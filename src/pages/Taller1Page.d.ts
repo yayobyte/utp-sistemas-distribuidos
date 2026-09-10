@@ -18,10 +18,20 @@ export interface ComparisonCriterion {
   grid: string;
 }
 
-export interface RealWorldCase {
+export interface CaseStudySpec {
+  label: string;
+  value: string;
+}
+
+export interface CaseStudyItem {
+  id: string;
+  category: 'cluster' | 'grid';
   tag: string;
   title: string;
+  subtitle: string;
   description: string;
-  usage: string;
-  borderColor: string;
+  detailedPoints: string[];
+  specs: CaseStudySpec[];
+  impactMetric: string;
+  impactLabel: string;
 }

@@ -9,15 +9,120 @@ import {
   Activity,
   Zap,
   ExternalLink,
+  ChevronDown,
+  ChevronRight,
+  CheckCircle2,
+  Lock,
 } from 'lucide-react';
 import { ClusterGrid3D } from '../components/ClusterGrid3D';
-import type { Taller1TabType, ArchType, ComponentDetailType } from './Taller1Page.d';
+import type {
+  Taller1TabType,
+  ArchType,
+  ComponentDetailType,
+  CaseStudyItem,
+} from './Taller1Page.d';
 import './Taller1Page.styles.css';
 
 export const Taller1Page: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Taller1TabType>('investigacion');
   const [selectedArch, setSelectedArch] = useState<ArchType>('cluster');
   const [selectedComponent, setSelectedComponent] = useState<ComponentDetailType>('compute');
+  const [selectedCaseId, setSelectedCaseId] = useState<string>('frontier');
+
+  const caseStudies: CaseStudyItem[] = [
+    {
+      id: 'frontier',
+      category: 'cluster',
+      tag: 'Clúster HPC Exaescala',
+      title: 'Supercomputador Frontier',
+      subtitle: 'Oak Ridge National Laboratory (ORNL) · Top500 #1',
+      description:
+        'El primer supercomputador exaescala del planeta, diseñado para resolver problemas de simulación cuántica, modelado climático y fusión nuclear mediante una arquitectura homogénea masiva.',
+      detailedPoints: [
+        '9,400+ nodos de cómputo HPE Cray EX homogéneos con procesadores AMD EPYC de 64 núcleos.',
+        'Más de 37,000 aceleradores GPU AMD Instinct MI250X conectados vía interconexión Infinity Fabric.',
+        'Red Slingshot-11 con latencias sub-microsegundo (< 1 µs) y topología Dragonfly de alta densidad.',
+        'Refrigeración líquida directa al chip (Direct-to-Chip Liquid Cooling) disipando 21 MW.',
+      ],
+      specs: [
+        { label: 'Rendimiento', value: '1.194 ExaFLOPs' },
+        { label: 'Interconexión', value: 'Slingshot-11 (RDMA)' },
+        { label: 'Almacenamiento', value: '700 PB Orion (Lustre)' },
+        { label: 'Acoplamiento', value: 'Fuertemente Acoplado' },
+      ],
+      impactMetric: '1.194 EF',
+      impactLabel: 'Potencia de Cómputo',
+    },
+    {
+      id: 'wlcg',
+      category: 'grid',
+      tag: 'La Malla Grid Global',
+      title: 'Worldwide LHC Computing Grid (WLCG)',
+      subtitle: 'CERN · Ginebra & 170+ Centros de Datos en 40 Países',
+      description:
+        'La infraestructura de computación en malla más grande de la historia científica. Procesa los petabytes de datos generados anualmente por las colisiones de partículas en el Gran Colisionador de Hadrones.',
+      detailedPoints: [
+        'Arquitectura jerárquica por niveles: Tier-0 (CERN), 14 centros nacionales Tier-1 y más de 140 centros universitarios Tier-2.',
+        'Integración de clústeres locales y supercomputadores heterogéneos bajo middlewares abiertos (Globus, gLite, ARC).',
+        'Red óptica dedicada de área extensa LHCOPN / LHCONE sobre enlaces transcontinentales de 100 Gbps.',
+        'Almacenamiento masivo jerárquico que combina discos SSD NVMe con librerías robóticas de cintas magnéticas (LTO).',
+      ],
+      specs: [
+        { label: 'Infraestructura', value: '170+ Centros / 40 Países' },
+        { label: 'Cores Simultáneos', value: '1,000,000+ Cores' },
+        { label: 'Almacenamiento', value: '1 Exabyte Distribuido' },
+        { label: 'Seguridad', value: 'PKI / Certificados X.509' },
+      ],
+      impactMetric: '1,000,000+',
+      impactLabel: 'Núcleos en Red WAN',
+    },
+    {
+      id: 'osg',
+      category: 'grid',
+      tag: 'Grid Científico Federado',
+      title: 'Open Science Grid (OSG)',
+      subtitle: 'Consorcio Nacional de Universidades y Laboratorios en EE.UU.',
+      description:
+        'Malla de alto rendimiento orientada a High Throughput Computing (HTC) que comparte de forma federada la capacidad ociosa de clústeres universitarios para investigaciones de astrofísica y genómica.',
+      detailedPoints: [
+        'Planificación descentralizada mediante HTCondor-G y pasarelas de intermediación de recursos (Resource Brokers).',
+        'Acceso transparente a recursos computacionales dispares sin necesidad de que el investigador gestione cuentas individuales.',
+        'Soporte directo a proyectos como el observatorio de ondas gravitacionales LIGO y el telescopio IceCube en el Polo Sur.',
+      ],
+      specs: [
+        { label: 'Organizaciones', value: '120+ Instituciones' },
+        { label: 'Enfoque', value: 'HTC (High Throughput)' },
+        { label: 'Middleware', value: 'HTCondor / GridWay' },
+        { label: 'Administración', value: 'Federada / Multi-sede' },
+      ],
+      impactMetric: '2.5B hrs',
+      impactLabel: 'Cómputo Anual Donado',
+    },
+    {
+      id: 'folding',
+      category: 'grid',
+      tag: 'Computación Voluntaria / Desktop Grid',
+      title: 'Folding@home',
+      subtitle: 'Universidad de Stanford / Washington University',
+      description:
+        'Proyecto de computación distribuida voluntaria que agrupa millones de tarjetas gráficas y procesadores domésticos alrededor del mundo para simular la dinámica molecular de proteínas.',
+      detailedPoints: [
+        'Arquitectura asimétrica cliente-servidor: los clientes descargan unidades de trabajo (Work Units) y envían trayectorias procesadas.',
+        'Superó la barrera del ExaFLOP durante la investigación de la proteína Spike del COVID-19 con la participación ciudadana.',
+        'Manejo de nodos con alta volatilidad mediante redundancia de cómputo y verificación de integridad criptográfica.',
+      ],
+      specs: [
+        { label: 'Participantes', value: 'Millones de Voluntarios' },
+        { label: 'Red', value: 'Internet Público' },
+        { label: 'Nodos', value: 'PCs / GPUs Domésticas' },
+        { label: 'Aplicación', value: 'Biomedicina & Fármacos' },
+      ],
+      impactMetric: '2.4 EF',
+      impactLabel: 'Pico de Cómputo Ciudadano',
+    },
+  ];
+
+  const currentCase = caseStudies.find((c) => c.id === selectedCaseId) || caseStudies[0];
 
   return (
     <div>
@@ -565,81 +670,250 @@ export const Taller1Page: React.FC = () => {
         </section>
       )}
 
-      {/* TAB 3: CASOS REALES / INDUSTRIA */}
+      {/* TAB 3: CASOS REALES / INDUSTRIA (APPLE WEBSITE SHOWCASE & EDITORIAL VALUES) */}
       {activeTab === 'casos' && (
-        <section className="tile-section tile-light taller1-content-section">
+        <section className="tile-section tile-parchment taller1-content-section">
           <div className="container-wide">
-            <div style={{ marginBottom: '32px' }}>
-              <h2 className="type-display-md taller1-main-title">
-                Casos Reales y Proyectos Emblemáticos
-              </h2>
-              <p style={{ fontSize: '15px', color: 'var(--color-ink-muted-48)' }}>
-                Implementaciones que demuestran la aplicación práctica de Clústeres y Grids a nivel mundial.
-              </p>
+            {/* Apple Continuity-Style Interactive Showcase (Reference 1) */}
+            <div className="apple-showcase-container">
+              {/* Left Column: Interactive Feature Accordion */}
+              <div className="apple-accordion-column">
+                {caseStudies.map((study) => {
+                  const isOpen = selectedCaseId === study.id;
+                  return (
+                    <div
+                      key={study.id}
+                      onClick={() => setSelectedCaseId(study.id)}
+                      className={`apple-accordion-row ${isOpen ? 'is-open' : 'is-closed'}`}
+                    >
+                      <div className="apple-accordion-header">
+                        <h3 className="apple-accordion-title">
+                          {study.title}
+                        </h3>
+                        <div className="apple-accordion-chevron">
+                          <ChevronDown
+                            size={22}
+                            style={{
+                              transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                              transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                              color: isOpen ? '#1d1d1f' : '#86868b',
+                            }}
+                          />
+                        </div>
+                      </div>
+
+                      {isOpen && (
+                        <div className="apple-accordion-content">
+                          <p className="apple-accordion-desc">{study.description}</p>
+                          <div className="apple-accordion-tags">
+                            <span className="apple-pill-tag">
+                              {study.category === 'cluster' ? 'Clúster Homogéneo' : 'Malla Grid Geodistribuida'}
+                            </span>
+                            <span className="apple-pill-tag">
+                              {study.impactMetric} · {study.impactLabel}
+                            </span>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Right Column: Apple Device Continuity Showcase (MacBook + iPhone Display) */}
+              <div className="apple-mockup-wrapper">
+                {/* MacBook Display Frame */}
+                <div className="apple-macbook-frame">
+                  {/* Top Menu Bar */}
+                  <div className="apple-mac-menubar">
+                    <div className="apple-mac-menubar-left">
+                      <span className="apple-logo-glyph"></span>
+                      <span className="apple-menubar-title">Duplicación del Clúster</span>
+                      <span className="apple-menubar-item hide-mobile">Edición</span>
+                      <span className="apple-menubar-item hide-mobile">Visualización</span>
+                      <span className="apple-menubar-item hide-mobile">Ventana</span>
+                      <span className="apple-menubar-item hide-mobile">Ayuda</span>
+                    </div>
+                    <div className="apple-mac-menubar-right">
+                      <span className="apple-menubar-metric">{currentCase.impactMetric}</span>
+                      <span className="apple-status-dot green" />
+                    </div>
+                  </div>
+
+                  {/* MacBook Screen Content (Wallpaper + Terminal Window) */}
+                  <div className={`apple-mac-screen bg-${currentCase.id}`}>
+                    {/* Live Cluster Dashboard Inset */}
+                    <div className="apple-mac-window">
+                      <div className="apple-window-header">
+                        <div className="apple-window-dots">
+                          <span className="dot red" />
+                          <span className="dot yellow" />
+                          <span className="dot green" />
+                        </div>
+                        <span className="apple-window-title">{currentCase.title} — Telemetry Console</span>
+                      </div>
+                      <div className="apple-window-body">
+                        <div className="apple-terminal-header">
+                          <div className="apple-terminal-pill">{currentCase.tag}</div>
+                          <span className="apple-terminal-sub">{currentCase.subtitle}</span>
+                        </div>
+                        
+                        <div className="apple-terminal-grid">
+                          {currentCase.specs.map((spec, sIdx) => (
+                            <div key={sIdx} className="apple-terminal-stat">
+                              <span className="stat-label">{spec.label}</span>
+                              <strong className="stat-value">{spec.value}</strong>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Bottom macOS Dock */}
+                    <div className="apple-mac-dock">
+                      <span className="dock-icon c-blue">🖥️</span>
+                      <span className="dock-icon c-purple">⚡</span>
+                      <span className="dock-icon c-green">🌐</span>
+                      <span className="dock-icon c-orange">📊</span>
+                      <span className="dock-icon c-teal">🔒</span>
+                      <span className="dock-icon c-dark">⚙️</span>
+                    </div>
+                  </div>
+
+                  {/* Floating iPhone Screen Mirroring Window (Mirroring Image 1) */}
+                  <div className="apple-iphone-mirror">
+                    <div className="apple-iphone-notch" />
+                    <div className="apple-iphone-statusbar">
+                      <span>9:41</span>
+                      <div className="iphone-icons">
+                        <span>5G</span>
+                        <span>100%</span>
+                      </div>
+                    </div>
+                    <div className="apple-iphone-body">
+                      <div className="iphone-widget">
+                        <div className="widget-icon">
+                          {currentCase.category === 'cluster' ? <Cpu size={16} /> : <Globe size={16} />}
+                        </div>
+                        <div className="widget-info">
+                          <span className="widget-label">LIVE STATUS</span>
+                          <strong className="widget-val">{currentCase.impactMetric}</strong>
+                        </div>
+                      </div>
+                      <div className="iphone-metric-bar">
+                        <div className="iphone-metric-track">
+                          <div
+                            className="iphone-metric-fill"
+                            style={{
+                              width: currentCase.category === 'cluster' ? '94%' : '88%',
+                              backgroundColor: currentCase.category === 'cluster' ? '#2997ff' : '#34c759',
+                            }}
+                          />
+                        </div>
+                        <span className="iphone-caption">
+                          {currentCase.category === 'cluster' ? 'Latencia < 1 µs (RDMA)' : 'Nodos WAN Conectados'}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="taller1-case-grid">
-              {/* Frontier Top500 */}
-              <div className="utility-card" style={{ borderLeft: '4px solid #0066cc' }}>
-                <span className="taller1-case-tag" style={{ color: '#0066cc' }}>
-                  Clúster HPC Masivo
-                </span>
-                <h3 className="taller1-case-title">
-                  Supercomputador Frontier (ORNL)
-                </h3>
-                <p className="taller1-case-desc">
-                  El primer supercomputador exaescala del mundo. Posee más de 9,400 nodos homogéneos interconectados mediante la red Slingshot-11 de HPE Cray con refrigeración líquida total.
-                </p>
-                <div className="taller1-case-footer">
-                  Uso: Modelado nuclear, astrofísica y clima.
+            {/* Apple Values Section with Pill Search & 3 Minimalist Rounded Cards (Reference 2) */}
+            <div className="apple-values-container">
+              {/* Top Header Explorer Pill */}
+              <div className="apple-values-top-bar">
+                <div className="apple-search-pill">
+                  <span className="pill-text">Arquitecturas Distribuidas</span>
+                  <button
+                    onClick={() => setActiveTab('investigacion')}
+                    className="pill-btn"
+                  >
+                    Explorar
+                  </button>
                 </div>
               </div>
 
-              {/* CERN WLCG */}
-              <div className="utility-card" style={{ borderLeft: '4px solid #34c759' }}>
-                <span className="taller1-case-tag" style={{ color: '#248a3d' }}>
-                  La Malla Grid Más Grande
-                </span>
-                <h3 className="taller1-case-title">
-                  WLCG (Worldwide LHC Computing Grid)
+              {/* Main Headline (Apple Display Typography) */}
+              <div className="apple-values-header-wrapper">
+                <h3 className="apple-values-main-title">
+                  Nuestros valores reflejan nuestro compromiso.
                 </h3>
-                <p className="taller1-case-desc">
-                  Integra más de 170 centros de datos en más de 40 países organizados en niveles (Tier-0 en Ginebra, Tier-1 nacionales, Tier-2 universitarios) para procesar los datos del Gran Colisionador de Hadrones.
-                </p>
-                <div className="taller1-case-footer">
-                  Uso: Física de partículas y descubrimiento del bosón de Higgs.
-                </div>
               </div>
 
-              {/* Open Science Grid */}
-              <div className="utility-card" style={{ borderLeft: '4px solid #af52de' }}>
-                <span className="taller1-case-tag" style={{ color: '#af52de' }}>
-                  Grid Académico Nacional
-                </span>
-                <h3 className="taller1-case-title">
-                  Open Science Grid (OSG)
-                </h3>
-                <p className="taller1-case-desc">
-                  Consorcio de universidades y laboratorios en EE.UU. que comparten tiempo de cómputo en clústeres locales mediante HTCondor y middleware Grid para democratizar la investigación científica.
-                </p>
-                <div className="taller1-case-footer">
-                  Uso: Genómica, biomedicina y química computacional.
+              {/* 3 Apple Values Editorial Cards */}
+              <div className="apple-values-grid">
+                {/* Card 1: Escalabilidad Científica */}
+                <div className="apple-clean-card">
+                  <div>
+                    <div className="apple-clean-icon">
+                      <Globe size={36} strokeWidth={1.3} color="#1d1d1f" />
+                    </div>
+                    <h4 className="apple-clean-title">
+                      Un plan tan innovador como nuestros sistemas.
+                    </h4>
+                    <p className="apple-clean-desc">
+                      La infraestructura Grid agrega petabytes de datos y millones de ciclos de cómputo en más de 40 países para hacer posible los descubrimientos del CERN.
+                    </p>
+                  </div>
+                  <a
+                    href="https://wlcg.web.cern.ch/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="apple-clean-link"
+                  >
+                    <span>Más información sobre la malla WLCG</span>
+                    <span className="link-arrow">›</span>
+                  </a>
                 </div>
-              </div>
 
-              {/* Folding@home */}
-              <div className="utility-card" style={{ borderLeft: '4px solid #ff9f0a' }}>
-                <span className="taller1-case-tag" style={{ color: '#ff9f0a' }}>
-                  Desktop / Volunteer Grid
-                </span>
-                <h3 className="taller1-case-title">
-                  Folding@home & SETI@home
-                </h3>
-                <p className="taller1-case-desc">
-                  Malla de computación voluntaria donde millones de usuarios donan ciclos de GPU/CPU de sus computadores personales a través de Internet para simular el plegamiento de proteínas y enfermedades complejas.
-                </p>
-                <div className="taller1-case-footer">
-                  Uso: Búsqueda de fármacos contra COVID-19 y Cáncer.
+                {/* Card 2: Rendimiento Exaescala */}
+                <div className="apple-clean-card">
+                  <div>
+                    <div className="apple-clean-icon">
+                      <Cpu size={36} strokeWidth={1.3} color="#1d1d1f" />
+                    </div>
+                    <h4 className="apple-clean-title">
+                      Rendimiento Exaescala. Esto es Frontier.
+                    </h4>
+                    <p className="apple-clean-desc">
+                      Un clúster homogéneo de ultra-baja latencia capaz de ejecutar 1.194 ExaFLOPs con interconexión RDMA Slingshot para física y modelado de alta precisión.
+                    </p>
+                  </div>
+                  <a
+                    href="https://www.top500.org/system/180047/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="apple-clean-link"
+                  >
+                    <span>Más información sobre Top500</span>
+                    <span className="link-arrow">›</span>
+                  </a>
+                </div>
+
+                {/* Card 3: Soberanía y Acceso Abierto */}
+                <div className="apple-clean-card">
+                  <div>
+                    <div className="apple-clean-icon">
+                      <Shield size={36} strokeWidth={1.3} color="#1d1d1f" />
+                    </div>
+                    <h4 className="apple-clean-title">
+                      Innovación diseñada para ser accesible y federada.
+                    </h4>
+                    <p className="apple-clean-desc">
+                      A través de certificados PKI X.509 y middlewares abiertos, cientos de universidades comparten recursos computacionales con total soberanía y seguridad.
+                    </p>
+                  </div>
+                  <a
+                    href="https://osg-htc.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="apple-clean-link"
+                  >
+                    <span>Más información sobre Open Science Grid</span>
+                    <span className="link-arrow">›</span>
+                  </a>
                 </div>
               </div>
             </div>
