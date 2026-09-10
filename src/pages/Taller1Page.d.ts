@@ -1,4 +1,9 @@
-export type Taller1TabType = 'investigacion' | 'matriz' | 'casos';
+export type Taller1TabType =
+  | 'investigacion'
+  | 'matriz'
+  | 'casos'
+  | 'diferencias'
+  | 'conclusiones';
 
 export type ArchType = 'cluster' | 'grid';
 

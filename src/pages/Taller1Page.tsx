@@ -11,8 +11,11 @@ import {
   ExternalLink,
   ChevronDown,
   ChevronRight,
+  Sliders,
+  BookmarkCheck,
   CheckCircle2,
   Lock,
+  Sparkles,
 } from 'lucide-react';
 import { ClusterGrid3D } from '../components/ClusterGrid3D';
 import type {
@@ -170,7 +173,7 @@ export const Taller1Page: React.FC = () => {
             <button
               onClick={() => setActiveTab('investigacion')}
               className={activeTab === 'investigacion' ? 'btn-primary' : 'btn-pearl-capsule'}
-              style={{ fontSize: '13px', padding: '8px 18px' }}
+              style={{ fontSize: '13px', padding: '8px 16px' }}
             >
               <Cpu size={14} />
               1. Hardware & Arquitectura
@@ -178,7 +181,7 @@ export const Taller1Page: React.FC = () => {
             <button
               onClick={() => setActiveTab('matriz')}
               className={activeTab === 'matriz' ? 'btn-primary' : 'btn-pearl-capsule'}
-              style={{ fontSize: '13px', padding: '8px 18px' }}
+              style={{ fontSize: '13px', padding: '8px 16px' }}
             >
               <Layers size={14} />
               2. Matriz Comparativa
@@ -186,10 +189,26 @@ export const Taller1Page: React.FC = () => {
             <button
               onClick={() => setActiveTab('casos')}
               className={activeTab === 'casos' ? 'btn-primary' : 'btn-pearl-capsule'}
-              style={{ fontSize: '13px', padding: '8px 18px' }}
+              style={{ fontSize: '13px', padding: '8px 16px' }}
             >
               <Activity size={14} />
-              3. Casos Reales (CERN, Top500)
+              3. Casos Reales
+            </button>
+            <button
+              onClick={() => setActiveTab('diferencias')}
+              className={activeTab === 'diferencias' ? 'btn-primary' : 'btn-pearl-capsule'}
+              style={{ fontSize: '13px', padding: '8px 16px' }}
+            >
+              <Sliders size={14} />
+              4. Diferencias Clave
+            </button>
+            <button
+              onClick={() => setActiveTab('conclusiones')}
+              className={activeTab === 'conclusiones' ? 'btn-primary' : 'btn-pearl-capsule'}
+              style={{ fontSize: '13px', padding: '8px 16px' }}
+            >
+              <BookmarkCheck size={14} />
+              5. Conclusiones
             </button>
           </div>
         </div>
@@ -551,14 +570,6 @@ export const Taller1Page: React.FC = () => {
       {activeTab === 'matriz' && (
         <section className="tile-section tile-light taller1-content-section">
           <div className="container-wide">
-            <div style={{ marginBottom: '24px' }}>
-              <h2 className="type-display-md taller1-main-title">
-                Matriz Comparativa de Hardware y Arquitectura
-              </h2>
-              <p style={{ fontSize: '15px', color: 'var(--color-ink-muted-48)' }}>
-                Diferencias fundamentales entre la conformación física y lógica de un Clúster vs. un Grid.
-              </p>
-            </div>
 
             <div className="taller1-table-wrapper">
               <table className="taller1-matrix-table">
@@ -757,7 +768,7 @@ export const Taller1Page: React.FC = () => {
                           <div className="apple-terminal-pill">{currentCase.tag}</div>
                           <span className="apple-terminal-sub">{currentCase.subtitle}</span>
                         </div>
-                        
+
                         <div className="apple-terminal-grid">
                           {currentCase.specs.map((spec, sIdx) => (
                             <div key={sIdx} className="apple-terminal-stat">
@@ -916,6 +927,209 @@ export const Taller1Page: React.FC = () => {
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* TAB 4: DIFERENCIAS CLAVE (APPLE BENTO SPLIT CARDS) */}
+      {activeTab === 'diferencias' && (
+        <section className="tile-section tile-light taller1-content-section">
+          <div className="container-wide">
+
+            {/* Apple Bento Grid for Key Differences */}
+            <div className="apple-diff-grid">
+              {/* Diff 1: Homogeneidad */}
+              <div className="apple-diff-card">
+                <div className="apple-diff-card-header">
+                  <div className="apple-diff-icon">
+                    <Cpu size={28} strokeWidth={1.4} color="#1d1d1f" />
+                  </div>
+                  <span className="apple-diff-pill">Criterio 1</span>
+                </div>
+                <h3 className="apple-diff-title">Homogeneidad de los Nodos</h3>
+                <div className="apple-diff-split">
+                  <div className="apple-split-side cluster-side">
+                    <span className="split-badge cluster">Clúster</span>
+                    <strong className="split-headline">Homogéneo</strong>
+                    <p className="split-desc">
+                      Mismo modelo de procesadores (Xeon/EPYC), placas madre, memoria ECC y aceleradores GPU para garantizar cálculo síncrono uniforme y sin variabilidad.
+                    </p>
+                  </div>
+                  <div className="apple-split-divider" />
+                  <div className="apple-split-side grid-side">
+                    <span className="split-badge grid">Grid</span>
+                    <strong className="split-headline">Altamente Heterogéneo</strong>
+                    <p className="split-desc">
+                      Integra clústeres completos, supercomputadores, servidores de diversos fabricantes, PCs de laboratorio e instrumentos científicos con múltiples arquitecturas y sistemas operativos.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Diff 2: Acoplamiento y Latencia */}
+              <div className="apple-diff-card">
+                <div className="apple-diff-card-header">
+                  <div className="apple-diff-icon">
+                    <Zap size={28} strokeWidth={1.4} color="#1d1d1f" />
+                  </div>
+                  <span className="apple-diff-pill">Criterio 2</span>
+                </div>
+                <h3 className="apple-diff-title">Acoplamiento y Latencia de Red</h3>
+                <div className="apple-diff-split">
+                  <div className="apple-split-side cluster-side">
+                    <span className="split-badge cluster">Clúster</span>
+                    <strong className="split-headline">Fuertemente Acoplado (&lt; 1 µs)</strong>
+                    <p className="split-desc">
+                      Interconexión local de ultra-alta velocidad (InfiniBand HDR/NDR, RoCE) con Remote Direct Memory Access (RDMA) para paso de mensajes síncronos MPI a nivel de microsegundo.
+                    </p>
+                  </div>
+                  <div className="apple-split-divider" />
+                  <div className="apple-split-side grid-side">
+                    <span className="split-badge grid">Grid</span>
+                    <strong className="split-headline">Débilmente Acoplado (Red WAN / ms)</strong>
+                    <p className="split-desc">
+                      Opera sobre enlaces geográficos WAN, Internet y redes académicas (RENATA, GEANT) con latencias variables en el orden de milisegundos, optimizado para tareas asíncronas independientes.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Diff 3: Dominio de Administración */}
+              <div className="apple-diff-card">
+                <div className="apple-diff-card-header">
+                  <div className="apple-diff-icon">
+                    <Server size={28} strokeWidth={1.4} color="#1d1d1f" />
+                  </div>
+                  <span className="apple-diff-pill">Criterio 3</span>
+                </div>
+                <h3 className="apple-diff-title">Dominio de Administración</h3>
+                <div className="apple-diff-split">
+                  <div className="apple-split-side cluster-side">
+                    <span className="split-badge cluster">Clúster</span>
+                    <strong className="split-headline">Único Dominio Centralizado</strong>
+                    <p className="split-desc">
+                      Administrado por un único equipo de TI que impone políticas homogéneas, gestión de usuarios local (LDAP/Kerberos) y planificador central de trabajos (Slurm, PBS).
+                    </p>
+                  </div>
+                  <div className="apple-split-divider" />
+                  <div className="apple-split-side grid-side">
+                    <span className="split-badge grid">Grid</span>
+                    <strong className="split-headline">Múltiple y Federado</strong>
+                    <p className="split-desc">
+                      Múltiples organizaciones independientes comparten recursos. Cada institución conserva su soberanía administrativa, coordinadas mediante pasarelas Grid y certificados PKI X.509.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Diff 4: Almacenamiento */}
+              <div className="apple-diff-card">
+                <div className="apple-diff-card-header">
+                  <div className="apple-diff-icon">
+                    <HardDrive size={28} strokeWidth={1.4} color="#1d1d1f" />
+                  </div>
+                  <span className="apple-diff-pill">Criterio 4</span>
+                </div>
+                <h3 className="apple-diff-title">Almacenamiento y Jerarquía</h3>
+                <div className="apple-diff-split">
+                  <div className="apple-split-side cluster-side">
+                    <span className="split-badge cluster">Clúster</span>
+                    <strong className="split-headline">SAN / Lustre / NVMe-oF Local</strong>
+                    <p className="split-desc">
+                      Sistemas de archivos paralelos centralizados (Lustre, GPFS) conectados vía Fibre Channel o NVMe sobre Fabrics para lecturas/escrituras concurrentes a decenas de GB/s.
+                    </p>
+                  </div>
+                  <div className="apple-split-divider" />
+                  <div className="apple-split-side grid-side">
+                    <span className="split-badge grid">Grid</span>
+                    <strong className="split-headline">Almacenamiento Distribuido & Cintas</strong>
+                    <p className="split-desc">
+                      Gestores de recursos de almacenamiento (SRM, dCache, GridFTP) y librerías robóticas de cintas magnéticas (LTO) para conservación histórica masiva y federada a nivel de Exabytes.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* TAB 5: CONCLUSIONES (APPLE EDITORIAL HIGHLIGHTS) */}
+      {activeTab === 'conclusiones' && (
+        <section className="tile-section tile-parchment taller1-content-section">
+          <div className="container-wide">
+
+            {/* 3 Apple Editorial Conclusion Cards */}
+            <div className="apple-conclusions-list">
+              {/* Conclusion 1 */}
+              <div className="apple-conclusion-card">
+                <div className="conclusion-number">01</div>
+                <div className="conclusion-content">
+                  <div className="conclusion-tag">
+                    <Cpu size={14} />
+                    <span>HPC vs. HTC</span>
+                  </div>
+                  <h3 className="conclusion-title">
+                    Especialización vs. Agregación de Recursos
+                  </h3>
+                  <p className="conclusion-body">
+                    El hardware de un <strong>clúster</strong> se adquiere y configura específicamente para resolver problemas complejos de computación en paralelo masivo donde la velocidad de intercambio de mensajes en memoria y red es el factor limitante (<strong>High Performance Computing - HPC</strong>). Por el contrario, un <strong>grid</strong> aprovecha y agrega infraestructuras ya existentes para procesar cargas de trabajo de alto volumen desacopladas e independientes (<strong>High Throughput Computing - HTC</strong>).
+                  </p>
+                </div>
+              </div>
+
+              {/* Conclusion 2 */}
+              <div className="apple-conclusion-card">
+                <div className="conclusion-number">02</div>
+                <div className="conclusion-content">
+                  <div className="conclusion-tag">
+                    <Zap size={14} />
+                    <span>Topología & Enlace</span>
+                  </div>
+                  <h3 className="conclusion-title">
+                    El Rol Crítico de la Red de Interconexión
+                  </h3>
+                  <p className="conclusion-body">
+                    Mientras que en un clúster la inversión en hardware se concentra fuertemente en switches no bloqueantes y tarjetas con soporte <strong>RDMA (InfiniBand)</strong> para reducir la latencia al microsegundo, en un grid los componentes clave son los <strong>gateways</strong>, <strong>routers de frontera BGP</strong> y sistemas de almacenamiento federado capaces de operar eficientemente sobre redes WAN no confiables y de alta latencia inherente.
+                  </p>
+                </div>
+              </div>
+
+              {/* Conclusion 3 */}
+              <div className="apple-conclusion-card">
+                <div className="conclusion-number">03</div>
+                <div className="conclusion-content">
+                  <div className="conclusion-tag">
+                    <Sparkles size={14} />
+                    <span>Sinergia Distribuida</span>
+                  </div>
+                  <h3 className="conclusion-title">
+                    Coexistencia en la Jerarquía de Sistemas Distribuidos
+                  </h3>
+                  <p className="conclusion-body">
+                    Ambos conceptos no compiten entre sí; un Grid frecuentemente utiliza clústeres completos como sus nodos de cómputo básicos (niveles <strong>Tier-1</strong> o <strong>Tier-2</strong> en la terminología del WLCG del CERN). Esto demuestra que <strong>Clúster y Grid son paradigmas complementarios</strong> que resuelven diferentes estratos de la escala computacional global.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Apple Frosted Summary Banner */}
+            <div className="apple-summary-banner">
+              <div className="apple-summary-text">
+                <strong>¿Listo para entregar el Taller 1?</strong>
+                <p>Todos los requerimientos teóricos, arquitecturales y comparativos han sido sintetizados con base en la bibliografía oficial del curso.</p>
+              </div>
+              <a
+                href="https://classroom.google.com/c/ODcyMDQwNDA5MjIw/a/ODcyMDQwNDA5MjMy/details"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                style={{ fontSize: '13px', padding: '10px 22px', textDecoration: 'none', whiteSpace: 'nowrap' }}
+              >
+                <span>Entregar en Classroom</span>
+                <ExternalLink size={14} />
+              </a>
             </div>
           </div>
         </section>
