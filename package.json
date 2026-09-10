@@ -1,0 +1,26 @@
+{
+  "name": "sistemas-distribuidos",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Plataforma académica y repositorio interactivo para la materia Sistemas Distribuidos (IS893) - UTP",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lucide-react": "^1.16.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0"
+  }
+}

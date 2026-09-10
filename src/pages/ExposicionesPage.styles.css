@@ -1,0 +1,59 @@
+.exposiciones-section {
+  padding: 60px 24px;
+}
+
+.exposiciones-header {
+  margin-bottom: 32px;
+}
+
+.exposiciones-title {
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+
+.exposiciones-lead {
+  color: var(--color-ink-muted-48);
+}
+
+.exposiciones-card {
+  margin-bottom: 32px;
+  background-color: var(--color-surface-pearl);
+}
+
+.exposiciones-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 16px;
+}
+
+.exposiciones-criteria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.exposicion-criteria-box {
+  background-color: var(--color-canvas);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-hairline);
+}
+
+.exposicion-percentage {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.exposicion-criteria-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-top: 4px;
+}
+
+.exposicion-criteria-desc {
+  font-size: 12px;
+  color: var(--color-ink-muted-48);
+  margin-top: 2px;
+}

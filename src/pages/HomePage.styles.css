@@ -1,0 +1,228 @@
+.home-hero-section {
+  padding: 70px 24px 60px;
+}
+
+.home-hero-container {
+  text-align: center;
+}
+
+.home-hero-title {
+  color: var(--color-ink);
+  margin-bottom: 18px;
+}
+
+.home-hero-lead {
+  color: var(--color-ink-muted-80);
+  max-width: 720px;
+  margin: 0 auto 32px;
+}
+
+.home-hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.home-featured-section {
+  padding: 80px 24px;
+}
+
+.home-featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+
+.home-badge-pill {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary-on-dark);
+  background-color: rgba(41, 151, 255, 0.15);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.home-featured-heading {
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.home-featured-description {
+  font-size: 17px;
+  color: var(--color-body-muted-dark);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.home-featured-checklist {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.home-checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.home-preview-card {
+  background-color: var(--color-surface-tile-2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 32px;
+  box-shadow: var(--shadow-card-dark);
+}
+
+.home-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.home-preview-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary-on-dark);
+}
+
+.home-preview-tag {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-mono);
+}
+
+.home-preview-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.home-preview-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.home-preview-box.cluster {
+  border-left: 4px solid var(--color-primary);
+}
+
+.home-preview-box.grid {
+  border-left: 4px solid var(--color-success);
+}
+
+.home-preview-box-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.home-preview-box-title {
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.home-preview-box-desc {
+  font-size: 13px;
+  color: var(--color-body-muted-dark);
+}
+
+.home-evaluation-section {
+  padding: 80px 24px;
+}
+
+.home-evaluation-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.home-evaluation-title {
+  color: var(--color-ink);
+  margin-bottom: 12px;
+}
+
+.home-evaluation-lead {
+  color: var(--color-ink-muted-48);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.home-evaluation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.home-eval-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.home-eval-tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.home-eval-percentage {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.home-eval-percentage.highlight {
+  color: var(--color-primary);
+}
+
+.home-eval-card-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 10px;
+}
+
+.home-eval-list {
+  font-size: 14px;
+  color: var(--color-ink-muted-80);
+  padding-left: 18px;
+  line-height: 1.6;
+}
+
+.home-teacher-section {
+  padding: 60px 24px;
+}
+
+.home-teacher-card {
+  background-color: var(--color-surface-pearl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 32px;
+}
+
+.home-teacher-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 6px;
+}
+
+.home-teacher-desc {
+  font-size: 14px;
+  color: var(--color-ink-muted-48);
+}

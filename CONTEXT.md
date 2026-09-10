@@ -67,6 +67,8 @@ Brindar al estudiante la fundamentación teórica y práctica necesaria para **i
 ---
 
 ### 🛠️ Actividades y Talleres (20%)
+* **Google Classroom Asignatura:** [Sistemas Distribuidos IS893](https://classroom.google.com/c/ODcyMDQwNDA5MjIw)
+* **Taller 1 Direct Link:** [Taller 1 - GRID y CLUSTER](https://classroom.google.com/c/ODcyMDQwNDA5MjIw/a/ODcyMDQwNDA5MjMy/details)
 * **Propósito:** Investigación o revisión de las aplicaciones del tema.
 * **Metodología:** Durante cada capítulo, se plantearán actividades y talleres para que cada alumno pueda encontrar elementos que ayuden a dar claridad y aplicabilidad del tema revisado en clase.
 
