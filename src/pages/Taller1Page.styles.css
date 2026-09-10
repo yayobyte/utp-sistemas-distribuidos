@@ -1,5 +1,5 @@
-.taller1-header-section {
-  padding: 32px 24px 0;
+.tile-section.taller1-header-section {
+  padding: 32px 24px 0 !important;
 }
 
 .taller1-header-wrapper {
@@ -68,8 +68,8 @@
   margin-bottom: 0;
 }
 
-.taller1-content-section {
-  padding: 32px 24px 60px;
+.tile-section.taller1-content-section {
+  padding: 32px 24px 60px !important;
 }
 
 .taller1-segmented-controls {
