@@ -1,0 +1,82 @@
+.cluster-grid-3d-wrapper {
+  width: 100%;
+  height: 380px;
+  position: relative;
+  background: radial-gradient(circle at center, #1a1a24 0%, #0c0c10 100%);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  margin-bottom: 24px;
+}
+
+.cluster-grid-3d-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cluster-grid-3d-overlay {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.cluster-grid-3d-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.cluster-grid-3d-hint {
+  font-size: 11px;
+  color: var(--color-primary-on-dark);
+  margin-top: 4px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.cluster-grid-3d-legend {
+  position: absolute;
+  bottom: 14px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.cluster-grid-3d-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cluster-grid-3d-badge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cluster-grid-3d-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}

@@ -1,15 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
+import type { SubNavProps } from './SubNav.d';
 import './SubNav.styles.css';
-
-interface SubNavProps {
-  title: string;
-  subtitle?: string;
-  badge?: string;
-  breadcrumbs?: { label: string; path?: string }[];
-  actions?: React.ReactNode;
-}
 
 export const SubNav: React.FC<SubNavProps> = ({
   title,

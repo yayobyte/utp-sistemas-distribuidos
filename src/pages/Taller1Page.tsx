@@ -10,12 +10,14 @@ import {
   Zap,
   ExternalLink,
 } from 'lucide-react';
+import { ClusterGrid3D } from '../components/ClusterGrid3D';
+import type { Taller1TabType, ArchType, ComponentDetailType } from './Taller1Page.d';
 import './Taller1Page.styles.css';
 
 export const Taller1Page: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'investigacion' | 'matriz' | 'casos'>('investigacion');
-  const [selectedArch, setSelectedArch] = useState<'cluster' | 'grid'>('cluster');
-  const [selectedComponent, setSelectedComponent] = useState<string>('compute');
+  const [activeTab, setActiveTab] = useState<Taller1TabType>('investigacion');
+  const [selectedArch, setSelectedArch] = useState<ArchType>('cluster');
+  const [selectedComponent, setSelectedComponent] = useState<ComponentDetailType>('compute');
 
   return (
     <div>
@@ -116,6 +118,9 @@ export const Taller1Page: React.FC = () => {
               </div>
             </div>
 
+            {/* Interactive 3D Canvas Visualizer */}
+            <ClusterGrid3D mode={selectedArch} />
+
             {selectedArch === 'cluster' ? (
               /* CLUSTER VIEW */
               <div className="taller1-arch-grid">
@@ -123,7 +128,7 @@ export const Taller1Page: React.FC = () => {
                 <div className="utility-card-dark taller1-interactive-map">
                   <div className="taller1-map-header">
                     <h3 className="taller1-map-title">
-                      Esquema de Hardware: Clúster HPC
+                      Componentes del Clúster
                     </h3>
                     <span className="taller1-map-badge" style={{ color: 'var(--color-primary-on-dark)' }}>
                       Fuertemente Acoplado · &lt; 1 µs
@@ -282,7 +287,7 @@ export const Taller1Page: React.FC = () => {
                 <div className="utility-card-dark taller1-interactive-map">
                   <div className="taller1-map-header">
                     <h3 className="taller1-map-title">
-                      Esquema de Hardware: Grid Computing
+                      Componentes del Grid
                     </h3>
                     <span className="taller1-map-badge" style={{ color: 'var(--color-success)' }}>
                       Débilmente Acoplado · WAN / Internet
@@ -507,7 +512,7 @@ export const Taller1Page: React.FC = () => {
                   <tr style={{ borderBottom: '1px solid var(--color-hairline)' }}>
                     <td className="taller1-td" style={{ fontWeight: 600, color: 'var(--color-ink)' }}>Ubicación Geográfica</td>
                     <td className="taller1-td" style={{ borderRight: '1px solid var(--color-hairline)', color: 'var(--color-ink-muted-80)' }}>
-                      <strong>Centralizada:</strong> En un mismo rack o pasillo dentro de un único centro de datos.
+                      <strong>Centralizada:</strong> En una misma sala, pasillo de racks o centro de datos.
                     </td>
                     <td className="taller1-td" style={{ color: 'var(--color-ink-muted-80)' }}>
                       <strong>Distribuida globalmente:</strong> Entre diferentes ciudades, países y continentes.
