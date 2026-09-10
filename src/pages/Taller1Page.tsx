@@ -1114,23 +1114,6 @@ export const Taller1Page: React.FC = () => {
               </div>
             </div>
 
-            {/* Apple Frosted Summary Banner */}
-            <div className="apple-summary-banner">
-              <div className="apple-summary-text">
-                <strong>¿Listo para entregar el Taller 1?</strong>
-                <p>Todos los requerimientos teóricos, arquitecturales y comparativos han sido sintetizados con base en la bibliografía oficial del curso.</p>
-              </div>
-              <a
-                href="https://classroom.google.com/c/ODcyMDQwNDA5MjIw/a/ODcyMDQwNDA5MjMy/details"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-                style={{ fontSize: '13px', padding: '10px 22px', textDecoration: 'none', whiteSpace: 'nowrap' }}
-              >
-                <span>Entregar en Classroom</span>
-                <ExternalLink size={14} />
-              </a>
-            </div>
           </div>
         </section>
       )}

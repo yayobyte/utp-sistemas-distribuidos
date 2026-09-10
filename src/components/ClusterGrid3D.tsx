@@ -54,49 +54,101 @@ export const ClusterGrid3D: React.FC<ClusterGrid3DProps> = ({ mode }) => {
 
       // Materials
       const rackMat = new THREE.MeshStandardMaterial({
-        color: 0x1b1c22,
+        color: 0x1c1c20,
         roughness: 0.3,
         metalness: 0.8,
       });
 
+      // 1. Head Node / Master Computer Material (Electric Apple Blue)
       const masterMat = new THREE.MeshStandardMaterial({
-        color: 0x0066cc,
+        color: 0x0071e3,
         roughness: 0.2,
-        metalness: 0.9,
-        emissive: 0x003366,
-        emissiveIntensity: 0.4,
+        metalness: 0.85,
+        emissive: 0x004085,
+        emissiveIntensity: 0.45,
       });
 
+      // 2. NAS / SAN Parallel Storage Material (Distinct Apple Purple)
+      const storageMat = new THREE.MeshStandardMaterial({
+        color: 0xaf52de,
+        roughness: 0.25,
+        metalness: 0.85,
+        emissive: 0x581c87,
+        emissiveIntensity: 0.5,
+      });
+
+      // 3. Central Switch Material (High-Speed Amber)
       const switchMat = new THREE.MeshStandardMaterial({
         color: 0xff9f0a,
-        emissive: 0xff6600,
-        emissiveIntensity: 0.8,
+        roughness: 0.2,
+        metalness: 0.8,
+        emissive: 0xcc7a00,
+        emissiveIntensity: 0.85,
       });
 
+      // 4. Worker Compute Nodes Material (Sleek Dark Slate)
       const workerMat = new THREE.MeshStandardMaterial({
-        color: 0x22242e,
-        roughness: 0.4,
-        metalness: 0.7,
+        color: 0x242730,
+        roughness: 0.35,
+        metalness: 0.75,
       });
 
       const ledGreenMat = new THREE.MeshBasicMaterial({ color: 0x34c759 });
       const ledBlueMat = new THREE.MeshBasicMaterial({ color: 0x2997ff });
+      const ledPurpleMat = new THREE.MeshBasicMaterial({ color: 0xbf5af2 });
+      const ledAmberMat = new THREE.MeshBasicMaterial({ color: 0xff9f0a });
 
-      // 1. Master Rack & Storage (Back row)
-      const masterRack = new THREE.Mesh(new THREE.BoxGeometry(2.5, 5, 2), masterMat);
-      masterRack.position.set(-3.5, 0.5, -4);
+      // 1. Master Head Node Rack (Left Back - Cobalt Blue)
+      const masterRack = new THREE.Mesh(new THREE.BoxGeometry(2.5, 5.2, 2.2), masterMat);
+      masterRack.position.set(-3.8, 0.6, -4);
       mainGroup.add(masterRack);
 
-      const storageRack = new THREE.Mesh(new THREE.BoxGeometry(2.5, 5, 2), rackMat);
-      storageRack.position.set(3.5, 0.5, -4);
+      // Master Top Display / Control Panel Screen
+      const masterDisplay = new THREE.Mesh(
+        new THREE.BoxGeometry(1.8, 1.2, 0.1),
+        new THREE.MeshBasicMaterial({ color: 0x64d2ff })
+      );
+      masterDisplay.position.set(-3.8, 1.8, -2.85);
+      mainGroup.add(masterDisplay);
+
+      // 2. NAS / SAN Parallel Storage Array (Right Back - Royal Purple)
+      const storageRack = new THREE.Mesh(new THREE.BoxGeometry(2.5, 5.2, 2.2), storageMat);
+      storageRack.position.set(3.8, 0.6, -4);
       mainGroup.add(storageRack);
 
-      // 2. Central High Speed Switch (Center)
-      const switchBox = new THREE.Mesh(new THREE.BoxGeometry(6, 0.8, 1.5), switchMat);
+      // Storage Drive Bays (Horizontal Disk Tray Slots)
+      for (let i = 0; i < 4; i++) {
+        const driveBay = new THREE.Mesh(
+          new THREE.BoxGeometry(2.0, 0.4, 0.08),
+          new THREE.MeshStandardMaterial({ color: 0x2d124d, metalness: 0.9 })
+        );
+        driveBay.position.set(3.8, 2.0 - i * 0.8, -2.86);
+        mainGroup.add(driveBay);
+
+        const driveLed = new THREE.Mesh(
+          new THREE.BoxGeometry(0.15, 0.15, 0.05),
+          i % 2 === 0 ? ledPurpleMat : ledAmberMat
+        );
+        driveLed.position.set(4.6, 2.0 - i * 0.8, -2.8);
+        mainGroup.add(driveLed);
+      }
+
+      // 3. Central High Speed Switch (Center)
+      const switchBox = new THREE.Mesh(new THREE.BoxGeometry(6.4, 0.9, 1.6), switchMat);
       switchBox.position.set(0, 0, 0);
       mainGroup.add(switchBox);
 
-      // 3. Worker Compute Blades (Front Row)
+      // Switch Port LEDs
+      for (let p = -5; p <= 5; p++) {
+        const portLed = new THREE.Mesh(
+          new THREE.BoxGeometry(0.12, 0.12, 0.05),
+          p % 2 === 0 ? ledGreenMat : ledAmberMat
+        );
+        portLed.position.set(p * 0.5, 0.2, 0.82);
+        mainGroup.add(portLed);
+      }
+
+      // 4. Worker Compute Blades (Front Row)
       const workerPositions = [-6, -2, 2, 6];
       workerPositions.forEach((posX) => {
         const worker = new THREE.Mesh(new THREE.BoxGeometry(2, 4, 2), workerMat);
@@ -116,13 +168,13 @@ export const ClusterGrid3D: React.FC<ClusterGrid3DProps> = ({ mode }) => {
           new THREE.Vector3(posX * 0.5, 0.2, 2),
           new THREE.Vector3(0, 0, 0),
         ]);
-        const lineMat = new THREE.LineBasicMaterial({ color: 0x2997ff, transparent: true, opacity: 0.6 });
+        const lineMat = new THREE.LineBasicMaterial({ color: 0x34c759, transparent: true, opacity: 0.7 });
         const line = new THREE.Line(lineGeo, lineMat);
         mainGroup.add(line);
 
         // Packet
         const packetGeo = new THREE.SphereGeometry(0.18, 8, 8);
-        const packetMat = new THREE.MeshBasicMaterial({ color: 0x00ffff });
+        const packetMat = new THREE.MeshBasicMaterial({ color: 0x30d158 });
         const packet = new THREE.Mesh(packetGeo, packetMat);
         mainGroup.add(packet);
 
@@ -138,18 +190,49 @@ export const ClusterGrid3D: React.FC<ClusterGrid3DProps> = ({ mode }) => {
         });
       });
 
-      // Master to Switch Lines
+      // Master to Switch Connection Line (Electric Blue)
       const masterLineGeo = new THREE.BufferGeometry().setFromPoints([
-        new THREE.Vector3(-3.5, 0.5, -3),
+        new THREE.Vector3(-3.8, 0.5, -2.9),
+        new THREE.Vector3(-1.8, 0.2, -1.2),
         new THREE.Vector3(0, 0, 0),
       ]);
-      mainGroup.add(new THREE.Line(masterLineGeo, new THREE.LineBasicMaterial({ color: 0x0088ff, opacity: 0.8 })));
+      mainGroup.add(new THREE.Line(masterLineGeo, new THREE.LineBasicMaterial({ color: 0x0071e3, linewidth: 2 })));
 
+      // Master to Switch Packet
+      const masterPacket = new THREE.Mesh(new THREE.SphereGeometry(0.22, 8, 8), new THREE.MeshBasicMaterial({ color: 0x64d2ff }));
+      mainGroup.add(masterPacket);
+      packets.push({
+        mesh: masterPacket,
+        path: [
+          new THREE.Vector3(-3.8, 0.5, -2.9),
+          new THREE.Vector3(-1.8, 0.2, -1.2),
+          new THREE.Vector3(0, 0, 0),
+        ],
+        progress: 0.2,
+        speed: 0.025,
+      });
+
+      // Storage to Switch Connection Line (Purple)
       const storageLineGeo = new THREE.BufferGeometry().setFromPoints([
-        new THREE.Vector3(3.5, 0.5, -3),
+        new THREE.Vector3(3.8, 0.5, -2.9),
+        new THREE.Vector3(1.8, 0.2, -1.2),
         new THREE.Vector3(0, 0, 0),
       ]);
-      mainGroup.add(new THREE.Line(storageLineGeo, new THREE.LineBasicMaterial({ color: 0xaf52de, opacity: 0.8 })));
+      mainGroup.add(new THREE.Line(storageLineGeo, new THREE.LineBasicMaterial({ color: 0xaf52de, linewidth: 2 })));
+
+      // Storage to Switch Packet
+      const storagePacket = new THREE.Mesh(new THREE.SphereGeometry(0.22, 8, 8), new THREE.MeshBasicMaterial({ color: 0xbf5af2 }));
+      mainGroup.add(storagePacket);
+      packets.push({
+        mesh: storagePacket,
+        path: [
+          new THREE.Vector3(3.8, 0.5, -2.9),
+          new THREE.Vector3(1.8, 0.2, -1.2),
+          new THREE.Vector3(0, 0, 0),
+        ],
+        progress: 0.6,
+        speed: 0.022,
+      });
 
     } else {
       // Setup Grid 3D Environment (Globe, Geographical Sites, Arced WAN links)
@@ -344,22 +427,26 @@ export const ClusterGrid3D: React.FC<ClusterGrid3DProps> = ({ mode }) => {
           {mode === 'cluster' ? (
             <>
               <div className="cluster-grid-3d-badge">
-                <span className="cluster-grid-3d-indicator" style={{ backgroundColor: '#0066cc' }} />
-                <span>Nodo Maestro / Storage</span>
+                <span className="cluster-grid-3d-indicator" style={{ backgroundColor: '#0071e3' }} />
+                <span>Nodo Maestro (Head Node)</span>
+              </div>
+              <div className="cluster-grid-3d-badge">
+                <span className="cluster-grid-3d-indicator" style={{ backgroundColor: '#af52de' }} />
+                <span>NAS / SAN (Lustre Storage)</span>
               </div>
               <div className="cluster-grid-3d-badge">
                 <span className="cluster-grid-3d-indicator" style={{ backgroundColor: '#ff9f0a' }} />
                 <span>Switch InfiniBand (&lt; 1 µs)</span>
               </div>
               <div className="cluster-grid-3d-badge">
-                <span className="cluster-grid-3d-indicator" style={{ backgroundColor: '#2997ff' }} />
+                <span className="cluster-grid-3d-indicator" style={{ backgroundColor: '#34c759' }} />
                 <span>Nodos Cómputo (Workers)</span>
               </div>
             </>
           ) : (
             <>
               <div className="cluster-grid-3d-badge">
-                <span className="cluster-grid-3d-indicator" style={{ backgroundColor: '#0066cc' }} />
+                <span className="cluster-grid-3d-indicator" style={{ backgroundColor: '#0071e3' }} />
                 <span>Organizaciones (Gateways)</span>
               </div>
               <div className="cluster-grid-3d-badge">
@@ -368,7 +455,7 @@ export const ClusterGrid3D: React.FC<ClusterGrid3DProps> = ({ mode }) => {
               </div>
               <div className="cluster-grid-3d-badge">
                 <span className="cluster-grid-3d-indicator" style={{ backgroundColor: '#af52de' }} />
-                <span>Storage Tier (SRM)</span>
+                <span>Storage Tier (SRM / LTO)</span>
               </div>
             </>
           )}
