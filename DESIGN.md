@@ -552,11 +552,49 @@ The structural breakpoints that matter for agents: 1440px (content lock), 1068px
 6. The single drop-shadow (`rgba(0, 0, 0, 0.22) 3px 5px 30px`) is reserved for product photography only.
 7. When in doubt about emphasis: alternate surface (light → dark tile) before adding chrome.
 
-## Known Gaps
+## Interactive UI Primitives & Academic Components
 
-- Form validation and error states were not surfaced on the analyzed pages; only the neutral search input is documented.
-- The homepage's embedded video/player frame uses `{colors.surface-black}`; interior player controls are not documented (they're a platform widget, not a web-design token).
-- Some component imagery is dynamic (rotating product hero) and its specific copy varies per surface — component specs name the structure, not the rotating content.
-- Dark-mode counterparts for store and accessories utility cards were not surfaced on the analyzed pages; the system documented is the daytime/light-dominant variant Apple ships by default.
-- Atmospheric photography (environment page mountain vista) is a content asset, not a design token; the documented `{component.environment-quote-card}` describes the structural surface only.
-- The exact backdrop-filter blur radius on `{component.sub-nav-frosted}` and `{component.floating-sticky-bar}` is platform-dependent; production CSS uses `saturate(180%) blur(20px)` as a typical baseline but the value isn't formalized as a token.
+The web platform implements modular, reusable UI primitives located in `src/components/ui/` designed in accordance with Apple's museum-gallery editorial aesthetic:
+
+### 1. `ComparisonTable` (`src/components/ui/ComparisonTable/`)
+- **Visual Style**: High-density academic matrix. Pure white header with 1px hairline divider, alternating light (`#ffffff`) and subtle pearl (`#fafafc`) rows.
+- **Micro-interactions**: Hover row highlighting with smooth opacity transition.
+- **Badges & Highlights**: Category pills (`#f5f5f7` background, 600 weight) and Action Blue highlights for key metric comparison criteria.
+
+### 2. `BentoSplitCard` (`src/components/ui/BentoSplitCard/`)
+- **Visual Style**: 2-column comparative bento box. Card header features topic title and subtitle. 
+- **Column Separation**: Left column for Clúster (`#f5f5f7` cardlet with deep ink text) and right column for Grid (`#fafafc` cardlet with secondary hairline).
+- **Typography**: Display category in `SF Pro Display` (19px / 600) with key attribute tag in `SF Pro Text` (14px).
+
+### 3. `AppleContinuityMockup` (`src/components/ui/AppleContinuityMockup/`)
+- **Visual Style**: Museum-grade hardware frame showcasing Apple's ecosystem.
+- **Hardware Frames**:
+  - **MacBook Pro**: Titanium bezel, dark notch/camera dot, 16:10 display ratio, bottom lip notch.
+  - **iPhone**: Floating overlay with Dynamic Island pill, titanium rim, screen mirroring active state.
+- **Content**: Displays live distributed sync status across macOS and iOS (Continuity / AirDrop / Universal Control).
+
+### 4. `AppleEditorialCard` (`src/components/ui/AppleEditorialCard/`)
+- **Visual Style**: Unboxed monochrome card with pure typography.
+- **Header**: High-contrast SVG line icon (no colored background box).
+- **Body**: Headline in `SF Pro Display` (21px / 600), body in `SF Pro Text` (15px / 400 / 1.5 line-height).
+- **Interactive Element**: Action Blue link with right chevron (`›`) that scales on hover.
+
+### 5. `NumberedCard` (`src/components/ui/NumberedCard/`)
+- **Visual Style**: Academic conclusion card.
+- **Numeral**: Oversized subtle numeral (`01`, `02`, `03`) in `#e5e5ea` with `-0.04em` letter spacing.
+- **Card Body**: High-contrast title and structured conclusion text for executive summaries.
+
+---
+
+## Component Architecture Convention (Triad Pattern)
+
+Every atomic UI primitive and page subcomponent strictly follows the three-file triad pattern:
+```text
+ComponentName/
+├── ComponentName.tsx         # Pure JSX markup and component logic
+├── ComponentName.styles.css  # Dedicated CSS styles referencing Apple design tokens
+└── ComponentName.d.ts        # TypeScript interfaces and prop types
+```
+
+Static data sets are strictly decoupled from rendering logic and live in `src/data/<domain>.data.ts` with matching `src/data/<domain>.data.d.ts` type definitions.
+

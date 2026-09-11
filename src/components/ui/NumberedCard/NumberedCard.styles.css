@@ -1,0 +1,66 @@
+.apple-numbered-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 40px 48px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 36px;
+  align-items: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.apple-numbered-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .apple-numbered-card {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    gap: 16px;
+  }
+}
+
+.numbered-digit {
+  font-size: 54px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #d2d2d7;
+  line-height: 1;
+}
+
+.numbered-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.numbered-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0071e3;
+}
+
+.numbered-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #1d1d1f;
+  margin: 0 0 8px 0;
+  line-height: 1.25;
+}
+
+.numbered-body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #424245;
+  margin: 0;
+}

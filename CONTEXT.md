@@ -92,27 +92,49 @@ Brindar al estudiante la fundamentación teórica y práctica necesaria para **i
 
 ---
 
-## 📂 Convenciones y Estructura Sugerida del Repositorio
+## 📂 Convenciones y Estructura del Repositorio
 
 ```text
 .
 ├── CONTEXT.md                  # Contexto global y lineamientos de la materia
 ├── README.md                   # Presentación del repositorio
-├── 0. CLASS_INTRO.txt          # Información inicial de clase
-├── 1. INTRO.txt                # Notas y material del Tema 1
+├── DESIGN.md                   # Sistema de diseño Apple y directrices UI
+├── actividades_talleres/        # Documentos base de talleres prácticos
+│   └── taller_1_cluster_grid/
+│       └── TALLER_1_CLUSTER_GRID.md
 ├── parcial_1/                  # Notas y material para Parcial 1
-│   ├── intro/
-│   └── arquitecturas/
 ├── parcial_2/                  # Notas y material para Parcial 2
-│   ├── comunicacion/
-│   ├── sistemas_archivos/
-│   └── nombres_directorios/
 ├── parcial_3/                  # Notas y material para Parcial 3
-│   ├── gestion_procesos/
-│   ├── sincronizacion_concurrencia/
-│   └── fiabilidad_seguridad/
-├── actividades_talleres/        # Talleres y ejercicios prácticos
-└── exposiciones/               # Diapositivas, investigación y código de exposiciones
+├── exposiciones/               # Diapositivas e investigación
+└── src/                        # ⚡ Aplicación Web Interactiva (Vite + React + TS)
+    ├── components/
+    │   ├── ui/                 # Primitivas UI reutilizables (Atomic Design)
+    │   │   ├── ComparisonTable/
+    │   │   ├── BentoSplitCard/
+    │   │   ├── AppleContinuityMockup/
+    │   │   ├── AppleEditorialCard/
+    │   │   └── NumberedCard/
+    │   ├── taller1/            # Componentes por pestaña de Taller 1
+    │   │   ├── Taller1Header/
+    │   │   ├── TabHardwareArch/
+    │   │   ├── TabMatriz/
+    │   │   ├── TabCasosReales/
+    │   │   ├── TabDiferencias/
+    │   │   └── TabConclusiones/
+    │   ├── ClusterGrid3D/      # Canvas 3D Three.js interactivo
+    │   ├── GlobalNav/          # Barra de navegación superior
+    │   ├── SubNav/             # Subnavegación contextual
+    │   └── Footer/             # Pie de página institucional
+    ├── data/                   # Capa de datos centralizada y tipada
+    │   ├── taller1.data.ts
+    │   └── taller1.data.d.ts
+    ├── pages/                  # Vistas orquestadoras principales
+    │   ├── HomePage.tsx
+    │   ├── TalleresPage.tsx
+    │   ├── Taller1Page.tsx
+    │   ├── ParcialesPage.tsx
+    │   └── ExposicionesPage.tsx
+    └── styles/                 # Tokens globales y sistema de diseño Apple
 ```
 
 ---
@@ -122,4 +144,5 @@ Brindar al estudiante la fundamentación teórica y práctica necesaria para **i
 Al interactuar o generar contenido dentro de este repositorio:
 1. **Contexto Académico:** Todo el código, resúmenes y explicaciones deben alinearse con los conceptos de la materia (modelos distribuidos, consistencia, concurrencia, tolerancia a fallos, comunicación RPC/RMI/Sockets, etc.).
 2. **Claridad y Rigor:** Explicar trade-offs de diseño (ej. coherencia vs. latencia, teorema CAP, escalabilidad vs. consistencia).
-3. **Lenguajes y Herramientas habituales:** Java (RMI, sockets, threads), Python, Go, Docker/Contenedores, APIs REST/gRPC según las guías del curso.
+3. **Estructura de Componentes:** Mantener la separación de responsabilidades con archivos `.tsx`, `.styles.css` y `.d.ts` por componente, extrayendo datos estáticos a `src/data/`.
+4. **Lenguajes y Herramientas habituales:** React + TypeScript para la web interactiva; Java (RMI, sockets, threads), Python, Go, Docker según las guías del curso.

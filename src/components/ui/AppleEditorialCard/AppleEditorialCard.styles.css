@@ -1,0 +1,62 @@
+.apple-clean-card {
+  background-color: #ffffff;
+  border-radius: 28px;
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.apple-clean-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.apple-clean-icon {
+  margin-bottom: 28px;
+  display: inline-block;
+}
+
+.apple-clean-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #1d1d1f;
+  line-height: 1.25;
+  margin: 0 0 14px 0;
+}
+
+.apple-clean-desc {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #6e6e73;
+  margin: 0 0 32px 0;
+}
+
+.apple-clean-link {
+  font-size: 15px;
+  font-weight: 400;
+  color: #0066cc;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.15s ease;
+}
+
+.apple-clean-link .link-arrow {
+  font-size: 17px;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.apple-clean-link:hover {
+  text-decoration: underline;
+}
+
+.apple-clean-link:hover .link-arrow {
+  transform: translateX(3px);
+}

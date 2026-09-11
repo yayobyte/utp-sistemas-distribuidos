@@ -1,0 +1,120 @@
+.bento-split-card {
+  background-color: #ffffff;
+  border-radius: 28px;
+  padding: 36px 32px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bento-split-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+}
+
+.bento-split-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.bento-split-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #f5f5f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bento-split-pill {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #86868b;
+  background: #f5f5f7;
+  padding: 4px 10px;
+  border-radius: 980px;
+}
+
+.bento-split-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #1d1d1f;
+  margin: 0 0 24px 0;
+  line-height: 1.25;
+}
+
+.bento-split-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 16px;
+  align-items: stretch;
+  background: #fbfbfd;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .bento-split-container {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .bento-split-divider {
+    height: 1px;
+    width: 100%;
+  }
+}
+
+.bento-split-side {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bento-split-divider {
+  width: 1px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.bento-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.bento-badge.cluster {
+  background: rgba(41, 151, 255, 0.12);
+  color: #0071e3;
+}
+
+.bento-badge.grid {
+  background: rgba(52, 199, 89, 0.12);
+  color: #28a745;
+}
+
+.bento-headline {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d1d1f;
+  line-height: 1.3;
+}
+
+.bento-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6e6e73;
+  margin: 0;
+}
