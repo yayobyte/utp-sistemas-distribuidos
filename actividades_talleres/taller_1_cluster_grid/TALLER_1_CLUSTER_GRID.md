@@ -181,6 +181,9 @@ flowchart TB
 | **Dominio de Administración** | **Único:** Administrado por un solo equipo/departamento de TI. | **Múltiple / Federado:** Cada sitio tiene su propio administrador y políticas. |
 | **Almacenamiento** | Compartido o paralelo de alta velocidad (**SAN, Lustre, GPFS, NVMe-oF**). | Distribuido y federado (**GridFTP, SRM, iRODS, librerías de cinta magnética**). |
 | **Seguridad Física y de Red** | Seguridad perimetral del datacenter local; red privada interna. | Seguridad criptográfica federada (**PKI, Certificados X.509, VOMS, túneles seguros**). |
+| **Carga de Trabajo Ideal** | **HPC (High Performance Computing):** Simulaciones físicas intensivas en comunicación síncrona. | **HTC (High Throughput Computing):** Procesamiento masivo de tareas independientes (desacopladas). |
+| **Métrica Clave de Rendimiento** | **FLOPS / EFLOPS:** Operaciones de punto flotante por segundo en tareas síncronas. | **Trabajos/Mes o Años de Cómputo:** Volumen acumulado de unidades de trabajo completadas (*Throughput*). |
+| **Tolerancia a Fallos** | **Baja en tiempo de ejecución:** El fallo de un nodo suele interrumpir el trabajo paralelo MPI completo si no hay *checkpointing*. | **Alta por diseño:** El middleware/broker reasigna las unidades de trabajo de nodos caídos a otros disponibles sin detener la malla. |
 | **Componente de Gestión** | Nodo Maestro / Head Node con planificador local (Slurm, PBS). | Pasarelas Grid (*Gatekeepers*), *Resource Brokers* y servidores de metadatos. |
 | **Tolerancia a la Variabilidad de HW** | Muy baja; se diseñan para consistencia de hardware. | Muy alta; el middleware abstrae la disparidad del hardware subyacente. |
 

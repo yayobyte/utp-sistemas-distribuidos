@@ -665,13 +665,33 @@ export const Taller1Page: React.FC = () => {
                     </td>
                   </tr>
 
-                  <tr>
+                  <tr style={{ borderBottom: '1px solid var(--color-hairline)' }}>
                     <td className="taller1-td" style={{ fontWeight: 600, color: 'var(--color-ink)' }}>Carga de Trabajo Ideal</td>
                     <td className="taller1-td" style={{ borderRight: '1px solid var(--color-hairline)', color: 'var(--color-ink-muted-80)' }}>
-                      <strong>HPC (High Performance Computing):</strong> Simulaciones físicas intensivas en comunicación síncrona.
+                      <strong>HPC (High Performance Computing):</strong> Simulaciones físicas intensivas en comunicación síncrona y procesamiento en paralelo masivo.
                     </td>
                     <td className="taller1-td" style={{ color: 'var(--color-ink-muted-80)' }}>
-                      <strong>HTC (High Throughput Computing):</strong> Procesamiento masivo de tareas independientes (desacopladas).
+                      <strong>HTC (High Throughput Computing):</strong> Procesamiento masivo de tareas independientes (desacopladas) a gran escala temporal.
+                    </td>
+                  </tr>
+
+                  <tr style={{ borderBottom: '1px solid var(--color-hairline)', backgroundColor: 'var(--color-surface-pearl)' }}>
+                    <td className="taller1-td" style={{ fontWeight: 600, color: 'var(--color-ink)' }}>Métrica Clave de Rendimiento</td>
+                    <td className="taller1-td" style={{ borderRight: '1px solid var(--color-hairline)', color: 'var(--color-ink-muted-80)' }}>
+                      <strong>FLOPS / EFLOPS:</strong> Operaciones de punto flotante por segundo en tareas continuas síncronas.
+                    </td>
+                    <td className="taller1-td" style={{ color: 'var(--color-ink-muted-80)' }}>
+                      <strong>Trabajos/Mes o Años de Cómputo:</strong> Volumen total acumulado de unidades de trabajo independientes completadas (*Throughput*).
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td className="taller1-td" style={{ fontWeight: 600, color: 'var(--color-ink)' }}>Tolerancia a Fallos</td>
+                    <td className="taller1-td" style={{ borderRight: '1px solid var(--color-hairline)', color: 'var(--color-ink-muted-80)' }}>
+                      <strong>Baja en tiempo de ejecución:</strong> En simulaciones MPI síncronas, el fallo de un solo nodo suele abortar el trabajo si no hay *checkpointing* o recuperación activa.
+                    </td>
+                    <td className="taller1-td" style={{ color: 'var(--color-ink-muted-80)' }}>
+                      <strong>Alta por diseño:</strong> Si un nodo o sitio geográfico se cae, el *Resource Broker* o middleware reasigna la tarea a otro nodo disponible sin afectar al sistema.
                     </td>
                   </tr>
                 </tbody>
