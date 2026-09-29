@@ -100,40 +100,44 @@ Brindar al estudiante la fundamentación teórica y práctica necesaria para **i
 ├── README.md                   # Presentación del repositorio
 ├── DESIGN.md                   # Sistema de diseño Apple y directrices UI
 ├── actividades_talleres/        # Documentos base de talleres prácticos
-│   └── taller_1_cluster_grid/
-│       └── TALLER_1_CLUSTER_GRID.md
+│   ├── taller_1_cluster_grid/
+│   │   └── TALLER_1_CLUSTER_GRID.md
+│   └── taller_2_modelos_computacion/
+│       └── TALLER_2_MODELOS_COMPUTACION.md
 ├── parcial_1/                  # Notas y material para Parcial 1
 ├── parcial_2/                  # Notas y material para Parcial 2
 ├── parcial_3/                  # Notas y material para Parcial 3
 ├── exposiciones/               # Diapositivas e investigación
 └── src/                        # ⚡ Aplicación Web Interactiva (Vite + React + TS)
     ├── components/
+    │   ├── layout/             # AppShell, Sidebar y TallerLayout
     │   ├── ui/                 # Primitivas UI reutilizables (Atomic Design)
     │   │   ├── ComparisonTable/
+    │   │   ├── DataTable/
     │   │   ├── BentoSplitCard/
     │   │   ├── AppleContinuityMockup/
     │   │   ├── AppleEditorialCard/
     │   │   └── NumberedCard/
-    │   ├── taller1/            # Componentes por pestaña de Taller 1
-    │   │   ├── Taller1Header/
+    │   ├── taller1/            # Secciones del Taller 1
     │   │   ├── TabHardwareArch/
     │   │   ├── TabMatriz/
     │   │   ├── TabCasosReales/
     │   │   ├── TabDiferencias/
     │   │   └── TabConclusiones/
-    │   ├── ClusterGrid3D/      # Canvas 3D Three.js interactivo
-    │   ├── GlobalNav/          # Barra de navegación superior
-    │   ├── SubNav/             # Subnavegación contextual
-    │   └── Footer/             # Pie de página institucional
+    │   ├── taller2/            # Secciones del Taller 2
+    │   │   └── ModelSection/
+    │   ├── ClusterGrid3D.tsx   # Canvas 3D Three.js interactivo
+    │   └── Footer.tsx          # Pie de página institucional
     ├── data/                   # Capa de datos centralizada y tipada
+    │   ├── talleres.registry.ts  # Registro único de talleres (navegación)
+    │   ├── curso.data.ts
     │   ├── taller1.data.ts
-    │   └── taller1.data.d.ts
+    │   └── taller2.data.ts
     ├── pages/                  # Vistas orquestadoras principales
     │   ├── HomePage.tsx
-    │   ├── TalleresPage.tsx
+    │   ├── CursoPage.tsx
     │   ├── Taller1Page.tsx
-    │   ├── ParcialesPage.tsx
-    │   └── ExposicionesPage.tsx
+    │   └── Taller2Page.tsx
     └── styles/                 # Tokens globales y sistema de diseño Apple
 ```
 

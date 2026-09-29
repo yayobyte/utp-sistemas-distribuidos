@@ -67,8 +67,8 @@
   --shadow-card-dark: 0 8px 30px rgba(0, 0, 0, 0.35);
 
   /* Nav dimensions */
-  --height-global-nav: 44px;
-  --height-sub-nav: 52px;
+  --height-topbar: 52px;
+  --width-sidebar: 260px;
 }
 
 /* Reset & Defaults */

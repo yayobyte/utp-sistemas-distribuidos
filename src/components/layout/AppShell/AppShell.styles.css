@@ -1,0 +1,64 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: var(--width-sidebar) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.app-shell-topbar {
+  display: none;
+}
+
+.app-shell-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.app-shell-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.app-shell-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .app-shell-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: var(--height-topbar);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    background-color: rgba(245, 245, 247, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--color-hairline);
+  }
+
+  .app-shell-menu-button {
+    display: inline-flex;
+    padding: 6px;
+    border-radius: var(--radius-sm);
+    color: var(--color-ink);
+  }
+
+  .app-shell-topbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-ink);
+  }
+}

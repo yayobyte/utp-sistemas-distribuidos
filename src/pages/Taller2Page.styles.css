@@ -1,0 +1,38 @@
+.taller2-content {
+  padding: 24px 24px 40px;
+}
+
+.taller2-lead {
+  font-size: 15px;
+  color: var(--color-ink-muted-80);
+  margin-bottom: 20px;
+  max-width: 760px;
+}
+
+.taller2-jump-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.taller2-jump-chip {
+  font-size: 13px;
+  color: var(--color-ink-muted-80);
+  background-color: var(--color-canvas-parchment);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.taller2-jump-chip:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .taller2-content {
+    padding: 20px 16px 32px;
+  }
+}
