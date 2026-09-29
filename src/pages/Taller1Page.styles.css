@@ -1,17 +1,17 @@
 /* =====================================================================
-   TALLER 1 PAGE LAYOUT & OVERRIDES
+   TALLER 1 CONTENT SECTIONS
    ===================================================================== */
-
-.tile-section.taller1-header-section {
-  padding-top: 36px !important;
-  padding-bottom: 20px !important;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
-}
 
 .tile-section.taller1-content-section {
   padding-top: 24px !important;
   padding-bottom: 80px !important;
   padding-left: 24px !important;
   padding-right: 24px !important;
+}
+
+@media (max-width: 768px) {
+  .tile-section.taller1-content-section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
 }

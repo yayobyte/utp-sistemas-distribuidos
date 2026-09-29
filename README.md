@@ -57,32 +57,37 @@ npm run build
 ```text
 src/
 ├── components/
+│   ├── layout/                   # 🧭 Estructura de navegación
+│   │   ├── AppShell/             # Sidebar + contenido; drawer en móvil
+│   │   ├── Sidebar/              # Lista de talleres (estado y puntos) e información del curso
+│   │   └── TallerLayout/         # Encabezado, pestañas enlazables y anterior/siguiente por taller
 │   ├── ui/                       # 🧱 Primitivas UI reutilizables
-│   │   ├── ComparisonTable/      # Matriz comparativa genérica tipada
+│   │   ├── ComparisonTable/      # Matriz comparativa de 2 columnas (Clúster vs. Grid)
+│   │   ├── DataTable/            # Tabla genérica con scroll horizontal en móvil
 │   │   ├── BentoSplitCard/       # Tarjetas Bento Clúster vs. Grid
 │   │   ├── AppleContinuityMockup/# Mockup interactivo MacBook + iPhone
 │   │   ├── AppleEditorialCard/   # Tarjeta editorial minimalista con Action Blue
 │   │   └── NumberedCard/         # Tarjeta de conclusiones con numeración sobredimensionada
-│   ├── taller1/                  # 📑 Subcomponentes por pestaña de Taller 1
-│   │   ├── Taller1Header/        # Header frosted, badges y selector de 5 pestañas
+│   ├── taller1/                  # 📑 Secciones del Taller 1
 │   │   ├── TabHardwareArch/      # Visualizador 3D Three.js e inspector de hardware
-│   │   ├── TabMatriz/            # Renderizador de la Matriz Comparativa (12 criterios)
+│   │   ├── TabMatriz/            # Renderizador de la Matriz Comparativa
 │   │   ├── TabCasosReales/       # Casos reales, Continuity y tarjetas editoriales
 │   │   ├── TabDiferencias/       # 4 Bento cards de diferencias clave
 │   │   └── TabConclusiones/      # 3 tarjetas numeradas + banner de entrega
-│   ├── ClusterGrid3D/            # Canvas 3D Three.js
-│   ├── GlobalNav/                # Barra de navegación principal estilo Apple
-│   ├── SubNav/                   # Navegación secundaria contextual
-│   └── Footer/                   # Pie de página institucional
+│   ├── taller2/                  # 📑 Secciones del Taller 2
+│   │   └── ModelSection/         # Modelo de computación con sus 2 ejemplos
+│   ├── ClusterGrid3D.tsx         # Canvas 3D Three.js
+│   └── Footer.tsx                # Pie de página institucional
 ├── data/                         # 📊 Capa de datos tipada y desacoplada
+│   ├── talleres.registry.ts      # Registro único de talleres (rutas, estado, secciones)
+│   ├── curso.data.ts             # Información del curso, evaluación, parciales y bibliografía
 │   ├── taller1.data.ts           # Datos de criterios, casos, bento y conclusiones
-│   └── taller1.data.d.ts         # Contratos e interfaces de datos
+│   └── taller2.data.ts           # 9 modelos, 18 ejemplos y matriz comparativa
 └── pages/                        # 🧭 Vistas orquestadoras
-    ├── HomePage.tsx
-    ├── TalleresPage.tsx
-    ├── Taller1Page.tsx           # Orquestador modular (28 líneas)
-    ├── ParcialesPage.tsx
-    └── ExposicionesPage.tsx
+    ├── HomePage.tsx              # Resumen: talleres y evaluación
+    ├── CursoPage.tsx             # Información del curso
+    ├── Taller1Page.tsx           # /talleres/1/:seccion
+    └── Taller2Page.tsx           # /talleres/2/:seccion
 ```
 
 ---

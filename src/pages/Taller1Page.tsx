@@ -1,29 +1,32 @@
-import React, { useState } from 'react';
-import { Taller1Header } from '../components/taller1/Taller1Header/Taller1Header';
+import React from 'react';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { TallerLayout } from '../components/layout/TallerLayout/TallerLayout';
 import { TabHardwareArch } from '../components/taller1/TabHardwareArch/TabHardwareArch';
 import { TabMatriz } from '../components/taller1/TabMatriz/TabMatriz';
 import { TabCasosReales } from '../components/taller1/TabCasosReales/TabCasosReales';
 import { TabDiferencias } from '../components/taller1/TabDiferencias/TabDiferencias';
 import { TabConclusiones } from '../components/taller1/TabConclusiones/TabConclusiones';
-import type { Taller1TabType } from '../components/taller1/Taller1Header/Taller1Header.d';
+import { getTaller, getTallerPath } from '../data/talleres.registry';
+import type { Taller1SectionSlug } from './Taller1Page.d';
 import './Taller1Page.styles.css';
 
+const taller = getTaller('1')!;
+
 export const Taller1Page: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<Taller1TabType>('investigacion');
+  const { section } = useParams<{ section: Taller1SectionSlug }>();
+  const navigate = useNavigate();
 
-  return (
-    <div className="taller1-page-wrapper">
-      {/* Header with Title, Objectives, Score, Classroom link & Tab Switcher */}
-      <Taller1Header activeTab={activeTab} onTabChange={setActiveTab} />
+  const sectionViews: Record<Taller1SectionSlug, React.ReactNode> = {
+    hardware: <TabHardwareArch />,
+    matriz: <TabMatriz />,
+    casos: <TabCasosReales onExploreClick={() => navigate(getTallerPath(taller, 'hardware'))} />,
+    diferencias: <TabDiferencias />,
+    conclusiones: <TabConclusiones />,
+  };
 
-      {/* Dynamic Tab Views */}
-      {activeTab === 'investigacion' && <TabHardwareArch />}
-      {activeTab === 'matriz' && <TabMatriz />}
-      {activeTab === 'casos' && (
-        <TabCasosReales onExploreClick={() => setActiveTab('investigacion')} />
-      )}
-      {activeTab === 'diferencias' && <TabDiferencias />}
-      {activeTab === 'conclusiones' && <TabConclusiones />}
-    </div>
-  );
+  if (!section || !(section in sectionViews)) {
+    return <Navigate to={getTallerPath(taller)} replace />;
+  }
+
+  return <TallerLayout taller={taller}>{sectionViews[section]}</TallerLayout>;
 };

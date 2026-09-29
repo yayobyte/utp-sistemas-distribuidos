@@ -1,30 +1,28 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { GlobalNav } from './components/GlobalNav';
-import { Footer } from './components/Footer';
+import { AppShell } from './components/layout/AppShell/AppShell';
 import { HomePage } from './pages/HomePage';
-import { TalleresPage } from './pages/TalleresPage';
+import { CursoPage } from './pages/CursoPage';
 import { Taller1Page } from './pages/Taller1Page';
-import { ParcialesPage } from './pages/ParcialesPage';
-import { ExposicionesPage } from './pages/ExposicionesPage';
+import { Taller2Page } from './pages/Taller2Page';
 
 export const App: React.FC = () => {
   return (
     <Router>
-      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-        <GlobalNav />
-        <main style={{ flex: 1 }}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/talleres" element={<TalleresPage />} />
-            <Route path="/talleres/1" element={<Taller1Page />} />
-            <Route path="/parciales" element={<ParcialesPage />} />
-            <Route path="/exposiciones" element={<ExposicionesPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <Routes>
+        <Route element={<AppShell />}>
+          <Route index element={<HomePage />} />
+          <Route path="curso" element={<CursoPage />} />
+          <Route path="talleres/1/:section?" element={<Taller1Page />} />
+          <Route path="talleres/2/:section?" element={<Taller2Page />} />
+
+          {/* Rutas anteriores al rediseño */}
+          <Route path="talleres" element={<Navigate to="/" replace />} />
+          <Route path="parciales" element={<Navigate to={{ pathname: '/curso', hash: '#parciales' }} replace />} />
+          <Route path="exposiciones" element={<Navigate to={{ pathname: '/curso', hash: '#exposiciones' }} replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Route>
+      </Routes>
     </Router>
   );
 };
