@@ -75,10 +75,10 @@ export const TalleresPage: React.FC = () => {
                 </div>
 
                 <h3 className="taller-card-title">
-                  Taller 2: Arquitecturas Distribuidas & P2P
+                  Taller 2: Aplicaciones de Modelos de Computación Distribuida
                 </h3>
                 <p className="taller-card-desc">
-                  Modelos Cliente-Servidor multihilo, arquitecturas P2P no estructuradas y estructuradas (DHT / Chord), y capas de middleware.
+                  Dos ejemplos reales por modelo: Cluster, Grid, Volunteer, Utility, Cloud, Mobile, Ubiquitous/IoT, Edge/Fog y Autonomic Computing.
                 </p>
               </div>
 
