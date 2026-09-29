@@ -100,8 +100,10 @@ Brindar al estudiante la fundamentación teórica y práctica necesaria para **i
 ├── README.md                   # Presentación del repositorio
 ├── DESIGN.md                   # Sistema de diseño Apple y directrices UI
 ├── actividades_talleres/        # Documentos base de talleres prácticos
-│   └── taller_1_cluster_grid/
-│       └── TALLER_1_CLUSTER_GRID.md
+│   ├── taller_1_cluster_grid/
+│   │   └── TALLER_1_CLUSTER_GRID.md
+│   └── taller_2_modelos_computacion/
+│       └── TALLER_2_MODELOS_COMPUTACION.md
 ├── parcial_1/                  # Notas y material para Parcial 1
 ├── parcial_2/                  # Notas y material para Parcial 2
 ├── parcial_3/                  # Notas y material para Parcial 3
