@@ -1,0 +1,1106 @@
+Hora de inicio de la reunión: 2026-09-29 18:29 GMT-5
+Asistentes
+Alex Gómez, Andres Felipe Valencia Velez, Asbel Enrique Duque Vanegas, Camilo Ruiz Toro, Cesar Augusto Diaz Arriaga, Cesar Augusto Diaz Arriaga's Presentation, Cristhian Andres Mendoza Villegas, Cristhian Santiago Loaiza Arias, Cristian Felipe Correa Tamayo, Daniel Osorio Orozco, Daniel Rico Palacio, David Steven Martin Munoz, Isabella Giraldo Cifuentes, Juan Felipe Lozano Aristizabal, Juan Manuel Galvis Morales, Juan Pablo Castaño Castro, Justin Andres Garcia Ocampo, Miguel Angel Soto Grajales, Miguel Mejia, Santiago Andres Diaz Vargas, Stephania Duque Arango, Verónica Naranjo Roman, Victor Wilson Rosero Cuatin, Yayo Gutierrez, Yeison Andres Jaramillo Carvajal
+Transcripción
+Cesar Augusto Diaz Arriaga: Hola, jóvenes, muy buenas noches.
+Cesar Augusto Diaz Arriaga: ¿Cómo están?
+Cesar Augusto Diaz Arriaga: Bienvenidos a esta nueva clase, clase número siete, donde vamos a estar comenzando con nuestro segundo tema.
+Cesar Augusto Diaz Arriaga: Vamos a estar hablando sobre las arquitecturas en sistemas distribuidos.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Eh, ya en las clases pasadas pues hicimos una introducción, entendimos un poco de qué se trataban los sistemas distribuidos, de que estaban compuestos, qué buscamos con ellos, cuáles son sus objetivos, cuáles son sus características, etcétera.
+Cesar Augusto Diaz Arriaga: Hablamos también bastante sobre los modelos de computación distribuida, pero ahora nos vamos a enfocar en hablar en el primer concepto, en el primer componente que nosotros vamos a tener que definir a partir de el sistema que nosotros vayamos a crear,
+Cesar Augusto Diaz Arriaga: en este caso, la arquitectura.
+Cesar Augusto Diaz Arriaga: ¿Qué es la arquitectura?
+Cesar Augusto Diaz Arriaga: Hagamos un símil con lo que sabemos de los arquitectos civiles, ¿cierto?
+Cesar Augusto Diaz Arriaga: De los arquitectos que construyen casas, edificios, centros comerciales, etcétera.
+Cesar Augusto Diaz Arriaga: ¿Y ustedes qué creen que es ser arquitecto?
+Cesar Augusto Diaz Arriaga: ¿Cuál es la la función?
+Cesar Augusto Diaz Arriaga: ¿Cuál es la misión?
+Cesar Augusto Diaz Arriaga: ¿Qué es lo que hacen los arquitectos?
+Yayo Gutierrez: Ah, diseñan, planean, estructuran.
+Cesar Augusto Diaz Arriaga: ¿Qué estructuran, no?
+Cesar Augusto Diaz Arriaga: ¿Qué cómo diseñan?
+Cesar Augusto Diaz Arriaga: ¿Diseñan qué?
+Yayo Gutierrez: Pues hay varios tipos de diseños, o sea, uno es es el diseño visual de cómo cómo es la estructura y el otro es el diseño arquitectónico, que quiere decir cómo cómo van las bases y ahí para arriba cómo iría digamos la fachada y
+Yayo Gutierrez: la lo que se le dice mampostería, que está como de moda ese término por acá en Pereira.
+Yayo Gutierrez: Eso sería en términos pues de arquitectura en el poco conocimiento que tengo pues de la ingeniería civil.
+Cesar Augusto Diaz Arriaga: Okay,
+Yayo Gutierrez: Yeah.
+Cesar Augusto Diaz Arriaga: dale.
+Cesar Augusto Diaz Arriaga: ¿Tú tú crees que los arquitectos son los que diseñan las bases de las
+Yayo Gutierrez: Ellos, ellos, ellos poco de física, pero tienen que tener conocimientos de de los cimientos,
+Cesar Augusto Diaz Arriaga: construcciones.
+Yayo Gutierrez: o sea, al menos ellos no ellos no harán la física y y cuánta tensión y cuánta fuerza aguantan, pero pues no pueden construir algo salido pues de la no pueden construir una utopía, no falta el que lo salga con eso,
+Cesar Augusto Diaz Arriaga: Mhm.
+Yayo Gutierrez: pero realmente son diseños que al menos pues los programas de CAD eh de entrada no no salen.
+Yayo Gutierrez: en la flot, ¿cierto?
+Cesar Augusto Diaz Arriaga: Okay.
+Cesar Augusto Diaz Arriaga: Okay.
+Cesar Augusto Diaz Arriaga: ¿Alguien más?
+Cesar Augusto Diaz Arriaga: ¿Alguien que tenga una un concepto similar o diferente?
+Cesar Augusto Diaz Arriaga: ¿Qué cuál es la función del arquitecto?
+Cesar Augusto Diaz Arriaga: ¿Qué es lo que hace un arquitecto?
+Cesar Augusto Diaz Arriaga: Nadie tiene un familiar arquitecto que sepa que qué es lo que hace.
+Juan Felipe Lozano Aristizabal: Pues yo puedo decir como la idea si quieren.
+Cesar Augusto Diaz Arriaga: Dale.
+Juan Felipe Lozano Aristizabal: Yo por lo general pues yo entiendo que el arquitecto es como el soñador del proyecto, ¿cierto?
+Juan Felipe Lozano Aristizabal: Como el el que se piensa el proyecto desde un punto de vista más obviamente con con una
+Cesar Augusto Diaz Arriaga: Mhm.
+Juan Felipe Lozano Aristizabal: tecnicidad a un nivel de tecnicidad pues suficiente, pero pero es el que se piensa el proyecto desde el punto de vista de la funcionalidad, de los espacios, de cómo se va a generar, de para quién es, ¿cierto?
+Juan Felipe Lozano Aristizabal: Ya pues hay ya viene el el civil que es el que realmente dice, "Okay, bueno, esto se hace de esta manera porque tiene que tener tanta resistencia." Pero yo siento que es como el soñador del
+Juan Felipe Lozano Aristizabal: proyecto que tiene que definir no solamente la parte estructural, sino la parte de usabilidad y de los espacios, ¿cierto?
+Juan Felipe Lozano Aristizabal: Y ahí es donde yo creo que está el el nicho del arquitecto.
+Cesar Augusto Diaz Arriaga: Bien.
+Cesar Augusto Diaz Arriaga: Usabilidad.
+Cesar Augusto Diaz Arriaga: Okay, perfecto.
+Cesar Augusto Diaz Arriaga: Daniel levantó la mano, pero como que se cansó.
+Cesar Augusto Diaz Arriaga: Ibas a decir algo, Daniel Rico.
+00:05:00
+Cesar Augusto Diaz Arriaga: Sí, se cansó.
+Cesar Augusto Diaz Arriaga: ¿Alguien más?
+Cesar Augusto Diaz Arriaga: ¿Algún concepto adicional?
+Cesar Augusto Diaz Arriaga: ¿Para qué sirve un arquitecto sin el arquitecto no construye, empecemos desde ahí, el arquitecto no es el que construye.
+Cesar Augusto Diaz Arriaga: Entonces, ¿para qué usamos la arquitectura o para qué es la arquitectura?
+Cristhian Andres Mendoza Villegas: compañeros no construye, pero que diseña, dice cómo va a estar, cómo va a ser el diseño de la casa cómo va a hacer los planos, cómo se va hacer estructurar Ah.
+Cristhian Andres Mendoza Villegas: M.
+Cesar Augusto Diaz Arriaga: Okay.
+Cristian Felipe Correa Tamayo: ¿Cómo va a ser toda la distribución de,
+Cesar Augusto Diaz Arriaga: La distribución de qué, Cristian.
+Cristian Felipe Correa Tamayo: por ejemplo, de los espacios?
+Cristian Felipe Correa Tamayo: Y pues digamos que en este caso sería como la distribución de de los sistemas que vamos a utilizar, cómo lo vamos a utilizar.
+Cesar Augusto Diaz Arriaga: Okay, perfecto.
+Cesar Augusto Diaz Arriaga: Pregunta, ¿será lo mismo diseñar desde el punto de vista del arquitecto?
+Cesar Augusto Diaz Arriaga: diseñar una casa a un apartamento.
+Juan Felipe Lozano Aristizabal: Le puedo responder, profe.
+Cesar Augusto Diaz Arriaga: Respondas,
+Juan Felipe Lozano Aristizabal: Vea, yo creería que hay similar,
+Cesar Augusto Diaz Arriaga: Juen.
+Juan Felipe Lozano Aristizabal: o sea, hay cosas similares, ¿cierto?
+Juan Felipe Lozano Aristizabal: Pues la solución es sigue teniendo una idea del ladrillo, de la pintura, ¿cierto?
+Cesar Augusto Diaz Arriaga: Mhm.
+Juan Felipe Lozano Aristizabal: Pero la lo que yo decía como la usabilidad y la y la intención del proyecto es completamente
+Cesar Augusto Diaz Arriaga: ¿Por qué si la usabilidades
+Juan Felipe Lozano Aristizabal: distinta.
+Juan Felipe Lozano Aristizabal: Entonces,
+Cesar Augusto Diaz Arriaga: vivienda o habitación,
+Juan Felipe Lozano Aristizabal: claro, pero pero también hay unas consideraciones específicas que tienen unas viviendas que no tienen otras,
+Cesar Augusto Diaz Arriaga: cierto?
+Juan Felipe Lozano Aristizabal: ¿cierto?
+Juan Felipe Lozano Aristizabal: Entonces, un edificio pues requiere un shoot de basura, si quier un espacio para portería, requiere cumplir con unas leyes, unas normas, entonces también tiene la parte del de la normatividad, ¿cierto?
+Juan Felipe Lozano Aristizabal: Entonces tiene que haber rampas,
+Cesar Augusto Diaz Arriaga: Mhm.
+Juan Felipe Lozano Aristizabal: pues una casa hacen unas escaleras en en caracol y y ya de metal, ¿cierto?
+Juan Felipe Lozano Aristizabal: Ya dependerá de lo que se desee,
+Cesar Augusto Diaz Arriaga: Sí.
+Juan Felipe Lozano Aristizabal: pero obviamente hay hay un nivel mayor de de responsabilidad de parte del arquitecto para que un proyecto tenga o cumpla con ciertas especificaciones, ya sean normativas o o el deseo del cliente, ¿cierto?
+Juan Felipe Lozano Aristizabal: M.
+Cesar Augusto Diaz Arriaga: Mm.
+Cesar Augusto Diaz Arriaga: Pero si hablamos solamente de la construcción, digámosle así, del proyecto privado o de la construcción privada, yo voy a hacer un apartamento, pero voy a diseñar como arquitecto voy a diseñar un apartamento dentro de un edificio, pero el apartamento,
+Cesar Augusto Diaz Arriaga: no tanto las zonas comunes y etcétera, sino el apartamento.
+Cesar Augusto Diaz Arriaga: Lo mismo pasa con la casa.
+Cesar Augusto Diaz Arriaga: Voy a diseñar una casa.
+Cesar Augusto Diaz Arriaga: ¿Será que es lo mismo?
+Cesar Augusto Diaz Arriaga: ¿Pienso de la misma manera o resuelvo el problema de la misma manera?
+Cesar Augusto Diaz Arriaga: Porque el el proyecto es hacer una vivienda, ¿cierto?
+Cesar Augusto Diaz Arriaga: Hacer un espacio donde pueda vivir gente.
+Cesar Augusto Diaz Arriaga: Y en ese modelo, o en ese en esa tarea tengo la posibilidad de crear una casa o de hacerlo como un apartamento.
+Cesar Augusto Diaz Arriaga: ¿Por qué?
+Cesar Augusto Diaz Arriaga: ¿Por qué separarlo?
+Cesar Augusto Diaz Arriaga: ¿Por qué tenemos palabras diferentes para lo mismo?
+Cesar Augusto Diaz Arriaga: Al final son viviendas.
+Cesar Augusto Diaz Arriaga: ¿Qué pasa con los espacios?
+Cristhian Andres Mendoza Villegas: espacios.
+Cesar Augusto Diaz Arriaga: El apartamento no puede ser de 130 met²ad como una casa.
+Cristhian Andres Mendoza Villegas: Sí.
+Cesar Augusto Diaz Arriaga: Entonces, ¿cuál es el problema del espacio?
+Yayo Gutierrez: Profe,
+Cristhian Andres Mendoza Villegas: Permito.
+Yayo Gutierrez: yo tengo otra apreciación.
+Cesar Augusto Diaz Arriaga: Dime
+Yayo Gutierrez: Listo.
+Yayo Gutierrez: Entonces, vea,
+Cesar Augusto Diaz Arriaga: Y
+Yayo Gutierrez: a ver, por ahí un chiste es pues sin ánimo como de ofender, pero realmente yo creo que pone como lo que lo que realmente yo siento que hace el arquitecto en Yeah.
+Yayo Gutierrez: arquitecto.
+Yayo Gutierrez: El chiste dice, "El arquitecto no es lo suficientemente varón para ser ingeniero civil, pero no es lo suficientemente mujer para ser diseñadora de interiores."
+Yayo Gutierrez: Entonces,
+Cesar Augusto Diaz Arriaga: M.
+Yayo Gutierrez: realmente está muy en la mitad, o sea, es una persona que toma un poquito de los dos, de la parte de estructural y de la parte visual.
+Yayo Gutierrez: Y no es lo mismo, no es lo mismo pues arreglar un apartamento que construirse construirse un un edificio, construirse algo.
+Yayo Gutierrez: Hace poquito yo contraté un arquitecto para arreglar un apartamento y él sabe qué hacer, qué madera usar, eh qué mármol poner, ¿cierto?
+Yayo Gutierrez: En temas un poco estructurales y más bien visuales, ¿cierto?
+Yayo Gutierrez: Pero póngale, por ejemplo, al arquitecto que diseñó el Burge Khalifa en Dubai.
+Yayo Gutierrez: Es el edificio más alto del mundo en este momento.
+Yayo Gutierrez: No puede ser un arquitecto que haga una casa.
+Cesar Augusto Diaz Arriaga: Sí.
+Yayo Gutierrez: Tiene que ser un arquitecto que sepa de que hay cosas, o sea, él no puede venir a un edificio.
+Yayo Gutierrez: No sé si han visto ese Burge Khalifa que es como como triangular, más ancho abajo y arriba es no puede venir un arquitecto a hacerlo al revés,
+Cesar Augusto Diaz Arriaga: Mhm.
+00:10:00
+Yayo Gutierrez: como más ancho arriba y delgadito abajo porque pues no no da.
+Yayo Gutierrez: Entonces, el arquitecto para mí, en definición es el que está en la mitad entre la parte estructural y la parte de usabilidad y sabe un poquito de los dos en eso en temas de construcción,
+Cesar Augusto Diaz Arriaga: Okay.
+Yayo Gutierrez: ¿cierto?
+Yayo Gutierrez: Pues yo ya en arquitectura de sistemas ya la cosa es diferente porque imagínese un arquitecto de sistemas que no haya tirado una línea de
+Cesar Augusto Diaz Arriaga: Sí.
+Yayo Gutierrez: código en su vida, o sea, no tiene presentación.
+Cesar Augusto Diaz Arriaga: Mm.
+Cesar Augusto Diaz Arriaga: Alguien, alguien iba a hacer algún otro comentario ahí vi que alguien más iba a hablar antes que Yayo o junto con Yayo.
+Cesar Augusto Diaz Arriaga: Claro que esto lo va a responder.
+Cesar Augusto Diaz Arriaga: Esto sí tiene cara agradecer por ahí, pero yo quería mostrarles uno que vi hace tiempo que me pareció interesante.
+Cesar Augusto Diaz Arriaga: Eh, bueno, estos edificios sí son torcidos, pero ah, no lo voy a ver.
+Cesar Augusto Diaz Arriaga: Esp a ver si lo si lo buscamos en en las imágenes de Google.
+Cesar Augusto Diaz Arriaga: ¿Alguien más tiene comentario?
+Yayo Gutierrez: Búsquese uno, profe, que se llama El Museo del Futuro.
+Yayo Gutierrez: Es un edificio.
+Yayo Gutierrez: Es considera el edificio más bonito del mundo y es rarísimo.
+Cesar Augusto Diaz Arriaga: Esto, estos, bueno, estos tienen su este, por ejemplo, no sé.
+Cesar Augusto Diaz Arriaga: Ah, que imagen que lo buscara
+Yayo Gutierrez: se llama El Museo del Futuro.
+Yayo Gutierrez: Yeah.
+Yayo Gutierrez: Se llama El Museo del Futuro.
+Yayo Gutierrez: Es rarísimo, pero es muy bonito y está en Dubai también.
+Cesar Augusto Diaz Arriaga: Creo que uno de los que está está chévere.
+Cesar Augusto Diaz Arriaga: Este está bueno, pero quiero, por ejemplo, el de Dubai, el icónico de Dubai.
+Cesar Augusto Diaz Arriaga: ¿Cómo es que se llama el
+Yayo Gutierrez: Se llama Burch al Arab, el que parece una vela.
+Yayo Gutierrez: Burch b
+Cesar Augusto Diaz Arriaga: Sí,
+Yayo Gutierrez: arap.
+Cesar Augusto Diaz Arriaga: por alar esto, ¿qué es lo que quería mostrar?
+Yayo Gutierrez: Aha.
+Cesar Augusto Diaz Arriaga: que tiene que ver con lo que estabas planteando, ¿cierto?
+Cesar Augusto Diaz Arriaga: De que debes saber de que la base debe ser más ancha que que lo que
+Yayo Gutierrez: Gloria a Dios.
+Cesar Augusto Diaz Arriaga: está arriba, pero este es este es curvo, ¿cierto?
+Cesar Augusto Diaz Arriaga: O sea, que la base es más angosta que que la barriga, digámoslo así.
+Cesar Augusto Diaz Arriaga: Pero el que quería mostrarles es uno que me salió aquí en una foto, algo como este.
+Cesar Augusto Diaz Arriaga: que hace un tiempo vi un video de proyectos arquitectónicos y hablaban de esta de esta construcción, ¿cierto?
+Cesar Augusto Diaz Arriaga: Ah, pero le dio pues por abrir a este.
+Cesar Augusto Diaz Arriaga: Vamos a abrirlo.
+Cesar Augusto Diaz Arriaga: Abrir imagen en una nueva pestaña.
+Cesar Augusto Diaz Arriaga: Sí. Okay.
+Cesar Augusto Diaz Arriaga: El arquitecto tiene un alma de de escultor, ¿cierto?
+Cesar Augusto Diaz Arriaga: de pintor, de crear algo distinto cada vez que le llega un proyecto.
+Cesar Augusto Diaz Arriaga: ¿Y será que el arquitecto se preocupa de que eso sí sea construible?
+Cesar Augusto Diaz Arriaga: Pues les toca porque cuando hagan la maqueta les tiene que quedar parada,
+Daniel Osorio Orozco: No,
+Cesar Augusto Diaz Arriaga: ¿sí o no?
+Cesar Augusto Diaz Arriaga: Pero pero ustedes creen que ellos se preocupan de del esfuerzo para llegar a hacer estas cosas.
+Asbel Enrique Duque Vanegas: No, profe,
+Daniel Osorio Orozco: Profe,
+Asbel Enrique Duque Vanegas: que preocupa ya el ingeniero civil.
+Daniel Osorio Orozco: pues en parte sí, o sea,
+Asbel Enrique Duque Vanegas: M.
+Daniel Osorio Orozco: obviamente el que se ocupa es el ingeniero civil,
+Cesar Augusto Diaz Arriaga: Pera,
+Daniel Osorio Orozco: pero si si yo como arquitecto diseño una cosa que es absolutamente imposible, pues o sea, no sé, un edificio colgado de la luna, pues no.
+Daniel Osorio Orozco: này.
+Cesar Augusto Diaz Arriaga: pero entonces ahí entran los proyectos Okay.
+Cesar Augusto Diaz Arriaga: como este, no sé si lo alcanzan a notar o y es y es más o menos algo como esto, ¿sí?
+00:15:00
+Cesar Augusto Diaz Arriaga: Y ya proyectos que pues que tienen que ver un poco más con las limitaciones que tienen eh físicas.
+Cesar Augusto Diaz Arriaga: Sí, son proyectos soñables y si tengo la plata y el presupuesto, recuerden que aquí todo lo todo gir es alrededor de la plata y el presupuesto, ¿cierto?
+Cesar Augusto Diaz Arriaga: Si yo tengo la plata y el presupuesto y el y el jefe o el dueño del negocio o el o el que se está soñando el proyecto dice, "Yo quiero tener un edificio, un hotel en forma de guitarra." ¿Quién le dice que
+Cesar Augusto Diaz Arriaga: no?
+Cesar Augusto Diaz Arriaga: O será que nosotros le decimos que no.
+Yayo Gutierrez: La física,
+Cesar Augusto Diaz Arriaga: Entonces, la la física la física dice que no se puede,
+Yayo Gutierrez: la física le dice que no.
+Cesar Augusto Diaz Arriaga: pero está el ingeniero que tiene que hacer lo posible, ¿cierto?
+Cesar Augusto Diaz Arriaga: Entonces ahí es donde ahí es donde quiero que vayamos con este con este concepto y es que ¿qué es de qué se trata la arquitectura?
+Cesar Augusto Diaz Arriaga: de la arquitectura simplemente es identificar qué es lo que yo tengo que construir y cómo voy a colocar esos elementos dentro de dentro de la dentro de la estructura, ¿cierto?
+Cesar Augusto Diaz Arriaga: desde el punto de vista de la arquitectura civil, pues entonces ellos eh tienen una serie de reglas, como estaban diciendo ustedes, tienen unas reglas, tienen unos eh unas soluciones preconcebidas o patrones que normalmente tienen ya claro, ¿cierto?
+Cesar Augusto Diaz Arriaga: Entonces ellos ya saben que, por ejemplo, si yo voy a hacer una casa, entonces tengo que diseñarla de una manera.
+Cesar Augusto Diaz Arriaga: Si voy a hacer un apartamento, lo diseño de una manera completamente distinta.
+Cesar Augusto Diaz Arriaga: A pesar de que tengan el mismo objetivo o estén intentando resolver el mismo problema, dependiendo del proyecto en el que yo esté trabajando, pues voy a poder colocar los elementos de una manera u otra.
+Cesar Augusto Diaz Arriaga: Ahora, si a mí me dicen, ya no vas a construir un un edificio de apartamento, sino que vas a construir un edificio de oficinas, ¿será lo mismo, será la misma arquitectura?
+Yayo Gutierrez: No, no es es diferente.
+Yayo Gutierrez: Tiene que ser diferente.
+Yayo Gutierrez: Claro.
+Cesar Augusto Diaz Arriaga: ¿Por qué es diferente?
+Yayo Gutierrez: por el usen.
+Cesar Augusto Diaz Arriaga: Porque hay componentes que ya no son necesarios.
+Cesar Augusto Diaz Arriaga: en una en una en un edificio de oficinas no necesito habitaciones, por ejemplo, no necesito una sala comedor, que es lo que uno normalmente espera en las habitaciones, ¿cierto?
+Cesar Augusto Diaz Arriaga: Entonces, ese tipo de de elementos o ese tipo de cosas que de ahora en adelante podríamos llamarlos componentes o partes de del proyecto, ¿cierto?, no es lo que ellos se encargan de hacer,
+Cesar Augusto Diaz Arriaga: hacer de que los distintos elementos o los distintos eh componentes que hacen parte del proyecto tengan una razón lógica y estén en un sitio lógico para su construcción.
+Cesar Augusto Diaz Arriaga: Entonces ahí es donde y yo cuando hablo de los cada vez que hablo de de la arquitectura de de la diferencia entre casa y apartamentos, hay una muy clara y es, por ejemplo, ¿dónde pongo la cocina?
+Cesar Augusto Diaz Arriaga: En una casa, ¿dónde se pone la cocina?
+Cesar Augusto Diaz Arriaga: versus un apartamento.
+Yayo Gutierrez: Pues en el apartamento yo la he visto ahí como a la entrada.
+Yayo Gutierrez: Entra y la tiene ahí en la casa.
+Cesar Augusto Diaz Arriaga: Mm.
+Yayo Gutierrez: Puede que esté al fondo, puede que esté
+Cesar Augusto Diaz Arriaga: ¿Cuándo has visto en una casa que la cocina está en la entrada junto a la
+Yayo Gutierrez: No,
+Cesar Augusto Diaz Arriaga: entrada?
+Yayo Gutierrez: no creo que no.
+Yayo Gutierrez: M.
+Cesar Augusto Diaz Arriaga: Pero pero es una cocina y hacen la misma función, ¿cierto?
+Cesar Augusto Diaz Arriaga: Pero, ¿por qué para para el apartamento sí es válido,
+Yayo Gutierrez: Pues es que no habría más donde ponerla.
+Cesar Augusto Diaz Arriaga: ¿cierto?
+Yayo Gutierrez: Tak.
+Cesar Augusto Diaz Arriaga: Entonces, dependiendo entonces digamos que el arquitecto es el encargado de ubicar los distintos elementos, los distintos espacios que necesita eh distribuir dentro del espacio físico que tiene.
+Cesar Augusto Diaz Arriaga: Entonces, él tiene que definir, ¿okay?
+Cesar Augusto Diaz Arriaga: ¿Cómo voy a a colocar la sala comedor?
+Cesar Augusto Diaz Arriaga: ¿Cómo voy a colocar eh el baño?
+Cesar Augusto Diaz Arriaga: ¿Dónde voy a colocar el baño?
+Cesar Augusto Diaz Arriaga: ¿Dónde va la cocina?
+Cesar Augusto Diaz Arriaga: ¿Dónde va las habitaciones, etcétera?
+Cesar Augusto Diaz Arriaga: Y entonces, dependiendo de cada tipo de proyecto, pues nosotros vamos viendo de que eh cada apartamento es distinto al otro, ¿cierto?
+Cesar Augusto Diaz Arriaga: O sea, no en el mismo edificio, sino que así sea el mismo arquitecto, este proyecto lo hizo de una manera y el siguiente proyecto tiene otras consideraciones, tienen otra estructura de edificio, ¿cierto?
+Cesar Augusto Diaz Arriaga: Puede que para el para el conjunto que está diseñando todos los edificios sean iguales, pero cuando cambio de proyecto, cuando voy a un siguiente proyecto, los apartamentos no son iguales, los espacios no son iguales, las dimensiones,
+00:20:00
+Cesar Augusto Diaz Arriaga: las la dispersión de de los elementos no es igual, pero podemos decir que tenemos como una especie de plantilla, patrón que nos permita que nos permite permite decir, "Okay,
+Cesar Augusto Diaz Arriaga: si voy a hacer un proyecto que se llama apartamento, entonces yo lo primero que tengo que hacer es en la entrada voy a colocar a un lado de la entrada o o de frente la entrada de la sala comedor,
+Cesar Augusto Diaz Arriaga: pero a un lado va a estar la cocina, ¿cierto?
+Cesar Augusto Diaz Arriaga: Y el y la zona de lavado junto a la cocina tiene sentido en un apartamento, porque en una casa la zona de lavado está separado de la cocina.
+Cesar Augusto Diaz Arriaga: cierto, está en un espacio completamente distinto.
+Cesar Augusto Diaz Arriaga: Ojalá si si está bien diseñado tiene patio.
+Cesar Augusto Diaz Arriaga: En una en un apartamento no definimos o no se diseñan patios, ¿cierto?
+Cesar Augusto Diaz Arriaga: No hay.
+Cesar Augusto Diaz Arriaga: Entonces, a pesar de que los elementos eh sean comunes o los componentes que se necesiten sean comunes, en cada uno de los proyectos, el arquitecto tiene que definir cómo van a estar relacionados los distintos proyectos o los distintos
+Cesar Augusto Diaz Arriaga: componentes.
+Cesar Augusto Diaz Arriaga: Yo no voy a poner el baño al lado de la cocina.
+Cesar Augusto Diaz Arriaga: Bueno, en algunos apartamentos sí está al lado de la cocina, pero pues digamos que no va a estar al frente de la cocina o aquí a este lado está la cocina y aquí está el baño.
+Cesar Augusto Diaz Arriaga: Eso no tiene mucho sentido.
+Cesar Augusto Diaz Arriaga: El baño en un apartamento puede ser uno para tres habitaciones, en una casa un baño para tres habitaciones, pues podría no ser eh no ser muy cómodo.
+Cesar Augusto Diaz Arriaga: y tenemos como la creencia de que los las casas deberían de tener por lo menos un baño en la habitación privada y un baño social o un baño compartido.
+Cesar Augusto Diaz Arriaga: Si las casas son de dos pisos, en el primer piso no pongo las habitaciones y y la cocina en el segundo, pongo las el las zonas comunes en el primero y las habitaciones en el segundo.
+Cesar Augusto Diaz Arriaga: Terminamos nosotros de encontrando de que ellos al final van teniendo una serie de patrones que van a ir cumpliendo.
+Cesar Augusto Diaz Arriaga: ¿Qué tienen adicional?
+Cesar Augusto Diaz Arriaga: Pues tienen eh la capacidad de pensar, diseñar o elegir cómo quieren ver los distintos elementos.
+Cesar Augusto Diaz Arriaga: Entonces ahí entra la parte femenina del del arquitecto, ¿cierto?
+Cesar Augusto Diaz Arriaga: donde dice, "No, pues yo quiero yo quiero que las ventanas no sean cuadradas, sino que sean ovaladas y que tengan este esta salida, esta protuberancia. O quiero que todas las ventanas sean eh de piso a techo o las quiero
+Cesar Augusto Diaz Arriaga: solamente eh pequeñitas, etcétera, ¿cierto?
+Cesar Augusto Diaz Arriaga: Ellos ya tienen la libertad de definir el diseño o el o la o cada uno de esos elementos cómo los va a ir diseñando, si los quiere grande, pequeños, anchos, gorditos, flaquitos, etcétera.
+Cesar Augusto Diaz Arriaga: Ellos ya tienen esa posibilidad de de definirlo, pero al final ellos lo único que están haciendo es un esquema, es un diagrama, es un es un es una foto de qué es lo que yo quiero hacer o de qué es lo que yo quiero construir.
+Cesar Augusto Diaz Arriaga: Ellos no necesariamente lo tienen que construir, simplemente hacen un esquema, una un prototipo, una plantilla de qué es lo que esperaría ver cuando ya todo el proyecto esté construido, ¿cierto?
+Cesar Augusto Diaz Arriaga: ¿Y dónde entra el ingeniero entonces?
+Cesar Augusto Diaz Arriaga: En hacer esa ese diseño, volverlo a realidad, ¿cierto?
+Cesar Augusto Diaz Arriaga: en analizar cada uno de esos.
+Cesar Augusto Diaz Arriaga: requisitos, cada una de esas componentes, cada una de esas funcionalidades y volverlos o traerlos hacia la realidad.
+Cesar Augusto Diaz Arriaga: Vamos bien hasta ahí o no.
+Cesar Augusto Diaz Arriaga: Pregunta, ¿el ingeniero es el que tiene que construirlo?
+Yayo Gutierrez: Yeah.
+Asbel Enrique Duque Vanegas: No.
+Cristian Felipe Correa Tamayo: No son los
+Cesar Augusto Diaz Arriaga: Ah,
+Cristian Felipe Correa Tamayo: técnicos.
+Cesar Augusto Diaz Arriaga: ahora ya entienden la discusión que tuvimos en la primera clase, que los ingenieros no tenemos que ser programadores.
+Cristian Felipe Correa Tamayo: Sí, sí.
+Cristian Felipe Correa Tamayo: Yeah.
+Cesar Augusto Diaz Arriaga: ¿Por qué?
+Cesar Augusto Diaz Arriaga: Porque es que nosotros vamos a tener el conocimiento de cómo coger un diagrama, qué herramientas son las que necesitamos para volverlo realidad.
+Cesar Augusto Diaz Arriaga: El ingeniero civil va a tener que analizar estructura, van a tener que analizar cargas, tensiones, etcétera, y tienen su reglamentación para poder construir el edificio, para poder construir la casa con todas las leyes y reglas que actualmente se tienen en cuenta.
+Cesar Augusto Diaz Arriaga: Probablemente al ingeniero no le interesa eso.
+Cesar Augusto Diaz Arriaga: Probablemente, pero al ingeniero civil, perdón, al arquitecto no le interesa eso, pero el ingeniero civil sí tiene que intentar que ese sueño que planteó el el arquitecto pues se pueda hacer realidad.
+00:25:00
+Cesar Augusto Diaz Arriaga: Pero básicamente en el concepto de arquitectura, lo que realmente aprenden los arquitectos a hacer es poder identificar primero cuáles son los componentes comunes o cuáles son los patrones que yo debo
+Cesar Augusto Diaz Arriaga: cumplir o la serie de componentes que deben aparecer en mi sistema o en mi proyecto para lograr que tenga sentido el proyecto.
+Cesar Augusto Diaz Arriaga: Imagínense un centro comercial y ustedes definan un centro comercial y no y no dejen espacio para baños, tendrá sentido, ¿cierto?
+Cesar Augusto Diaz Arriaga: Puede que hayan conocido algún centro comercial sin baños, pero creo que de manera general un centro comercial debe tener baños, ¿cierto?
+Cesar Augusto Diaz Arriaga: No tiene mucho sentido que yo coloque una un local de comidas al lado de un local de ropa, por ejemplo.
+Cesar Augusto Diaz Arriaga: No tiene mucho sentido.
+Cesar Augusto Diaz Arriaga: Entonces, todas esas, digámoslo así, todos esos elementos que nosotros necesitamos tener en cuenta en nuestro en nuestro proyecto, lo tenemos que definir y tenemos que identificar en qué lugar en qué lugar debe ir cada uno de esos componentes y cuál es su función eh dentro de dentro del sistema.
+Cesar Augusto Diaz Arriaga: Eh, yo podría decir, "No, es que los baños los voy a dejar en el último piso. Entonces,
+Cesar Augusto Diaz Arriaga: voy a poner a correr la gente subiendo escalas cuando quiera ir al baño.
+Cesar Augusto Diaz Arriaga: O puedo hacer un lo que hacen unos todos los baños, e, cada piso tiene un baño o tiene un conjunto de baño, ¿cierto?
+Cesar Augusto Diaz Arriaga: Entonces, ya es decisión del arquitecto identificar a partir de el proyecto en el que esté eh trabajando si con un solo espacio de baños es suficiente o si necesita tener múltiples espacios de baños.
+Cesar Augusto Diaz Arriaga: No sé si ustedes han ido a centros comerciales, no los de aquí, porque los de aquí somos muy chiquitos, pero no sé, a un centro comercial Titán en Bogotá o Santa Fe o alguno de esos que son extremadamente grandes,
+Cesar Augusto Diaz Arriaga: que son cuatro o cinco cuadras de centro comercial.
+Cesar Augusto Diaz Arriaga: Y ustedes van a se van a dar cuenta que a pesar de que son dos,
+Yayo Gutierrez: Sí.
+Cesar Augusto Diaz Arriaga: tres pisos de de centro comercial, eh cada área, cada bloque, cada tiene una zona de baños, ¿cierto?
+Cesar Augusto Diaz Arriaga: Entonces, mire que cada proyecto tiene una unas implicaciones distintas y eso es lo que busca el arquitecto.
+Cesar Augusto Diaz Arriaga: El arquitecto lo que busca es identificar qué elementos son los que necesita y dónde debería de colocarlos para garantizar un flujo adecuado, una ubicación estratégica o al menos que sea coherente para el servicio que queramos colocar en cada uno de los componentes.
+Cesar Augusto Diaz Arriaga: Si ya nos venimos al mundo de los sistemas de los sistemas, ¿cierto?
+Cesar Augusto Diaz Arriaga: De los sistemas informáticos y entrando aquí al al mundo de los sistemas distribuidos, pues vamos a hablar de que la arquitectura se basa en el mismo concepto.
+Cesar Augusto Diaz Arriaga: No no nos vamos a enfocar o no nos preocupa cómo construirlo, sino qué vamos a construir.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Y en ese que vamos a construir, nosotros lo que tenemos que hacer es identificar cuáles son los componentes, cuáles son los distintos elementos que necesito en el sistema, cómo interactúan o cómo van a ser a a relacionarse esos distintos elementos en el
+Cesar Augusto Diaz Arriaga: sistema, qué va a hacer cada uno de esos componentes dentro del sistema y dónde van a ir ubicados.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Entonces, digámoslo así, que la teoría dice, o digamos que la definición que tengo acá dice que la la arquitectura es la organización lógica de componentes de la aplicación distribuida.
+Cesar Augusto Diaz Arriaga: Remarco aquí el concepto lógica.
+Cesar Augusto Diaz Arriaga: ¿Qué creen ustedes que es hace referencia a la palabra lógica aquí?
+Cesar Augusto Diaz Arriaga: la organización lógica de componentes.
+Yayo Gutierrez: que no necesariamente es física.
+Cesar Augusto Diaz Arriaga: Exactamente.
+Yayo Gutierrez: này.
+Cesar Augusto Diaz Arriaga: Yo puedo definir una arquitectura sin tener que decir dónde la voy a montar o dónde va a estar implementada.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: ni con qué lenguaje la voy a desarrollar, nada, estoy definiendo.
+Cesar Augusto Diaz Arriaga: Son una serie de componentes que identificar cuál es su patrón de interacción.
+Cesar Augusto Diaz Arriaga: ¿Cómo que patrón de interacción?
+Cesar Augusto Diaz Arriaga: ¿Cómo?
+Cesar Augusto Diaz Arriaga: O sea, ¿qué rol tiene dentro del dentro de la aplicación y cómo está relacionada con los distintos elementos?
+Cesar Augusto Diaz Arriaga: ¿Cierto?
+Cesar Augusto Diaz Arriaga: Si yo tengo un local, pues debo tener un pasillo.
+Cesar Augusto Diaz Arriaga: por donde la gente pueda llegar al local.
+Cesar Augusto Diaz Arriaga: Yo no puedo tener un local y otro local así pegados y que la puerta se comparta.
+00:30:00
+Cesar Augusto Diaz Arriaga: Entonces, que yo tenga que entrar por el local uno para llegar al local dos, ¿cierto?
+Cesar Augusto Diaz Arriaga: No tiene mucho sentido.
+Cesar Augusto Diaz Arriaga: Debo dejar un pasillo para eso.
+Cesar Augusto Diaz Arriaga: Ese tipo de reglas o ese tipo de elementos eh o local pasillo deben ir relacionados, deben estar juntos, deben hacer parte de la solución integral.
+Cesar Augusto Diaz Arriaga: No es que yo diseñe cosas por aparte y después miro a ver cómo las monto, no.
+Cesar Augusto Diaz Arriaga: Yo yo debo tener claro cuál es el patrón de interacción, cómo cómo se van a relacionar los distintos elementos dentro de mi sistema, qué roles ejercen.
+Cesar Augusto Diaz Arriaga: O sea, cada uno de esos elementos que yo voy a agregar, ¿cuál es su rol?
+Cesar Augusto Diaz Arriaga: ¿Cuál es su función?
+Cesar Augusto Diaz Arriaga: ¿Por qué?
+Cesar Augusto Diaz Arriaga: ¿Por qué debajo del de la escalera de una casa de dos pisos pongo un baño un solo un sanitario y no pongo una ducha?
+Cesar Augusto Diaz Arriaga: Ah, porque es que ahí en ese espacio, por el espacio que tiene y por la ubicación donde está, solamente es necesario un un sanitario, un un orinal, por decirlo así, ¿cierto?
+Cesar Augusto Diaz Arriaga: No es necesario una ducha.
+Cesar Augusto Diaz Arriaga: Las duchas se necesitan es al lado de las habitaciones o cerca de las habitaciones.
+Cesar Augusto Diaz Arriaga: ¿Por qué no pongo la ducha junto a la junto a la cocina?
+Cesar Augusto Diaz Arriaga: Porque no se necesita ahí.
+Cesar Augusto Diaz Arriaga: debe tener un una organización lógica de componentes.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Pero cada uno de esos componentes tiene un rol y ese rol pues debe estar relacionado en con su ubicación y qué y cómo interactúa con los elementos que está a su alrededor.
+Cesar Augusto Diaz Arriaga: ¿Cuál es su correspondencia?
+Cesar Augusto Diaz Arriaga: Okay.
+Cesar Augusto Diaz Arriaga: ¿Cuál es su correspondencia a los nodos del sistema distribuido físico?
+Cesar Augusto Diaz Arriaga: Esto ya aplica pues para nosotros, ¿cierto?
+Cesar Augusto Diaz Arriaga: Para el mundo de los sistemas distribuidos.
+Cesar Augusto Diaz Arriaga: Okay, ya tengo identificados los componentes, tengo identificado sus roles, ya sé cómo van a interactuar entre ellos.
+Cesar Augusto Diaz Arriaga: Ahora me toca decir en dónde los voy a colocar, si los voy a colocar todos juntos en un clúster o los voy a tener los voy a montar en un grid o voy a tener múltiples servicios o múltiples centros de datos y esos centros de datos se van a comunicar entre ellos y
+Cesar Augusto Diaz Arriaga: paré de contar, ¿cierto?
+Cesar Augusto Diaz Arriaga: Entonces este elemento donde dice y su correspondencia a los nodos físicos, pues es básicamente de que nosotros como arquitectos de sistemas distribuidos vamos a decir dónde queremos esos elementos, dónde va a estar esa solución que nosotros vamos a estar trabajando.
+Cesar Augusto Diaz Arriaga: la topología también, cómo van a estar relacionados, cuál va a ser la interacción entre los diferentes elementos, qué pongo en el centro y cómo se comunica con los demás o cuál va a ser la distribución que vamos a tener.
+Cesar Augusto Diaz Arriaga: Entonces, esa topología también hace parte de la solución que nosotros como arquitectos vamos nosotros a a entregar.
+Cesar Augusto Diaz Arriaga: Al final nosotros como arquitectos o el concepto de arquitectura no habla de el cómo hacer, sino del qué vamos a hacer.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: ¿Qué vamos a desarrollar?
+Cesar Augusto Diaz Arriaga: ¿Cuál es el el cuál es el sistema que nosotros vamos a desarrollar?
+Cesar Augusto Diaz Arriaga: ¿Cuántas arquitecturas existen?
+Cesar Augusto Diaz Arriaga: ¿Cuántas cuántas arquitecturas creen ustedes que hay para sistemas y para la arquitectura general?
+Cesar Augusto Diaz Arriaga: Pues para la arquitectura civil.
+Cesar Augusto Diaz Arriaga: Creo que yo ya había hablado de algo, les había adelantado ya.
+Daniel Osorio Orozco: Tantas como proyectos,
+Cesar Augusto Diaz Arriaga: Yo qué dice,
+Daniel Osorio Orozco: profe.
+Cesar Augusto Diaz Arriaga: cierto, cada vez que aparece un proyecto, tengo que pensar desde cero una arquitectura.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: No existe una regla donde yo no existe una plantilla que yo me lleve para todos los proyectos y que funcione igual.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Cada proyecto debe tener una plantilla completamente distinta.
+Cesar Augusto Diaz Arriaga: Cada solución debería de tener un análisis independiente de qué componentes, qué roles, qué patrones de interacción se necesitan para resolver ese proyecto.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Entonces, si vamos a eso, dime quién va a hablar por ahí.
+Yayo Gutierrez: Ah, sí, sí.
+Yayo Gutierrez: No, no, qué pena.
+Cesar Augusto Diaz Arriaga: Ah, bueno,
+Yayo Gutierrez: estaba ahorita hablando en mute, pero bueno,
+Cesar Augusto Diaz Arriaga: sí.
+Yayo Gutierrez: o sea, eh estamos que cada aplicación tiene su arquitectura, pero hay patrones, o sea, realmente hay límites en los patrones, o sea, uno no se puede salir, o sea, si uno tiene un monolito o si tiene un microservicios,
+Cesar Augusto Diaz Arriaga: Mhm.
+Yayo Gutierrez: pues eso, o sea, como que no se puede salir de esos paradigmas, no habría otra manera.
+Yayo Gutierrez: Pero la arquitectura sí cambia.
+Yayo Gutierrez: Usted puede tener mezclado, puede tener por un lado suelto, pero a la final debe usar algún patrón.
+Yayo Gutierrez: Eso, eso es más o menos lo que quería decir.
+Cesar Augusto Diaz Arriaga: Entonces es que realmente realmente como cada proyecto es distinto, cada proyecto tiene restricciones distintas, cada proyecto tiene necesidades independientes o funcionalidades independientes, pues yo no puedo encasillar todo en un solo patrón, en una sola forma, ¿cierto?
+Cesar Augusto Diaz Arriaga: Eh, ya han escuchado el concepto de microservicios.
+00:35:00
+Cesar Augusto Diaz Arriaga: lo después lo vamos a discutir un poco más a profundidad, pero básicamente yo puedo decir todo todo eh todo el nuevo sistema lo puedo desarrollar como microservicio, pero no necesariamente todos los sistemas se deben crear como microservicios.
+Cesar Augusto Diaz Arriaga: Eh, vamos a hablar del concepto de monolito, que es el la forma como hemos aprendido a construir nosotros aplicaciones hasta ahora, donde eh lo que nosotros hacemos es crear un solo proyecto que contenga toda la lógica, toda la aplicación como tal.
+Cesar Augusto Diaz Arriaga: Eso es lo que nosotros llamamos monolito.
+Cesar Augusto Diaz Arriaga: Y hacer un monolito no está mal.
+Cesar Augusto Diaz Arriaga: Hay proyectos que se o que tienen sentido que se desarrollen el monolito, que no tienen sentido ser partidos o o no tienen sentido que nosotros podamos eh eh complejizar o llenar Yeah.
+Cesar Augusto Diaz Arriaga: de ingeniería o sobre o hacer sobre ingeniería sobre la solución.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Entonces, dependiendo de cada proyecto, yo puedo resolverlo con distintos patrones, pero esos patrones, monolito, microserpicios, Serverless, eh SOA, etcétera, todos esos patrones pues tienen un deber ser.
+Cesar Augusto Diaz Arriaga: Cada patrón busca resolver un problema distinto, ¿listo?
+Cesar Augusto Diaz Arriaga: Y ese problema distinto es lo que nosotros vamos a ir entendiendo un poquito de las distintas arquitecturas que nosotros tenemos disponibles para los sistemas distribuidos.
+Cesar Augusto Diaz Arriaga: Pero antes de hablar de Ah, bueno, entonces aquí, perdón, aquí algunos ejemplos.
+Cesar Augusto Diaz Arriaga: Entonces, vamos a tener eh arquitecturas que son netamente para sistemas distribuidos o que solamente las podemos aplicar en sistemas distribuidos como la arquitectura maestro trabajador o guiadas por la geometría de los datos, que depende de cómo esté generándose la información o cómo deba a ser procesada la información,
+Cesar Augusto Diaz Arriaga: pues debo eh crear una arquitectura o definir una arquitectura que ayude a eso.
+Cesar Augusto Diaz Arriaga: Hay arquitecturas que se aplican para cualquier sistema, incluso para los sistemas centralizados, pero que tiene mucho tiene mucha cavidad o se ha utilizado también en los sistemas distribuidos como la cliente servidor, la arquitectura de capas o multinivel,
+Cesar Augusto Diaz Arriaga: la arquitectura editor suscriptor o publicador suscriptor o publicador consumidor.
+Cesar Augusto Diaz Arriaga: la peer to peer, ¿cierto?
+Cesar Augusto Diaz Arriaga: Que es otra que hemos escuchado por ahí, la SOA, la de microservicios, la Serverless y múltiples arquitecturas que hemos venido escuchando durante toda nuestra vida.
+Cesar Augusto Diaz Arriaga: Los que no han escuchado, pues van a empezar a escuchar de ellas a partir de ahora, ¿cierto?
+Cesar Augusto Diaz Arriaga: ¿Por qué?
+Cesar Augusto Diaz Arriaga: porque es que estamos rodeados de distintos patrones o distintos problemas que ya tienen solución y simplemente pues debemos aplicar ese tipo de soluciones.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Así que nosotros como arquitectos de software o de sistemas distribuidos debemos buscar construir la solución más completa, ¿cierto?
+Cesar Augusto Diaz Arriaga: poder crear el edificio y crear las calles y crear los elementos, las zonas verdes de nuestro proyecto.
+Cesar Augusto Diaz Arriaga: Nosotros debemos poder identificar que no todo lo que vamos a hacer son crear casas y al lado una casa y al lado una casa y y una vía y par de contar, ¿cierto?
+Cesar Augusto Diaz Arriaga: Tenemos que empezar a identificar de que si yo tengo una zona donde hay muchas casas, muy probablemente en ese proyecto voy a necesitar un un colegio, ¿cierto?
+Cesar Augusto Diaz Arriaga: o una escuela por lo menos y voy a necesitar una iglesia y voy a necesitar un parque.
+Cesar Augusto Diaz Arriaga: Entonces, todos esos elementos hacen parte de esos patrones que yo como arquitecto debo conocer, ¿cierto?
+Cesar Augusto Diaz Arriaga: No. No tiene mucho sentido, aunque pueda existir, pero no tiene mucho sentido que yo diseñe un proyecto donde todas sean simplemente casas y que no hayan espacios de esparcimiento o espacios de donde se puedan reunir la comunidad.
+Cesar Augusto Diaz Arriaga: Entonces, eso es lo que nosotros ahora desde el punto de vista de los sistemas tenemos que empezar a aprender a construir.
+Cesar Augusto Diaz Arriaga: Y es que todos los componentes deben o todos los elementos que nosotros vamos a incluir dentro de nuestros sistemas tienen un deber ser.
+Cesar Augusto Diaz Arriaga: cierto, tienen una necesidad, tienen una un rol que van a cumplir dentro del sistema y básicamente nosotros lo que tenemos que hacer es analizar cada uno de esos roles.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Y existen múltiples soluciones para los distintos problemas que hay.
+Cesar Augusto Diaz Arriaga: Entonces, en este curso o al menos conmigo, vamos a hablar solamente sobre cuatro arquitecturas básicas, las clásicas, las que aplican para o vamos a encontrar en casi todos los sistemas distribuidos, pero ya saben que existen múltiples eh arquitecturas,
+Cesar Augusto Diaz Arriaga: ¿cierto?
+Cesar Augusto Diaz Arriaga: o hay arquitecturas para cada problema que exista, pero nosotros simplemente vamos a agrupar esas arquitecturas en un conjunto básico, digámoslo así, de arquitecturas en las cuales eh vamos a
+00:40:00
+Cesar Augusto Diaz Arriaga: a intentar enfocar o digámoslo así a a identificar cuándo utilizar cada una de esas arquitecturas en el escenario que sea adecuado para nuestro proyecto.
+Cesar Augusto Diaz Arriaga: Listo.
+Cesar Augusto Diaz Arriaga: Vamos a hablar de estas cuatro porque esas cuatro son, digamos que son ortogonales, tienen el concepto ortogonalidad, o sea, son cuatro soluciones completamente distintas.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Hay algunas soluciones que son muy son parecidas o que comparten muchos criterios.
+Cesar Augusto Diaz Arriaga: Por ejemplo, SOA, microservicios y cliente servidor comparten muchos conceptos.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Entonces, ¿qué hace que esta sea una arquitectura o esta sea otra?
+Cesar Augusto Diaz Arriaga: Simplemente algunos conceptos casi que filosóficos o de patrón o de problema que están resolviendo el que me dice si estoy utilizando el uno o el otro.
+Cesar Augusto Diaz Arriaga: Pero los cuatro que tengo aquí identificados, lo que es maestro, trabajador, cliente, servidor, editor, suscriptor y peer to peer son cuatro arquitecturas ortogonales.
+Cesar Augusto Diaz Arriaga: Son cuatro patrones de arquitectura que, digámoslo así, son es completamente distinto el uno del otro.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Hay más patrones ortogonales.
+Cesar Augusto Diaz Arriaga: Está el patrón eh even sourcing.
+Cesar Augusto Diaz Arriaga: Ay, even source even drive development oven source development.
+Cesar Augusto Diaz Arriaga: Ese ese patrón arquitectural de basado en eventos es completamente distinto a todo lo que hemos visto acá.
+Cesar Augusto Diaz Arriaga: Eh, tenemos otro que es el serverless, el el patrón sin servidor o la arquitectura sin servidor, es completamente distinta a esos cuatro modelos, pero digamos que los que más utilizamos o los que más vamos a encontrar en la arquitectura o en el
+Cesar Augusto Diaz Arriaga: modelos los modelos arquitecturales son estos cuatro.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Pero antes de hablar de arquitecturas quiero que dejemos claro dos conceptos.
+Cesar Augusto Diaz Arriaga: Bueno, un concepto partido en dos eh elementos.
+Cesar Augusto Diaz Arriaga: El concepto de acoplamiento, ¿alguien tiene algún una preconcepción de lo que es acoplamiento?
+Cesar Augusto Diaz Arriaga: De tener algo acoplado.
+Daniel Osorio Orozco: eh implica una relación de dependencia negativa, es decir,
+Cesar Augusto Diaz Arriaga: ¿Por qué negativa?
+Daniel Osorio Orozco: casi casi que encajan como piezas de puzle porque hace que,
+Cesar Augusto Diaz Arriaga: Ajá.
+Daniel Osorio Orozco: por ejemplo, un software hace que reemplazar un elemento sea complejo, sea costoso,
+Cesar Augusto Diaz Arriaga: Mm.
+Cesar Augusto Diaz Arriaga: Sí.
+Daniel Osorio Orozco: entonces implica eh peor mantenibilidad del softbard.
+Cesar Augusto Diaz Arriaga: Sí, cierto.
+Cesar Augusto Diaz Arriaga: Pero ahí hay una cosa buena y es que si es acoplado es más rápido y es más ágil su su trabajo, es más fácil de desarrollar, es más fácil de digámoslo así, me va a dar unas respuestas mucho más inmediatas.
+Yayo Gutierrez: más seguro.
+Daniel Osorio Orozco: Sí.
+Cesar Augusto Diaz Arriaga: Mlemos de seguridad.
+Daniel Osorio Orozco: Hm.
+Cesar Augusto Diaz Arriaga: Pero pero tener algo acoplado, pues digamos que tenemos un poco más de control, es más nosotros, digámoslo así, es más predecible lo que puede estar sucediendo dentro de nuestro sistema, ¿cierto?
+Cesar Augusto Diaz Arriaga: si está acoplado.
+Cesar Augusto Diaz Arriaga: Cuando ten cuando cuando tenemos algo desacoplado, se pierden muchas eh asunciones o muchas de las eh cosas que nosotros esperamos que tenga el sistema, pues pueden no ser tan claras o no ser tan eh como nosotros deseamos.
+Cesar Augusto Diaz Arriaga: Listo.
+Cesar Augusto Diaz Arriaga: Pero es cierto, el acoplamiento es qué tan entrelazados, qué tan dependientes son los componentes que vamos a tener en nuestro sistema, ¿cierto?
+Cesar Augusto Diaz Arriaga: ¿Qué tan dependiente es que el baño esté junto a las habitaciones?
+Cesar Augusto Diaz Arriaga: ¿Qué tanto depende el sistema o la casa de que eso suceda?
+Cesar Augusto Diaz Arriaga: O o será que como en las casas viejas, en las fincas viejas, que el baño quedaba era por allá, patio atrás al fondo, porque no había alcantarillado, entonces no dejaban el baño dentro de la casa, ¿cierto?
+Cesar Augusto Diaz Arriaga: Entonces, ¿qué tan necesario es de que ese recurso o ese elemento esté conectado con los otros componentes?
+Cesar Augusto Diaz Arriaga: Y en ese en ese concepto de acoplamiento vamos a hablar de que tenemos dos dos tipos de acoplamiento, un acoplamiento espacial y un acoplamiento temporal.
+Cesar Augusto Diaz Arriaga: El acoplamiento espacial hace referencia a la ubicación.
+Cesar Augusto Diaz Arriaga: ¿Qué tan necesario es de que ese componente esté en un punto específico o esté en una dirección, esté en una ubicación para poder realizar la comunicación, establecer la comunicación entre componentes, ¿cierto?
+00:45:00
+Cesar Augusto Diaz Arriaga: La relación entre esos componentes depende de que los dos componentes estén en un lugar específico.
+Cesar Augusto Diaz Arriaga: O y la temporal es qué tan dependientes son en que estén activos al mismo tiempo.
+Cesar Augusto Diaz Arriaga: O sea, el temporal tiene que ver con el tiempo, el espacial con el lugar, con la ubicación, con la dirección.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Y son dos tipos de acoplamiento distintos.
+Cesar Augusto Diaz Arriaga: O sea, yo puedo estar acoplado espacialmente, pero no tan acoplado temporalmente y viceversa.
+Cesar Augusto Diaz Arriaga: Puedo estar acoplado temporalmente, pero no espacialmente.
+Cesar Augusto Diaz Arriaga: Y entonces aquí viene la pregunta, ¿y entonces qué es mejor?
+Cesar Augusto Diaz Arriaga: ¿Estar acoplado o desacoplado?
+Cesar Augusto Diaz Arriaga: Entonces, Daniel defiende de que el acoplamiento o tener un alto acoplamiento, un alto grado de acoplamiento, o sea, estar muy muy conectados es perjudicial para la aplicación, para la mantenibilidad.
+Cesar Augusto Diaz Arriaga: Y es cierto, cierto, porque vamos a hablar un poco ahora más adelante, pero eh tener estos elementos tan acoplados hace de que mi sistema sea un posible foco de error, porque si falla uno, todo el sistema falla, porque todos dependen de los otros.
+Cesar Augusto Diaz Arriaga: Yayo, ¿y vas a decir
+Yayo Gutierrez: Ah, sí, sí, sí.
+Yayo Gutierrez: No,
+Cesar Augusto Diaz Arriaga: algo?
+Yayo Gutierrez: el acoplamiento no es malo ni bueno, sino que también depende pues de de lo que se vaya a implementar.
+Yayo Gutierrez: O sea, eso por por alguna razón existe o si no ya se hubiera abolido.
+Cesar Augusto Diaz Arriaga: No se hablaría de ese concepto.
+Cesar Augusto Diaz Arriaga: Exactamente.
+Cesar Augusto Diaz Arriaga: ¿Y qué pasa si yo tengo todo desacoplado?
+Cesar Augusto Diaz Arriaga: Entonces, si yo todo si todo mi sistema fuera desacoplado para el sist para el mundo de los sistemas distribuidos sería fabuloso, sería lo mejor que podría suceder, pero para el rendimiento de mi aplicación sería muy malo.
+Cesar Augusto Diaz Arriaga: Listo.
+Cesar Augusto Diaz Arriaga: Y vamos a entender un poco estos conceptos de acoplamiento espacial y temporal.
+Cesar Augusto Diaz Arriaga: Entonces, vamos a hablar de dos ejemplos muy sencillos.
+Cesar Augusto Diaz Arriaga: Vamos a intentar comunicar dos personas.
+Cesar Augusto Diaz Arriaga: dos personas que están en distintos sitios y vamos a tener dos canales de comunicación.
+Cesar Augusto Diaz Arriaga: El primero vamos a hacer una llamada telefónica, sea con un teléfono fijo o sea con un teléfono celular.
+Cesar Augusto Diaz Arriaga: Y la otra es est eh hacer la comunicación por voz, pero utilizando mensajes de voz, pues mensajes utilizando WhatsApp o cualquiera de esos eh herramientas de mensajería que me permita hacer mensajes de voz.
+Cesar Augusto Diaz Arriaga: ¿Cuál es la idea?
+Cesar Augusto Diaz Arriaga: La idea es pasar un mensaje, ¿cierto?
+Cesar Augusto Diaz Arriaga: O sea, nosotros cuando nos comunicamos queremos pasar un mensaje, queremos, yo tengo la intención de consultar alguna cosa o de decir alguna cosa a otra persona que es la que va a recibir el mensaje o la que me va a entregar el mensaje.
+Cesar Augusto Diaz Arriaga: ¿Cierto?
+Cesar Augusto Diaz Arriaga: Ese es ese es el concepto como tal.
+Cesar Augusto Diaz Arriaga: Necesito que estos dos componentes eh César y Andrea se puedan hablar, ¿listo?
+Cesar Augusto Diaz Arriaga: O puedan intercambiar información porque hay un mensaje que tiene que fluir entre esas dos personas.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Voy a utilizar el teléfono celular.
+Cesar Augusto Diaz Arriaga: Pregunta.
+Cesar Augusto Diaz Arriaga: Para poder hacer una llamada celular o utilizar el servicio celular de llamadas, habrá un acoplamiento espacial.
+Cesar Augusto Diaz Arriaga: ¿Será que depende del lugar, ubicación, dirección para poder establecer la llamada?
+Daniel Osorio Orozco: Sí, profe.
+Yayo Gutierrez: Yo diría que sí, o sea, sí,
+Cesar Augusto Diaz Arriaga: Sí.
+Yayo Gutierrez: ¿no?
+Cesar Augusto Diaz Arriaga: ¿Cómo que
+Yayo Gutierrez: O sea, sí y no.
+Cesar Augusto Diaz Arriaga: no?
+Yayo Gutierrez: Pues usted hace la llamada desde donde esté en un rango de distancia a la a la antena más próxima, pero eso hace que usted tenga que estar cerca a la a una antena.
+Cesar Augusto Diaz Arriaga: Hhm.
+Yayo Gutierrez: Si es pues por antena.
+Cesar Augusto Diaz Arriaga: No,
+Yayo Gutierrez: Si la llamada es satelital, pues yo ya diría que no.
+Yayo Gutierrez: Ev.
+Cesar Augusto Diaz Arriaga: ya no tanto.
+Cesar Augusto Diaz Arriaga: Pero, ¿será que necesito acoplamiento espacial?
+Cesar Augusto Diaz Arriaga: Recuerden que el acoplamiento espacial habla de que para poder yo establecer comunicación con esa otra persona, tengo que saber cómo localizarla.
+Cesar Augusto Diaz Arriaga: ¿Será que yo tengo que saber cómo localizar a la otra persona para eh establecer la comunicación?
+Cesar Augusto Diaz Arriaga: O sea, yo tengo que saber si está en la casa,
+Yayo Gutierrez: Ah, no, no, no, no,
+Cesar Augusto Diaz Arriaga: en el centro o
+Yayo Gutierrez: no, no, no.
+Yayo Gutierrez: Si es celular,
+Cesar Augusto Diaz Arriaga: no.
+Yayo Gutierrez: no.
+Yayo Gutierrez: Pues si es de fijo a fijo, sí, pero si es celular,
+Cesar Augusto Diaz Arriaga: Y si celular no tendría yo,
+Yayo Gutierrez: no.
+Cesar Augusto Diaz Arriaga: entonces, ¿cómo hago yo para poder localizar una persona a su celular?
+Yayo Gutierrez: No sé si entiendo la pregunta.
+Yayo Gutierrez: es, o sea, la llama y la localiza.
+Cesar Augusto Diaz Arriaga: Imagínate, imagínate, imagínate que vas a llamar a tu novia, amigo, etcétera.
+00:50:00
+Cesar Augusto Diaz Arriaga: ¿Cómo localizas a tu amigo si no tienes si si no sabes dónde está?
+Cesar Augusto Diaz Arriaga: ¿No está al lado tuyo, mejor dicho?
+Yayo Gutierrez: Por eso con la llamada, ¿cierto?
+Yayo Gutierrez: se un número telefónico
+Cesar Augusto Diaz Arriaga: Ah, okay.
+Yayo Gutierrez: o
+Cesar Augusto Diaz Arriaga: Tengo que yo tengo que conocer el número telefónico de la otra persona, ¿sí?
+Yayo Gutierrez: exacto.
+Cesar Augusto Diaz Arriaga: Porque si no la tengo, ¿cómo cómo me comunico con ella?
+Cesar Augusto Diaz Arriaga: O sea, si yo lo quiero llamar a usted, yo cómo hago?
+Cesar Augusto Diaz Arriaga: Yo no tengo su número telefónico.
+Cesar Augusto Diaz Arriaga: Bueno, mentira, sí, yo lo tengo en la lista, pero usted no me puede llamar a mí, ¿cierto?
+Cesar Augusto Diaz Arriaga: ¿Cómo me cómo mandaría el mensaje para que para que yo le responda y podamos hablar en tiempo real?
+Cesar Augusto Diaz Arriaga: pues al mismo tiempo.
+Yayo Gutierrez: Sí, pues no habría manera, o sea, si es por el mismo canal, no habría manera, habría que buscarlo por otro canal.
+Cesar Augusto Diaz Arriaga: Entonces, entonces el celular o los el teléfono fijo o las llamadas eh celulares tienen un alto acoplamiento espacial porque yo necesito conocer el número telefónico,
+Cesar Augusto Diaz Arriaga: la ubicación de la persona o el algo que me identifique eh el objetivo a donde voy a hacer el el mensaje, ¿cierto?
+Cesar Augusto Diaz Arriaga: Entonces,
+Yayo Gutierrez: En teoría sería una especie de dirección, o sea,
+Cesar Augusto Diaz Arriaga: en teoría,
+Yayo Gutierrez: el número telefónico es Listo.
+Cesar Augusto Diaz Arriaga: su número telefónico es la dirección a donde yo voy a llamar.
+Cesar Augusto Diaz Arriaga: Lo mismo pasa con el teléfono fijo.
+Cesar Augusto Diaz Arriaga: Con el teléfono fijo, su número su número de teléfono está asignado a una ubicación, a un punto, a un a una ruta donde llega hasta su hasta su casa.
+Cesar Augusto Diaz Arriaga: Pues cierto.
+Cesar Augusto Diaz Arriaga: Si yo te llamo al número fijo es porque sé que está en la casa.
+Cesar Augusto Diaz Arriaga: Si yo te llamo al número celular es porque sé que tiene el celular en la mano.
+Cesar Augusto Diaz Arriaga: Si no tuviese el celular en la mano, pues no habría forma de localizarlo.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Entonces existe un alto acoplamiento espacial.
+Cesar Augusto Diaz Arriaga: Porque yo necesito conocer a dónde, o sea, a dónde voy a hacer el llamado, ¿sist?
+Cesar Augusto Diaz Arriaga: O a qué persona voy a llamar o a qué número voy a a llamar.
+Cesar Augusto Diaz Arriaga: Listo.
+Cesar Augusto Diaz Arriaga: El emisor debe conocer la ubicación del receptor o cómo localizar el receptor de manera directa, única.
+Cesar Augusto Diaz Arriaga: Sí. Y el acoplamiento temporal de lo que me dice es si César o el o aquí el personaje, si este personaje tiene que estar en la llamada al mismo tiempo, de manera simultánea,
+Cesar Augusto Diaz Arriaga: en el mismo instante de tiempo que esta otra persona de va a estar en el teléfono.
+Cesar Augusto Diaz Arriaga: ¿Qué tan dependiente es la comunicación para que los dos al mismo instante de tiempo tengan el canal de comunicación en uso?
+Cesar Augusto Diaz Arriaga: Entonces, la llamada telefónica es acoplado o desacoplado temporalmente.
+Cesar Augusto Diaz Arriaga: Acoplado es que dependen.
+Cesar Augusto Diaz Arriaga: Desacoplado es que no.
+Daniel Osorio Orozco: brutalmente acoplado.
+Cesar Augusto Diaz Arriaga: brutalmente acoplado.
+Cesar Augusto Diaz Arriaga: Entonces, mire que un concepto tan sencillo como hacer una llamada telefónica, pues es un es un sistema o es un una comunicación que es acoplado tanto espacial como temporalmente.
+Cesar Augusto Diaz Arriaga: O sea, yo sé dónde estoy, yo sé a quién tengo que llamar y tienen que estar los dos de manera simultánea, digámoslo así, dispuestos a establecer la comunicación o a estar dentro de la comunicación.
+Cesar Augusto Diaz Arriaga: ¿Vamos bien hasta ahí o no?
+Cesar Augusto Diaz Arriaga: Facilito.
+Cesar Augusto Diaz Arriaga: Ahora voy a hacer, le voy a mandar los mensajes mejor por mensajes de mensajes de voz, perdón.
+Cesar Augusto Diaz Arriaga: En lugar de llamarla, voy a hacerme le voy a mandar un mensaje y ella me va a responder por mensaje de voz.
+Cesar Augusto Diaz Arriaga: No, no nos gusta leer.
+Cesar Augusto Diaz Arriaga: Listo.
+Cesar Augusto Diaz Arriaga: Entonces, vamos a estar por voz, pero ya vamos a utilizar una herramienta de telecomunicaciones distinta, un canal de comunicaciones distintas, como por ejemplo WhatsApp.
+Cesar Augusto Diaz Arriaga: Listo, vamos a utilizar WhatsApp para comunicarnos o yo le voy a mandar el mensaje eh de voz y ella me responde por voz y así sucesivamente.
+Cesar Augusto Diaz Arriaga: Vamos a seguir el proceso de comunicación.
+Cesar Augusto Diaz Arriaga: Acoplamiento espacial.
+Cesar Augusto Diaz Arriaga: Alto, alto grado de acoplamiento o bajo grado de acoplamiento espacial.
+Yayo Gutierrez: Eh,
+Cesar Augusto Diaz Arriaga: Espacial por WhatsApp.
+Yayo Gutierrez: usted usted menciona menciona por WhatsApp, ¿cierto?
+Cesar Augusto Diaz Arriaga: Sí. Solo mensajes de voz, no llamada por WhatsApp, sino mensajes de voz.
+Yayo Gutierrez: Pero vuelve y juega el mismo.
+Yayo Gutierrez: Usted tiene que saberla, entre comillas dirección.
+Yayo Gutierrez: Tienes que saber a dónde se lo mando.
+Cesar Augusto Diaz Arriaga: Ajá.
+Cesar Augusto Diaz Arriaga: Entonces, yo tengo que saber o el número telefónico o ahora que se están inventando ese cuento de crear
+Yayo Gutierrez: Es
+Cesar Augusto Diaz Arriaga: las los usernames.
+Yayo Gutierrez: decir, de la roba
+Cesar Augusto Diaz Arriaga: Ajá.
+Cesar Augusto Diaz Arriaga: Entonces, tengo que saber cuál es el username de la persona, a la que voy a llamar, etcétera, que le voy a mandar mensaje, etcétera.
+Cesar Augusto Diaz Arriaga: Entonces, tengo un alto grado de acoplamiento espacial.
+Cesar Augusto Diaz Arriaga: Yo tengo que saber a quién va al mensaje y tengo que saber eh exactamente cuál es el la ubicación de esa persona o la dirección de esa persona temporalmente habrá qué grado de acoplamiento tengo o sea, ¿será que cuando yo esté mandando el mensaje de voz,
+00:55:00
+Cesar Augusto Diaz Arriaga: la otra persona tiene que estar esperando a que le llegue el mensaje y me tiene que responder de manera inmediata?
+Yayo Gutierrez: No, no, para nada.
+Cesar Augusto Diaz Arriaga: Entonces, temporalmente hay un bajo grado de de acoplamiento o hay desacoplamiento temporal.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Entonces, mire que para el mismo para el mismo tipo de mensaje o para el mismo tipo de comunicación, puedo tener canales que me que me dan un alto grado de acoplamiento y un bajo grado de acoplamiento.
+Cesar Augusto Diaz Arriaga: Pregunta, ¿será lo mismo?
+Cesar Augusto Diaz Arriaga: Ojo, el los mensajes o o la comunicación será la misma si la hago por teléfono o si la hago por mensajes de voz.
+Cesar Augusto Diaz Arriaga: ¿Será lo mismo, tendrá la misma
+Yayo Gutierrez: No, no,
+Cesar Augusto Diaz Arriaga: efectividad?
+Yayo Gutierrez: para nada, profe.
+Yayo Gutierrez: Es es la comunicación asíncrona.
+Yayo Gutierrez: es es más diferente, es más claro por el feedback inmediato.
+Cesar Augusto Diaz Arriaga: ¿Por qué?
+Yayo Gutierrez: De hecho, de hecho le hacer el ejemplo.
+Yayo Gutierrez: Yo yo prendo la cámara porque en el mundo corporativo se considera una falta de respeto y usted está en una reunión sin dar la cámara porque usted no siente que está hablando en en vivo, presente.
+Yayo Gutierrez: Entonces, si usted deja un mensaje de audio,
+Cesar Augusto Diaz Arriaga: Mhm.
+Yayo Gutierrez: inclusive la comunicación es más asíncrona, o sea, se siente como yo le dejo el mensaje y respóndame por eficiente que sea,
+Cesar Augusto Diaz Arriaga: Sí.
+Yayo Gutierrez: pero tarda más tiempo, hay un poquitico más de desconexión y si bien usted la puede hacer totalmente, pero hay más desconexiones.
+Yayo Gutierrez: Yo, por ejemplo, con estas clases en en que se están dando ahora siento más desconexión con la clase, entonces tengo que estar como más,
+Cesar Augusto Diaz Arriaga: Okay.
+Yayo Gutierrez: no sé si es la
+Cesar Augusto Diaz Arriaga: Pero sí, sí,
+Yayo Gutierrez: pregunta.
+Cesar Augusto Diaz Arriaga: pero y tiene que ver con eso y es si yo te hago una llamada y te quiero decir, "Mire, lo espero a las 2 de la tarde." Yo sé que le en este instante le llegó el
+Cesar Augusto Diaz Arriaga: mensaje, ¿cierto?
+Cesar Augusto Diaz Arriaga: El otro me puede dar el feedback, me puede dar la confirmación.
+Cesar Augusto Diaz Arriaga: Listo, nos vemos a las dos.
+Cesar Augusto Diaz Arriaga: Y en 2 segundos, 3 segundos, bueno, en 30 segundos hicimos la comunicación que queríamos.
+Cesar Augusto Diaz Arriaga: Yo logré el feedback y quedó cuadrada toda la comunicación.
+Cesar Augusto Diaz Arriaga: En cambio, si yo hago, si yo utilizo un canal desacoplado o asíncrono temporalmente, sí, si yo hablo, si utilizo un canal asíncrono, yo le puedo decir, "Mire, te necesito a las 2 de la tarde." Y la persona que lo reciba y la persona que
+Yayo Gutierrez: llega a las
+Cesar Augusto Diaz Arriaga: lo recibe dice, "Ay, no vi el mensaje y ya son las 12, ¿cierto? Entonces,
+Cesar Augusto Diaz Arriaga: no es tan efectiva, no tengo la retroalimentación tan instantánea, no existe una garantía de que el mensaje llegue en el momento en el que yo estoy esperando o que la respuesta me llegue cuando yo estoy esperando.
+Cesar Augusto Diaz Arriaga: Listo.
+Cesar Augusto Diaz Arriaga: Llamo, llamo a la secretaria.
+Cesar Augusto Diaz Arriaga: Mire, por favor, mándeme el listado de X Y Zas, ¿cierto?
+Cesar Augusto Diaz Arriaga: Yo sé que ella ya sabe, ya tiene el mensaje y ya va a empezar a trabajar en ello.
+Cesar Augusto Diaz Arriaga: A diferencia de si yo le mando un mensaje de voz y le digo, "Mire, para mañana, por favor, me tiene esto xyj cosas." Y la muchacha me dice,
+Cesar Augusto Diaz Arriaga: "Ah, a mí se me quedó el celular donde mi novio." Y no hay y no
+Cesar Augusto Diaz Arriaga: hay no hay nada que nosotros podamos hacer ante ese hecho, ¿cierto?
+Cesar Augusto Diaz Arriaga: La comunicación no se dio, el canal que utilizamos es desacoplado, entonces no hay una garantía de que la información llegó a tiempo, se procesó a tiempo y se va a entregar de la manera adecuada.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: ¿Cómo van ahí?
+Cesar Augusto Diaz Arriaga: ¿Cómo lo ven ahí?
+Cesar Augusto Diaz Arriaga: Listo.
+Cesar Augusto Diaz Arriaga: Perfecto.
+Cesar Augusto Diaz Arriaga: Ahora, este grado de acoplamiento va a ser muy importante para el análisis que nosotros vamos a hacer de arquitecturas.
+Cesar Augusto Diaz Arriaga: ¿Por qué?
+Cesar Augusto Diaz Arriaga: Porque vamos a darnos cuenta de que entre mayor grado de acoplamiento espacial y temporal vamos a tener respuestas mucho más instantáneas o va a ser mucho más eficiente las eh la comunicación que vamos a tener entre los elementos o los componentes.
+Cesar Augusto Diaz Arriaga: Pero si yo decido que mi sistema sea desacoplado, pues voy a entrar en el mundo de que existe la posibilidad de que haya mayor latencia para para las respuestas,
+Cesar Augusto Diaz Arriaga: que la solución no me entregue resultados tan rápido como yo esperaría.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: ¿Por qué?
+Cesar Augusto Diaz Arriaga: Porque decidí utilizar un canal, un mecanismo de sacoplado.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+01:00:00
+Cesar Augusto Diaz Arriaga: Ahora vamos como ejemplo, vamos a analizar distintos elementos o distintos canales de comunicación que podríamos nosotros utilizar que sean acoplados y desacoplados.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Entonces, para que lo veamos simplemente como como desde el punto de vista de analogía de la forma como nos comunicamos nosotros para entender qué es acoplado y qué es desacoplado tanto espacial como temporalmente.
+Cesar Augusto Diaz Arriaga: Una llamada telefónica, ya lo habíamos ya habíamos hablado, es acoplado tanto espacial como temporal.
+Cesar Augusto Diaz Arriaga: O sea, existe una alta dependencia de saber dónde está y que y los las dos personas tienen que estar dispuestas a comunicarse en el mismo instante de tiempo.
+Cesar Augusto Diaz Arriaga: Entonces es acoplado tanto espacial como temporalmente.
+Cesar Augusto Diaz Arriaga: una una carta postal, o sea, cuando me mandan una carta por correo, no por correo electrónico, sino por correo eh físico.
+Cesar Augusto Diaz Arriaga: Cuando el banco me manda una carta o alguien me manda una carta, un amigo me va a mandar una carta y utiliza el, digámoslo así, las empresas de de transporte,
+Yayo Gutierrez: Los extractos bancarios, por ejemplo, te los mandan a veces
+Cesar Augusto Diaz Arriaga: yo no sé, a mí ya no me volvió a demandar ninguno en físico,
+Yayo Gutierrez: típico.
+Cesar Augusto Diaz Arriaga: pero bueno, sería algo así.
+Cesar Augusto Diaz Arriaga: ¿Quieren alguien se quiere comunicar conmigo?
+Cesar Augusto Diaz Arriaga: ¿Hay acoplamiento espacial?
+Cesar Augusto Diaz Arriaga: ¿Sí o no?
+Yayo Gutierrez: Sí, claro.
+Yayo Gutierrez: Pues tiene que saber a dónde manda la carta.
+Cesar Augusto Diaz Arriaga: Okay.
+Cesar Augusto Diaz Arriaga: Entonces,
+Yayo Gutierrez: Ah.
+Cesar Augusto Diaz Arriaga: él debe tener o el la casa, pues la dirección de la casa, la ciudad, etcétera.
+Cesar Augusto Diaz Arriaga: O sea, tiene que tener toda la información para poder localizar a la persona.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Espacialmente depende de eso, porque si no tuviese la dirección, ¿será que puede mandar la carta por correo?
+Cesar Augusto Diaz Arriaga: No tiene sentido, ¿cierto?
+Cesar Augusto Diaz Arriaga: o no habría forma de que llegue al destino.
+Cesar Augusto Diaz Arriaga: Entonces, ese tipo de mensajería es acoplado espacialmente, temporalmente será será acoplado.
+Cesar Augusto Diaz Arriaga: ¿Será que cuando esté mandando el mensaje a yo tengo que estar pendiente de que me van a mandar el mensaje?
+Yayo Gutierrez: Bueno, ahí sí la carta puede llegar cuando quiera.
+Cesar Augusto Diaz Arriaga: Puede llegar hoy, puede llegar mañana, puede llegar dentro de un mes, ¿cierto?
+Cesar Augusto Diaz Arriaga: Entonces, no existe y y cuando llegue la carta, cuando llegue el elemento físico, la comunicación termina o la comunicación se da como se esperaba.
+Cesar Augusto Diaz Arriaga: Entonces, va a ser acoplado espacialmente, pero desacoplado temporalmente.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: El tiempo no no de no debo estar en sincronía, no debo estar conectado con con el instante de tiempo en el que me están mandando la carta.
+Cesar Augusto Diaz Arriaga: Listo.
+Cesar Augusto Diaz Arriaga: Una transmisión de un evento en directo, una meet, un un alguna cosa así por el estilo.
+Cesar Augusto Diaz Arriaga: Listo.
+Cesar Augusto Diaz Arriaga: O sea, yo quiero mandarle yo voy a transmitir un partido.
+Cesar Augusto Diaz Arriaga: transmite un partido de la selección Colombia que está jugando en en Estados Unidos espacialmente hay una comunicación acoplada o desacoplada de Estados Unidos.
+Cesar Augusto Diaz Arriaga: allá se está jugando el partido y lo y y me van a mandar el mensaje a mí
+Yayo Gutierrez: No, acoplado le llega al que al que acceda de él.
+Yayo Gutierrez: No necesariamente no.
+Cesar Augusto Diaz Arriaga: espacialmente.
+Cesar Augusto Diaz Arriaga: Él no sabe dónde estoy yo, ¿cierto?
+Cesar Augusto Diaz Arriaga: Es más, él va a estar enviando información, digámoslo así, a a m está mandando un canal y si yo lo veo bien y si no lo veo, pues también, ¿cierto?
+Cesar Augusto Diaz Arriaga: a él a él no le interesa.
+Cesar Augusto Diaz Arriaga: Él simplemente está enviando la comunicación.
+Cesar Augusto Diaz Arriaga: El acoplamiento espacial es muy bajo.
+Cesar Augusto Diaz Arriaga: No existe una dependencia de que él pueda seguir transmitiendo si yo lo estoy viendo o no lo estoy viendo.
+Cesar Augusto Diaz Arriaga: Si yo no lo veo, pues él sigue transmitiendo.
+Cesar Augusto Diaz Arriaga: A mí no a él no le interesa eso.
+Cesar Augusto Diaz Arriaga: Listo.
+Cesar Augusto Diaz Arriaga: Porque no depende de que yo lo esté mirando.
+Cesar Augusto Diaz Arriaga: Y temporalmente será que hay acoplamiento o no.
+Yayo Gutierrez: Sí, claro, si no se lo pierde o le tocaba a veces la regrabación,
+Cesar Augusto Diaz Arriaga: Si yo si yo si pero si yo no estoy en el momento en el que están enviando la
+Yayo Gutierrez: Đ
+Cesar Augusto Diaz Arriaga: información, yo me perdí la información.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Entonces acoplados para poder que la comunicación sea, eh, digámoslo así, adecuada o que se establezca la comunicación en este caso de manera correcta.
+Cesar Augusto Diaz Arriaga: Yo tengo que estar a la hora del partido prendiendo el televisor para poder ver eh la transmisión.
+Cesar Augusto Diaz Arriaga: Listo.
+Cesar Augusto Diaz Arriaga: Y si no estoy en el sitio, pues si no estoy en el momento en el que empezó el partido, pues cuando entre a la comunicación, perdón, cuando entre a la comunicación, pues voy a estar eh desfasado.
+01:05:00
+Cesar Augusto Diaz Arriaga: Me perdí una parte y el resto eh es lo que me voy a poder ver, ¿cierto?
+Cesar Augusto Diaz Arriaga: Entonces, no existe un acoplamiento y una dependencia temporal para que la transmisión en vivo pues llegue al receptor.
+Cesar Augusto Diaz Arriaga: Si no hay nadie viendo, pues rating cero, ¿cierto?
+Cesar Augusto Diaz Arriaga: Nadie vio esa transmisión y se transmitió, pero nadie, no hubo receptor, no hubo quien recibiera el mensaje.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Y por último, un anuncio en el tablón, en un tablero allá en la oficina o o simplemente aquí cuando yo les publico algo en el tablón de Classroom y pongo un anuncio.
+Cesar Augusto Diaz Arriaga: Espacialmente hay acoplamiento entre el emisor y los receptores.
+Cesar Augusto Diaz Arriaga: O sea, yo tengo que saber dónde están ustedes para poderles mandar el
+Yayo Gutierrez: No, no,
+Cesar Augusto Diaz Arriaga: mensaje.
+Yayo Gutierrez: pues con el ejemplo del tablón realmente con el Classroom, pues como solo somos un grupo como que que tiene que estar extingido, pues que es diferente, pero yo entiendo que es un anuncio que se da al que coja.
+Cesar Augusto Diaz Arriaga: No, eh, pero es igual, o sea, yo coloco el el yo coloco un mensaje en el tablón de en el en el la en el bloque de anuncios de Classroom y yo no sé dónde están ustedes, ni siquiera sé si lo vieron o no lo vieron,
+Cesar Augusto Diaz Arriaga: por ejemplo.
+Cesar Augusto Diaz Arriaga: Listo.
+Yayo Gutierrez: Ah ya,
+Cristhian Andres Mendoza Villegas: Sí.
+Yayo Gutierrez: Yeah.
+Cesar Augusto Diaz Arriaga: No sé si el mensaje llegó o no llegó.
+Cesar Augusto Diaz Arriaga: Yo solamente sé que está Yo yo emití el evento, pero no sé cuántos consumidores hay de este evento o en qué momento lo vean.
+Cesar Augusto Diaz Arriaga: Ah, bueno.
+Cesar Augusto Diaz Arriaga: ¿Y en qué momento?
+Cesar Augusto Diaz Arriaga: Pues tiene que ver con el desacoplamiento, ¿qué?
+Cesar Augusto Diaz Arriaga: Espacial, ¿cierto?
+Yayo Gutierrez: temporal.
+Yayo Gutierrez: Ah.
+Cesar Augusto Diaz Arriaga: El temporal, perdón, el el espacial es dónde están el temporal, ¿cuándo están?
+Cesar Augusto Diaz Arriaga: Listo.
+Cesar Augusto Diaz Arriaga: Entonces, yo sé que yo mandé el evento, no sé dónde están ustedes, no sé cómo llegar a ustedes, solamente tengo un espacio, digámoslo así, común donde puedo publicar el anuncio y tampoco tengo la certeza
+Cesar Augusto Diaz Arriaga: de que esta información llegó a tiempo o llegó antes del momento en el que yo quisiera decirlo.
+Cesar Augusto Diaz Arriaga: Yo puedo publicar ahí en el en el Classroom.
+Cesar Augusto Diaz Arriaga: Yo les puedo decir, jóvenes, hoy a las 6:30, por favor, ingresen por este otro enlace y estoy muy seguro que va a haber más de una persona que ni siquiera leyó el mensaje, ¿cierto?
+Cesar Augusto Diaz Arriaga: ¿Por qué?
+Cesar Augusto Diaz Arriaga: Porque no existe esa dependencia de que estén al mismo tiempo pendientes del mensaje, ni que van a llegar o que tenga un canal que va a llegar de manera directa a cada uno de ustedes.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Desde el punto de vista de las herramientas de comunicación de sistemas distribuidos, también vamos a ir viendo que existen diferentes mecanismos de comunicación que voy a poder utilizar para dependiendo del grado de acoplamiento que nosotros vayamos a estar trabajando.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Entonces, por ejemplo, la arquitectura cliente servidor está dentro de este dentro de este cuadrante, ¿cierto?
+Cesar Augusto Diaz Arriaga: acoplado.
+Cesar Augusto Diaz Arriaga: Acoplado.
+Cesar Augusto Diaz Arriaga: Eso quiere decir de que este tipo de arquitecturas eh va a ser muy eficiente en sistemas de alto rendimiento, sistemas donde yo hago una petición y necesito una respuesta lo más pronto posible, poder atender al usuario en el menor tiempo posible.
+Cesar Augusto Diaz Arriaga: Entonces esa arquitectura cliente servidor entra dentro de este paradigma normalmente.
+Cesar Augusto Diaz Arriaga: No voy a decir que no hay variantes, pero digamos que lo tradicional es que esté dentro de este cuadrante de acoplamiento, tanto espacial como temporal.
+Cesar Augusto Diaz Arriaga: eh desacoplado espacialmente y acoplado temporalmente.
+Cesar Augusto Diaz Arriaga: podría ser eh editor suscriptor en modo push o la comunicación a grupo.
+Cesar Augusto Diaz Arriaga: No se preocupen por eso, eso lo vamos a ver más adelante, es el siguiente capítulo, los mecanismos de comunicación.
+Cesar Augusto Diaz Arriaga: Pero entonces tenemos dos formas de poder enviar un mensaje a una persona, ¿cierto?
+Cesar Augusto Diaz Arriaga: O sea, que espacialmente, no sé dónde está, pero temporalmente, en este mismo instante de tiempo yo le voy a mandar el mensaje y le va a llegar allá.
+Cesar Augusto Diaz Arriaga: No sé dónde está en editor suscriptor ni en comunicación a grupo.
+Cesar Augusto Diaz Arriaga: Listo.
+Cesar Augusto Diaz Arriaga: No sé dónde está, pero sé que le llega el mensaje.
+Cesar Augusto Diaz Arriaga: Si manda el mensaje.
+Yayo Gutierrez: Así funcionan las push notifications del celular con esos servicios.
+Cesar Augusto Diaz Arriaga: Exactamente.
+Cesar Augusto Diaz Arriaga: Es más, push notification hace parte de este modelo editor suscriptor.
+Cesar Augusto Diaz Arriaga: Eh, acoplado espacialmente y desacoplado temporal.
+01:10:00
+Cesar Augusto Diaz Arriaga: No es muy común que tengamos un modelo donde yo diga, "Yo sé dónde está, pero no le voy a mandar el mensaje, pero no se lo voy a mandar ahorita para que lo vea después." No tiene como mucho sentido desde el punto de vista práctico de los
+Cesar Augusto Diaz Arriaga: sistemas distribuidos, pero el desacoplado, desacoplado, que sería como el mundo ideal para para sistemas distribuidos.
+Cesar Augusto Diaz Arriaga: Entonces, estamos hablando de memoria compartida.
+Cesar Augusto Diaz Arriaga: Esto solamente aplica en sistemas centralizados o que utilicen memoria compartida distribuida.
+Cesar Augusto Diaz Arriaga: en editor suscriptor utilizando pool es otro modelo de cómo recibir los mensajes o utilizando esta última que dice aquí Mom, que es las colas de mensajes, ¿listo?
+Cesar Augusto Diaz Arriaga: o la sí, las colas de mensajes, básicamente.
+Cesar Augusto Diaz Arriaga: Entonces, con cualquiera de estos mecanismos de comunicación, nosotros vamos a garantizar de que voy a tener un sistema desacoplado, tanto espacial como temporalmente.
+Cesar Augusto Diaz Arriaga: Dime
+Yayo Gutierrez: Profe, ese ese acoplado espacial,
+Cesar Augusto Diaz Arriaga: Yayo.
+Yayo Gutierrez: desacoplado temporal, a mí se me suena mucho al correo electrónico.
+Yayo Gutierrez: Es lo mismo.
+Yayo Gutierrez: Usted no lo usted lo recibe, pero usted no lo abre igual a la carta costal, o sea, usted puede que hasta la reciba y la abra tres días después.
+Yayo Gutierrez: me da la impresión de que está como muy por ahí, que no sea habitual,
+Cesar Augusto Diaz Arriaga: Pero okay, pero desde el punto de vista de comunicación, digámoslo así,
+Yayo Gutierrez: Eh,
+Cesar Augusto Diaz Arriaga: o de arquitecturas, el correo electrónico hace parte más como de este del tablón.
+Cesar Augusto Diaz Arriaga: Bueno, ¿por qué por qué lo digo?
+Cesar Augusto Diaz Arriaga: Pues entra más como en este mundo del desacoplado, desacoplado, porque yo a pesar de que tengo su dirección de correo, ¿sí?
+Cesar Augusto Diaz Arriaga: que sería como el acoplamiento espacial, digámoslo así, que podríamos llegar a a decir que tenemos en el correo electrónico.
+Cesar Augusto Diaz Arriaga: A pesar de que yo tengo su correo electrónico, no hay una garantía, o sea, no no es un canal directo, no es no es que esté apuntando a su celular o esté apuntando a su está en un tablón,
+Yayo Gutierrez: Pero si está apuntando alguien,
+Cesar Augusto Diaz Arriaga: está en un lugar centralizado.
+Yayo Gutierrez: pero si apunta una dirección.
+Cesar Augusto Diaz Arriaga: Sí,
+Yayo Gutierrez: Yo más fácil lo vería en el en el push,
+Cesar Augusto Diaz Arriaga: pero
+Yayo Gutierrez: como es similar a un push notification, como yo sé a quién se lo mando,
+Cesar Augusto Diaz Arriaga: mm
+Yayo Gutierrez: que sería por ahí desacopsulado espacial.
+Yayo Gutierrez: Claro, es sí, sí.
+Cesar Augusto Diaz Arriaga: va ahí como como en el en el en el intermedio,
+Yayo Gutierrez: Hm.
+Cesar Augusto Diaz Arriaga: porque realmente nosotros lo que hacemos con el correo electrónico es dejarlo en un sitio central, que él me notifique o que él haga algún proceso para que me llegue el mensaje directo al celular.
+Cesar Augusto Diaz Arriaga: pues es otra cosa, pues digámoslo así, es otro componente, es otro canal de comunicación, pero en términos generales nosotros lo que estamos haciendo es dejándolo en el servidor de Gmail,
+Yayo Gutierrez: Ah,
+Cesar Augusto Diaz Arriaga: en el servidor de Hotmail y ya nosotros, sea por jalar el mensaje o sea porque nos lo
+Yayo Gutierrez: sí, sí, porque es un servidor P3 o un servidor.
+Cesar Augusto Diaz Arriaga: notifique.
+Cesar Augusto Diaz Arriaga: Exactamente.
+Yayo Gutierrez: Claro, ya.
+Cesar Augusto Diaz Arriaga: O sea,
+Yayo Gutierrez: Sí, sí, sí, sí, sí.
+Cesar Augusto Diaz Arriaga: yo no yo no lo estoy ubicando a usted directamente,
+Yayo Gutierrez: Yeah.
+Cesar Augusto Diaz Arriaga: pero sí estoy diciendo, déjelo en en una cola, déjelo en una en un buzón de mensajes y que él lo va a poder recoger en algún momento.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Eh, okay.
+Cesar Augusto Diaz Arriaga: Vamos a hablar entonces de la primera arquitectura, ¿cierto?
+Cesar Augusto Diaz Arriaga: ¿Qué es la arquitectura maestro trabajador?
+Cesar Augusto Diaz Arriaga: Bueno, vamos a hablar de las arquitecturas de computación distribuida que solo aplican en computación distribuida, pero eh nos vamos a enfocar en esta, en la maestro trabajador.
+Cesar Augusto Diaz Arriaga: ¿Por qué?
+Cesar Augusto Diaz Arriaga: Porque en las que son guiadas por la geometría de los datos, pues entonces vamos a tener eh arquitecturas que tienen que ver con matrices dos de dos de dos dimensiones, por decirlo así.
+Cesar Augusto Diaz Arriaga: O sea, que yo voy a tener una serie de componentes eh distribuidos y cada uno de ellos se encarga de procesar o gestionar algún tipo de dato y pues simplemente nosotros vamos a poder eh comunicarnos con los distintos componentes dependiendo de cuál sea el dato o a qué datos que
+Cesar Augusto Diaz Arriaga: nosotros vayamos a ir.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Generalmente la comunicación se hace entre vecinos y realmente son pocos los sistemas que puede podemos ver nosotros en este modelo.
+Cesar Augusto Diaz Arriaga: El otro es el modelo de grafo, ¿cierto?
+Cesar Augusto Diaz Arriaga: De que nosotros creemos un grafo y el grafo puede ser dirigido o no dirigido y la comunicación se da entre los modos que estén conectados entre ellos.
+Cesar Augusto Diaz Arriaga: Eh, también puede ser un un ejemplo claro de este de esta arquitectura, pero tampoco es muy visto.
+Cesar Augusto Diaz Arriaga: O sea, probablemente cuando estemos viendo peer to podemos hablar un poco sobre un concepto de de grafo, ¿cierto?, de de arquitectura basada en grafos, pero por el digámoslo así por la por la especificidad
+Cesar Augusto Diaz Arriaga: de del modelo Pir to Pir o la característica del modelo P to Pir pues hace de que no hablemos de esto.
+Cesar Augusto Diaz Arriaga: Entonces, aquí en el modelo de grafo, la información puede estar llegando por algún lugar, esto se puede distribuir en diferentes elementos y se puede ir procesando como en una serie de steps o de pasos y se va a ir procesando.
+01:15:00
+Cesar Augusto Diaz Arriaga: Es como la especie de workflow o cuando nosotros trabajamos en un modelo de workflow, pero cada uno de los pasos tiene un componente distinto del sistema distribuido.
+Cesar Augusto Diaz Arriaga: Es un poco complejo ver un ejemplo, pero pues eh pero serían algunas arquitecturas.
+Cesar Augusto Diaz Arriaga: Estas arquitecturas como tal sí o sí solamente se pueden aplicar en sistemas distribuidos.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Pero como les digo, en el 99.9% de de los casos no vamos a tener este tipo de arquitecturas.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: ¿Cuál es la arquitectura netamente para computación distribuida que sí vamos a conocer es la maestro trabajador?
+Cesar Augusto Diaz Arriaga: ¿Okay?
+Cesar Augusto Diaz Arriaga: ¿Qué es esta arquitectura?
+Cesar Augusto Diaz Arriaga: maestro trabajador, pues como su nombre lo dice, vamos a tener unos maestros y unos trabajadores.
+Cesar Augusto Diaz Arriaga: También en la literatura, en la historia, lo vamos a encontrar con el concepto de maestro esclavo, ¿cierto?
+Cesar Augusto Diaz Arriaga: Pero eh digamos que socialmente no es muy no es muy bien recibido de que hablemos de que tengo nodos maestros y noos esclavos.
+Cesar Augusto Diaz Arriaga: Entonces, vamos a decir que tengo noos maestros y no dos trabajadores.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: ¿Cuál es la cuál es la el modelo arquitectural?
+Cesar Augusto Diaz Arriaga: El modelo arquitectural es muy sencillo.
+Cesar Augusto Diaz Arriaga: O cuál es el diagrama como nosotros vamos a dibujar un modelo maestro trabajador, este que tenemos nosotros acá.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Este es el diagrama o esta es la forma como nosotros vamos a dibujar en nuestra arquitectura un modelo maestro trabajador.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: ¿De qué consta?
+Cesar Augusto Diaz Arriaga: consta de dos componentes, un componente llamado master o maestro y otro componente llamado trabajador.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Y el maestro está relacionado con uno o con múltiples trabajadores.
+Cesar Augusto Diaz Arriaga: Vamos bien hasta ahí.
+Cesar Augusto Diaz Arriaga: Así es como nosotros lo diagramamos o así es como lo llevamos a nuestro plano, a nuestro diagrama arquitectural.
+Cesar Augusto Diaz Arriaga: Voy a tener un elemento.
+Cesar Augusto Diaz Arriaga: Ese elemento habla con otros elementos.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Ese es como el ese es los los tipos de componentes que tenemos y cuántos componentes vamos a tener.
+Cesar Augusto Diaz Arriaga: En este caso voy a tener cuatro componentes, uno que actúa como maestro y tres que trabajan o que actúan como como trabajadores, perdón.
+Cesar Augusto Diaz Arriaga: Los trabajadores.
+Cesar Augusto Diaz Arriaga: En esta arquitectura el rol del maestro es coordinar el trabajo, es recibir las tareas que vienen del usuario.
+Cesar Augusto Diaz Arriaga: O sea, aquí está el usuario, le manda las tareas al maestro.
+Cesar Augusto Diaz Arriaga: Y el maestro lo que va a hacer es distribuir las tareas entre los distintos trabajadores.
+Cesar Augusto Diaz Arriaga: Listo.
+Cesar Augusto Diaz Arriaga: Entonces, la función del maestro, recibir las instrucciones o las tareas que lleguen a a nuestro sistema, las distribuye a uno o a los trabajadores que necesite distribuir, espera la respuesta del trabajador y luego cuando tenga el consolidado, cuando la tarea ya esté terminada,
+Cesar Augusto Diaz Arriaga: pues simplemente le da el resultado al usuario.
+Cesar Augusto Diaz Arriaga: ¿Cómo vamos ahí?
+Cesar Augusto Diaz Arriaga: Claro.
+Cesar Augusto Diaz Arriaga: Sí. Okay.
+Cesar Augusto Diaz Arriaga: ¿Será que este trabajador necesita hablar con el usuario o el usuario hablará con este trabajador o con este trabajador?
+Yayo Gutierrez: No, no está el maestro.
+Cesar Augusto Diaz Arriaga: Ojo, en este modelo o en esta arquitectura, todas las tareas, toda la comunicación llega por al maestro.
+Cesar Augusto Diaz Arriaga: Todas las tareas que tiene el sistema las recibe el maestro y el maestro lo que hace es distribuirla entre los distintos trabajadores.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Los trabajadores pueden ser toderos, o sea, este trabajador puede hacer de todo, este puede hacer de todo, este puede hacer de todo.
+Cesar Augusto Diaz Arriaga: O puedo tener trabajadores especializados.
+Cesar Augusto Diaz Arriaga: Este es el bueno para hacer esto, este es el bueno para hacer esto otro y este es el bueno para hacer esto otro.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Entonces el maestro es el el que se encarga de decir, "Mire, esta tarea es de x tipo, entonces que la haga el el trabajador uno. Este es del mismo tipo,
+Cesar Augusto Diaz Arriaga: que la sigue haciendo el trabajador uno.
+Cesar Augusto Diaz Arriaga: Ah, es que el trabajador tres también sabe hacer eso.
+Cesar Augusto Diaz Arriaga: Entonces, una para el uno, otro para el tres y así sucesivamente.
+Cesar Augusto Diaz Arriaga: O sea, él es el que se encarga de distribuir las tareas entre los distintos trabajadores que tenga cargo.
+Cesar Augusto Diaz Arriaga: Los trabajadores pueden ser genéricos, que hacen de todo o pueden ser especializados.
+Cesar Augusto Diaz Arriaga: Es parte de la definición del arquitecto identificar qué tipo de trabajadores son los que necesita eh la arquitectura o necesita la solución, ¿cierto?
+01:20:00
+Cesar Augusto Diaz Arriaga: Si van a ser trabajadores genéricos, que todos hacen de todo, o van a ser trabajadores dedicados.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Entonces, básicamente el maestro lo que hace es repartir todas las tareas entre los distintos trabajadores y eh si hay más tareas que trabajadores, pues entonces las guarda para que cuando el trabajador termine, pues simplemente le deleguen otra tarea.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Claro.
+Cesar Augusto Diaz Arriaga: Hasta ahí.
+Cesar Augusto Diaz Arriaga: ¿Alguna pregunta sobre el funcionamiento de de la arquitectura o de los de esta arquitectura?
+Cesar Augusto Diaz Arriaga: Maestro trabajador pregunta.
+Cesar Augusto Diaz Arriaga: Acoplamiento.
+Cesar Augusto Diaz Arriaga: ¿Cómo lo ven?
+Cesar Augusto Diaz Arriaga: ¿Habrá acoplamiento espacial y temporal?
+Yayo Gutierrez: No, esto esto es asíncrono, ¿no?
+Cesar Augusto Diaz Arriaga: ¿Será síncron?
+Cesar Augusto Diaz Arriaga: Ojo, acropamiento espacial.
+Cesar Augusto Diaz Arriaga: ¿Será que el maestro tiene que conocer a los esclavos y saber dónde está para mandarle
+Daniel Osorio Orozco: Sí,
+Yayo Gutierrez: Sí,
+Daniel Osorio Orozco: profe.
+Yayo Gutierrez: sí, sí, sí, claro.
+Cesar Augusto Diaz Arriaga: la Hay un alto acoplamiento espacial?
+Yayo Gutierrez: No.
+Daniel Osorio Orozco: Claro,
+Cesar Augusto Diaz Arriaga: temporal.
+Cesar Augusto Diaz Arriaga: Habrá un acoplamiento temporal entre maestro y esclavo.
+Cesar Augusto Diaz Arriaga: O sea,
+Daniel Osorio Orozco: claro, profe.
+Cesar Augusto Diaz Arriaga: el maestro y los trabajadores tienen que estar activos al mismo tiempo para que la
+Daniel Osorio Orozco: También
+Cesar Augusto Diaz Arriaga: comunicación se dé.
+Daniel Osorio Orozco: claro, profe.
+Yayo Gutierrez: Yo digo que no.
+Yayo Gutierrez: Pues ahí.
+Daniel Osorio Orozco: Yo no le puedo hablar.
+Cesar Augusto Diaz Arriaga: ¿Por por qué no?
+Daniel Osorio Orozco: servidor apagado, pues.
+Cesar Augusto Diaz Arriaga: Ajá.
+Cesar Augusto Diaz Arriaga: Okay.
+Cesar Augusto Diaz Arriaga: O sea, yo tengo un Imagínonos de que este trabajador no está activo.
+Cesar Augusto Diaz Arriaga: ¿Será que este maestro podrá hablar con este trabajador?
+Cesar Augusto Diaz Arriaga: no está pendiente, digámoslo así, ¿no?
+Cesar Augusto Diaz Arriaga: No es que no esté activo, no esté pendiente de de trabajar, de de hacer algo o está ocupado.
+Cesar Augusto Diaz Arriaga: ¿Será que este le puede mandar tareas así ocupado?
+Yayo Gutierrez: Bueno, pues en ese caso sí tiene que estar acoplado.
+Yayo Gutierrez: Yo lo veo más como por precisamente creo que me se me confunde la imagen de los de los trabajadores porque pues usted les asigna una tarea, ellos verán cuando la terminan.
+Yayo Gutierrez: Usted lo pone a hacer el piso y él verá cuando lo termina.
+Cesar Augusto Diaz Arriaga: Pero sí,
+Yayo Gutierrez: Pero si él no está,
+Cesar Augusto Diaz Arriaga: ¿qué pasa si él termina y no está el maestro?
+Yayo Gutierrez: pues no podía arrancar otra o no sabría arrancar otras.
+Cesar Augusto Diaz Arriaga: Okay.
+Cesar Augusto Diaz Arriaga: Entonces,
+Yayo Gutierrez: Ah.
+Cesar Augusto Diaz Arriaga: hay una alta dependencia de que cuando este esté disponible, este también esté disponible para para asignar o para recibir tarea, ¿cierto?
+Cesar Augusto Diaz Arriaga: O sea, hay alto acoplamiento tanto espacial porque tiene que conocerse dónde está cada uno de ellos como temporalmente, porque si yo le quiero mandar hacer una tarea, pues el otro tiene que estar ahí pendiente de recibir tareas y viceversa.
+Cesar Augusto Diaz Arriaga: Y si yo le voy a decir, ya terminé de hacer tal tarea, pues lo mismo, yo tengo que recibir esa esa notificación, ¿cierto?
+Cesar Augusto Diaz Arriaga: O esa confirmación, esa comunicación.
+Cesar Augusto Diaz Arriaga: Entonces, es un modelo altamente acoplado, tanto temporal como espacialmente y eso genera eh que este sistema o esta arquitectura no sea muy tolerante a fallos.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Ojo, ya estamos entrando al mundo de los sistemas distribuidos.
+Cesar Augusto Diaz Arriaga: ¿Qué es eso de tolerante a fallos?
+Cesar Augusto Diaz Arriaga: Fiabilidad.
+Cesar Augusto Diaz Arriaga: ¿Se acuerdan de los objetivos?
+Cesar Augusto Diaz Arriaga: Cuando yo tengo un sistema que es altamente dependiente o que es acoplado tanto espacial y temporalmente, se convierte en un, digámoslo así, en un sistema poco fiable, porque el hecho de que un componente falle, pues pueda ser, podría llegar a ser de que mi sistema fallara por completo.
+Cesar Augusto Diaz Arriaga: Entonces, cuando yo estoy analizando una arquitectura y tengo un acoplamiento temporal y o espacial de de los componentes, yo debo analizar qué pasaría si este elemento no está disponible y qué pasaría si este elemento no está disponible.
+Cesar Augusto Diaz Arriaga: O sea, en este caso, los dos roles.
+Cesar Augusto Diaz Arriaga: ¿Qué pasa si el maestro no está disponible?
+Cesar Augusto Diaz Arriaga: ¿Qué pasa si el trabajador no está disponible?
+Cesar Augusto Diaz Arriaga: Entonces, pensémoslo.
+Cesar Augusto Diaz Arriaga: O sea, siempre es más fácil entenderlo pensándolo en el en el mundo físico o al menos el mundo que nosotros conocemos con los obreros.
+Cesar Augusto Diaz Arriaga: Y entonces decimos, si está el maestro, eh, perdón, está el maestro y está el trabajador, pues entonces el maestro le asigna las tareas al trabajador.
+Cesar Augusto Diaz Arriaga: ¿Qué pasa si este trabajador mientras está trabajando falla?
+Cesar Augusto Diaz Arriaga: Se cayó de la obra, le cayó un ladrillo encima.
+Cesar Augusto Diaz Arriaga: ¿Qué pasa con mi sistema?
+Yayo Gutierrez: pues yo no creo que se caiga el sistema, pero pues esa trabajo quedaría puede que quede
+Cesar Augusto Diaz Arriaga: Okay.
+Cesar Augusto Diaz Arriaga: Entonces, ese este maestro tendría que darse cuenta de que este esclavo falló, perdón, de que este trabajador falló y entonces tiene dos posibilidades.
+Cesar Augusto Diaz Arriaga: O reemplaza el trabajador, consigue un otro obrero para que venga y haga esas tareas.
+Cesar Augusto Diaz Arriaga: o distribuye esas tareas entre quién?
+01:25:00
+Cesar Augusto Diaz Arriaga: Entre los trabajadores que le quedaron, ¿cierto?
+Cesar Augusto Diaz Arriaga: Entonces esta tarea, ay, es que yo mandé a este que levantara este muro, pero él estaba levantando el muro y se cayó.
+Cesar Augusto Diaz Arriaga: Entonces, esperemos a que se desocupe este o este para que vaya y termine el muro.
+Cesar Augusto Diaz Arriaga: Sí. Entonces, la tolerancia fallos en este modelo, digámoslo que es es no no es bidireccional.
+Cesar Augusto Diaz Arriaga: Entonces, si si este trabajador falla, pues sí, qué pena, vamos a bajar el rendimiento, voy a tener menos recursos para para responder a los sistemas, pero el sistema sigue trabajando, ¿cierto?
+Cesar Augusto Diaz Arriaga: o o las tareas, perdón, el sistema sigue trabajando, pero las tareas se van a hacer eh más lento o se van a recibir respuestas mucho más lentejas, más lentas.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Pero la pregunta es, ¿y qué pasa si se cae mi maestro?
+Yayo Gutierrez: No, pues ahí ya no habría manera.
+Cesar Augusto Diaz Arriaga: Entonces, aquí es donde hablamos.
+Yayo Gutierrez: No.
+Cesar Augusto Diaz Arriaga: Es aquí este este elemento.
+Cesar Augusto Diaz Arriaga: Cuando analizamos esta arquitectura nos damos cuenta de que este elemento es uno que tiene una característica o un nombre que se llama punto crítico de fallo.
+Cesar Augusto Diaz Arriaga: ¿Qué es punto crítico de fallo?
+Cesar Augusto Diaz Arriaga: Que si él falla, el sistema completo falla.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: No hay forma de, entre comillas, no hay forma de recuperar ese esa tarea o este trabajo o es todos estos componentes o en este caso si falla el máster, todos estos componentes se vuelven inútiles.
+Cesar Augusto Diaz Arriaga: Sí, porque tengo una un poco de trabajadores, pero no hay quién les dé tareas.
+Cesar Augusto Diaz Arriaga: Y lo peor, las tareas que él tenía o que este señor conocía, pues ya no las conoce nadie.
+Cesar Augusto Diaz Arriaga: Entonces, ¿cómo resolvemos eso?
+Cesar Augusto Diaz Arriaga: ¿Cómo podríamos resolverlo en esta arquitectura?
+Yayo Gutierrez: No, pues asumo Okay.
+Yayo Gutierrez: igual lo que dije abajo y y de potencia, identificar la transacción de lo que está haciendo y pues como una transacción de banco.
+Cesar Augusto Diaz Arriaga: Ajá.
+Yayo Gutierrez: Eso es básicamente.
+Yayo Gutierrez: Si falló la transacción tiene el identificador de quién fue o de qué transacción fue, se recipe.
+Yayo Gutierrez: Y se le asigna a otro.
+Cesar Augusto Diaz Arriaga: Este concepto y de impotencia lo vamos a ver cuando estemos hablando más de tolerancia a fallo, ¿cierto?
+Cesar Augusto Diaz Arriaga: Pero entonces aquí la la pregunta es, bueno, ¿y si este es mi punto crítico de fallo?
+Cesar Augusto Diaz Arriaga: O sea, yo ya identifiqué que este señor, si este señor falla, mi sistema, esta parte del sistema va a fallar.
+Cesar Augusto Diaz Arriaga: ¿Cómo puedo resolver esto?
+Cesar Augusto Diaz Arriaga: Es una solución básica que todo el mundo dice, pues tengo un maestro aquí en backup, ¿cierto?
+Cesar Augusto Diaz Arriaga: ¿Y qué va a estar haciendo el maestro en backup cuando mientras el maestro principal está trabajando?
+Cesar Augusto Diaz Arriaga: Le voy a estar pagando a otro trabajador aquí por estar aquí pendiente por si el otro cae.
+Yayo Gutierrez: Pues en esa arquitectura tocaría así a Lojam Rodríguez mantiene sentado y y se
+Cesar Augusto Diaz Arriaga: No, no,
+Yayo Gutierrez: lo
+Cesar Augusto Diaz Arriaga: pero es que pero ahí teníamos a Quinterito, ¿no?
+Yayo Gutierrez: paga.
+Cesar Augusto Diaz Arriaga: Ahí teníamos a Quinterito que lo reemplazaba cuando Pero le estoy pagando a Quintero por estar sentado en todos los partidos,
+Yayo Gutierrez: Ajá.
+Yayo Gutierrez: Ha.
+Cesar Augusto Diaz Arriaga: ¿cierto?
+Cesar Augusto Diaz Arriaga: Entonces, una posibilidad es tener replicación, o sea, tener ese ese modelo donde yo tengo un servidor de respaldo que cada vez que llegue una tarea, pues yo le notifique al servidor de respaldo qué es lo que está sucediendo,
+Cesar Augusto Diaz Arriaga: o sea, yo le voy informando.
+Cesar Augusto Diaz Arriaga: Esto ya terminó, entienda que esto ya terminó de tal manera que si mi nodo principal falla o mi máster falla, pues lo otro lo tengo.
+Cesar Augusto Diaz Arriaga: O la otra es coger uno de estos esclavos.
+Cesar Augusto Diaz Arriaga: y promocionarlo, ¿sí o no?
+Cesar Augusto Diaz Arriaga: Perdón, trabajadores, uno de estos trabajadores,
+Yayo Gutierrez: trabajador.
+Yayo Gutierrez: No.
+Cesar Augusto Diaz Arriaga: uno de estos obreros, lo el que tenga más experiencia, el que tenga más capacidad, el que sea más eh más pilo, entonces lo puedo promocionar a má.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Entonces tendría que empezar un modelo de de promoción, un modelo de elección entre entre estos tres elementos.
+Cesar Augusto Diaz Arriaga: para identificar cuál de ellos tiene mayor capacidad o cuál tiene la mayor experiencia o cuál puede asumir roles de liderazgo y entonces simplemente lo vamos a convertir en en nuestro nuevo máster.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: Entonces mira que son elementos que cuando yo estoy analizando la arquitectura voy a tener que identificar y poder definir qué pasa en la tolerancia a fallos.
+Cesar Augusto Diaz Arriaga: ¿Qué pasa si este señor cae?
+Cesar Augusto Diaz Arriaga: ¿Cómo voy a cuál va a ser el algoritmo con el que vamos a elegir al siguiente maestro?
+Cesar Augusto Diaz Arriaga: O si yo propongo como solución tener un maestro, una réplica del maestro, de tal manera que cuando el uno de los nodos falle, pues simplemente vamos Uh.
+01:30:00
+Cesar Augusto Diaz Arriaga: a resolver eso, pero esto tiene que ver porque este señor es mi punto crítico de fallo, no es un cuello de botella, es el punto crítico de fallo.
+Cesar Augusto Diaz Arriaga: ¿Por qué no es cuello de botella?
+Cesar Augusto Diaz Arriaga: Porque él, este señor, no es el que me está limitando la capacidad de procesar información.
+Cesar Augusto Diaz Arriaga: ¿Qué me lo está limitando?
+Cesar Augusto Diaz Arriaga: ¿Cuántos trabajadores tengo?
+Cesar Augusto Diaz Arriaga: Si tengo ocho trabajadores, voy a ir más rápido.
+Cesar Augusto Diaz Arriaga: Si, o sea, que este señor no es el que hace que se limite la el rendimiento de mi aplicación.
+Cesar Augusto Diaz Arriaga: Entonces, el único problema que tiene es que como él es el que concentra todas las órdenes y todas las peticiones y todas las instrucciones que llegan de los usuarios o que llegan de afuera, pues simplemente este señor es el elemento que si él falla o no está
+Cesar Augusto Diaz Arriaga: disponible, pues el trabajador no va a poder decirle que terminó ni qué fue lo que terminó, ni hay forma de que se retroalimente al ingeniero, al usuario, al arquitecto.
+Cesar Augusto Diaz Arriaga: ¿Qué tareas ya se han realizado y que hace falta por realizar?
+Cesar Augusto Diaz Arriaga: O si hay alguna dificultad o hay algún problema, pues entonces no hay forma, no hay quien haga esa notificación.
+Cesar Augusto Diaz Arriaga: Estos manes normalmente no saben hablar, ¿listo?
+Cesar Augusto Diaz Arriaga: Entonces no saben hablar con los ingenieros, no entienden, no le entienden mucho al ingeniero y el ingeniero pues tampoco les va a entender mucho a ellos.
+Cesar Augusto Diaz Arriaga: ¿Listo?
+Cesar Augusto Diaz Arriaga: ¿Cómo vamos?
+Cesar Augusto Diaz Arriaga: Hasta ahí.
+Cesar Augusto Diaz Arriaga: Bien.
+Cesar Augusto Diaz Arriaga: Listo.
+Cesar Augusto Diaz Arriaga: Dale.
+Cesar Augusto Diaz Arriaga: Entonces, tenemos nuestra primera arquitectura.
+Cesar Augusto Diaz Arriaga: Es una arquitectura muy sencilla.
+Cesar Augusto Diaz Arriaga: Tenemos solamente dos roles, maestro trabajador.
+Cesar Augusto Diaz Arriaga: Son acoplados tanto espacial temporalmente.
+Cesar Augusto Diaz Arriaga: El maestro recibe todas las tareas y lo distribuye entre los trabajadores.
+Cesar Augusto Diaz Arriaga: El trabajador recibe una tarea y se concentra en esa tarea.
+Cesar Augusto Diaz Arriaga: Eso es como una de los vamos a decir una la filosofía principal de esta arquitectura es que el trabajador se concentra en la tarea que está haciendo.
+Cesar Augusto Diaz Arriaga: Está dedicando todos sus recursos a hacer la tarea lo más rápido posible.
+Cesar Augusto Diaz Arriaga: Cuando él termine, cuando termine, pues entonces le va a notificar al al máster de que ya terminó y entonces que está disponible para recibir más tareas.
+Cesar Augusto Diaz Arriaga: ¿Listo?
