@@ -1,0 +1,834 @@
+Hora de inicio de la reunión: 2026-10-20 18:28 GMT-5
+Asistentes
+Student36, Student1, Student3, Student4, Teacher, Student5, Student6, Student7, Student8, Student28, Student9, Student11, Student12, Student13, Student14, Student15, Student16, Student17, Student18, Student19, Student20, Student21, Student22, Student23, Student35, Student25, Student26, Student27
+Transcripción
+Teacher: Muy buenas noches, jóvenes.
+Teacher: ¿Cómo están?
+Teacher: Espero que todo muy bien.
+Teacher: Hoy por fin vamos a terminar de hablar de nuestra arquitectura cliente servidor.
+Teacher: Recuerden que yo les dije que eh iba a ser muy largo este tema porque es una de las arquitecturas que más utilizamos y es la más vulnerable desde el punto de vista de los sistemas distribuidos.
+Teacher: Y básicamente nosotros durante todo este tiempo hemos estado mirando cuáles son las eh, digámoslo así las implicaciones de trabajar con esta arquitectura y cómo vamos a evitar ese cuello de botella y ese punto único de fallo llamado servidor,
+Teacher: ¿cierto?
+Teacher: Y vimos bastantes elementos o hemos visto distintos elementos con los cuales eh podemos nosotros resolver.
+Teacher: Ahora, en este en esta parte final de cliente servidor estábamos hablando de los cinco aspectos de diseño.
+Teacher: ¿Se acuerdan cuáles eran o cuáles hemos visto?
+Teacher: Por lo menos son cinco.
+Teacher: ¿Quién me dice algún compartir?
+Teacher: ¿Cuál es el primero?
+Teacher: de a uno que que se cansan.
+Teacher: Espérate, vámonos aquí.
+Teacher: Los cinco aspectos eran esquema esquema de servicio múltiples clientes, o sea, cómo vamos a atender a cada cliente.
+Teacher: Y ahí y ahí vimos dos modelos o dos posibilidades.
+Teacher: ¿Cuáles eran?
+Teacher: O tres posibilidades.
+Teacher: ¿Cuáles eran?
+Teacher: Tener un servidor secuencial que atienda solo un cliente a la vez.
+Teacher: tener un servidor concurrente utilizando hilos o procesos y utilizando un servidor basado en eventos, ¿cierto?
+Teacher: Son las tres opciones que teníamos.
+Teacher: gestión de conexiones.
+Teacher: De gestión de conexiones decíamos cuántas petici o cómo íbamos a hacer el proceso de conexión y desconexión dependiendo de cómo íbamos a atender a los clientes.
+Teacher: Nosotros teníamos dos opciones, o una conexión por cada petición, o sea, cada vez que necesite hacer algo, yo tengo que conectarme al servidor y hacer la solicitud o y conectarme, hacer el pedido y apenas me den la respuesta me desconecta.
+Teacher: o puedo tener un modelo de sesión o un modelo de conexión persistente donde yo me conecto y desde que yo me conecte hasta que yo de manera específica le diga que me quiero desconectar, pues puedo mandar múltiples peticiones.
+Teacher: Hay unas ventajas y desventajas, eso ya lo vimos atrás.
+Teacher: Luego hablamos de la localización del servidor y agregamos un nuevo elemento dentro de nuestra arquitectura llamado el binder, ¿cierto?
+Teacher: o binder.
+Teacher: Eh, este elemento pues termina siendo un nuevo servidor,
+Student27: M.
+Teacher: pero se encarga o va a tener la responsabilidad de decirnos un servicio en qué en qué ubicación lo podemos encontrar, intentando de desacoplar o bajar la la el acoplamiento eh espacial que tenemos entre el cliente y el servidor.
+Teacher: ¿Listo?
+Teacher: Pero vamos a estar acoplados al binder.
+Teacher: Pero con esta, digámosle así que con este con este ajuste lo que estamos dándole es la posibilidad de que podamos tener escalamiento horizontal en nuestros servidores, que podamos tener múltiples copias de nuestros servidores y que el cliente no tenga que estar pegado,
+Teacher: no tenga que estar atendiendo siempre al mismo.
+Teacher: Y por último estuvimos hablando de servicios con estado y sin estado que básicamente hacen referencia a si el servidor va a guardar información sobre lo que está haciendo el cliente y y cómo va ese procesamiento de ese cliente.
+Teacher: Servicio con estado, pues es muy chévere, muy bueno, porque podemos optimizar, los mensajes van a ser más cortos, no vamos a tener que estar enviando muchas varias veces la misma información, sino mando la información una vez y simplemente le digo qué es lo que quiero hacer con ella.
+Teacher: En cambio, eh en el servicio sino estado, cada petición que nosotros hacemos tenemos que estar enviando toda la información que necesita el servidor para para atender.
+00:05:00
+Teacher: En el servicio con estado puedo ser mucho más eficiente, puedo tener un rendimiento mucho más alto, pero pero todas las peticiones de un cliente tienen que ir direccionadas al mismo servidor, o sea, que disminuye la capacidad de de escalamiento o de replicación que podríamos llegar a tener nosotros en
+Teacher: nuestro sistema o dificulta un poco eh el tema de hacer el escalamiento horizontal.
+Teacher: Eh, en lo único que podemos hacer es escalamiento vertical, o sea, solamente vamos a poder agregar más recursos para mejorar el servicio en en ese modelo.
+Teacher: Y en el servicio sin estado, pues es más tolerante a fallos.
+Teacher: Eh, digamos que los mensajes van a ser mucho más pesados, pero en el caso de que se caiga un servidor, pues no pasa nada.
+Teacher: Simplemente redirijo o reenvío la petición a otro de los servidores que están disponibles y espero que me que lo atiendan sin ningún problema.
+Teacher: O sea, que digamos que unas por otras.
+Teacher: Y por último, lo último que vimos en la clase pasada fue el tema de los lees, ¿cierto?
+Teacher: donde estábamos diciendo que los leis eran un mecanismo, ¿para qué?
+Teacher: Para verificar si el componente, el emisor o el receptor, el cliente o el servidor, eh todavía estaban vigentes, ¿cierto?
+Teacher: No era un temporizador, no es un token, es básicamente un mecanismo de de una conversación que vamos a tener que estar haciendo entre cliente y servidor, simplemente para detectar si el cliente todavía está activo o el servidor está activo.
+Teacher: Eh, y hablamos del algoritmo, ¿cierto?
+Teacher: que el algoritmo del list era muy sencillo.
+Teacher: Eh, cuando yo establecía la comunicación, el servidor me entregaba un list Sí, el servidor me entregaba un list y el cliente cada x tiempo ese list tiene una vigencia y cada x tiempo antes de que se se cumpla el plazo tiene que renovar el list.
+Teacher: Si al si al momento de renovar el servidor no me responde, pues yo como cliente me doy cuenta de que el servidor no está disponible.
+Teacher: puedo asumir de que el servidor ya no me va a responder la solicitud que yo le mandé, entonces puedo optar o puedo o tengo la posibilidad de de optar por hacer un reenvío de nuevo a la plataforma o simplemente devolver y decir,
+Teacher: miren, no se pudo procesar en este momento, intenta más tarde, etcétera, etcétera, etcétera.
+Teacher: O sea, ya el cliente nos tiene que esperar hasta que se muera la conexión o no necesitamos definir un tiempo máximo de espera, un time out para darle respuesta al usuario, ¿cierto?
+Teacher: Si hay peticiones que puedan demorar más de los 3 minutos, 5 minutos que normalmente nosotros definimos para el time out, pues entonces eh si se puede demorar más, entonces estos leis nos van a permitir saber si todavía están procesando,
+Teacher: si el servidor todavía está activo y probablemente siga procesando nuestra petición.
+Teacher: Y en el caso contrario, si el que se si el que tenía que renovar el list no lo renueva, pues entonces eh el servidor se puede dar cuenta de que ese cliente ya no está activo, que ya no va que digámoslo así,
+Teacher: no hay forma de contactar, no hay forma de hablar, el canal de comunicación se cortó, pues entonces las tareas que ese cliente mandó y que yo estaba procesando pues lo puedo eh cancelar, ¿cierto?
+Teacher: No es fácil cancelarlo, pero eso lo vamos a ver el día de hoy, ¿cierto?
+Teacher: No es fácil cancelarlo, pero podría yo tomar la decisión de cancelar la petición.
+Teacher: Pero entonces para eso me sirven los lees, para evitar utilizar el time out, que es como la opción común, lo que más nosotros utilizamos en en estos desarrollos y es decir, pues yo lo máximo que puedo esperar son 3 minutos y ¿qué pasa si la tarea o el procesamiento
+Teacher: demora más de 3 minutos?
+Teacher: ¿Cierto?
+Teacher: ¿Qué pasa si necesito registrar eh los datos biométricos de una persona y tengo un sistema concurrente y tienen que analizar las 10 huellas digitales y tienen que revisar o validar el rostro, ¿cierto?
+Teacher: ¿Qué pasa si tengo que hacer ese tipo de procesamiento?
+Teacher: pues el servidor no lo va a hacer de manera instantánea, eso no se hace en un segundo.
+Teacher: Probablemente para evitar problemas necesita algún tiempo de procesamiento y si está ocupado, si hay múltiples peticiones o está trabajando de manera concurrente, pues puede haber tiempos de espera mucho más largos de lo que nosotros esperábamos en un principio,
+Teacher: ¿cierto?
+Teacher: Entonces, eso para que lo tengamos en cuenta de por qué los lices son una buena solución.
+Teacher: No es una implementación fácil de realizar porque no todos los lenguajes de programación tienen el soporte paralices, pero pues es una una muy buena idea o al menos un buen eh una muy buena forma para que nosotros podamos
+00:10:00
+Teacher: eh gestionar eh si los nodos que estamos nosotros trabajando todavía están activos o no.
+Teacher: Eh, listo.
+Teacher: Vamos a hablar de nuestro quinto aspecto de diseño, que es el comportamiento ante fallos.
+Teacher: Y básicamente yo lo que queremos hablar es y qué es esto de comportamiento ante fallos, a qué hacemos referencia y es okay, nosotros estamos creando un sistema distribuido y ese sistema distribuido eh
+Teacher: por naturaleza es posible que algo falle, ¿cierto?
+Teacher: Y por qué decimos por naturaleza?
+Teacher: Porque ya sabemos que son varias máquinas conectadas por una red.
+Teacher: Y ahora los problemas o la o las dificultades que podríamos llegar a tener nosotros en el sistema distribuido, no necesariamente es por errores dentro del software.
+Teacher: Pueden haber errores en la red, pueden haber errores en el ambiente, pueden haber errores de comunicación que no tienen nada que ver con el desarrollo que nosotros hemos hemos realizado, ¿cierto?
+Teacher: Entonces, ¿qué es lo que quiere o qué es lo que busca que analicemos y que pensemos en este quinto aspecto?
+Teacher: Y es cómo se va a comportar nuestro sistema en el caso de que haya un error o que algún componente falle o que el cliente que manda hacer peticiones pues ya se desconecta, o sea, cómo nos vamos a comportar.
+Teacher: Entonces, aquí hay digamos de cuatro opciones de que podemos nosotros seleccionar, ¿cierto?
+Teacher: La primera, no vamos a garantizar nada.
+Teacher: ¿Qué significa?
+Teacher: que un cliente, un usuario, sí, un cliente manda una solicitud y el y esa solicitud del lado del servidor se puede procesar o se puede ejecutar cero o n veces.
+Teacher: O sea, yo puedo mandar esa solicitud y esa solicitud se puedo mandar 0 una 2 3 cu 10 veces y se ejecutó de manera permanente en la base de datos o en o en mi servidor, perdón.
+Teacher: ¿Por qué se puede puede ocurrir eso?
+Teacher: Ah, pues porque simplemente eh llegó la petición y hubo algún error y entonces volvió a tomar la misma petición o la devolvimos a una a un espacio donde donde está lo que está pendiente por procesar y lo vamos a procesar varias veces,
+Teacher: ¿cierto?
+Teacher: Y que probablemente por problemas de de codificación o problemas de sincronización con la base de datos, etcétera, pues pueda que yo tenga que ejecutar múltiples veces.
+Teacher: ¿Qué otra opción puede ser?
+Teacher: Ah, que el cliente tenga una política de reintentos.
+Teacher: Eso quiere decir de que paso el time out, entonces vuelvo y mando una petición.
+Teacher: Paso el time out, vuelvo y mando una petición.
+Teacher: Y si tengo múltiples copias, pues es posible que en todas las copias o en todos los servidores se esté procesando el la misma tarea, ¿cierto?
+Teacher: porque con diferencias de tiempo.
+Teacher: Entonces, eso también es eh algo posible, es algún comportamiento que nosotros podemos tener en el sistema.
+Teacher: Entonces, ¿qué es eso de garantizar nada?
+Teacher: Y es yo no yo no puedo garantizar nada sobre el sistema.
+Teacher: Puede que se ejecute o no se ejecute la tarea.
+Teacher: ¿Listo?
+Teacher: ¿Ustedes creen que eso es bueno?
+Teacher: Que el sistema no garantice que se ejecute, que pueda ejecutarlo cero o n veces.
+Teacher: Eso es malo, ¿cierto?
+Teacher: Muy malo.
+Teacher: Es malo porque vamos a estar eh, digámoslo así, es posible que hayan datos que se pierdan o es posible que hayan datos que se dupliquen.
+Teacher: ¿Por qué?
+Teacher: Porque no sabemos cómo se va a comportar el sistema.
+Teacher: No vamos a garantizar nada.
+Teacher: No tenemos ningún tipo de de garantía o ningún tipo de control para evitar de que eso pueda suceder.
+Teacher: Entonces, esa es la solución ingenua, pero eh digamos que es una de las soluciones que debemos evitar.
+Teacher: Segundo, al menos una vez, ¿qué significa eso?
+Teacher: Y es que de alguna manera nosotros garanticemos de que sí o sí se tenga que ejecutar por lo menos una vez.
+Teacher: Puede que se ejecuten más, pero que por lo menos una vez.
+Teacher: Y aquí entra entra en juego, por ejemplo, el tema de los reintentos, que es cuando nosotros decidimos que si el servidor no me responde, pues reintente, pero el servidor no me responde, puede ser por cualquier motivo, ¿cierto?
+Teacher: Puede ser porque no le llegó la pregunta, porque hay mucha cola en espera en ese servidor o simplemente porque el proceso se está demorando mucho.
+Teacher: Y entonces el cliente dice, "Ve, no, ya ha pasado tanto tiempo, no me ha respondido, pues simplemente vuelvo a reintentar y vuelvo a reintentar y vuelvo a reintentar y entonces al final voy a recibir n peticiones y probablemente voy a tener que procesar esas n peticiones,
+00:15:00
+Teacher: ¿cierto?
+Teacher: Entonces, eso es lo que significa el almeno una vez.
+Teacher: ¿Cuándo paran los reintentos?
+Teacher: hasta que me responda.
+Teacher: Sí, eso es como la la idea.
+Teacher: ¿Cuándo paro de hacer reintentos al servidor?
+Teacher: Cuando el servidor me dé una respuesta, cuando llegue una respuesta.
+Teacher: Mientras no llegue esa respuesta, pues seguiré enviando y enviando y enviando peticiones como mucho una vez.
+Teacher: Quiere decir de que la petición puede que se ejecute o puede que no se ejecute.
+Teacher: ¿Listo?
+Teacher: O sea, que puede ser cero o puede ser una vez.
+Teacher: Ese es el modelo clásico en el que nosotros simplemente hacemos una petición y si no me respondió, pues entonces tiro un error, le digo al usuario, "No se pudo." Y no se pudo,
+Teacher: ¿cierto?
+Teacher: Y cada vez que nosotros intentamos vuelve y nos dice, "No se puede, no se puede, no se puede, no se puede." Listo.
+Teacher: Ese modelo tampoco es muy chévere.
+Teacher: Ese es el modelo de Bancolombia, ¿cierto?
+Teacher: Es el modelo donde cuando el sistema no está respondiendo de manera eficiente, pues, ¿qué dice?
+Teacher: Nada, no puedo procesarlo, no puedo procesar, no puedo, estoy caído, estoy caído, estoy caído.
+Teacher: Entonces, cuando yo tengo ese modelo o defino ese modelo, que es el modelo donde yo menos código tengo que hacer, porque no le voy a decir al cliente que reintente, no le voy a decir al servidor que que ejecute,
+Teacher: si no le llega, simplemente mando la petición y si no me respondió, pues simplemente digo, no, no hay respuesta, no puedo procesar su su tarea.
+Teacher: Listo, no hay forma de corrección en caso de que la comunicación falle, no hay forma de que nosotros podamos resolver o ayudar a resolver eh el problema.
+Teacher: Y la última es exactamente una vez que es la que nosotros estamos o quisiéramos que que ocurriera, ¿cierto?
+Teacher: Y es que si estuviéramos en el mundo ideal, nosotros mandamos la petición y nos llega la respuesta dentro del tiempo esperado, con los datos esperados, etcétera, con los datos eh bien procesados, etcétera.
+Teacher: Sí, eso sería como el mundo ideal, pero pero recuerden que estamos ante fallos.
+Teacher: Entonces, ¿cómo vamos a garantizar nosotros que al menos ejecute una vez así hayan fallos?
+Teacher: Sí, ese esa es como la situación.
+Teacher: ¿Cómo vamos a garantizar de que yo le mando una petición a un servidor?
+Teacher: Ese servidor la empieza a procesar y mientras estaba procesando tuvo un problema eh un crasho en memoria, un crasho en el disco duro, el procesador se sobrecalentó y se apagó.
+Teacher: ¿Cómo garantizamos de que esa petición que hizo ese cliente sí se ejecuta por lo menos exactamente una vez?
+Teacher: Sí, no hay forma de garantizarlo.
+Teacher: O sea, tendríamos que tener un ambiente controlado, un ambiente ideal o centralicemos todo, ¿cierto?
+Teacher: Si todos lo centralizamos, pues vamos a garantizar de que todos los servicios es muy probable que todos los servicios estén disponibles.
+Teacher: Entonces, pero no es la solución que queremos, no es la solución donde estamos hablando de que estamos descentralizando el problema, sino que lo vamos a a centralizar de rado.
+Teacher: Entonces, ¿cómo lo vamos a lograr?
+Teacher: Pues vamos a tener que elegir alguna estrategia.
+Teacher: La estrategia de los reintentos es una buena estrategia para garantizar de que por lo menos una vez se ejecute.
+Teacher: Pero, ¿cómo paso?
+Teacher: de al menos una vez, o sea, una o varias veces a exactamente una vez utilizando reintentos.
+Teacher: Pues entonces aquí es donde vamos a tener que hablar sobre un concepto nuevo, espero que sea nuevo, que es una operación idempotente.
+Teacher: ¿Qué es esto de idotencia?
+Teacher: ¿Qué es esta palabra?
+Student8: que no importa las veces que se pida tiene como el mismo, o sea, yo reconozco que es una misma petición.
+Teacher: Exactamente.
+Teacher: Entonces tienen que ser operaciones que si así yo las mande 10 veces el o ejecute de eh 10 veces en mi sistema, eh voy a llegar al mismo resultado.
+Teacher: Sí. O sea, si llegó una vez me da un resultado.
+Teacher: Si llegaron cinco peticiones y las procesé las cinco, me tiene que dar el mismo resultado.
+Teacher: Eso es lo que nosotros llamamos operaciones importantentes.
+Teacher: ¿Cuál es?
+Teacher: la característica general de las operaciones impempotentes y es que cuando yo vaya a hacer algún tipo de mutación de datos, las consultas todas son idempotentes porque yo hago una consulta y eso no me modifica nada.
+Student8: Ah.
+Student8: Yeah.
+Teacher: Pero cuando yo hago algún tipo de mutación, una creación, una modificación o una eliminación, la idea es de, bueno, la eliminación no, porque la eliminación solamente puede hacer una vez, pero si yo hago una creación o una modificación,
+00:20:00
+Teacher: lo ideal es que si llegan varias veces la tarea de creación, yo tenga la posibilidad de identificar que es la misma tarea para saber que no la voy a hacer o si al ejecutar la tarea siempre me va a devolver el mismo resultado.
+Teacher: ¿Listo?
+Teacher: Entonces, un ejemplo clásico, por ejemplo, cuando estamos hablando del banco y que voy a hacer un una consignación y imagínense que ese proceso de consignación o ese esa tarea de estar diciendo, "Necesito consignar 100,000, necesito consignar 100,000,
+Teacher: tengo que repetirla varias veces porque han pasado un buen tiempo y no me ha dado respuesta." el
+Teacher: sistema o yo le he dado clic otra vez al botón enviar, enviar, enviar, enviar porque somos bastante impacientes.
+Teacher: Y si yo me pongo de esa manera, pues entonces voy a mandar varias veces la misma petición.
+Teacher: Cuando llega en el servidor llegan n peticiones, ¿cierto?
+Teacher: que pudo que ya estaba procesando la primera, estaba lento, estaba bloqueado porque había otro proceso que estaba moviendo cuentas que tenían que ver con esto, pero va a llegar una siguiente petición que va a intentar hacer lo mismo y otra petición que va a hacer lo mismo.
+Teacher: Entonces, ¿cuál es la cuál es la la idea?
+Teacher: La idea es de que si yo voy a hacer consignaciones, en lugar de decir que al saldo de la cuenta acumúlele la cantidad que mandó, eso no sería idotente, porque si mando cinco veces la misma petición, entonces él lo que va a hacer es coger el saldo y sumarle 100,000.
+Teacher: Luego vuelve en la siguiente petición coge el saldo y le suma otros 100,000.
+Teacher: Y él coge el saldo y le suma otros 100,000.
+Teacher: O sea, ejecutar varias veces la misma operación implica en que el estado el el estado real del sistema va a quedar inconsistente, no no va a quedar el eh digámoslo así decir no va a quedar en el mismo resultado después de
+Teacher: varias eh de varias veces ejecutada la misma petición.
+Teacher: Entonces, ¿cómo lo resolvemos?
+Teacher: En lugar de hacer un acumulador, de decirle cuánto es el incremento, yo hago el cálculo de cuánto sería el saldo final.
+Teacher: Entonces, si yo desde, digámoslo así, desde el front, yo ya le digo, "Mire, es que su nuevo saldos son 100,000, eh, son 1,100,000 y mando cinco veces esa misma petición, pues en el servidor si yo hago las los cinco updates,
+Teacher: ¿cuál sería el saldo final?
+Teacher: 1,100,000, ¿cierto?
+Teacher: Entonces, sin importar cuántas veces yo tenga que mandar la petición, siempre voy a llegar al mismo resultado.
+Teacher: Otra posibilidad o otra opción que tenemos para las tareas potentes o repetibles es marcarlas con un con un ID, ¿cierto?
+Teacher: Un número único que defina esta tarea dentro de todas las tareas que puede tener el sistema.
+Teacher: Esta tarea eh cuál es o o qué tarea es.
+Teacher: Y cuando yo la mando al servidor, cada reintento que yo lo hago, lo mando con el mismo número de tarea, ¿cierto?
+Teacher: Con el mismo número consecutivo.
+Teacher: ¿Con qué idea?
+Teacher: Que al momento de que el servidor lo reciba, pues él diga, "Ah, okay, esta tarea eh ya la estoy procesando, entonces no la tengo que ejecutar." Listo.
+Teacher: Pero entonces mira que ahí hay una un tema de lógica y de control y de control de estados que hace que hace que el que el sistema pues se tenga que comportar de una manera distinta, pero la idea de las operaciones independentes es eso,
+Teacher: es de que de alguna manera, sea marcando el mensaje o sea marcando o haciendo o que los datos que voy a modificar ya ya sean id potentes, pues entonces en en ese momento o con ese momento, yo ya podría pasar de un modelo de como al menos una
+Teacher: vez a lo que nosotros estamos deseando y es que exactamente se ejecute una vez.
+Teacher: ¿Listo?
+Teacher: Eh, entonces, operaciones y de potentes con al menos una vez es aproximadamente igual a exactamente una vez, que es lo que nosotros deseamos y es que todas las operaciones, todas las operaciones, independiente de qué problema ocurra, eh, se se ejecute en el sistema.
+Teacher: ¿Listo?
+Teacher: Pero, ¿qué puede hacer de que falle el sistema?
+Teacher: Pérdida de datos.
+Teacher: ¿Cómo que pérdida de datos?
+Teacher: El cliente mandó la petición, pero la petición no llegó al servidor.
+Teacher: ¿Listo?
+Teacher: Si estamos, por ejemplo, si si estamos en una LAN o estamos mandando nuestros datos a la nube y la y nuestra nube está en Estados Unidos, está en España, pues entonces la petición de x tarea o la petición que va a hacer el
+Teacher: cliente que está en Colombia al servidor que está en Estados Unidos, probablemente no es no es necesariamente cierto, pero probablemente pueda tener una pérdida de paquete, se puede perder el mensaje, ¿cierto?
+00:25:00
+Teacher: O puede que el camino que escoja sea un camino largo y tortuoso para llegar hasta el servidor.
+Teacher: Entonces, ¿qué pasa si lo que se perdió no fue eh o sea, si el problema no es de que falló el cliente o el servidor, sino que yo mandé la petición y nunca llegó al servidor?
+Teacher: Entonces, yo nunca voy a obtener respuesta porque nunca se va a procesar.
+Teacher: Y cómo pasa al revés, ¿qué pasa si se pierde la respuesta?
+Teacher: El servidor sí la hizo, pero mandó la mandó la respuesta al cliente, pero en ese en el camino el mensaje se perdió o no llegó el mensaje o hubo un problema de seguridad y entonces llegó corrupto.
+Teacher: ¿Qué hacemos nosotros ahí?
+Teacher: El mensaje ni llegó, ni llegó la petición o no llegó la respuesta.
+Teacher: El cliente no la va a volver a mandar porque ya sabe que el servidor, pues el servidor la la debería de responder y el servidor no va a reenviar la respuesta porque simplemente el cliente porque ya la respondió,
+Teacher: ya le dio la respuesta y se la mandó al cliente, ¿cierto?
+Teacher: Entonces, eh esa es una posibilidad de fallo.
+Teacher: Otra, se cae el servidor o se cae el cliente.
+Teacher: Vamos a ir analizando cada una de ellas cómo sería el comportamiento, pero digamos que aquí tenemos dos escenarios, una con comunicación fiable y otra con comunicación no fiable.
+Teacher: La comunicación fiable hace referencia a que yo puedo garantizar, o sea, está casi que dentro de mi dominio de que el cliente y servidor sí o sí se van a comunicar.
+Teacher: O sea, no hay un no hay posibilidad de perdida de paquete.
+Teacher: ¿Cómo podemos garantizar eso?
+Teacher: Cuando estamos trabajando en una LAN.
+Teacher: ¿Listo?
+Teacher: Entonces, si yo estoy en un, digámosle así, yo estoy en un cluster y estoy mandando mensajes de un equipo a otro, a menos de que falle el switch, que sería un problema de canal, ¿cierto?
+Teacher: A menos de que falle el switch, yo puedo garantizar de que mi mensaje va a llegar al servidor, ¿cierto?
+Teacher: que esa petición que yo mandé con dirección servidor va a llegar en algún momento.
+Teacher: Entonces, eso es lo que nosotros llamamos comunicación fiable.
+Teacher: O sea, nosotros podemos garantizar o el canal de comunicación es confiable.
+Teacher: Yo puedo garantizar de que no hay pérdida de paquetes.
+Teacher: Entonces, si no hay pérdida de paquetes, entonces los el problema solamente está en si el cliente o el servidor están disponibles o están respondiendo, ¿cierto?
+Teacher: Si el servidor cae, no hay forma de saber si se ha ejecutado el servicio.
+Teacher: O sea, si el servidor se cayó, no sabemos si ya había terminado de procesar y faltaba solamente dar la respuesta.
+Teacher: Entonces, much muchas veces.
+Teacher: Entonces, muy probablemente vamos a tener que volverlo a ejecutar.
+Teacher: Si tenemos una lista de tareas pendientes por ejecutar o que están en ejecución y el servidor cae, cuando vuelva a levantar el servidor, pues deberíamos de tener esa lista para poder saber qué datos o qué procesos o qué
+Teacher: tareas estaban pendientes por ejecutar y terminarlas de ejecutar.
+Teacher: Pero ojo, solamente en el caso donde no sea necesario o que el sistema sea síncrono, o sea, que no haya un cliente conectado que esté esperando la respuesta, sino que yo le puedo mandar la respuesta luego.
+Teacher: ¿Listo?
+Teacher: Y a él le va a llegar la la respuesta luego y él la va a procesar cuando le llegue.
+Teacher: Entonces, si estamos en un modelo asíncrono, yo puedo levantar el servidor para continuar o para retomar o reiniciar las tareas que estábamos en ejecución y que no alcanzamos a terminar.
+Teacher: Si ya habíamos terminado, pero no alcanzamos a mandar el mensaje, pues entonces deberíamos de tener una base de datos o un o un registro que me diga qué terminé y a quién y qué está pendiente de salir o qué está pendiente
+Teacher: de ser despachado, ¿cierto?
+Teacher: O qué mensajes no se han enviado de tareas que ya se habían terminado.
+Teacher: Todo eso lo deberíamos de tener nosotros registrado en algún momento, en algún lugar, perdón.
+Teacher: Entonces, en la semántica, como mucho una vez, o sea, el 01, si llega la respuesta significa que se ejecutó una vez.
+Teacher: O sea, si yo solamente hago una petición y espero una respuesta, si llegó respuesta es porque sí se ejecutó.
+Teacher: Si no llega respuesta, se pudo haber ejecutado cero o uno.
+Teacher: No podemos decir nada de ello.
+Teacher: ¿Por qué?
+Teacher: ¿Por qué digo yo que no podemos decir nada de eso?
+Teacher: porque se pudo haber procesado y después el servidor se cayó, ¿cierto?
+Teacher: y no me alcanzó a mandar la respuesta o definitivamente el servidor ya estaba caído cuando yo mandé la petición, entonces no se ejecutó.
+00:30:00
+Teacher: Entonces aquí aquí cuando estamos en este dilema es cuando no sabemos qué hacer porque si se ejecutó mi sistema queda inconsistente, tengo que hacer un rollback o tengo que hacer una devolución de esa transacción y si no se ejecutó
+Teacher: pues no pasa nada.
+Teacher: Simplemente le dije al usuario que no que no fue procesada, ¿cierto?
+Teacher: Pero eso sí escogemos la semántica de como mucho una vez la por defecto, la que nosotros hacemos y esperamos la respuesta y si no nos respondió pues simplemente los datos fallaron.
+Teacher: Pero si es la semántica al menos una vez donde yo voy a continuar, voy a intentar intentar hasta que llegue a la respuesta, entonces voy a retransmitir.
+Teacher: Entonces, lo mismo, voy a retransmitir la respuesta, ¿cierto?
+Teacher: cuando el servidor se recupere.
+Teacher: Entonces, voy a retransmitir la respuesta eh para poder garantizar de que el mensaje le llegue al cliente.
+Teacher: ¿Listo?
+Teacher: Entonces, esa es esa es la posibilidad o eso, digámoslo así, la ventaja que tenemos nosotros para poder trabajar o que tenemos que pensar cuando nosotros estamos implementando este modelo de cómo va a funcionar cuando el servidor cae, pues entonces cuando suba,
+Teacher: lea los trabajos que están pendientes, lea las tareas pendientes por enviar y simplemente haga el envío.
+Teacher: Mira que estos son elementos o características de requisitos no funcionales del sistema, ¿cierto?
+Teacher: Son simplemente la garantía que nosotros como arquitectos o como desarrolladores vamos a garantizar sobre el software qué es lo que el software va a realizar en caso de que algo falle.
+Teacher: Entonces, eso es tareas adicionales, es programación adicional que vamos a tener nosotros que implementar o que adoptar dentro de nuestro sistema.
+Teacher: sea que yo escriba el código o sea que monte una biblioteca o algo que me ayude a gestionar este tipo de escenarios y lo mismo, usar un sistema de transacciones distribuidos.
+Teacher: O sea, si tengo que cambiar o hacer una modificación en múltiples servicios con una tarea, esta tarea hace de que se modifiquen varios servicios, pues en caso de que uno de esos servicios falle, pues tengo que identificar qué falló,
+Teacher: cuál fue el que falló, verificar si puedo reenviarlo a otro servicio que que pueda atender esa tarea de nuevo o si no pues empezar a hacer el proceso de de evolución de todos los de todos los casos.
+Teacher: Eso y esto no es fácil, esto es uno de los dolores de cabeza más grandes que tiene la computación distribuida.
+Teacher: Hay algunos patrones que nos ayudan a resolver esto, pero no es infalible, no es, digámoslo así, no es la solución o no existe una bala de plata que resuelva este tema de las transacciones distribuidas.
+Teacher: Pero, ¿qué pasa si la comunicación no es fiable, o sea, se pueden perder los paquetes.
+Teacher: Entonces, aquí volvemos a Ahora sí tenemos que analizar esto.
+Teacher: ¿Y qué pasa si se perdió fue la petición y la respuesta?
+Teacher: ¿Será que vamos si no hay respuesta retransmitimos?
+Teacher: Cuando se cumpla el plazo, cuando se acabe el tiempo, será que volvemos a retransmitir el mensaje.
+Teacher: Pero si retransmitimos el mensaje, lo ideal es de que nuestros mensajes o nuestros operaciones sean ideepotentes, que cada vez que yo lo llame, si se ejecutan múltiples veces, pues lleguemos al mismo resultado, que no cambiemos el estado del sistema simplemente porque tuve
+Teacher: que retransmitir o reenviar la petición.
+Teacher: Podemos agregar un número de secuencia, decir, "Mire, es que este es el mensaje uno, este es el mensaje dos, este el mensaje tres y si tengo que retransmitir, pues este es el mensaje tres, eh, digámoslo así, eh, copia uno,
+Teacher: mensaje tres, copia dos, mensaje tres, copia tres, así tantas tantas veces como nosotros eh tengamos nosotros dispuestos para retransmitir o reenviar la misma petición.
+Teacher: Yo puedo elegir de que solamente haga tres tres reintentos o le puedo decir que haga 10 reintentos o le puedo decir que reintente de manera indefinida.
+Teacher: ¿Cierto?
+Teacher: Ya depende la necesidad que tengamos nosotros dentro de nuestro sistema.
+Teacher: Si se pierde la petición, entonces si retransmito no pasa nada.
+Teacher: Pero si se pierde, si lo que se perdió fue la respuesta, pues retransmitir neces implica a que va a volver a ejecutar la tarea, ¿cierto?
+Teacher: Si la tarea es potente, pues no pasa nada, pero gasta recursos.
+Teacher: Pero si no nos vamos a nos vamos a tirar el sistema, vamos a cambiar el estado de mi sistema.
+Teacher: Entonces, una de las posibilidades para evitar eh este tema de los fallos es guardar el histórico de respuestas.
+00:35:00
+Teacher: lo que hablábamos nosotros de guardar un lock, de qué es lo que ya procesé, de qué petición, de qué de qué cliente, qué petición, qué reintento, ya la procesé y cuando llegue una nueva petición, pues simplemente voy y miro a la caché si esa tarea o esa petición ya la había
+Teacher: eh ya la había ejecutado.
+Teacher: Y si ya la había ejecutado, pues simplemente devuelvo la misma respuesta.
+Teacher: No la voy a volver a procesar.
+Teacher: Eso es como una mejora que podemos nosotros hacer si estamos trabajando o si decidimos agregar caché a nuestro sistema.
+Teacher: ¿Listo?
+Teacher: Eh, en el caso de que caiga el servidor, pues si llega la respuesta no pasa nada.
+Teacher: Sí, si llegó la respuesta significa que si el servidor se cayó o no, ya lo procesó al menos una vez.
+Teacher: Y si no llega pues no sabemos nada.
+Teacher: No sabemos si fueron cero o n veces las que se ejecutó, porque puedo mandar múltiples veces y no llega ninguna respuesta.
+Teacher: Entonces, no sé si realmente no fue procesada simplemente porque el servidor no estaba disponible o no habían copias de ese servidor para poder atender las solicitudes.
+Teacher: ¿Listo?
+Teacher: ¿Y qué pasa si se cae el cliente?
+Teacher: Pues es lo menos traumático, ¿cierto?
+Teacher: En el peor de los casos, si se cae el cliente, pues el servidor va a estar allá procesa y procese y procese hasta que termine de procesar.
+Teacher: Y cuando ya vaya a dar la respuesta, pues diga, "Ve, no, no hay a quien el cliente ya se fue." Eso es como como
+Teacher: ir a una tienda y decir, "Mire, necesito tal cosa." Y mientras el señor va y busca eh el producto,
+Teacher: cuando vuelve ve que el cliente ya se fue, que no esperó.
+Teacher: Entonces, ¿qué pasó?
+Teacher: se perdió el recurso, se perdió tiempo de respuesta, se perdió eh el tiempo de ir a buscar el recurso y ahorita le toca ir a volverlo a guardar, ¿cierto?
+Teacher: Pero entonces ahí podemos, si tenemos caché, podemos guardar la respuesta en el caché para cuando vuelva el cliente o el cliente quiera volver a hacer la misma solicitud, pero ya lo tenga a la mano, ya tenga la respuesta a la mano.
+Teacher: Alternativas para para eso, utilicemos épocas o utilicemos lees.
+Teacher: Épocas es otro modelo o es otro mecanismo de de control de si el cliente o el servidor están vigentes, ¿cierto?
+Teacher: cada vez que el cliente está en ejecución o o digámoslo así, vamos a estar eh en ejecución, vamos a vamos a tener asignada una época y cada vez que nosotros eh iniciemos o se reinicie el cliente, lo que hace es cambiar la época.
+Teacher: Es como si fuera un contador donde yo soy el la ejecución número uno y voy a estar en en mandando peticiones del de la temporada uno, de la época uno,
+Teacher: pero por algún motivo se me cerró el cliente y tuve que volverlo a iniciar.
+Teacher: Como cerré el cliente, la respuesta no va a llegar, no voy a recibir los datos, pues entonces abro un nuevo cliente y hago de nuevo la misma solicitud.
+Teacher: Pero ahí cuando hago la misma solicitud, ya no estoy en la misma época anterior.
+Teacher: Me va a generar una nueva época, me va a generar un nuevo, digámoslo así, una nueva sesión, por decirlo así.
+Teacher: No es una sesión, es una época, pero para que lo vean de ese modelo.
+Teacher: O sea, cada vez que inicie un cliente o se inicia un cliente o se conecta el cliente, vamos a aumentarle la época.
+Teacher: Vamos a decir, "Es que esta petición fue en la época uno, esta petición volvió en la época dos." Entonces,
+Teacher: cuando cuando yo me doy cuenta que el cliente ha llegado a una petición con una época mayor y tengo tareas que se están ejecutando de del mismo cliente con con épocas menores, pues las puedo desechar.
+Teacher: Listo, porque todas esas épocas menores las puedo desechar, pero también puedo utilizar los lees, ¿cierto?
+Teacher: Entonces con el con los leis, pues entonces aquí vamos a hacer lo mismo.
+Teacher: Si el cliente si el servidor asigna un list mientras dure el servicio, si el cliente no renueva, pues ya sé qué tareas son de ese cliente y simplemente le voy a voy a abortar eh la tarea.
+Teacher: Ese proceso de abortar depende mucho de cómo lo estemos implementando.
+Teacher: No siempre es fácil de hacerlo, no siempre es, digámoslo así, sencillo decirle al sistema operativo, mire, esta tarea o este proceso o este hilo que está ejecutando la tarea, eh, las peticiones de este cliente, por favor párenlo porque el cliente ya se desconectó,
+Teacher: ¿listo?
+Teacher: O el cliente no está disponible.
+Teacher: Y lo mismo del lado del servidor, si del lado del del cliente, si el servidor es el que falla, pues entonces el cliente va a tener como la claridad de decir, "Okay, tengo que buscar un nuevo servidor o tengo que buscar un nuevo elemento." ¿Listo?
+00:40:00
+Teacher: Eh, abordar no siempre es trivial porque puede dejar incoherente el estado del servidor, ¿cierto?
+Teacher: O sea, puede dejar en un que modifica unos datos y otros no.
+Teacher: Entonces debemos garantizar de que ese tipo de inconsistencia no no vaya a quedar en nuestro sistema y mucho menos cuando estemos partiendo o parando de manera bruta el servicio.
+Teacher: O sea, si el servicio estaba modificando, estaba agregando datos a una tabla, por ejemplo, estaba agregando datos a una tabla y yo rompo, parto la ejecución de ese servicio, ¿qué garantía hay de que esos datos que estaba yo estaba ejecutando no
+Teacher: van a quedar después?
+Teacher: no van a ser basura o no van a interferir con la siguiente vez que yo voy a procesar los datos.
+Teacher: Entonces, eso en algunos casos no es fácil de de detectar o de identificar y entonces en ese caso nosotros preferimos no abortar.
+Teacher: ¿Listo?
+Teacher: que termine la ejecución, perdamos los recursos, perdamos el tiempo de procesamiento, pero garantizamos de que cuando termine y genere la respuesta, pues no va a haber quién la reciba y la podamos guardar en una caché o simplemente eh
+Teacher: cuando nos demos cuenta de que no, pues entonces podamos decirle a la base de datos, ve devuelva todo todos los cambios sin sin afectar el el servidor real, ¿cierto?
+Teacher: o borre todos los datos que guardó de manera temporal, porque ese cliente o esa petición pues ya no se pudo ejecutar de manera coherente.
+Teacher: Vamos bien hasta ahí o alguna pregunta.
+Teacher: Espero que hayan quedado bien.
+Student22: Bien.
+Student22: Ah.
+Teacher: Listo.
+Teacher: Listo.
+Teacher: Ese era el quinto aspecto de diseño.
+Teacher: Entonces, mire que tenemos muchas cosas que analizar.
+Teacher: al momento de definir o decidir que vamos a trabajar con una arquitectura cliente servidor.
+Teacher: Vamos a hablar de estas últimas dos arquitecturas en lo que nos queda de la clase, ¿cierto?
+Teacher: la editor suscriptor y la peer to peer.
+Teacher: Entonces, vamos a hablar un poco sobre el modelo editor suscriptor.
+Teacher: Este es un modelo desacoplado.
+Teacher: También tenemos dos roles, un editor suscriptor en muchos eh digámoslo así, hay variantes de este modelo.
+Teacher: Eh, hay uno que se llama editor consumidor, este que es editor suscriptor, que es un poco diferente, ¿cierto?
+Teacher: Eh, vamos a hablar un poco de las diferencias, pero eh, ¿cuál es la idea?
+Teacher: La idea es que vamos a tener una plataforma donde uno de los nodos va a generar eventos o va a generar mensajes y van a ver otros elementos que están escuchando, están pendientes de esos mensajes.
+Teacher: ¿Listo?
+Teacher: se llama editor suscriptor porque esos que emiten o que generan mensajes son elementos editores o son nodos editores.
+Teacher: Y los que quieren escuchar esos mensajes de la plataforma son los suscriptores.
+Teacher: Los suscriptores no reciben todos los mensajes, solamente los que ellos están interesados.
+Teacher: Los editores publican cualquier tipo de mensaje, ¿no?
+Teacher: No interesa si hayan suscriptores o no sobre esos mensajes.
+Teacher: Vamos a ir hablando un poco más sobre eso.
+Teacher: Este este es un modelo o este es un una arquitectura, digámoslo así, que normalmente vamos a llamar de eventos distribuidos.
+Teacher: ¿Listo?
+Teacher: O sea, que es un sistema basado en eventos donde la forma de comunicarnos o como nos vamos a comunicar entre el uno y el otro es simplemente lo lo voy a publicar en una en un gestor, en un broker.
+Teacher: Voy a publicar un evento y de ese broker van a, digámoslo así, va a llegar a unos suscriptores que van a recibir esos eventos.
+Teacher: ¿Listo?
+Teacher: El editor publica, el suscriptor recibe los eventos, pero pero la recepción puede ser de dos tipos o de una de dos tipos.
+Teacher: O puede ser utilizando push, que sería como lo normal, o sería utilizando el modelo pull.
+Teacher: O sea, yo puedo suscribirme en cualquiera de esos dos tipos, con una plataforma que me haga una notificación push o una notificación pull.
+Teacher: ¿Qué cuál es la diferencia entre este y este?
+Teacher: Y es que cuando un editor genera un dato, genera un evento, los suscriptores van a estar aquí pendientes de ese evento, están ahí escuchando, ¿cierto?
+Teacher: O o en un momento determinado se registraron y dijeron, "Ey, a mí me interesa el tema de la bolsa. Todos tres están interesados en el tema de la bolsa." Entonces,
+Teacher: cuando este señor habla de la bolsa, pues la idea es de que estos tres elementos se vean notificados.
+Teacher: ¿cierto?
+00:45:00
+Teacher: O le llegue el mensaje.
+Teacher: Él no va a mandar tres mensajes, él va a mandar uno.
+Teacher: Pero como hay tres personas interesadas, entonces ese mensaje se convierte en tres envíos a los suscriptores.
+Teacher: Cuando estamos hablando de la notificación push es porque la plataforma, el servicio, el el broker, el elemento que va a estar recibiendo los mensajes, sabe o tiene forma de localizar a los suscriptores y y a medida que van llegando los
+Teacher: eventos, él va mandando la notificación.
+Teacher: ¿Listo?
+Teacher: Digamos que de manera eh en línea, por decirlo así, cada vez que ocurre un evento dentro de nuestra plataforma, esa notificación o ese evento se le va a enviar a todos los suscriptores, a todos los que estén pendientes de ese elemento.
+Teacher: ¿Listo?
+Teacher: La alternativa pool hace referencia de que la plataforma va a ser pasiva.
+Teacher: Aquí ya no va ya no va a buscar los suscriptores y los va les va a mandar el mensaje, sino que el suscriptor va a tener que preguntarle a la plataforma, ¿hay mensajes de los eventos que o de los de los eventos que yo soy interesado?
+Teacher: Si me dice que sí, los descargo.
+Teacher: ¿Hay eventos?
+Teacher: No, no hay eventos, entonces no hago nada.
+Teacher: Hay eventos, no hago nada.
+Teacher: Entonces, en el modelo push es la plataforma la que busca los suscriptores.
+Teacher: En el modelo Pool son los suscriptores que buscan en la plataforma si hay más eventos o si hay eventos nuevos en la plataforma.
+Teacher: O sea, que si me demoro mucho en preguntar, pues voy a recibir un evento que pudo haber ocurrido hace mucho rato.
+Teacher: ¿Listo?
+Teacher: Dependiendo de cuál sea el modelo que nosotros estemos utilizando, pues vamos a tener que implementar de manera diferente o vamos a poder seleccionar de manera diferente nuestros nuestroos gestores.
+Teacher: ¿Listo?
+Teacher: Aquí habla de gestión de colas.
+Teacher: ¿Por qué habla de gestión de colas?
+Teacher: Porque en este modelo editor suscriptor, como es basado en eventos, utilizamos un mecanismo o una herramienta llamada la cola de mensajes, porque la comunicación no va a ser de manera directa, sino que yo lo voy a dejar como una especie de buzón y de ese buzón le va a llegar al
+Teacher: suscriptor.
+Teacher: ¿Listo?
+Teacher: Eh, ¿qué más tenemos?
+Teacher: facilita el uso de sistemas heterogéneos y es un paradigma asíncrono y desacoplado en espacio.
+Teacher: Cuando hablemos de palabra de la palabra asíncrono, hagamos referencia a desacoplado en tiempo o o desacoplamiento temporal.
+Teacher: O sea, que este modelo es desacoplado tanto temporal como espacial.
+Teacher: ¿Por qué temporal?
+Teacher: porque los suscriptores pueden estar o no disponibles en el momento que se genere el evento.
+Teacher: Y no importa porque este señor, el publicador, va a generar el evento sin importar si hay suscriptores o no.
+Teacher: Y los suscriptores y los publicadores no conocen el destinatario, o sea, el publicador no conoce quién es el o cómo llegar al al suscriptor uno.
+Teacher: ¿Por qué?
+Teacher: Porque eso lo hace la plataforma.
+Teacher: Entonces, básicamente es un modelo asíncrono, no tienen que estar de manera simultánea los dos componentes para comunicarse y desacoplado en espacio.
+Teacher: No hay conocimiento de dónde está la ubicación o cuál es la ubicación de ese de ese elemento, porque publicar en un tema no significa de que vaya a ir a todos los suscriptores, ¿cierto?
+Teacher: Van a haber unos suscriptores que reciban y otros que no.
+Teacher: ¿Dónde podemos utilizar este este tipo de de plataformas o de arquitecturas en el mercado bursátil?
+Teacher: Todo el manejo de la bolsa de valores, las acciones, etcétera, es un ejemplo claro de de este tipo, porque voy a tener múltiples elementos que están publicando datos.
+Teacher: Cada uno de estos podría ser un una acción diferente y esa acción genera eventos en la plataforma y las personas que compraron o que están interesadas en esa acción, pues van a ser notificadas.
+Teacher: Las que no, no.
+Teacher: Entonces, yo voy a poder ver si sube o si baja, si compr si compran o si venden.
+Teacher: Todas esas notificaciones me van a llegar a mí porque yo estoy interesado en esos temas.
+Teacher: Eh, las subastas, los chat, las aplicaciones de domótica.
+Teacher: todas las aplicaciones de automóticas, los sensores, eh todo lo de o muchas de las cosas de internet de las cosas eh están o la mejor arquitectura para trabajar esto es utilizar modelo editor suscriptor, ¿listo?
+Teacher: O sea, generar eventos, cada sensor genera un evento y que cada uno de los dispositivos que estén interesados en ese evento pues pueda recibir el la notificación y actuar basados en esa notificación.
+00:50:00
+Teacher: Si no hay ninguno interesado sobre ese evento, pues no pasa nada, ¿cierto?
+Teacher: Ese es básicamente el modelo.
+Teacher: Entonces, en el modelo editor suscriptor, digamos que hay una serie de mensajes básicos, entre esos suscribirme.
+Teacher: Entonces, el suscriptor le dice a la plataforma que se quiere suscribir a un tipo de evento, ¿cierto?
+Teacher: Eh, todos se van a suscribir a un tipo de evento y ya después de que están suscritos, pues solamente queda la espera de que los editores publiquen eventos.
+Teacher: Cuando hay un evento que se publica por parte de un editor, por ejemplo, aquí este editor dos publicó el evento 5, que el evento puede ser cualquier cosa, lo que nosotros queramos nosotros, o sea, es como mandar un mensaje a un buzón y ese buzón lo va a escuchar mucha gente.
+Teacher: Entonces, si estoy en notificación push, cuando llega el evento 5, el la plataforma sabe quiénes se suscribieron a esa a ese evento 5 y a esos elementos les va a mandar la notificación.
+Teacher: ¿Listo?
+Teacher: Entonces, mira que el camino o el canal de comunicación es de este sentido, o sea, para suscribirme hacia acá para notificar de aquí para allá.
+Teacher: ¿Listo?
+Teacher: ¿Qué otro mensaje vamos nosotros a tener?
+Teacher: El de dar de baja.
+Teacher: Dar de baja es dejar dejar de escuchar un tipo de evento.
+Teacher: No, ya no me interesa escuchar eventos del tipo uno.
+Teacher: Pues cuando haya un evento del tipo uno, pues a él ya no se le manda.
+Teacher: ¿Por qué?
+Teacher: Porque él se dio de baja.
+Teacher: Entonces, mira que es un modelo bastante fácil y sencillo de trabajar.
+Teacher: En el modelo pool lo único que cambia es la forma en la que obtenemos los eventos.
+Teacher: En este caso con la notificación push, evento que llega, evento que se notifica.
+Teacher: En la notificación PL, nosotros lo que vamos o los suscriptores van a tener que llamar la función obtiene, es una nueva función o una función get, por decirlo así, que es la función que va a venir hacia nuestra plataforma,
+Teacher: va a mirar los cambios o va a mirar qué eventos se han se han ocurrido de los que estoy interesado.
+Teacher: Voy a verificar cuáles son los elementos que vienen o qué ha ocurrido de este tipo de evento y si hay algo pues descargo el evento.
+Teacher: Si no, pues simplemente no pasa nada, digámoslo así, me devuelven una lista vacía, entonces no hay nada que procesar.
+Teacher: Okay.
+Teacher: Al final el comportamiento es muy similar.
+Teacher: Lo único que lo único que cambia es cuándo se le va a notificar al suscriptor, cuándo el suscriptor va a recibir los datos.
+Teacher: ¿Listo?
+Teacher: En este modelo, en este modelo push, yo voy a tener que o el suscriptor debe tener la capacidad de recibir conexiones o de recibir información que viene desde la plataforma.
+Teacher: Entonces, entre comillas, vamos a tener que darle características de servidor que esté escuchando a cualquier modificación o a cualquier dato que me quiera mandar la plataforma.
+Teacher: En cambio, en este no.
+Teacher: en este cuando yo decida eh cuando esté desocupado, después de x tiempo, etcétera, cuando yo decida, voy a venir a la plataforma y simplemente voy a descargar los datos que tengo.
+Teacher: Cada uno tiene pues sus pecurialidades.
+Teacher: Este es se usa más para cuando yo necesito que el evento se resuelva o sea atendido en en tiempo real.
+Teacher: este cuando los eventos no son tan importantes, cuando no necesito reaccionar de manera instantánea.
+Teacher: Si yo estoy en una hidroeléctrica y estoy censando el nivel del del embalse, ¿cierto?
+Teacher: Yo estoy monitoreando el nivel del envale.
+Teacher: Si el enval se está subiendo, ¿qué tengo que hacer?
+Teacher: Abrir con puertas, porque si no voy a tener una inundación.
+Teacher: Entonces, yo voy a abrir con puertas.
+Teacher: ese tipo de acciones donde yo estoy pendiente de de subidas de de altura.
+Teacher: Cuando el sensor lo notifica, pues yo espero que me notifique lo más pronto posible para poder reaccionar.
+Teacher: En cambio, en el modo pool pudo haberse censado ese el evento, pero yo hasta que yo no vaya y pregunte sobre ese evento, no voy a llegar o no voy a recibir ese mensaje para poder reaccionar.
+Teacher: Entonces, unas por otras.
+Teacher: Listo.
+Teacher: Como he sabido, desafortunadamente el la arquitectura que más que más utilizamos nosotros es cliente servidor, ¿cierto?
+00:55:00
+Teacher: Pero si con cliente servidor ya existen tecnologías que me ayudan a simular, digámoslo así, el comportamiento del editor suscriptor.
+Teacher: ¿Listo?
+Teacher: ¿Cómo lo hacemos?
+Teacher: utilizando alguno de estos dos modelos, el cliente pull y el server push.
+Teacher: Estos dos elementos no hacen parte de la arquitectura, son variaciones de cliente servidor que intentan simular lo que ocurre en en el maestro suscriptor, en el editor, perdón, en el editor suscriptor.
+Teacher: Sí. Eh, ¿por qué?
+Teacher: Porque mire que estamos hablando de cliente y servidor, ya no estamos hablando de publicador y suscriptor, cliente y servidor, pero vamos a simular los comportamientos.
+Teacher: ¿Cómo lo hacemos?
+Teacher: Yo podría utilizar cliente PL, cliente pool para obtener datos de mi servidor cuando yo necesite los datos, cuando se generen los eventos.
+Teacher: O yo podría utilizar el modelo server push para notificarle a los clientes cuando el servidor tenga algo para decirle a los clientes.
+Teacher: A diferencia de cliente servidor, que el cliente inicia la comunicación y se queda esperando la respuesta.
+Teacher: Con este modelo el cliente se podría conectar y no estar esperando respuesta, pero dejar el canal abierto para que el servidor de alguna manera me pueda notificar, no me pueda enviar mensajes, pero son, digámoslo así, son tecnologías adicionales a cliente servidor.
+Teacher: ¿Listo?
+Teacher: Entonces, ¿qué es esto de del cliente pool?
+Teacher: El cliente va a estar descargando, va a estar pidiéndole al servidor que le entregue datos.
+Teacher: Esto es un comportamiento muy similar a lo que teníamos nosotros con el el editor suscriptor push eh pull y el server push pues sería que el servidor le busque a los clientes y le mande los datos.
+Teacher: Entonces, mira que es un comportamiento similar o una forma como nosotros podríamos implementar utilizando cliente servidor.
+Teacher: Esa misma característica de notificar al usuario cuando ocurra un evento, cuando algo sucede en el del lado del servidor, le puedo decir al usuario, "Ey, acaba de pasar esto de manera instantánea." Entonces,
+Teacher: mira que son dos tecnologías que espero que hayan escuchado y si no no lo han escuchado, pues empiecen a investigar en ello y aprendan un poquito de ello.
+Teacher: No vamos a profundizar mucho en ello aquí.
+Teacher: Pero eh digámoslo así, si yo no quiero implementar cliente servidor, puedo utilizar cliente pull y server push.
+Teacher: Listo.
+Teacher: Dime [estudiante].
+Student26: Profe, este es esta es la tecnología que se utilizan los sockets, ¿no?
+Student26: para hacer, por ejemplo, chats.
+Teacher: Entonces, por eso, para no implementar el otro modelo, pues entonces estamos simulando o o teniendo un comportamiento similar como lo que son los web socket.
+Teacher: Exactamente.
+Teacher: O server push es otro otra otro modelo, otra arquitectura también que nosotros podríamos llegar a tener.
+Teacher: ¿Listo?
+Teacher: Entonces, ¿qué es esto del cliente pool?
+Teacher: O sea, vamos a hacer de que nuestro cliente eh haga peticiones al servidor, ¿cierto?
+Teacher: Y esas peticiones pueden ser periódicas o pueden ser persistentes.
+Teacher: ¿Listo?
+Teacher: Cuando yo digo una una petición periódica es lo que normalmente nosotros hacemos con Ajax.
+Teacher: Bueno, ya no se ve esto el tema del Ajax, pero con muchas de las aplicaciones que nosotros hacemos con nuevas con las nuevas tecnologías donde, por ejemplo, yo estoy interesado o yo yo hago una aplicación en Read o en Angular o en View
+Teacher: que va a ir descargando datos que están llegando al servidor, ¿cierto?
+Teacher: es cada x tiempo hace una petición al servidor para descargar los últimos datos o puedo estar utilizando un modelo de programación reactiva donde cada x tiempo me va me va a ir entregando porciones de datos.
+Teacher: Entonces, cuando estoy en ese modelo, estoy trabajando con cliente pulling.
+Teacher: ¿Listo?
+Teacher: O sea, cada x tiempo eh vamos a estar yendo al servidor a mirar a ver si hay cambios o a descargar los cambios.
+Teacher: ¿Listo?
+Teacher: Si no hay cambios, pues el servidor me responde, no hay.
+Teacher: Y si hay cambios, pues el servidor responde con los cambios que o con los nuevos datos que tiene que que descargar.
+Teacher: ¿Listo?
+Teacher: Entonces eso es lo que nosotros llamamos un cliente pulling.
+Teacher: Hay otro que se llama long pulling o long polling.
+Teacher: ¿Y qué es este long polling?
+Teacher: Y es el modelo, digámoslo así, tradicional, donde yo hago una petición y hasta que el servidor no me diga que hay datos, me quedo ahí conectado.
+Teacher: ¿Y cuánto tiempo voy a estar conectado?
+Teacher: Toda la vida si es necesario.
+Teacher: Listo.
+Teacher: A en este modelo es el modelo tradicional con el que nosotros o donde nosotros podríamos en en un momento determinado decir, "Ah, necesito mensajes para empezar a procesar." Entonces el cliente va al servidor y le dice,
+01:00:00
+Teacher: "Hay nuevos mensajes." Y como no hay,
+Teacher: el servidor se queda calladito y se queda callado hasta que llegue un nuevo mensaje al servidor o hasta que llegue una nueva tarea que a él le pueda interesar.
+Teacher: Y en el momento en el que le llegue la tarea, pues simplemente le dice al cliente, "Listo, ya llegó esta." Y entonces el cliente la recibe y puede empezar a procesar.
+Teacher: Hay que tener en cuenta algo con este L poling y es que si vamos a utilizar este modelo, vamos a tener que quitar de nuestro vocabulario o de nuestra eh caja de herramientas los timeouts.
+Teacher: ¿Listo?
+Teacher: Porque yo estoy necesitando o o cuando utilizo L polling es porque yo necesito que el servidor me entregue un dato para poder seguir trabajando, para poder seguir procesando y voy a esperar todo el tiempo que sea necesario hasta que llegue un
+Teacher: dato.
+Teacher: ¿Listo?
+Teacher: Un dato que me sirva a mí o que yo pueda empezar a procesar.
+Teacher: ¿Listo?
+Teacher: Y el otro modelo pues es el server push, ¿cierto?
+Teacher: Entonces, en este server push es cuando nosotros tenemos que el servidor de alguna manera sabe localizar los clientes y puede enviar información a ese cliente.
+Teacher: Entonces, hay distintas opciones desde el mundo o desde donde nosotros o mejor dicho con este server push lo que sucede es que el cliente se conecta en un hilo, pues en una tarea en background o en segundo plano,
+Teacher: él se conecta y se queda esperando a que el servidor le mande información.
+Teacher: El cliente puede seguir trabajando.
+Teacher: Él tiene una tarea en segundo plano para escuchar al servidor, pero él sigue trabajando.
+Teacher: Puede seguir interactuando con el usuario, haciendo otras peticiones a otros servidores.
+Teacher: Pero cuando ocurra un evento por ese canal de en background o ese canal en segundo plano, cuando llegue un mensaje, pues lo voy a procesar.
+Teacher: ¿Listo?
+Teacher: Entonces, la idea es de que sea un modelo, digámoslo así, inverso a lo que normalmente decimos nosotros en cliente servidor.
+Teacher: Nosotros decimos, el servidor no está haciendo nada hasta que el cliente le hace una petición.
+Teacher: En este caso, el cliente se conecta, pero deja el canal abierto para escuchar.
+Teacher: Entonces, mira que toma el escenario eh contrario.
+Teacher: Y en, digámoslo así, tecnológicamente en la parte web nosotros tenemos estos tres tecnologías, http server push, que es lo que normalmente utiliza, por ejemplo, el servidor de correo electrónico para notificarnos en los celulares cuando llegue un nuevo correo.
+Teacher: Server send events, que es cuando ocurre un evento, pues el servidor manda ese evento, ¿cierto?
+Teacher: En lugar de que el cliente sea el quien mande el evento para que el procesor lo lea, el servidor puede mandar ese evento o podemos utilizar la tecnología que es mucho más conocida que se llama websocket, que tiene un comportamiento o vamos a tener el mismo comportamiento general,
+Teacher: pero tiene una implementación completamente distinta a cualquiera de estos otros dos.
+Teacher: Juan, cuéntame.
+Student13: Profe, ¿me escucha?
+Student13: Eh,
+Teacher: Sí,
+Student13: no quería preguntarle algo sobre el client pull y el long poll.
+Student13: Yo entiendo que el client es pues como dice periódico,
+Teacher: sí,
+Student13: es unas peticiones periódicas a un pin periódico para que envíe la información que haya disponible.
+Teacher: sí.
+Student13: Cuando habla usted del long quiere decir que si yo hago un solo ping o le hago una petición al servidor, no sería un ping, eh él se queda pendiente de enviarme lo primero que llegue, así se demore o sería también a través de unas peticiones
+Student13: periódicas.
+Teacher: No, no, porque aquí, digámoslo así, aquí quedamos como en el escenario normal de cliente.
+Student13: Yeah.
+Teacher: Ey, necesito, pero solamente que no le voy a mandar una petición al servidor a decirle, "Hágame esto, si no le voy a decir, e, ¿hay algún evento de de la acción? Y pues hasta ahora no ha habido ningún movimiento,
+Teacher: pues no me dice nada.
+Teacher: Pero cuando haya algún movimiento de Ecopetrol, me digámoslo así por el canal que ya abrí con él, por ese canal me va a mandar la respuesta en el long
+Student13: Ya entiendo.
+Student13: Queda como queda como Claro,
+Teacher: pulling.
+Student13: ya ya entendí.
+Teacher: O
+Student13: Pero en el client, el client pool lo que sería más bien es como yo hago la petición periódica constante hasta que
+Teacher: sea,
+Student13: haya y cuando haya algo ahí sí me envían, pero inmediato.
+Teacher: en el CL en el en el clim pull, el servidor responde de una.
+Teacher: Es como, digámoslo así, este cliente pool es como decirle, hay algo y si hay algo me lo manda.
+Teacher: Si no hay nada me dice, "No, no hay nada." En cambio,
+Teacher: en este el servidor se queda callado hasta que llegue algo, pero yo voy a estar ahí conectado esperando a que me llegue algo.
+01:05:00
+Teacher: Y ahí y ahí es donde digo yo, tenemos que quitar el time out porque es una conexión permanente.
+Teacher: Puede durar todo el día sin que pase ningún mensaje por ahí.
+Student13: Listo, profe.
+Student13: Yes.
+Teacher: Listo.
+Teacher: Pero, ¿por qué?
+Teacher: Porque estoy intentando simular ese comportamiento de, "Ey, cuando ocurra algo, quiero que le notifique al cliente o a este otro componente para que pueda recibir los mensajes."
+Teacher: Entonces, ¿cuál es la cuál es la conclusión?
+Teacher: Ey, us editor suscriptor en lugar de cliente servidor.
+Teacher: A pesar de que yo puedo implementar esto, que es por lo que nosotros conocemos más Websocket que que Kafka o trabajamos más con Websocket que Kafka, es simplemente ¿por qué?
+Teacher: Porque nosotros somos más cómodos o es más cómodo para mí implementar una solución utilizando cliente servidor que utilizando otras arquitecturas, ¿sí?
+Teacher: incorporando nuevos elementos, incorporando nuevas mecanismos de comunicación, para nosotros puede ser un poco más complicado o simplemente desconocemos del hecho y entonces no lo usamos.
+Teacher: Pero la idea es que a pesar de que podamos simular o llegar a unos comportamientos similares de editor, suscriptor con cliente servidor, lo ideal es utilicemos el el arquitectura que es, no intentemos resolver con esto,
+Teacher: intentemos resolver con esto lo que no necesitamos.
+Teacher: Sí, como como dice el dicho, si yo sola si yo solo tengo un martillo, todo lo que veo parece una puntilla, ¿cierto?
+Teacher: La idea es esa, es si es puntilla, péguele con el martillo, pero si es un tornillo, pues utilice un destornillador, ¿cierto?
+Teacher: Entonces, ese ese es más o menos el lo que quiero que tengamos en cuenta.
+Teacher: O sea, las arquitecturas están para que se ajusten de manera adecuada al problema que nosotros estamos trabajando.
+Teacher: Hay diferentes variantes de implementaciones de cliente servidor.
+Teacher: Podemos utilizar cliente push y cliente pool y server push o web socket, etcétera.
+Teacher: Este sería el modelo que estamos viendo acá, comunicación directa y es que el cliente y el servidor van a estar conectados de manera directa.
+Teacher: ¿Listo?
+Teacher: ¿Cuál es el detalle?
+Teacher: Y es que los suscriptores tienen tendrían que conocer quién a qué servidores son a los que se van a conectar para poder estar escuchando las peticiones y viceversa, los editores van a tener que mandar mensajes a todos los suscriptores.
+Teacher: ¿Listo?
+Teacher: Si hay cinco suscriptores, entonces eh tiene que mandar cinco mensajes.
+Teacher: Hay que tener en cuenta algo, no necesariamente va a tener que mandárselo a todos estos suscriptores, solamente a los que se conectaron.
+Teacher: Y aquí ya no es un modelo de eh yo estoy interesado en el evento tal, sino yo me voy a conectar al editor dos porque el editor 2 va a generar los eventos que a mí me interesan.
+Teacher: Si hay otro, si este suscriptor está interesado en eventos del editor uno, se tendría que conectar también al editor uno.
+Teacher: Sí, porque tengo que tener el canal abierto eh ante todos los posibles lugares por donde viene la plataforma, eh que pueda venir un mensaje.
+Teacher: Entonces, esto es el modelo de conexión directa, eh, digámoslo así, desventaja del acoplamiento espacial.
+Teacher: Listo, porque suscriptores y editores se tienen que conocer, tienen que estar ahí de manera disponible.
+Teacher: Podemos montar un broker, podemos tener un intermediario, ¿cierto?
+Teacher: Entonces, el intermediario es el que se va a encargar de recibir las suscripciones, recibir los eventos, publicar la eh las respuestas o los eventos.
+Teacher: Entonces, digamos que ese intermediario pues va a hacer toda esa tarea de gestión de de la arquitectura, ¿cierto?
+Teacher: Pero, ¿qué problema ven ustedes aquí que ese intermediario?
+Teacher: ¿En qué se convierte de manera general?
+Teacher: En un servidor, ¿cierto?
+Teacher: Donde es mi cuello, mi cuello botella.
+Teacher: Dependemos de las de las capacidades o de los recursos de ese intermediario para poder notificar a todos los suscriptores y recibir las ediciones.
+Teacher: Y en el caso de que ese elemento falle, pues toda mi arquitectura se va.
+Teacher: Entonces, tener un solo intermediario puede, digámoslo así, tiene como ventaja que tenemos ya desacoplamiento espacial, ya los editores y suscriptores no se conocen, pero tenemos un cuello de botella y punto crítico de fallo, ¿listo?
+Teacher: O punto único de fallo.
+Teacher: Entonces, ¿cómo lo resolvemos?
+Teacher: Ah, pongamos una red de intermediarios, o sea, pongamos un clúster de intermediarios.
+Teacher: De esa manera vamos a tener replicación, no vamos a estar dependiendo de uno solo, eh, etcétera, etcétera.
+Teacher: Si uno de ellos cae, pues entonces tengo otro de respaldo.
+01:10:00
+Teacher: Está chévere esta solución, ¿cierto?
+Teacher: Esta es la solución óptima.
+Teacher: ¿Cuál es el problema?
+Teacher: ¿Qué problema le ven a esta?
+Student26: La plata.
+Student26: Yeah.
+Teacher: El único problema que tenemos todos, no tenemos plata, ¿cierto?
+Teacher: Y es que aquí acabamos de pasar de un modelo donde con un servidor o con un nodo o un contenedor resolvíamos.
+Teacher: Ahora tenemos que tener siete contenedores, ocho contenedores, perdón, eh o ocho máquinas o ocho máquinas virtuales para poder garantizar de que mi arquitectura no caiga, ¿cierto?
+Teacher: Para garantizar el el desacoplamiento espacial, las la habilidad y la fiabilidad.
+Teacher: O sea, que mi sistema no falle, que pueda crecer, que podamos tener más suscriptores, que podamos tener más editores y mi plataforma funcione de manera eficiente, ¿cierto?
+Teacher: Pero nos tenemos que meter la mano al bolsillo mucho más grande solamente para garantizar ese ese esa característica no funcional de la aplicación.
+Teacher: O la otra es utilizando comunicación a grupo.
+Teacher: Comunicación a grupo es un mecanismo de comunicación que vamos a ver en el próximo módulo y es que puedo mandar mensajes por la red y ese mensaje le va a llegar a múltiples a uno, a todos o a múltiples eh nodos dentro de la red.
+Teacher: Entonces, yo podría utilizar ese mecanismo de comunicación a grupo para poder decir, "Mire, yo necesito mandarle este mensaje a tal a los que estén interesados en este tipo y los suscriptores van a estar escuchando el canal cuando lleguen eventos de ese tipo." ¿Listo?
+Teacher: Entonces esa es otra posibilidad de implementar editor suscriptor, pero los mecanismos de comunicación a grupo no son tan, digámoslo así, no son tan comunes para para el día a día de nuestro trabajo, ¿cierto?
+Teacher: Entonces, la solución ideal o la solución que normalmente vamos a estar trabajando es utilizando esta esta arquitectura que tenemos acá.
+Teacher: ¿Listo?
+Teacher: ¿Por qué?
+Teacher: Porque es la resiliente, es la pero es la más costosa, es la que me va a a costar mucho más implementarla.
+Teacher: Por esa razón algunos van a elegir mejor irse a a client polling y server push, ¿cierto?
+Teacher: Porque solamente necesitamos los dos elementos.
+Teacher: En este caso, si yo quiero hacer las cosas bien, debemos tener una un clúster, una red de intermediarios o un o un conjunto de elementos intermediarios para evitar eh la para garantizar la tolerancia a fallos y la capacidad de
+Teacher: crecimiento.
+Teacher: Bueno, los eventos, suscribirse, darse de baja, publicar un evento lo genera el editor, notificar, lo hace el suscriptor cuando es push obtiene, lo hace el suscriptor, ¿ve?
+Teacher: notifica el evento, lo hace el la plataforma hacia el suscriptor, obtiene lo ejecuta el suscriptor para leer lo que hay en la plataforma.
+Teacher: Aquí hay algunos otros modelos, otros elementos.
+Teacher: Ah, darse de baja.
+Teacher: Ah, bueno, aquí ya está.
+Teacher: Eh, darse baja.
+Teacher: Esto es como otras notificaciones, otros elementos adicionales que podríamos llegar a tener.
+Teacher: Y aquí nos hacemos una pregunta.
+Teacher: Chanfle, ¿no alcanzamos editor?
+Teacher: Pir to p.
+Teacher: Aquí nos hacemos una pregunta y es, ¿tengo es estas dos arquitecturas o tengo estas dos implementaciones?
+Teacher: Voy a tener un cliente que está generando datos y tiene que mandarle información a tres servidores, uno que imprime, otro que almacena y otro que proyecta datos.
+Teacher: y voy a tener una, digámoslo así, una implementación similar, pero utilizando editor suscriptor.
+Teacher: Aquí el que genera los datos, el que es activo, el que inicia la comunicación, ¿quién es?
+Teacher: El editor.
+Teacher: Y manda el evento a la plataforma y la plataforma le va a enviar a varios suscriptores, a los tres suscriptores que tiene, el de imprimir, el de almacenar y el de proyectar datos.
+Teacher: Y hay dos preguntas.
+Teacher: ¿En cuál de las dos es más fácil de añir un nuevo consumidor?
+Teacher: alguien que reciba la información y la procese.
+Teacher: ¿En cuál de los dos es más fácil?
+Teacher: ¿En cliente servidor o en editor suscriptor?
+Teacher: agregar un nuevo nodo que reciba los datos y los procese.
+Student26: servidor.
+Student26: No.
+Student13: editor sub.
+Student13: Yo diría que en el editor subscriptor porque ya hay un punto intermedio que filtra.
+Teacher: [estudiante], ¿por qué dices cliente servidor antes de que [estudiante] fue el que habló, cierto?
+Student13: Felipe,
+Teacher: [estudiante].
+Student13: profe.
+Teacher: Ah, Juan.
+Student26: Sí, pues porque el cliente simplemente le hace la petición al servidor y no importa si el cliente no está, pues bien.
+Student26: Si, está bien.
+Teacher: Imaginemos que, espera que por aquí puedo hacer cuadrito.
+Teacher: Sí. Entonces, vamos a agregar otro consumidor.
+Teacher: Sí, ese consumidor digamos que va a mandar un correo.
+01:15:00
+Teacher: ¿Listo?
+Teacher: Es esos datos los voy a mandar por un correo.
+Teacher: ¿Qué es más fácil?
+Teacher: ¿Aregarlo al cliente servidor o a este otro?
+Teacher: Viene, viene aquí mi pregunta.
+Student8: Ah.
+Teacher: Si yo te si yo trabajo con cliente servidor, ¿sí?
+Teacher: ¿Qué es agregar un nuevo nodo?
+Teacher: Es agregar un nuevo ¿qué?
+Student13: Nuevo proceso desde el servidor.
+Teacher: Un nuevo servidor, ¿cierto?
+Student13: It
+Teacher: Voy a el servidor 4 y sabemos de que en arquitectura cliente servidor el cliente tiene que conocer el servidor.
+Teacher: O sea, que agregar un nuevo consumidor implicaría que yo tuviese que venir aquí a la aplicación del cliente.
+Teacher: Sí, que yo tengo que venir aquí a la aplicación del cliente y decirle en su código ahora, mándele los datos al servidor 4. Vale.
+Teacher: ¿Qué se pasó con el texto del servidor 4?
+Teacher: Sí, yo al cliente tendría que venir y decirle, "Ey, mándele los datos al nuevo servidor 4."
+Teacher: Sí. Y el servidor 4. Okay.
+Teacher: Y podemos generar respuesta.
+Teacher: En cambio, en el modelo editor suscriptor, ¿qué ibas a decir, Juan?
+Teacher: ¿Por qué crees tú que es más fácil?
+Student13: Pues yo siento que ya ya hay una información en el servidor intermedio o en el broker que lo único que tendría que hacer es replicarla hacia un nodo extra, pero ya tendría esa información lista.
+Teacher: Eh,
+Student13: Es un punto intermedio de de concentración de las peticiones.
+Teacher: exactamente.
+Teacher: Aquí agregar un nuevo este nuevo nodo, este otro suscriptor cuatro.
+Teacher: Agregar este nodo.
+Teacher: Lo único que necesita es decirle a al broker, ey, estoy interesado en los eventos y el broker me lo va a notificar.
+Teacher: Listo.
+Teacher: Sea por pull o push, yo solamente tendría que desarrollar a quién, a este, ¿cierto?
+Teacher: En cambio, aquí yo tendría que modificar el cliente y tengo que modificar el servidor, porque yo tengo que garantizar de que el cliente, además de mandárselo a los tres que ya existen, también le mande el la misma notificación al cuarto.
+Teacher: Recuerden que en el modelo eh cliente servidor eh si tengo si tengo que mandar datos a cuatro servidores, me tengo que conectar a los cuatro servidores para mandar la información.
+Teacher: En cambio, en esta otra arquitectura solamente lo mando al broker y el broker se encarga de distribuirlo.
+Teacher: Pero ahorita viene la pregunta, ¿y si queremos que el generador, o sea, si el generador sepa cuándo se ha procesado los datos cada consumidor?
+Teacher: Yo quiero que este señor, este nodo, sepa que ya se procesó, que ya se imprimió, que ya se almacenó, que ya se proyectó y que ya se envió por correo.
+Teacher: ¿En cuál de los dos es mejor?
+Teacher: M.
+Student13: Este es el Yeah.
+Teacher: ¿Por qué?
+Student13: Profe.
+Teacher: Porque el cliente servidor, el canal de cliente servidor es bidireccional.
+Teacher: Sí, yo mando los datos, yo le puedo responder, yo le puedo responder diciéndole, "Ya lo procesé." En el modelo editor suscriptor,
+Teacher: el editor no sabe quiénes son los suscriptores y los suscriptores no conocen el editor y como no lo conocen, pues no tienen forma de notificarle que ya se procesó.
+Teacher: Listo.
+Teacher: Entonces, cuando yo necesito un canal bidireccional, o sea, yo necesito recibir notificaciones o recibir eh resultados del procesamiento, yo tendría que hacerlo en un modelo cliente servidor o maestro trabajador,
+Teacher: pero pues hablando en estos dos escenarios, trabajamos con el modelo, ¿no?
+Teacher: el maestro trabajador, no, porque el maestro trabajador no le distribuye, no le manda a todos los trabajadores la misma tarea, él lo distribuye.
+Teacher: Entonces, aquí en cliente servidor yo puedo mandar los datos, la mismos los mismos datos a todos los servidores, pero si yo necesito retroalimentación es más fácil para el servidor darle una respuesta al cliente porque por este lado no habría cómo.
+Teacher: Tendríamos que decirle a este señor que se convierta en editor, publique un evento y que este tenga por acá un procesito en background, que sea un suscriptor y que esté escuchando eventos para él.
+Teacher: Listo.
+Teacher: Pero mira que ya la implementación o la el dato es un poco más complejo y me quedó pendiente la arquitectura Per to P. Listo.
+Teacher: Vamos a ver.
+Teacher: Chu chu borramos todo.
+Teacher: Listo.
+Teacher: Eh, nada, la arquitectura Ptupir es relativamente sencilla.
+01:20:00
+Teacher: Yo aquí al final creo que les dejé un videíto donde explica esto.
+Teacher: De todas maneras, de todas maneras, si tienen alguna duda, es la más chica.
+Teacher: Sí, es la más chida.
+Teacher: Eh, de todas maneras creo que el ejercicio que yo les voy a mostrar de ejemplo vamos a utilizar Per to P. Y si no, y si no, pues buscamos el espacio para para explicar un poco este modelo.
+Teacher: ¿Listo?
+Teacher: Pero por favor estudien to hagan una investigacioncita.
+Teacher: Recuerden que para el jueves vamos a tener el parcial.
+Teacher: Creo que hay una o dos preguntas de de Pir to Pir, así que les recomiendo que de aquí al al jueves eh eh revisen este este tema, por favor.
+Teacher: Listo.
+Teacher: Revisen este tema.
+Teacher: Está bien.
+Teacher: Virtual.
+Teacher: Por ahora va a ser virtual de para el parcial.
+Teacher: M. Recuerde que está partido en dos.
+Teacher: Una parte va a ser un un formulario, un un cuestionario de la parte teórica y va a haber una parte práctica.
+Teacher: El cuestionario lo vamos a hacer sincrónicos, o sea, yo yo abro el el cuestionario, ustedes lo realizan y yo lo cierro.
+Teacher: Y eh la otra parte es el otro 60% va a ser un ejercicio que ustedes van a tener hora y media o todo el fin de semana para realizarlo.
+Teacher: Ya depende de ustedes.
+Teacher: Y el resto de la clase después del cuestionario, yo les voy a mostrar cómo vamos a resolver el parcial, pero con el ejercicio que yo traigo a colación.
+Teacher: Listo, jóvenes, muchísimas gracias por todo.
+Teacher: Si si de pronto ven que este tema de cliente servidor está de de peer to lo no quedó claro o tienen muchas dudas, me avisan al principio de la clase y si es así,
+Teacher: entonces dedicamos el principio de la clase para explicar esto y el ejercicio y hacemos el los exámenes de manera asincrónica.
+Teacher: ¿Listo?
+Teacher: Ve. Sí, asincrónica.
+Teacher: Entonces depende.
+Teacher: Espero que les rinda con la investigación y que se sientan duchos con esto, pero si no pues me avisan y entonces yo lo yo lo explico y ustedes eh y hacemos el examen la próxima semana.
+Teacher: ¿Está
+Student13: Listo, profe.
+Teacher: bien?
+Student13: Profe, usted nos va a servir nos va a subir la diapositiva de peer
+Teacher: Sí,
+Student13: to
+Teacher: ¿no?
+Teacher: Ahí ahí ya está en la en la plataforma.
+Teacher: En la Ya está en el material.
+Student13: en Classroom.
+Teacher: Sí, en el classroom,
+Student13: Listo, profe.
+Teacher: en el material de el tema dos está todo hasta peer to p.
+Teacher: Listo.
+Teacher: Dale.
+Teacher: Igual voy a buscar de pronto algo un poco más explicativo.
+Teacher: Voy a revisar esta y si encuentro una más modernita para que para que lo vean ahí.
+Teacher: ¿Listo?
+Teacher: Eh, jóvenes, nada, nos vemos entonces el jueves.
+Teacher: Si si se sienten preparados hacemos el parcial.
+Teacher: Si no se sienten preparados, pues dejamos el parcial teórico para la próxima semana, pero les dejo el el el, ¿cómo se llama eso?
+Teacher: El práctico.
+Teacher: ¿Está bien?
+Teacher: y lo y resolvemos un práctico la próxima clase.
+Student22: Listo.
+Teacher: Dale, nos vemos entonces el jueves.
+Teacher: Que tengan buena
+Student22: Hasta luego.
+Student22: Muchas gracias.
+Student8: Vale,
+Teacher: noche.
+Student8: profe.
+Student8: Gracias.
+Student7: BR.
+Student18: Saludos.
+Student7: Gracias,
+Student17: Buenas noches,
+Student13: Sal.
+Teacher: Buenas noches,
+La reunión finalizó después de 01:23:45 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+

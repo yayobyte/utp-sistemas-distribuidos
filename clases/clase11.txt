@@ -1,0 +1,839 @@
+Hora de inicio de la reunión: 2026-10-13 18:30 GMT-5
+Asistentes
+Student1, Student2, Student3, Student4, Teacher, Student5, Student6, Student7, Student8, Student28, Student9, Student11, Student12, Student13, Student14, Student15, Student16, Student17, Student18, Student19, Student21, Student22, Student23, Student35, Student25, Student26, Student27
+Transcripción
+Teacher: Hola, jóvenes, muy buenas noches.
+Teacher: Espero que estén todos muy bien.
+Teacher: Bienvenidos a esta sesión, nuestra clase número 11. eh donde ya estamos cerrando, estamos terminando un poco el tema de cliente servidor, apenas estamos terminando cliente servidor y pues estamos eh ya
+Teacher: viendo los últimos aspectos de diseño o vamos a ver los aspectos de diseño de este modelo, ¿cierto?
+Teacher: Eh, como se han dado cuenta, hemos estado hablando bastante bastante sobre este modelo y pues tiene mucho sentido por el hecho de que es la arquitectura o es el modelo arquitectural que más se utiliza,
+Teacher: pero desde el punto de vista de los sistemas distribuidos es el más peligroso, es el que si lo utilizamos y lo utilizamos de una mala de una mala manera, pues vamos a entrar a grandes dificultades o grandes problemas al momento de desplegar
+Teacher: nuestras aplicaciones.
+Teacher: Una cosa que tengo para pues que quiero comentarles es que a pesar de que es la arquitectura que más se usa desde el punto de vista de los sistemas distribuidos, es es la peor implementación o es la peor arquitectura.
+Teacher: ¿Listo?
+Teacher: No quiere decir de que no lo usemos, ¿sí?
+Teacher: sino que hay que tener mucho cuidado, hay que tener mucha precaución porque ya sabemos eh las grandes deficiencias que tiene esta arquitectura.
+Teacher: A pesar de que hayan unas prácticas que que hemos visto de que ya se ven aplicadas en muchas de las tecnologías o en muchas de las herramientas que nosotros usamos hoy en día, pues eso significa de que nosotros como desarrolladores o nosotros como arquitectos o nosotros como
+Teacher: ingenieros vamos a tener que tener esto en cuenta al momento de de crear estos sistemas, ¿cierto?
+Teacher: Vamos a tener que eh al momento de que definamos la arquitectura tener esto elementos en cuenta si necesitamos engrosar el cliente o no, si vamos a utilizar caché, si vamos a utilizar proxy, etcétera.
+Teacher: O sea, si vamos a a segmentar o delimitar o o subdividir el esfuerzo entre diferentes servidores.
+Teacher: Todo eso son distintas variantes que vamos a tener que ir tomando, al menos ideas que tenemos que ir tomando sobre el modelo cliente servidor, ¿cierto?
+Teacher: En los otros modelos casi no tenemos que pensar tanto, pero en esta arquitectura sí, porque es que estamos dependiendo o al menos el modelo depende de un componente que es punto crítico de fallo y eh cuello de botella,
+Teacher: o sea, que es el que me va a limitar en el proceso de crecimiento eh de mi sistema.
+Teacher: Listo.
+Teacher: Voy a compartir pantalla y vamos a ver entonces el tema del día de hoy.
+Teacher: Me confirman si ven mi pantalla.
+Student8: Sí, profe.
+Student8: Buenas noches.
+Teacher: Buenas noches, [estudiante].
+Teacher: Gracias.
+Teacher: Perfecto.
+Teacher: Entonces, eh hoy vamos a estar hablando de los cinco aspectos de diseño y es como las cinco preguntas o los cinco elementos que nosotros tenemos que dar respuesta por el simple hecho de utilizar arquitectura cliente servidor.
+Teacher: O sea, son cinco aspectos que nosotros vamos a tener que analizar muy bien para que nuestro sistema cliente servidor pues se comporte como esperamos que se comporte dentro del sistema, ¿cierto?
+Teacher: Eh, vamos a empezar con el primero, ¿listo?
+Teacher: Entonces, el primero es cómo vamos a atender a los clientes, ¿listo?
+Teacher: O lo que aquí llamamos el servicio a múltiples clientes.
+Teacher: ¿Qué significa?
+Teacher: Y es, okay, yo tengo un cliente, bueno, yo voy a tener un servidor, que vamos a implementar un servidor que ya sabemos que es un elemento pasivo, o sea, que va a estar esperando conexiones y apenas recibe una petición la procesa y entrega respuesta,
+Teacher: ¿cierto?
+Teacher: Pero entonces este primer aspecto lo que me ayuda o lo que me pide es que definamos cuál va a ser el modelo de atención a esos clientes.
+Teacher: Si voy a poder atender solamente una petición de una una sola petición a la vez o si puedo trabajar de manera concurrente, ¿listo?
+Teacher: O sea, o si puedo recibir múltiples peticiones e irlas procesando de manera independiente.
+Teacher: Y ahí es donde entra este esta, digámoslo así, este aspecto.
+Teacher: Y entonces tenemos tres opciones.
+00:05:00
+Teacher: Tenemos tres opciones con las cuales nosotros podemos resolver esta pregunta o esta inquietud o este aspecto de diseño.
+Teacher: O voy a crear un servicio secuencial donde hablamos que secuencial es el primero en llegar en primero en salir.
+Teacher: O sea, digámoslo así, es como una cola normal donde voy van llegando las peticiones y entonces el servidor recibe la petición, procesa esa petición y entrega una respuesta.
+Teacher: Pero, ¿qué pasa si llegan múltiples usuarios de manera simultánea o de manera concurrente?
+Teacher: Pues los va a dejar en cola.
+Teacher: ¿Listo?
+Teacher: Porque en el modelo de servidor secuencial, él solamente se va a enfocar en una petición a la vez.
+Teacher: Listo.
+Teacher: Así todos los recursos que tenemos nosotros disponibles los va a dejar o los va a utilizar de la manera adecuada para atender esa única petición que le llegó.
+Teacher: y los otros usuarios.
+Teacher: Esperen, cuando este servidor con todos los recursos del sistema que nosotros hemos definido eh entregue una respuesta, entonces él entregará la respuesta y tomará la siguiente que está en la cola y así sucesivamente.
+Teacher: ¿Listo?
+Teacher: Eso es, digámoslo así, es una implementación bastante sencilla, es un modelo bastante eh fácil de implementar, ¿cierto?
+Teacher: porque pues no tengo que estar pensando en en manejar elementos alternos o estar controlando elementos extraños.
+Teacher: Simplemente es un programita normal que está esperando petición.
+Teacher: cuando recibe una petición, recibe, verifica qué es lo que tiene que hacer, va, lo realiza, entrega respuesta y sigue en espera.
+Teacher: Pero digamos que una de las grandes desventajas que tiene este modelo y es que si nosotros tenemos un una infraestructura bastante grande y la petición que acaba de llegar no necesita o
+Teacher: no o no eh puede ser explotada o no puede explotar todos los recursos que tenemos disponibles, pues estamos desperdiciando máquina, ¿cierto?
+Teacher: O sea, si es una petición algo sencilla, eh, no es que necesito saber cuáles son eh las ciudades de Colombia para poderlas cargar en una lista desplegable o en un combo.
+Teacher: es, ¿será que esa petición que yo necesito hacerle al servidor para que me entregue esa lista eh necesita todos los recursos de la máquina, necesita todo lo que la infraestructura que nosotros definimos?
+Teacher: Pero en el modelo de de la eh de la renderización de una película o una renderización de una imagen, pues sí necesito que todos esos recursos que tenemos disponibles estén en pro de esa tarea.
+Teacher: va a ser una sola tarea y todos los recursos que nosotros tenemos disponibles las vamos a a poner o se o las vamos a dejar simplemente atender de la mejor manera esa tarea y es nuestra responsabilidad de que esas tareas que vamos a trabajar en un
+Teacher: servidor secuencial realmente puedan aprovechar todos los recursos de máquina, realmente puedan aprovechar todos los recursos disponibles que tenemos en nuestro clúster o en el grid o en la infraestructura que nosotros hayamos.
+Teacher: definido, ¿listo?
+Teacher: O en la máquina virtual, etcétera, donde nosotros est hayamos definido que vamos a a implementar nuestro sistema.
+Teacher: ¿Listo?
+Teacher: Entonces, eso es el, digámoslo así, ese es el primer modelo.
+Teacher: El segundo modelo es que trabajemos de manera concurrente, o sea, que los recursos que yo voy a tener disponibles no vayan a ser solamente para un solo proceso o para una sola tarea o para una sola petición, sino que yo voy a poder atender a múltiples usuarios o múltiples peticiones con los mismos
+Teacher: recursos.
+Teacher: A eso es lo que nosotros llamamos servidores concurrentes, ¿cierto?
+Teacher: Y es que si tenemos n procesadores disponibles, podríamos dedicarle un procesador a cada una de las tareas que tenemos, ¿cierto?
+Teacher: Y así si llegan 100, si tengo 100 nodos o 100 procesadores, pues digámoslo así podríamos atender de manera muy eficiente hasta 100 usuarios o hacia 100 peticiones que lleguen, ¿cierto?
+Teacher: delegando o entregándole a cada uno de esos núcleos o a cada uno de esos procesadores una tarea para realizar.
+Teacher: ¿Listo?
+Teacher: Pero eh eso lo podemos hacer utilizando dos elementos del sistema operativo, que son los hilos y que son los procesos.
+Teacher: O sea, yo puedo hacer una implementación de servidor concurrente utilizando procesos o una implementación de servidor concurrente utilizando hilos.
+Teacher: ¿Cuál es la diferencia entre uno y otro?
+Teacher: ¿Conocen los conceptos de hilo y proceso?
+Teacher: ¿Y cuál es la diferencia entre
+Student8: Sí,
+Teacher: ellos?
+Student8: profe, el hilo es, digamos que está turnado, ¿no?
+00:10:00
+Student8: Como que entra un proceso un poquito, se ejecuta un momentico y luego se turna otro, otro, otro.
+Student8: Entonces, eso da la sensación de concurrencia,
+Teacher: Mhm.
+Student8: pero no está pasando realmente exactamente al mismo tiempo porque digamos que los núcleos van estando ocupados, bueno, el núcleo está va estando ocupado en un momento puntual,
+Teacher: Okay.
+Student8: ¿cierto?
+Teacher: Y los
+Student8: Y mientras que el proceso corriendo en un core pues corre,
+Teacher: procesos.
+Student8: digamos, de forma continua y si hay múltiples core pues pueden haber múltiples eh procesos corriendo de verdad de forma concurrente.
+Teacher: Okay,
+Student8: Es decir, no no es como que prestemos pedacitos pequeños de tiempo para dar la sensación de que ocurre de forma concurrente,
+Teacher: perfecto.
+Student8: sino que de verdad ocurre de forma concurrente.
+Teacher: ¿Alguien quiere complementar algo o no?
+Teacher: ¿O creen que lo dijo todo [estudiante]?
+Teacher: Imaginémonos que esto es el recurso que tenemos nosotros disponibles en nuestro sistema operativo, en nuestra máquina, nuestro, bueno, nuestra implementación, en nuestro solución nodo que donde vamos a estar corriendo nuestra aplicación, ¿cierto?
+Teacher: ¿Cuál es la diferencia de un proceso?
+Teacher: O sea, cada aplicación que nosotros eh estamos ejecutando en una máquina es un proceso.
+Teacher: O sea, que si yo abro, espérame aquí cambio de color, de si yo abro eh, no sé, una aplicación como, no sé, el controlador de de la impresora, entonces necesito un proceso para correr aquí.
+Teacher: Voy a abrir la aplicación de nosotros.
+Teacher: Entonces, otro proceso.
+Teacher: Vamos a correr la base de datos, otro proceso.
+Teacher: O sea, cada aplicación que nosotros desarrollamos y montamos en el sistema operativo o cada aplicación que necesite el sistema operativo para correr, pues ellos lo que van a hacer es ir creando procesos, ¿cierto?
+Teacher: Esos procesos tienen una característica y es que son gestionados o son controlados por quién?
+Teacher: Por el sistema operativo.
+Teacher: Cada vez que yo necesite iniciar o arrancar un proceso, pues le tengo que decir al sistema operativo que me entregue recursos para ese proceso.
+Teacher: ¿Qué recursos son los que voy a estar solicitándole al sistema operativo?
+Teacher: Los los recursos que le voy a solicitar son un espacio de memoria.
+Teacher: Pues vamos a tener aquí memoria.
+Teacher: Listo.
+Teacher: O sea, le a cada proceso se le va a ir reservar de la memoria total que tiene el equipo se le va a reservar un espacio de memoria.
+Teacher: ¿Listo?
+Teacher: Entonces, esa memoria eh es la memoria que va a poder contar el proceso o que va a poder utilizar para guardar sus variables, para guardar pues toda la información, etcétera, etcétera, etcétera.
+Teacher: Va a necesitar también, además de memoria, va a necesitar eh procesador, ¿cierto?
+Teacher: iba a necesitar algo.
+Teacher: Eh, esto se llama computer pipe, la pila del computador, la pila de control.
+Teacher: ¿Qué es esto de la?
+Teacher: Bueno, ¿qué es qué es esto?
+Teacher: Esos tres elementos.
+Teacher: Entonces, la memoria, ¿dónde guardar información de manera temporal?
+Teacher: Procesador para poder realizar las operaciones o para que las las instrucciones que nosotros hicimos en el programa se puedan ejecutar y el controlador de dónde va el programa, ¿cierto?
+Teacher: O sea, como el eh el controlador, el elemento que es capaz de identificar en qué parte de todo el código va nuestro programa.
+Teacher: ¿Listo?
+Teacher: Entonces, eso es lo que nosotros tenemos en cada uno de estos procesos.
+Teacher: Cada vez que nosotros arrancamos un proceso, cada uno de ellos se le asigna un espacio de memoria distinto, o sea, que este elemento, este proceso no puede ver los la memoria que tiene este proceso y así sucesivamente.
+Teacher: Cada uno de estos elementos es un elemento independiente.
+Teacher: Además de eso, necesita pues procesador o tiempo de procesador.
+Teacher: Por ejemplo, yo tengo una máquina con un solo procesador, pues entonces, como decía [estudiante], él lo que va a hacer es compartir ese procesador entre los distintos procesos que tenemos en el sistema operativo, ¿cierto?
+Teacher: O sea, que si tenemos 100 procesos en ejecución, pues a cada uno de ellos le va a tocar una centésima de de tiempo para ir ejecutando su programa.
+Teacher: Y entonces va rotando entre uno y otro para poder eh para poder realizar o para poder dar esa semejanza de lo que es un un concurrencia o de que estoy haciendo multitarea, ¿cierto?
+Teacher: Pero al final si tuviese un solo procesador, lo que estoy haciendo es repartiendo mi tiempo entre o o mi foco o mi procesamiento entre las n tareas que tengo yo en ejecución.
+00:15:00
+Teacher: ¿Listo?
+Teacher: ¿Cuál es la idea del servidor concurrente?
+Teacher: La idea del servidor concurrente es que a medida que vayan llegando conexiones, o sea, si este es mi mi elemento principal, o sea, si este es P, o sea, este es mi proceso principal o mi servidor, no lo voy a dejar mejor ese.
+Teacher: Que si este es ese mayúscula porque trabaja mucho.
+Teacher: Si este es mi servidor, si este nodo es mi servidor, si se alcanza si se está viendo en pantalla lo que estoy dibujando, ¿cierto?
+Student8: Sí, profe, sí.
+Teacher: Si este es mi servidor, entonces cada vez que llegue una petición del cliente, cada vez que un cliente intente acceder, él lo que va a hacer es crear un nuevo cliente, un nuevo proceso para que atienda ese cliente.
+Teacher: ¿Listo?
+Teacher: Entonces, eh a medida que vayan llegando peticiones o tareas, el servidor lo que va a hacer es decir, "No, yo programa servidor, yo no voy a atender eso. Lo que voy a hacer es decirle al sistema operativo que cree un nuevo proceso para que
+Teacher: atienda a esa la solicitudes de ese usuario.
+Teacher: Y si llega otro usuario, entonces el servidor lo que hace es decirle al sistema operativo que cree otro proceso para que para que abra eh para que atienda a ese otro usuario y así sucesivamente.
+Teacher: ¿Listo?
+Teacher: ¿Qué o qué ven ustedes en ese modelo?
+Teacher: Que está chévere, ¿sí o no?
+Teacher: Está chévere poder atender a todos los clientes asignándoles un proceso, diciéndole que el sistema operativo gestione de alguna manera ese sistema o esa petición, esa conexión con ese cliente de manera independiente al servidor.
+Teacher: O sea, el servidor termina siendo solamente una pasarela o un elemento que su única misión es estar atento a recibir las peticiones y una vez se reciba sin siquiera saber qué es lo que está pidiendo, le va a crear un nuevo proceso.
+Teacher: le va a pedir al no al sistema operativo que me reserve memoria, procesador y pila de control o sí el control de del programa para que atienda a ese usuario y así si hay 10 usuarios o 10 peticiones simultáneas,
+Teacher: pues lo que voy a tener es la creación de 10 procesos para cada una de esas cosas.
+Teacher: ¿Vamos bien?
+Teacher: ¿Haí o no?
+Teacher: Pero,
+Student8: C'est
+Teacher: ¿qué pasa?
+Teacher: El sistema sigue creando procesos, ¿cierto?
+Teacher: ¿Cuántos procesos va a poder crear?
+Teacher: Dígame que 16. A ver, 6 * 3 18. ¿Cuántos recursos puedo disponer?
+Teacher: 21, ¿cierto?
+Teacher: O sea, eso quiere decir de que mi sistema, si esto fuera, digámoslo así, de manera simulada, los recursos, todos los recursos que yo tengo disponibles, el sistema o el soft o el servidor solamente me podría atender cuántos usuarios.
+Teacher: En este caso 20, ¿cierto?
+Teacher: Está él como servidor, como proceso servidor y solamente me soportó otros 20 procesos más.
+Teacher: Eso significa de que la capacidad o los recursos de manera concurrente que yo tengo para este servidor solamente me va a soportar 20 20 peticiones de manera simultánea.
+Teacher: ¿Qué pasaría si necesito más peticiones en ese modelo de servidor concurrente por con procesos?
+Teacher: ¿Se acuerdan de cómo hacíamos nosotros para poder atender más usuarios o atenderlos mejor?
+Teacher: ¿Qué tenía, qué recurso tenemos o qué posibilidad tenemos de variación en el servidor?
+Teacher: Hacer algo que era scale app, ¿cierto?
+Teacher: ¿Y qué es scale app?
+Teacher: Aumentar los recursos de mi de mi servidor, ¿cierto?
+Teacher: Para poder que atienda más usuarios, pues lo que tengo que hacer es aumentar recursos, o sea, extender esta línea, extender esto, estos límites, ¿cierto?
+Teacher: Los vamos a extender un poco más, los vamos a mover hacia afuera.
+Teacher: ¿Listo?
+Teacher: Y si movemos estos límites hacia afuera, pues entonces voy a tener más capacidad, voy a tener más procesador, voy a tener más memoria y por ende voy a poder procesar o atender a más usuarios.
+Teacher: ¿Listo?
+Teacher: Esa es como el modelo clásico eh donde yo puedo crear procesos para para poder atender esos elementos.
+00:20:00
+Teacher: ¿Está bien?
+Teacher: ¿No está mal?
+Teacher: ¿Listo?
+Teacher: Pero, ¿qué sucede?
+Teacher: acaba los recursos de la máquina de una manera bastante rápida, ¿cierto?
+Teacher: Porque lo que estoy haciendo es diciéndole al sistema operativo que me gestione como si fueran programas independientes a cada uno de los usuarios.
+Teacher: ¿Listo?
+Teacher: Y si el usuario eh viene con una petición muy pequeña, pues entonces él lo que va a hacer es intentar o empezar el proceso de creación de del proceso.
+Teacher: O sea, él inicia la creación del proceso, le asigna espacio de memoria, le asigna el procesador o la porción del procesador que va a poder utilizar y recibe la petición.
+Teacher: Y si es una petición muy pequeña, pues entonces hace una cosa instantánea y luego bota, pues cierra la conexión o entrega la respuesta.
+Teacher: Y si al entregar la respuesta ya el usuario no necesita nada más, entonces el sistema operativo se tiene que encargar de apagar de manera eh adecuada el proceso que le generó y llegó otra petición.
+Teacher: Entonces tiene que volver a abrir una nueva petición para un nuevo proceso para recibir la petición y así sucesivamente.
+Teacher: A pesar de que es una solución buena, eh tiene la gran dificultad o el gran problema de de la sobrecarga que le estamos haciendo sobre al sistema operativo, ¿cierto?
+Teacher: Le estoy diciendo, mire, separe un espacio de memoria, o sea, busque dentro de la memoria RAM que tiene qué espacios de memoria tiene disponibles para que los pueda utilizar ese proceso, para que sean de dominio de ese proceso y las va a reservar solo para ese proceso.
+Teacher: ¿Listo?
+Teacher: va a a elegir o identificar qué procesador que se encuentra en x máquina es la que se va a encargar de atender eso o que a qué máquina le va a distribuir, le va a asignar esta tarea para que ese procesador pues se distribuya entre las n servicios que
+Teacher: tenemos en esa máquina y así sucesivamente, ¿cierto?
+Teacher: O sea, estamos en un, digámoslo así, en un paso de carga y sobrecarga de del sistema operativo para estar creando uno y otros procesos.
+Teacher: Pero entonces ahí vienen los hilos.
+Teacher: ¿Y qué es un hilo?
+Teacher: Un hilo pues es lo mismo, pero a diferencia de los procesos que lo que voy haciendo es reservando memoria y reservando procesador de toda la máquina, los hilos tienen una característica eh más básica o más
+Teacher: eh interesante y es que los hilos se crean al interior de un proceso, o sea, en lugar de crear un proceso que le necesita el sistema
+Teacher: operativo eh cargar y o sea, solicitar memoria, etcétera, etcétera, no, yo ya tengo mi proceso cargado y dentro de este proceso lo que voy a hacer es abrir un hilo, que es como una especie de subproceso o un proceso pequeño que vive dentro del
+Teacher: proceso.
+Teacher: Vamos bien hasta ahí.
+Teacher: Así que este hilo como no necesito pedirle al sistema operativo, bueno, sí se le pide, pero no, el sistema operativo no tiene que reservar espacios de memoria, no tiene que asignar procesadores y el PC pues sí se lo tiene que asignar,
+Teacher: pues el control en qué lugar del programa va, ese sí se lo tiene que dar a cada uno de los hilos.
+Teacher: Pero entonces le quité la, digámoslo así, la responsabilidad o el esfuerzo de la memoria y el procesador.
+Teacher: Entonces es mucho más rápido, mucho más fácil de atender, ¿cierto?
+Teacher: o mucho más fácil de de encender ese hilo.
+Teacher: Y este hilo va a estar utilizando los recursos que tiene este proceso.
+Teacher: ¿Sí?
+Teacher: O sea, que si este proceso eh tiene se le asignó un espacio de memoria, todos los hilos comparten ese espacio de memoria.
+Teacher: ¿Listo?
+Teacher: Entonces, si yo quiero eh que un hilo haga un proceso y se lo entregue a le entregue un resultado a otro, pues fácilmente yo lo que voy a hacer es poder guardar un oar uno de los espacios de
+Teacher: memoria del proceso.
+Teacher: guardo el dato ahí y este otro hilo tiene acceso a ese espacio de memoria porque están dentro del mismo proceso y entonces pueden leer, pueden compartir información, se pueden escribir entre ellos para para intercambiar información y para hacer los
+Teacher: distintos procesos que se tiene.
+Teacher: ¿Listo?
+Teacher: Generalmente los hilos o los threads son más ligeros y comparten los más recursos, pero tiene más problemas de sincronización.
+Teacher: Bueno, eso eso realmente ha mejorado bastante, pero eh cuando hablamos de sincronización es poder identificar dónde va cada uno de ellos y si necesito terminar todos los hilos, pues cómo los ubico dentro del proceso, eh,
+00:25:00
+Teacher: cómo hago ese proceso de de localización y y ejecución de tareas sobre cada uno de estos hicos.
+Teacher: Ese es son los problemas de sincronización que al final las herramientas de desarrollo han mejorado bastante o han evolucionado bastante para que no sean tan descontrolado que nosotros podamos controlar ese tema de los procesos.
+Teacher: ¿Cuál de los dos es mejor?
+Teacher: ¿Utilizar procesos o utilizar hilos?
+Teacher: ¿Ustedes cómo lo ven?
+Teacher: ¿Ya ya entendieron?
+Teacher: Entonces, si yo si llega otro cliente para otro servidor, ah, bueno, perdón, estos hilos se hubiesen creado aquí, ¿cierto?
+Teacher: Aquí es donde se tienen que crear estos hilos.
+Teacher: ¿Por qué?
+Teacher: Porque este es el servidor y el servidor en lugar de crear otro proceso, lo que tiene que hacer es crear un hilo por cada uno de los clientes o por cada una de las peticiones que están llegando hacia el servidor.
+Teacher: Así el hilo principal o el hilo eh que está escuchando no se ocupa sino para escuchar.
+Teacher: Cada atención o cada petición que llegue le él va a crear un hilo para poderlo atender.
+Teacher: ¿Cuál de los dos modelos es mejor?
+Teacher: Y los orocesos para un servidor concurrente.
+Teacher: ¿Ustedes qué dicen?
+Teacher: ¿Cómo lo ven?
+Teacher: No lo ven ni el uno ni el otro.
+Student8: Depende
+Teacher: ¿De qué depende, [estudiante]?
+Student8: de según cómo se mire.
+Student8: Mentiras, ¿no?
+Student8: Eh, profe, pues no sé, depende, por
+Teacher: O sea, ¿qué es mejor?
+Student8: ejemplo,
+Teacher: ¿Crear un nuevo proceso para que lo atienda o crear un hilo para que lo
+Student8: pues es que no sé,
+Teacher: atienda?
+Student8: depende, por ejemplo, es que uno quita, por ejemplo, carga de pronto administrativa al sistema operativo y tal, pero pues eh y obviamente tiene digamos una mejor gestión de de asignación de recursos
+Student8: Pero pues de todas formas eh, o sea, el otro también tiene la ventaja de de la velocidad en la concurrencia y todo.
+Student8: Entonces depende.
+Teacher: Okay.
+Teacher: Bien.
+Teacher: ¿Algún otro concepto?
+Teacher: ¿Alguien más que quiera compartir?
+Teacher: ¿Cuál es mejor?
+Teacher: ¿Cuál usar?
+Teacher: Porque le estoy dando dos opciones.
+Teacher: O lo usamos con hilos o lo usamos con procesos.
+Teacher: ¿Cuál de los dos usamos o cuál deberíamos usar?
+Teacher: Ni idea.
+Teacher: ¿No se les ocurre alguna razón por la cual usar la una o la otra?
+Teacher: Con los procesos sabemos que estamos sobrecargando el sistema operativo y que el sistema operativo tiene que reservar memoria, etcétera, etcétera, etcétera.
+Teacher: Eso significa que si elegimos la opción de procesos, vamos a tener una mayor latencia, ¿cierto?
+Teacher: porque vamos a tener que esperar, o sea, yo mando la petición y por cada petición yo tengo que esperar a que el sistema operativo cree un proceso, lo prepare, lo tenga listo, lo tenga ya disponible, o sea, mi programa ya esté corriendo de nuevo y pasarle la petición para que lo atienda,
+Teacher: ¿cierto?
+Teacher: Y si llega otra petición, tengo que esperar a que a que la genere, reserve memoria, etcétera, etcétera, etcétera, y le manda la petición y y se pueda procesar.
+Teacher: O sea, que posiblemente una de las causas que podemos nosotros eh podemos analizar a partir del de si utilizamos un servidor concurrente utilizando procesos es de que vamos a tener una mayor sobrecarga, pero voy a tener más recursos para atender la petición,
+Teacher: ¿cierto?
+Teacher: Porque mire que no estoy no estoy distribuyendo los recursos de un proceso entre n subprocesos o entre n hilos, sino que tengo todo el recurso completo, todo lo que reservo de el procesador, todo este espacio y este procesador dedicado o el tiempo de procesamiento dedicado
+Teacher: que que tiene definido este proceso lo tiene para atender esa solicitud.
+Teacher: O sea, que las peticiones se van a hacer mucho más rápido, pero va a haber una sobrecarga, una latencia adicional por la creación de cada uno de estos procesos.
+Teacher: ¿Listo?
+Teacher: Entonces, ¿cuándo deberíamos utilizar procesos?
+Teacher: Cuando oh, perdón, y otro y otra de las deficiencias que tiene los procesos es que rápidamente va a ocupar todos los recursos de la máquina.
+00:30:00
+Teacher: Y al ocupar todos los recursos de la máquina, caemos en un problema que que es bastante conocido que se llama DOS.
+Teacher: No es el sistema operativo en disco, sino el denial of service.
+Teacher: ¿Qué es el denial of service?
+Teacher: ¿O cuándo ocurre este esta denegación de servicio o denegación de servicio?
+Student26: Se hacen muchas peticiones
+Teacher: Pero, ¿por qué?
+Teacher: ¿Por qué hacer peticiones genera un denial of service?
+Student26: porque cuelga el servidor.
+Student26: No.
+Teacher: ¿Okay?
+Teacher: Entonces, crear procesos puede llegar al punto donde cuando llegue el elemento 21, o sea, la petición 21, él no tiene capacidad, o sea, el equipo, el sistema operativo no tiene la capacidad de crear un nuevo proceso y al perder esa
+Teacher: capacidad él lo que hace es devolver que no lo puede hacer o que no puede atender.
+Teacher: o tiene todo el equipo en un estado, en un o en un nivel de ocupación que no puede recibir más peticiones, entonces simplemente devuelve do listo.
+Teacher: Denal of service.
+Teacher: Listo.
+Teacher: ¿Qué pasa con los hilos?
+Teacher: ¿Será que con los hilos también tenemos denial of service?
+Teacher: Los hilos son más ligeros para arrancar, ¿sí?
+Teacher: Porque no necesitan toda todo ese proceso de reserva.
+Teacher: van a compartir los recursos que tiene el el proceso.
+Teacher: Ya sabemos de que la memoria, o sea, el espacio de memoria del proceso es toda la memoria que tiene disponible los hilos.
+Teacher: Eh, se se crea mucho más rápido porque no necesitan toda esa sobrecarga.
+Teacher: Pueden atender eh más rápidamente las peticiones, ¿cierto?
+Teacher: Pero, ¿cuál es el problema que tenemos ahí?
+Teacher: no va a tener of service o no llegaremos muy fácil a una negación de servicio.
+Teacher: ¿Por qué?
+Teacher: Porque es que todos los hilos se están creando dentro de un mismo proceso.
+Teacher: ¿Cuál es la cuál es la situación?
+Teacher: que si yo tengo 1000 1000 peticiones, pues voy a tener 1000 hilos dentro de esto.
+Teacher: Y entonces el tiempo o el procesador que se le asignó a o los procesadores que se le asignaron a este proceso solamente van a cada uno de estos hilos va a tener una milésima de procesador, ¿cierto?
+Teacher: O sea, se va a repartir ese procesador entre los n hilos que tiene ese proceso por dentro, haciendo lo que sea más lento.
+Teacher: ¿O no les parece?
+Teacher: Si yo cojo el tiempo de procesamiento y lo parto en 1000, pues entonces voy a tener, estoy atendiendo 1000 peticiones, pero esos 1000 los estoy atendiendo muy poquito.
+Teacher: Sí, si el tiempo de procesamiento fuera un segundo, pues estaríamos dando una milésima de segundo para que ejecute las instrucciones que tiene el programa para estar rotando entre todas y al siguiente segundo volverle a dar la eh la asignación
+Teacher: a cada una de ellas.
+Teacher: Entonces se vuelve un poco más complejo.
+Teacher: Así que los hilos van a ser mucho más rápidos, pero procesan cosas mucho más chiquitas porque tienen o tienen que compartir el tiempo de procesamiento que tiene el proceso.
+Teacher: No sé si se entiende ahí el tema.
+Teacher: Listo.
+Teacher: No, no me va a quitar los recursos de mi máquina.
+Teacher: No me va a llenar, no me va a sobresaturar los recursos de la máquina.
+Teacher: ¿Por qué?
+Teacher: porque todos los hilos se crean dentro de dentro del mismo proceso, pero estoy solamente segmentando los recursos que tengo dentro de mi en mi servicio a lo que a lo que me asigna el sistema operativo para este proceso.
+Teacher: El resto de elementos no no puedo.
+Teacher: Y si estas estos elementos hilos necesitan mucha memoria, pues entonces vamos a tener que mirar cuántos hilos puedo crear basados en el recurso de memoria que tenga disponible el proceso.
+Teacher: Listo.
+Teacher: ¿Vamos bien hasta ahí o no se entiende?
+Teacher: Entonces, ahorita sí.
+Teacher: ¿Cuál de los dos?
+Teacher: y los procesos.
+Teacher: Depende de qué depende del nivel o del tipo de peticiones que nosotros vamos a atender.
+Teacher: Si necesitamos peticiones que necesitan un alto poder de cómputo, la mejor solución es utilizar procesos, ¿cierto?
+Teacher: porque les vamos a dar más recursos y van a poder procesar o van a poder realizar buenas ejecuciones para para dar la respuesta de la manera más eficiente.
+Teacher: Pero si las peticiones son pequeñas, hilos, se demoran menos en arrancar, necesitan menos recursos, pueden procesarse de manera inmediata y se liberan mucho más fácil, ¿cierto?
+Teacher: Si ya no necesitamos la atención de ese cliente, pues simplemente libero la el hilo y le doy más recursos a los hilos que quedan disponibles.
+00:35:00
+Teacher: ¿Listo?
+Teacher: Entonces, dependiendo del tipo de petición que nosotros vayamos a tener en nuestro sistema, vamos a poder elegir el uno o el otro.
+Teacher: Con hilos voy a poder aumentar el número de clientes bastante de una manera sustancial, ¿cierto?
+Teacher: porque pero le estoy dando cada vez menos tiempo de procesamiento a cada uno de ellos.
+Teacher: O sea, que ahí vamos a perder una de las eh una de las transparencias que que queremos que tengamos dentro del sistema.
+Teacher: Y es, ¿cuál?
+Teacher: La transparencia de el número de usuarios, o sea, de el tema de concurrencia, justamente que entre más usuarios haya, menos o o más mal me están atendiendo, porque estoy distribuyendo menos el tiempo o le estoy dando menos tiempo a cada uno de esos usuarios,
+Teacher: ¿cierto?
+Teacher: Es esa es como la situación, ese es el escenario en el que estamos y es que si utilizamos hilos va a ser mucho más ágil para empezar su su ejecución, pero le estamos dando menos tiempo de ejecución.
+Teacher: Pero si utilizamos procesos, pues entonces los procesos me van a ocupar la máquina y solamente puedo crecer hasta los recursos que tengo en la máquina.
+Teacher: Entonces, ahí estamos afectando la transparencia en eh o estamos afectando el rendimiento, ¿sí?, y la capacidad de crecimiento, o sea, unas por otras.
+Teacher: Entonces, ¿qué hacemos para aumentar las peticiones o para aumentar el número de peticiones que podemos trabajar, ¿qué hacemos?
+Teacher: y los oprocesos o no utilizamos el servidor concurrente.
+Teacher: ¿Qué hacemos?
+Teacher: Complejo y ¿qué pasa si combinamos ambos mundos?
+Teacher: Sí, si sabemos que los procesos son complejos, se demoran mucho, eh, y pueden llegar a ocuparme o o tumbar mi servicio o tumbar mi servidor o mi máquina,
+Teacher: quitarle todos los recursos a mi máquina porque voy a crecer demasiado en procesos y los hilos están segmentando, están limitando mucho el procesamiento que vamos a tener ahí y porque no podemos tener unos procesos preparados.
+Teacher: para gestionar hilos.
+Teacher: ¿Qué tal si yo ya si yo digo cuando tenga, no sé, 10 nodos o 10 peticiones o 10 hilos en un proceso, cree otro proceso para atender los siguientes 10 peticiones y cree otro proceso para las siguientes 10
+Teacher: peticiones y así sucesivamente.
+Teacher: Así voy a poder crecer más peticiones, ¿cierto?
+Teacher: voy a poder atender más solicitudes, pero ojo, si son solicitudes pequeñas que no que no necesiten mucho procesamiento.
+Teacher: Y una de las implementaciones que nosotros hemos visto que que tiene como mayor sentido desde el punto de vista funcional es tener hilos o perdón procesos precargados.
+Teacher: ¿Qué significa?
+Teacher: que cuando se está levantando el servidor principal va a levantar n procesos que se encarguen que se van a encargar de crear hilos para mi sistema.
+Teacher: ¿Sí?
+Teacher: Entonces, de esta manera voy a poder aumentar el número de peticiones o número de conexiones que voy a aceptar en mi servidor y pero voy a estar utilizando los hilos.
+Teacher: Pero, pero ojo, en el momento de arranque de la aplicación, cuando está arrancando la aplicación, él va a preparar o ya va a dejar listo el número de procesos necesario para la tarea que él está intentando hacer.
+Teacher: Si van conmigo con esto no.
+Teacher: Y entonces llega una petición a a uno de estos procesos le dice creo un hilo.
+Teacher: Otra petición a otro proceso creo un hilo y puedo ir balanceando, ir distribuyendo la carga para que todos estos procesos que tengo precargados me sirvan para aumentar la capacidad.
+Teacher: Y si necesito más más usuarios, pues agrego otro nodo, otro proceso y puedo crecer en tantos procesos como recursos que tenga en esta máquina.
+Teacher: ¿Listo?
+Teacher: Entonces ahí es donde donde hablamos nosotros de un pull de n hilos o procesos prearrancados, ¿cierto?
+Teacher: y es tengámoslos ya preparados de tal manera que cuando llegue una petición le pueda asignar de una vez el hilo o pueda crear el hilo dentro de uno de los procesos que ya están cargados, que no necesito esperar de que el sistema operativo eh lo genere,
+00:40:00
+Teacher: sino que ya los tengo, ya los tengo ahí disponibles, ya estoy ocupando ese recurso de máquina, pero lo voy a utilizar para que me genere los hilos que yo estoy necesitando.
+Teacher: ¿Listo?
+Teacher: Eh, ¿cuál es el problema de este pool de conexiones?
+Teacher: Y es de que si yo defino estos cinco procesos como mi pool de mi pool de procesamiento, ¿cierto?, o mi pool para la concurrencia, estoy desaprovechando recursos o estoy ocupando recursos con procesos o con servicios que no están haciendo nada,
+Teacher: ¿cierto?
+Teacher: Si no hay sino cinco peticiones, pues tengo cinco procesos ahí precargados solamente por si de pronto llega a crecer el recurso.
+Teacher: Entonces, ¿dónde podríamos nosotros eh gestionarlo?
+Teacher: Pues entonces podríamos hacer un modelo donde el número de procesos que voy a tener precargados dependen del número de peticiones que están llegando, ¿cierto?
+Teacher: Entonces, eh yo puedo decir que inicie con un solo proceso precargado, pero cuando veamos de que aquí hay más de 10 peticiones, entonces me cree otro.
+Teacher: Y cu y cuando tengamos 100 peticiones, pues entonces ya tenemos 10 procesos completamente ocupados o vamos a ir creciendo en ese número de procesos.
+Teacher: Y en el caso de que veamos de que la carga o el número de peticiones va bajando, pues simplemente yo puedo ir liberando los procesos que yo veo que no estoy necesitando y solamente dejo el que realmente necesito para el flujo,
+Teacher: para el nivel de peticiones que nosotros tenemos.
+Teacher: Entonces, eso es lo que nosotros llamamos el esquema híbrido, ¿sí?
+Teacher: donde voy a tener un mínimo de m, nodos o hilos o procesos arrancados y voy a tener un máximo de m procesos arrancados.
+Teacher: ¿Listo?
+Teacher: Si no hay petición, entonces libero.
+Teacher: Si petición y no hay ninguno libre, o sea, si ya está lleno, si tengo todos los procesos llenos, o sea, si llega una petición y no tengo ninguna ningún hilo libre o ningún proceso libre, pues se crea un nuevo proceso.
+Teacher: Pero si está inactivo por un n tiempo, o sea, no le han llegado peticiones por n tiempo, pues simplemente voy destruyendo, voy borrando hasta tener el número mínimo de elementos que nosotros definamos.
+Teacher: ¿Listo?
+Teacher: No sé cómo cómo lo ven ahí.
+Teacher: No sé si tienen alguna pregunta, alguna duda.
+Teacher: ¿Lo están pensando muchos?
+Teacher: ¿Se o todo bien?
+Student8: No.
+Teacher: ¿Todo claro?
+Teacher: Sí. Listo.
+Teacher: Entonces, vámonos.
+Teacher: Entonces, esta es la forma como nosotros podemos eh implementar la conexión o la atención a los clientes de manera concurrente.
+Teacher: Está secuencial, está concurrente.
+Teacher: Y el tercer modelo es basado en eventos.
+Teacher: ¿Qué es esto del modelo basado en eventos?
+Teacher: Es una variante al modelo tradicional de concurrencia, ¿cierto?
+Teacher: Ahora vamos a manejar la concurrencia con un solo servidor, o sea, es como coger un servidor secuencial que solamente hace una tarea a la vez y la voy a combinar con la con el servicio concurrente, o sea, que voy a poder recibir múltiples peticiones de manera simultánea.
+Teacher: ¿Listo?
+Teacher: Este es un modelo eh que se ha vuelto bastante eh bastante popular en muchas de las implementaciones o en muchos tipos de implementaciones y es por una simple razón y es que si yo tengo un
+Teacher: proceso que que puede atender múltiples tareas, o sea, aquí ya no vamos a hablar de de servidores, o sea, de sistemas operativos y crear más procesos, sino que ya tengo un proceso o el conjunto de procesos que tengo ya reservados para la
+Teacher: atención.
+Teacher: Y en lugar de crear más hilos o crear hilos dentro de él, eh solamente todo lo vamos a manejar en una sola en un solo hilo, por decirlo así.
+Teacher: Todas las peticiones las voy a recibir aquí.
+Teacher: ¿Qué es lo qué es lo que cambia versus el modelo de de del servidor concurrente?
+Teacher: Y es de que ahora nosotros lo que vamos a tener es una especie de eh vamos a tener una especie de vector, ¿listo?
+Teacher: O rejilla o eh cuadrícula, como lo quieran ver ustedes, donde es son como las posiciones donde van a ir cada uno de los clientes.
+Teacher: ¿A qué me refiero con esto?
+00:45:00
+Teacher: Y es que el cliente o digámoslo así, cuando llega una petición del cliente, mi servidor, vamos a decir que es es del servidor no es no es el sistema operativo, sino ya la aplicación que está recibiendo eh los datos,
+Teacher: ¿cierto?
+Teacher: Entonces, aquí tengo mi servidor ese.
+Teacher: Entonces, cada vez que llego un usuario, cada vez que llega un usuario y solicita conexión, lo que va a hacer el servidor es asignarle una posición de de esta de este vector.
+Teacher: Entonces, llegó otro usuario para el segundo posición, llegó otro usuario para la tercera posición.
+Teacher: y así sucesivamente.
+Teacher: Es la misma aplicación, solamente que en cada uno de estos cuadritos va a tener un cliente distinto, un cliente conectado distinto.
+Teacher: ¿Listo?
+Teacher: Y ojo, aquí está como la magia de este de este modelo y es a pesar de que ahí tengo ese vector donde en cada uno de esos vectores está la conexión a cada uno de los clientes, el servidor va a estar pendiente de cualquier mensaje que
+Teacher: llegue por alguno de esos vectores o por alguno de esos clientes.
+Teacher: ¿Listo?
+Teacher: Si este señor, que fue el primero que conectó, perdón, si este señor manda una petición y es el primero, digamos, entre toda entre el todo de la Ray, es el primero que hizo la petición o que llegó primero,
+Teacher: pues entonces mi servidor lo que va a hacer es coger esa petición, procesarla con todo este recurso y le da respuesta.
+Teacher: Listo, de respuesta por este canal y queda otra vez pendiente.
+Teacher: Estoy aquí pendiente de que otra cosa sucede.
+Teacher: Llegó otra petición por aquí, pues entonces recibe la petición, la procesa y genera la respuesta.
+Teacher: ¿Listo?
+Teacher: y así
+Student8: Profe,
+Teacher: sucesivamente.
+Student8: ¿qué pasa si una petición se es demasiado grande o digamos que bloquea el procesamiento?
+Teacher: Aquí lo va a tener dándole y dándole.
+Student8: Que es una
+Teacher: ¿Qué pasa con qué pasa con los otros?
+Student8: vulnerabilidad.
+Teacher: Perdieron.
+Teacher: espere que estoy ocupado, estoy atendiendo de manera concurrente n clientes, ¿sí?
+Teacher: Pero la atención la hago uno a uno.
+Student8: Hm.
+Teacher: ¿Listo?
+Teacher: Entonces, básicamente el modelo el modelo funciona como bueno, es una implementación en Unix que de espera simultánea.
+Teacher: ¿Listo?
+Teacher: O sea, yo estoy esperando a que alguno de ellos diga algo.
+Teacher: Si este señor dijo algo antes que este, pues atiendo este y cuando termino sigo con la con el proceso que este mandó.
+Teacher: ¿Listo?
+Teacher: Ese es el modelo eh basado en eventos.
+Teacher: Tengo este pull de de conexiones, es el nombre correcto, es un pull de conexiones y en este pool de conexiones voy a estar pendiente cuál es el evento, quién está activo.
+Teacher: ¿Cuál es la motivación de este modelo?
+Teacher: La motivación es que eh no es muy común o al menos no es tan probable de que múltiples usuarios estén solicitando recursos de manera permanente o de manera simultánea a mi servidor.
+Teacher: O sea, si yo tengo 10 clientes, ¿cuál es la probabilidad que los 10 clientes en lleguen al mismo tiempo a solicitar cosas?
+Teacher: Es muy baja, ¿cierto?
+Teacher: Porque si yo, si este señor llegó, mandó un dato, yo lo procesé y le di una respuesta, este cliente va a recibir la respuesta y va a tener que analizarla, va a tener que hacer algo con ella, la va a tener que guardar,
+Teacher: se la va a mostrar al usuario, el usuario va a tomar una decisión de seleccionar alguna cosa, etcétera, pero todo eso es tiempo que puede estar utilizando en atender otras otros eventos o eventos de otros clientes.
+Teacher: y no tengo que estar creando ni procesos, ni tengo que estar creando hilos y tienen todo el recurso del procesador para atender cada solicitud.
+Teacher: Entonces, como como tengo todo el recurso, pues la idea es de que yo le voy a dar la respuesta mucho más rápida que si tuviese que crear un proceso, esperar a que se cree, se le se levante la aplicación y yo le pueda mandar la petición o mandarle
+Teacher: la conexión para que atienda al cliente.
+Teacher: En este caso ya estoy y no tengo que crear ni un hilo, no tengo que crear nada.
+Teacher: Aquí está mi lógica.
+Teacher: Simplemente llama la función de la tarea o de la petición que me están llamando y la respuesta pues se la devuelvo y paré contrar y terminó mi flujo.
+Teacher: ¿Listo?
+Teacher: Ese es como el la motivación de por qué podemos trabajar en estos model estos servicios o estos servidores eh con un modelo de atención basado en eventos.
+00:50:00
+Teacher: Eh, aquí vamos a aprovechar todo el hardware eh y el flujo de ejecución y de ejecución del procesador por cada procesador, porque al final la implementación que nosotros hagamos del servidor puede hacer de que podamos eh hacer que cualquier proceso ocupe todos los recursos que
+Teacher: tengo disponibles.
+Teacher: ¿Listo?
+Teacher: Y ya no es ya no es un tema de de elección de quién lo hace, sino es un solo servidor, es un solo servicio.
+Teacher: Pues entonces identifiquemos cómo cada una de las tareas o cada una de las acciones que podemos hacer dentro del procesador, pues entonces se puede ejecutar de manera concurrente, o sea, se perdón, se puede ejecutar utilizando todos los recursos disponibles.
+Teacher: Tengo poquitos recursos, pues aprovecho esos recursos que tengo.
+Teacher: tengo muchos recursos, pues la idea es de que esta tarea atienda a todos utilizando todos esos recursos.
+Teacher: ¿Cuál es la otra asunción que tiene este modelo o o este servidor basado en eventos?
+Teacher: Y es que las tareas no se pueden demorar mucho.
+Teacher: O sea, si yo tengo 10 10 clientes en mi en mi pool de conexiones, pues yo esperaría de que lo que me demore haciendo esta tarea no sea superior a el instante de tiempo o a la probabilidad de que llegue otro mensaje
+Teacher: de otro cliente, porque si llega otro mensaje, pues ese mensaje va a estar ahí eh eh en pendiente, ni siquiera en visto.
+Teacher: está pendiente para poderlo revisar cuando yo ya me desocupe, cuando ya esté disponible de todo eso.
+Teacher: Tengo todos los clientes, pero mientras cada uno de ellos eh está procesando y me manda una nueva petición, pues estoy ocupando el recurso en atender otro cliente.
+Teacher: ¿Listo?
+Teacher: Hasta ahí vamos bien.
+Teacher: Entonces, ¿cuál es mejor?
+Teacher: ¿Qué es mejor?
+Teacher: Utilizar un servidor secuencial, un servidor concurrente, un servidor basado en eventos.
+Student8: otra vez.
+Student8: Depende.
+Teacher: Pero, ¿por qué depende tanto?
+Teacher: ¿Quién me quién me quita esa
+Student8: Por ejemplo, el el basado en eventos, por lo que escucho,
+Teacher: dependencia?
+Student8: hm sería muy chore eh digamos que es óptimo bajo condiciones ideales de yo poder asignarle todos los recursos a una petición puntual.
+Student8: Eh, entonces por ese lado pues está muy chévere, pero por otro eh pues no sé, digamos que pierde un poco la capacidad de hacer muchas cosas a la vez.
+Teacher: Mhm.
+Student8: Entonces, si yo sé que mi mi aplicación eh digamos que tiene pocos clientes, pero con unos requerimientos muy fuertes, cada que entra una petición, pues yo voy a preferir un servidor de evento, ¿cierto?
+Student8: dedicar toda la intensidad de mi procesamiento a resolver una tarea muy grande y no o si tengo, por ejemplo, el caso contrario, si tengo muchas tareas eh pequeñitas, pero que son muchas muchas muchas muchas tareas,
+Student8: pues no voy a escoger un servidor basado en eventos porque pues literalmente voy a estar como dedicando recursos inmensos a un algo que es de pronto muy pequeño.
+Student8: Entonces, por eso
+Teacher: Mm.
+Teacher: Okay.
+Teacher: No, y y tiene mucho sentido, ¿cierto?
+Teacher: Entonces,
+Student8: depende
+Teacher: desde el punto de vista técnico o eh sí, de rendimiento, digámoslo así, el servidor basado en eventos es mucho mejor que el servidor concurrente basado en hilos y procesos, ¿cierto?
+Teacher: porque no tiene esos tiempos ni esas latencias que que están que están eh definidas o que están implícitas en el en el en la creación de los hilos o en la creación de los procesos, porque lo único que hago es tener una conexión y estar pendiente de cualquier
+Teacher: evento, cualquier activación que se venga de alguno de los clientes y simplemente voy a procesar ese evento.
+Teacher: Pero, pero lo que decía [estudiante], ¿y qué pasa si mis peticiones son muy pequeñas o tengo muchos clientes?
+Teacher: Y entonces ahí hay un, digámoslo así, hay una un proyecto, un problema que tiene que ver con este mundo de los sistemas distribuidos y los elementos concurrentes.
+Teacher: Y es poder identificar qué sistema o qué modelo de de atención de usuarios.
+Teacher: es el que mejor escala, ¿cierto?
+Teacher: ¿Cuál es la cuál es la digámoslo así?
+Teacher: ¿Cuál es la mejor implementación dependiendo el número de clientes o el número de usuarios que o el número de peticiones más que todo número de peticiones que vamos a estar eh teniendo en nuestro sistema si utilizamos un servidor concurrente o
+Teacher: un servidor basado en eventos?
+Teacher: Entonces, en esta página en kegel.com ck cenk eh es un digámoslo así es el problema de de los 10,000 clientes.
+00:55:00
+Teacher: Básicamente lo que hacen es analizar para cada implementación en en servidor concurrente o en servidor basado en eventos, ¿qué tan bueno es el modelo utiliza eh ese modelo para gestionar 10,000 clientes, 100,000 clientes, un millón de clientes y así sucesivamente,
+Teacher: ¿cierto?
+Teacher: O sea, en digámoslo así en potencias de 10,000.
+Teacher: ¿Qué tan qué tan potente es esa es la escalabilidad de nuestro sistema, ¿cierto?
+Teacher: Y básicamente o en términos generales pues termina la conclusión que que llegó [estudiante].
+Teacher: para cuando yo tengo pequeños sistemas o sistemas donde el número de clientes y de peticiones pues es controlado, sabemos que eh me es un servidor que va a estar dando solamente la hora.
+Teacher: O sea, que yo le hago la petición y me devuelve qué hora es, pues son peticiones muy pequeñas y existe poca probabilidad de o el tiempo que yo me demoro atendiendo eso no es tan grande como para que haya múltiples
+Teacher: clientes que estén pidiendo eh peticiones de manera concurrente.
+Teacher: Entonces, yo podría eh ese tipo de servicio utilizarlo con con eventos, ¿cierto?
+Teacher: Pero, ¿qué pasa si tengo 100,000 100,000 usuarios?
+Teacher: pidiendo la hora.
+Teacher: ¿Qué pasa si tengo un millón de usuarios pidiendo la hora?
+Teacher: Sí. Entonces, ya ese ese instante de tiempo, ese tiempo que me gasto yo en ir al al reloj y identificar qué hora es, pues ya se va viendo representativo.
+Teacher: ese tiempo que él se está gastando cuando tengo un millón de clientes, pues sí puede reflejar en que haya múltiples peticiones de manera que lleguen en ese en ese instante de tiempo y eso haga de que mi sistema funcione peor o entregue o
+Teacher: tenga tiempos de respuestas mucho peores porque van a quedar en cola.
+Teacher: A diferencia del modelo basado en procesos e hilos, que simplemente vamos a estar eh, ¿cómo lo digo?
+Teacher: vamos a estar creando y creando los hilos, pues o tener un pull de hilos ya cargados, listos para para que procesen, pero sí van a poder crecer.
+Teacher: Si le pongo más recursos, pongo más procesadores, van a poder crecer eh con mucha más eh soltura, ¿cierto?
+Teacher: o va a poder crecer mucho más fácil en ese modelo.
+Teacher: Entonces, realmente la sobrecarga de creación y destrucción de los procesos e hilos lo hace más malo en pequeños niveles de concurrencia.
+Teacher: Pero cuando tenemos unos grandes niveles de concurrencia, pues eh el modelo de eventos se queda corto porque va a entrar, digámoslo así, van a entrar muchos conflictos en el poder atenderlos a todos de manera simultánea.
+Teacher: Entonces, va al final va a estar en un modelo secuencial y todos los procesos o todos los clientes esperando a que a que los atiendan de una manera secuencial, básicamente.
+Teacher: ¿Listo?
+Teacher: eh tiene una peor escalabilidad, o sea, este sistema basado en eventos tiene una peor escalabilidad, pero la programación es menos oscura.
+Teacher: O sea, no tenemos que estar o no tenemos que conocer eh eh, no sé, técnicas o herramientas o elementos complejos para poderlo implementar.
+Teacher: Básicamente es simplemente es programación tal cual como nosotros hacemos un solo programa que atiende una sola petición.
+Teacher: Sí, solamente que tenemos este gestor de eventos que realmente no es que afecte la lógica de mi programa.
+Teacher: En cambio, cuando yo estoy trabajando con el uso y procesos, sí, sí dentro de la lógica de del programador tiene que quedar claro, el programador debe tener claro cuándo arrancar los hilos y cuándo arrancar los procesos.
+Teacher: Y entonces puede ser un poco más oscuro.
+Teacher: El concepto aquí más oscuro es qué tanto esfuerzo, qué tantas cosas tengo que hacer para poder implementar el uno o el otro.
+Teacher: Desde el punto de vista de hilos y procesos, hay un nivel un poquito mayor de conocimiento que deben tener los desarrolladores versus el conocimiento que necesito para la implementación basada en eventos.
+Teacher: ¿Listo?
+Teacher: Entonces, ¿cuándo es una mala idea utilizar hilos?
+Teacher: Y cuándo es una mala idea eh utilizar eventos.
+Teacher: Entonces, hilos es una mala idea para la mayoría de propósitos.
+Teacher: Yo sé que todos ustedes son unos duros en hilos, espero, pero en la gran mayoría de los servicios que nosotros hacemos no tiene mucho sentido trabajar hilos.
+Teacher: Ojo, tengamos en cuenta de que depende en qué sistema operativo estemos corriendo, cuál sea el lenguaje de programación que nosotros estemos trabajando, porque hay lenguajes de programación que no tienen implementación de servidores basados en eventos, ¿sí?
+01:00:00
+Teacher: O sea, no es que el hecho de que si yo elijo Python, pues Python no tiene un modelo basado en eventos.
+Teacher: ¿Listo?
+Teacher: Python sí o sí tiene que ir con hilos, pero si yo necesito sistemas de alto rendimiento, pues yo no lo voy a hacer en Python.
+Teacher: Sí, tengo que utilizarlo en C y en C tengo la posibilidad de de hacer sistemas basados eh servidores basados en eventos.
+Teacher: Entonces, dependiendo de cuál sea el problema que nosotros estemos eh realizando y si queremos mejorar el rendimiento, pero tengo yo claridad de que mi sistema no tiene una alta escalabilidad, no va a crecer mucho en peticiones, pues hilos es mala idea en la mayoría de propósitos,
+Teacher: pero eventos es una mala idea cuando tenemos un servidores de alta concurrencia, donde tenemos peticiones de múltiples usuarios o muchas peticiones.
+Teacher: en un instante de tiempo.
+Teacher: Listo.
+Teacher: Entonces, para que lo tengan ahí en cuenta, eh, como tal.
+Teacher: Vamos bien hasta ahí.
+Student8: Sí,
+Teacher: No te perde.
+Student8: profe.
+Student8: Yeah.
+Teacher: Estamos perdidos.
+Teacher: Esos muchachos están lejos.
+Teacher: Dale, vamos con el segundo aspecto.
+Teacher: ¿Listo?
+Teacher: ¿Cuál es el segundo aspecto?
+Teacher: La gestión de conexión.
+Teacher: Entonces, el primero, ¿cómo vamos a atender los clientes?
+Teacher: Seuencial, concurrente o eventos.
+Teacher: Eh, y la segunda, ¿cómo vamos a gestionar las conexiones, o sea, cómo vamos a ir a cómo vamos a recibir las peticiones, eh, y es que cuando yo me estoy eh cuando yo voy a hacer una petición al servidor,
+Teacher: digamos que yo tengo que hacer dos eventos.
+Teacher: uno, conectarme y después de que ya conecté o negociar la conexión con el servidor, ahora sí puedo mandarle eh la petición a partir del canal que que abrí con el servidor, ¿cierto?
+Teacher: Entonces, este segundo punto o este segundo aspecto tiene que ver con ese primer mensaje, cómo vamos a manejar las conexiones.
+Teacher: Y es que tenemos dos formas, como siempre yo siempre complicando, no hay una sola forma de hacerlo, hay dos formas.
+Teacher: tenemos una conexión por cada petición o conexiones persistentes.
+Teacher: Me conecto y después de que ya establecí mi conexión, puedo hacer múltiples peticiones al servidor.
+Teacher: ¿Listo?
+Teacher: En cambio, en el otro, yo me tengo que conectar, hago la petición y apenas me da la respuesta me cierra la conexión.
+Teacher: O sea, que es un modelo mucho más independiente o un modelo donde yo me conecto y puedo hacer múltiples peticiones a mi servidor.
+Teacher: ¿Listo?
+Teacher: Entonces vamos a analizar una por una, perdón, vamos a analizar una por una.
+Teacher: Primero, en el modelo de una conexión por cada petición, el usuario, perdón, el cliente tiene que establecer la comunicación con el servidor y se conecta.
+Teacher: Una vez conectado, manda una única petición, se procesa, el servidor me responde y cierra la conexión.
+Teacher: Eso quiere decir que si necesito o tengo más tareas por hacer, tengo que volver a conectarme, o sea, tengo que volver a establecer la conexión, volver a mandar la petición, me cierra y si tengo más tareas vuelvo y me mando la tarea o
+Teacher: intento hacer la conexión.
+Teacher: En este otro modelo yo me conecto o establezco la conexión, el servidor recibe la conexión y está esperando peticiones.
+Teacher: Entonces yo le digo, "Ey, necesito hacer esto." Él llega a la procesa,
+Teacher: me entrega respuesta.
+Teacher: ¿Algo más?
+Teacher: Sí, vea, tengo esta otra.
+Teacher: entro la proceso y me responde algo más y así sucesivamente.
+Teacher: Listo.
+Teacher: Para entender este modelo de gestión de conexiones, a mí me gusta utilizar una analogía con el tema de de las cajas en los bancos, ¿cierto?
+Teacher: O en o en un supermercado, ¿cierto?
+Teacher: Imag, pensemos en en el la forma como interactuamos con el cajero automático y la forma como trabajamos con el cajero persona que tenemos dentro del banco, ¿cierto?
+Teacher: Yo tengo múltiples transacciones para hacer.
+Teacher: Yo yo tengo que, no sé, pagar servicios, pagar el arriendo, tengo que sacar plata, tengo varias cosas para hacer.
+Teacher: Listo.
+Teacher: Si eso lo pudiese hacer en un modelo o en un cajero automático, o sea, si yo pudiera entrar, seleccionar en la opción de menú y quiero pagar eh la energía y luego pagar el gas y luego si todos lo pudiéramos hacer en un cajero electrónico,
+01:05:00
+Teacher: ¿cuál sería el modelo?
+Teacher: Una conexión por petición.
+Teacher: Si ustedes han visto los cajeros electrónicos, solamente saben hacer una cosa a la vez.
+Teacher: Entonces, ¿qué por qué lo digo?
+Teacher: Porque yo lo primero que hago es o lo primero que él me pide es, meta la tarjeta.
+Teacher: Eso pensémoslo como en el modelo de la conexión.
+Teacher: Tengo que meter la tarjeta para poderme conectar con el sistema, ¿cierto?
+Teacher: Luego me dice, ¿qué quiere hacer?
+Teacher: Consultar saldo, ¿Hacer un retiro?
+Teacher: ¿Qué es lo que quiere hacer?
+Teacher: Ah, no, quiero hacer un retiro.
+Teacher: Okay.
+Teacher: ¿De cuánto?
+Teacher: De un millón de pesos.
+Teacher: Me cuenta la plata, me entrega la plata.
+Teacher: ¿Y qué es lo último?
+Teacher: Y después de que me entrega, ¿qué me dice?
+Teacher: retire su tarjeta, o sea, me desconecta.
+Teacher: ¿Qué pasa si tengo múltiples peticiones?
+Teacher: Tengo que volverme a conectar, tengo que volver, saco la tarjeta, vuelvo y la meto.
+Teacher: Saco la tarjeta y vuelvo y le meto.
+Teacher: Y así por cada una de las transacciones que yo tenga pendientes por hacer.
+Teacher: ¿Listo?
+Teacher: En el en la en las conexiones persistentes es más como cuando vamos a hablar con el cajero persona, ¿cierto?
+Teacher: Porque nosotros esperamos en una cola, cuando no se atiende, yo puedo sacar tantas peticiones o tantas eh sí, puedo hacer realizar tantas peticiones o tantas actividades o tareas mientras me esté atendiendo a mí, ¿cierto?
+Teacher: ese servidor me está atendiendo a mí y como yo soy el que estoy en la eh eh en en atención, puedo pedirle una, 2, 3, 5, 10, 50 peticiones.
+Teacher: ¿Listo?
+Teacher: Y cuando termine de hacer todas mis peticiones, yo le digo, "Listo, ya terminé, no necesito más. Me desconecto y me voy." Listo.
+Teacher: ¿Cuál de las dos es mejor?
+Teacher: Ah, bueno, pero ya desde el punto de vista eh de sistemas, cuando yo hablo de una conexión por petición, recuerde que el servidor va a estar esperando petición o esperando conexiones para recibir las peticiones.
+Teacher: Pues entonces en este modelo, imaginémonos el banco, el mismo cajero de banco, la persona, pero que solamente por cada vez que yo me acerque a la a la casilla solamente me permitiera hacer una sola transacción.
+Teacher: Entonces, yo voy al banco, veo una cola, hago la cola y cuando me atiende me dice, "Solamente le recibo una transacción, ¿qué va a hacer?" No quiero consultar el saldo.
+Teacher: Okay, tiene 50,000 pesos.
+Teacher: ¿Tiene algo más para hacer?
+Teacher: Sí, vuelva a la cola.
+Teacher: Ojo, vuelva a la cola porque tiene que volver a conectarse, tiene que volver a hacer todo el proceso de conexión.
+Teacher: ¿Listo?
+Teacher: Viene por la otra.
+Teacher: ¿Qué quiere hacer?
+Teacher: No, sacar los 50,000 pesos.
+Teacher: Le entrega los 50,000 pes y, ¿qué más?
+Teacher: ¿Tiene algo más para hacer?
+Teacher: Sí. vuelva a la cola.
+Teacher: Eso es el modelo, una conexión por petición, porque cada vez que necesite hacer algo o si tiene muchas cosas por hacer, tiene que establecer o intentarse conectar, e, entrar a la cola e intentar volver a que lo puedan atender.
+Teacher: ¿Listo?
+Teacher: En cambio, en este si es el modelo tradicional.
+Teacher: Ya estoy aquí, ya me está atendiendo.
+Teacher: Yo le doy una, 2, 3, cu, cinco transacciones y después de n tiempo, pues me atiende y ya me salgo.
+Teacher: ¿Qué pasó con las otras personas que querían el servicio?
+Teacher: Están esperando en la cola, ¿cierto?
+Teacher: Y tienen que esperar a que termine todas las transacciones que yo tengo.
+Teacher: No sé si queda claro el los modelos, una conexión por petición o conexiones persistentes.
+Teacher: N peticiones por cada conexión.
+Teacher: Sí, queda claro.
+Teacher: ¿Cuál es mejor?
+Teacher: Esta o esta.
+Teacher: Ah, depende de qué depende del sistema que estemos implementando.
+Teacher: ¿Cierto?
+Teacher: No quería escuchar a [estudiante] diciendo depende otra vez porque los demás no no lo han pensado.
+Teacher: ¿Por qué?
+Teacher: ¿Por qué depende?
+Teacher: Ah, porque pensémonos, pensémoslo desde el punto de vista del cliente.
+Teacher: Imagine, ustedes han ido al banco, espero que ustedes sean de los jóvenes juiciosos que hacen las eh las tareas o o hacen los mandados en la casa, ¿cierto?
+Teacher: Entonces, ustedes van al banco y ven una cola larga.
+Teacher: ¿Ustedes qué dicen?
+Teacher: ¿Me quedo o no me quedo?
+Teacher: ¿Por qué?
+Teacher: Porque cada persona que está en la cola sabemos de que va a tener o se va a demorar un buen rato porque pueden hacer múltiples transacciones.
+Teacher: ¿Qué tal si yo les digo que cada persona que está en la cola solamente puede hacer una petición, una sola transacción?
+01:10:00
+Student8: fluye más rápido.
+Student8: Hasta de pronto me quedo.
+Teacher: De de pronto me quedo porque yo sé, ah, okay.
+Teacher: Eh, si cada transacción se demora un minuto, hay 10 personas en 10 minutos me atienden.
+Student7: Pero si tiene más transacciones o tiene muchas transacciones,
+Teacher: Sí.
+Student7: pues ahí es donde lo piensa uno.
+Teacher: Ah, pero ahí está, ahí está el detalle.
+Teacher: Pero imaginemos ese ese escenario.
+Teacher: Entonces, una sola transacción, pero yo vengo solamente a hacer una consignación o vengo a pagar eh no sé el agua antes de que me corten.
+Teacher: Okay, yo veo que son 10 más o menos un minuto por cada por cada usuario o por cada petición.
+Teacher: 10 minutos me aguanto.
+Teacher: Y la y la cola fluye, ¿sí o no?
+Teacher: La cola fluye bastante.
+Teacher: ¿Por qué?
+Teacher: Porque es que usted venga tan tan y despachado.
+Teacher: Ah, necesita hacer más.
+Teacher: vaya la cola.
+Teacher: Así que el número de peticiones que yo voy a poder atender o digamos el número de clientes que voy a poder atender en un instante de tiempo, en una hora, pues van a ser 60. Y eso es satisfacer a 60 clientes si vienen para una sola
+Teacher: transacción.
+Teacher: ¿Quiénes son los que se van a encomodar?
+Teacher: Los que tienen múltiples transacciones, ¿cierto?
+Teacher: ¿Por qué?
+Teacher: porque van a tener que llegar, atender y luego volver a empezar a hacer la cola y ahí entonces no se sabe, pues desde el punto de vista de atención al cliente, no se sabe cuánto tiempo va a estar en sala.
+Teacher: ¿Por qué?
+Teacher: Porque si tengo cinco transacciones, soy un mensajero y traigo cinco transacciones, pues tengo que hacer cinco veces la cola.
+Teacher: Puede que fluya, pero son cinco veces que me me atienden y tengo que volver a empezar.
+Teacher: Me atienden, tengo que volver a empezar sin saber cuál es el tamaño de la cola en cada uno de los intentos, ¿cierto?
+Teacher: Dale.
+Teacher: Pero yo sé que yo como usuario que estoy en la cola después de n tiempo o rápidamente o mucho más rápido me van a estar atendiendo.
+Teacher: ¿Qué pasa con este otro modelo que es el que realmente utilizan los los bancos?
+Teacher: El modelo de las n peticiones en la misma conexión.
+Teacher: Ah, voy a ir despachando clientes más rápido, porque ese cliente que tenía n peticiones después de que se conectó, atendí, le atendí todo lo que quería, todo lo que necesitaba y adiós, pues se fue, ¿cierto?
+Teacher: Ese cliente quedó muy contento porque, okay, tuvo que esperar bastante a que le dieran a que le dieran turno, ¿sí?
+Teacher: a que lo pudieran atender, pero una vez atendido ya sabe que ya salió, que ya terminó, que no tiene que estar esperando más tiempo.
+Teacher: Listo.
+Teacher: Y todo el paquete de tareas que tenía para hacer ya las terminó.
+Teacher: Listo.
+Teacher: Y le puedo puedo irme para para donde el cliente y decirle para donde el usuario y decirle, "Mire, ya terminé todo esto. Eh,
+Teacher: me gasté 2 horas, 3 horas haciendo esto, pero listo, ya terminé.
+Teacher: Pero en el otro no hay una garantía de cuánto tiempo se demore en terminar la tarea o determinar el mandado.
+Teacher: ¿Listo?
+Teacher: Entonces, cuando tenemos una conexión de petición es mucho más sencillo, pero hay mayor sobrecarga.
+Teacher: Sobrecarga en qué sentido?
+Teacher: en que por cada petición que yo voy a hacer tengo que establecer una conexión, tengo que volver a conectarme, volver a conectarme eso.
+Teacher: Es como si estuviera trabajando en modo desconectado o lo que yo les decía del cajero, por cada cosa que yo quiera hacer, meta la tarjeta, saque la tarjeta, meta la tarjeta, saque la tarjeta.
+Teacher: Y pues uno diría, pues si ya tiene la tarjeta ahí, ya sabe quién soy yo, pues por qué no me deja hacer las múltiples transacciones porque fue definido como un modelo donde una conexión por cada petición.
+Teacher: Listo.
+Teacher: Ah, pero que en este modelo, en este modelo yo puedo yo podría quedarme en ese ciclo de meta la tarjeta, saque la tarjeta, meta la y no y no libero el recurso.
+Teacher: Sí, eso es eso es posible, pero digámoslo así que el modelo va a ser de que la gente que está esperando, si tengo, digámoslo así, el mismo nivel de trabajo que hacerlo en la cajera cajero normal, se va a demorar mucho más tiempo,
+Teacher: ¿cierto?
+Teacher: porque tiene que establecer la conexión, meta la clave, saque el saque la tarjeta, vuélvala a meter, meta de nuevo la clave y así sucesivamente.
+Teacher: O sea, hay una mayor sobrecarga en la tarea.
+Teacher: Eh, bueno, y necesitamos protocolos de transporte orientados a cliente servidor como el TD TCPIP o TCP FAS Open.
+Teacher: Ahora, ¿qué pasa con estos con este modelo de conexión persistente?
+01:15:00
+Teacher: Y es que es más complejo porque vamos a tener que implementar una cosa un poco más eh hilos o procesos o y si estoy en eventos, ¿cómo hago yo para para manejarle múltiples peticiones al mismo cliente y dejar a los otros ahí
+Teacher: parados?
+Teacher: Probablemente este modelo no puede no puede aplicar en un cliente servidor basado en eventos, ¿cierto?
+Teacher: Porque la idea es esa, la idea es que o atiendo una petición y mientras él piensa que cuál es la segunda petición puedo estar atendiendo a otro cliente.
+Teacher: Habría que mirar el nivel de peticiones que que vamos a tener en nuestro sistema, ¿cierto?
+Teacher: Es más complejo de desarrollar, pero tiene menor sobrecarga porque no tengo que estar conectándome o identificándome una por una.
+Teacher: Eh, el servidor va a admitir un número limitado de conexiones, o sea, ahí vamos a estar restringiendo las capacidades de mi servidor, porque entonces ya no voy ya no va a poder atender 100 clientes, 1000 clientes, porque un cliente puede estar haciendo 100 tareas.
+Teacher: Entonces, voy a tener que limitar el número de clientes para poder atender de manera eficiente mi sistema, ¿cierto?
+Teacher: eh dificulta el reparto de servicio entre clientes.
+Teacher: Esto, digámoslo así, este tema del balanceo de carga o o de que una petición la atienda un cliente y otra petición la atiende otra, no podría ser.
+Teacher: Todas las peticiones las tendría que estar atendiendo el mismo servidor para poder pues garantizar el seguimiento y la y que la conexión se realizó de manera correcta.
+Teacher: Entonces, todas las peticiones se tienen que hacer hacia el mismo servidor.
+Teacher: Eh, implica que el servidor mantiene el estado.
+Teacher: Más adelante vamos a hablar qué significa servidores con estado.
+Teacher: Eh, pero básicamente necesita de que el ese servidor tiene que saber quién es ese cliente durante todo el tiempo de la conexión.
+Teacher: tiene que saber qué es el cliente, qué ha hecho, cómo lo ha hecho, si tiene permisos o no, etcétera.
+Teacher: O sea, todo eso lo tiene que tener el servidor como en su mente ahí, eh, para poder atenderlo de la mejor manera.
+Teacher: dificulta el reparto de carga, ese eso del escalado horizontal de poder crecer en más servicios, pues si todas las peticiones tienen que ir al mismo servidor, pues entonces limita esa posibilidad de de escalado horizontal.
+Teacher: Posibilita el pipeline en la petición es enviar la siguiente petición sin esperar la respuesta previa.
+Teacher: Okay, esto es básicamente como una mejora en el servicio porque yo sé que si ya hizo esto, ya hizo esto, ya hizo esto, muy probablemente lo que sigue o la siguiente petición es esta, entonces yo ya puedo empezar a preprocesarla antes de que me la pida.
+Teacher: ¿Listo?
+Teacher: y o puedo mandar múltiples peticiones y el pues si el servidor simplemente va recibiendo, atiende una y apenas entrega la respuesta ya tiene la otra ahí en en la entrada, pues entonces simplemente la toma y así sucesivamente y facilita el server push,
+Teacher: o sea, de que el coneo de conexiones persistentes, como yo estoy ahí conectado esperando, pues el servidor en cualquier momento puede venir y entregarme una notificación o darme una notificación.
+Teacher: Eso lo vamos a ir viendo.
+Teacher: Eso el server push lo vamos a ver un poquito más adelante, pero pero con esta gestión de conexiones, si utilizo este modelo, si utilizo este modelo, digamos que voy a estar atendiendo a los clientes de manera más eficiente si vienen con solo una
+Teacher: petición.
+Teacher: ¿Listo?
+Teacher: Entonces, voy a ir despachando peticiones mucho más rápido.
+Teacher: Sí. y los clientes van a estar menos en la cola.
+Teacher: Pero con este modelo yo voy a atender muy bien al cliente que llegó, que se logró conectar.
+Teacher: Lo voy a atender muy bien y lo voy a atender todo el tiempo que sea necesario para él.
+Teacher: Pero si yo lo estoy manejando de esa manera, el los clientes se van a quedar en cola y ya sabemos de que nosotros somos desesperados y si llevamos mucho tiempo en la cola, ¿qué hacemos?
+Teacher: Ah, ya me mamé, me fui.
+Teacher: Algo por el estilo puede suceder acá.
+Teacher: lo el tema de los timeouts, que es el tiempo de espera, el tiempo máximo de espera que nosotros programamos la conexión o que una petición me pueda responder o el tiempo máximo de latencia que nosotros estamos dispuestos a soportar.
+Teacher: Eso es lo que nosotros llamamos el time out, ¿cierto?
+Teacher: ¿Cuánto es el tiempo máximo de latencia que yo espero?
+Teacher: Después de que hice la petición, ¿cuánto es el tiempo máximo que yo esperaría para decir que si me atendió o no me atendió o o si la respuesta es válida o no, etcétera?
+Teacher: Entonces esos elementos que que hacen que mi servicio funcione bien o mal, pues terminan siendo o terminan dificultándose gracias a este modelo.
+Teacher: Listo, porque el que se conectó le va muy bien, pero los que están en cola, pues van a van a tener unos tiempos de latencia mucho más altos y mucho más ineficientes, dependiendo del número de cuántas peticiones tiene cada cliente que está
+01:20:00
+Teacher: conectado.
+Teacher: No sé si tienen alguna duda sobre esto o les queda alguna inquietud o les quedó completamente claro cómo funciona, cómo vamos a definir nuestro servidor, si de esta manera o de esta manera.
+Teacher: Listo.
+Teacher: Una una cosa que debemos tener en cuenta, lo vamos a hablar un poquito cuando estemos en servidores con estado y sin estado, pero en este modelo cuando cuando el usuario tiene una una conexión por petición,
+Teacher: la petición debe ir con todo el bloque de datos que necesita el servidor para trabajar.
+Teacher: ¿Listo?
+Teacher: Eso, eso quiere decir de que si yo tengo que volver varias veces, yo tengo que venir con el historial de todo lo que me han hecho para que él lo pueda atender.
+Teacher: ¿Listo?
+Teacher: O sea, si yo necesito que me saque o perdón, yo necesito que me consulte el saldo para después hacer un retiro, pues yo tendría que llegar aquí con el tiquetico del saldo, por decirlo así.
+Teacher: Tendría que venir con el tiquetico del saldo para que el usuario, para que el servidor diga, "Ah, usted ya tiene esto." Entonces tenga la plata.
+Teacher: Listo.
+Teacher: Eso no es exactamente igual.
+Teacher: Así no va a funcionar en el banco, pero es más o menos el modelo.
+Teacher: Todo lo que yo ya le hice tengo que venir con el con el paquetico en la mano por si la necesito en la nueva transacción.
+Teacher: ¿Listo?
+Teacher: Eso es como lo importante en este modelo.
+Teacher: En cambio, aquí como el servidor tiene el control o tiene el eh el historial de todo lo que de todas las peticiones y todas las respuestas, pues entonces puede eh reaccionar a partir de esa información.
+Teacher: La tiene en el contexto, ¿sí?
+Teacher: y entonces puede dar respuesta o puede atender las solicitudes basado en en ese contexto.
+Teacher: En cambio, en el otro, como esta petición la hago yo y la siguiente petición puede ser mi compañero que está al lado, entonces él tiene que tener todo el contexto o toda la información necesaria para poder tomar una decisión
+Teacher: o para poder procesar de manera adecuada la petición.
+Teacher: ¿Listo?
+Teacher: Eh, creo que aquí ya pasamos al tercero y ya no nos da tiempo para ver este tercero.
+Teacher: Así que, jóvenes, ¿cómo lo ven?
+Teacher: ¿Cómo ven esos dos aspectos de diseño?
+Teacher: Pero no tanto.
+Teacher: Se me fue.
+Student8: Profe, pues interesante porque lo pone uno a pensar el paqué, ¿cierto?
+Teacher: Ajá.
+Student8: Eh, ¿qué es la tarea que yo voy a a resolver con mi sistema distribuido?
+Student8: Eh, ¿cuántos usuarios tengo a la vez?
+Student8: ¿Qué tan grande o tan pequeña es la tarea eh para yo poder eh elegir un modelo de gestión de conexiones y una forma de atender esas esas peticiones.
+Student8: Entonces, nada interesante.
+Teacher: Y eso es algo que por y eso es algo que normalmente nosotros no pensamos, ¿cierto?
+Teacher: Esa para nosotros no siempre vamos a ser cliente servidor y y sí es un cliente
+Student8: Mhm.
+Teacher: servidor, pero ¿qué tipo de cliente necesito o qué tipo de servidor necesito?
+Student8: Vamos.
+Teacher: ¿Cierto?
+Teacher: Entonces, todo lo que hemos visto son diferentes opciones de qué tipo de cliente o qué tipo de servidor necesito.
+Teacher: Y estos cinco aspectos son los que van a definir eh el cómo vamos a ir atendiendo, cómo va a ser el funcionamiento de mi servidor.
+Teacher: No siempre todos los servidores se tienen que manejar de la misma manera, ¿cierto?
+Teacher: No, no siempre todas las eh todos los servicios que nosotros estemos creando tienen que funcionar de la misma manera.
+Teacher: Cada uno puede tener un dependiendo del tipo de servicio, dependiendo del tipo de de de peticiones que nosotros vamos a estar recibiendo, vamos a poder optar por una u otra.
+Teacher: ¿Listo?
+Teacher: Eh, jóvenes, no deemos aquí por hoy.
+Teacher: No sé si tienen alguna duda, inquietud antes de cerrar la clase y si no, pues nos vemos el jueves.
+Teacher: Listo, nos vemos el jueves,
+Student11: Muchas gracias,
+Teacher: entonces.
+Student11: profe,
+Teacher: Dale, que esté muy bien.
+Student11: que estés muy
+Teacher: Buenas noches.
+Student18: Hasta luego,
+Student4: Chao, profe.
+Student18: profe.
+Student27: Luego, profe.
+Student22: Solup.
+Student8: Hasta luego, profe.
+Student8: Gracias.
+La reunión finalizó después de 01:24:37 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+

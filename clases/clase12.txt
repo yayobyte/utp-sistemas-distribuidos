@@ -1,0 +1,834 @@
+Hora de inicio de la reunión: 2026-10-15 18:29 GMT-5
+Asistentes
+Student36, Student1, Student3, Student4, Teacher, Student5, Student6, Student7, Student8, Student28, Student9, Student12, Student13, Student14, Student15, Student16, Student17, Student18, Student19, Student20, Student21, Student22, Student23, Student35, Student25, Student26, Student27
+Transcripción
+Teacher: Hola, jóvenes.
+Teacher: Buenas noches.
+Teacher: ¿Cómo están?
+Teacher: Espero que todo muy bien.
+Teacher: Bienvenido a esta nueva sesión de del curso de cliente servidor, ¿cierto?
+Teacher: Perdón, de sistemas distribuidos, pero ya llevamos mucho tiempo hablando de cliente servidor.
+Teacher: Eh, desde la clase pasada empezamos a hablar un poco sobre los aspectos de diseño, ¿cierto?
+Teacher: los aspectos o las cinco cuestiones, preguntas o cinco características que deberíamos nosotros tener en cuenta al momento de desarrollar una aplicación cliente servidor y vale la pena tenerlos en cuenta porque eso va a
+Teacher: definir cómo va a ser la atención a los distintos usos clientes y cuál va a ser el rendimiento que nosotros vamos a lograr con este modelo.
+Teacher: ¿Listo?
+Teacher: En la clase pasada alcanzamos a ver dos modelos.
+Teacher: de dos aspectos.
+Teacher: El primero, el cómo vamos a atender a los clientes, ¿cierto?
+Teacher: ¿Cuál va a ser el modelo o el esquema de servicio a múltiples clientes?
+Teacher: Si vamos a trabajar de manera secuencial, si vamos a trabajar con un servidor concurrente o íbamos a trabajar con servidores basados en eventos.
+Teacher: Y estuvimos hablando un poco de las características de cada uno de ellos.
+Teacher: ¿Qué es trabajarlo eh con hilo o con qué es secuencial?
+Teacher: ¿Qué es trabajarlo concurrente con hilos?
+Teacher: que es trabajar con currente con eh con procesos y también un poco estuvimos describiendo cómo es el funcionamiento de del sistema basado en eventos, ¿cierto?
+Teacher: Eh, adicional estuvimos hablando también el segundo aspecto que tiene que ver con la gestión de conexión, o sea, cómo va a ser el proceso de conexión y cuántas peticiones vamos a aceptar por cada una de las peticiones.
+Teacher: Entonces, teníamos estas dos opciones.
+Teacher: Una conexión por petición quiere decir de que cada vez que yo necesite algo tengo que hacer la cola, tengo que ir a a hacia el servidor y decirle que necesito hacer algo.
+Teacher: Si el servidor está disponible o tiene capacidad, pues me va a atender de una vez.
+Teacher: Si no tiene la capacidad, pues me va a dejar en espera hasta que haya recursos disponibles.
+Teacher: ¿Listo?
+Teacher: Eh, en el y una vez me el servidor o establezco la conexión con el servidor, pues simplemente hago la conexión, envío la petición, me manda la respuesta y luego me desconecta, ¿cierto?
+Teacher: De tal manera que si yo necesito hacer una nueva petición, pues tengo que volver a ingresar de nuevo o volver a hacer el proceso de conexión por completo.
+Teacher: En cambio, en las hablamos de conexiones persistentes o que yo puedo mandar varias peticiones en una misma conexión.
+Teacher: En este modelo eh nosotros eh digamos que hacemos una conexión directa hacia un servidor y mientras esté conectado a ese servidor voy a estar enviando información por el canal.
+Teacher: Eh, este puede verse bastante chévere o interesante desde el punto de vista de del modelo de que voy a poder atender de mejor manera a los usuarios, pero eso hace de que mi sistema tenga algunas limitaciones de
+Teacher: escalamiento y de distribución de conexiones o distribución de peticiones, porque si elijo ese modelo de conexión persistente, pues voy a tener que siempre hablar con el mismo servidor.
+Teacher: Entonces, si tenemos escalamiento horizontal, o sea, que si tenemos varias copias del mismo servicio, no voy a poder enviar información a a cualquiera de los servidores.
+Teacher: Todas las peticiones tienen que ir al mismo servicio.
+Teacher: Entonces ahí perdemos, digamos que la flexibilidad que habíamos o que podemos nosotros darle a nuestro sistema de esa capacidad de crecimiento, porque siempre voy a saber o tengo que saber a qué servidor me tengo que conectar o a qué
+Teacher: servidor le tengo que mandar la petición porque ya estoy conectado a él y solo hasta que yo termine todas mis peticiones y le diga de manera explícita que me quiero desconectar, solo hasta ese momento pues voy a liberar los recursos.
+Teacher: Entonces, con el modelo de una conexión competición, vamos a poder atender más usuarios con los mismos recursos.
+Teacher: Con el modelo de peticiones eh de conexiones persistentes, voy a tener menos posibilidad de atender usuarios, o sea, voy a tener una capacidad un poco más limitada porque los recursos van a estar destinados o van a
+Teacher: estar reservados para un usuario mientras esté en sesión o mientras esté conectado.
+00:05:00
+Teacher: ¿Listo?
+Teacher: Entonces, eso hace de que los recursos no se liberen tan rápidamente y es y puede que mi sistema pues se vea un poco más limitado en cuántos clientes puede atender porque necesita manejar eso.
+Teacher: Por aquí habíamos hablado de que el servidor debe mantener el estado.
+Teacher: Eso lo vamos a hablar como en uno de los otros aspectos que vamos a hablar hoy, pero significa eso y es como siempre me tengo que conectar con el mismo, pues entonces él debe guardar en su memoria o en la memoria que tiene asignada en el proceso
+Teacher: va a tener que guardar eh la información de qué hemos trabajado o qué hemos estado trabajando durante esta conexión, ¿cierto?
+Teacher: Eso tiene cosas buenas y tiene cosas malas.
+Teacher: Eso es más o menos lo que vamos a ver ahora más ratico, pero ahora nos vamos a concentrar en el tercer aspecto de diseño y es cómo localizamos el servidor.
+Teacher: ¿Cómo así que cómo localizamos el servidor?
+Teacher: Pues en este modelo o en esta arquitectura pues el cliente tiene que llegar al servidor, ¿cierto?
+Teacher: Tiene que decirle a dónde se tiene que conectar.
+Teacher: Pero hemos hablado de que existen muchas variantes o muchas posibilidades para establecer esa conexión, ¿cierto?
+Teacher: Habíamos hablado de servidores jerárquicos, habíamos hablado de servidores con cachés, proxis, etcétera.
+Teacher: O sea, vimos bastantes variantes para hacer este proceso de conexión, digamos que de manera eh independiente, ¿cierto?
+Teacher: o tengo muchas formas de encontrar servidores.
+Teacher: Y si hacemos escalamiento o hacemos eh replicación de servicios, pues yo tengo que decirle, "Ey, yo necesito conectarme a un servidor que me pueda atender un servicio, ¿lo? O que o que sepa hacer la petición que yo tengo pendiente por hacer." Pero
+Teacher: eh cuando nosotros pensamos en este problema, en cómo localizamos el servidor, cómo hacemos de que el cliente sepa dónde se encuentra el servidor, siempre terminamos con una misma variante, una misma forma de de hacerlo y es, ¿no?
+Teacher: Pues digámosle en qué máquina y en qué puerto está escuchando ese servidor, ¿cierto?
+Teacher: Eso es como lo común.
+Teacher: ¿Cómo?
+Teacher: ¿Dónde está el servidor?
+Teacher: Ah, busquemos una máquina, eh, démosle la dirección IP y el puerto por el que está escuchando y con eso resolvemos.
+Teacher: Pero eso no es escalable, ¿cierto?
+Teacher: Si yo tengo varias copias o múltiples copias del mismo servicio, el cliente solamente se conectaría a uno y todos los clientes intentarían buscar ese uno.
+Teacher: La Entonces, este tercer aspecto de diseño habla es, okay, quitemos esa dependencia, o sea, no utilicemos el eh la dirección y la máquina y el puerto del servicio para poder establecer conexión.
+Teacher: ¿Okay?
+Teacher: ¿Cómo nos conectamos?
+Teacher: Entonces, aquí nosotros vamos a a agregar un nuevo concepto que lo vamos a llamar el binder.
+Teacher: ¿Qué es el binder?
+Teacher: El binder es un servicio que se encarga de decirme dónde están los servidores.
+Teacher: Es un servidor que su única función es decirme en dónde está el servicio que yo necesito.
+Teacher: Entonces, de esa manera el cliente no tiene que saber en qué máquina está.
+Teacher: eh no tiene que saber en qué máquina y en qué puerto está de manera específica, sino que voy a tener un servidor que se va a encargar de decirme en qué máquina y en qué puerto o a qué máquina y a qué puerto me tengo que conectar para para poder llegar al
+Teacher: servicio, para poder ejecutar la petición que yo tengo.
+Teacher: Pero entonces ahí viene la la discusión de, okay, ¿qué es primero?
+Teacher: ¿El huevo o la gallina?
+Teacher: O sea, ¿cuál es el problema?
+Teacher: Si el problema es que no podemos depender de un servidor o de una dirección de servidor para localizar, para poder llamar el servicio, vamos a agregar otro servidor en la mitad llamado Binder, que todos los clientes van a tener que conocer.
+Teacher: O sea, cómo vamos a resolver un problema metiendo el mismo problema.
+Teacher: Ese es básicamente el el concepto, ¿cierto?
+Teacher: Y es que el binder termina siendo un servidor y ese binder es mi cuello botella y es mi punto crítico de fallo porque es un servidor y generalmente va a ser un servidor único.
+Teacher: Sí. Entonces, eh en ese en ese en ese concepto pues estamos como, ¿qué fue primero?
+Teacher: ¿El huevo o la gallina?
+Teacher: ¿Cierto?
+Teacher: ¿Cómo resuelvo un problema de localizar el servidor?
+Teacher: pues coloque otro servidor que le diga dónde se encuentra el servidor.
+Teacher: No tiene mucho sentido, pero ojo, este servidor solamente se encarga de tener la relación de cuál es el servicio que que usted necesita o qué servicio está funcionando y en dónde se encuentra.
+00:10:00
+Teacher: Solamente tiene esa función, no va a procesar nada más, no va a hacer ningún tipo de cálculo, ni va a tener caché de de procesamiento o de respuestas.
+Teacher: Simplemente me va a decir, "Okay, necesitas este servicio. Vaya,
+Teacher: conéctese la máquina uno por el puerto 5000 y este otro y si necesita este otro servicio, vaya a la máquina 7 por el puerto 18,000 y así sucesivamente.
+Teacher: ¿Listo?
+Teacher: él solamente se encarga de decirme dónde se encuentra el servicio que yo estoy buscando.
+Teacher: Pero lo que decimos, no quiero saber quiero saber dónde está el servidor, pero quiero ocultárselo al cliente, pero el cliente debe conocer la dirección y puerto del Binder.
+Teacher: O sea, al final sí vamos a depender de un servidor.
+Teacher: ¿Por qué es importante?
+Teacher: ¿Por qué no necesitamos el binder en nuestro sistema?
+Teacher: Para evitar que los clientes tengan que conocer las ubicaciones o o el lugar específico donde donde se encuentran los servicios.
+Teacher: ¿Y por qué es importante eso?
+Teacher: Recuerden que nosotros tenemos la posibilidad de tener múltiples copias.
+Teacher: Pues entonces yo tendría que decirle al cliente, cada vez que creo una nueva copia, tendría que decirle al cliente, "Ey, tenga en cuenta de que hay un nuevo servidor que también es capaz de atender estos servicios."
+Teacher: Sí, si estoy haciendo migración, si estoy pasando de una plataforma a otra, si estoy pasando de un equipo a otro, entonces tengo que estarle diciendo, "Mire, tenga en cuenta que si no encuentro el servicio en la máquina uno,
+Teacher: búsquelo en la máquina dos, porque voy a estar migrando, voy a estar haciendo una actualización de hardware o estoy moviéndolo para otro sitio porque le voy a hacer un mantenimiento al equipo físico, ¿cierto?
+Teacher: Entonces, necesito moverlo a otro a otra ubicación, a otro eh componente para el que estemos trabajando.
+Teacher: o si estamos en el mundo de la alta disponibilidad, pues entonces yo tengo que decir, "Okay, si este señor no me responde o qué disponibilidad o qué posibilidades tengo para poder llegar al servicio, entonces me va a decir,
+Teacher: mire, tienes dos posibilidades, entra al servidor uno, entra al servidor dos." Eso es lo que hace el Binder,
+Teacher: ¿listo?
+Teacher: es empaquetar o al menos gestionar el servicio que yo necesito en dónde lo puedo encontrar, cómo vamos ahí bien, se entiende el servidor binder o el o la función de este servidor.
+Teacher: ¿Qué es lo que necesitamos?
+Teacher: Okay, vamos a identificar o vamos a darle una o vamos a crear una identificación de servicio.
+Teacher: ¿Qué es esto de la identificación de servicio?
+Teacher: pues es el nombre del servicio al que nosotros nos vamos a conectar.
+Teacher: ¿Qué es un nombre de servicio?
+Teacher: Por ejemplo, yo me quiero conectar a un servidor Postgress, entonces o al servidor Postgress que tiene eh la base de datos, no sé, historial académico.
+Teacher: solamente decir de que es la base de datos historial académico o una base de datos posgr con historial académico, yo debería poder encontrar en qué parte de todos los nodos que tengo dentro de mi sistema dentro de mi infraestructura,
+Teacher: en cuál de esos nodos está el servicio que que recibe o que es capaz de atender ese tipo de solicitudes.
+Teacher: La información del histórico, de el historial académico de los estudiantes.
+Teacher: ¿Listo?
+Teacher: Y si yo necesito otro servicio, yo necesito el el servicio donde donde podemos enviar los archivos a de no sé, los archivos privados.
+Teacher: Entonces voy a tener otro servicio al cual yo le puedo mandar los archivos, ¿cierto?
+Teacher: Que me gestione los archivos de una manera privada, que no sea público para todos los usuarios.
+Teacher: Entonces eso ese tipo de servicio yo necesito darle un identificador, pero ese identificador debe ser fácil de recordar o fácil de entender para para el humano o para el cliente, ¿cierto?
+Teacher: o para el usuario que está utilizando el cliente no debe ser algo tan extraño como la dirección Macutador más la dirección del ínodo dentro del disco duro o el puerto por donde está escuchando,
+Teacher: porque probablemente a los a los usuarios o los usuarios no van a tener muy claro eso.
+Teacher: Los clientes también cuando yo necesite acceder a múltiples servicios o mi cliente puede acceder a múltiples servidores, tendría que yo decirle a cuál de todos los servidores es el que necesito ir.
+Teacher: Y sería muy maluco pedirle al usuario que diga a qué servidor lo va a hacer y que la identificación de cada servicio, sea números o la dirección IP y puerto.
+Teacher: Creo que no sería bastante elegible o al menos bastante útil ese tipo o ese modelo.
+00:15:00
+Teacher: Entonces, ¿qué es lo que buscamos?
+Teacher: que buscamos es crear un identificador, un identificador del servicio.
+Teacher: Y ese identificador pues lo voy a utilizar para mandárselo al Binder y el Binder me pueda devolver la ubicación o la locación donde se encuentra el servicio.
+Teacher: ¿Qué se espera o qué quisiéramos que tuviera ese identificador de servicio?
+Teacher: Pues primero que fuera de ámbito global.
+Teacher: ¿Qué significa esto?
+Teacher: De que todos los servicios que yo pueda utilizar o que yo podría necesitar debería debería ser único para todo el sistema.
+Teacher: ¿Listo?
+Teacher: Entonces, si el recurso o el servicio que yo necesito es un archivo, pues entonces el nombre del servicio que yo le diga eh es un archivo, o sea, él entenderá que es un archivo, pero le puedo dar otro servicio y él y ese otro servicio puede ser un servidor.
+Teacher: otro servicio, puede ser un un una lista de permisos, una lista de de elementos a los que yo tengo eh posibilidad de acceder, ¿cierto?
+Teacher: A qué oficinas puedo yo acceder.
+Teacher: Eso es un servicio.
+Teacher: Consultar ese tipo de cosas, pues eso es un servicio.
+Teacher: Entonces, cuando yo digo que es de ámbito global es porque yo deseo que ese nombre de servicio que yo elija me sirva o los nombres de servicios que vayamos a utilizar me sirvan para identificar cualquier cosa, un archivo,
+Teacher: un equipo, una impresora, un dato dentro del bueno, una base de datos o un servicio al que le puedo consultar cosas, etcétera.
+Teacher: Entonces, eso es lo deseable, ¿cierto?
+Teacher: Mira que estamos hablando de lo deseable de ese identificador y es que tenga un ámbito global, o sea, que yo ahí pueda en ese nombre de servicio yo pueda reunir todos los tipos de servicios que necesitamos nosotros en nuestro sistema,
+Teacher: que sea un nombre de texto de texto de carácter jerárquico.
+Teacher: ¿Cómo así que jerárquico?
+Teacher: Así como como lo que nosotros hacemos con los dominios, ¿cierto?
+Teacher: con los dominios de internet que tenemos es una cadena y es jerárquica.
+Teacher: Eh, si no han visto por qué es jerárquica, eh, lo vemos en en un siguiente módulo, pero básicamente cuando nosotros decimos eh utp.edu.cco realmente tenemos que verlos al revés.
+Teacher: El CO significa que es un una dirección de Colombia.
+Teacher: Edu significa que es una universidad.
+Teacher: y UTP, pues sería el nombre de la universidad o el nombre del instituto que está registrado como una como una entidad educativa dentro de Colombia.
+Teacher: Entonces, al final el nombre de dominio o ese nombre que nosotros le estamos dando a los diferentes servidores al final es una es una un nombre de texto y que tienen un una característica jerárquica.
+Teacher: ¿Listo?
+Teacher: Cuando nosotros nombramos un archivo, cuando queremos ubicar un archivo.
+Teacher: Normalmente tenemos una una estructura jerárquica.
+Teacher: El nombre del archivo empieza con el slash empieza con el C2 puntos y termina con la extensión, el nombre del archivo punto y la extensión.
+Teacher: todo toda la ruta desde el C2 puntos, todas las carpetas o todos los subniveles de carpetas que necesitamos ingresar, todo eso hace parte del nombre del archivo.
+Teacher: Entonces, y si ustedes ven, es un sistema de caracteres jerárquico, porque cada nivel o cada carpeta que nosotros usamos es un nivel de jerarquía dentro de la estructura de archivos y así sucesivamente.
+Teacher: O sea, que eso es como lo deseable de que el nombre de servicio o el nombre del recurso que nosotros queramos ubicar dentro de nuestro sistema, pues este tenga esta característica.
+Teacher: Eh, que sea transparente ubicación.
+Teacher: ¿Qué significa que sea transparente?
+Teacher: Que no diga o que no tenga de manera explícita eh máquina uno, máquina dos, máquina tres o el equipo de Teacher, el equipo de la secretaria, el equipo de del diseñador, ¿cierto?
+Teacher: que no tenga que no tenga ese tipo de discriminación de dónde se encuentra o que el usuario tenga que decir dónde se encuentra.
+Teacher: ¿Listo?
+Teacher: ¿Cuál es su ubicación física?
+Teacher: Que si está local o está en AWS, que yo no tenga que decirle de los recursos que están en AWS tal servicio, sino que con el mismo nombre de servicio me diga o eso es un recurso local o es un recurso público
+Teacher: o un recurso remoto.
+Teacher: ¿Listo?
+Teacher: Eso es lo ideal, ¿cierto?
+Teacher: lo deseable que tenga la posibilidad de replicación, que el Binder sea capaz de almacenar o de tener relacionado a un mismo ID de servicio múltiples múltiples instancias del servicio, ¿cierto?
+00:20:00
+Teacher: Entonces, yo puedo decir de que este servicio está replicado, está en varios lugares.
+Teacher: Entonces, yo puedo decir este servicio está en la máquina uno por el puerto uno o está en la máquina dos, puerto dos y así sucesivamente, ¿cierto?
+Teacher: Entonces, de esta manera, si uno de los servicios o uno de los nodos no está, pues simplemente me puedo pasar al otro.
+Teacher: ¿Por qué?
+Teacher: porque ese mismo servicio está en esa en esos dos lugares.
+Teacher: Y el otro, digámoslo así, el otro la otra característica deseable es de que puedan existir múltiples versiones del servicio.
+Teacher: O sea, si el servicio va evolucionando, pues mi sistema podría utilizar el servicio de la forma vieja o con el nombre del servicio viejo, pero podamos seguir evolucionando, podamos seguir creciendo en servicios y entonces si hay una nueva versión del mismo servicio,
+Teacher: pero los nuevos clientes pueden utilizar esa nueva versión, pero los antiguos pueden seguir utilizando la versión anterior, o sea, la forma como se mandaba eh o o se nombraba la versión anterior.
+Teacher: Entonces, mire que eso eh ayuda a que eh mis sistemas no tenga que tener tanta configuración o tanta no haya tanta dependencia de la ubicación o del lugar donde se encuentra el servidor.
+Teacher: El Binder me va a dar esa capa de transparencia en en la ubicación entre cliente y servidor.
+Teacher: ¿Listo?
+Teacher: O sea, baja la dependencia o la Sí. la dependencia, el acoplamiento espacial entre el uno y el otro, porque el cliente no tiene que saber dónde está el servidor, el cliente simplemente pregunta o eh solicita eh la información
+Teacher: de a dónde se tiene que conectar y el Binder es el que se encarga de decirle, "No, vaya a la copia uno, vaya a la copia dos o a la copia tres."
+Teacher: E bueno, aquí ya alternativas del ID de servicio, pues el clásico que siempre utilizamos, dirección y máquina puerto, ¿cierto?
+Teacher: Cuando yo le digo entre a Local host por el puerto 8080, esa es una forma de de identificar el servicio, ¿cierto?
+Teacher: decir, "Mire, es que el está en la máquina 192, 168, 10 20 y el puerto es el el 51, el puerto 5432, etcétera. Entonces,
+Teacher: con la dirección de la máquina y puerto, yo puedo llegar al servicio, yo puedo localizar el servicio." ¿Listo?
+Teacher: Pero el problema de este modelo, que es el modelo que más se usa, es que no genera transparencia, ¿no?
+Teacher: O no da transparencia.
+Teacher: ¿Por qué?
+Teacher: Porque primero estamos dándole la ubicación y evita de que podamos tener múltiples copias del servicio porque yo siempre me voy a conectar a la máquina que yo le diga.
+Teacher: Si tengo tres copias, cuatro copias, siempre se va a conectar a la misma máquina porque le estoy diciendo, vaya a esa misma máquina.
+Teacher: Eh, otra posibilidad es tener el nombre del servicio más la dirección del servidor, o sea, ocultar o opacar el número del puerto, que es una un elemento común o muy básico
+Teacher: dentro de los sistemas eh operativos y es localizar o que podamos localizar los servicios a partir de puertos.
+Teacher: Evitemos esta transparencia, evitemos que tenga que saber cuál es el puerto, de tal manera que yo lo puedo arrancar por el 8080, pero si tengo otro servicio ahí que está por el 8080, lo puedo arrancar por el 8081 y debería ser lo mismo,
+Teacher: ¿cierto?
+Teacher: Debería poder localizar el servidor o diferenciarlo del otro servidor que estaba ahí.
+Teacher: Entonces, ¿por qué?
+Teacher: Porque el ID del servicio debería apuntar esa al nuevo puerto.
+Teacher: Entonces, ¿cómo lo podemos resolver?
+Teacher: Pues en lugar de que tengamos un puerto quemado, podemos tener un nombre de servicio o una identificación del servicio más la dirección del servidor.
+Teacher: O sea, reemplazamos el puerto por el nombre del servicio porque la dirección del servidor o la dirección de la máquina todavía sigue siendo la misma.
+Teacher: ¿Qué servicios eh utilizan este modelo?
+Teacher: Java RMI Registry y el S RPC, o sea, hay varios servicios que tienen su propio binder o tienen su propio sistema de localización de de servidor.
+Teacher: Pero para poder llegar ahí, yo necesito conocer en qué máquina se encuentra este servicio y cuál es el nombre del servicio que quiero conectar o o que quiero eh recibir.
+Teacher: el binder, el servidor binder en cada nodo, o sea, es muy probable de que yo tenga que agregar un binder en cada uno de los nodos para que cuando yo consulte en ese nodo y pregunte por el por el servicio,
+Teacher: perdón, entonces él pueda decirme cuál es el puerto por el que estamos escuchando o por el que está escuchando ese servicio.
+00:25:00
+Teacher: Hoy arrancó, ayer arrancó en el 8080, hoy arrancó en el 8081, en el 8082. Y no deberíamos de tener problemas para localizar o encontrar el servidor porque ya no estamos utilizando el puerto directo, lo estamos ocultando por un nombre de servicio.
+Teacher: O el otro modelo es tener un nombre de servicio de ámbito global.
+Teacher: O sea, que independiente donde yo esté o independiente donde se encuentra el servicio, yo hago la pregunta y él lo encuentra de alguna manera.
+Teacher: Entonces, eh el servidor es un servidor con ubicación conocida, o sea, el Binder, el servicio Binder tiene que ser conocido.
+Teacher: Entonces, si es el de DCE, el de Corba o el de Mac, eh tengo que saber en dónde se encuentra ese ese servidor Binder.
+Teacher: Y aquí eh y como es un servidor Binder global, pues entonces tenemos dos posibilidades.
+Teacher: un binder global, un único servidor que se encargue de decirme cuál es el nombre de la máquina y cuál es el nombre del puerto.
+Teacher: O puedo tener una combinación de un binder global y un binder local, donde el binder global me dice en qué máquina tengo que buscarlo y en binder local en qué puerto tengo que encontrarlo.
+Teacher: Vamos a mirar un poco eh digámoslo así eh una una analogía de qué es esto del Minder.
+Teacher: Entonces voy a voy a empezar con con un digámosle así con una característica que ya no es tan común o ya no es tan útil, pero en algunos escenarios es posible que que lo podamos utilizar.
+Teacher: ¿Cierto?
+Teacher: Pregunta.
+Teacher: ¿Ustedes necesitan o tienen la intención de escribirle al vicerrector académico de la universidad?
+Teacher: ¿Cómo hacen ustedes para localizar al vicerrector?
+Teacher: ¿Qué herramientas tienen ustedes para llegar a a ubicarlo?
+Student13: Profe, pues un directorio muchas veces a
+Teacher: Claro.
+Student13: cloud o a veces uno tiene que
+Teacher: Eh, un directorio.
+Teacher: Sí.
+Student13: llegar como por las ramas de ese árbol preguntando que lo refieran y que lo lleven con una contestadora, pues cosas como esas.
+Teacher: Okay.
+Student13: Yeah.
+Teacher: Va, va, va por el lado, ¿cierto?
+Teacher: Primero que todo, ¿cómo se llama el vicerrector?
+Student22: Per le preguntó a Claudio.
+Teacher: No sé, no sé, no sé cómo se llama, ¿cierto?
+Teacher: Pero ese es mi objetivo, o sea, ese es mi elemento con el que yo me quiero conectar.
+Teacher: Tengo que hablar sobre algún caso especial, alguna cosa, ¿cierto?
+Teacher: Entonces, ¿dónde entra el concepto del binder?
+Teacher: El binder, como yo no sé exactamente dónde se encuentra el servidor que yo estoy buscando, no sé dónde se encuentra ni cómo encontrar al al vicerrector, pues yo tengo diferentes opciones.
+Teacher: Una, ¿cuál sería?
+Teacher: Si yo si yo alguna vez me lo hubiese encontrado y le pedí el nombre y el número telefónico, yo qué haría conexión directa.
+Teacher: ¿cierto?
+Teacher: Si yo ya lo ya tengo el número telefónico y el nombre, pues yo simplemente lo busco en mi en la agenda o en o en el celular y le marco, ¿sí o no?
+Teacher: Entonces, eso es equivalente a tener la dirección de la máquina y el puerto.
+Teacher: O sea, yo sé en dónde está y cómo localizarlo, por dónde me por dónde me escucha, por dónde me puedo me puedo conectar con él.
+Teacher: Okay.
+Teacher: Si no tengo esa, ah, podría también tener el número de la extensión dentro de dentro del dentro de la universidad, ¿cierto?
+Teacher: Dentro del número los números de teléfono de la universidad, yo podría saber cuál es la extensión de la oficina directa del vicerrector y entonces simplemente eh le marco directamente a esa extensión y también lo podría hacer.
+Teacher: Pero si yo tengo la ubicación exacta, si yo ya tengo el número de la extensión, pues okay, está perfecto.
+Teacher: Pero, ¿qué pasa si la universidad le da por cambiar de proveedor de de internet?
+Teacher: O, ¿qué pasa si el vicerrector cambia de proveedor o cambia de número de celular?
+Teacher: Entonces, ya no tengo forma de localizarlo, ¿cierto?
+Teacher: ¿Por qué?
+Teacher: Porque hubo migración del del servicio, hubo migración en la información y entonces ahora ya no tengo forma de localizarlo.
+Teacher: ¿Por qué?
+Teacher: Porque yo dependía de ese único número, esa única dirección a la que yo podía acceder.
+Teacher: Si él cambia de ubicación o cambia de de número, pues no hay forma, ya no hay ya no tenemos forma de localizar.
+00:30:00
+Teacher: Entonces, eso es lo ese es el equivalente a utilizar la conexión directa sin utilizar un binder.
+Teacher: Simplemente eh hago la llamada de manera directa, pero yo yo podría decir, "Okay, yo sé que es el vicerrector académico de la universidad, tengo el número telefónico del PBX de la universidad,
+Teacher: pero no me sé la extensión.
+Teacher: Entonces, ¿qué hago?
+Teacher: Voy al directorio que hay en en la universidad del directorio telefónico.
+Teacher: No sé si ustedes han visto que hay un directorio en en la universidad, pero es una un directorio que me dice cada una de las facultades, cada una de las dependencias eh su número telefónico interno, o su número de extensión.
+Teacher: Entonces, voy a ir a ese documento, a ese elemento donde yo podría empezar a buscar entre todas las opciones que tengo ahí en cuál es el número de la extensión de de fulano.
+Teacher: Listo.
+Teacher: Ese documento viene haciendo el símil a lo que yo decía, dirección de la máquina y nombre de servicio.
+Teacher: No sé número del puerto, no sé el número telefónico real, pero yo sé que está que debe estar en la Universidad Tecnológica.
+Teacher: Entonces, hay un número del PBX de la Universidad Tecnológica que me lo debo saber y tengo que saber cuál es el servicio, la vicerrectoría académica.
+Teacher: Y con esa información yo puedo entrar al directorio o podría entrar al PBX y el PBX si se va a llamar a a vicerrectoría académica, marque tal extensión, se va a llamar a a ingeniería de sistemas a otra extensión y así sucesivamente.
+Teacher: Entonces tendría que utilizar ese recurso para establecer eh la ubicación de del servicio.
+Teacher: Si internamente le cambian la extensión, yo no tendría problemas porque ellos ajustarían el el directorio, perdón, ajustarían el directorio y cuando yo lo vuelvo a buscar pues simplemente digo, "Ey, señora Universidad Tecnológica, necesito el vicerrector académico,
+Teacher: llame por la extensión 1325." Listo.
+Teacher: Y entonces ya sabemos que y mañana si le cambian la extensión entre por la 8723. Y de todas maneras voy a localizar el recurso porque no estoy dependiendo de un número fijo o un valor fijo que ya tenía preconcido.
+Teacher: ¿Listo?
+Teacher: Entonces ese es el segundo modelo, el seg el modelo donde tengo el nombre del servicio y la dirección del servidor.
+Teacher: ¿Listo?
+Teacher: Esa es la otra posibilidad.
+Teacher: Okay.
+Teacher: ¿Qué pasa si yo no sabía o es más no sé cuál es el PBX de la universidad?
+Teacher: ¿Qué hago?
+Teacher: Pues ahorita dicen que entro de la página web y miro cuál es el PBX, ¿no?
+Teacher: Imaginémonos que que es otro servicio.
+Teacher: Pero si no me sé el número de la máquina, si no sé en dónde está el o cuál es el PBX de de la universidad, ¿cómo hago para localizar al vicerrector académico?
+Teacher: No me digas que con cloud ni con chat GPT.
+Teacher: ¿Cómo lo ubico?
+Teacher: Voy a tener que ir a un binder un poco más grande, ¿cierto?
+Teacher: Y qué binder, por ejemplo, el pongo una moto y un en su parqueadero y verá que ahí mismo aparece.
+Teacher: Sí, bueno, tiene sentido, ¿eh?
+Teacher: Pero yo tendría que buscar un binder un poco más grande, por ejemplo, hablar con la empresa telefónica o mirar en el directorio que tiene la empresa telefónica donde están registrados todos los números de de Pereira.
+Teacher: y llamar o o mirar eh en ese directorio primero cuál es el número de la de la Universidad Tecnológica y si por algún motivo ese directorio ya tiene, digámoslo así,
+Teacher: discriminado cada una de las extensiones que hay dentro de la Universidad Tecnológica, mucho mejor, porque sería un elemento externo fuera de la Universidad Tecnológica y me va a dar la información de cuál es la dirección de la máquina y cuál es la dirección del puerto.
+Teacher: Sé cuál es el servicio, tengo como conocimiento el servicio.
+Teacher: con ese directorio, con esas páginas blancas que teníamos hace tiempo, con esas páginas blancas nosotros podíamos con solamente el nombre de a quién voy a llamar o el servicio que yo estaba buscando, tenía la posibilidad de que en todo ese catálogo podía encontrar cuál es la
+Teacher: dirección de la máquina puerto o mejor el número telefónico de manera de manera específica.
+00:35:00
+Teacher: Eh, y mucho más antes, cuando las redes no eran tan extensas como las que tenemos nosotros ahora, que ya podemos decir que cada persona tiene su propio número o era un poco más engorroso porque teníamos que llamar algo que se llamaban las
+Teacher: operadoras, ¿cierto?
+Teacher: Las operadoras eran eh cuando yo no sabía cómo llamar a otro lugar, eh necesito hablar con no sé con la con la alcaldía de Bogotá.
+Teacher: Yo no sé cuál es el número de la alcaldía de Bogotá, entonces ni siquiera sé cuál es ni cuál es la extensión ni cómo llamó a Bogotá.
+Teacher: Entonces habían unas personas, ya ahorita no existen, pero antes habían unas personas que se llamaban operadoras que uno apretaba, creo que era el cero o el nueve, algo así.
+Teacher: Eh, y en y me contestaba una persona, entonces yo a esa persona le decía, "Ey, necesito hacer una llamada a a la alcaldía de Bogotá. Si ella se sabía la dirección,
+Teacher: me la podía decir de una vez.
+Teacher: F. Entonces, la sabía, pues me podía decir, "No, espere, yo te traslado la llamada a un operador que ya se encuentra en Bogotá, a otra persona que tenga más conocimientos de la ciudad específica, ¿cierto? Entonces,
+Teacher: este primer operador tenía como un contexto general de dónde se encuentran los distintos o dónde podemos nosotros encontrar o o cómo hacemos para llamar a una ciudad distinta.
+Teacher: Y luego ellos nos podían pasar a otro operador que se encargara de decirme de manera local, o sea, ya dentro de dentro de Bogotá, cuál era el número que yo estaba buscando o me podía comunicar de manera directa.
+Teacher: Cuando tengo esos dos pasos es cuando yo digo, "Okay, tengo un binder global." O sea,
+Teacher: alguien que sabe a quién preguntar y tengo un binder local que es el que ya me dice dónde está, ¿cierto?
+Teacher: en en qué ubicación lo puedo encontrar los servicios.
+Teacher: Entonces, no sé, espero que el ejemplo eh haya ayudado como para aclarar un poco el panorama, pero vamos a ver es que una animación pues una un modelo donde vamos a ir mirando cada uno de los tipos de binder y cuál y cómo sería la interacción o la comunicación que vamos a tener entre los
+Teacher: componentes.
+Teacher: En este caso voy a tener dos máquinas, la máquina uno y la máquina dos.
+Teacher: En la máquina uno está el cliente, en la máquina dos está el servidor.
+Teacher: En el modelo clásico, en el modelo básico, para que el cliente se pueda conectar al servidor, el cliente tiene que conocer, debe tener dentro de su memoria el nombre de la máquina servidor y el puerto por el que tiene
+Teacher: que escuchar o por el por el puerto por el que está escuchando el servidor.
+Teacher: Es más o menos lo que hacemos nosotros con nuestras bases de datos o cuando nos conectamos a una base de datos.
+Teacher: Decimos la base de datos está en local host por el puerto 3306, ¿cierto?
+Teacher: Entonces, ya sabemos que ahí en la máquina local tenemos un servidor de My Sequel, lo de MySQL, listo.
+Teacher: Pero porque le estamos diciendo de manera explícita que en la máquina tal, por el puerto tal, es que puedes establecer la comunicación.
+Teacher: ¿Listo?
+Teacher: y solamente y esa base de datos va a estar o ese servicio va a estar disponible mientras esté en esa máquina.
+Teacher: Si yo la muevo para otra máquina, el cliente o mi aplicación no va a ser capaz de encontrar los datos.
+Teacher: ¿Sí?
+Teacher: ¿Por qué?
+Teacher: Porque dentro de mi aplicación yo tengo quemado que para localizar el servidor tengo la dirección de la máquina y el puerto.
+Student26: Profe, ¿me escucha?
+Teacher: Sí, ya yo
+Student26: Eh, casi que no.
+Student26: Eh,
+Teacher: escucho.
+Student26: eh, una pregunta, ¿ese vinter a mí me suena como si fuera un DNS o algo así similar?
+Student26: ¿O es o es como o qué es?
+Teacher: El el DNS es un ejemplo de un binder, pero el ejemplo más chiquito de todos los binder.
+Student26: Ah, okay, ok.
+Teacher: O sea, el binder me sirve para cualquier tipo de servicio, incluso para servicios locales dentro del clúster.
+Teacher: ¿Okay?
+Teacher: Entonces,
+Student26: Okay.
+Teacher: e cuando estamos, o sea, cuando ya estamos en una en una aplicación un poco más grande, un ejemplo, estamos utilizando una arquitectura de microservicios, yo podría decir, es que yo tengo un servicio de gestión de clientes, tengo un servicio de ventas,
+Teacher: tengo un servicio de de financiero, un servicio de inventario.
+Teacher: Entonces, ¿cómo hace?
+Teacher: ¿Cómo hace el cliente para decir, "Es que voy a hablar con el servidor financiero" sin tener que decirle cuál de las máquinas o cuál de los pods o pues cuál de los contenedor, cuál máquina virtual o a qué máquina física se tiene que conectar.
+Teacher: Entonces, el Binder es el que se encarga de hacer ese tipo de de interconexión.
+Teacher: ¿Qué servicio necesita?
+00:40:00
+Teacher: Vaya, búsquelo en la máquina tal.
+Teacher: Máquina tal, puerto tal.
+Teacher: Listo.
+Teacher: Entonces, el Binder me sirve para localizar cualquier servicio y ojalá cualquier servicio, una impresora, una base de datos, una máquina, todo eso hace parte de del proceso de venta.
+Teacher: Entonces, cuando elegimos este modelo de de identificador de servicio que es dirección de la máquina y puerto, entonces el cliente se hace una conexión directa.
+Teacher: Digamos que el proceso de conexión es lineal, ¿cierto?
+Teacher: Es poco escalable, altamente dependiente o altamente acoplado tanto temporal y espacialmente, pero establezco la comunicación de manera directa.
+Teacher: Si el servidor cambia el puerto, tengo que decirle al cliente, tengo que enseñarle al cliente que cambie su puerto porque es la única forma como lo tenemos para localizar.
+Teacher: Si hay varias copias de de la del mismo servicio, este señor solamente se va a conectar a ese a ese servidor y para contar.
+Teacher: Listo.
+Teacher: En el modelo dos vamos a utilizar un binder que vamos a llamar un binder local.
+Teacher: ¿Y qué es un binder local?
+Teacher: Es un servicio binder.
+Teacher: Es un servicio binder que está en la misma máquina dentro del mismo servidor del cliente, del servidor, perdón, o sea, la misma máquina donde se encuentra el servidor.
+Teacher: Entonces, este es el equivalente al PBX que tenemos nosotros en la universidad.
+Teacher: Entonces, ¿qué es lo que hace o qué es lo que hace por defecto eh o el servicio?
+Teacher: Cuando arranca el servicio de la máquina dos, o sea, cuando arranca el servicio, lo primero que hace es registrarse el binder.
+Teacher: O sea, cuando inicia la aplicación, lo que tiene que hacer es ubicar la información de dónde se encuentra el binder.
+Teacher: En la máquina, en la misma máquina, por el puerto.
+Teacher: Ah, perdone, perdone.
+Teacher: En la misma máquina.
+Teacher: en e por el puerto B, o sea, como el Binder es local.
+Teacher: Solamente necesito saber que está en el puerto B. Y entonces él cuando inicia la aplicación lo que hace es decirle al Binder, "Oiga, señor Binder, cuando pregunten por este servicio, yo voy a estar respondiendo por el puerto S." Ojo,
+Teacher: dentro de la misma máquina.
+Teacher: Cuando llamen este servicio, yo estoy por el puerto S. Si arranca otro servicio que que o sea, si arranca otro servidor que responde el mismo servicio, pues básicamente lo que va a decir, "Ey, yo me llamo,
+Teacher: yo atiendo el servicio tal y estoy por el puerto T, ¿sí?
+Teacher: Puerto S, puerto T." ¿Por qué?
+Teacher: porque son dos aplicaciones corriendo en la misma máquina y lo que hacen es registrarse al Binder diciéndole, "Señor Binder, si alguien pregunta por este servicio, dígale que estoy escuchando por este puerto." Listo.
+Teacher: Entonces, con esto el Binder lo que va a hacer es guardar en su memoria que este servicio se encuentra en este puerto.
+Teacher: Y para contar, ¿qué hace el cliente?
+Teacher: El cliente para poderse conectar al servidor debe saber cuál es la dirección de la máquina, o sea, cuál es en qué máquinas está corriendo el servidor y cuál es el nombre del servicio.
+Teacher: Mire que aquí ya no tengo que saber cuál es el puerto.
+Teacher: No sé si está por el 80, 80 81, etcétera.
+Teacher: No, no, no tengo que saber nada.
+Teacher: solamente cuál es el servicio que necesito.
+Teacher: Listo, necesito el servicio apache, necesito el servicio ww, como lo quieramos nosotros llamar, pero el ww de esta máquina.
+Teacher: Entonces, pero el cliente también tiene que saber el binder porque puerto va a estar escuchando.
+Teacher: ¿Por qué?
+Teacher: Porque recuerden que el Binder es un servidor y entonces yo tengo que localizar a a dónde preguntarle, dónde está el servidor.
+Teacher: Entonces tengo que saber estas dos cosas.
+Teacher: Primero, ¿en qué máquina está?
+Teacher: ¿Cuál es el nombre del servicio?
+Teacher: Y por dónde está el binder, el binder local, ¿dónde está?
+Teacher: Entonces el cliente cuando necesita conocer el servicio, pues se conecta a la máquina dos, pero habla primero con el Binder, habla con este servicio.
+Teacher: Le pregunta, "Ey, ¿y este servicio está disponible en este momento?" El Binder
+Teacher: viene, verifica su memoria, si aquí está, está por el puerto S. Entonces, la respuesta que él hace es, "Est está por el puerto S." Entonces,
+Teacher: el cliente, ¿qué tiene que hacer?
+Teacher: Como él preguntó por esto y me respondieron puerto S, entonces yo lo que tengo que hacer es conectarme a la máquina dos por el puerto S para localizar mi servidor.
+00:45:00
+Teacher: Entonces, el tercer mensaje va a ser ya la conexión directa, donde le digo Ya sé que está en la máquina dos, en el puerto S, porque fue lo que me respondió el Binder, pues entonces establezco la comunicación de manera directa.
+Teacher: Eso es lo que nosotros llamamos un Binder local porque está dentro de la misma máquina de los servidores, eh, de los servicios, perdón.
+Teacher: Sí, del servidor.
+Teacher: En la misma máquina donde se encuentra el servidor en ejecución, donde tenemos el la máquina o el componente donde vamos nosotros a interactuar o a mandarle las peticiones.
+Teacher: ¿Vamos bien hasta ahí o no?
+Teacher: Sí. Listo.
+Teacher: Vamos subiéndole subiendo el el nivel.
+Teacher: Ahora vamos a trabajar con el ID de servicio y un Binder global.
+Teacher: ¿Qué hace esto del ID de servicio y un binder global?
+Teacher: Pues ya no tengo que saber en qué máquina se encuentra el servicio.
+Teacher: Solamente necesito preguntar, o sea, tengo un Binder que se va a encargar de decirme entre todas las máquinas que tengo dónde se encuentran los servicios.
+Teacher: O sea, él va a registrar de manera centralizada todos los servicios de mi sistema.
+Teacher: Y entonces yo vengo acá o el cliente solamente necesita saber qué servicio y tiene que conocer en dónde se encuentra el binder.
+Teacher: Pero, ¿qué es primero el huevo de la gallina?
+Teacher: ¿Cierto?
+Teacher: ¿Dónde se encuentra el binder?
+Teacher: Ah, tengo que decirle de manera específica que el binder está en la máquina 3 puerto B. ¿Qué pasa si muevo el binder a la máquina 4?
+Teacher: Ya no hay conexión.
+Teacher: El cliente nunca va a poder encontrar un servidor.
+Teacher: ¿Listo?
+Teacher: Porque estamos dependiendo de esta de esta forma para conectarnos al Binder.
+Teacher: Muy bien.
+Teacher: Entonces, en este Binder global ya no necesito saber en qué máquina.
+Teacher: El binder me va a entregar la dirección de la máquina y el puerto donde va a estar escuchando el servicio.
+Teacher: Cuando arranca el servicio se registra al Binder.
+Teacher: Entonces, él se conecta a la máquina 3 por el puerto Binder y le y le dice, cuando pregunten o cuando digan hagan una pregunta sobre el servicio y de service, dígale que está en la máquina dos, puerto S.
+Teacher: Listo.
+Teacher: Y eso es lo que va a guardar el Binder en su memoria.
+Teacher: Entonces, si ese mismo servicio está en otra máquina, pues simplemente la otra el otro servicio cuando arranque se registra el binder y le dice, "Okay, este servicio está en la máquina 2s puerto S, pero también está en la máquina 3 puerto S.
+Teacher: También puede ser.
+Teacher: Listo.
+Teacher: O cualquier otro puerto.
+Teacher: Recuerden que aquí ya no dependemos de esos números de puerto de manera específica.
+Teacher: Okay, pero todo lo va a guardar este señor llamado Binder.
+Teacher: El cliente necesita la conexión al servidor, ¿qué hace?
+Teacher: Le pregunta al Binder, "Ey, ¿este servicio está disponible?" El Binder le dice,
+Teacher: "Sí, está en la máquina dos puerto S." Y entonces ya teniendo la información de la
+Teacher: dirección específica donde conectarnos, pues entonces el cliente se va a conectar o va a establecer la comunicación directa con nuestro Binder Global, eh con nuestro servidor, perdón.
+Teacher: Este señor que está aquí arriba, el este señor es el que llamamos el Binder Global, el BG Binder Global.
+Teacher: Listo.
+Teacher: Por eso se llama aquí el tercer modelo, dice el ID del servicio.
+Teacher: Solamente tiene la identificación del servicio y dónde se encuentra el binder global.
+Teacher: Tengo que tener conocimiento de estas dos cosas.
+Teacher: Pero entonces aquí ya separamos las cosas porque ahorita tenemos un servicio independiente que me puede decir la ubicación de servicios en en toda la red, digámoslo así, o en todos los servicios que tenemos nosotros disponibles.
+Teacher: En el anterior solamente me daba los servicios que estaban en la misma máquina.
+Teacher: En Binder local solamente me da los servicios que están corriendo, que están en ejecución dentro de la misma máquina.
+Teacher: con el Binder Global vamos a poder establecer o vamos a poder eh guardar la información de manera única de todo de todos los recursos que tengo en mi red.
+Teacher: Pero está otra variante, la de yo llamo a la operadora, la operadora me redirige a otra operadora y esa otra operadora es la que me hace la conexión con el usuario o con el servidor.
+Teacher: Entonces aquí vamos a trabajar con un modelo de Binder Glock.
+00:50:00
+Teacher: ¿Qué vamos a tener?
+Teacher: Dos, un binder local y un binder global.
+Teacher: ¿Listo?
+Teacher: O sea, va a haber un binder del lado de la máquina, o sea, del lado del del servicio y va a haber otro binder que va a estar por fuera.
+Teacher: ¿Listo?
+Teacher: Voy a tener un binder global y un binder local dentro de la máquina dos, donde se encuentra el servicio.
+Teacher: Ahora, ¿qué necesita conocer el cliente e que está en la máquina uno?
+Teacher: ¿Qué necesita saber?
+Teacher: ¿Qué servicio necesita?
+Teacher: Pero necesita saber dónde está el binder global, o sea, cuál es la dirección de la máquina y puerto del la máquina y el puerto del binder global.
+Teacher: ¿Y cuál es la dirección o el puerto por donde va a estar escuchando el Binder?
+Teacher: ¿Por qué necesita el puerto del binder local?
+Teacher: Porque este señor en lugar de responderme por dirección de máquina y puerto, solamente me va a decir en qué máquina está.
+Teacher: Y después de que me diga la máquina, yo tengo que intentar conectarme a este puerto del Binder cuál es este puerto para poder establecer la comunicación.
+Teacher: ¿Listo?
+Teacher: Entonces, le estoy quitando responsabilidades al Binder Global.
+Teacher: Antes yo le daba todas las responsabilidades, le decía, "Usted tiene que aprenderse en qué máquina está y en qué puerto." Ahora,
+Teacher: en este modelo solamente se tiene que aprender la máquina porque el puerto lo va a manejar quién?
+Teacher: Mi Binder local.
+Teacher: Entonces, empecemos acá con las preguntas.
+Teacher: inicia el servicio, ¿qué tiene que hacer?
+Teacher: Registrarse ante los binder.
+Teacher: En al binder local mando una petición al Binder local, mando una petición al Binder Global diciendo este servicio, este servicio está por el puerto S localmente.
+Teacher: Este servicio está en la máquina dos en al global.
+Teacher: Listo.
+Teacher: Entonces, el servidor no sabe si hay dos, tres, cuatro instancias acá, solamente tiene una.
+Teacher: O sea, solamente sabe que en esa máquina está ese servicio.
+Teacher: ¿En qué puerto?
+Teacher: No, pero sabe que está en esa máquina.
+Teacher: Okay, ya sé dónde está ese servicio, dónde está.
+Teacher: Ahora los Binder van a guardar esta información en su memoria.
+Teacher: Ahora el cliente debe iniciar el proceso de comunicación con el Binder Global.
+Teacher: Le pregunta, "¿Conoces este servicio?" Y él dice,
+Teacher: "Sí, está en la máquina dos." Okay.
+Teacher: Ahora me tengo que conectar a la máquina dos, al puerto del Binder y le pregunto, "¿Conoces a ese conoces este servicio?" me dice,
+Teacher: "Sí, está en el puerto S." Entonces,
+Teacher: ya con esta información pues puedo establecer la comunicación ya directa con nuestro servidor.
+Teacher: Al final estoy, digámoslo así, estamos en el mismo modelo cliente servidor, solamente que mire que ahora el cliente en este último modelo, el cliente no tiene el conocimiento, no tiene que conocer en dónde se encuentrra, dónde están implementados todos los servicios.
+Teacher: solamente necesita saber qué servicio es el que él necesita.
+Teacher: Y a partir de algunas preguntas de negociación o de o de gestión, pues él va a ubicar dónde se encuentra el servidor.
+Teacher: ¿Cuál es el mejor modelo de estos tres o cuatro modelos que hay?
+Teacher: Este último.
+Teacher: ¿Por qué es por qué es mejor este último?
+Teacher: porque hay una menor dependencia, una una menor eh hay un menor acoplamiento entre el cliente y el servidor, ¿cierto?
+Teacher: No hay una dep y este señor ya no es un cuello de botella tan grande como lo teníamos en el modelo pasado.
+Teacher: No, eh En el ejemplo pasado, en este, en este, este señor es un cuello de botella gigante porque dependemos de él para todos los servicios de la red.
+Teacher: Todos los servicios.
+Teacher: Listo, porque él aquí va a saber el nombre del servicio y en qué máquina y puerto existe.
+Teacher: Si se caía este servidor, todo se perdía porque no había forma de recuperar.
+Teacher: Si no sé si había muchas peticiones de localización de servidor, dependíamos de la capacidad de respuesta que tuviera este, ¿cierto?
+Teacher: O sea, el cuello de botella de mi sistema iba a ser este este nodo porque él iba a recibir todas las peticiones antes de poder establecer la comunicación con los servidores.
+Teacher: Él va a recibir todas las peticiones de los clientes y él va a tener que responder a esas peticiones con la información que tienen ya en memoria.
+00:55:00
+Teacher: En cambio, en este otro modelo, digamos que hicimos un servidor jerárquico.
+Teacher: ¿Por qué?
+Teacher: Porque vamos a a tener un binder global que va a solamente va a conocer direcciones de máquina.
+Teacher: Voy a tener un binder o un servidor local que se va a encargar de conocer los puertos.
+Teacher: Este tiene una responsabilidad más pequeña que el que teníamos antes, porque solamente necesita saber máquinas.
+Teacher: Si tengo varias instancias de la misma dentro de la misma máquina, a él no le importa, solamente tiene un registro.
+Teacher: Ese servicio está en esa máquina.
+Teacher: Este señor es el que va a tener que ayudarnos a definir a cuál de las instancias o a cuál de las copias o de las réplicas es que nosotros vamos a conectarnos.
+Teacher: ¿Por qué?
+Teacher: Porque este señor sí gestiona los puertos o la el número de copias que tenemos en la misma máquina.
+Teacher: ¿Listo?
+Teacher: Si solamente tenemos una, pues es simplemente decir en esta máquina va a estar escuchando o va a haber una aplicación llamada My Sequal, porque Puerto escucha por el 4306, 4607, etcétera.
+Teacher: El que el que me pongan, el que hayan configurado para el servicio.
+Teacher: Listo.
+Teacher: Creo que creo que eso es todo lo que quería decir del Binder.
+Teacher: O sea, el Binder al final es un componente intermedio, un servidor al cual yo le voy a preguntar dónde se encuentran los servidores.
+Teacher: Listo.
+Teacher: Ese ese binder termina siendo un nuevo servidor, termina siendo un nuevo cuello de botella, un punto crítico de fallo porque cualquier cosa que le pase el binder puede llegar a a repercutir en en el fallo del servicio.
+Teacher: Pero a este Binder como tiene una sola responsabilidad, pues es un servicio relativamente rápido.
+Teacher: Sí. Entonces, no va a tener la misma sobrecarga, no va a tener los mismos problemas que tenemos con el servidor real que recibe una petición y tiene que procesarla, tiene que realizar alguna tarea con la información y luego entregar la respuesta.
+Teacher: En cambio, con este con el Binder que agilizamos o podemos tener esas múltiples copias, ¿se acuerdan ese componente que teníamos en la mitad cuando hablaba del escalamiento y cómo lo distribuíamos?
+Teacher: pues ese elemento del centro, ese componente que al que le llegan las peticiones y y la y dice a dónde se va a redirigir cada uno de los eventos o a cada uno de las peticiones, perdón, podría ser este binder,
+Teacher: ¿cierto?
+Teacher: Este binder podría decirme, váyase a la máquina uno, a la máquina dos, a la máquina tres y y seguir el proceso de comunicación.
+Teacher: ¿Qué problema tiene agregar un Binder dentro de nuestra arquitectura?
+Teacher: ¿Qué aumentamos?
+Teacher: el número de mensajes, estamos disminuyendo el ancho de banda de mi canal porque estoy mandando mensajes de ubicación o de o de búsqueda de ubicación y eso pues es ruido o mensajes que voy a estar ocupando en el canal.
+Teacher: Y otra de las cosas, latencia, porque mientras estoy buscando eh mientras estoy buscando dónde se encuentra el servidor, pues estoy gastando tiempo de procesamiento, ¿cierto?
+Teacher: tiempo de atención y eso pues me va a hacer de que mi sistema pueda aumentar en la latencia, aumentar en el tiempo que va a dar la respuesta.
+Teacher: ¿Cuál sería el el digámoslo así la configuración más performante, más eficiente?
+Teacher: ¿Qué tipo de binder sería el más eficiente?
+Teacher: O ¿qué tipo de identificador de servicio sería el más eficiente?
+Teacher: El que me va a dar una respuesta mucho más rápida.
+Teacher: o va a tener menor latencia el que es más el que es altamente acoplado, ¿cierto?
+Teacher: Dirección de la máquina y puerto.
+Teacher: Si yo ya sé a qué tengo que ir, no tengo que preguntarle a nadie, me voy en un solo mensaje y y y mando la y mando la petición, pero recuerden que altamente acoplado, eh, menos tolerante a fallos.
+Teacher: Este modelo es un poco más tolerante a fallos.
+Teacher: ¿Por qué?
+Teacher: Porque si la máquina dos falla, digámoslo así, esta máquina dos falla, yo podría tener copias en otros servidores.
+Teacher: Entonces, me yo puedo darme cuenta, no, la máquina dos no está respondiendo.
+Teacher: Entonces, busque dentro del dentro de ese servicio qué otras máquinas han reportado alzas.
+Teacher: Si esta máquina se dañó, esta máquina no la pude recuperar, pero tengo otra otra máquina backup y levanto y monto el servicio, paso los datos y levanto esa máquina por por otra dirección IP, pues esa máquina cuando se regist cuando inicie se registra ante el binder y entonces las siguientes
+01:00:00
+Teacher: peticiones van a ir a la siguiente máquina y así sucesivamente.
+Teacher: Yeah.
+Teacher: Mire que es mucho más tolerante a fallos este modelo, pero entre más desacoplemos el sistema, más lento puede llegar a ser la solución que nosotros estemos haciendo.
+Teacher: Estamos garantizando un nivel de transparencia mucho mayor.
+Teacher: La localización del servidor es uno de los problemas más grandes que tenemos en los sistemas distribuidos para poder utilizar o para poder aprovechar el paralelismo y poder utilizar el tema de de crecer eh o o de la capacidad de crecimiento de nuestro sistema,
+Teacher: ¿cierto?
+Teacher: En cambio, en cambio en el modelo directo no hay capacidad de crecimiento.
+Teacher: Todos los todos los clientes ya están apuntando a un único servidor y tengo que garantizar de que ese servidor siempre esté respondiendo.
+Teacher: Muy bien.
+Teacher: ¿Cómo vamos ahí?
+Teacher: Bien, pregunta sobre el la localización.
+Teacher: Okay, vamos entonces con con este cuarto cuarto aspecto, cuarta pregunta, cuarta característica que tenemos que tener en cuenta y es si el servicio que nosotros vamos a desarrollar es con estado o sin estado.
+Teacher: ¿Qué hace a qué hace referencia esto del estado?
+Teacher: y es qué tanto el servidor tiene que saber eh datos del cliente o tiene que guardar datos del cliente.
+Teacher: O sea, ¿qué tanta qué tan dependiente es nuestro sistema de que el cliente va a estar mandando múltiples operaciones y el servidor tenga que conocer qué datos ya me ha mandado, qué datos he procesado, etcétera, de ese cliente.
+Teacher: ¿Listo?
+Teacher: Entonces, eso es lo que nosotros decimos, si el servicio es con estado o sin estado.
+Teacher: Con estado, necesito guardar información.
+Teacher: Sin estado, el cliente, el servidor no tiene conocimiento de nada que tenga que ver con los clientes.
+Teacher: ¿Listo?
+Teacher: Entonces, ¿qué tiene de bueno o qué ventajas tiene eh el servicio con estado?
+Teacher: ¿Listo?
+Teacher: Y es las peticiones son más cortas.
+Teacher: ¿Por qué?
+Teacher: Porque normalmente las peticiones que nosotros hacemos al servidor eh generalmente es qué operación quiero hacer y cuáles son los argumentos, cuáles son los datos que quiero que procese.
+Teacher: ¿Cierto?
+Teacher: Eso es lo normal.
+Teacher: Si tengo un servicio conectado, esos datos podrían estar en la memoria, podrían estar en la gestión de la sesión o en la gestión que está haciendo el cliente, el servidor, perdón.
+Teacher: Entonces, el cliente lo único que tendría que decir es, bueno, eh, calcule tal operación o tengo los siguientes datos, calculele, deme la media y entonces él recorre los datos, genera la media y me y me la entrega.
+Teacher: Ahora, dame la desviación estándar.
+Teacher: No tengo que volverle a pasar los datos, simplemente le digo, dáele desviación estándar.
+Teacher: Y como los datos ya los tiene allá, entonces pum, desviación estándar.
+Teacher: Necesito el valor e la moda, entonces me da la moda.
+Teacher: Entonces, ese esa capacidad que va a tener el servidor de conocer eh los datos que tiene cliente, saber qué es lo que ya ha procesado y probablemente ah bueno, va a tener los mensajes van a ser más cortos porque no tienen que enviar tanta información.
+Teacher: cortos en el sentido de de capacidad o de tamaño del mensaje cuando estemos nosotros enviando la información va a tener un mejor rendimiento porque como la información está en memoria pues no va a tener que leerla una y otra vez cada vez que llega una petición del
+Teacher: cliente y podemos optimizar el servicio.
+Teacher: O sea, yo puedo puedo preveer a partir de las acciones, operaciones que él me está haciendo, yo podría preveer cuál es el siguiente cambio o podría adelantar algún tipo de preprocesamiento porque sé que él después de hacer x o y
+Teacher: tareas, lo que comúnmente hacemos o lo que comúnmente hace es realizar el reporte.
+Teacher: Entonces, mientras él está, yo le doy la respuesta para que él analice si todo está bien o no.
+Teacher: Yo podría, yo servidor podría empezar a organizar los datos que necesitamos para el reporte para que cuando él me diga, "Listo, los datos fueron bien validados", pues simplemente ya tenga el reporte listo para entregar.
+Teacher: Entonces, puedo preveer o puedo adelantar tareas, puedo hacer que mi sistema sea eh proactivo, no reactivo de de reaccionar ante algún evento, sino puede ser proactivo, puede eh a partir de x datos que que tiene, mientras, digámoslo así,
+Teacher: mientras está el tiempo muerto que el usuario está revisando información, yo podría empezar procesamiento, podría empezar a hacer alguna optimización, alguna mejora dentro de nuestro servicio.
+01:05:00
+Teacher: hacer que el usuario se sienta cada vez más a gusto de nuestro sistema.
+Teacher: ¿Cuáles son las ventajas de un servicio sin estado?
+Teacher: ¿Qué es más tolerante a fachos?
+Teacher: ¿Qué pasa con el servicio con estado?
+Teacher: Todas las conexiones o todas las peticiones que yo hagan tienen que ir hacia el mismo servidor.
+Teacher: Si tengo múltiples copias, todas las peticiones de este cliente tienen que ir a ese servidor porque ese servidor es el que guarda el estado.
+Teacher: Si llega una petición a otro servidor, ñu, perdió.
+Teacher: Listo.
+Teacher: Eh, ¿por qué?
+Teacher: Porque no tiene la información en memoria, tendría que volver a empezar.
+Teacher: En cambio, los servicios sin estado son más tolerante a fallos.
+Teacher: ¿Por qué?
+Teacher: Porque el servidor no tiene que guardar información, ¿cierto?
+Teacher: El si uno de los servidores falla o se cae o deja de de funcionar, no pasa nada.
+Teacher: puedo redirigir las peticiones a otro a otro servidor y el otro servidor sin tener que haberlo atendido antes, puede procesar la petición que está haciendo el usuario o el cliente, perdón.
+Teacher: Entonces, mire que es mucho más tolerante a fallos.
+Teacher: Reduce el número de mensajes de comienzos y finales de sesión, o sea, ya no tengo que iniciar sesión y cerrar sesión.
+Teacher: ¿Por qué?
+Teacher: Porque simplemente hago, establezco la comunicación y empiezo el proceso de de petición, ¿cierto?
+Teacher: Son más económicos para el servidor porque consume menos memoria.
+Teacher: ¿Listo?
+Teacher: Entonces, eso es otra otra de las grandes ventajas.
+Teacher: A pesar de que necesita memoria para poder procesar los datos, tener las variables para poder procesar la información o capturar la información que el usuario envía, no hay información ahí guardada.
+Teacher: No estoy reservando memoria, no estoy eh ocupando espacios de memoria en cosas que no necesito.
+Teacher: Listo.
+Teacher: Solamente para el proceso de de procesarlo y tiene un mejor reparto de carga y fiabilidad con en el esquema de de escalada horizontal.
+Teacher: ¿Qué significa?
+Teacher: Con un servicio sin estado, nosotros sí podemos tener múltiples copias del mismo servicio y redirigirlo a cualquiera de los nodos que estén disponibles.
+Teacher: No va a ser que todas las peticiones vayan al mismo, sino que lo podemos redirigir.
+Teacher: Y si necesitamos más eh atender más peticiones, agrego un nuevo nodo para hacer crecimiento o replicación o es escalado horizontal.
+Teacher: agrego otro nodo y el sistema me o el binder me va a llevar hacia el otro nodo.
+Teacher: ¿Listo?
+Teacher: Entonces, mire que todo eh el servicio sin estados desde el punto de vista de los sistemas distribuidos es lo más eficiente.
+Teacher: ¿Qué problema tiene el el servicio sin estado?
+Teacher: Y es que cada vez que yo hago una petición tengo que mandar todos los datos.
+Teacher: ¿Listo?
+Teacher: Por eso es que cada vez que nosotros hacemos una petición al servidor, vamos a cargar una cantidad de datos porque tengo que mandar toda la información que quiero procesar.
+Teacher: Si yo, por ejemplo, le digo al servidor, "Dame la media de dame la media de este conjunto de datos, yo tengo que mandar el conjunto de datos." Él le saca la media,
+Teacher: me entrega la respuesta.
+Teacher: Y si después yo le digo, "Bueno, y ahora entrégame la moda." Tengo que volverle a mandarla todos los datos porque el servidor no
+Teacher: sabe o no tiene conocimiento de qué es lo que usted quiere hacer o perdón, no tiene información previa de lo que está usted haciendo.
+Teacher: Entonces, cada petición que usted haga tiene que enviar una y otra vez la misma información o la información acumulada.
+Teacher: ¿Qué fue lo que empecé a pedir y qué datos ya me han dado por adelantado.
+Teacher: Listo.
+Teacher: No hay forma de de ser proactivo, de empezar a decir, "Okay, si usted ya he hecho esto, el siguiente paso va a ser este." No hay forma de que lo podamos gestionar.
+Teacher: ¿Por qué?
+Teacher: porque simplemente no tengo conocimiento del cliente y lo peor, esa petición me puede volver a mí o puede llegar a cualqu cualquier otro servidor.
+Teacher: Entonces, yo no tengo que ocupar o no puedo eh hacer esta esta estas peticiones como tal.
+Teacher: Pregunta, ¿las aplicaciones web son un servicio con estado o sin estado?
+Teacher: O sea, las aplicaciones web, los servicios web que nosotros o los servidores web que nosotros hacemos son servicios con estado, sin estado.
+Student8: Profe,
+Student26: Con estado.
+Student8: pues los clásicos conectado,
+Teacher: Y si yo le digo que el protocolo HTTP es sin estado, o sea, no hay forma, no hay forma de que el servidor guarde la petición porque me puede responder
+Student8: el
+Teacher: cualquier servidor, o sea, cualquier copia del servidor.
+Student8: protocolo, sí, pero estoy preguntó por las aplicaciones y las aplicaciones generalmente persisten datos.
+01:10:00
+Teacher: Sí, sí,
+Student8: M.
+Teacher: pero si la aplicación persiste datos, no le no le das la capacidad de que sea de que pueda tener escalado horizontal porque vamos a depender de ese servicio.
+Teacher: Porque miren lo que estoy diciendo, el servicio con estado hace de que todas las peticiones tienen que ir al mismo servidor.
+Teacher: Por eso es que nosotros no hacemos sino aplicaciones de un solo servidor, de que ese responde todo.
+Teacher: ¿Por qué?
+Teacher: porque lo hacemos con estado.
+Student8: Esa es la razón también de de los token JW las autenticaciones, ¿no?
+Student8: permitir autenticaciones sin
+Teacher: ¿Y por qué por qué necesitamos ese ese JWT token para
+Student8: estado para
+Teacher: no tener que autenticarnos cada vez que Exactamente porque si no utilizo
+Student8: no tener base de datos autenticando
+Teacher: JWT o no utilizo un modelo de token que diga usted ya está y usted ya inició sesión y usted sí es la persona que es y tiene estos permisos, etcétera, si usted no lo hace cada vez que usted hace una petición como el servidor
+Teacher: HTTP, ojo, los servidores http son servidores sin Bueno, http 1.x eh 1.0 1.1.
+Teacher: Esos servidores que atienden ese protocolo son servidores sin estado, quiere decir de y fuera de eso atienden una petición por conexión.
+Teacher: Entonces, cada vez que yo hago una petición, él busca a qué servidor eh le va a mandar la petición.
+Teacher: Si solamente hay uno, pues va a ir todos al mismo.
+Teacher: Pero si tengo múltiples copias del mismo servicio, el mismo protocolo, el mismo Sí. La misma forma de de comunicación hace que yo pueda mandar una petición al servidor uno y la siguiente petición o la siguiente acción la mande al servidor tres.
+Teacher: Entonces, ¿cómo hacemos nosotros para guardar el estado si mi servidor no es conectado o si mi si el protocolo, la forma como podemos guardar la información no es conectado?
+Teacher: Entonces, ahí es donde entramos con los sistemas de almacenamiento del lado del cliente o del lado del servidor para guardar esa información, para guardar el estado.
+Teacher: como el protocolo HTTP, no guarda, no tiene estado.
+Teacher: Nosotros lo que hacemos es guardarlo del lado del cliente.
+Teacher: Entonces ahí es donde entra que el local storage, que el session storage.
+Teacher: ¿Y por qué necesitamos eso?
+Teacher: Ah, porque es que el servidor, cada vez que necesitamos mandar una información al servidor, le tengo que mandar toda la información de quién soy, dónde estoy, qué datos necesito procesar, etcétera, etcétera, etcétera.
+Teacher: Entonces, ahí es donde están los sistemas de almacenamiento eh de los storage del del navegador, que básicamente obligan a que yo como desarrollador tenga que agregar o meter
+Teacher: dentro del paquete lo los datos o la información que necesita el servidor por cada petición.
+Teacher: O la otra es utilizar las cookies.
+Teacher: ¿Y qué es las cookies?
+Teacher: es un sistema de almacenamiento compartido, pero no es que sea realmente compartido, eso siempre va a estar guardado en el lado del cliente.
+Teacher: Pero, ¿qué sucede con las cookies?
+Teacher: Y es que las cookies es un, digámoslo así, es una memoria que siempre va a ser parte del mensaje.
+Teacher: O sea, cada vez que yo hago una petición al servidor, el servidor lo el cliente lo que hace es revisar qué cookies o qué datos tenemos dentro de las cookies de ese servidor y él lo que va a hacer es empaquetar eso en el mismo mensaje.
+Teacher: O sea, además de los datos que yo normalmente mando entre cliente y servidor, él empaqueta, agrega dentro del mensaje las cookies.
+Teacher: Listo.
+Teacher: Y cuando el y entonces el servidor cuando lo recibe, pues recibe las cookies, puede tomar decisiones sobre las cookies, mirar ahí cuál es el token o mirar información que ya tiene preprocesada, mirar el estado del carrito cosas así por el estilo.
+Teacher: Yo lo puedo guarda esa información o ese tipo de información yo la puedo guardar en mi en la cookie y cuando el servidor le da respuesta, el servidor vuelve y mete la cookie y la devuelve.
+Teacher: Entonces, e en con ese modelo, digámoslo así, o con ese mecanismo de almacenamiento local, pues podemos simular de que el servidor maneje el estado, así los servicios que nosotros creemos sean sin estado.
+Teacher: ¿Listo?
+Teacher: Es más, muchos de los servidores que nosotros hacemos realmente son sin estado.
+Teacher: ¿Por qué?
+Teacher: Porque delegamos el tema del almacenamiento.
+Teacher: ¿A quién?
+Teacher: A otro servidor, al de base de datos.
+Teacher: Nosotros no dejamos mucho o al servidor de de caché, pero no lo dejamos en el servidor como tal.
+Teacher: ¿Por qué?
+Teacher: Porque la próxima petición pues no tiene, probablemente no tiene nada que ver con la previa que que acabamos de atender.
+Teacher: ¿Listo?
+Teacher: Y por último vamos a hablar de este componente.
+Teacher: Este componente es importante entenderlo porque vamos a hablar sobre el último último aspecto de diseño que es la el comportamiento ante fallos.
+01:15:00
+Teacher: ¿Listo?
+Teacher: Pero antes de hablar de este comportamiento.
+Teacher: Voy a hablar de un mecanismo que tenemos no solo en los sistemas, bueno, lo usamos bastante en los sistemas distribuidos, que son los llamados LISEs.
+Teacher: ¿Qué son los leis?
+Teacher: Los Lises es un mecanismo de tolerancia a fallos.
+Teacher: ¿Qué es lo que me va a permitir este tema de los leces?
+Teacher: Poder identificar o poder sí, poder darnos cuenta si un cliente todavía está activo o no.
+Teacher: Ojo, este tema de los leces tiene que ver con la tolerancia a fallos, pero quiero que entendamos esto antes de hablar de cómo nos vamos a a comportar en caso de que haya un fallo.
+Teacher: Entonces, ¿qué entonces el list es un mecanismo de control para identificar si los dos elementos que estamos en conexión, cliente y servidor, estamos aún disponibles.
+Teacher: ¿Por qué es importante eso?
+Teacher: Porque si yo mando una petición al servidor y el servidor deja de funcionar en un tiempo, recuerden que en el modelo cliente servidor generalmente usamos un mecanismo bloqueante, un mecanismo sincrónico.
+Teacher: Sícrono.
+Teacher: ¿Qué?
+Teacher: ¿Cómo que sírono?
+Teacher: Yo hago una petición al servidor y me quedo esperando a que llegue la respuesta.
+Teacher: Sí, el servidor, el cliente manda la petición y se queda en un estado de espera a que llegue la respuesta.
+Teacher: por ese canal.
+Teacher: ¿Y qué pasa si yo mando la petición y el servidor deja de funcionar?
+Teacher: ¿Qué pasa con ese cliente?
+Teacher: Se va a quedar ahí esperando de manera indefinida.
+Teacher: O vamos a poner un un tiempo de de espera máximo, un time out que nosotros normalmente llamamos, ¿cierto?
+Teacher: Pero eso no significa que el servidor esté caído, porque el time out puede solamente significar que el servidor no ha respondido, pero puede ser porque esté procesando o porque esté muy ocupado y yo estoy en cola o alguna situación de las que ya hemos
+Teacher: visto hasta ahora.
+Teacher: Entonces, los leis me van a permitir es identificar si realmente ese servidor no está funcionando o si ese servidor eh está funcionando aún está activo y entonces yo tendría que darle un poquito más de espera porque no ha terminado de procesar la
+Teacher: información.
+Teacher: Probablemente la petición que yo hice era una petición que demandaba mucha muchos cálculos, muchos recursos y necesito esperar a que llegue.
+Teacher: Entonces para eso es que vamos a utilizar estos días.
+Teacher: Listo.
+Teacher: Para poder saber si cliente o servidor todavía siguen vigentes, cómo funciona o cuál es su función.
+Teacher: Mira, realmente la detección y tratamiento ante la caída de nodos, eso eso es lo que vamos nosotros a hacer con los leces.
+Teacher: Es vamos a tratar o detectar que un no se se ha caído.
+Teacher: ¿Cómo funciona?
+Teacher: Tenemos dos elementos que se van a comunicar.
+Teacher: ¿Listo?
+Teacher: Entonces, el proceso A o el nodo A necesita algo del nodo B. ¿Qué es lo que qué es lo que hace el cliente o cómo funciona?
+Teacher: Entonces, A como A y B se van a comunicar, los dos elementos se van a comunicar, entonces A genera un list, genera un compon un elemento de esto, ¿cierto?
+Teacher: De control.
+Teacher: Entonces, A genera un list y le envía a B. Sí, le envía a B ese list y le da un tiempo de vigencia.
+Teacher: O sea, yo le digo, "Ey, tome este token o este elemento y este elemento va a tener una duración o va a tener una vigencia de 30 segundos." ¿Listo?
+Teacher: Entonces con usted con ese toque o con ese list, porque no es un token, es un list, usted con ese list eh yo le voy a garantizar de que yo voy a estar activo durante ese periodo de tiempo que yo que al cual yo le doy ese list.
+Teacher: Listo.
+Teacher: Pero antes de que se termine eh el time out, el plazo de tiempo que yo le di, usted tiene que renovar el list.
+Teacher: O sea, yo se lo di, pero usted me tiene que me tiene que solicitar la renovación.
+Teacher: ¿Para qué?
+Teacher: Para eso es como decir, "Ey, ¿todavía estás activo?" Y yo le digo,
+Teacher: "Sí, pero realmente en lugar de ser solamente un mensaje de de confirmación, le doy un nuevo list con un nuevo tiempo de espera, un nuevo plazo y así me voy durante todo el tiempo en el que estemos en
+Teacher: ejecución." ¿Qué sucede si el elemento
+Teacher: B, que es el que tiene que renovar el list, no manda el mensaje?
+01:20:00
+Teacher: Ojo, yo soy a por decirlo, yo soy el servidor y le doy un list al cliente y le digo, "Cada 30 segundos me tiene antes de 30 segundos me tienes que renovar el listar un nuevo list.
+Teacher: ¿Qué pasa si no me llega la solicitud de renovación?
+Teacher: ¿Qué puede definir el servidor o qué puede definir?
+Teacher: ¿Qué puedo definir yo si el usuario cada 30 segundos se tenía que reportar y en estos 30 segundos no se reportó?
+Teacher: Que el cliente se cayó, ¿cierto?
+Teacher: Que el componente al que yo le di el permiso ya no está disponible.
+Teacher: Entonces, como yo sé que ese cliente ya no está disponible, pues simplemente yo digo, "Okay, entonces las tareas que estaba haciendo ese cliente o que me mandó ese cliente las puedo parar. Porque,
+Teacher: ¿para qué sigo procesando la información si yo termine no voy a tener a quien entregárselo?" Porque él l.
+Teacher: No, el cliente no renovó su list, por lo tanto, el cliente muy probablemente dejó de estar en en operación.
+Teacher: Y si lo y si pasa al revés, el cliente mandó la solicitud de Lis y el servidor no le responde.
+Teacher: Entonces, ¿qué supone?
+Teacher: ¿Qué se supondría ahí?
+Teacher: De que el servidor se cayó, el servidor ya no está disponible.
+Teacher: Entonces, si el servidor no está disponible, ¿qué puede hacer el cliente?
+Teacher: Decir, "No, pues esa última petición que yo mandé se perdió. Lo que tengo que hacer es volver a a enviarlo a otro servidor o buscar otro
+Teacher: servidor que me atienda esta solicitud." ¿Listo?
+Teacher: Entonces, eso es lo eso es lo interesante del list, porque es ese mecanismo que nos permite garantizar de que si el cliente todavía está funcionando, pues sigo puedo seguir procesando la información, pero si el cliente deja de funcionar pues puedo parar y liberar esos recursos porque todo el
+Teacher: procesamiento que yo haga al final se va a perder, no va a haber un cliente que lo reciba.
+Teacher: Y lo mismo del otro lado, si el cliente se da cuenta que el servidor ya no responde, no está disponible, entonces yo puedo tomar una decisión de qué hacer.
+Teacher: Ya no, ya no tengo que quedarme esperando de manera indefinida, no tengo que quedarme esperando los 10 minutos que le di de time out, simplemente ya sé que ese servidor no está disponible porque porque el protocolo o el
+Teacher: mecanismo de negociación de o de verificación de de del estado del servidor no no fue no existe, no responde, pues entonces puedo tomar decisiones como, "Okay, renovemos o okay, busquemos algo más.
+Teacher: algún otro lugar para enviar o esperemos un tiempo para que el servidor se recupere y vuelvo a hacer la solicitud, hago un reenvío.
+Teacher: ¿Listo?
+Teacher: Entonces, mire que es bastante interesante este modelo de los de los leises.
+Teacher: Eh, no es un temporizador, no es un time out.
+Teacher: Listo.
+Teacher: los list, a pesar de que tengan un tiempo de vigencia, no es un no es simplemente manejar el time out o un temporizador, porque el cuando yo hablo de temporizador eh estoy haciendo un, digámoslo así, estoy dándole un periodo de tiempo donde voy a estar voy a estar vigente,
+Teacher: donde yo creo y espero de que el sistema todavía esté activo.
+Teacher: Cuando nosotros definimos el time out, cuando yo hago una conexión y espero una respuesta y yo digo, "No, el tiempo máximo de espera van a ser 2 minutos." ¿Qué pasa si el proceso se demora 2 minutos y 5
+Teacher: segundos?
+Teacher: Porque tiene mucha información que procesar o porque hay muchas peticiones de manera concurrente y entonces no la pudo empezar a atender justo al instante que yo la mandé.
+Teacher: Entonces, eh eso hace de que mis el tiempo de espera pueda ser dinámico Y si yo pongo un tiempo de espera muy pequeño o más pequeño que el tiempo que realmente se demora en procesar, nosotros al final vamos a,
+Teacher: digámoslo así, a desechar una posible respuesta simplemente porque no ocupo o no quedo dentro de nuestro temporizador.
+Teacher: Entonces, los listorizadores, ¿listo?
+Teacher: Los list es un mecanismo de de monitoreo, un mecanismo de comunicación constante que vamos a tener entre el cliente y el servidor para garantizar de que podamos detectar cualquiera de la caída de los alguno de los dos nodos,
+Teacher: el cliente o el servidor.
+Teacher: Bueno, aplicaciones, vamos a ver mucho este tema de los lices cuando estemos hablando de los binding para detectar caídas de cliente, para la suscripción editor suscriptor, para el manejo de caché en sistemas de archivos distribuidos.
+01:25:00
+Teacher: O sea, cuando yo tengo un usu un cliente que que necesito gestionar datos en caché, si ese cliente ya no está o si esa aplicación ya no está corriendo, pues esa caché ya no tiene sentido.
+Teacher: Entonces, con eso vamos nosotros también a poder manejar eso.
+Teacher: Eh, normalmente estos leis los podemos utilizar en servicios sin estados, ¿listo?
+Teacher: Pero si el servicio que nosotros estamos desarrollando no es un servicio web, es un servicio que sí maneja el estado y que guarda el estado de del cliente, por ejemplo, un servicio como el FTP, no sé si han trabajado con FTP,
+Teacher: pero yo establezco la comunicación y yo mando comandos y él entiende según el contexto que tiene del lado del servidor, él entiende qué es lo que estamos haciendo.
+Teacher: Entonces, yo podría conectarme a un servicio como el S3 S3 de Amazon, que es un sistema de almacenamiento.
+Teacher: Ese sistema almacenamiento no es un sistema o no necesariamente es un sistema eh sin estado.
+Teacher: podríamos tener un estado o podríamos conectarnos a un servicio que que creamos utilizando sockets en en S2 y o sea en una máquina virtual y entonces puedo puedo establecer o conectarme a ella y hacer algún tipo de negociación.
+Teacher: lo que hacemos con los CICD, con la integración continua, eh que lo que hacemos es conéctese al servidor, muévase al directorio tal, ejecute tal comando, eh borre los archivos tal, suba los nuevos, todos esos pasos son, digámoslo así,
+Teacher: son instrucciones que dependen de que el servidor esté manejando el estado, que tengamos nosotros o que el servidor sepa en qué lugar de toda la ejecución eh o en qué lugar de los comandos está eh vamos nosotros y cómo podemos
+Teacher: eh continuar con las siguientes instrucciones.
+Teacher: Todos esos son servicios con estado.
+Teacher: Entonces, si tenemos o manejamos los listos con estado, pues podríamos hacer o podríamos eh crear mecanismos de control que perdimos en los sistemas distribuidos, como los cerrojos, ¿cierto?
+Teacher: Un cerrojo es ese elemento que que me permite identificar si un recurso está siendo utilizado por un proceso o no.
+Teacher: Pero ahorita con los sistemas distribuidos, eh un proceso que está en otra máquina quiere ubicar un recurso que está en otra máquina, pero no hay forma de de identificar si está o no está ocupado.
+Teacher: ¿Por qué?
+Teacher: porque los cerrojos los manejas el sistema operativo, pero yo ahora voy a estar es comunicándome por la red, entonces no hay forma de gestionarlo.
+Teacher: Pero si tenemos eh servicios con estado y manejamos lees, podemos tener el un o podemos implementar algo como los arrojos distribuidos, porque el servidor va a saber o va a tener en en su contexto, en su memoria, va a tener que algún recurso está ocupado y cuando el list deje de responder,
+Teacher: pues simplemente lo puede liberar.
+Teacher: Listo, puede liberar y darle permiso a otro elemento.
+Teacher: O si alguien viene a pedir el mismo el mismo recurso, como es un servicio con estado y todavía y sé que el cliente todavía lo está utilizando, pues simplemente puedo bloquear el recurso.
+Teacher: Entonces, mire que tiene bastantes usos de manera cotidiana en los sistemas distribuidos.
+Teacher: Eh, nada, ¿qué pasa si se apaga el servidor y arranca?
+Teacher: Pues entonces si el si el tiempo de digámoslo así de pérdida de conexión o de pérdida de servicio volver a arrancar, eh, ejemplo, estamos en un en un servidor y el servidor falló y se reinició o o falló el servicio,
+Teacher: la aplicación se crashó y volvió y se levantó de una.
+Teacher: Eh, con este tema de oles podríamos nosotros recuperar el estado de cómo estaba el servidor, ¿cierto?
+Teacher: No vamos a a a seguir en el estado de procesamiento de los datos, pero el list me puede decir, mire, este cliente acaba de mandar una solicitud de renovación de Lis, significa que yo debo tener una tarea por acá pendiente de él.
+Teacher: busquémosla en la base de datos o busquémosla en el log o busquémosla en algún registro para poder empezar a procesarla de una vez, ¿cierto?
+Teacher: Entonces, eso también sería una opción de de recuperación ante fallos y que y que tenga esas características de de mantener el servicio en funcionamiento.
+Teacher: ¿Listo?
+Teacher: Eh, nada, eso es todo por hoy.
+Teacher: Ya nos queda pendiente de hablar este último comportamiento y las últimas dos arquitecturas, que eso creo que la vemos en la siguiente clase.
+Teacher: ¿Listo?
+Teacher: Entonces, jóvenes, eh no sé si tienen alguna duda de lo que vimos hoy y si no, pues nos vemos el martes.
+01:30:00
+Student26: Listo, profe.
+Teacher: Dale.
+Teacher: Que estén muy bien.
+Student5: Gracias.
+Student18: Buenos días,
+Student1: Gracias prof.
+Student18: Gloria.
+Student22: H go.
+Student18: Saludos.
+Student1: Feliz noches para todos.
+Student8: Hasta luego.
+La reunión finalizó después de 01:30:29 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+

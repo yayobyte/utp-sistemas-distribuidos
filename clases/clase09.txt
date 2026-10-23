@@ -1,0 +1,815 @@
+Hora de inicio de la reunión: 2026-10-06 18:29 GMT-5
+Asistentes
+Student36, Student1, Student2, Student3, Student4, Teacher, Student5, Student7, Student8, Student28, Student9, Student11, Student12, Student13, Student14, Student16, Student17, Student18, Student19, Student21, Student23, Student35, Student25, Student26, Student27
+Transcripción
+Student5: M.
+Teacher: Bueno, muy buenas noches a todos jóvenes.
+Teacher: ¿Cómo están?
+Teacher: Espero que todo muy bien.
+Teacher: Continuamos con nuestro mundo de cliente servidor.
+Teacher: En este caso vamos a seguir hablando del modelo, perdón, de los sistemas distribuidos y vamos a seguir hablando del cliente servidor.
+Teacher: En la clase pasada estuvimos hablando, empezamos como a discutir el modelo cliente servidor hablando de que el servidor era nuestro elemento cuello de botella, ¿cierto?
+Teacher: ¿Quién me ayuda a describir por qué el servidor, el componente servidor era el cuello botella de la arquitectura?
+Student26: porque tiene tiene el límite de las peticiones que puede manejar.
+Teacher: Sí, porque en el modelo convencional de de esta arquitectura, el servidor es el que tiene el conocimiento, es el donde vamos a procesar toda la información y el cliente simplemente va a hacer solicitudes, ¿cierto?
+Teacher: Entonces nuestro sistema podrá crecer a medida de que ese servidor tenga recursos suficientes para hacerlo, ¿cierto?
+Teacher: Pero cuando ese servidor se va quedando sin recursos, pues ya no va a permitir crecer en el sistema, pues en crecer en en funcionalidades o simplemente crecer en el número de usuarios que podemos atender.
+Teacher: Pero además de eso también es el punto crítico de fallo.
+Teacher: ¿Por qué punto crítico de fallo?
+Teacher: ¿Quién más me dice por qué decimos de que el servidor es el punto crítico de fallo?
+Student18: Profe, porque si se pues si se colapsa el servidor se cae todo el sistema.
+Teacher: ¿Okay?
+Teacher: Porque dependemos de ese componente, ¿cierto?
+Teacher: Ese componente es el que sabe hacer las cosas.
+Teacher: Si él no está, pues no hay nadie que sepa hacer las cosas.
+Teacher: Y entonces como una de las posibilidades para mejorar o para distribuir o para evitar que el servidor sea un elemento crítico dentro de nuestro sistema, estuvimos hablando del reparto de funcionalidad entre cliente y servidor, ¿cierto?
+Teacher: habláamos de que habían unos clientes gruesos y unos o pesados y unos clientes ligeros o unos clientes delgados.
+Teacher: ¿Cuál era la diferencia entre ellos?
+Student28: Profe, la diferencia entre ellos es en la cantidad de tareas que procesan,
+Teacher: ¿Cómo
+Student28: donde el cliente ligero realiza pocas tareas de procesamiento y digamos que la
+Teacher: así?
+Student28: mayor parte de la lógica se ejecutan al servidor y por el contrario, el cliente pesado es donde realizan la mayor parte del procesamiento y la y la parte de la funcionalidad se traslada al servidor del servidor al cliente.
+Teacher: Okay.
+Teacher: ¿Cuál de los dos es mejor?
+Teacher: ¿Tener cliente pesado o cliente ligero?
+Teacher: Otro, otro, otro que participe.
+Student8: Profe,
+Student5: Ok.
+Student8: el cliente pesado era era al que le cargábamos como muchas partes de los scripts y muchas eh digamos que tareas eh para alivianarle la carga al servidor.
+Student8: Por ejemplo, hablábamos de los PWA y habláamos de este tipo de cosas que movían eh gran parte de la arquitectura de la aplicación hacia el cliente eh versus eh
+Student8: clientes que literalmente solo eran como una interfaz de acceso, que eran los ligeros.
+Teacher: Sí. ¿Cuál de los dos es
+Student8: Eh, profe,
+Teacher: mejor?
+Student8: pues depende de para qué, ¿cierto?
+Student8: Digamos que el cliente pesado tiene la ventaja de que eh digamos que consume demanda menos del servidor, pero en contraprestación pues por ejemplo va a tener un mayor tiempo de descarga ese cliente
+Student8: o cierto requiere instalación, etcétera, porque pues lleva muchos más script,
+Teacher: Aha.
+Student8: más componentes pequeños para resolver esas tareas que de las que en un cliente pesado de las que en un cliente ligero se encarga el servidor.
+00:05:00
+Teacher: Bien, [estudiante].
+Student28: Profe,
+Teacher: [estudiante]
+Student28: pues como pues como dice mi mi compañero,
+Teacher: [estudiante].
+Student28: pues depende, por ejemplo, los clientes pesados pues van a distribuir mejor la carga del procesamiento.
+Student28: Los clientes ligeros pues simplifican administración,
+Teacher: Okay.
+Student28: pero ya lo que viene siendo el equilibrio entre ellos, pues eso ya depende de los requisitos de rendimiento, de mantenimiento y escalabilidad.
+Teacher: Entonces, mire que no hay una solución absoluta.
+Teacher: No hay no hay una receta que nos diga cuál es la solución o cuál es el o cómo lo podemos resolver.
+Teacher: Depende mucho del problema que nosotros estemos atendiendo, ¿cierto?
+Teacher: depende de qué cosas son las que nosotros esperamos resolver con nuestra arquitectura cliente servidor y por qué vamos a distribuir.
+Teacher: No siempre vamos a tener la certeza o la garantía de que si lo tenemos grueso pues va a ser mejor o si lo tenemos delgado, pues el cliente si lo tenemos si tenemos el cliente grueso o delgado, pues sea mejor o no en el para la solución de nuestro problema.
+Teacher: Tenemos que ir revisando esos requisitos no funcionales para poder tomar una decisión como repartir la carga entre cliente y servidor.
+Teacher: ¿Listo?
+Teacher: Pero si por algún motivo, razón o circunstancia no queremos repartir eh la carga entre cliente y servidor, pues tenemos otras variantes que podemos aplicar solamente del lado del backend, perdón, del lado del servidor, ¿cierto?
+Teacher: donde nosotros vamos a a tener distintas capacidades o distintas posibilidades de de mejorar el rendimiento, de bajar la dependencia que tenemos del servidor a partir de algunos elementos que podemos ir integrando aquí.
+Teacher: ¿Listo?
+Teacher: Y ahí vamos a empezar a hablar sobre este primer componente que es el la caché, o sea, poder utilizar o o agregar en nuestro servicio de cliente servidor la posibilidad de manejar una caché.
+Teacher: Ya habíamos hablado un poco sobre eso, que la caché pues era una memoria temporal de corto plazo que nosotros podíamos utilizar para guardar información común.
+Teacher: Eso creo que lo alcanzamos a hablar en la en la clase pasada, ¿cierto?
+Teacher: Pues básicamente nosotros lo que vamos a hacer es además de hacer la implementación de cliente y servidor, o sea, de la aplicación cliente y lo que va a ser el servidor, también tenemos la posibilidad de agregar este esta caché.
+Teacher: caché.
+Teacher: ¿En dónde la caché?
+Teacher: Yo la puedo eh agregar o puedo anexarla a nuestra aplicación del lado del servidor o del lado del cliente.
+Teacher: Si yo lo agrego del lado del cliente, pues tenemos la posibilidad de guardar mucha de la información común o muchas de los valores que nosotros le preguntamos al servidor y que normalmente vamos a estar utilizando eh en la aplicación,
+Teacher: ¿cierto?
+Teacher: Entonces yo llego, la guardo ahí, esa caché o esos datos en la caché van a tener una vigencia, un un tiempo donde esos datos nosotros los vamos a asumir como datos válidos o datos que no han cambiado y simplemente eh vamos a estar tomando esos datos
+Teacher: de manera local.
+Teacher: Entonces, si hablamos de un cliente servidor con caché, es como si estuviéramos agregando un espacio de memoria a nuestro a nuestro cliente y ahí vamos a ir haciendo preguntas al servidor y los resultados que tengamos o que obtengamos del servidor lo guardamos en la caché.
+Teacher: De tal manera que la próxima vez que necesite esa información, yo verifique si ya tengo ese dato en la caché y si lo y si ya lo tengo, pues no le pregunto al servidor, quito esa responsabilidad de que el servidor vuelva a procesar esa información y simplemente tomo el dato
+Teacher: que tengo en la caché del lado del cliente.
+Teacher: Bien, también tenemos la posibilidad de agregar caché del lado del servidor y si agregamos caché del lado del servidor, pues vamos a resolver el otro problema que tenemos.
+Teacher: Y es, ¿qué pasa si clientes me están preguntando lo mismo, me están intentando o están intentando resolver el mismo problema?
+Teacher: Que en un periodo de tiempo, pues muy probablemente al procesar la misma información va a generar los mismos resultados.
+Teacher: Si me preguntan, eh, dame el listado de los usuarios que tengo en el sistema y otro usuario me pregunta lo mismo, va a ser la misma respuesta.
+Teacher: Entonces, lo mismo.
+Teacher: Igual vamos a agregar un componente de caché al lado del servidor.
+Teacher: Cada vez que recibamos una petición, verificamos si yo ya tengo la respuesta en el caché.
+Teacher: Si no lo tengo, pues simplemente voy, lo proceso y cuando tenga el resultado, lo guardo en la cachéa y doy respuesta.
+Teacher: Así sí llegan múltiples peticiones, si llegan múltiples peticiones a nuestro a nuestro servidor, pero si las peticiones son repetidas o son similares, pues simplemente nosotros lo que vamos a hacer es utilizar los datos que tengo en la cach.
+00:10:00
+Teacher: ¿Listo?
+Teacher: Entonces este concepto de la caché lo que va a hacer es que me va a permitir mejorar la latencia, ¿cierto?
+Teacher: porque ya no vamos a tener que estar enviando mensajes de un componente a otro, esperar a que procese y genere respuesta, sino que voy a poder tener una respuesta mucho más rápida.
+Teacher: Si es lo tengo del lado del cliente, pues va a ser mucho más eficiente porque ni siquiera me comunico por la red, pero si lo tengo del lado del servidor, pues vamos a tener la latencia de de comunicación,
+Teacher: o sea, de enviar la información y recibirla, pero no del procesamiento.
+Teacher: Y eso, pues, ayuda bastante a que nuestra aplicación sea mucho más ágil.
+Teacher: reduce el consumo de red, depende de donde la ponga, ¿cierto?
+Teacher: Y vamos a reducir los recursos del servidor o vamos a depender menos de los recursos del servidor.
+Teacher: Entonces, el servidor, ¿a qué se va a dedicar?
+Teacher: Pues a procesar tareas que necesiten ser procesadas, ¿cierto?
+Teacher: consultas comunes o datos que ya fueron preprocesados, pues simplemente los va a guardar en la caché y va a evitar estar calculando, va a estar haciendo operaciones múltiples veces la misma operación simplemente para darle respuesta a los clientes que estén haciendo solicitudes a nuestra
+Teacher: plataforma.
+Teacher: ¿Listo?
+Teacher: Eh, pero caché, la caché puede generar algún algunas dificultades, vamos a decirlo así, no son deficiencias, sino dificultades.
+Teacher: ¿Por qué?
+Teacher: ¿Por qué son qué qué dificultades pueden encontrar ustedes sobre la caché?
+Student26: M. Yeah.
+Student8: Si el dato cambia por escritura y no se ha alcanzado a actualizar la cache, yo puedo estar leyendo un dato viejo.
+Teacher: Okay.
+Teacher: Entonces, una tiene que ver con los datos obsoletos, ¿cierto?
+Teacher: Si nosotros eh si nosotros podemos utilizar un si estamos agregando una caché, tenemos la posibilidad de que al momento en que yo hago una consulta y tenga el dato en la caché, pues ese dato yo voy a confiar porque es el el modelo que nosotros hemos
+Teacher: seleccionado.
+Teacher: Yo voy a confiar de que ese dato es el bueno, pero probablemente puede estar malo, ¿cierto?
+Teacher: puede estar obsoleto, puede ser que los datos ya cambiaron, pero no yo no me he dado cuenta o mi caché no se ha dado cuenta.
+Teacher: ¿Listo?
+Teacher: Entonces, esa es una es uno de los problemas y es que en el caso de que la información se actualice o se desactualice, yo voy a seguir usando datos obsoletos.
+Teacher: La pregunta aquí es, hola, ¿y mi servicio será que tolera que el cliente utilice datos obsoletos?
+Teacher: ¿Será que permitimos de que nuestra aplicación pueda mostrar datos obsoletos a los a los clientes, a los usuarios?
+Teacher: ¿Qué tan qué tan disponible o qué tan dispuestos estamos nosotros a dejarle esa información obsoleta?
+Student8: el el caso clásico como el saldo de una cuenta bancaria en un banco, no estaría tan chévere tener ese dato en un cach
+Teacher: Okay.
+Teacher: Ese ese es un caso donde por ejemplo no podría no podría dejarse como un dato en la caché porque yo quisiera que cada vez que yo haga una consulta me dé el saldo actualizado, el saldo real.
+Teacher: ¿Listo?
+Teacher: Pero hay otros datos que no son tan necesarios, no son tan críticos y podríamos nosotros tolerar de que el cliente o que los datos del cliente estén obsoletos.
+Teacher: Por ejemplo, si yo llego y consulto o necesito consultar eh, no sé, las reglas de descuento que tenemos actualmente aplicadas o que estamos aplicando en este momento, yo puedo al inicio del día, en el primer login, etcétera,
+Teacher: pues según algún criterio que nosotros hagamos, podríamos descargar toda la lista de reglas de descuentos que nosotros tenemos para los clientes y no volverlas a preguntar el servidor.
+Teacher: ¿Por qué?
+Teacher: Porque yo sé que eso, esas reglas no cambian mucho o no tienen una movilidad muy alta.
+Teacher: Entonces, existe una alta probabilidad de que esos datos mientras yo los esté usando, mientras los datos estén en la caché, no cambien.
+Teacher: Entonces, yo puedo confiar con que esos datos.
+Teacher: ¿Qué pasa si agregan una nueva regla y yo no la he descargado o yo no la tengo?
+Teacher: puede que no sea tan crítico porque esa nueva regla puede que no le aplique a ninguno de mis clientes o el cliente que tiene los datos desactualizados puede que no necesite esa regla o no esté trabajando en ese modo.
+Teacher: módulo o algún caso en especial, ¿cierto?
+00:15:00
+Teacher: Entonces ahí es donde nosotros tenemos que ir analizando si podemos o no podemos utilizar la caché, qué datos de todos los datos que estamos transmitiendo pueden estar en la caché y cuál sería eh o en el caso de que yo necesite actualizar esa caché,
+Teacher: entonces necesito verificar algo que nosotros vamos a llamar la coherencia, o sea, cómo vamos a garantizar nosotros de que los datos que estamos utilizando o los datos que tenemos en la caché realmente son los más eh actualizados.
+Teacher: Y ahí cuando nosotros agregamos este elemento, cuando nosotros nos preocupamos por la coherencia de la caché, lo que vamos a hacer es aumentar la complejidad o mejor dicho aumentar el esfuerzo que voy a tener que hacer en el sistema.
+Teacher: ¿Listo?
+Teacher: ¿Por qué?
+Teacher: Porque vamos a tener que hacer más envíos de información simplemente para mantenerla actualizada.
+Teacher: ¿Cómo que envíos de información?
+Teacher: Nosotros podríamos eh pensar en resolverlo utilizando un mecanismo que cada x tiempo vaya al servidor o o le haga una petición al servidor para actualizar la caché, para actualizar los datos.
+Teacher: Entonces, digamos que ese tema de las reglas de las reglas de financiación, yo podría decirle, bueno, eh, perdón, las reglas de descuento que le vamos a aplicar al cliente.
+Teacher: Entonces, yo podría decirle que cada, no sé, cada día a medianoche se descargue eh las nuevas reglas de de cobro o de descuentos que le vamos a aplicar al cliente, ¿cierto?
+Teacher: Entonces, durante todo ese tiempo va a ser va a ser válido o durante toda la todo el día voy a aplicar estas reglas y a medianoche voy a traer un nuevo dato.
+Teacher: Pero esa ese a medianoche voy a traer un nuevo dato significa que yo como desarrollador tengo que agregar esa nueva funcionalidad.
+Teacher: es una es un elemento que va a cambiar el o mejor dicho se sale del funcionamiento normal de la aplicación, pero por el hecho de estar manejando caché o de estar gestionando caché, nos vamos a tener que preocupar por hacer esa esa nueva operación,
+Teacher: ¿cierto?
+Teacher: Eh, otra posibilidad que tengo con la caché y es que una vez se haya modificado alguno de los elementos fuente, alguno de los eh recursos que se ve que implican el cambio de de datos en la caché, pues lo que puedo hacer es invalidar la caché,
+Teacher: ¿cierto?
+Teacher: ¿Qué es eso invalidar?
+Teacher: Si yo, por ejemplo, tengo los datos de los descuentos y un usuario en algún lado del mundo modifica la tabla de descuentos, hace cualquier modificación, aumenta un porcentaje, aumenta los límites, Yes.
+Teacher: donde se tiene que aplicar, etcétera, o los baja, pues dependiendo de cuál sea eh el sistema.
+Teacher: Entonces, lo que va a hacer es irse a todos los computadores o a todos los nodos que tengan caché y le va a decir, "Ey, ese dato de las reglas de descuento inhabilítela. Haga de cuenta de que esa de que ese dato ya venció,
+Teacher: ya se ya no está disponible.
+Teacher: Entonces, es lo que va a hacer es que la próxima vez que necesite ese dato, pues se va a dar cuenta de que la caché está inconsistente o que ese dato está inconsistente, no puede creer en él y tiene que mandar una nueva petición para descargar o para ir al
+Teacher: servidor a solicitarle que le entregue la nueva lista.
+Teacher: ¿Listo?
+Teacher: Entonces ese ese esos esas tareas adicionales, sea para invalidarla o sea para estar recargando nuestra caché cada x tiempo, pues genera eh una sobrecarga en nuestro servicio, ¿cierto?
+Teacher: Sobre una sobrecarga porque además de estar respondiendo a las solicitudes, pues también tiene que agregar unos nuevos servicios para estar actualizando la caché, por decirlo así.
+Teacher: Puede puede ser para actualizar o simplemente el proceso de cómo localizar cuáles en dónde hay copias, en cuáles de los clientes tienen copias del dato y simplemente ir a invalidar esas copias.
+Teacher: Todo eso es una gestión que no es fácil y no es sencilla de mantener.
+Teacher: Eh, pero el hecho de tener caché, pues no todo es malo, también tiene cosas buenas.
+Teacher: ¿Y qué cosas buenas eh podemos tener nosotros?
+Teacher: pues el tema de de poder trabajar en modo desconectado, que si por un momento, un instante de tiempo el servidor no está disponible, pues yo voy a poder seguir trabajando en mi sistema así no el el servidor no me
+Teacher: conteste.
+Teacher: ¿Listo?
+Teacher: ¿Por qué?
+Teacher: Porque si los datos con los que necesito estar operando los tengo en la caché, pues puedo realizar las operaciones y puedo hacer las cosas que yo necesito de manera desconectada, sin necesidad de que el servidor esté.
+00:20:00
+Teacher: Y también tengo la posibilidad de que yo pueda guardar información parcial, intente llegar al servidor y el servidor no responde.
+Teacher: Pues la caché me sirve tanto para consulta como para escritura.
+Teacher: Entonces, yo podría guardar eso en esa memoria temporal, en esa caché, podría guardar la operación o la tarea o algo que quisiera guardar mientras el servidor no esté eh disponible, pero cuando esté disponible pues puedo mandar la información allá.
+Teacher: todos ese tipo de operaciones o todo ese tipo de funcionalidades que lo que hace es que nuestros usuarios se sientan más a gustos con el sistema, eh puede ser gestionado gracias a que estamos eh trabajando con con la cach.
+Teacher: Eh, este est concepto de prefeching eh tiene que ver mucho con ese proceso que yo le estaba diciendo de que a medianoche vaya y traiga la información y cargue los datos, porque eso es básicamente ir y actualizar la información que necesitamos para seguir
+Teacher: trabajando.
+Teacher: No necesariamente tiene que ser a medianoche.
+Teacher: Depende cuál es el flujo de de los datos que estemos trabajando.
+Teacher: en un escenario que digámoslo así en un proyecto en el que estuve trabajando yo cuando apenas estaba empezando a trabajar como como desarrollador, tuve la oportunidad de desarrollar un servidor eh web, no era un servidor web,
+Teacher: era un servidor socket que se conectaba a una base de datos para traer información y eh la idea era de que unos dispositivos móviles, en ese tiempo los dispositivos móviles eran una cosa loca, pero a partir de unos dispositivos móviles que se conectaban por la red 3G,
+Teacher: que creo que era la que que existía en ese momento, entonces que se conectaban por la red y descargaban la información para poder trabajar en esos dispositivos móviles.
+Teacher: Entonces, ¿cómo cómo funcionaba la vaina?
+Teacher: Pues en el momento en el que hacían login, el login, o sea, yo mandaba usuario contraseña y él me devolvía en el resultado o en la respuesta.
+Teacher: Si todo estaba bien, o sea, si el usuario y la contraseña eran correctos, me devolvía toda la información que necesitaba el dispositivo móvil para trabajar de manera desconectada.
+Teacher: O sea, conmigo no tenía que hablar sino cuando hacía una venta.
+Teacher: Pero el listado de productos, los precios de los productos, no sé, los tiempos de entrega o el listado de clientes, o sea, toda la información que él necesitaba en su dispositivo, lo descargaba de una sola vez y y desde ahí hasta
+Teacher: el próximo login, por decirlo así, no tenía que descargar nada porque toda esa información era una información fija y le iba a manejar dentro de la caché.
+Teacher: Si yo apagaba el equipo, se me descargaba y tenía que volver a iniciar sesión, pues toda la caché se perdió.
+Teacher: Tengo que volver a descargarla y hago una nueva consulta al servidor y la descargo.
+Teacher: Listo.
+Teacher: Pero del lado del servidor teníamos el mismo e ese mismo problema y es okay.
+Teacher: Eh, la petición es muy sencilla, o sea, va a iniciar sesión y yo tengo que devolverle la lista de o sacar información de clientes, de productos, de no sé qué.
+Teacher: O sea, tenía que hacer varias consultas a la base de datos para consolidar la nueva respuesta y devolverla.
+Teacher: Se imagina todos los dispositivos móviles a las 8 de la mañana que arrancaran eh el día, cómo se me iba a poner el procesamiento en mi servidor, ¿cierto?
+Teacher: Entonces íbamos a tener 1000 peticiones, 500 peticiones, dependiendo de cuántos usuarios teníamos.
+Teacher: Vamos a tener 500 peticiones de manera casi que simultánea, porque todos arrancan a trabajar al mismo tiempo, casi que simultáneas pidiendo la misma información.
+Teacher: Entonces ahí nosotros desarrolyamos un servidor, pues en el servidor una pequeña caché donde toda esa información común, productos, clientes, etcétera, que le pueden servir a todos los usuarios, o sea, no no todo,
+Teacher: pero lo que le puede servir a todos los clientes eh lo ten lo guardábamos en la cachela.
+Teacher: En la primer consulta, cuando no teníamos nada, traíamos la información y la guardamos ahí.
+Teacher: Para las siguientes consultas, las otras 999 consultas que iban a llegar a la plataforma, el 80% de los datos que necesitaban ya los teníamos en la caché.
+Teacher: Entonces, solamente nos preocupábamos por procesar ese 20% que le hacía falta y le entregábamos la información por completo.
+Teacher: O sea, que sin tener un servidor demasiado fuerte en ese tiempo, no teníamos servidores tan potentes como los que podemos ver ahora, pero lográbamos resolver el problema gracias a que teníamos este concepto de caché.
+00:25:00
+Teacher: ¿Listo?
+Teacher: ¿Qué pasa con el prefeching?
+Teacher: O sea, ¿qué pasa con con ese proceso de estar cada x tiempo descargando datos?
+Teacher: Pues existe una alta probabilidad de que nosotros estemos descargando datos que ya tenemos actualizados.
+Teacher: ¿Listo?
+Teacher: Entonces, o que traigamos unos datos que al final no se vayan a usar, ¿cierto?
+Teacher: que nosotros hicimos eh en el prefech, yo cada x tiempo, cada 2 horas voy a ir a actualizar la caché, pero cada 2 horas es poco probable de que cambie la información de los clientes o que aparezca un cliente y lo tengamos que utilizar en en este en este terminal
+Teacher: o y entonces si yo empiezo a hacer ese proceso de prefeching de estar llamando cada x tiempo a traer la última actualización, pues estoy gastando ancho de banda, estoy perdiendo eh procesamiento y además de eso me están cobrando por la transmisión.
+Teacher: Entonces, todo ese, digámoslo así, tenemos que considerar bastante ese tipo de modelo para o este modelo para saber si lo aplicamos o no lo aplicamos en nuestro cliente servidor, pero al final lo podemos usar.
+Teacher: Es una muy buena idea, no voy a decir que es mala, solamente que si escogemos esta opción tenemos que analizar qué hacemos con los datos obsoletos y y cómo vamos a ir actualizando estos datos en nuestro sistema.
+Teacher: Todo bien, hasta ahí queda claro.
+Teacher: Se quedan calladitos.
+Teacher: Otro otro elemento, cliente servidor con proxy.
+Teacher: ¿Conocen qué es un proxy?
+Teacher: No me vayan a decir que un equipo donde van a instalar un software y que en ese software vamos a a guardar imágenes.
+Teacher: Es, no, eso no es.
+Teacher: O ponerle reglas de seguridad para que no salgan a las páginas p****.
+Teacher: No, eso no es.
+Teacher: ¿Qué es un próximo?
+Student11: No, profe, no sé.
+Teacher: No sabe.
+Teacher: Yo sol un qué un
+Student26: Proxy es un Sí,
+Teacher: qué.
+Student26: es es un servidor por donde se redireccionan eh peticiones.
+Student26: Entonces sí es es básicamente,
+Teacher: ¿Cómo que se redirecciona?
+Student26: o sea, se usa como para filtrar y redireccionar, ¿cierto?
+Student26: Entonces,
+Teacher: Okay.
+Student26: eh, por ejemplo, usted hay un cliente que hace una petición y pasa por el proxy, entonces el proxy determina a quién se la manda.
+Student26: A veces lo confunden con un balanceador de carga,
+Teacher: Mhm.
+Student26: pero realmente un proxy lo que hace es mandar una petición para un lado, para el otro.
+Teacher: Sí.
+Student26: M.
+Teacher: Bien.
+Teacher: y realmente y realmente tiene que ver con un concepto de de condensación o de o de de multiplexación.
+Teacher: Es el el concepto, ¿cierto?
+Teacher: Porque, ¿cuál es la situación?
+Teacher: ¿Hay aplicaciones o hay arquitecturas o hay soluciones donde el cliente tendría que conocer múltiples servidores para poder responder un o para poder trabajar, ¿cierto?
+Teacher: Entonces, si este cliente necesita hablar con el sistema financiero, entonces tiene que hablar con un servidor y si tiene que hablar con el sistema contable es otro el sistema de producción es otro servidor y el sistema de ventas es otro otro servidor.
+Teacher: Y entonces el cliente tendría que conocer muchos eh detalles de cómo está la implementación o cómo es la solución que nosotros estamos teniendo, ¿cierto?
+Teacher: Y eh y además de eso también tendríamos nosotros múltiples clientes que están pidiendo las la misma información o que están intentando localizar los mismos recursos o casi los mismos recursos o hay muchos recursos compartidos o muchas consultas compartidas que yo podría centralizar.
+Teacher: Entonces este componente proxy básicamente lo que hace es de concentrador.
+Teacher: ¿Listo?
+Teacher: dentro de la arquitectura cliente servidor es un elemento híbrido porque se va a comportar como servidor, pero también es un cliente.
+Teacher: ¿Listo?
+Teacher: ¿Por qué híbrido?
+Teacher: Porque para todos los nodos que estén de su lado, por decirlo así, dependiendo del tipo de proxi, todos los nodos que estén de su lado, su caminos, la forma como o el lugar a donde tienen que ir a preguntar las cosas es este señor proxy.
+Teacher: ¿Listo?
+Teacher: Entonces, todas las peticiones que ellos vayan a hacer tienen que ir hacia el proxy.
+Teacher: El proxy lo que va a hacer es consolidar todas las peticiones que tienen estos usuarios o estos clientes.
+Teacher: Va a identificar cuáles son esas peticiones únicas, por decirlo así.
+Teacher: Y con esas peticiones únicas solamente hace una.
+Teacher: petición al servidor, ¿cierto?
+00:30:00
+Teacher: Él conoce dónde están los servidores y cuáles son los servidores.
+Teacher: Pues simplemente es lo que hace recibir y reenviar o servir como cliente hacia los servidores.
+Teacher: ¿Listo?
+Teacher: Cuando tiene la respuesta, como sabe de que hay varios usuarios o varios clientes que necesitan esa información, solamente la manda una vez, pero le responde a todos los nodos que estaban esperando esa respuesta.
+Teacher: Listo, vamos bien hasta ahí.
+Teacher: O sea, es un concentrador de peticiones.
+Teacher: Yo voy a gestionar todas las peticiones de estos clientes que están conectados a mí.
+Teacher: Yo las voy a concentrar y en lugar de que cada uno de los clientes envíe de manera independiente eh peticiones al servidor, yo las concentro, identifico que todas esas peticiones son lo mismo o es la misma petición,
+Teacher: entonces simplemente envío una única petición al servidor y el servidor pues me responde y yo puedo responderle de una vez a los tres elementos.
+Teacher: no hace procesamiento.
+Teacher: Bueno, si tiene que procesar para condensar y devolver, pero no es el que procesa, no es un elemento eh servidor como tal.
+Teacher: En este caso es más como un agente intermedio que me va a concentrar esa información.
+Teacher: Otra labor que podemos delegar nosotros al proxy es de caché.
+Teacher: Lo mismo, como varios clientes o múltiples clientes le están haciendo solicitud a él, pues él tiene la posibilidad de identificar cuáles son esas preguntas comunes o solicitudes comunes y cuál es la respuesta que normalmente me está dando el
+Teacher: servidor.
+Teacher: Si yo hago dos veces la misma petición al servidor y me vuelve el mismo resultado, yo como proxy podría podría asumir de que esa va a ser la respuesta para esa petición.
+Teacher: durante x tiempo.
+Teacher: Entonces, yo podría también hacer de que este ser proxy me sirva también de caché o que tenga la caché fuera de mi cliente y de esta manera eh puedo seguir haciendo las mismas peticiones dentro de la dentro de dentro de mi red.
+Teacher: Todas las va a recibir el proxy y el proxy respondería a partir de los datos que tiene caché.
+Teacher: no necesariamente va a estar eh recibiendo todas las peticiones y enviándolas a al servidor.
+Teacher: Listo.
+Teacher: Vamos a tener dos tipos, bueno, hay tres tipos de de proxis dependiendo de la solución que tengamos, pero nos vamos a concentrar en dos, el forward proxy y el reverse proxy.
+Teacher: Listo.
+Teacher: El forward es el que vamos a colocar del lado de los clientes.
+Teacher: digamos que es el que concentra las peticiones de los clientes y hace las solicitudes hacia los servidores.
+Teacher: ¿Listo?
+Teacher: Entonces ese forward proxy está configurado.
+Teacher: una vez más para recibir las peticiones y delegar o responder.
+Teacher: ¿Listo?
+Teacher: Eh, perdón, delegar, no, o pasarlo al nivel de los servidores.
+Teacher: Eso es el forward proxy.
+Teacher: Entonces, él va a tener múltiples clientes conectados a él, va a recibir las peticiones, envía la petición al servidor, la respuesta las devuelve a los distintos clientes que hayan hecho la misma solicitud.
+Teacher: Si tenemos cachés y tenemos que guardar información común para estar evitando ir a la a internet a descargar una y otra vez eh recursos, pues podemos eh anexar ese caché al proxy para que toda la gestión, digamos que quede dentro de nuestra red interna.
+Teacher: No tengamos que ir hasta fuera, sino que quede dentro de la red interna.
+Teacher: El otro proxy es el proxy reverse.
+Teacher: El proxy reverse es el que yo voy a colocar del lado del servidor.
+Teacher: Entonces es un servicio o un servidor que no procesa, pero que redirige.
+Teacher: ¿Listo?
+Teacher: Entonces el proxy reverse lo ponemos del lado del servidor.
+Teacher: ¿Con qué idea?
+Teacher: Capturar todas las peticiones que deberían llegar a los servidores.
+Teacher: Él las va a capturar y él igual que el proxy forward identifica si ya tiene algo en la caché.
+Teacher: si maneja caché, si lo tiene la caché lo responde.
+Teacher: Si no, pues busca, identifica o localiza cuál es el servidor que va a procesar.
+Teacher: Recibe la información, la puede cachear y manda la de respuesta.
+Teacher: ¿Listo?
+Teacher: Este proxy reverse, listo.
+Teacher: Ese proxy reverse está definido como proxy reverse, no funciona igual que un proxy forward.
+Teacher: ¿Listo?
+Teacher: O sea, tienen la responsabilidad distinta.
+Teacher: ¿Listo?
+Teacher: Proxy forward, eh, digámoslo así, es la cara visible de los clientes hacia la red y el proxy reverse es la cara visible del mundo hacia los servidores.
+Teacher: ¿Listo?
+Teacher: ¿Cuál es la idea del proxib reverse?
+00:35:00
+Teacher: Descargar la carga que tienen los servidores o recibir las peticiones y dirigirlas de manera directa a cada una de ellas.
+Teacher: Eso, ¿qué para qué utilizamos el proxy?
+Teacher: Digamos que esto me va a permitir aumentar una de las eh una de los objetivos que teníamos nosotros en los sistemas distribuidos y es el de transparencia de ubicación.
+Teacher: O sea, este cliente va a poder llegar a este servidor sin saber dónde o cuál es el servidor.
+Teacher: ¿Por qué?
+Teacher: Porque él no necesita saber cuál es el servidor que le va a responder, porque no va a hacer una conexión directa con él a preguntarle sobre un servicio en específico.
+Teacher: Todas las preguntas se las va a preguntar al proxy y así él no tiene que saber exactamente cuál es el servidor que le va a dar su respuesta.
+Teacher: ¿Listo?
+Teacher: Y pues y si este señor no está, sino que hay otro, no le importa.
+Teacher: ¿Por qué?
+Teacher: porque él no tiene.
+Teacher: necesidad de ubicar, no sabe, no tiene que saber cuál es la ubicación, la dirección exacta a la que tiene que mandar la petición.
+Teacher: El proxy forward es el que se va a encargar de esa tarea.
+Teacher: ¿Listo?
+Teacher: Y del lado del proxy reverse también vamos a limitar o vamos a poder dar respuesta de una manera mucho más ágil, bajándole la carga de responsabilidad sobre los servidores, ¿cierto?
+Teacher: Porque ahora estos servidores van a estar trabajando menos porque el proxy reverse puede responder a las preguntas comunes y solamente lo que sí se tenga que procesar se manda.
+Teacher: Esto me va a garantizar aumentar qué, la el la capacidad de el la escalabilidad de mi sistema.
+Teacher: Porque para el sistema solamente está viajando una petición entre el cliente y los servidores, una petición, pero esa petición puede ser el resumen o el acumulado de múltiples peticiones que hayan hecho del lado del cliente o del lado del proxy forward.
+Teacher: ¿Listo?
+Teacher: Entonces, ya no tenemos 3 4 5 10 peticiones al mismo servidor, sino que vamos a tener una y así podría yo tener múltiples proxis para segmentar la gran cantidad de clientes que vamos a ir teniendo y y crecer en 10 nodos,
+Teacher: en 15 nodos, en 20 nodos dentro de mi red.
+Teacher: Simplemente es aumentar un mensaje que va a llegar al proxy for, al proxy reverse, perdón.
+Teacher: ¿Vamos bien hasta ahí o no?
+Teacher: habían conocido el próximo en el mercado o digámoslo así en el mundo común, nosotros principalmente conocemos los proxi, los proxis o los equipos proxy generalmente son los proxy forward,
+Teacher: ¿listo?
+Teacher: O sea, en muchas de las empresas nosotros colocamos o agregamos o ponemos un proxy forward, pero es un proxy http, ¿listo?
+Teacher: Un proxy solamente sobre un protocolo.
+Teacher: No se, digámoslo así, no se sesguen solamente a ese tipo de proxi, porque ¿cuál es la función del proxy?
+Teacher: eh ese proxy http, pues que todas las peticiones HTTP, o sea, todas las peticiones que vienen del navegador o todas las peticiones que necesitan acceso a internet, yo no tenga que darle acceso a cada uno de los dispositivos,
+Teacher: no tenga que darle una IP pública a cada uno de los dispositivos para poder acceder a ella, sino que concentremos todas las peticiones aquí.
+Teacher: Y este es el nodo que tiene el la IP pública.
+Teacher: Esta este es el nodo que puede salir a internet.
+Teacher: Entonces, digámoslo así.
+Teacher: Vamos a hablar de que los routers que tenemos nosotros dentro de nuestros dentro de nuestros nuestras casas funcionan como un proxy forward, ¿sí?
+Teacher: Porque todos los dispositivos se conectan a él y lo buscan como el canal por donde van a buscar los servidores y realmente él es el que hace esta conexión.
+Teacher: No vamos a decir que los routers inalámbricos son proxis cuando solamente lo que hacen es concentrar y y delegar.
+Teacher: ¿Listo?
+Teacher: Si pero un proxy, como les decía, puede tener caché, entonces yo podría guardar los datos intermedios.
+Teacher: Eso lo hacen los proxis HTP.
+Teacher: Eh, puedo tener aquí un un una caché y esa caché eh haría pues o respondería a muchas de las solicitudes que tenemos.
+Teacher: Listo.
+Teacher: En el proxy forward sería entonces lo contrario.
+Teacher: También existen servidores HTTP que se pueden configurar como Proxy Reverse.
+Teacher: Es el único punto de acceso.
+00:40:00
+Teacher: Yo puedo poner aquí un firewall dentro de mi infraestructura.
+Teacher: Ponemos aquí un murito y esa y esa infraestructura solamente permite llegar a este equipo, no va a llegar ni a este ni a este ni a este.
+Teacher: Estos equipos van a estar aislados de la conexión a internet.
+Teacher: Entonces, le pongo un elemento frontera junto con el firewall, que en muchos casos vamos a darnos cuenta de que el firewall de una red puede eh está sirviendo como proxy reverse dentro de la red, porque en algunas de las configuraciones de los firewall nosotros podemos decir que si llega una petición de tal
+Teacher: tipo, mándesela a tal servidor, si llega una petición a tal ruta, mándesela a otro servidor y así sucesivamente.
+Teacher: El firewall podría tener alguna algunos roles de proxy reverse, pero el proxy reverse tiene esa capacidad de que puedo guardar caché y puedo o de que puedo tener una caché definida y puedo eh guardar resultados comunes ante la caché y ante peticiones de clientes,
+Teacher: pues simplemente voy a la caché y traigo la información.
+Teacher: ¿Será bueno o será malo utilizar esto del próximo?
+Teacher: ¿Ustedes cómo lo ven?
+Student5: Entonces, el que maneja caché solamente sería el revés.
+Teacher: Los dos podrían ser, podría ser en el forward.
+Teacher: Entonces este señor este este señor me pidió la información de Google este me la información de, o sea, en la página de Google y todos piden la página de Google, pues los recursos estáticos o los JavaScript, los las imágenes,
+Teacher: etcétera, que normalmente, bueno, Google no maneja mucha imagen, pero esas imágenes que normalmente nosotros utilizamos lo podríamos guardar en la caché y y en lugar de que cada vez que necesitemos la imagen ir hasta el servidor, pues simplemente me lo responde desde aquí.
+Teacher: Listo.
+Teacher: Entonces yo podría tener caché en el cliente en el proxy forward, eh caché en el proxy reverse para dar respuestas mucho más ágiles a partir de de la historia o del o de lo ya que conocemos.
+Teacher: podemos responder sin necesidad de ir a los a los servidores y me va a garantizar o me va a aumentar la escalabilidad de mi sistema porque a un proxy forward yo le puedo pegar muchos clientes, múltiples clientes y si quiero tener otro conjunto de clientes,
+Teacher: pues pongo otro proxy forward.
+Teacher: Y para la plataforma o para la arquitectura es como si tuviéramos dos clientes, porque recuerden que el proxy tiene la el rol de cliente cuando hace las solicitudes al servidor y recibe la respuesta.
+Teacher: ¿Listo?
+Teacher: Y aquí ejemplo con el proxy reverse su prioridad es ser un servidor porque todas las peticiones que vienen de la rede.
+Teacher: Si él la y pero él recuerden, él no procesa, él lo único que va a hacer es revisar su caché y si no la tiene la caché, pues lo manda a preguntar al servidor.
+Teacher: Claro.
+Teacher: Entonces, mire, la otra opción que tenemos y es en lugar de utilizar cachés y que gestionemos la caché de manera local, podemos montar unos servidores proxi, proxy forward, proxy reverse.
+Teacher: Hay otros otro servidor proxy que metemos aquí en la red o que podemos tener como en la mitad de la comunicación entre cliente y servidor, que ese ese proxy nosotros lo llamamos como open proxy.
+Teacher: Listo.
+Teacher: Un proxy open.
+Teacher: ¿Y qué es un proxy open?
+Teacher: Pues es un proxy abierto, ¿cierto?
+Teacher: Su nombre lo dice y está muy claro.
+Teacher: Pero básicamente un proxy open no es más que no es más que el un proxy de estos que lo que hace es consolidar múltiples proxis forward y la y centraliza en una sola petición al proxy reverse.
+Teacher: ¿Listo?
+Teacher: Entonces es como tener diferentes niveles de proxy.
+Teacher: Entonces tenemos uno pegado de los clientes, otro que va a estar entre los proxy forward y los proxy reverse.
+Teacher: Y los proxy reverse que son los que ocultan la capa de servidores o la cantidad de servidores o la ubicación de sus servidores.
+Teacher: ¿Listo?
+Teacher: ¿Alguna pregunta sobre el próximo?
+Teacher: ¿Algo que les haya quedado de inquietud?
+Teacher: Entonces tenemos el proxy forward, el proxy normal, ¿cierto?
+Teacher: Y el proxy reverse.
+Teacher: Ese es básicamente lo que estábamos hablando.
+Teacher: ¿Listo?
+Teacher: Okay.
+Teacher: Otro.
+Teacher: Ya ya hemos hablado de dos de dos ajustes entre cliente y servidor sin tener que agregar funcionalidades al cliente.
+Teacher: Si metemos la caché si toca ponerle funcionalidad y lógica para más, pero ahí vamos con nuestro cliente servidor con proxy.
+00:45:00
+Teacher: Tenemos el cliente servidor proxy y el cliente servidor con Gachel.
+Teacher: Un tercer modelo, en lugar de tener un solo servidor, tengamos servidores jerárquicos, ¿cierto?
+Teacher: Tengamos servidores en varios niveles.
+Teacher: ¿Cómo así que jerárquicos?
+Teacher: Ah, pues que no es que tengamos un solo servidor que haga todo, sino que podemos tener servidores que se encarguen de una parte de la tarea y otros que están más arriba, que lo que hacen es consolidar o gestionar a los servidores de esta primer capa y otros más arriba
+Teacher: que consolidan los de la segunda capa y así sucesivamente.
+Teacher: Entonces, al final podríamos armar una especie de árbol, una topología de árbol donde vamos a tener solo servidores.
+Teacher: ¿Listo?
+Teacher: Pero la idea de los clientes de servidor jerárquico es que podamos identificar qué tipo de división de funcionalidades o de responsabilidades vamos a dar sobre los servidores.
+Teacher: Y es que eh yo puedo tener una división, una separación vertical donde cada nivel tiene una responsabilidad distinta.
+Teacher: Este servidor atiende unas tareas, pero hay otras tareas que él recibe, pero no sabe procesarlas.
+Teacher: Entonces, las manda al del siguiente nivel.
+Teacher: Y si ese no la sabe procesar, el del siguiente nivel y así vamos subiendo nosotros en la jerarquía.
+Teacher: ¿Listo?
+Teacher: La otra es hacer una división horizontal.
+Teacher: La división horizontal es que yo tengo múltiples servidores igualitos que saben hacer lo mismo, pero cada uno de ellos va a tener una, digámoslo así, se va a responsabilidad responsabilizar de una parte de la carga del sistema.
+Teacher: ¿Listo?
+Teacher: Pero si necesitan ayuda, necesitan algo, tienen otra persona, otro nodo que hace exactamente lo mismo y entonces se pueden delegar, se pueden repartir las tareas, etcétera, etcétera, etcétera.
+Teacher: ¿Cierto?
+Teacher: Entonces, al final todos estos nodos que están en el como al mismo nivel, pues todos están trabajando de manera cooperativa para resolver las mismas tareas.
+Teacher: No necesariamente tienen que tener el conocimiento completo del sistema, pero al final están haciendo las mismas tareas.
+Teacher: Entonces, para dar un ejemplo eh de lo que puede ser una división vertical, yo podría decir que el mismo el mismo patrón arquitectural de las aplicaciones eh comunes es, ¿qué pasa si yo separo eh mi aplicación en tres capas?
+Teacher: ¿Y cuáles serían esas capas?
+Teacher: Una es la capa de presentación, entonces voy a tener un servidor con mi aplicación hecha en React o mi aplicación hecha en View o mi aplicación hecha en Angular.
+Teacher: Tengo un servidor encargado solamente de la capa presentación.
+Teacher: Voy a tener otro servidor que se encarga de la capa de aplicación, o sea, la lógica de negocio.
+Teacher: Voy a tener otro servidor que se encarga de la base de datos.
+Teacher: Eso significa que no necesariamente tengo que tener un solo servidor para todo mi sistema, sino que puedo ir partiendo las responsabilidades.
+Teacher: Usted se encarga eh de toda la parte de HTTP.
+Teacher: como usted como servidor HTTP va a tener que publicar suspints o va a tener que eh generar los HTML que necesita el usuario en un momento determinado.
+Teacher: No piensen en aplicaciones angular o R, piensen en aplicaciones servidor que se encargan solamente del frontend.
+Teacher: Listo.
+Teacher: Eh, listo.
+Teacher: Pero si necesitamos lógica, usted no la va a procesar o no la tiene, la tengo en otro servidor.
+Teacher: Voy a concentrar toda la lógica de negocio, todas las reglas de de validación y de procesamiento, todas las voy a tener en ese otro servidor.
+Teacher: Entonces, este servidor sirve para la presentación o para poder despachar todo lo que tiene que ver con con la vista, pero este señor habla con la lógica cuando necesita procesar datos.
+Teacher: para poder generar la respuesta como tal.
+Teacher: Y ese servidor de lógica puede conectarse a un servidor distinto para la base de datos, ¿cierto?
+Teacher: Entonces, teniendo esos tres niveles o teniendo esa esa gestión, eh cada uno tiene una responsabilidad distinta.
+Teacher: Los clientes o si los clientes no se tienen que conectar a los tres.
+Teacher: Yo me conecto al al de presentación y el de presentación llega a los otros niveles como necesita.
+Teacher: ¿Listo?
+Teacher: En la división horizontal es como si tuviéramos todos iguales.
+Teacher: Entonces, pensemos, por ejemplo, así como dice aquí eh los servidores DNS, no sé si conocen el concepto del DNS, los servidores de nombre de dominio, pero ¿qué es eso?
+Teacher: Son servidores que su única función es convertir de URL, pues del nombre de un dominio a eh una dirección IP.
+00:50:00
+Teacher: Esa es la función de un servidor DNS.
+Teacher: coge una cadena www.
+Teacher: ehutp.edu.co y me la me tiene que devolver un servidor IP 195 118 XX, ¿cierto?
+Teacher: O sea, hace esa traducción.
+Teacher: Eso es lo que hace un servidor, un servidor DNS.
+Teacher: Pues yo puedo tener un solo servidor DNS para todas mis peticiones o puedo tener múltiples servidores.
+Teacher: ¿Cierto?
+Teacher: ¿Cuál es la diferencia entre el uno y el otro?
+Teacher: a que el uno está en un lado y el otro está en el otro.
+Teacher: Yo le puedo hacer las mismas preguntas a uno o al otro.
+Teacher: Si uno no está disponible, pues se lo puedo preguntar al otro.
+Teacher: Pero, ¿para qué vamos a partir de manera horizontal eh los nodos si al final puedo tener uno solo que haga todo?
+Teacher: Pues para bajar la carga de mi sistema, para aumentar la capacidad de de escalamiento de mi sistema que pueda atender más usuarios con el mismo sistema, ¿cierto?
+Teacher: Entonces, yo no voy a tener un solo servidor DNS, voy a tener 100. Y todos hacen lo mismo, convierten de nombre de dominio a dirección IP.
+Teacher: Pero, ¿qué pasa si al DNS que yo me conecto no sabe la eh no tiene en su base de conocimiento, en su base de consulta, no tiene eh la dirección que yo le estoy dando, la URL o perdón,
+Teacher: el dominio que yo le estoy dando.
+Teacher: Ah, pues ese ese servidor DNS puede hablar con otros servidores de NS, que hacen lo mismo, pero puede hablar con otro diciendo, "Ey, ¿tú conoces este este dominio?" No,
+Teacher: pero puedo preguntarle a otro que yo conozco y así yo me puedo ir eh extendiendo entre los n servidores que tengo en ese nivel hasta encontrar el resultado que yo elijo.
+Teacher: Pero yo como cliente no tengo que conocer los n servidores que están en ese nivel.
+Teacher: Yo con solo poderme comunicar con uno voy a lograr el resultado como si todos esos nodos horizontales, pues todos son nodos partidos en dominios o o que tienen conocimiento de parte del internet, pues entonces entre todos comparten la información y simplemente me el que al que yo le pregunté me entrega la
+Teacher: respuesta.
+Teacher: ¿Cómo la ven?
+Teacher: ¿Cuál de estos tipos de servidores habían visto, escuchado, habían hablado?
+Teacher: ¿El multicapa o el de división horizontal o todo es
+Student8: Yo creo que en algún punto todos,
+Teacher: nuevo?
+Student8: pero por encimita.
+Student5: Para mí todo es nuevo.
+Teacher: [estudiante] Diego, ¿quién una burbuja o qué?
+Student5: Sí. Ok.
+Teacher: Okay, ya yo a decirte algo.
+Student26: Ah, sí.
+Student26: No, yo los he visto todos en vertical, en horizontal, pues básicamente cuando cuando se necesita separar eh como procesamiento el el vertical funciona muy bien, ¿cierto?
+Student26: Usted mismo lo dijo, cuando hay un servidor web y cuando hay un servidor de almacenamiento, una NAS o cuando hay un servidor de bases de datos y cuando está el servidor de reglas de negocio, pues está el código backen en una parte,
+Teacher: Claro.
+Student26: el servidor de bases de datos en
+Teacher: Entonces yo yo a cada uno le doy una
+Student26: otra.
+Teacher: responsabilidad y entre ellos se coordinan para lograr el resultado que yo estoy esperando, ¿cierto?
+Teacher: Y en la división horizontal todos hacen,
+Student26: Exode.
+Teacher: o sea, si yo me conecto a cualquiera de ellos me va a responder a la pregunta, pero si él no tiene la información o no puede procesarlo, lo puede delegar, puede delegar la tarea a otro hermanito o a otro clon.
+Teacher: para que le ayude a resolver y cuando tenga la respuesta pues le responde al usuario.
+Teacher: O sea, ¿cuál es la idea?
+Teacher: La idea es que el cliente o las peticiones que estén llegando no lleguen todas a un único servidor, ¿cierto?
+Teacher: sino que todas puedan distribuirse entre los n servidores que vamos a tener en nuestro servicio.
+Teacher: Si es con división vertical, pues voy a fortalecer la capa de presentación porque es donde vamos a a recibir a todos los clientes, pero la el servidor de base de datos puede ser pequeño o pueden ser pocas copias,
+Teacher: ¿cierto?
+Teacher: porque no necesito eh o no van a llegar el mismo volumen de peticiones que va a recibir el cliente, ya porque vamos a ir segmentando qué es lo que necesita hacer cada uno de ellos.
+Teacher: ¿Listo?
+Teacher: No sé si hay alguna pregunta sobre
+Student26: No, que a veces a veces se confunde este esta arquitectura con la del proxy,
+Teacher: este.
+Student26: o sea, el proxy coge la la petición y la parte.
+Student26: Entonces, ah, bueno, usted necesita web, venga, yo le pido a web.
+00:55:00
+Student26: usted necesitaba hacer datos y venga, yo le pido en este en este la petición entra por un servidor y el mismo servidor es el que le pide a otro.
+Student26: O sea,
+Teacher: Exacto.
+Student26: aquí, por ejemplo,
+Teacher: Aquí.
+Student26: la presentación, el web le pide, por ejemplo, si si tiene, digamos, un microservicio en otro lado, el mismo servidor web cuando ya le entró la petición del cliente es el que le pide al microservicio,
+Teacher: Mhm.
+Student26: al servidor que tiene ese microservicio y no es el cliente o es o el proxy, sino ese mismo servidor le pide al otro y ese mismo que tiene el microservicio se neita la capa de datos, va y le pide al servidor que tiene las Pero no es que la petición entre así como
+Student26: multiplexada, sino que entra de arriba para abajo.
+Teacher: o que el cliente tenga que o que el cliente tenga que hablar con todos al mismo tiempo.
+Student26: Exacto.
+Student26: O que el cliente vaya uno por uno.
+Teacher: Eh,
+Student26: Pues no, esa sí no la he visto, Pero
+Teacher: esa esa la eso es lo normal en la arquitectura cliente servidor, pero podemos variarlo con este cliente jerárquico.
+Teacher: Sí. Ah, no, es que yo necesito hacer esta cosa.
+Teacher: Pues entonces, pídaselo a uno.
+Teacher: Él él comparte esa tarea o distribuye esa tarea en qué es lo que él puede resolver.
+Teacher: Lo que no puede resolver se lo pasa el de la el del siguiente nivel y así sucesivamente.
+Teacher: Sea jerárquico o sea por división horizontal.
+Teacher: lo que él pueda responder lo responde, pero lo que no puede buscar cómo responderlo.
+Teacher: Otro ejemplo de esta división multier o multinivel o división vertical, lo que cuando habláamos de la segmentación de los bancos o de la implementación de los bancos, pues nosotros hablamos de que podíamos tener sucursales, ¿cierto?
+Teacher: Y que cada sucursal tuviera su centro de datos y que pudiera y que cada centro de datos o cada sucursal gestionara la información de su centro de datos.
+Teacher: Pero no existe, digámosle, una restricción de que yo pudiese tener un un servidor regional, ¿cierto?, que cogiera todas las de Pereira, por ejemplo, Pereira, Dos Quebradas, La Virginia, etcétera, y las consolidara o que tuviera algunos roles o algunas tareas que él pudiera
+Teacher: ser de soporte o de o de extensión a lo que hacen normalmente las oficinas, ¿cierto?
+Teacher: Y más arriba podríamos tener otro nivel que pueda ser nivel nacional y otro nivel internacional dependiendo pues de del banco en el que nosotros estemos trabajando.
+Teacher: Entonces, mire que a pesar de que todos los nodos del primer nivel saben, reciben las peticiones de los usuarios, puedo tener uno de segundo nivel que gestione otras tareas que no hacen aquí, ¿cierto?
+Teacher: Eh, muchas veces he visto en los bancos que existe los usuarios tienen que estar jugando como con dos terminales, con la aplicación del banco y otra aplicación que normalmente entran por escritorio remoto o por terminal para hacer consultas sobre en el sistema alegado,
+Teacher: ¿cierto?
+Teacher: En el sistema viejo.
+Teacher: Hay cosas que ellos pueden hacer con la aplicación que tienen local, hay otras cosas que no.
+Teacher: Hay otras consultas que tienen que llevarlas o tienen que revisarlas en otro sistema.
+Teacher: Pues en este cliente servidor jerárquico, yo podía hacer de que todo lo que hace o todo lo normal de la oficina lo hagamos aquí y lo que es específico, especial que no lo puedan hacer ellos, pues se lo puede delegar a otro servidor que se encargue de hacer ese tipo de roles.
+Teacher: Ya no voy a hacer de que el cliente se tenga que conectar a dos aplicaciones, puedo hacer de que el mismo servidor, todas estas peticiones las hago yo, pero esta que no me la sé, pues se la puedo delegar a una de mayor nivel.
+Teacher: Bien, todo bien hasta
+Student26: Sí,
+Teacher: ahí.
+Student26: la que me confundí un poquito es la horizontal, que son varios idénticos en paralelo eh cooperando en el mismo servicio.
+Student26: Pero, ¿quién lo sincroniza?
+Student26: O sea, el cliente no los puede consultar a todos, no puede saber dónde están.
+Teacher: Puede consultar a cualquiera y entre ellos se hablan si necesitan información.
+Teacher: Mm.
+Student26: Dạ.
+Teacher: Ejemplo, nosotros afortunados, desafortunadamente nos nos enseñaron de que cada vez que nos fuéramos a conectar a internet había un una configuración que teníamos que ir por allá por las direcciones
+Teacher: de del adaptador que era definirle los DNS.
+Teacher: Y por alguna razón que no entiendo por qué todos nos fuimos al DNS 88, ¿sí o no?
+Teacher: A todos les ha tocado el 888 o algunos no.
+Student26: Sí, o el 11
+Teacher: Y el 444 y el 8844.
+Student26: Uno.
+Teacher: ¿Qué es eso?
+Teacher: ¿Qué todo esos qué son?
+Student3: Los bene de Google.
+Teacher: Servidores de cierto son de servidores de NS.
+Student3: M.
+Teacher: ¿Cuál es la función de esos servidores de NS?
+Teacher: traducir de dominio a IP porque la comunicación se hace a partir de la de IP, no de no de dominio.
+01:00:00
+Teacher: Entonces, ese servidor hace el cambio de dominio a IP.
+Teacher: Vamos bien hasta ahí.
+Teacher: Sí, de dominio IP.
+Teacher: ¿Qué pasa si yo me conecto al 111 y le digo, "Quiero entrar a la UTP, utp.edu.com." Probablemente ese dominio nunca en la
+Teacher: vida ha tenido que navegar.
+Teacher: ¿Por qué?
+Teacher: Porque los usuarios que estaban utilizando ese servidor de dominio nunca no eran de Pereira y nunca buscaron utp.edu.com.
+Teacher: Entonces, ¿qué hace ese servidor?
+Teacher: Ese servidor dice, "Pues yo no lo conozco, pero tengo una red de amigos a los que le puedo preguntar otros servidores de NS." Entonces,
+Teacher: yo lo que hago es hablar con otro servidor de NS y le digo, "Ey, ¿tú conoces este?" Y él dice,
+Teacher: "Pues voy a mirar en mi base de datos." No,
+Teacher: nunca nunca lo nunca he hecho esa traducción.
+Teacher: Entonces voy a otro servidor de NS y así me voy hablando entre ellos se hablan y al final me dicen, "Mire, usted para llegar eh ese esa dirección, ese nombre de dominio, su su IP es tal. Listo,
+Teacher: pero lo mismo, yo le pregunté a uno y como él no sabía, fue a hablar con otro y si él no sabía fue a hablar con otro." son exactamente iguales.
+Teacher: Si yo hubiera dicho, "No, no se conecta al 111, sino al 888", pues la respuesta pudo haber sido instantánea, porque yo me puedo conectar a cualquiera porque ofrecen el mismo servicio.
+Teacher: ¿Listo?
+Teacher: Pero si ellos, si uno no lo sabe, pues habla con nosotros para localizar el recurso que estamos buscando.
+Teacher: No sé si queda más claro ahí el ejemplo,
+Student26: Sí, sí, sí.
+Student26: Esa esa red de DNS sí está más clara.
+Teacher: el el cómo implementarlo, eso es otro problema.
+Teacher: Eso ya es un poquito más de de implementación, pues de código, pero ese es más o menos el la filosofía que nosotros estamos planteando de la arquitectura.
+Teacher: Ey, va a tener n servidores similares y los clientes se pueden conectar a cualquiera de ellos y cuando hagan una petición, si hay algo que no lo saben, pues se van a hablar entre los servidores y no vamos a hacer de que el cliente tenga que decir,
+Teacher: "Ah, es que se tiene que conectar al servidor tal para poder saber esa dirección." Y si quiere otra dirección,
+Teacher: entonces háblese con otro servidor tal.
+Teacher: Y si quiere una hay una página en Japón donde yo estoy viendo unos unos avances tecnológicos, pues este DNS que soy yo no lo tengo, entonces tengo que ir al servidor tal que es el que está en Japón para poder hablar con ellos.
+Teacher: No, la idea es de que yo a cualquiera que le pregunte entre ellos se propague la solicitud y llegue mi respuesta cuando tenga la respuesta, cuando haya ubicado la solución.
+Teacher: Y si no la encuentra, ah, pues le dice, pues el dominio no existe, no hay redireccionamiento, etcétera, etcétera, etcétera.
+Teacher: ¿Listo?
+Teacher: Entonces, esa es como como las dos posibilidades, o división vertical, donde cada nivel tiene una responsabilidad distinta o división horizontal, todos hacemos lo mismo, pero la si a mí me llega una petición que yo no sé, hablo con mis amigos para que me ayuden a resolver.
+Teacher: Vamos.
+Teacher: Listo.
+Teacher: ¿Qué hice?
+Teacher: Bien, continuamos.
+Teacher: Cliente servidor con reparto de carga.
+Teacher: ¿Qué es esto de reparto de carga?
+Teacher: Y es que eh aquí vamos a hablar de de cuando nosotros tenemos unas o un gran volumen de solicitudes y no somos capaz de procesarlas con los recursos que tenemos, ¿cierto?
+Teacher: Nosotros eh inicialmente adquirimos un equipo o alquilamos o compramos o contratamos un una infraestructura y esta infraestructura hm no es suficiente para atender todas las solicitudes.
+Teacher: Entonces ahí venimos con un tema y es y cómo resolvemos esto, ¿cierto?
+Teacher: cómo vamos a a poder darle la posibilidad de escalar o de recibir múltiples peticiones si el servicio que tenemos pues no no nos sirve o no podemos hacerlo, ¿cierto?
+Teacher: Ya sabemos que el servidor es mi cuello de botella el que limita cuántas personas tiene puede procesar o cuántas peticiones puedo procesar y es mi punto único de fallo.
+Teacher: Si él falla, pues se acabó todo el mundo, pues se acabó el sistema.
+Teacher: Entonces, ¿cómo podemos mejorar esa esa función?
+Teacher: Entonces, la solución clásica que nos enseñaron o que hemos aprendido de manera impiúrica es si necesito más recursos, pues póngale más recursos.
+01:05:00
+Teacher: Eso es lo que vamos a llamar escalado vertical o scale up.
+Teacher: ¿Listo?
+Teacher: Entonces ahí vamos a mejorar el rendimiento porque hay más recursos, entonces voy a responder más rápido o tengo más procesadores o entonces tengo posibilidades de atender a más usuarios dependiendo de qué es lo que yo esté buscando.
+Teacher: Eh, pero la escalabilidad del servicio, pero no escala mucho o no es suficiente la escalabilidad del servicio ni la tolerancia al fallo.
+Teacher: Lo único que estoy haciendo es aumentando en recursos.
+Teacher: Voy a hacer de que pueda responder más rápido, voy a hacer que pueda atender más usuarios, pero vamos a llegar a lo mismo.
+Teacher: Cuando esos recursos que agregué eh lleguen a su máximo, pues vamos otra vez a tener problemas.
+Teacher: La otra la otra solución es bueno, entonces distribuyamos eh las peticiones de los clientes entre múltiples copias del mismo servicio.
+Teacher: Eso es lo que nosotros llamamos un escalado horizontal.
+Teacher: Opa.
+Teacher: Eso es lo que nosotros vamos a llamar un escalado horizontal.
+Teacher: Van ahí conmigo.
+Teacher: Listo.
+Student8: Sí, profe.
+Teacher: Entonces, escalado vertical.
+Teacher: Bueno, aquí lo aquí vamos a a ponerlo acá.
+Teacher: Escalado vertical.
+Teacher: Si este es mi escenario normal, ¿cierto?
+Teacher: donde tengo múltiples clientes y van a mi servidor.
+Teacher: Uno de los clientes hace una petición y la va a procesar el servidor.
+Teacher: Pero yo aquí, bueno, aquí digamos que este componente no tiene nombre.
+Teacher: Esto es como la interfaz o por donde nosotros nos estemos comunicando, si estamos utilizando socket o estamos utilizando un servidor web, por donde estemos recibiendo.
+Teacher: Entonces, todos los clientes se van a conectar a esta interfaz de servicio y esta interfaz de servicio es la que va a recibir la petición y y la va a hacer procesar por el servidor, ¿cierto?
+Teacher: ¿Qué pasa si me estoy viendo cortico de recursos?
+Teacher: Pues lo que hago es hacer un scale up.
+Teacher: Entonces este aumentó el recurso.
+Teacher: Mira el recurso que tenía aquí y mira el recurso que tiene ahora.
+Teacher: Yo qué digo, "Ah, pues con estos recursos pues voy a poder atender mucho mejor las peticiones que están llegando." Si yo
+Teacher: sé que con estos recursos tener 10 personas o tener estos tres clientes eh eh hace de que el funcionamiento del sistema esté un poco eh lento, pues si yo aumento estos recursos, pues va a mejorar el rendimiento porque va voy a poder disponer de más recursos para este
+Teacher: cliente, para este cliente y para este cliente.
+Teacher: Entonces, las peticiones que él haga las voy a poder responder mucho más ágil o mucho mejor.
+Teacher: Las que él haga lo mismo, lo mismo.
+Teacher: O sea, que gracias a al Scale App podemos mejorar el rendimiento.
+Teacher: ¿Qué tantos clientes podemos atender con este nuevo servidor?
+Teacher: No es proporcional al a la capacidad que tengamos, ¿no?
+Teacher: Ojalá fuera lineal, porque así podríamos nosotros proyectar cuánto cuántos recursos necesitamos para el número de clientes que queremos, pero no es lineal.
+Teacher: ¿Por qué?
+Teacher: porque necesita un sistema operativo que gestione esos recursos, necesita pues diferentes elementos y hay limitantes también del de las mismas plataformas software o room times que nosotros estamos usando.
+Teacher: Entonces este Scale va a llegar a un límite, un límite donde me va a decir ya no puedo crecer más.
+Teacher: Pero aún así, teniendo este recurso amplio, amplió la boca de la botella, ¿cierto?
+Teacher: Pero sigue siendo mi punto crítico de fallo.
+Teacher: Si este nodo falla, no queda nada, ¿cierto?
+Teacher: Si este si este no falla, pues mi sistema se fue al piso.
+Teacher: Entonces, ¿qué es lo que se recomienda?
+Teacher: Pues hagamos algo llamado scale out.
+Teacher: Y el scale out pues es básicamente si yo tengo este servicio y los recursos que yo tengo en este servicio no son suficientes, pues lo que vamos a hacer es crear otro servicio para distribuir la carga entre ellos
+Teacher: dos.
+Teacher: ¿Sí?
+Teacher: O sea, que petición que llega, petición que asigno a uno, petición que llega se la puedo asignar a otro y se la puedo asignar a otro y así sucesivamente.
+Teacher: Entonces, digamos que con este modelo de scaleout podemos crecer, entre comillas de manera ilimitada.
+Teacher: Y digo entre comillas porque de qué depende, ¿de qué depende?
+Student8: de la plata.
+Teacher: De presupuesto, ¿cierto?
+Teacher: Yo no puedo crecer ahí de manera indefinida.
+Teacher: Pueda que yo pueda crecer, o sea, tenga la posibilidad de crecer en el número de nodos que yo quiera, pero a mí lo que me va a limitar es el dinero, ¿cierto?
+Teacher: ¿Cuánto puedo yo invertir o cuánto voy a invertir en nodos adicionales?
+Teacher: ¿Listo?
+Teacher: Eh, ¿qué más dice el scale?
+Teacher: Esta interfaz de servicio pues se tiene que actualizar, tiene que tener unas nuevas capacidades.
+01:10:00
+Teacher: ¿Y cuáles serían?
+Teacher: De poder distribuir o identificar qué servicios están disponibles y poderles ir distribuyendo, ir asignando de alguna forma las peticiones ante esos servidores.
+Teacher: No sobrecargar el mismo servidor, sino que va a distribuirlo entre los distintos recursos.
+Teacher: Y si aparece uno nuevo, pues esta interfaz tendría que tener la capacidad de poder utilizar ese servicio adicional.
+Teacher: ¿Listo?
+Teacher: Eso es básicamente lo que nosotros hablamos aquí de de reparto de carga y es cómo hacemos nosotros para para que a medida que van llegando o necesitamos crecer el recurso, pues podamos distribuirlo entre diferentes elementos.
+Teacher: Eh, las peticiones se reparten entre servidores, eh, mejora la latencia, la escalabilidad del servicio y la tolerancia fallos.
+Teacher: ¿Por qué se mejora?
+Teacher: Porque ahora si uno de los nodos falla, no pasa nada, mi servicio sigue en funcionamiento, ¿cierto?
+Teacher: mejora la latencia porque no vamos a tener que esperar en una cola a que lo atienda, sino que yo podría estar atendiendo varias peticiones de manera simultánea.
+Teacher: Si yo tengo un solo servidor, probablemente todos esos recursos es para poder atender una petición, depende del sistema que estemos creando, pero si tengo múltiples servidores, a cada uno de ellos le puedo asignar una tarea diferente y va a tener los recursos suficientes
+Teacher: para atender esas solicitudes, ¿cierto?
+Teacher: Eh, ¿qué más decía por acá?
+Teacher: Requiere un esquema de reparto de carga, que es lo que yo le decía el intermediario.
+Teacher: Tiene que aprender o tener un modelo, un algoritmo de reparto de carga y eh si usa repositorio de datos necesita replicación de datos.
+Teacher: Esto del reparto de carga es ya tiene que ver un poco con otros componentes o mejor dicho esta interfaz de servicio.
+Teacher: Yo la podría reemplazar por otro componente altamente conocido como es un balanceador de carga, ¿cierto?
+Teacher: o puede o puede utilizar un repartidor de carga, que es diferente, o puedo utilizar eh un un distribuidor de conexiones, ¿listo?
+Teacher: o un balanceador de conexiones, creo que también lo llaman, que son diferentes.
+Teacher: Es diferente un balanceador de carga o un balanceador de de solicitudes o de peticiones, pero ese ese, digámoslo así, tenemos que dotar de una capacidad adicional a esta interfaz de servicio, a quien recibe las peticiones para poder localizar los distintos servicios.
+Teacher: Hay aplicaciones donde este elemento es un AP gateway.
+Teacher: No sé si han escuchado lo que es un API Gateway, pero este señor, pues simplemente es el App Gateway que puede estar redistribuyendo las peticiones entre los distintos servidores.
+Teacher: Los distintos servidores pueden ser dedic eh que sirvan para todo o que sean independientes.
+Teacher: Cada uno hace una tarea específica.
+Teacher: Entonces, lo mismo.
+Teacher: Este podría ser un proxy, ¿sí?
+Teacher: o podríamos tener múltiples copias del mismo servicio, entonces también necesitaríamos un pequeño balanceo de carga entre esos dos servidores.
+Teacher: O sea, aquí ya se nos abre el abanico de oportunidades y de recursos que podríamos nosotros tener.
+Teacher: Eso sí, basándonos en qué, en el presupuesto o en qué cuánto dinero tenemos para poder nosotros balancear o tener múltiples copias de nuestro servicio.
+Teacher: Sí, sí queda claro estos dos modelos de de escalamiento.
+Teacher: Primero que podemos escalar con scale up, escalamiento vertical, scale out, escalamiento horizontal.
+Teacher: Sí, pero aquí viene un problema y es y y ¿qué pasa si estos servidores qué pasa si estos servidores manejan datos o tienen una base de datos por dentro?
+Teacher: Ojo, ¿qué pasa si tienen la base de datos por dentro?
+Teacher: Cuando yo escalo o creo uno nuevo, ¿qué problema ven ustedes?
+Teacher: Si yo tengo esto y agrego un nuevo nodo y cada uno de los servidores maneja datos, ¿deben algún problema o
+Student8: Profe, que el acceso a los datos,
+Teacher: no?
+Student8: la consistencia tenerlos sincronizados en toda parte.
+Teacher: Ah, pues entonces entr entramos en un problema.
+Teacher: Hacer scaleout es muy bueno, pero si los datos dependen del nodo, entonces vamos a tener un problema y es y cómo vamos a garantizar de que los datos que estén en todos los nodos sea igual.
+Teacher: Sí. ¿Cómo hacemos de que este dato que se vino a procesar aquí en este servidor, esta petición que se vino a procesar este este servidor, eh, pero a estos No, y supongamos de que esto era guardar un nuevo usuario o una nueva venta.
+01:15:00
+Teacher: ¿Qué pasa si la siguiente el siguiente cliente pregunta cuántas ventas he hecho hoy y lo responde este servidor?
+Teacher: Pues este no va a tener el dato exacto porque la esta venta la procesó fue este y este no sabe que hubo una venta procesada aquí.
+Teacher: Entonces, ya tenemos otro problema.
+Teacher: ¿cierto?
+Teacher: Tenemos que resolver otro problema.
+Teacher: Nosotros cada vez que vemos una solución se nos se nos vuelve compleja, se nos complica.
+Teacher: Entonces, ¿qué pasa si tengo los datos aquí y una base de datos acá o o guardo en archivos, etcétera, y lo tengo en cada uno de ellos?
+Teacher: Entonces, cuando existe eso de que los nodos tienen el almacenamiento, entonces vamos a tener que tener una nueva interfaz.
+Teacher: Y esta nueva interfaz, ¿para qué nos va a servir?
+Student8: Ah.
+Teacher: Para hacer el proceso de sincronización de la información, ¿cierto?
+Teacher: Cualquier cambio que haga alguno de estos nodos tiene que verse replicado o tiene que ver de qué manera podemos garantizar la consistencia de mi de mi servicio, ¿cierto?
+Teacher: ¿Cómo vamos a hacer para que este nodo, si este nodo cambió, me modifique estos el almacenamiento de este y el almacenamiento de est?
+Teacher: Eso es básicamente lo que yo estoy buscando o lo que tengo que buscar cuando tenemos en scale out.
+Teacher: O sea, que si elegimos escalamiento horizontal, tenemos que pensar en y si los datos están aquí, si el almacenamiento está aquí, ¿cómo hacemos?
+Teacher: Para evitar problemas, ¿qué qué hacemos?
+Teacher: Saquemos el almacenamiento.
+Teacher: Okay.
+Teacher: Pongamos un servidor acá, el de datos.
+Teacher: Sí. Pongamos un servidorcito acá y todos estos servidores cuando necesiten datos pues van y hablan con el servidor de datos.
+Teacher: ¿Qué sucedió?
+Teacher: ¿Qué sucedió si se si saco los datos a un solo servidor?
+Teacher: Volvimos al problema original.
+Teacher: Creamos un cuello de botella y un punto crítico de fallo.
+Teacher: Sí, si van conmigo, ¿no?
+Teacher: Si yo saco los datos y digo, lo voy a llevar a este otro servidor, este servidor se convierte en mi cuello botella.
+Teacher: Este es el que va a limitar cuántos datos o cuántos clientes o cuántos servidores voy a poder crear.
+Teacher: Y además es mi punto crítico de fallo.
+Teacher: Si se si se cae este nodo, pues se perdió toda la información y todos los servidores, independiente de si tengo tres, cidores no van a servir para nada.
+Teacher: Entonces, ¿cuál es la solución?
+Teacher: Ah, pues entonces hagamos un clúster de servidores o tengamos servidores de datos replicados.
+Teacher: No vamos a procesar la información aquí.
+Teacher: Este servidor está dedicado solamente al almacenamiento.
+Teacher: Entonces, vamos a tener servidores de almacenamiento.
+Teacher: ¿Cuántos?
+Teacher: Uno, dos, 3, 5, 7, depende cuál es el volumen de información.
+Teacher: Y volvemos al gallo.
+Teacher: La gallina, ¿cierto?
+Teacher: ¿Qué hacemos?
+Teacher: ¿Qué hacemos en este caso?
+Teacher: O sea, pasamos de aquí a este, mucho mejor, porque el procesamiento se hace aquí y el almacenamiento se va a guardar acá.
+Teacher: No dejamos uno solo porque cuello botella.
+Teacher: Entonces, montemos, hagamos un scaleout de servidores, pero volvimos a este escenario, ¿cierto?
+Teacher: Entonces, ¿cómo lo vamos a resolver?
+Teacher: Ah, pues entonces lo que vamos a hacer es cambiar nuestro sistema de de procesamiento.
+Teacher: Ya no vamos a distribuir peticiones de manera independiente, así como lo hace este.
+Teacher: Este lo manda a uno solo.
+Teacher: Probablemente o una muy buena solución aquí es de que cada petición que llegue aquí se distribuya a todos los servidores de manera simultánea.
+Teacher: Eso, eso de distribuir a todos los servidores de manera simultánea es lo que nosotros llamamos eh es lo que nosotros llamamos replicación, ¿cierto?
+Teacher: Entonces, vamos a tener los datos en espejo, o sea, yo quiero guardar un dato y este dato lo voy a guardar en el servidor uno, en el servidor dos y en el servidor tres.
+Teacher: En los tres servidores los voy a guardar.
+Teacher: ¿Listo?
+Teacher: Y si uno falla, no pasa nada.
+Teacher: Estos dos tienen una copia.
+01:20:00
+Teacher: Y si llega un servidor nuevo, ah, pues cojamos a uno y simplemente clonémoslo o hagamos la copia de seguridad de de la información o levantemos el estado y ya tengo un nuevo servidor al cual poder hacerle más o poder distribuir más
+Teacher: peticiones de de lectura o escritura para garantizar pues eso esto de la disponibilidad del servicio.
+Teacher: ¿Vamos bien hasta ahí o no?
+Teacher: Pero para analizar este último pedazo, para analizar este último pedazo, vamos a hablar o no o dejamos pendiente para la próxima clase el cliente servidor con alta disponibilidad.
+Teacher: ¿Listo?
+Teacher: que es básicamente lo que nosotros estamos buscando de que esos tres nodos de que tienen almacenamiento se gestionen para alta disponibilidad, que estén en modo réplica o en modo eh en modo copia de seguridad y que lo podamos tener al mismo tiempo.
+Teacher: ¿Listo?
+Teacher: Pero para entender cómo podemos configurar esos servidores y cómo los podemos mantener, eh lo dejamos para la próxima clase.
+Teacher: ¿Listo?
+Teacher: Eh, jóvenes, eh, tengan una muy buena noche.
+Teacher: No sé si queda alguna pregunta sobre este otro modelo y si no, pues terminamos por
+Student26: Eh, profe,
+Teacher: hoy.
+Student26: no, no preguntas sobre eso.
+Student26: Entonces, por ahora quedamos eh quedamos remoto hasta que se diga
+Teacher: Sí,
+Student26: lo contrario.
+Teacher: sí, sí.
+Teacher: Yo creo que sí.
+Teacher: Yo creo que es lo mejor para este escenario.
+Teacher: Para este escenario, si de aquí a un mes dice, "No, ya toda la universidad está abierta y hay condiciones,
+Student26: Listo.
+Teacher: pues de pronto analizamos otra cosa." Listo.
+Teacher: Y ponemos a viajar a Cristianes que está en Buga.
+Student19: No, profe,
+Teacher: A [estudiante],
+Student19: me va a poner a viajar otra vez.
+Teacher: a [estudiante] que mire a ver cómo viene porque si no pierde la materia.
+Teacher: Mentira.
+Teacher: Ahí miramos a ver cómo qué sucede.
+Teacher: Listo.
+Teacher: De todas maneras, eh, nada, nos vemos entonces el jueves y continuamos con este con este coso y miramos a ver cómo evoluciona el tema de la universidad.
+Teacher: ¿Está bien?
+Student26: Listo, profe.
+Student26: Ya está.
+Teacher: Dale,
+Student5: Gracias.
+Teacher: que tengan muy buenas noches.
+Student1: Feliz noches para todos.
+Student19: Yeah.
+Student28: Yeah.
+La reunión finalizó después de 01:22:17 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+

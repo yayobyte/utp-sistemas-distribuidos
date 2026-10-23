@@ -1,0 +1,795 @@
+Hora de inicio de la reunión: 2026-09-22 18:32 GMT-5
+Asistentes
+Student36, Student1, Student2, Student3, Student4, Teacher, Student5, Student6, Student7, Student8, Student28, Student9, Student11, Student12, Student13, Student14, Student15, Student16, Student17, Student18, Student19, Student21, Student22, Student23, Student35, Student25, Student27
+Transcripción
+Teacher: Listo, jóvenes, muy buenas noches a todos.
+Teacher: ¿Cómo están?
+Teacher: Espero que muy bien.
+Teacher: Eh, nada, vamos a continuar con lo que veníamos revisando sobre los sistemas distribuidos, ¿cierto?
+Teacher: Pero antes de de avanzar quisiera que retomáramos entre todos un pequeño recorderis de los modelos de computación distribuida, ¿cierto?
+Teacher: Eh, y hablamos de que eran nueve modelos, ¿cierto?
+Teacher: Cluster, Grid, Volunteer, Utility, Cloud, Mobile, Uitus, Edge, FOC y Autonomic Computing.
+Teacher: Vamos a recordar qué era cada uno de ellos.
+Teacher: ¿Quién me dice qué era o cuál era la característica del cluster computing o cuando hablamos de que tenemos un modelo de computación en cluster?
+Student6: Eh, profe, generalmente máquinas muy similares, están en misma ubicación y son para potencia de cálculo, por así decirlo.
+Teacher: Okay, recuerden que ya aquí podemos hablar de que podemos utilizar para high performance, para mejorar el rendimiento o podemos utilizarlo para alta disponibilidad.
+Teacher: Todavía nos falta un poco entender qué se necesita para cada uno de ellos, pero digamos que el clúster generalmente los vamos a utilizar para eso, para alta disponibilidad y para high performance o para alto rendimiento.
+Teacher: y GR
+Student28: Profe, lo del grid era que conecta recursos computacionales,
+Teacher: computing.
+Student28: no necesariamente tienen que ser iguales, que estén distribuidos geográficamente hablando, y que estos colaboran para resolver, digamos, tareas grandes y dividiéndolas en partes independientes.
+Teacher: Okay, Bien.
+Teacher: Tengamos en cuenta de que aquí vamos a hablar de grid computing, principalmente cuando los dueños de cada uno de los nodos son empresas o soy yo como como misma empresa, digámoslo así.
+Teacher: yo puedo separar, puedo crear una aplicación de Grid pensando en que tengo departamentos o sucursales independientes o porque simplemente hago un convenio con otras entidades, con otras empresas para realizar pues esa compartición de recursos que tenemos, ¿cierto?
+Teacher: Eh, gracias.
+Teacher: Volunteer computing.
+Teacher: ¿Quién me explica Volunteer Computing?
+Student18: Profe, es cuando pues como lo dice su nombre, personas ceden voluntariamente sus recursos para aportar a la carga este de ese sistema que busca solución, algún problema en específico.
+Student18: Mhm.
+Teacher: Okay.
+Teacher: Entonces, en Volunteer es un modelo equivalente al grid porque va a ser sistemas de cómputo con eh distribuido, con alta latencia, etcétera.
+Teacher: Pero aquí los recursos de cómputo no son donados o no son prestados o no son eh cedidos por otra entidad, sino por voluntarios, por personas del común.
+Teacher: ¿Listo?
+Teacher: Entonces, podemos llegar a tener unos grandes volúmenes de procesamiento o digámosle así grandes cantidades de recursos, pero de manera volátil, solamente para utilizar eh los recursos de cómputo de que un voluntario, que una persona que está creyendo en un proyecto,
+Teacher: pues ofrece hacia ese proyecto.
+Teacher: ¿Listo?
+Teacher: Bien.
+Teacher: Utility Computing.
+Teacher: ¿Alguien más o me toca a mí irlos a buscar?
+Teacher: ¿Quién quiere alguien nuevo que me diga utility computing?
+00:05:00
+Student5: noche.
+Teacher: Hola, [estudiante].
+Student5: Si mal no recuerdo es este el que dependiendo de lo que uno consuma es lo que está ocupando o pues lo que va a hacer, lo que uno requiere es lo que va a adquirir solamente eso.
+Teacher: ¿Cómo así?
+Student5: O sea, eh, como Fell Yo sí,
+Teacher: recapitule a ver
+Student5: sí, yo pienso este es, o sea, los recursos que necesitemos para la implementación es lo que lo único que vamos a a a que no estoyendo redundante, a requerir,
+Student5: no vamos a tener más de a disposición, sino solamente lo que se necesite.
+Teacher: Mm.
+Teacher: ¿Y qué pasa con eso?
+Teacher: Pues normalmente uno consigue compra lo que necesita,
+Student5: Sí, pero son,
+Teacher: ¿no?
+Student5: o sea, es lo que está a la disposición, o sea, es disposición, no, no es que esté comprando de más de sobra que tenga ahí.
+Teacher: Okay.
+Teacher: Entonces, primero es un recurso por demanda.
+Teacher: Yo creo que esa es la idea que quiere dar [estudiante], ¿cierto?
+Teacher: que es un recurso por demanda, o sea,
+Student5: Sí, señor.
+Teacher: que cuando necesito más recursos, vamos a a poder conseguir esos recursos y cuando tenemos poco, pues cuando necesitemos poco, pues vamos a estar consumiendo poco.
+Teacher: Pero la característica del utility computing es la forma de facturar o la forma de adquirir el recurso, ¿cierto?
+Teacher: Y es que mientras yo no esté necesitando esos recursos adicionales, no voy a estar pagando por ello.
+Teacher: Sí. Entonces, voy a que tenga un costo fijo, por decirlo así, por acceso a la plataforma, pero si en un momento determinado yo necesito o hay una alta demanda de recursos, entonces el proveedor me los ofrece, yo lo utilizo y cuando pasa la carga,
+Teacher: pues simplemente eh reduce y el tiempo o los recursos que necesité durante ese proceso largo de de procesamiento o de computación me van a cobrar eso.
+Teacher: Digamos que es una factura dinámica dependiendo de los recursos que realmente esté utilizando, eh, de lo que tenga disponible.
+Teacher: ¿Listo?
+Teacher: Muy bien.
+Teacher: ¿Quién me quiere explicar cloud computing?
+Teacher: Cloud.
+Teacher: Cloud.
+Teacher: ¿Quién?
+Teacher: a la
+Student28: Profe, lo del Cloud Computy era lo de que, bueno, es un modelo, o sea, que es más como un modelo de negocio y de consumo donde el usuario paga por lo que usa, pero que él no necesita conocer ni administrar la infraestructura física que
+Student28: haya detrás.
+Student28: Simplemente él consume el servicio, lo que esté pagando y ya a partir de atrás se encarga la empresa, el administrador, etcétera.
+Student28: Yeah.
+Teacher: Okay.
+Teacher: Entonces es un modelo donde los recursos de cómputo los vamos a adquirir o los perdón, los vamos a ubicar en la red, ¿cierto?
+Teacher: Puede ser la red pública o una red privada.
+Teacher: Puedo tener nubes públicas, nubes privadas o nubes híbridas que tengan pues la combinación de ambas, ¿cierto?
+Teacher: y que generalmente nosotros lo que vamos a hacer es pagar por un servicio.
+Teacher: Entonces ahí entran los conceptos de infraestructura como servicio, plataforma como servicio y software como servicio.
+Teacher: Listo.
+Teacher: ¿Quién me dice cuál es la característica de infraestructura que sea diferente a [estudiante]?
+Teacher: ¿Cuál es la característica de infraestructura como servicio?
+Student18: que toca la administración del pues del de los recursos que uno paga por usar o pues administrar el sistema operativo, ese tipo de cosas.
+Student18: Yeah.
+Teacher: Okay.
+Teacher: Entonces, hay una menor responsabilidad del proveedor de servicio y yo tengo que asumir una gran cantidad de responsabilidades desde el sistema operativo, las herramientas que vamos a instalar, las aplicaciones, etcétera, y yo debo hacerle el mantenimiento a toda esa
+Teacher: infraestructura y plataforma como servicio.
+Teacher: Madre mía.
+Student13: Si quiere puedo hablar un momentico.
+Teacher: Dale,
+Student13: Yo creo que que pues ya la plataforma como servicio eh va un poco más allá y no solamente
+Teacher: Juan.
+Student13: nos brinda eh las capacidades de computación, de almacenamiento y de red necesarias para pues para cualquier herramienta, sino que también nos genera un un framework para trabajar en donde ellos manejan y mantienen ese framework.
+00:10:00
+Student13: Pues yo me imagino que es un sistema operativo, ¿cierto?
+Teacher: Ajá.
+Student13: Sería ese eso.
+Teacher: Más que un sistema operativo, ya es todo un ambiente de ejecución.
+Teacher: ¿Listo?
+Teacher: Entonces, entonces nos ofrecen un ambiente de ejecución donde nosotros podemos montar nuestras aplicaciones basados en los requisitos o en las características de ese ambiente de ejecución.
+Teacher: Entonces, si yo quiero montar una mi aplicación hecha en Java, pues ellos dicen, pues soporto Java 21, ah, pero yo quiero una Java 25, no se puede.
+Teacher: Sí. Entonces es como para tenerlo ahí en cuenta.
+Teacher: Ellos proveen la infraestructura o proveen la infraestructura y todas las herramientas de desarrollo o los ambientes de ejecución y yo simplemente voy a montar la aplicación ahí.
+Teacher: ¿Listo?
+Teacher: Eh, o me pueden decir solamente soporto eh aplicaciones escritas en JavaScript, escritas en Python o y escritas en Go.
+Teacher: Si tienen una aplicación en una en un lenguaje distinto, no lo va a poder ejecutar acá.
+Teacher: Entonces, ahí es donde podemos decir que nos están ofreciendo eh plataforma, porque ellos deciden cuáles son los recursos que yo puedo utilizar o cuáles son las eh herramientas que yo puedo utilizar para montar mi aplicación.
+Teacher: Y también nos van a decir cuál es la base de datos que ellos están ofreciendo.
+Teacher: Si nos ofrecen todas, pues fabuloso, pero si nos dicen, "No, y la aplicación que ustedes pueden eh o la base de datos que pueden utilizar es My Sequel, pues My Sequel y no hay nada más que hacer." Listo.
+Teacher: Eso es.
+Teacher: Eh, y entonces, ¿quién me explica software como servicio?
+Teacher: Yo yo escojo aquí uno de los que no han hablado.
+Teacher: Juan Manuel, se voló.
+Teacher: Se voló.
+Teacher: Mira que sí.
+Teacher: Ah, no, ahí está.
+Teacher: Juan Manuel Galvis, ¿estás?
+Teacher: Ahora dice que es sin micrófono.
+Teacher: Sí, no responde, ¿eh?
+Teacher: Dale, [estudiante].
+Student8: Profe, ese es el que yo no me encargo como de nada y literalmente solo consumo una aplicación, ¿no?
+Student8: como Spotify o Netflix o todo esto que yo no me encargo ni de infraestructura, ni siquiera del software cómo está montado, sino solo de consumirlo.
+Teacher: Exactamente.
+Teacher: Eh, en software como servicio, el proveedor es quien quien ofrece la aplicación, el servicio que se tiene que montar y pues nosotros solamente vamos a utilizar el software tal cual como él lo tiene.
+Teacher: ¿Listo?
+Teacher: E [estudiante], cuéntame.
+Student13: Pero yo quería pues como preguntar una cosa y a la vez como aclararla, pues que es que yo tenía esa duda de que pues hombre, ¿será que entonces cuando yo entro a internet y llamo eh a por ejemplo la
+Student13: página de Facebook, yo estoy haciendo un consumo de software, pues de de software como servicio?
+Student13: Y pues yo lo pensé así y lo que yo entendí es por si usted me lo podía aclarar, pero no me quedó tan claro, es que yo estoy pensando en este momento es como como un usuario experto, o sea,
+Student13: como que yo quiero ofrecer un servicio, no tanto yo como el el que voy a ir a buscar utilizar el servicio que ya está siendo ofrecido.
+Student13: Entonces, en este caso sería más bien como que como que quién me ofrece esa aplicación así directa.
+Teacher: Pero, ¿cómo así?
+Student13: Tengo como esa confusión, profe.
+Teacher: No,
+Student8: O sea,
+Student13: Sí,
+Student8: como marca blanca le entiendo.
+Student8: No.
+Teacher: no.
+Student13: sí, como más bien como software, como servicio, ¿en qué se diferenciaría de usted simplemente entrar a una página web, por ejemplo?
+Teacher: ¿Y quién y quién hizo la página web?
+Student13: Eh, por ejemplo, digamos, yo estoy en mi casa y quiero entrar a revisar las noticias del tiempo y me meto
+Teacher: Sí,
+Student13: a la página del tiempo, pues a mí me están ofreciendo ese ese esa página como un software.
+Teacher: sí.
+Student13: O sea,
+Teacher: Ajá.
+Student13: a mí me queda como esa duda de si ahí yo estoy haciendo un uso de un software como servicio y
+Teacher: Claro,
+Student13: me
+Teacher: claro, porque detrás hay una hay un equipo de desarrollo donde tiene,
+Student13: Ok.
+Teacher: mejor dicho, el tiempo el tiempo.com eh tuvo que adquirir una infraestructura, crear un montar un sistema operativo, montar las herramientas, desarrollar una aplicación, guardar la información, pues gestionar los datos de esta información para que usted la pueda utilizar.
+Teacher: ¿Sí o no?
+Student13: Okay.
+Teacher: Ah, pero es que yo no aporto,
+Student13: Sí.
+00:15:00
+Teacher: yo no agrego valor, no, no estoy dando eh feedback ni me estoy, ¿cómo digo yo?
+Teacher: No estoy aprovechando en la aplicación como en en digámoslo así para para guardar mis datos.
+Teacher: Puede ser que sí, pero es que usted está pagando por un software que tiene un recurso que usted necesita o que le está procesando, que le está guardando, que le está hosteando una información que usted necesita.
+Teacher: Entonces ahí como usted no es el que desarrolla ni agrega eh ni agrega aplicaciones sobre la plataforma, entonces usted lo que está adquiriendo o está usando es un software que alguien desarrolló, que se encarga de hacerle mantenimiento,
+Teacher: que se encarga de hacerle todo y que me cobra por utilizar ese servicio.
+Student13: Listo, profe.
+Teacher: Sí.
+Student13: Entonces, yo como por recapitular, yo entendería que cualquier aplicación que esté o bueno, más bien la aplicación, cualquier servicio en la en la internet que esté abierto al público, uno lo podría tomar como un software, como servicio desde el punto de vista de un consumidor.
+Teacher: Sí, claro, exacto.
+Teacher: No, y de y del modelo de computación.
+Student13: Listo.
+Teacher: Eh, miremos a ver qué dice [estudiante] y de pronto hago un ejemplo un poco más claro para
+Student22: Bueno, pues según yo tengo entendido,
+Teacher: eso.
+Student22: no todas las páginas web serían un SAS,
+Teacher: Mhm.
+Student22: porque el SAS tiene que ofrecer directamente h una utilización o más bien como tiene que ser una herramienta que la persona deba de usar.
+Student22: Por ejemplo, el ejemplo que ustedes hicieron con un periódico sería simplemente una página de contenido,
+Teacher: Sí,
+Student22: pero no una SAS porque no está ofreciendo una herramienta directa para el
+Teacher: pero pero tú vas a pagar por
+Student22: usuario,
+Teacher: ella
+Student22: ¿no?
+Student22: Pero eso eso es un eso es un eh una herramienta de contenido.
+Student22: SAS tiene que ser es una herramienta
+Teacher: por ¿Y será que la herramienta de para gestionar el contenido no es
+Student22: que no porque
+Teacher: el SAS?
+Student22: eso ya vendría siendo más algo interno para las empresas.
+Student22: Uno
+Teacher: Pero tú lo tienes, pero tú tienes que desarrollarlo para luego ofrecerlo.
+Student22: como
+Teacher: O sea, el tiempo no dijo, "Ve, tengo unas noticias ahí y voy a cobrar por tener noticias." No,
+Teacher: tuvo que desarrollar una plataforma, perdón, un software para gestionar eso, ¿sí o no?
+Student22: sí,
+Teacher: y te está cobrando para que puedas acceder a esta plataforma y puedas
+Student22: Pero
+Teacher: recibir los recursos o o revisar los recursos que estás interesado o
+Student22: sí,
+Teacher: no.
+Student22: pero igual no no sería SAS,
+Teacher: ¿Por qué no?
+Teacher: Entonces, ¿qué es?
+Student22: sería simplemente una herramienta de contenido porque
+Teacher: Pero los software, o sea, y un CMS, digámosla,
+Student22: una unas tiene que tener
+Teacher: digámoslo así, WordPress, ¿qué es?
+Student22: WordPress es un CRM de páginas web.
+Teacher: Una un CMS, que es el concepto,
+Student22: ¿Ves?
+Teacher: ¿cierto?
+Student22: Es un CMS.
+Teacher: Okay.
+Teacher: Eso y no te lo están vendiendo como software para que tú montes tus páginas.
+Student22: Sí, pero pero no es una SAS,
+Teacher: Pero y tú sobre esa sobre WordPress por eso y quéas
+Student22: es un software.
+Student22: SAS vendría siendo que la persona que lo vaya a utilizar no tenga que hacer nada, simplemente va a utilizar la herramienta.
+Student22: Por ejemplo, Cana, yo entro a Canva y yo quiero editar mis fotos.
+Student22: Eh,
+Teacher: Sí.
+Student22: ellos ya hicieron el software, ellos ya tienen toda la funcionalidad hecha de la edición de fotos.
+Student22: Yo solamente entro, edito la foto y ya es una herramienta.
+Student22: Pero es diferente para las herramientas de contenido.
+Teacher: Entonces lo Entonces,
+Student22: Las herramientas de contenido eh simplemente son solo son páginas de
+Teacher: dale dale.
+Teacher: Entonces,
+Student22: contenido.
+Teacher: para ti Google no es un SAS.
+Teacher: Google search.
+Student22: Depende de la depende de la
+Teacher: Google search.
+Student22: herramienta.
+Teacher: Google search.
+Teacher: El buscador de Google.
+Student8: el buscador de toda la vida.
+Student8: Ah.
+Teacher: ¿Es un software o no es un software?
+Student22: Sí.
+Teacher: Perdón, ¿es un SAS o no es un
+Student22: Hm,
+Teacher: SAS?
+Student22: pues yo creo que no.
+Student22: Sería simplemente un software.
+Teacher: Y si es un software que estoy accediendo por la red para llegar a él,
+Student22: No,
+Teacher: ¿cómo se llama
+Student22: no, pero no,
+Teacher: eso?
+Student22: no, no, pero no, no es un, no es un SAS, profe.
+Teacher: ¿Cómo que no?
+Teacher: ¿Qué es?
+Teacher: ¿Qué es?
+Teacher: Es un software.
+Student22: es un
+Teacher: ¿Y cómo y cómo llegó a él?
+Student8: software como
+Student22: Pero
+Teacher: Y cómo llegó a él,
+Student8: servicio.
+Teacher: como si por la red y me lo y Google me lo está ofreciendo como qué, como un servicio.
+Teacher: Entonces, ¿cómo llama?
+Student8: Cualquier cosa que sea un software enterítico por el que te
+Teacher: Eh,
+Student8: cobren y accedes
+Teacher: no necesariamente, porque entonces viene la segunda, el ejemplo que quería preguntarles.
+Student8: por internet.
+Teacher: Entonces, entonces, ¿gmail, qué es?
+00:20:00
+Teacher: A mí no me cobran por Gmail.
+Student22: Gmail.
+Student22: Sí, es un SAS.
+Student8: Pero a uno sí le cobran, solo que no directamente, le cobran con publicidad,
+Teacher: Pero,
+Student8: con datos,
+Teacher: ¿qué qué es Gmail?
+Student8: con otras cosas.
+Teacher: ¿Qué es Drogboss?
+Student8: También es ADAS,
+Teacher: ¿Qué es eh Google Drive?
+Student8: profe, ¿no?
+Student8: Todo eso es AD.
+Teacher: ¿Sí o no?
+Student8: M.
+Teacher: es software.
+Teacher: Yo, digámoslo así, no necesariamente el software que yo construya tiene que ser para que alguien meta datos o para que utilicen los datos o que no sé, no sé cómo cómo eh explicarlo exactamente,
+Teacher: pero cualquier software que yo tenga público en la red y que la gente entre y pueda disfrutarlo es un software como servicio, porque no es ni plataforma ni es infraestructura.
+Teacher: Sí. Y son recursos de cómputo utilizados para o que voy a utilizar para eso.
+Teacher: Cada vez que yo hago una consulta en Google Search, se mueve una cantidad de datos y se mueve una cantidad de infraestructura para eso.
+Teacher: ¿Listo?
+Teacher: Lo mismo pasa con con los chat de IA, bueno, las herramientas de IA que tenemos hoy en día, ¿cierto?
+Teacher: Y es que eh es una aplicación, ellos la tienen desarrollada, hicieron un una ventanita medio tontica y medio feíta para que habláramos con con un software que está corriendo por ahí atrás.
+Teacher: Eso no es computación.
+Teacher: ¿Y qué computación sería?
+Teacher: Cloud, porque la la forma, el recurso, el medio por donde lo vamos a a utilizar y aprovechar es utilizando el cloud.
+Teacher: No necesariamente yo tengo que guardar información sobre el sistema, ¿cierto?
+Teacher: Nosotros no guardamos, bueno, ellos sí guardan información de los chats que nosotros hacemos, pero nosotros no estamos eh guardando nuestra información ni llenando nuestras o utilizándolo como mi base de datos o como mi centro de almacenamiento.
+Teacher: Simplemente es un servicio por el cual me van a cobrar y que tengo como recurso de de acceso el el internet.
+Teacher: Entonces ahí es cuando decimos que tenemos cloud computing, porque los recursos, todo, digámoslo así, eh toda la infraestructura está en la nube y yo voy a pagar o no, porque también puede que no sea de pago, eh yo voy a pagar por acceder a esos recursos que no los tengo que instalar en mi computador,
+Teacher: sino que están en la nube.
+Teacher: ¿Listo?
+Teacher: Eh, no sé si [estudiante] tiene algo más, ¿no?
+Teacher: O no sé si todavía no me creen,
+Student22: No, no, no, no tengo nada más.
+Teacher: no lo convenzo.
+Teacher: y es que es como una de esas eh posibles confusiones que nosotros podemos llegar a tener y es que eh digamos que hay cosas en internet que no necesariamente son eh cloud computing,
+Teacher: pero quedaron clasificadas en cloud, como que disponer de una página estática, por ejemplo.
+Teacher: Sí. O las páginas web de hace 30 años.
+Teacher: que lo único que tenían era HTML y CCS y eso y eso que es CSS.
+Teacher: Eh, esas eh pues eran recursos que yo tenía que yo podía llegar a ellos utilizando el internet, ¿cierto?
+Teacher: las páginas eh de con información erótica, yo no estoy aprovechando eso, pero son recursos que están en internet y es un software que me están ofreciendo por el cual me van a cobrar si yo estoy interesado en ello,
+Teacher: ¿cierto?
+Teacher: Entonces, todo, digámoslo así, casi casi que todas esas aplicaciones que nosotros conocemos como aplicaciones web eh terminan siendo parte de este modelo de computación cloud.
+Teacher: ¿Listo?
+Teacher: sea porque nosotros lo desarrollemos, sea porque nos den la infraestructura para que nosotros creemos cosas, o sea porque ya nos estén ofreciendo el
+Student8: Profe,
+Teacher: servicio.
+Student8: ¿hay alguna que sea ejemplo de algo que no es un SAS que esté expuesto por internet?
+Teacher: sería pues que no esté expuesto por internet, muy complicado porque realmente la definición de cloud eh es un recurso de cómputo que no tengo local, sino que lo estoy accediendo por la red y por la red puede ser local o puede ser eh pues
+Teacher: dentro de la red local de mi empresa, por ejemplo, yo puedo tener unos servicios que yo voy a consumir como si fuera cloud en mi propia cloud, digámosle así, o mi cloud, Pero, pero si digámoslo así,
+Teacher: pensemos en que cloud computing es todos esos todo lo que sea procesar información sin tener que utilizar mi mi computador o mi dispositivo, digámoslo así.
+00:25:00
+Teacher: En algunos casos sí lo utilizamos, pero entonces ahí ya entramos eh, por ejemplo, a mobile computing cuando sacamos parte del procesamiento para que lo hagan los dispositivos móviles.
+Teacher: [estudiante], ¿qué ibas a
+Student13: Profe,
+Teacher: preguntar?
+Student13: yo le iba a comentar era que yo sí creo que aparte de la reflexión que ya se hace también sí es importante que nos salgamos un poco esa idea de que de que estamos como consumidores, pues que fue lo que yo dije,
+Student13: pero pues ahorita sí vale la pena decir que somos estamos estaríamos pensando más es como una empresa que tiene un servicio o un o una necesidad ya de su empresa y que pues la solución más básica o o
+Student13: la tradicional sería tener un premis, un servicio para sí mismo,
+Teacher: Ne.
+Student13: el manejo de su de su infraestructura, el manejo de la plataforma y luego el manejo de del software, ¿cierto?
+Student13: Pero pero lo que uno está haciendo es delegando eso a otra empresa y ahí pues yo sí creería que me eh pues delegarle a otra empresa hasta inclusive el el hosting del software específico para que ellos lo manejen o bueno,
+Student13: se lo expongan a uno y uno simplemente tenga que acceder a él.
+Student13: Es importante entender que ese software puede ser de uno mismo, o sea, cosas que uno mismo haga, por ejemplo, la página de HTML de uno mismo,
+Teacher: Sí.
+Student13: que ya quede expuesta y le hagan todo el manejo de cómo está expuesta.
+Student13: Y eso, por ejemplo, lo hace AWS que o que usted simplemente les manda les manda
+Teacher: Mhm.
+Student13: el Ah, bueno, ese sería en plataforma, pero ya en temas de software me queda duro entender es si yo le yo que le mandaría a ellos para que o para que ellos expusieran un software o sería que uno contrata un software que crearon ellos ¿Por qué?
+Teacher: En software como servicio,
+Student13: Yeah.
+Teacher: el proveedor, el proveedor X me da el software.
+Teacher: Otro ejemplo de software como servicio, Netflix.
+Teacher: ¿Será que eso es cloud o no es cloud?
+Teacher: ¿No es software como servicio o no?
+Student13: Yo creo que sí.
+Teacher: ¿Y por qué sí o
+Student13: Pues, profe,
+Teacher: no?
+Student13: yo creería que sí, porque a la final yo no tengo, o sea, yo no, o sea, mi mi problema era, necesito tener un hosting para poder ver películas.
+Student13: Entonces, yo puedo montar un computador en mi casa, poner ahí los archivos, escribir un código para que haya un reproductor de videos que yo pueda acceder a él y y bueno, pero también la otra opción que yo tengo es decir,
+Student13: pues ir y buscar quién me ofrece las películas a través de la red y sería Netflix y eso ya me da directamente la aplicación que sería la solución a mi necesidad específica.
+Student13: M.
+Teacher: Exactamente.
+Teacher: O sea, antes de Netflix la solución era vaya a una tienda, coja un CD o un cassette y vayase para la casa y reprodúzcalo, ¿cierto?
+Teacher: Y luego vuelva a la tienda a entregar el cassette.
+Teacher: Ahora ya tengo ese recurso, ¿dónde?
+Teacher: en la nube, en este caso en la nube.
+Teacher: Entonces ese servicio ya termina siendo un un software como servicio o ese software llamado Netflix que pudo haber sido un al principio era una paginita donde yo entraba, me logueaba y hacía play como estilo YouTube, hacía play sobre la película que yo quería ver.
+Teacher: Pero eso es software y eso es software como servicio.
+Teacher: Y no necesariamente quiere ser quiere decir de que yo estoy eh introduciendo datos para poder decir que es cloud computing o qué es software como servicio, no.
+Teacher: El software es cualquier cualquier aplicación que yo pueda acceder por la red y que eh pues me me sirva para algo, o sea, para almacenar o para transmitir información o para transmitir audio como Spotify, cosas así por el decirlo.
+Teacher: Todo eso termina siendo eh cloud computing.
+Teacher: ¿Listo?
+Teacher: Pero cuando el cloud computing no se queda solo en el cloud, sino que vamos a utilizar recursos eh locales, ahí es donde entra, por ejemplo, mobile computing, ¿cierto?
+Teacher: Y no en todos los que manejamos local, porque vamos a tener aplicaciones que corran en nuestro computador de de la casa, pero si lo utilizo en dispositivos móviles y van a correr en laptops, en tablets, en en celulares,
+Teacher: eh pues ya vamos a cambiar de modelo de computación, ¿cierto?
+Teacher: Entonces ahí el mobile computing es utilizar estos recursos, estos recursos móviles para para potenciar la capacidad de de nuestro sistema, ¿cierto?
+Teacher: que generalmente hace parte de un cloud o pues es colaborativo con cloud, pero por el hecho de que yo esté delegando responsabilidades, que no todo lo haga el servidor, sino que pasemos cosas y la hagamos desde nuestro equipo móvil,
+Teacher: pues entonces vamos a Tener mo.
+Teacher: Computer, aplicaciones como eh Dime, [estudiante], a ver si me va a dar
+00:30:00
+Student5: cosas, ¿no?
+Student5: Profe, al contrario,
+Teacher: ejemplos.
+Student5: eh, quería verme un poquitico porque tengo una una pues como de concepto.
+Student5: Yo tenía como presente que cuando hablamos de un software SAS, la característica era que ese software se podía distribuir a diferentes usuarios o clientes finales y servían para ellos, o sea, esos mismos software,
+Student5: pero simplemente que tenía como la particularidad que se podía distruir a a diferentes usuarios y les iba a servir igual.
+Teacher: Sí, sí.
+Student5: Entonces, no sé si son dos conceptos o dos temas diferentes que abarcan SAS o es el mismo concepto, porque pues lo que habamos ahorita, estamos hablando de un software el cual podemos acceder por la red y prestar una
+Student5: funcionalidad
+Teacher: Sí, pero no significa de que con el mismo software atienda varios clientes.
+Student5: en Correcto.
+Teacher: Yo puedo yo puedo ofrecer un SAS.
+Teacher: Yo puedo ofrecer un SAS donde a cada cliente tengo que hacerle una instalación y darle una ruta para que acceda de manera
+Student5: Ah, listo.
+Teacher: independiente.
+Student5: Pero entonces no quiere decir que SAS de un SW SAS sea, o sea, implícitamente sirva para varios clientes.
+Student5: Eso no.
+Student5: El concepto está ahí lo que yo tenía presente.
+Teacher: No es, o sea, es un es una necesidad que tenemos nosotros como grupos de desarrollo, eh, evitar duplicar código.
+Teacher: O sea, si yo tengo si yo tengo que instalar 10 clientes y tengo 10 instalaciones, significa que tengo 10 problemas latentes, ¿cierto?
+Teacher: En cambio, si yo tengo uno solo y hago una actualización, solamente la hago en ese solo y aplica para todos los clientes.
+Teacher: Pero no hay una obligatoriedad en el modelo que me diga, "Es que para poder ser sastúltiples clientes." No,
+Teacher: eso es una característica que le podemos dar a nuestro software sas.
+Teacher: Pero yo podría tener una aplicación contable y entonces, ah, Teacher se va a registrar, listo.
+Teacher: Entonces, Teacher va a entrar por Teacher.contable.com y se va a registrar [estudiante].
+Teacher: Entonces, [estudiante].contable.com contable.com y yo puedo tener dos servidores independientes atendiendo eh a cada uno de mis clientes o un servidor independiente para cada uno de mis clientes que que quiera mi software y sigo siendo software como
+Teacher: servicio.
+Student5: Listo, profe.
+Student5: Muchas gracias.
+Student5: Yeah.
+Teacher: Listo.
+Teacher: ¿Y por qué no es plataforma?
+Teacher: Si si si estoy sacando una un servidor para cada uno de ellos, ¿quién me ayude analizar por qué no es plataforma sino software?
+Teacher: Porque independiente de cómo yo lo instale o cómo yo lo distribuya.
+Teacher: Yo como proveedor me encargo de la infraestructura, sean equipos virtuales o sean equipos físicos, eh la red, eh me encargo de montarle las herramientas de desarrollo, las herramientas de ejecución.
+Teacher: Necesito montar la base de datos, necesito y yo yo tengo que hacer los backups, yo tengo que garantizar de que si algo si se me cae el servidor, ¿cómo lo voy a recuperar?
+Teacher: etcétera.
+Teacher: O sea, entonces yo estoy ofreciendo un servicio en la nube.
+Teacher: El cómo lo haga yo internamente es otro caso, pero yo estoy ofreciendo un servicio en la nube y el usuario va a poder acceder utilizando este utilizando la red o en este caso en la mayoría de los casos internet para llegar a ese servicio.
+Teacher: El cómo lo tenga implementado no es no es, digámoslo así, no es restricción para el tipo de modelo de computación.
+Teacher: ¿Listo?
+Teacher: Dale.
+Teacher: Eh, ubiquitus, ¿quién me explica?
+Teacher: Ubiquitus o internet de las cosas.
+Student5: Eh, me voy a reivindicar con la primera intervención que dice, profe.
+Teacher: Dale,
+Student5: Eh, este viene siendo como lo mismo del
+Teacher: tranquilo.
+Student5: móvil computing con la diferencia de que no hay tanta intervención de la persona, son sistemas más autónomos y trabajan como si tanta intervención de de parte de uno.
+Teacher: Sí, sí.
+Student5: Un ejemplo que de pronto usted nos brindaba en su momento era como un relog smash que mantenía viendo el pulso cardíaco y contabilizando pasos y todo eso.
+Teacher: Ajá, exactamente.
+Teacher: ¿Quién levantó la mano también por ahí?
+Teacher: [estudiante], creo que
+Student8: No, profe, eso que era una computación similar,
+Teacher: fue.
+Student8: pero de cosas que no necesitan de la intervención humana para estar compartiendo datos entre sí.
+Teacher: Dime, [estudiante].
+00:35:00
+Student28: profe, y que en adición pues como que estos sistemas tienen esa adaptación y bueno y se comportan de manera distinta según la ubicación.
+Student28: Un ejemplo de este que no requiera casi por no decir nula, la intervención humana sería estas cortinas inteligentes que
+Teacher: Mhm.
+Student28: llegas determinada hora o con determinada luz se cierran o se bajan.
+Teacher: Sí.
+Student28: Ev.
+Teacher: Sí, tiene sentido, pero es cierto.
+Teacher: Y es que ya no es tanto como mobile donde yo digo, no es que yo voy a utilizar mi recurso de cómputo para hacer tal tarea, sino que ese recurso ya está haciendo la tarea.
+Teacher: Sí. Entonces ahí esa es como la gran diferencia.
+Teacher: Entonces ahí es donde entran pueden ser dispositivos móviles como el smartwatch.
+Teacher: Yeah.
+Teacher: Cierto, el smartwatch no es un no está en un sitio fijo, no está, bueno, si en mi en mi brazo, pero no está en un lugar fijo de la red.
+Teacher: Se está conectando en diferentes lugares de la red o por Bluetooth o por x o y cosas está accediendo a la red y está haciendo una tarea de manera permanente, ¿cierto?
+Teacher: los sensores de los sensores que identifican que alguien llegó a la casa para prender o apagar la luz, eh, o en el baño que nos pasa muchas veces de que toca moverse para que vuelva y prenda la luz.
+Teacher: Ese no necesariamente es inteligente, pero podrían utilizarse dispositivos como esos para determinar, mire, este señor está o no está, existe o no existe la necesidad de de interactuar o de realizar envío de información para que se ejecute el sistema o para que se mueva el sistema,
+Teacher: ¿cierto?
+Teacher: Eh, en esos días estaba viendo en LinkedIn una aplicación que tenía la digámoslo así que estaba era una cámara que estaba revisando o estaba
+Teacher: monitoreando un pasillo en un supermercado, pero la cámara tenía la posibilidad de identificar o preclasificar si alguien estaba robando.
+Teacher: Sí. Entonces, eso será mobile computing utility computing o o software como servicio, ¿cierto?
+Teacher: Entonces ahí estamos, digámoslo así, a pesar de que van a haber unos servidores, un unas máquinas o o el mismo procesador de la cámara puede ser el que haga ese tipo de clasificación, pero yo estoy haciendo de que los elementos del ambiente interactúen entre sí para
+Teacher: identificar o determinar si entra o no entra o si pasa o no pasa.
+Teacher: Otro ejemplo, digámoslo así, no sé qué tan claro para ustedes pueda llegar a ser o qué tan común, pero sucede en muchos en muchos parqueaderos o incluso digamos el ejemplo que vemos ahorita en carretera, que es los peajes eh utilizando un tag,
+Teacher: ¿cierto?
+Teacher: ese ese elemento de que yo tenga un tag en mi carro y que pase por un por una cabina y la cabina detecta el tag, eh identifique que si es un usuario válido, que si tiene eh permisos, que tiene saldo y y quién pueda pase o si no tiene saldo,
+Teacher: pues va a mand.
+Teacher: Pues eso tiene que ver con con computación ubicua.
+Teacher: No es computación móvil, no es clúster.
+Teacher: Bueno, a pesar de que puede tener un clúster o no.
+Teacher: Pero ahí el mismo modelo de computación, la forma como estamos interactuando con el sistema, eh ya estamos hablando de ubicuitus computing o internet de las cosas.
+Teacher: Okay.
+Teacher: Juan, ¿qué ibas a decir?
+Student13: Eh, profe, no, pues yo entiendo que hay como una línea ahí que es difícil de de como de compensar.
+Student13: Por ejemplo, uno por ejemplo, yo me imagino un lector de huellas, ¿cierto?, donde va y hay un lector de huellas y usted pone la huella,
+Teacher: Mhm.
+Student13: pero muchas veces un lector de huellas está conectado a un computador y hubo una persona que abrió la aplicación, que la puso a correr y todo eso dentro de un sistema operativo tradicional.
+Teacher: Sí.
+Student13: Entonces yo entiendo que ya el UV querid computing, que es como cuando ya está embebido en el ambiente, en todos los aparatos, hasta el punto en que usted ya no se da cuenta de de que están ahí, yo creería pues que también atañe un poco más a que el mismo aparato ya tenga las capacidades de cómputo propias para
+Teacher: R.
+Student13: poder correr esa pues esa acción unitaria que hace.
+Student13: O sea, no tanto como pues, por ejemplo, los peajes.
+Student13: Los peajes ponen un computador y al computador le conectan el la talanquera esa y las camaritas y el computador hace el trabajo.
+Student13: Yo sí siento que eso tiene como un poquito más de de lo otro de de la de la computación un poquito tradicional, pero pues con unos elementos conectados a ella.
+00:40:00
+Student13: Pero si hay cosas como la nevera, porque la nevera ya se conecta al internet directamente o la lavadora que tú la puedes prender
+Teacher: Mhm.
+Student13: desde tu celular y tú no tienes un computador con la interfaz tradicional ahí para llegar y abrir un programa y decirle, "Oh, bueno, eh, arranquemos este programa y luego entonces ya abrimos Excel para hacer un spreadshe".
+Student13: ¿Cierto?
+Student13: Yo siento que hay como una diferencia ahí entre lo que yo le conecte a mi computador y lo que ya viene con las capacidades de RAM, de procesamiento, un aplicativo, una arquitectura interna.
+Teacher: Digamos que estamos en esa transición,
+Student13: M.
+Teacher: ¿cierto?
+Teacher: Porque nosotros hoy en día estamos en la transición donde casi todos los dispositivos ya tienen capacidad de de redes, pero eso es el reflejo de la el avance técnico que hemos que hemos tenido en en la dispersión del internet o la dispersión de la
+Teacher: red.
+Teacher: Sí. De que hace 30 años cuando yo empecé a estudiar, pensar en internet eh era una cosa loca.
+Teacher: Pues entonces los dispositivos no tenían eh ni no tenían ni la memoria, porque en ese momento la memoria el procesador era una cosa perrata.
+Teacher: No tenían ni la memoria, ni tenían el procesador, ni tenían la red para poder intercambiar información.
+Teacher: Pero hoy podemos miniaturizar tanto eh todos estos dispositivos que una cámara ya es una cámara web, pues no una webcam, sino una cámara que puede transmitir y yo puedo consultar desde mi dispositivo desde desde la red, ¿cierto?
+Teacher: O desde internet.
+Teacher: ¿Y por qué?
+Teacher: Porque es que ya en la casa tenemos internet, ya tenemos los diferentes elementos.
+Teacher: Entonces es, digámoslo así, es como el reflejo de qué tan avanzado va la tecnología, qué tan avanzado puedo hacer las cosas.
+Teacher: lo que tú decías, yo normalmente voy a tener una talquera un un sensor que va a un computador y ese computador se conecta a la talquera y si el computador se lo reemplazo por un Raspberry Pie, hacen lo mismo,
+Teacher: no guardan la misma información ni corren a la misma velocidad, pero hacen lo mismo.
+Teacher: Y si y si la solución que estoy dando es con un Raspberry Pie, ¿no será computación ubicua o seguirá siendo computación tradicional?
+Student13: Yo yo lo que entiendo es que pues también depende de quién le metió esa Raspberry al al sistema.
+Student13: O sea, una cosa es que yo como usuario le conecto, o sea, saque unas señales de la talquera y la conecto en una Raspberry con un aplicativo que yo le monté.
+Student13: Otra cosa es que a mí me vendieron la talquera que por dentro trae una raspberry y yo no tenga ni idea y ya yo como usuario
+Teacher: Pero
+Student13: simplemente puse una talquera y la conecté a mi Wi-Fi.
+Teacher: mira,
+Student13: Pues yo creería que ahí tiene que ver con lo con lo ubicuo, ¿cierto?
+Student13: que sería y llegar al punto en el que el usuario final simplemente consume
+Teacher: disfruta.
+Student13: el producto que ya tiene la función de red y la función de cómputo.
+Teacher: Sí.
+Student13: No.
+Teacher: Pero es que el hecho de que yo tenga que integrar esos sensores a mi sistema también hace parte de la de la computación ubicua porque no es computación móvil, no es que yo esté delegando responsabilidades sobre el dispositivo.
+Teacher: El dispositivo me está generando datos y nosotros lo que vamos a hacer es procesar esa información, sea en un centro de cómputo gigante o sea en una en un módulo eh, ¿cómo se llama eso?
+Teacher: un módulo dedicado.
+Teacher: Sí. Entonces, y y en y ese Raspberry Piie es el que conecta internet y ese Raspberry Pie es el que me va a poder decir, "Cóbrele a Teacher y bla bla bla." Entonces el internet,
+Teacher: bueno, el ubiquitus computing entra desde los sensores de de los sensores de de presencia, o sea, esos que puede uno comprar o que tiene uno en la casa, que es una cajita que solamente lanza un impulso eléctrico
+Teacher: si siente un siente un campo o si siente una sombra.
+Teacher: Y ese impulso llega una cajita controladora que es la que mandaba las notificaciones al correo, etcétera.
+Teacher: Ahí ya había ubiquitus computing en en los modelos viejos.
+Teacher: Ahora ya tenemos sensores de que ya están conectados ellos directamente internet y me mandan el mensaje de manera directa.
+Teacher: Eso simplemente es evolución técnica o tecnológica, pero la computación ubicua viene desde esos sensores que nosotros colocamos en eh en la fábrica para identificar si se está sobrecalentando una máquina o si una máquina eh no sé,
+Teacher: está botando agua, alguna cosa.
+Teacher: Yeah.
+Teacher: Todos esos sensores hacen parte de la computación ubicua porque a partir de la información que ellos recolectan, nosotros podemos tomar decisiones o se puede realizar algún tipo de operación.
+00:45:00
+Teacher: Eh, generalmente lo que nosotros conocemos como automatización empresarial o automatización en las fábricas, básicamente estamos aplicando su computación ubicua.
+Teacher: Sí, a pesar de que hay software y que hay unos super servidores, etcétera, pero es que esos servidores no están trabajando con una pantalla y un mouse que o un teclado de entrada y salida.
+Teacher: La entrada son son sensores, las salidas son otras máquinas o pueden ser otros sensores o pueden ser eh pantallas o carteles luminosos, alguna cosa así por el estilo.
+Teacher: todo ese, digámoslo así, el hacer de que todos estos dispositivos estén aportando información y recolectando información, incluso siendo elementos de salida de la información, eh, y que dependan del ambiente, no tanto porque yo estoy interactuando de manera directa,
+Teacher: sino que ellos sean capaz de capturar algún tipo de sensor y puedan mandar la información.
+Teacher: Ahí estamos hablando de Ubicotus Computing.
+Teacher: Y ahora que estamos de está de moda tener el sensor de de ¿cómo se llama eso?
+Teacher: El sensor de sismos activado desde el 10 de agosto.
+Teacher: Todos tenemos el sensor de sismos en el celular.
+Teacher: ¿Quién es quién es el que genera esos sismos?
+Teacher: ¿Quién genera esas alertas?
+Teacher: ¿Será un equipo allá en en dónde es que fue?
+Teacher: San José del Palmar.
+Teacher: Bueno, por allá.
+Teacher: en San José del Palmar tienen un sensor que se conecta directamente internet y manda la información o será un sensor que llega una central de datos y esa central de datos es la que procesa y envía la la notificación.
+Teacher: Entonces, a pesar de que podamos tener una solución un poco más compleja o eh de en términos de computación, para lograr eso, nosotros estamos capturando la información, no estamos utilizando eh dispositivos de salida eh para la computación
+Teacher: y pues unos dispositivos eh que tienen una tarea específica de salida.
+Teacher: Cuando, ejemplo, en una central de de estas eléctricas por por agua, esto se llama un embalse.
+Teacher: En un embalse, ellos abren unas compuertas, empieza a salir agua y en un momento determinado, cuando, no sé, cuando cargaron más de la energía que necesitaban o porque se dieron cuenta de que el volumen de de agua eh no está bajando,
+Teacher: no está yendo a la presión correcta, hay sensores que lo que hacen es cerrar un poco más el o cerrar las puertas de manera automática.
+Teacher: Eso es computación ubicua, ¿no?
+Teacher: No sé si si va quedando claro todo.
+Teacher: O sea, yo sé que es que estamos es terminando de afianzar muchas cosas que conocemos y no sabemos dónde ponerla, ¿cierto?
+Teacher: Porque nosotros como ingenieros de sistemas deberíamos de tener claro eh de dónde vienen y para qué son y por qué son así y por qué hablan de internet de las cosas.
+Teacher: El internet de las cosas es un concepto que viene desde hace poquito, eh, 8 años, 10 años, viene el concepto de internet de las cosas y básicamente lo que está resumiendo es de que ahora tenemos la tecnología suficiente para que esos pequeños dispositivos se conecten directamente a internet.
+Teacher: Pero antes de eso no había no habían esas capacidades técnicas, pero todavía teníamos computación ubicua, todavía teníamos sensores, todavía teníamos los edificios inteligentes que lo único que hacían era decir si si usted podía abrir una puerta o no con el dedo,
+Teacher: pues con su con su huella o que se le prendían las luces a medida de que usted iba prendiendo eh pasando por el pasillo.
+Teacher: Eso era lo que antes llamaban un edificio inteligente.
+Teacher: era aplicación del ubicuitus computing con la tecnología que teníamos en ese momento.
+Teacher: Eh, claro.
+Teacher: O alguna otra duda inquietud?
+Teacher: Claro.
+Teacher: Edge Computing.
+Teacher: ¿Quién me ayuda con Edge Computing?
+Teacher: A ver.
+Teacher: Uno por aquí.
+Teacher: Echamos para abajo.
+Teacher: Eh, Víctor Wilson, no, [estudiante] ya habló mucho.
+Teacher: Víctor Wilson, lo dejo de segundo.
+Teacher: Y Víctor Wilson no puede.
+Teacher: Víctor, Víctor, Víctor.
+Teacher: Víctor, no, mejor se fue, se fue Víctor.
+00:50:00
+Teacher: Entonces, pongamos una de las niñas, Estefanía.
+Student23: Profe,
+Teacher: Estefanía es computing.
+Student23: profe, profe, entiendo que Edge es cuando el dispositivo, el mismo dispositivo hace el análisis de datos, no necesita como enviar los datos como centro de datos para que sean analizados,
+Student23: sino que el mismo el mismo dispositivo allí se analiza eh los datos.
+Student23: Eso es lo que entiendo.
+Student23: Y F, no me queda muy claro cómo es, pero sé que, o sea, entiendo que los nodos procesan como como los datos, pero necesitan un como algo intermedio, no sé, para análisis, pero no lo entiendo muy muy claramente.
+Teacher: Okay.
+Student23: Me queda tan caro.
+Teacher: ¿Quién le ayuda a complementar aquí a Estefanía?
+Teacher: En hay parte de verdad en lo que está diciendo Estefanía.
+Teacher: Dime,
+Student5: Qué pena,
+Teacher: [estudiante].
+Student5: ¿no?
+Student5: Yo la verdad lo que alcancé a apuntar en su momento es que mejoran el problema de la latancia y ya no tengo
+Teacher: De la latencia.
+Teacher: Sí,
+Student5: pues nada.
+Teacher: no tiene nada más.
+Student5: M.
+Teacher: Okay.
+Teacher: ¿Quién más?
+Teacher: ¿Nadie se vio el video de de Computing que les dejé ahí en el el material?
+Teacher: No. ¿Quién?
+Teacher: ¿Quién?
+Teacher: ¿Quién?
+Teacher: [estudiante].
+Student28: Por lo que yo entendí del del computing es que se bueno, lo que el modelo busca es evitar ese envío de la información o esa subida de datos a la nube.
+Student28: Lo que lo que busca es como donde se generan los datos,
+Teacher: A,
+Student28: ahí mismo procéselos.
+Student28: Eso fue lo que yo entendí.
+Teacher: lo más cercano donde se generan procesarlo.
+Teacher: Pero ojo, ojo, eso quiere decir de que si yo tengo clientes alrededor del mundo, entonces tengo que tener servidores alrededor del mundo.
+Teacher: Juan, [estudiante].
+Student13: Pues depende, profe.
+Student13: Yo entiendo que eh yo trabajo directamente en el dispositivo final, ¿cierto?
+Student13: ¿Qué quiere decir?
+Student13: Como como en el si estamos por ejemplo trabajando en IoT,
+Teacher: Mm.
+Student13: pues yo estoy delegándole al a qué digo yo, al mismo a la misma Raspberry Pi para que me haga el cálculo, por ejemplo, de cuántos carros están pasando en por hora, ¿cierto?
+Teacher: Hm.
+Student13: Cosas como esas.
+Student13: O inclusive hay hay momentos donde se requiere enviar una información ya concreta para evitar que el envío hasta una base o hasta un centro de cómputo y la de vuelta pues ralentice el cálculo, porque muchas veces los mismos dispositivos requieren de del dato para poder funcionar o generar un dar un
+Student13: nuevo paso.
+Student13: Entonces, si lo haces, hacen ahí mismo y muchas veces son multiplicaciones sencillas, sumas sencillas, cosas sencillas.
+Student13: Entonces, hacer ese ese cálculo ahí mismo con los datos que se están llegando hace que sea mucho más rápido el proceso, ¿cierto?
+Student13: Pero eh yo entiendo que el fog es un poco
+Teacher: Sí.
+Student13: distinto en donde ahí el cómputo se hace en como en unos centros más localizados, unos nodos y no tienen que ir como a al qué digo yo, como el computador central, digámoslo así.
+Student13: Sí. Entonces,
+Teacher: Sí.
+Student13: yo puedo generar como pues no clústers como los que usted dijo, pero un clúster en definición general que sería como un arreglo de varios eh de varios dispositivos terminales que se conectan a un nodo local, que no es sería el nodo final,
+Student13: pues y ya los nodos se conectarían a un nodo principal y esos nodos locales que hay serían como ese Fog en donde yo genero un centro de cómputo pequeño que me genera unas capacidades idades mayores que las que podrían haber en los en los dispositivos terminales,
+Student13: eh, y y pero me da me me mantienen la latencia baja, ¿cierto?
+Student13: Eso es lo que yo entiendo, profe.
+Teacher: Bien, bien, [estudiante].
+Student28: Profe, por parte del Fog tengo como una duda, sino que de pronto estoy confundiendo yo la estructura o cómo se comporta la el focing es más similar al cluster o más similar al grid.
+Student28: Porque según yo había entendido lo que es el fog es como se agrega una capa intermedia de nodos, pero que estos están distribuidos geográficamente,
+Teacher: Mhm.
+Student28: que es como lo que es como lo pareció al grit,
+Teacher: Sí.
+Student28: que no están todos en la misma parte, pero entonces ya actuaría más como el grit.
+Teacher: Podría ser.
+Student28: Ok.
+Teacher: Es que normalmente el grid es como lo más fácil y más más fácil de implementar, digámoslo así, porque no hay restricciones, no tenemos las restricciones que hablamos del clúster en su momento.
+00:55:00
+Teacher: Entonces, muchos de los muchas de las soluciones que nosotros vamos a plantear serán tipo grid, ¿cierto?
+Teacher: Eh, solución clúster, vamos a montar un supercomputador para procesar ahí x cosas.
+Teacher: o para montar las diferentes aplicaciones que vamos a utilizar dentro de la empresa.
+Teacher: Pero pero Grid es mucho más común dentro de las soluciones que nosotros damos.
+Teacher: Eh, [estudiante], antes de que yo explique un poquito esto de leche y el foco,
+Student13: No, profe, sino que quiero como aclarar que pues yo yo digo no sé si sea por eso, pero yo digo clúster, pero no por eso digo, lo dije, no en el sentido del clúster que vimos computacional con ustedes,
+Student13: sino que para mí en mi mente pues yo tengo la palabra clúster del inglés que es en en términos generales un arreglo un conjunto de pequeñas cosas,
+Teacher: M.
+Student13: ¿cierto?
+Student13: Entonces, yo lo digo en ese sentido, como que hay un nodo central que tiene que que le hace el procesamiento o el cómputo a a unos terminales o unos dispositivos terminales, pero ese nodo central es un nodo local ante una red más grande para que no tenga que ir esa
+Student13: información a un centro mucho más lejos.
+Student13: Y es ahí donde yo pues hago esa aclaración.
+Student13: Solamente es eso,
+Teacher: Dale.
+Teacher: Listo, Juan.
+Teacher: Sí, ¿no?
+Teacher: Y y es y es cierto.
+Teacher: Y y este, digámoslo así que este Edge Foc computing es un complemento al cloud,
+Student13: profe.
+Teacher: ¿listo?
+Teacher: Porque nosotros habláamos de que el cloud era algo que estaba montado en un servidor en internet, donde ese servidor puede ser cualquier servidor, ¿cierto?
+Teacher: en cualquier lugar del mundo.
+Teacher: Generalmente ahorita que estamos tan pegados de Amazon, pues normalmente montamos los servidores en eh en Estados Unidos y en Virginia, que queda por ahí en la punta norte de Estados Unidos, ¿cierto?
+Teacher: Y Y allá es donde vamos a tener todo el centro de procesamiento, allá es donde vamos a estar mandando todas las solicitudes que tengan los usuarios y vamos a procesar y vamos a generar las respuestas.
+Teacher: El Edge Info Computing nació de de esa, digámoslo así, de ese de esa migración que estamos teniendo de los premises a la nube y que la nube no está tan cerquita, tan lejos y generalmente nos va a dar tiempos de respuesta no muy buenos.
+Teacher: A pesar de que AWS tiene unos tiempos de respuesta bastante aceptables o una red de transmisión de datos bastante aceptable, pues sería mucho más aceptable de que el centro de datos lo tuviera yo acá en mi oficina, ¿cierto?
+Teacher: O o si yo tuviese la solución en mi oficina sería mucho más ágil que si yo la tengo en Estados Unidos.
+Teacher: Entonces, eh este modelo de computación apareció gracias a ese esa evolución, ese salto que tuvimos a la nube y de que empezamos a ver la necesidad de bajar el tiempo de de respuesta o bajar la latencia al momento de
+Teacher: de de procesar la información, ¿cierto?
+Teacher: Entonces el el FOC o el HFO computing habla o intenta decir de que voy a tener que procesar información en el borde, o sea, lo más cercano del usuario.
+Teacher: Podríamos tomar como ejemplo lo que dijo Estefanía y es lo hago desde el mismo dispositivo, puede ser en el mismo dispositivo o en un dispositivo que esté muy cercano a mí o en alguna parte entre mi dispositivo y la
+Teacher: nube, en mi dispositivo y el centro de datos donde guardé el software o la información, ¿cierto?
+Teacher: Eso es a lo que nosotros llamamos F computing, que en algún espacio, en algún lugar, entre el nodo de cómputo donde está procesando, donde está la información y mi nodo, debe haber algo que me responda con menor latencia eh las solicitudes.
+Teacher: Dime,
+Student13: Hay un ejemplo bueno de eso,
+Teacher: Juan.
+Student13: profe, que es el el Amazon Cloud Front, creo que se llama,
+Teacher: Ajá.
+Student13: que ellos ellos te ofrecen un servicio para que, o sea, ellos te ofrecen a ti el hosting de tu página, obviamente, y te lo te lo sostienen en en en sus centros de datos allá.
+Teacher: Sí.
+Student13: Entonces, claro, tú dices, "Yo escojo el centro de datos de Brasil o el West, yo no sé qué de el West 1 de Estados Unidos, ¿cierto?
+Teacher: Sí.
+Student13: y listo.
+Student13: Entonces uno diría, bueno, viaja desde allá la página, la información de la página o cuando uno la solicita como como usuario, no no como el que la está pidiendo el hosting.
+Student13: Pero a veces cuando tú pagas un poquito de extra y necesitas esa velocidad y si tú sabes que tienes un grupo de personas que que siempre utilizan tu servicio en una ciudad, ahí ellos Amazon maneja ese Cloud front que es son como hostings locales.
+Student13: Yes.
+Student13: intermedios como en un con una información de la página en donde llega eso muy rápido
+01:00:00
+Teacher: Mhm.
+Student13: y ya luego empieza a llegar la parte del pues ya la conexión con el backing y todo va al centro de datos directamente y ya la y la otra opción ese sería el de Fog y para Edge hay
+Teacher: Claro.
+Student13: un es uno pensar en el caché de los celulares.
+Student13: Eso es una versión muy grande del Edge.
+Student13: Uno siempre tiene un pedazo de la página ahí.
+Teacher: Ajá.
+Teacher: Exactamente.
+Teacher: Entonces, lo mismo, o sea, Cloud Front de AWS es un ejemplo de ese F o Edge Computing, ¿cierto?
+Teacher: Porque eh yo tengo los datos allá, pero estoy utilizando un servicio que me acerca más eh o me deja los datos mucho más cercanos.
+Teacher: ¿En dónde?
+Teacher: No sé, pero es mucho más cercano.
+Teacher: Entonces ahí entra, por ejemplo, cuando nosotros estamos trabajando, vamos a ver Netflix, nosotros vemos de que simplemente entrando a la aplicación ya tenemos los previews, empiezan a reproducirse de manera eh casi que instantánea
+Teacher: el corto de del de la película, de la serie que yo tengo seleccionada.
+Teacher: ¿Cómo hace eso?
+Teacher: Y ustedes creen que tiene que ir hasta Estados Unidos para descargar el trozo de la película o el trozo del corto para empezar a reproducir, sería muy lento.
+Teacher: Sería eh Disney, sería eh este otro Amazon Prime, Prime Video, ¿cierto?
+Teacher: O sería eh claro claro video que más de uno de ustedes tiene acceso a Claro Video, ¿cierto?
+Teacher: Entonces, ese tipo de soluciones donde yo tengo que reducir el tiempo de respuesta, voy a reducir el la latencia de mi sistema, ahí es donde entra este modelo de Hif Computer.
+Teacher: Al final son centros de datos o son nodos de cómputo que están mucho más cercanos que van a descargar una parte de contenido estático y que ese contenido estático nosotros lo vamos a ir consumiendo de un sitio mucho más cercano que su el dato de origen o del lugar de
+Teacher: origen.
+Teacher: Esa es básicamente el la diferencia de de edifing.
+Teacher: Y por último, el autonomic computing o perdón, Juan, ¿Ibas a decir algo más sobre eso?
+Student13: No, profe, nada.
+Student13: Gracias.
+Teacher: Ah, okay.
+Teacher: Y por último, el autonomic.
+Teacher: ¿Quién quién tiene una referencia de lo que era autonomic computing?
+Teacher: ¿Quién se acuerda?
+Teacher: Skynet.
+Teacher: Okay.
+Teacher: Descríbame qué es lo que esperamos nosotros del autonomy computing.
+Teacher: [estudiante] Ángel.
+Student18: Eh, profe, es un sistema pues que se eran cuatro características, se autoconfiguraban, eh, se autoreparaban Well, Eh, no recuerdo las otras dos,
+Student18: pero pues en resumen el pues el sistema es capaz de de mejorarse a sí mismo, de solucionar sus sus problemas y lo sabe en algún momento y pues sí es como lo que pasó en la película de de Terminator,
+Student18: es un sistema por ese estilo.
+Teacher: Sí, exactamente.
+Teacher: Y es poder lograr un modelo de cómputo que no necesite intervención humana, ¿cierto?
+Teacher: Desafortunadamente o afortunadamente, como lo quieran ver ustedes, eh todo lo que es computación depende de las personas y por eso es que falla.
+Teacher: Sí. Por eso es que falla, eh, o todas las soluciones que nosotros hagamos son susceptibles a fallos.
+Teacher: Eh, mire otro ejemplo.
+Teacher: Miremos Iron Man, ¿cierto?
+Teacher: Iron Man tenía el control de qué de cómo iba a ser su traje, cómo iba a ser la construcción del sistema, qué cosas debería de tener y no hizo un solo eh traje.
+Teacher: ¿Cuántos trajes hizo?
+Teacher: ¿Cierto?
+Teacher: ¿Por qué?
+Teacher: Porque es que nosotros nos equivocamos.
+Teacher: La primer versión, listo, resolvió un problema, pero cuando él generó la segunda, ya cuando estaba en la casa y con y con plata y con tiempo, eh ese esa no fue su su última versión.
+Teacher: ¿Por qué?
+Teacher: Porque algo faltó.
+Teacher: Algo faltó.
+Teacher: Algo faltó.
+Teacher: Y mientras nosotros digamos que algo faltó, va eh eh vamos a seguir creando trajes y trajes y trajes.
+Teacher: Pero en la segunda película, creo que fue Iron Man, que fue la era del tron, de Ultron o esa fue Vengadores.
+Teacher: Bueno, la que sea.
+Teacher: ¿Qué era Ultron?
+Teacher: Sí, sí.
+Teacher: ¿Se la vieron o no?
+Student13: Sí,
+Teacher: Pero
+Student13: que sacaba sus propios clones en fábricas,
+Teacher: quiero
+01:05:00
+Student13: era como una entidad que se auto autogestionaba y también pues
+Teacher: se
+Student13: evolucionaba, digámoslo así.
+Student13: M.
+Teacher: auto, él tenía la capacidad de autogestionarse, de crear, de repararse.
+Teacher: Él era capaz de de reconfigurarse y y de de protegerse, ¿cierto?
+Teacher: Entonces, mire, ese ese tipo de modelos de cómputo que sean capaz de no depender de los humanos para poder seguir evolucionando, para poder seguir en funcionamiento, es a lo que nosotros vamos con la el modelo de computación autónoma.
+Teacher: ¿Listo?
+Teacher: Sí. Muchas de las cosas que hemos hablado pues son ciencia ficción, son inventos de gente que se imagina cosas, pero ¿quién dice que no podemos llegar allá?
+Teacher: ¿Cierto?
+Teacher: Hoy en día probablemente seguimos siendo limitantes, pero no es lo mismo la computación que tenemos hoy en día.
+Teacher: la computación que teníamos hace 30 años, cómo será la que tendremos dentro de 30 años, ¿cierto?
+Teacher: Entonces, eh ese es el modelo, digamos que hacia donde nosotros nos estamos moviendo y gracias a los avances técnicos y tecnológicos, pues estamos logrando eh llegar a esa a esas capacidades eh que no teníamos o que pensamos o ahora lo vemos como si fueran ciencia ficción,
+Teacher: pero muy probablemente en el futuro lo vamos a estar viendo eh como más comúnmente.
+Teacher: Lo mismo pasó con la computación móvil y lo mismo pasó con la computación ubicua.
+Teacher: En su momento cuando empezábamos a hablar de eso, era una utopía, era una cosa donde qué rico sería poder coger los laptops y meterlas al sistema o utilizar laptop para ser parte del sistema.
+Teacher: Qué rico poder utilizar crear un dispositivo eh portátil que nos permitiera eh guardarlo en el bolsillo y que pudiéramos eh interactuar con el sistema.
+Teacher: Y ahí fue donde aparecieron las palm y aparecieron diferentes dispositivos intentando resolver ese problema.
+Teacher: Hoy en día eso ya no es un problema, ¿cierto?
+Teacher: Técnicamente o la tecnología avanzado tanto que ya podríamos decir que no utilizar mobile computing sería desperdicio de de recursos o de o de la planta o de información que nosotros podríamos estar eh procesando, ¿cierto?
+Teacher: Eh, lo mismo pasó con la computación ubicua.
+Teacher: Eso era una un caso excepcional, unos casos de ejemplo que nosotros podíamos ir tomando, ir eh agregando a nuestro a nuestro sistema para para destacarnos, para vernos poderosos, vernos que somos los más avanzados en tecnología.
+Teacher: Hoy en día casi todos podríamos llegar a tener una una casa inteligente porque ya las herramientas y los dispositivos se han puesto tan baratos baratos que nos permite que podamos nosotros
+Teacher: eh adquirir ese tipo de servicios y ponerlos en nuestra casa, ¿cierto?
+Teacher: ya las chapas inteligentes que uno entra con la huella o con un código o que lo abre desde el celular, eh todo eso hace parte de esta computación ubicua.
+Teacher: Eh, HFO Computing, eso sí no se pensó, eso fue una evolución de del cloud, pero pero miren que todos estos modelos de computación son simplemente como esa evolución a a todo lo que la tecnología nos ha permitido avanzar durante todo este tiempo.
+Teacher: Listo, Chanfle, hablamos bastante y nos quedamos otra vez en los objetivos.
+Teacher: ¿Listo?
+Teacher: Y en 15 minutos no alcanzamos a hablar de los cinco objetivos.
+Teacher: Entonces, dejemos hoy por aquí y mejor el jueves terminamos ya el tema de introducción.
+Teacher: Espero que haya quedado mucho más claro los modelos.
+Teacher: Creo que que De todo, de todo es lo más importante que que podemos nosotros hablar aquí en en este capítulo, perdón.
+Teacher: Y vamos a hablar de los objetivos, qué es lo que buscamos nosotros de un sistema distribuido o que todo sistema distribuido cumpla para que sea un buen sistema distribuido.
+Teacher: ¿Listo?
+Teacher: Así que jóvenes, nos vemos el jueves.
+Teacher: Los saqué temprano para que vayan a comer tempranito y nos vemos en el jueves, la próxima clase.
+Teacher: ¿Listo?
+Student13: Profe, muchísimas gracias.
+Student7: por está bien.
+Teacher: Dale, que esté muy
+Student5: Cas
+Teacher: bien.
+Student9: Gracias, profe.
+Teacher: Se luego.
+Student8: Hasta luego, profe.
+Teacher: Hasta luego.
+La reunión finalizó después de 01:09:53 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+

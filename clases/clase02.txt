@@ -1,0 +1,1155 @@
+Hora de inicio de la reunión: 2026-09-10 18:30 GMT-5
+Asistentes
+Student1, Student2, Student3, Student4, Teacher, Student5, Student6, Student7, Student8, Student28, Student9, Student11, Student12, Student13, Student14, Student15, Student16, Student17, Student18, Student19, Student20, Student21, Student22, Student23, Student24, Student25, Student26, Student27
+Transcripción
+Teacher: Muy bien, jóvenes.
+Teacher: Buenas noches a todos.
+Teacher: Em, dale, vamos aquí vamos a a decirle que nuevo.
+Teacher: A ver cómo le quito esto.
+Teacher: Chun chun chun.
+Teacher: No, listo.
+Teacher: Y aquí pues simplemente es empezar a usar herramientas.
+Teacher: Esta es la de texto.
+Teacher: Okay.
+Teacher: Pero no con de texto, con esa letra tan feita.
+Teacher: Y cámbiale la letra si es valiente.
+Teacher: Aquí está normal.
+Teacher: Sí, perfecto.
+Teacher: Eh, listo.
+Teacher: Realmente el taller con el que estuvimos o el que les dejé hablaba sobre lo que era un cluster.
+Teacher: Vamos a hablar aquí.
+Teacher: Esto, ¿qué es?
+Teacher: Picker esito.
+Teacher: Está bien, pero entonces vamos aquí a la creencia.
+Teacher: Entonces, vamos a hablar del cluster y vamos a hablar del grid.
+Teacher: Listo.
+Teacher: ¿Qué encontraron sobre esto?
+Teacher: ¿Quién me quiere comentar qué entendieron?
+Teacher: ¿Qué aprendieron?
+Teacher: ¿Qué vieron sobre lo que era un cluster y lo que era un grito?
+Student26: Profe, el clúster está más dado como para high performance computing.
+Student26: Entonces, básicamente casi que todos los componentes están pegados, ¿cierto?
+Student26: La intención es que tengan como muy poca latencia entre la de la comunicación entre los componentes,
+Teacher: Mhm.
+Student26: entre es el almacenamiento, eh, casi como si fuera un supercomputador, ¿cierto?
+Student26: Y con instrucciones, el set de instrucciones del procesador inclusive es un poco especial, tiene algunas avanzadas como para sincronización entre hilos y y y cosas así.
+Student26: El grid es un poco más es básicamente muy descentralizado, no es como una colección de computadores, más como para high thr output computing y no
+Teacher: Oh, madre.
+Student26: necesari cómo y
+Teacher: Dale, dale.
+Teacher: Hágale.
+Teacher: Sigue,
+Student26: no es no es eh homogénea.
+Teacher: sigue.
+Student26: Esa es la diferencia entre los dos.
+Student26: El cluster es homogéneo, el grid es no homogéneo, no no sé si se le llama heterogéneo, pero creo que listo.
+Teacher: Genial.
+Student26: St. Es es eso fue y no es en ese margen de ideas.
+Student26: Entonces, la latencia entre ellos está alrededor de los milisegundos.
+Teacher: Ok.
+Student26: Entre el cluster es entre microsegundos, de hecho, y funciona tipo one.
+Student26: Yo por ahí en el trabajo puse pues le puse como unas animacioncitas ahí que si si la abre y ahí se ve más o menos gráficamente cómo se comportan el uno y el otro.
+Teacher: ¿Qué más?
+Teacher: ¿Algo que hayan entendido o visto sobre esto?
+Student18: entiendo que en términos de economía es más costoso el clúster que el porque pues en el clúster como los nodos son similares entre ellos, pues cuesta
+Student18: más conseguir equipos a similaritares.
+Student18: cambi el gr pues se puede reutilizar, o sea, no como es heterogenio, pues no es necesario que todos los sean en términos de hardware iguales.
+Student26: Y, profe, en el chat mandé un link de alguito, pues, ahí que me me desplegué ahí en Versel para mirar más o menos visualmente cómo funciona.
+Student26: Entonces, así es más o menos el clúster.
+Student26: En la mitad pues está el switch de baja latencia entre los componentes y los nodos, que son los negritos, ¿cierto?
+Teacher: Mhm.
+Student26: El el azul sería el NAS o creo o SAN, puede ser uno de los dos cualquiera que es el el almacenamiento en red y el nodo principal que es el perdón, el azul es el nodo principal y el morado es el naz según la la ¿qué?
+Student26: La anotación que pus allí.
+Student26: Y si te pasas arriba a al a la tab al al tab que está arriba, infraestructura del grid, ya sería un poquitico ahí más descentralizado funciona
+00:05:00
+Teacher: H
+Student26: one.
+Student26: De hecho, pues uno de esos nodos puede ser inclusive un mismo clúster, entonces no necesariamente es y y ahí está.
+Student26: Y en la matriz comparativa, pues hay algunas notas que que también extraje más arriba en la en el primer ahí.
+Student26: Exacto.
+Student26: Ahí está pues uno que es homogéneo, heterogéneo, el otro es acoplado, tightly coupled, el otro es débilmente acoplado.
+Student26: Eso fue más o menos lo que yo traje, no sé.
+Student26: Sí. M.
+Teacher: Sí. Bien, gracias.
+Teacher: ¡Chévere!
+Teacher: Es que es que punto asignado 50. Este muchacho está la sabe.
+Student26: Ahí está el link al Classroom Yeah.
+Teacher: Listo.
+Student26: por si lo necesitan.
+Teacher: Por por si se me pierde.
+Teacher: Okay, listo.
+Teacher: [estudiante], cuéntame.
+Student28: Hola, profe.
+Student28: Lo que yo abstraje, lo que era un clúster y un glit es como que el clúster es como ese conjunto de nodos, bueno, computadoras de equipos que está como todo muy centralizado, incluyendo eh digamos que algo pues no escuché que lo mencionaron,
+Student28: es el el almacenamiento de los datos, o sea, entre todos los nodan o consultan, por así decirlo, al mismo almacenamiento.
+Student28: En cambio, en el grid es descentralizado.
+Teacher: Ok.
+Student28: Todo nodo tiene su propio almacenamiento y tiene sus propios datos.
+Student28: Además de eso, pues el tema de la latencia.
+Student28: En el clúster, la latencia es muy baja porque como todos los equipos están como en ese mismo espacio, la latencia es muy baja.
+Student28: A diferencia que en el grid la latencia es mucho más alta.
+Teacher: Okay.
+Teacher: ¿Alguien más que quiera aportar algo?
+Teacher: Aquí hay una palabra chévere, acoplado.
+Teacher: No sé si se alcanza a ver bien y los que están en celular pues lo van a ver peor, pero eh dale.
+Teacher: ¿Quién más tiene algo?
+Teacher: Buenas noches.
+Teacher: Tranquilo, [estudiante], no pasa nada.
+Teacher: Em, okay.
+Teacher: Vamos entonces a analizar qué qué otros conceptos encontraron sobre sobre esto o qué otras características del clúster y del grid antes de hablar del hardware, porque listo, aquí ya hay algunos elementos que que me hablan de
+Teacher: de la infraestructura, pero pues quiero saber qué entendieron sobre el clúster y grit.
+Teacher: Dale,
+Student8: Profe, yo lo que entendía era que el clúster pues era,
+Teacher: [estudiante].
+Student8: digamos como esos espacios empresariales donde tienen un montón de servidores en un en un data center.
+Student8: Eh, y pues eh digamos que está enfocado a muy alto rendimiento y cosas de ese tipo.
+Student8: y un grid lo entendí algo como más distribuido en espacio geográfico, por ejemplo, el el varios usuarios conectados a internet con velocidades de conexión diferentes, computadoras diferentes y todo eso,
+Student8: eh proveyendo hardware para para realizar computación de algo.
+Student8: Entonces esas fueron como las diferencias que percibí.
+Student8: una, tiene como una arquitectura así super empresarial, super de data center y la otra es como algo más community, no sé.
+Student8: Es fue como mi perspectiva.
+Teacher: Okay, perfecto.
+Teacher: Bien, ¿alguien más?
+Student26: Si alguien está en el celular, profe, le da clic a ese link y la web es responsive, le carga mejor si lo ves
+Teacher: Te está vendiendo, te está vendiendo programa.
+Student26: directamente.
+Teacher: Ya vi nada.
+Student26: Estoy vendiendo la nota.
+Teacher: Sí, está buscando puntos adicionales por todos lados.
+Teacher: Listo.
+Teacher: E no, perfecto.
+Teacher: Bien.
+Teacher: Otro concepto o alguna otra idea Bueno, voy a cambiar la pregunta como para que puedan aportar un poco más al a la clase, ¿cierto?
+Teacher: ¿Cuándo debemos usar clúster y cuándo debemos usar grid?
+Teacher: ¿En qué escenarios necesitamos clúster y en qué escenarios necesitamos grid?
+00:10:00
+Teacher: O o ¿qué sistema es el que yo digo, "Ah, mire, es que para montar un clúster debería el sistema debería comportarse de esta manera y para grid de esta otra." Dime,
+Teacher: [estudiante].
+Student26: Eh, listo, profe.
+Student26: Pues vea, un clúster, ahí se ve que realmente es como para una tarea muy específica según la infraestructura que veo.
+Student26: Si hay, por ejemplo, le haces scroll un poquitico hacia abajo, los procesadores son Epic o pues Intel Cón que realmente pues
+Teacher: Ô
+Student26: los Epic les pasan por encima con instrucciones vectoriales.
+Student26: Entonces, usted necesita hacer operaciones matriciales para procesamiento multiparal.
+Student26: Este equipo es definitivamente lo que necesita.
+Student26: O sea, si necesita hacer cálculos, por ejemplo, aproximaciones tipo los que hace la NASA para lanzar un cohete al espacio, este equipo, de hecho, aparte tiene las aceleradores GPU con Nvidia H1, que esas pues también son como para tareas muy tipo relacionado con video,
+Student26: no necesariamente para jugar, sino tareas pues como para hacer codex y cosas así.
+Student26: Entonces, en ese tipo de tareas se usarían estos equipos.
+Teacher: Mhm.
+Student26: No, no sé si el hardware sea fijo, muy probablemente sea un poco más dinámico y no necesariamente para ese tipo de tareas, pero cuando usted necesita centralizar, yo diría que es este el ejemplo que usted da para los bancos en la vez anterior,
+Student26: eh, sería más un tipo grid, o sea, que cada nodo se encargue de hacer un proceso y cada uno se encargue de su almacenamiento y mande los mensajes.
+Student26: Igual, igual si usted va a hacer una transacción, por ejemplo, de banco a banco o al menos en nuestros tiempos, eso demoraba, usted tenía que esperar a que el otro le respondiera.
+Student26: Entonces, cuando la latencia no es un problema, eh usted utilizaría un grip.
+Student26: Creo que eso es lo que yo puedo inferir de acá.
+Teacher: Es que esto ahí se inventó hasta los talleres, mira.
+Teacher: Dale.
+Teacher: Eh, listo,
+Student26: Ah, esos son los que usted dijo al inicio en la clase.
+Teacher: [estudiante].
+Student26: Entonces, como estaba en el context, ahí los hardc los voy a ir subiendo uno por uno junto con las montas.
+Student26: Yo tengo un repositorio con eso, entonces cada que subo las notas él los despliega.
+Teacher: Okay, perfecto.
+Student8: Profe, yo creo que la diferencia fundamental es cuando se requiere un rendimiento
+Teacher: [estudiante]
+Student8: extremadamente alto y una estabilidad extremadamente fiable, eh, que usaría un clúster.
+Student8: Y cuando eso digamos pueden no ser cosas tan críticas para mi sistema y puedo permitirme de pronto un poco más de flexibilidad a fin de economizar de pronto un poco más recursos.
+Student8: Entonces puede que no use equipos que trabajan exactamente igual, que tienen, por ejemplo, un solo espacio de almacenamiento compartido entre entre varias computadoras, sino que puedo ocupar, digamos que algo más relajado que que me permita
+Student8: un implementaciones pues como más más relajadas, ¿cierto?
+Student8: No con unas especificaciones tan exageradas.
+Teacher: Bien.
+Teacher: Okay, perfecto.
+Teacher: Voy a, digámoslo así.
+Teacher: Ustedes aquí me han dicho algo pues que tiene que ver throw.
+Teacher: Creo que algo me falta aquí, pero bueno, eh me están diciendo eh básicamente eso y es que si yo necesito eh grandes capacidades de de procesamiento o necesito hacer tareas de alta de alto consumo de de recursos,
+Teacher: pues podríamos utilizar un clúster y eh buscando como utilizar un hardware adecuado para para la tarea que estemos nosotros definiendo, ¿cierto?
+Teacher: y en grid.
+Teacher: Entonces, me dicen que es algo como high thp o que yo necesito realizar eh eh tareas donde pueda atender múltiples múltiples peticiones, ¿cierto?
+Teacher: O que podamos e, ¿cómo lo digo?
+Student26: o diferentes tareas.
+Teacher: como diferentes tareas o que tengamos la posibilidad de de atender a a muchos usuarios de manera simultánea, ¿cierto?
+Teacher: Y HTC se llama este y este es output.
+Teacher: Creo que me falta un GH o me falta algo.
+Teacher: A lo que me dice que está ah, se me olvidó.
+Teacher: Bueno, eh, bien.
+Teacher: Listo.
+Teacher: Vamos bien hasta ahí.
+00:15:00
+Teacher: Ahora vamos a hablar un poquito del hardware.
+Teacher: Entonces, ¿qué encontraron de hardware?
+Teacher: ¿Qué necesitamos a este lado?
+Teacher: Nodos, ¿cierto?
+Teacher: Donde los nodos de cómputo, nodos.
+Teacher: Y aquí pues generalmente vamos a hablar que sean homogéneos.
+Teacher: ¿Y qué es eso de los nodos homogéneos?
+Student26: que sean
+Teacher: ¿Iguales?
+Student26: iguales.
+Teacher: Exactamente iguales.
+Teacher: Ojalá.
+Teacher: Ojalá.
+Teacher: ¿Cierto?
+Teacher: O sea, como recomendación para el clúster,
+Student26: Hm.
+Teacher: nosotros eh buscamos tener computadores o nodos de computación que tengan las mismas características eh en cada uno de los nodos.
+Teacher: Sí, a pesar de que yo por aquí vi que en el en el grafiquito hiciste una diferenciación entre el maestro y los esclavos, ¿cierto?
+Teacher: Sí. que en los nodos worker necesitábamos uno y en los nodos master, ah, bueno, aquí no dice nada de infraestructura, pero al final lo que yo busco es tener eh equipos de buenas características para poder generar procesar la información.
+Teacher: ¿Listo?
+Teacher: Entonces, mira,
+Student26: Ha. Yeah.
+Teacher: aquí habla de homogeneidad, bueno, memoria RAM de DR5, bueno, porque eso es como la última que tenemos nosotros hoy en día.
+Teacher: Eh, aceleradores de GPU, depende de cuál se qué sistema es el que nosotros estamos utilizando, si vamos a utilizarlo para computación gráfica o para eh la IA, que es como lo nuevo que está de moda, pues vamos a necesitar aceleradores o tarjetas de GPU que cumplan con ese tipo
+Teacher: de de características.
+Teacher: Pero si nuestra función es procesar datos y y ejecutar programas en en ejecutar programas de de computación normal, digámoslo así, de computación tradicional, pues no lo veo tan necesario, ¿cierto?
+Teacher: Eh, pero sí necesitamos un buen procesador, necesitamos un buen sistema de almacenamiento, que aquí no veo almacenamiento por Ah, aquí sí está, pero aquí ya se fue como un poquito más adelante.
+Student26: Eso es una SAN.
+Student26: Sí, es una SAN.
+Student26: Ah.
+Teacher: Ya ya vamos a hablar un poco de eso un poco más adelante.
+Teacher: Y sí, entonces el clúster busca concentrar ese tipo de equipo, ¿cierto?
+Teacher: concentrar una gran cantidad de equipos homogéneos para poder realizar eh las tareas de manera eh digámoslo así de manera eficiente.
+Teacher: ¿Listo?
+Teacher: Eh, ¿qué otra característica o qué otro elemento necesitamos nosotros para el clúster?
+Teacher: La red, ¿cierto?
+Teacher: Y entonces la red que vamos a utilizar en el clúster es de ¿qué tipo?
+Teacher: Wii.
+Student26: No, no es que Wi-Fi, WiFi tendría mucha latencia.
+Teacher: Conectamos todos por
+Student13: baja la
+Student26: No es que Wi-Fi Wi-Fi tendría mucha latencia,
+Teacher: Wi-Fi.
+Student13: t.
+Student26: tendría que ser cableado, pues, según lo que entiendo, y un switch de de muy baja latencia.
+Teacher: Okay.
+Teacher: ¿Qué dice
+Student26: A
+Student13: Sí,
+Teacher: Juan?
+Student13: yo lo que dije fue que que la idea es que sea de muy baja latencia y de un ancho de banda muy grande para que puedan pasar mucha información de manera muy rápida.
+Teacher: Y entonces, ¿cuál usamos?
+Teacher: Coaxeal.
+Student13: Hm.
+Student13: Pues yo hay cosas que no entiendo bien, pero dice hablar gigabit infin
+Student26: No,
+Student8: Fibra.
+Student8: Fibra.
+Student22: fibrica
+Student26: fibra.
+Student8: Fibra 100%.
+Student26: Sí, claro,
+Student8: Fibra.
+Student8: No hay nada.
+Student26: fibra.
+Teacher: 100% fibra.
+Teacher: ¿Será que la fibra es tan
+Student22: no siempre, porque también es muy difícil de mantener a veces,
+Teacher: buena?
+Student22: por ejemplo, cuando cuando usen espacios muy cerrados, si se llega a ensuciar un solo espacio de la fibra, eh, toca limpiarla muy bien, entonces también tiene un mantenimiento muy específico.
+Student22: Entonces, hay ciertos aspectos en donde a veces no la eligen.
+Teacher: Okay, perfecto.
+Student26: Pero yo no creería que sea una fibra de una fibra de esas tipo de hogar.
+Student26: O sea, es que de hecho el cable que une, por ejemplo, el Pacífico es un cable de fibra como de este tamaño de grueso super recubierto.
+Teacher: No.
+Student22: Claro.
+Student26: Entonces, el tema de ensuciarse creo que es un tema más cuando, por ejemplo, estas estas empresas de servicios de proveedores de internet instalan acá y la fibra se ensucia, la tienen que limpiar, pero no sé, no sé en ese aspecto.
+Student22: Eh, pues yo me imaginé que era de transmisión de datos de un dispositivo a otro y generalmente el cable no es tan grueso.
+Student22: Entonces, por eso digo eso, porque sí, pues el cable marítimo no es así,
+Teacher: Bien.
+Student22: no, no si es gigante, pero no,
+Teacher: O sea, que es ese cable amarítimo debe tener un bloque fibra ni el más
+Student22: pero
+Teacher: berraco.
+Student26: Claro, eso son eso es un montón de fibra de sanidad y o sea,
+Teacher: Ah, okay, okay.
+Teacher: No,
+Student26: esos son ese transoceánico.
+Teacher: el les tengo les tengo una
+Student22: y una capa de revestimiento được.
+00:20:00
+Student26: Sí.
+Teacher: noticia.
+Teacher: El los todos los cables de fibra prácticamente son del de un tamaño estándar.
+Teacher: Sí. O sea, ese que a los que tienen internet por fibra que le llega ese hilito, no sé si amarillo, pero yo he visto muchos que es como un hilito amarillo, un cablecito amarillo y llega a sus hogares.
+Teacher: Todas las fibras son de ese tamaño, al menos digamos que el estándar hoy en día de de los patch o o de los cables de fibra es tener de ese grosor.
+Teacher: Ese transoceánico si es tan grande, tan grueso y tan recubierto porque creen que es
+Student22: Entonces tien cosas y un reves.
+Student8: Son muchos cables.
+Teacher: ah porque tiene es una multiplexación de muchos cables de de
+Student8: Yes.
+Teacher: fibra, ¿cierto?
+Teacher: O sea, y hay que cubrirlos bien porque van a haber animales, van a haber rocas, van a haber diferentes tipos de elementos que puedan eh fracturar o hacer cualquier tipo de daño a la fibra.
+Teacher: La fibra, la fibra óptica es uno de esos elementos o uno de esos materiales eh más sensibles que podríamos nosotros llegar a utilizar.
+Teacher: Listo.
+Teacher: Todos saben que eso pues es simplemente un un pedazo de vidrio, ¿cierto?
+Teacher: Un poco flexible y por ahí va a transmitirse, pero por ser vidrio también es muy frágil.
+Teacher: ¿Listo?
+Teacher: Y por eso hay que hacer algún algún o hay que tener algunos tipos de eh buenas prácticas para manejar ese tipo de de material.
+Teacher: Eh,
+Student13: Pues profe, aquí averiguando dice que inclusive hay hay,
+Teacher: Juan.
+Student13: o sea, algunos clusters lo que están haciendo ahorita es que de una vez soldan la fibra directamente a los chips y a los procesadores de silicio y que en muchos casos cuando son distancias menores de 4 met lo que hacen
+Student13: es cables de cobre para que sea directamente un pulso eléctrico.
+Teacher: Okay.
+Teacher: Entonces, ya sabemos de que la red debe ser una red de alta velocidad y aquí entra pues en en juego el tema de las tecnologías, ¿cierto?
+Teacher: Entonces, nosotros sabemos o al menos tenemos la percepción de que la fibra óptica es el canal o el medio de comunicación más rápido que tenemos nosotros o que podemos transmitir con mayor velocidad, ¿cierto?
+Teacher: Pero eso es parcialmente cierto.
+Teacher: Listo.
+Teacher: Digamos que tecnológicamente eh dispositivos como el el coaxial y y dispositivos como el cable UTP ya están logrando eh anchos de bandas lo suficientemente eficientes para poderlos utilizar en un clúster.
+Teacher: ¿Listo?
+Teacher: ¿Cuál es la diferencia entre usar el uno y el otro?
+Teacher: Y es que para el codaxial y para y para el codaxial y para el UTP estamos utilizando hilos de cobre y sabemos de que el cob de que el cobre es muy caro.
+Teacher: Sí. En cambio, la fibra óptica es muy barata.
+Teacher: Entonces, ¿por qué no utilizamos fibra óptica para todas las toda la telecomunicación?
+Teacher: ¿Por qué seguimos usando UTP?
+Student22: Pues yo he visto unos UTPs que soportan transmisión de datos de más, por ejemplo, de pues yo he visto, por ejemplo, lo en casa máximo por ahí 10 GB, pero me imagino que para esos centros eh ahí se me olvidó eh para
+Teacher: Mhm.
+Student22: esos centros de bueno, para por ejemplo un cluster de a nivel empresarial deben tener de 100 GB, eh, que ni siquiera creo que se llaman UTP exactamente, sino que tienen unos nombres muy específicos.
+Student22: Oh.
+Student22: Oh.
+Teacher: Dime, dime, Juan.
+Student13: Pero es que yo lo que entiendo es que las nuevas versiones de esos cables UTP lo que hacen es pues ya ya tienen unos anchos de banda mucho más amplios que inclusive pueden soportar estos servidores, sí, industriales y centros de datos,
+Student13: pero ¿qué pasa?
+Student13: son de muy corto alcance, o sea,
+Teacher: Good.
+Student13: son para para conectar del computador, o sea, o del servidor al rack o a sí vamos a tener como muy cercanas distancias y entre más ancho de banda se le da el los cables son más cortos inclusive.
+Teacher: Sí,
+Student13: Yep.
+Teacher: bien.
+Teacher: Uy, chaf yaamos en categoría 8,
+Student22: Y y eso que dijo el compañero,
+Teacher: ¿eh?
+Student22: por eso en cuando uno ve los racks tiene unos switch tan grandes para que el mismo cablecito se conecta al switch y el clúster que tiene, por ejemplo, todo el dispositivo eh se transmite directamente a un switch y ese switch sale otro
+Student22: UTP y se conecta a otro dispositivo que puede hasta llegar a otro switch.
+Student22: Entonces es como repetir y repetir y repetir.
+Teacher: Sí.
+Student22: Entonces a veces no se cubren distancias tan largas con el UTP sino eh en realidad son muy cortas.
+00:25:00
+Student22: M.
+Teacher: Okay.
+Teacher: Bien.
+Teacher: Hay una hay una, digámoslo así, hay un elemento que debemos tener en cuenta cuando estamos eh pensando en infraestructura y es que muchas veces eh nosotros las decisiones que nosotros tomamos eh no solamente van de la mano de la tecnología,
+Teacher: sino también de la economía, ¿cierto?
+Teacher: del presupuesto o el sí, el presupuesto o el budget que tenemos nosotros asignados para el proyecto.
+Teacher: Hacer una solución con cable UTP es bastante eh barata a pesar de que el cable metro a metro es mucho más caro que la fibra óptica.
+Teacher: O sea, pensando en volumen, metro a metro es mucho más caro que la fibra óptica.
+Teacher: Eh, el tema de los equipos terminales, el tema de las tarjetas de de red o sí, los adaptadores o las tarjetas de red que vamos a a necesitar, eh los repetidores o la necesidad de repetir información, etcétera,
+Teacher: pues entonces nos va a ayudar a seleccionar cuál es la cuál es la mejor herramienta, cuál es la mejor tecnología que nosotros debemos utilizar.
+Teacher: Mire que actualmente nosotros tenemos categoría 8 supuestamente que es el la categoría más alta que tenemos nosotros de para transmisión de datos utilizando eh par trenzado de de de cobre, ¿cierto?
+Teacher: que el UTP pues básicamente es un par un par trensado.
+Teacher: Entonces podemos llegar hasta velocidades de 40 GB 40 GB por segundo.
+Teacher: Eso es una muy buena velocidad.
+Teacher: Es una velocidad equiparable a muchas de las conexiones que tenemos nosotros hoy en día con fibra óptica.
+Teacher: Lo normal que tenemos nosotros en casa, bueno, en casa o en las empresas es estamos trabajando con categoría 5, categoría 6 o categoría 6E.
+Teacher: Estas, digámoslo así, en términos generales, sirven para lo mismo o pueden llegar a las mismas velocidades, ¿cierto?
+Teacher: Entre mayor sea la categoría, pues mejor va a ser el trenzado, mejor va a ser el aislamiento que van a tener los distintos eh los distintos eh cables y por ende van a poder transmitir y va a haber menos ruido entre ellos.
+Teacher: ¿Por qué la fibra óptica es tan es tan interesante?
+Teacher: Y es que la fibra óptica tiene una velocidad de transmisión superior a cualquier otro mecanismo de de transmisión.
+Teacher: ¿Por qué?
+Teacher: Porque está utilizando luz.
+Teacher: Sí. Y otra de las características que tiene eh la fibra óptica es que la fibra o enviar información por la fibra no genera rozamiento y si no hay rozamiento, pues no va a haber calentamiento.
+Teacher: Y si no hay calentamiento, pues vamos a tener menor degradación del del equipo de conductor, ¿cierto?
+Teacher: En cambio, con un cable o con coaxial o con cobre, que es lo que normalmente utilizamos nosotros para comunicarnos, pues ese sí va a tener un calentamiento.
+Teacher: Por eso tenemos eh restricciones eh del tema de longitud del cable.
+Teacher: Fuera de eso, que como es un cable eh metálico, pues puede ser causante de descargas o o se puede influenciar bastante de los campos electromagnéticos que tenemos.
+Teacher: alrededor y por ende podríamos llegar a nosotros a perder eh eh información como como lo que pasa por el cable son corrientes, o sea, son electrones que están viajando.
+Teacher: Realmente nosotros lo que estamos es poniendo a viajar electrones.
+Teacher: Sabemos de que el paso de corriente por un cable o por un metal genera calor y ese calor empieza con el tiempo o con las distancias empieza a generar ruido.
+Teacher: Ruido, no sonidos extraños.
+Teacher: sino ruido es pérdida de información o atenuación del de los datos que estamos nosotros enviando.
+Teacher: Por eso, si vamos a hacer una una interconexión entre múltiples sedes o entre múltiples lugares utilizando UTP, vamos a tener que utilizar repetidores o vamos a utilizar switches que ayuden a unir diferentes redes y por eso es que tomamos las decisiones que tomamos según eh el el escenario o la empresa en el que estemos nosotros
+Teacher: trabajando.
+Teacher: ¿Listo?
+Teacher: En cambio, con la fibra óptica, ¿no?
+Teacher: Sí, en la fibra óptica yo puedo meter eh datos a la velocidad del sonido y sabemos de que a la velocidad de la luz, perdón, y sabemos que la velocidad de la luz es casi infinita, o sea, que nosotros podríamos enviar información a la velocidad de la luz,
+Teacher: o sea, que podríamos mandar miles y millones de datos en un segundo, ¿cierto?
+Teacher: Pero, ¿por qué no utilizamos fibra para todo?
+Teacher: ¿Quién se imagina por qué no utilizamos fibra?
+Teacher: Si hacer los cables de fibra son mucho más baratos porque se hacen de del material más abundante que tenemos en la tierra que es el silicio, vas alias arena y arena de mar que es más más cómo es
+00:30:00
+Teacher: más común y más eh más volumen de de material tenemos más abundante.
+Student26: abundante.
+Teacher: Gracias por la palabra.
+Teacher: Entonces, eh ¿por qué no seguimos trabaj por qué no trabajamos con con luz?
+Teacher: ¿Por qué no seguimos haciendo que trabajemos solo con terminales de luz?
+Student5: la fragilidad que mencionó al inicio.
+Teacher: Primero, un cable de esos no se puede doblar, ¿cierto?
+Teacher: O sea, es flexible, pero no lo puedo coger así y llevarlo en una esquina y partirlo porque va a haber refracción, ¿cierto?
+Teacher: O sea, que debo tener algunos algunas consideraciones al momento de de lanzar la fibra, ¿cierto?
+Teacher: ese esa fibra transoceánica no creo que pueda coger una curva y y hacer una u y devolverse por lo mismo, porque cualquier pequeña variación en en el ángulo que tenga la fibra, el eh el cable o el o el canal de comunicación,
+Teacher: pues puede generar refracción y la refracción es pérdida de información, ¿cierto?
+Teacher: solamente lo que se refleja es lo que continúa y lo que se reflecta es lo que se pierde.
+Teacher: Entonces, eso todavía sigue siendo tema de no digo de investigación porque pues han ya los cables nuevos tienen ya unas tecnologías bastante interesantes para evitar ese tipo de de situaciones,
+Teacher: pero aún así tenemos como el problema del mal uso de los usuarios, ¿cierto?
+Teacher: de que existen usuarios o que realmente los usuarios de manera general tienen una una mala manipulación o hacen una mala manipulación de de los elementos.
+Teacher: Y segundo es el tema del costo.
+Teacher: Compare el costo de una tarjeta de red.
+Teacher: No sé si ustedes han tenido, ahorita las tarjetas de red son muy estables, pero pues estables en que no se dañan, digámoslo así.
+Teacher: Más fácil se daña el resto del equipo que una tarjeta de red.
+Teacher: Pero, ¿saben cuánto cuesta una tarjeta de red versus lo que cuesta una tarjeta de fibra óptica?
+Teacher: Una tarjeta de red Ethernet versus una fibra
+Student26: No, eso llegó a costar inclusive 20,000
+Teacher: óptica.
+Student26: pesos.
+Teacher: Ajá.
+Student26: Ah, profe,
+Teacher: versus fibra.
+Student26: mientras encuentra ahí cuando usted estaba explicando ahorita, por ejemplo, lo de lo del ruido en en pues cuando hay comunicación por electrones también cada que hay un paso de un electrón necesariamente siempre hay un campo
+Teacher: Mhm.
+Student26: eléctrico y un campo magnético alrededor.
+Student26: Entonces eso dificulta el paralelismo cuando hay cables que tienen varias líneas, por ejemplo, eh, y cuando la latencia es tan bajita, esa corriente se hace casi continua y el campo electromagnético interfiere entre las líneas que siguen.
+Student26: Por eso, inclusive antes que teníamos la conexión de los discos duros o los dispositivos con el con el cable IDE, que eran casi como 10 líneas, era inclusive más lento que el nuevo que es seria lata, que es un cablecito chiquitico,
+Student26: delgadito.
+Student26: Y ese sat inclusive era muchísimo,
+Teacher: Bien.
+Student26: muchísimo, como 10 veces más rápido que el que el otro.
+Student26: Entonces, en temas de paralelismo es más complejo.
+Student26: El la fibra óptutica no interfiere, no tiene, digamos, un límite físico directo como lo tienen la parte eléctrica.
+Student26: Ha.
+Teacher: Mm.
+Teacher: Por eso es que cuando nos dicen, yo puedo yo puedo hacer un cableado estructurado entre múltiples edificios, pero lo primero que me dicen, si van a utilizar UTP, debe ser una distancia máxima de cuánto de cada de cada patch,
+Teacher: de cada cable, ¿se acuerdan?
+Teacher: O o no han pasado por Cisco en ese momento 100 m.
+Student8: 100 met, me parece.
+Teacher: Exactamente.
+Teacher: O sea, lo máximo que yo puedo tener un patch o un cable troncal utilizando Ethernet o utilizando UTP, por decirlo así, es un cable de 100 m.
+Teacher: O sea, entre un switch y otro switch debe haber máximo 100 m de distancia.
+Teacher: ¿Por qué?
+Teacher: Por temas de calidad, de ruido, etcétera, etcétera, etcétera.
+Teacher: ¿Listo?
+Teacher: E atenuación de la señal, toda todo ese tema.
+Teacher: Y si yo quiero llegar a 200 m, ¿qué tengo que hacer?
+Teacher: a un equipo intermedio que potencie la señal, o sea, suba el suba el el la señal otra vez y pueda transmitirse otros 100 m y así sucesivamente.
+Teacher: Generalmente cuando tengo cables más largos utilizamos coaxial.
+Teacher: Bueno, ya no es tan común porque ya no está tan ya no es tan eh común ver los terminales de coaxial.
+Teacher: vamos a encontrar, pero ya no es una tecnología que se utilice mucho.
+Teacher: Entonces, podemos pasarnos a un a un cable coaxial.
+Teacher: Ya un cable coaxial ya nos permite 500 m, casi 1 km.
+00:35:00
+Teacher: Listo.
+Teacher: El coaxial ese que llegaba la televisión, a la casa, ese por eso es que era utilizado para la transmisión de televisión.
+Teacher: Sí, porque permitía que ese mismo coaxial pudiera hacer eh largas longitudes antes de necesitar un repetidor o un equipo terminal para poder utilizar esa señal.
+Teacher: Y por último llega a la fibra, donde la fibra entre comillas no tiene no tiene límite.
+Teacher: ¿De qué depende?
+Teacher: de los equipos terminales.
+Teacher: Sí, realmente la fibra depende pues el el cada cuánto puedo eh o necesito un repetidor de fibra depende de los equipos terminales, depende de cuál es la intensidad de luz o la o la potencia que tenemos en el
+Teacher: equipo emisor y cuál es la sensibilidad que tenemos en el equipo receptor.
+Teacher: ¿Sí?
+Teacher: Entonces, dependiendo esa esa digámoslo así, esa esos elementos técnicos, entonces nos vamos a dar cuenta que que es mucho más fácil o o probablemente pueda ser más sencillo.
+Teacher: yo eh usar o hacer conexiones con Codaxial o hacer conexiones con UTP que o hacer las configurada óptica.
+Teacher: Eh, en este en este caso, mira, aquí en la consulta que hicimos, una tarjeta de red normal de las que nosotros utilizamos en los computadores y que vienen incorporadas dentro de los portátiles, generalmente son eh tarjetas 10 100 GB,
+Teacher: ¿cierto?
+Teacher: O sea, son estas tarjetas básicas donde pueden venir, pueden estar entre 45,000 y 100,000 pes.
+Teacher: O sea, eso es regalado, digámoslo así.
+Teacher: Las de alta velocidad o esas tarjetas que nosotros vamos a utilizar en los servidores o en los nodos de cómputo para procesar información, generalmente pueden superar los 800,000.
+Teacher: Realmente pueden ser mucho más caros, ¿listo?
+Teacher: y más cuando están valorados en dólares.
+Teacher: Ahorita que el dólar está barato, pues compremos.
+Teacher: Pero cuando el dólar estaba en su en su máximo apogeo, yo podría decir que una comprar una tarjeta de red para de fibra óptica, eh, perdón, de de 10 GB, digámoslo así,
+Teacher: o de estos que van a más de a más de 10 a un a más de 1 gigabit por segundo, esas tarjetas nos podrían estar costando alrededor de $500.
+Teacher: Listo.
+Teacher: Entonces, solamente por poder enviar más información o poder transmitir más información entre los equipos.
+Teacher: O sea, que si yo necesitaba transmitir información a 10 Gabit por segundo, pues cada una de las tarjetas de red me iba a costar eh alrededor de $500.
+Teacher: Listo.
+Teacher: Y súmenle, ¿cierto?
+Teacher: Y súmenle que necesitas tu cable UTP y sería un cable UTP en categoría 8. o categoría 6E para poder lograr esa esa alta disponibilidad o esa alta eh transmisión de datos que nosotros estamos necesitando.
+Teacher: Pero vamos con el de fibra.
+Teacher: Entonces, en fibra eh digámoslo así que aquí habla de 130 a 150.000.
+Teacher: No estoy muy no estoy muy de acuerdo con este valor, ¿cierto?
+Teacher: Porque eh si no todos tendríamos tarjetas de fibra.
+Teacher: Listo.
+Teacher: Si el costo de un digámoslo así, si la diferencia entre tener una tarjeta de Ethernet y una tarjeta de fibra es de 200,000 pesos, todos compraríamos la de fibra si hubiese pues eh forma de cablear.
+Teacher: Pero cuando empezamos a hablar de equipos terminales, o sea, eso de pronto para para nuestra tarjeta de red, pero ya los equipos terminales, o sea, equipos eh repetidores, eh toda todo el tema que debemos hacer para que nuestro cableado no tenga curvas muy
+Teacher: pronunciadas, etcétera, etcétera, puede todo ese ajuste que yo debo hacer en la instalación de la fibra, ahí es donde se vuelve caro el uso de esta de esta tecnología.
+Teacher: ¿Listo?
+Teacher: Entonces, si lo vamos a utilizar en centros de datos, podemos conectar eh pascore de fibra porque sabemos de que esos passcore van a tener una distancia eh pequeña, vamos a tener poca, digámoslo así,
+Teacher: podemos ajustar la flexibilidad o o la curva que vamos a utilizar para conectar los distintos dispositivos y eso pues podría ser de que mi sistema fuera mucho más rápido y eficiente, Pero esos esos digámoslo así, esas tarjetas son muy caras,
+Teacher: si comparado, o sea, son demasiado caras.
+Teacher: Una tarjeta para servidor, tarjeta fibra, eso se llama lidor hp.
+00:40:00
+Teacher: Vamos a mirar si lo podemos seleccionar.
+Student26: Si han, profe, si han bajado un poquito eh estas tarjetas pues de PCs, de ópticas han bajado un poquito.
+Student26: Yo creo que el problema es más estandarización, es que toda la infraestructura de de los de los proveedores de internet está montada así por el cablecito UTP y generalmente no te la tienen,
+Teacher: Mm.
+Student26: pero ya ha bajado mucho, pero yo creo que ya los equipos no los hacen con esa tarjeta.
+Teacher: Mira,
+Student26: Ah.
+Teacher: eh, sí, exacto, claro.
+Teacher: Es que la popularización, o sea, cuando tenemos pocos proveedores de una tecnología, la tecnología se se encarece cuando ya deja de ser una exclusividad y puedo tener distintos proveedores que me entreguen esa tecnología, pues va el precio va a bajar.
+Teacher: Mire que puede llegar a costar una sola tarjeta me puede llegar a costar 2,0000es de pesos, bueno, 1750 como dicen, ya, ¿cierto?
+Teacher: Y eso eso es plata, ¿cierto?
+Teacher: Eso es bastante plata.
+Teacher: Y si voy a tener 100 servidores, pues eso es mucha plata y tengo que tener dos tarjetas, ¿cierto?
+Teacher: para por algo que vamos a hablar más adelante de la replicación y y alta disponibilidad, etcétera.
+Teacher: Pero entonces todo eso, todo ese presupuesto o todas esas ese tipo de soluciones, pues me van a aumentar el presupuesto, me van a aumentar eh la necesidad de gastar más para tener los mismos recursos.
+Teacher: ¿Listo?
+Teacher: Y las velocidades que aquí propone, digamos que las tarjetas básicas proponen 8 GB o 16 Gabit, ¿cierto?
+Teacher: Miren que es mucha la diferencia de comprarme una tarjeta de 1 GB, que es las que normalmente conocemos nosotros de Ethernet, o comprarlas de alto de alto o de alta de alto desempeño o de con un ancho de banda mucho más alto para llegar a a ten,
+Teacher: ya me tengo que subir bastante de precio, ¿cierto?
+Teacher: En cambio, una tarjeta de fibra básica puede tener un canal de 8 de 16 GB.
+Teacher: ¿Listo?
+Teacher: Entonces, mira que que cambia o mejora el el ancho de banda con el cual nosotros vamos a estar transmitiendo solamente cambiando el medio de comunicación eh o el canal de comunicación y tarjetas superiores a 10 a 10 GB pues las vamos a
+Teacher: encontrar.
+Teacher: Bueno, rondan a 111. Recuerden, ahorita estamos y y si lo busca en Mercadoolbre, quién sabe dónde la consiguieron, pero realmente son tarjetas que pueden eh que pueden estar alrededor un poco superior a los 2 millones de pesos.
+Teacher: ¿Listo?
+Teacher: Y también depende de el fabricante o depende de la versión o la edad de la tarjeta, pues vamos a estar encontrando distintas opciones como tal.
+Teacher: ¿Listo?
+Teacher: Entonces, para nuestro nuestro clúster, nosotros podemos utilizar redes de alta velocidad.
+Teacher: Hoy en día tenemos la gran ventaja de que podemos utilizar eh Ethernet o podemos utilizar eh fibra, ¿cierto?
+Teacher: Pero si existiera una nueva tecnología, sería una buena idea utilizarla.
+Teacher: algo descabellado.
+Teacher: Imaginémonos que Google saca una nueva tecnología, ¿no?
+Teacher: Google casi no saca eso.
+Teacher: SpaceX saca un nuevo cable y unos nuevos terminales que garantizan una transmisión mucho más ágil y rápida.
+Teacher: ¿Ustedes creen que sería una buena opción para montar un clúster con esta tecnología?
+Student8: Profe, no, porque hay un tema de fiabilidad muy importante
+Teacher: como fiabilidad.
+Student8: en bueno, no sé, pues en términos como de que el sistema funcione como se espera siempre, es decir, no usaría una tecnología nueva en un clúster porque no
+Teacher: Okay.
+Student8: tengo, digamos, mucho tiempo de estar observando cómo se comporta bajo ciertas condiciones y uno de los puntos importantes por los que se elige un clúster es por esa fiabilidad.
+Teacher: Perfecto.
+Teacher: Yay.
+Student26: Ah, sí, profe, queena.
+Student26: Eh, repite la pregunta.
+Student26: Me distraje un momentico y me la perdí, pero estaba bien interesante.
+Teacher: Si hay una nueva tecnología, algo que X empresa propone, dice,
+Student26: Mm.
+Teacher: "Esta tecnología puede transmitir a mayor velocidad de la que tenemos nosotros ahora." Sería una buena idea para montarlo en un
+Teacher: cluster.
+Teacher: algo nuevo lo último en
+Student26: Pero sí, sí es que es que ese es el tema.
+Teacher: Guarach.
+Student26: Si hay un tema de de que hay que probarla y eso tiene que tener unos datos de respaldo detrás.
+Student26: Yo también estaría con el compañero anterior, que es un tema como de fiabilidad, pues si está muy alta ya depende.
+00:45:00
+Student26: O sea, yo yo la montaría igual igual si hay redundancia pues de datos y usted tiene control de pérdida de paquetes, pues bueno, móntela, ¿no?
+Student26: Pero hasta ahí no sabría realmente.
+Teacher: Okay, [estudiante].
+Student7: Yeah.
+Student22: Eh, pues depende de la empresa, porque por ejemplo Nvidia sacó eh yo me acuerdo que ellos sacaron hace, yo creo que fue un año más o menos, eh eh un switch que puede transmitir hasta
+Student22: 112 TB por segundo e y toda la infraestructura para poder utilizarlo.
+Student22: Y de una, pues por ejemplo, empresas gigantes sí la empezaron a utilizar.
+Student22: Sí. Eh, entonces, pues sí depende de la empresa porque, por ejemplo, esa tecnología era es era extremadamente nueva y era y es precisamente para esto,
+Teacher: Sí,
+Student22: es para un clúster.
+Student22: y pues si la empezaron a utilizar,
+Teacher: entonces suena a una buena opción.
+Teacher: Dale, [estudiante].
+Teacher: [estudiante] Felipe
+Student7: No, y también sería los costos, la centralización de, por ejemplo, de soporte, donde solamente,
+Teacher: He.
+Student7: digamos, ciertas personas a las que tendrían conocimiento de esto, entonces puede que la comunicación sea eh más bien poca.
+Student7: Entonces, digamos, eh la empresa que lo haga pod cobrar lo que quisiera, por decirlo así, por su mantenimiento, por su reparación, por cualquier cosa.
+Student7: Entonces haría que eh, por ejemplo, la logística también incrementara.
+Teacher: Okay.
+Teacher: Entonces, ¿es bueno o es
+Student7: Yo diría que no,
+Teacher: malo?
+Student7: yo diría que primero hay que esperar que otras personas, otras empresas lo prueben para poder tener fiabilidad a las cosas.
+Student7: Okay.
+Teacher: Okay.
+Teacher: Bien.
+Teacher: También entra al mundo de la fiabilidad.
+Student8: es un riesgo más en la cesta.
+Teacher: Okay.
+Teacher: Perfecto.
+Teacher: [estudiante] Andrés.
+Student5: Profe, eh yo me inclinaría pues lo que sea un compañero dependiendo como dice cuenta, todo depende, ¿cierto?
+Student5: Si la empresa que es la productora de la nueva tecnología es una empresa reconocida y no el garaje de la esquina, yo creo que uno pues entraría con más confianza por un lado, pero por el otro lado, mi punto de vista es que si bien la tecnología es nueva,
+Student5: digamos que llegue con un preo un precio accesible, competencia al mercado, pero si me toca cambiar a mi parte interna de los equipos para poder adaptar a la tecnología nueva, se me aumenta un costo, el cual yo diría será compensa lo el avance o lo o lo nuevo que venga
+Student5: con todo el cambio estructural que tengo que hacer en la parte interna de mis equipos.
+Student5: Ese sería pues mi punto de vista.
+Teacher: Okay.
+Teacher: Pero entonces tú lo ves como algo bueno o algo malo.
+Student5: Profe, pues yo sé que la respuesta no sirve, pero depende si el costo es competible.
+Student5: Las ventajas son buenas.
+Student5: La empresa que lo emite es confiable en el mercado, o sea, tiene reputación, tiene trayectoria comercial.
+Student5: Omitiendo pues de que me toque cambiar mi mi estructura interna, yo me cambiaría la nueva tecnología.
+Teacher: Okay.
+Teacher: Usted lo usaría.
+Student5: Es decir,
+Teacher: Listo.
+Student5: es bueno
+Teacher: Ajá.
+Teacher: Listo.
+Teacher: Perfecto.
+Teacher: Dale.
+Teacher: Ahí, ahí, ahí, digámoslo así.
+Teacher: Ahí depende.
+Teacher: [estudiante] lo [estudiante] Andrés lo dijo bastante bien y es depende.
+Teacher: Sí. Una de las cosas, o sea, no existen eh verdades blancas y negras, ¿cierto?
+Teacher: Nosotros siempre hablamos o siempre andamos en el mundo de los grises, o sea, no hay una garantía absoluta de que eso sea bueno o que sea malo.
+Teacher: Nosotros siempre vamos a estar en un camino de grises.
+Teacher: Y si tenemos múltiples opciones o si debemos analizar las las posibilidades que tenemos en nuestro en nuestros sistemas o en lo que queramos nosotros definir, siempre vamos a estar en un depende, ¿cierto?
+Teacher: en qué escenario, cuál es el la restricción o cuál es la garantía que yo quiero dar sobre el sistema.
+Teacher: Hay que tener en cuenta algo y es que cuando nosotros como asesores o como expertos o como directores de tecnología o simplemente alguien que estamos que está proponiendo una opción de solución de a una empresa, nosotros asumimos y cargamos sobre nuestros hombros la responsabilidad del
+Teacher: funcionamiento del sistema.
+Teacher: ¿Sí?
+Teacher: O sea, que cualquier decisión que nosotros tomemos y sea equivocada, no no van a ir en contra de Envidia, no van a ir en contra de Tricom, ni van a ir en contra de Cisco.
+Teacher: ¿Contra quién van a ir?
+Teacher: ¿Y quién es el que tiene que dar la cara?
+Teacher: ¿Quién es el que tiene que dar soporte?
+00:50:00
+Teacher: ¿Cierto?
+Teacher: ¿Quién es el que tiene que ir a carear a los gerentes que no saben nada de esto diciendo, "¿Y por qué gastamos toda esta plata en algo que no está sirviendo?" Listo.
+Teacher: Entonces, eh tiene que ver mucho con eso del carácter abierto que estábamos hablando nosotros en la en las características o en las ventajas que teníamos nosotros con los sistemas distribuidos.
+Teacher: Y es que entre más estándar sea la las herramientas que nosotros elijamos, menor va a ser el riesgo que nosotros vamos a asumir sobre las cosas, ¿cierto?
+Teacher: Si yo me voy o yo digo o propongo que vamos a hacer una comunicación utilizando Ethernet de 1 gig, sabemos de que cualquier problema o dificultad que nosotros vayamos a tener de en ese dispositivo,
+Teacher: pues son 45,000 pesos de diferencia y media hora de tiempo para resolver el problema, ¿cierto?
+Teacher: Voy a una tienda, a cualquiera de las tiendas de computación, encuentro una tarjeta de red cualquiera y voy conecto.
+Teacher: y mi sistema sigue en funcionamiento, ¿cierto?
+Teacher: ¿Por qué?
+Teacher: Porque estoy utilizando un estándar, estoy utilizando una algo que ya está definido, no tengo que esperar ni al proveedor X, Y o Z. Básicamente tengo cualquier yo puedo reemplazar ese componente por cualquier otro y mi sistema va a seguir
+Teacher: funcionando porque las los elementos son estándares.
+Teacher: E a diferencia de si tenemos eh herramientas propietarias, una cosa que solamente hace tricómodo, o una sola una cosa que sola solamente hace eh envidia, como el switch que está hablando aquí el compañero que nos compartió el compañero,
+Teacher: ¿cierto?
+Teacher: Si solo Nvidia puede hacer ese tipo de de dispositivos y se me daña o tengo una falla, como decía el otro compañero para el tema del soporte y tengo una falla, ¿cómo hago para darle el mantenimiento a eso?
+Teacher: ¿Será que yo tengo el conocimiento para hacerle el mantenimiento a eso o tendré que esperar a que me manden un experto desde Holanda para que venga y revise el el qué es lo que le pasa al al equipo?
+Teacher: Entonces eso es parte de esas decisiones o esos elementos que debemos tener en cuenta al momento de tomar decisiones.
+Teacher: Y lo mismo va a pasar para cualquier tipo de decisión que nosotros hagamos.
+Teacher: Siempre debemos verificar los riesgos y mirar entre más común o más popular sea la herramienta que nosotros estemos utilizando, va a ser menos el riesgo o al menos el costo de mantener ese ese recurso, ¿cierto?
+Teacher: Si utilizamos lo último que existe en tecnología, probablemente podamos aprovechar esa tecnología, podamos irnos a lo último con las mejores herramientas, pero me va a salir más costoso, primero porque no hay no hay alternativas para para comparar.
+Teacher: No van a haber competidores porque muchas veces sacan esa tecnología, la patentan y tendrán que esperar o van a sacarle gusto por 10 años.
+Teacher: Entonces, eh esa patente eh no va a haber ningún otro productor que haga algo similar o parecido que genere las mismas características.
+Teacher: Entonces vamos a estar, digámoslo así, ligados a ese fabricante durante mucho tiempo.
+Teacher: Eh, así que dentro del mundo de los sistemas distribuidos, no debemos, a pesar de que tengamos la necesidad o los requerimientos, no debemos utilizar lo último en tecnología.
+Teacher: Hace alrededor de unos 10 años más o menos, eh yo estuve eh participando en un proyecto donde donde necesitábamos montar un clústercito, pues un clustercito ahí, unas maquinitas eran como 16,
+Teacher: 20 máquinas y eh la propuesta se pasó con una tecnología que tenía del o generando de él en su momento.
+Teacher: So eran las primeras tarjetas de giga, ¿cierto?
+Teacher: Hace más o menos 10 años fue eso.
+Teacher: ¿Y qué proveedor era el único que podía entregarnos este tipo de tarjetas?
+Teacher: Del. Y se hizo la propuesta, se llevó comprar unos equipos y había que comprar una tarjeta adicional porque ninguno de los equipos viene con esa tarjeta ten giga.
+Teacher: Entonces, había que comprar esa tarjeta adicional.
+Teacher: O sea, que el costo del equipo había que aumentarle el costo de de la tarjeta adicional era 10 GB, eh, pero en Ethernet que era pues pasar de 1 Gabit por segundo a 10 GB, pues en un clúster,
+Teacher: pues genera una alta eh esperanza de mejora de rendimiento del sistema.
+Teacher: Pero eh para llegar aquí al al a la conclusión o saltarme de una vez a la conclusión, después de haberse comprado todos los materiales o todas las herramientas, nos encontramos de que esas tarjetas todavía estaban fallando, estaban en demo,
+00:55:00
+Teacher: por decirlo así, y empezábamos a tener desconexiones intermitentes.
+Teacher: ¿Y qué pasa cuando una tarjeta que solamente un fabricante puede hacer y tiene problemas?
+Teacher: ¿Qué pasa con el soporte?
+Teacher: Está supeditado a la necesidad o a la voluntad del proveedor, ¿cierto?
+Teacher: Muchas veces uno hablaba con el que me vendió, pero es que el que me vendió no es el que las hace, no es el que le hace.
+Teacher: probablemente puede llegar a conectarse y mirar el log, pero paré de contar, ¿cierto?
+Teacher: Entonces, eh ellos no van a cambiarla, no van a poder diagnosticar, "Ey, tráigame tráigame esa tarjeta, yo se la cambio, pero como es un proveedor de una sola empresa, pues va a tocar mandar a pedir y ese tiene que pedirlo a Estados Unidos o lo tiene que pedir a la China y
+Teacher: bla bla bla, ¿cierto?
+Teacher: Entonces ese tipo de de decisiones que se pueden llegar a tomar en un momento determinado, pues puede afectar el costo de nuestra de nuestro de nuestro proyecto y además aumentar las responsabilidades que nosotros asumimos por haber seleccionado,
+Teacher: elegido o utilizado ese tipo de tecnología en la en la solución del del problema que nosotros al que nos por el cual nos están pagando, digámoslo así.
+Teacher: ¿Listo?
+Teacher: Así que recomendación, eviten al máximo dentro de lo posible, o sea, dentro de lo que se pueda ese tipo de decisiones.
+Teacher: Pero entonces, ¿qué pasa si yo necesito hacer el cluster a 10 GB?
+Teacher: Pues entonces cambiémonos a tarjetas de tarjetas de de fibra.
+Teacher: ¿Cuál quiera?
+Teacher: Hoy en día, después de 20, 30 años de desarrollo de fibra óptica, podemos decir que cualquier fabricante pues me va a dar las mismas garantías con las tarjetas básicas, las de ocho, las de cuatro y de ocho, ¿cierto?
+Teacher: Yeah.
+Teacher: Esas que son las baratas, las que podemos utilizar y que vea que tienen un equivalente eh a la mejor tecnología que podíamos utilizar en Ethernet.
+Teacher: Puede que me cuesten prácticamente lo mismo, pero necesitaremos gente experta en fibra para poder hacer la instalación, la los patches, etcétera, etcétera, pero puede llegar a ser mucho más beneficioso para nosotros porque esas tarjetas sí están más
+Teacher: probadas y tienen una mayor trayectoria y por ende van a a resolver eh el problema de de una mejor manera.
+Teacher: Listo, red.
+Teacher: ¿Qué más tenemos nosotros aquí?
+Teacher: en en el cluster.
+Teacher: Para el cluster hay un concepto aquí que se llama centralizado.
+Teacher: Bueno, aquí en la red metamos los switches, los cables, los patch, etcétera.
+Teacher: Todo lo metemos ahí en la red.
+Teacher: Como es un sistema centralizado, necesitamos espacio.
+Teacher: ¿Listo?
+Teacher: ¿Y qué es espacio?
+Teacher: O locación, ubicación.
+Teacher: O sea, que dependiendo del número de equipos que nosotros vayamos a montar en el cluster, vamos a tener que tener una sala o una casa o un edificio o una gran infraestructura para poder darle mantenimiento a eso, ¿cierto?
+Teacher: Y esa casa, edificio, infraestructura, etcétera, es costos, es más plata, ¿cierto?
+Teacher: O sea, yo voy a tener que construir un edificio o un bloque o un o una un salón, una bodega, por decirlo así.
+Teacher: Vamos a coger una bodega y vamos a tener que empezar a adecuarla, agregarle sistemas de seguridad, sistemas de refrigeración, eh temas de cómo es, de restricción de acceso.
+Teacher: Vamos a tener que comprar distintos dispositivos, UPSs, vamos a tener que ponerle una planta en el caso de que se vaya a la luz y la UPS no tenga suficiente carga para mantener los equipos durante durante la recarga.
+Teacher: Entonces, necesitamos una planta generadora de energía, necesitamos eh personal que esté haciéndole seguridad al sistema, pues a a esa bodega, o sea, personas que estén a cargo de la seguridad y así sucesivamente, ¿cierto?
+Teacher: Entonces, el hecho de tener un clúster, dependiendo del tamaño del clúster, pues puede incurrir en que tengamos que hacer gastos superiores un poco más para poderlo mantener, ¿cierto?
+Teacher: Vamos a tener si si el espacio es mío y donde construyera un lote mío, etcétera, pues pare de contar.
+Teacher: Tenemos que pagarle el predial y para de contar.
+Teacher: Pero si es alquilado o si es en un edificio donde ya existía el edificio, yo lo que estoy haciendo es aprovechando el edificio para poder montar nuestro centro de datos, pues entonces vamos a tener que pagar arrendamiento, vamos a pagar servicios,
+01:00:00
+Teacher: vamos a pagar pues una serie de de costos adicionales por mantener eh el el recurso, ¿cierto?
+Teacher: Vamos.
+Teacher: Vamos a tener también un administrador.
+Teacher: ¿Será que con un administrador dentro del costo vamos a tener unos administradores, ¿listo?
+Teacher: Y estos administradores pues es más plata, o sea, va a ser el ingeniero o los profesionales que van a tener la la necesidad de hacerle mantenimiento, estar monitoreando el funcionamiento de nuestro clúster, que va a estar eh revisando si en el caso de que se dañe un disco duro pueda entrar y hacerle el
+Teacher: mantenimiento.
+Teacher: Si hay un sistema operativo que está molestando o necesita ser actualizado, pues que haga las actualizaciones.
+Teacher: y la aplicación que está corriendo dentro de ese clúster tiene problemas o necesita una actualización, pues necesitamos actualizar, etcétera, etcétera.
+Teacher: Listo.
+Teacher: Aquí ese de la refrigeración lo voy a poner aquí junto con el espacio refrigeración y seguridad.
+Teacher: ¿Listo?
+Teacher: ¿Qué más necesitaríamos para en la infraestructura?
+Teacher: Okay, si son cinco nodos, necesitamos un rack y los tipos de servidores de máquinas que vamos a comprar son máquinas de rack.
+Teacher: Si necesitamos dos nodos, pues podemos utilizar dos nodos de mesa y entonces compramos dos nodos, dos nodos de tipo escritorio y pues montamos, compramos una mesa y lo y hacemos el clúster con esos dos nodos, ¿cierto?
+Teacher: Dependiendo del problema o de la situación que nosotros o montamos una buena máquina y creo dos máquinas virtuales y ahí está el clúster de las dos máquinas que necesitamos.
+Teacher: Recuerden que en el tema de infraestructura nosotros esa tenemos esa flexibilidad de que podemos utilizar eh máquinas físicas, lógicas o contenedores, de físicas, virtuales o contenedores, pero los administradores y la red pues sí la vamos a estar necesitando.
+Teacher: Y para y para el grid, ¿qué necesitamos en el grid?
+Teacher: ¿Será que necesitamos nodos?
+Student22: Sí,
+Student26: Gracias.
+Student22: también, pero
+Teacher: Y será ah, bueno, espere que no he hablado de esa de los homogéneos.
+Teacher: ¿Por qué en el clúster necesitamos homogéneos?
+Teacher: Ah, esto es heterogéneo.
+Teacher: Heterogeno.
+Teacher: ¿Qué pasa con con los nodos y por qué pedimos o se solicita que sean nodos homogéneos?
+Teacher: Y es que la idea del clúster o el objetivo principal del clúster es que nosotros podamos desarrollar o crear una infraestructura de high performance computing para resolver un problema a la vez, digámoslo así.
+Teacher: O sea, que toda esa infraestructura, todos los equipos que yo voy a comprar, que voy a adquirir, tienen como objetivo resolver un problema.
+Teacher: Vamos a ejecutar el cálculo de x cosa.
+Teacher: Vamos a calcular tal otra.
+Teacher: ¿Listo?
+Teacher: Eh, ¿qué pueden qué pueden ser esos problemas en el mundo multimedia?
+Teacher: Por ejemplo, ahora que está tan de moda las películas donde eh la mitad la filman con actores, la otra mitad la generan con inteligencia, pues con con herramientas digitales, pues todo es toda esa creación de herramientas digitales o todas esas imágenes que se deben generar de manera
+Teacher: digital necesitan potencia de cómputo, ¿cierto?
+Teacher: Entonces, si yo voy a a hacer una película de animación donde toda es eh hecha con computador, pues entonces cuando estoy haciendo el proceso de renderizado, vamos a a pasar de del modo desarrollo al modo producción.
+Teacher: Yo necesito crear una imagen, 30 imágenes por cada segundo y tenemos una película de 2 horas por hacer.
+Teacher: O sea, que tengo una tarea que es bastante pesado, que tiene una gran cantidad de trabajo por hacer.
+Teacher: Entonces, lo que necesito es aumentar los recursos de cómputo o tener un sistema, un supercomputador, por decirlo así, vamos a tener un supercomputador que sea capaz de procesar todas esas tareas en paralelo o que pueda partir esa tarea en múltiples tareas e irlas procesando de manera paralela.
+Teacher: Ese es el objetivo del clúster.
+Teacher: El clúster está buscando resolver un problema a la vez.
+Teacher: ese problema puede ser tan grande como hacer la renderización de una película o puede ser como el proceso que se utiliza en el IDEAM para pronosticar cuál es el el tiempo o las variaciones de tiempo,
+Teacher: cuál va a ser el clima, la la proyección del clima, la el pronóstico para los siguientes 7 días.
+01:05:00
+Teacher: Entonces, yo necesito ejecutar un modelo que tenga la capacidad de generar o de analizar múltiples datos, datos históricos, datos eh en tiempo real, datos de satélite, datos de sensores, etcétera,
+Teacher: va a tener que procesar toda esa información y generar los pronósticos de clima, ¿cierto?
+Teacher: Eso es una tarea que puede ser muy muy pesada.
+Teacher: Pues entonces yo voy a crear un clúster, voy a unir una serie de nodos con una red de alta velocidad eh en un solo sitio para lograr eh que ese ese proceso pase de demorarse 8 días a que se
+Teacher: demore un día o que pase a demorarse 2 días de trabajo o dos días de cómputo a que se demore 2 horas.
+Teacher: Listo.
+Teacher: Y entre más rápido yo haga las tareas, pues mejor o más calidad voy a poder eh ponerle a o voy a estar entregando de mi trabajo, ¿cierto?
+Teacher: Well, voy a poder hacer ajustes.
+Teacher: Voy a en cambio, si yo necesito esperar 5 días para darme cuenta de que el pronóstico pues no fue muy correcto, pues entonces no tengo tiempo de maniobra porque la siguiente ejecución que yo voy a hacer o si tengo que hacer algún
+Teacher: tipo de ajuste, tengo que esperar otros 5 días.
+Teacher: En cambio, con un clúster necesito es eso, es mejorar el rendimiento, hacer de que esas tareas supergres demoren menos tiempo.
+Teacher: ¿Y cómo lo hacemos?
+Teacher: pues paralelizando principalmente eh la ejecución o o el procesamiento de la información.
+Teacher: Entonces, ¿por qué homogéneos?
+Teacher: Después de toda esa explicación, ¿por qué homogéneos?
+Teacher: Ah, porque una de las tareas que tiene el clúster es distribuir eh o una de las acciones que hace el clúster es distribuir las distintas tareas o los distintas eh procesos entre los distintos nodos que tenemos.
+Teacher: Si yo tengo un clúster de 20 nodos, la idea es de que los 20 nodos estén procesando la información de mi de mi tarea.
+Teacher: Entonces, yo voy a partir todo el esfuerzo de mi tarea en 20 para que cada uno de los nodos pueda ejecutar o pueda realizar eh su parte del trabajo de manera simultánea que los otros nodos.
+Teacher: O sea, que voy a cortar el tiempo de espera o el tiempo de procesamiento dependiendo del número de nodos que tengo.
+Teacher: Entonces, si yo tengo 100 nodos, pues la tarea debería de poderse partir en 100 nodos y poder aprovechar esos 100 nodos para seguir reduciendo el tiempo de respuesta de mi de mi aplicación.
+Teacher: Y la idea de que sean homogéneos es para que independiente a qué máquina yo le distribuya el trabajo, todos tengan un rendimiento similar.
+Teacher: ¿Sí?
+Teacher: O sea, que no hayan diferencias o que no hayan eh esa, digamoslo así, eso de esta tarea como es grande, mandémosela a este equipo nuevo y esta que es eh un poco más liviana, mandémoslo al viejito para para equilibrar la carga,
+Teacher: ¿no?
+Teacher: Aquí la idea del clúster es de que todos los nodos sean tengan las mismas características y puedan atender cualquier tipo de tarea.
+Teacher: Entonces, cada tarea que yo le asigne a ese procesador, yo tengo la esperanza de que tenga el mismo rendimiento que si lo ejecutara en otro en otro computador.
+Teacher: Por eso se recomienda de que sean homogéneos.
+Teacher: ¿Y por qué la red debe ser de alta velocidad?
+Teacher: Porque tengo que competir con los sistemas centralizados.
+Teacher: El clúster es un sistema centralizado.
+Teacher: Es como si yo comprara un supercomputador y lo montara dentro de mi empresa.
+Teacher: Y ya vimos de que un supercomputador me puede costar un ojo en la cara, pues muchos millones de pesos.
+Teacher: Pues la idea es de que el clúster sin tener que invertir toda esa gran cantidad de millones de pesos eh de infraestructura o de máquinas, pueda ejecutar mi tarea de manera local.
+Teacher: Y a diferencia del equipo centralizado, que cuando yo quiero comunicar o enviar información entre un proceso y otro que están corriendo dentro de la misma máquina, toda la información o la comunicación que ocurre dentro de dentro del computador
+Teacher: Mor.
+Teacher: se hace por canales en la bodar, ¿cierto?
+Teacher: o en los cables que van conectando los distintos dispositivos, los distintos eh procesadores, porque los nodos van a estar trabajando en los distintos núcleos de los procesadores dentro de la board y por la board pues hay unos canales de comunicación y entonces eh si yo quiero mandar un dato de un nodo
+Teacher: a otro o de un proceso a otro, pues utilizo solamente eh el bus de datos, es la palabra el bus de datos que tiene la boar.
+Teacher: ¿Listo?
+Teacher: En cambio, ahora en los sistemas distribuidos no tenemos un bus de datos usando la voar.
+Teacher: ¿Qué tenemos?
+Teacher: Una gran cantidad de procesadores que se tienen que comunicar utilizando una red.
+Teacher: Y entonces por esa razón en el clúster, como buscamos eh generar un ambiente de ejecución equivalente un sistema centralizado, o sea, de que no se vea mucho la diferencia de que por ser un clúster se va a demorar más de
+01:10:00
+Teacher: que si hubiera comprado un un nodo centralizado, pues entonces debo garantizar de que la velocidad de transmisión, que la información que va a estar viajando entre los distintos computadores sea la mejor posible.
+Teacher: Y por eso hablamos de que utilizamos redes de alta velocidad.
+Teacher: Eh, ¿está claro el tema del clúster?
+Teacher: ¿Y qué pasa con el grid?
+Teacher: Con el grid el objetivo no es no es resolver un problema o una tarea.
+Teacher: Vamos a hablar de que vamos a resolver múltiples problemas.
+Teacher: ¿Cómo así que múltiples problemas?
+Teacher: Sí, en el grit nosotros lo que estamos buscando es poder es poder eh ejecutar múltiples tareas, o sea, hacer grandes gran procesamiento de múltiples cosas al mismo tiempo.
+Teacher: O sea, estamos eh organizando una una infraestructura o un tema de un sistema de cómputo que me permita procesar a o múltiples usuarios o múltiples clientes o múltiples peticiones y hacerlo en el menor tiempo posible.
+Teacher: Listo.
+Teacher: A diferencia del clúster, que buscamos es consolidar todos esos recursos para que esa tarea la haga mucho mejor, en el en el grid nosotros estamos agregando muchos recursos para atender a múltiples peticiones, a múltiples eh solicitudes en el sistema y ahí pues digamos
+Teacher: que tiene un antagonismo en en el tema de las características.
+Teacher: Entonces, en la red, ¿será que la red debe ser de alta velocidad?
+Student8: No, por profe, ¿por qué?
+Student8: Para todas las tareas.
+Teacher: Porque no importa, ¿cierto?
+Student8: Yeah.
+Teacher: El espacio.
+Teacher: ¿Será que necesita espacio para el grit?
+Student13: Pero cuando usted habla espacio, imagino que espacio físico como físico,
+Teacher: Espa.
+Teacher: espacio físico, ubicación,
+Student13: ubicación,
+Teacher: el tema de de adecuar la refrigeración,
+Student13: no pues eh no porque usted está trabajando con el espacio de donde estén los dispositivos
+Teacher: seguridad.
+Student8: puede estar distribuido en cualquier parte.
+Student13: con pues uno trabajas con el espacio de donde estén los
+Student8: M.
+Teacher: ¿Cómo?
+Teacher: ¿Cómo?
+Student13: dispositivos, pero no es necesariamente algo que usted contrate como una bodega o algo para o una oficina.
+Teacher: Okay.
+Student13: O sea, yo yo con mi computador voy a un café,
+Teacher: Sí,
+Student13: lo prendo y puede que esté ya conectado al grid, ¿cierto?
+Teacher: sí,
+Student13: Okay.
+Teacher: exacto.
+Teacher: Entonces, mira que aquí el objetivo es distinto, ¿cierto?
+Teacher: El objetivo del grid no es que es esa máquina o ese conjunto de máquinas eh estén trabajando de manera cooperativa y para resolver un problema en el menor tiempo posible, para hacer de que tareas grandes se resuelvan en segundos o en
+Teacher: minutos.
+Teacher: Esa no ese no es el objetivo del grid.
+Teacher: El grid principalmente lo que busca es compartir recursos.
+Teacher: ¿Listo?
+Teacher: Y cuando hablamos de compartir recursos, significa que si yo tengo un nodo que no está haciendo nada, pues puedo aprovechar esos recursos, procesador, memoria y almacenamiento.
+Teacher: Lo puedo utilizar para atender a más usuarios, a usuarios que están dentro de dentro de la aplicación.
+Teacher: ¿Listo?
+Teacher: Entonces, esto es un, digámoslo así, el grid es una solución distribuida, o sea, ya no vamos a consolidar, no vamos a centralizar el eh la computación, voy a distribuir la computación en múltiples centros de datos o en múltiples
+Teacher: equipos o múltiples nodos, perdón.
+Teacher: Y en cada uno de esos nodos, pues se va a encargar de atender las solicitudes que le llegan a ese nodo, más tiene la posibilidad de distribuir o enviar solicitudes a otros de los nodos que tenemos en el grid para que ellos ayuden a resolver los problemas que tenemos nosotros de manera
+Teacher: local, ¿cierto?
+Teacher: O sea, si yo tengo un nodo que está recibiendo muchas peticiones y tengo otros tres que no las están recibiendo, pues yo tengo la posibilidad de utilizar esos otros tres nodos eh distribuyendo la carga o mandando a ejecutar tareas allá,
+Teacher: etcétera, etcétera.
+Teacher: Pero si cada uno de los nodos está trabajando o está con un consumo masivo de recursos, pues entonces yo yo me voy a encargar de mi propia de mi propia ejecución o de mi propia tarea.
+Teacher: Yo monto un grid cuando tengo múltiples problemas para resolver, no es un solo problema.
+Teacher: Listo.
+Teacher: Si yo tengo un solo problema, la idea es de que montemos un clúster.
+Teacher: Si tengo, si voy a ejecutar múltiples tareas o múltiples cosas, voy a trabajar con un gripeta.
+Teacher: ¿Listo?
+Teacher: La red no importa.
+Teacher: ¿Por qué?
+Teacher: porque no existe esa ese presión de tener alta velocidad de transmisión o que la comunicación eh compita con la velocidad de comunicar procesos utilizando la red eh el bus de datos de la boa.
+01:15:00
+Teacher: Yeah.
+Teacher: cierto, no existe esa presión, no estamos con el objetivo de equiparar el comportamiento o el rendimiento de una máquina centralizada.
+Teacher: Entonces, aquí sí no me importa si vamos a trabajar en red, eh si si vamos a trabajar local o si lo vamos a distribuir.
+Teacher: Si lo distribuyo, pues mandaré la tarea y esperaré la respuesta lo que se demore en hacerlo.
+Teacher: ¿Listo?
+Teacher: Eh, para el espacio voy a necesitar espacio.
+Teacher: ¿Sí?
+Teacher: ¿Cuál es el tema?
+Teacher: Y es que en Grid yo puedo tener nodos de una sola máquina.
+Teacher: Si es una sola máquina, pues cuál es el espacio que tengo el mismo centro de datos que tengo dentro de la oficina o simplemente es un puesto de trabajo y entonces tengo ese nodo trabajando, trabajando ahí.
+Teacher: ¿Listo?
+Teacher: ¿Qué pasa si es si se va a la luz de ese nodo o digámoslo así el centro eh la oficina donde estamos pierde conectividad?
+Teacher: ¿Qué pasa con mi sistema de cómputo?
+Teacher: ¿Será que falla o tiene problemas en el en el grid?
+Teacher: Tengo cuatro oficinas y y falló una de las oficinas,
+Student26: No, no, en el grid no
+Teacher: perdió conectividad.
+Teacher: ¿Qué pasa con el grid?
+Teacher: Sigue en funcionamiento.
+Student26: sigue, sigue funcionando.
+Student13: Se mantienen.
+Student26: Sí.
+Teacher: Los recursos de esa oficina que que se cayó pues no los tenemos disponibles.
+Student26: Gracias,
+Teacher: No vamos a poder compartir información con ellos, no vamos a poder utilizar esos recursos si los necesitamos.
+Teacher: Pero mi grid funciona sin ningún problema.
+Teacher: ¿Qué pasa en el clúster?
+Teacher: ¿Qué pasa si uno de los nodos falla?
+Student13: Se cae el sistema.
+Student13: Ah,
+Student26: dice que hay que volver a empezar,
+Student13: en el grill o en el
+Teacher: ¿Será que se cae el sistema?
+Student26: ¿no?
+Student26: dice,
+Teacher: No, en clúster,
+Student26: pues
+Teacher: en cluster.
+Teacher: En el
+Student8: Pues depende que no,
+Student13: clúster.
+Student8: profe, si es el maestro,
+Teacher: clúster.
+Student8: probablemente el que asigna el trabajo y eso, probablemente tenemos un problema muy gordo,
+Student22: Pues eh hay
+Student8: pero depende.
+Student13: Aunque yo entiendo que es que es tely coupled.
+Teacher: ¿Qué dice [estudiante]?
+Student13: ¿Cómo dicen, no?
+Student22: unos hay unos hay
+Teacher: Espere.
+Teacher: Juan, bueno, terminé la idea.
+Student22: unos cl,
+Teacher: Ah, bueno, [estudiante],
+Student22: perdón, no, qué pena,
+Teacher: no,
+Student22: meé.
+Teacher: no, hágale, [estudiante], dale, dale, que tú tienes el número uno.
+Student22: Hay unos clústers que, bueno, de hecho no es no está creado esta palabra para los clusters, sino que es la redundancia que, por ejemplo, se le crea, por ejemplo, eh cuando uno hace un servidor,
+Teacher: Mhm.
+Student22: por ejemplo, con discos duros.
+Student22: Hm hay una cosa que es redundancia y es tener más de lo que se necesita en el caso de que algo se caiga.
+Student22: Sí. Entonces, si por ejemplo uno de esos hard drive se daña, la información sigue intacta porque está, por ejemplo, esparcida en los otros tres.
+Student22: Pasa lo mismo en un cluster.
+Student22: Eh,
+Teacher: Mhm.
+Student22: crean unos con redundancia por si falla uno, los otros sigan manejando, aunque ahora van a tener eh que tener más procesamiento porque uno de ellos falló.
+Student22: Entonces,
+Teacher: Mhm.
+Student22: mientras esos tres clústers sigan funcionando, va el administrador, lo arregla y se soluciona el problema.
+Student22: Entonces, no se cae.
+Student22: A no ser de que se caigan los los mínimos para que no haya de redundancia, ¿no?
+Teacher: Ahí estás hablando de de otro concepto de de esta primera línea que es eh hide availability systems, que ya ya voy a hablar un poco de eso, pero eh una solamente para acotar algo y es que un clúster
+Teacher: se se piensa para una sola tarea.
+Teacher: Si yo genero redundancia, si yo tengo nodos a la espera de poder eh digamos un nodo a espera para reemplazar a alguien que se cae, estoy desaprovechando mi recurso porque voy a tener un procesador o una máquina o un o un
+Teacher: conjunto de máquinas que no estoy utilizando en pro del sistema, o sea, que estoy gastando presupuesto y no estoy resolviendo, no estoy mejorando el rendimiento.
+Teacher: Entonces, en ese caso, eh, digámoslo así, en cluster, yo no utilizaría el concepto de redundancia.
+Teacher: La redundancia está en en este otro concepto, en el tercer concepto que estoy colocando aquí al lado, que no hace parte pues de del tipo de solución que nosotros estamos hablando, del tipo de infraestructura que estamos hablando aquí,
+Teacher: que es el high abilability system.
+Teacher: Epa,
+Student22: Profe, disculpe una pregunta con lo que decir.
+Teacher: dime.
+Student22: Pues es que yo he estado estudiando mucho esto año y
+Teacher: Sí.
+Student22: lo que usted acaba de decir va en contra lo que me habían enseñado acerca de los clústers, que es que la redundancia,
+Teacher: Ajá.
+Student22: de hecho, es como la eh como la parte fundamental de ellos,
+Teacher: No
+Student22: eh porque yo sí se sacrifica, sí se sacrifica, eh rendimiento.
+Teacher: necesariamente.
+01:20:00
+Student22: Claro.
+Student22: Sí, porque para para poder tener ese sistema de que eh de que si en caso de que algo falla está todo el ese espacio perdido, pero no es tanto espacio y es un sacrificio que se tiene en cuenta el construir ese clúster.
+Teacher: Hm.
+Teacher: Mm.
+Student22: Sí.
+Teacher: Pero te lo comento de la siguiente manera, o sea, desde el punto de vista objetivo del clúster es si yo voy a tener cinco máquinas, necesito cinco máquinas para procesar o para mejorar el funcionamiento.
+Student22: Ah, bueno, sí, claro.
+Teacher: Si yo estoy pensando que el clúster es para usar la mitad y la otra por silas, ahí ya no hay alto rendimiento.
+Teacher: Estoy segmentando el rendimiento del clúster, estoy reduciendo el aprovechamiento que estoy haciendo el
+Student22: M.
+Teacher: sistema.
+Student13: Profe, yo yo iba yo iba a decir una cosa distinta.
+Teacher: ¿Sí me hago entender?
+Student13: Yo sé que ya yo va primero, sino que quería como anotar algo de lo que usted acaba de decir.
+Student13: ¿Será que hay algún problema si hago eso?
+Teacher: Pues si es de este tema del de la disponibilidad,
+Student13: Sí, es exactamente lo que usted acaba de decir con lo de [estudiante],
+Teacher: aprovech Yeah.
+Teacher: Dale, dale.
+Student13: No es que yo yo entiendo que lo que [estudiante] dice, pero yo creo que yo entendí como una diferencia en lo que él dijo y lo que usted dijo que los dos tienen razón.
+Teacher: Entonces,
+Student13: Obviamente uno tiene que generar una redundancia para que el sistema no se caiga y pues para que sea robusto, ¿cierto?
+Student13: Pero yo lo que entiendo que usted nos está diciendo es ya pasada toda esa redundancia en caso de que una parte del sistema se caiga, ¿qué le pasa al sistema?
+Student13: ¿Cierto?
+Student13: que no quiere decir que uno no vaya a tener redundancia y no vaya a proteger ese sistema como un berraco.
+Student13: Entonces ahí es donde yo digo pues lo que iba a decir, pero pues ya lo diré después y le doy la palabra a [estudiante].
+Teacher: Dale, yaño.
+Student26: Ah, listo.
+Student26: Gracias, Juan.
+Student26: Profe.
+Student26: Ah, profe, no sé si si la pregunta la confusión está en que estamos confundidos un cluster con una LAN, pues porque una LAN si se cae un equipo, bien, y a la final pues son equipos independientes que están trabajando en progo,
+Student26: independiente de lo que se instalable.
+Student26: Pero es que un clúster es porque lo que se está haciendo es básicamente como paralelizando los procesos.
+Student26: Entonces, si se cae uno,
+Teacher: Mhm.
+Student26: se dañó, se dañó el proceso y se tiene que volver a empezar.
+Student26: Es eso realmente como lo estoy entendiendo y y con la documentación que he estado leyendo.
+Student26: Entonces creo que los dos conceptos están cruzando.
+Teacher: Y es parte de de la dinámica que quería llevar aquí y es que hay que hay que entender, o sea, si yo tengo un un clúster que está trabajando en una sola tarea y tengo 10 nodos y uno
+Teacher: de ellos falla, ¿qué sucede?
+Teacher: ¿Qué dice Juan?
+Teacher: [estudiante] o ya yo iba a complementar porque pues para no dejarlo con la idea
+Student26: Sí, sí.
+Student26: Mientras eh Felipe a la web que yo sé que no les gusta mucho, pero aquí tengo una algo clave en la la web que tenía pues donde tenemos la información.
+Student26: Hay algo importante.
+Student26: Si sube un poquitico se mete en donde está la matriz comparativa en la segunda opción.
+Student26: Abajo hay algo que menciona que es la métrica clave del rendimiento.
+Student26: Eh.
+Student26: Ah,
+Teacher: Sí, sí,
+Student26: actualiza,
+Teacher: sí.
+Teacher: Música clave.
+Student26: profe,
+Teacher: Ah, ya,
+Student26: actualiza que acabé de subir.
+Student26: Sí,
+Teacher: ya.
+Student26: acabé de desplegar un un eh matriz comparativa.
+Student26: Listo.
+Student26: Mira, por ejemplo, en Exacto.
+Teacher: Clave.
+Student26: Aquí es en flops que pueden ser teraflops, lo que sea.
+Student26: Eso quiere decir que se toma como si fuera un solo equipo, o sea, puede ser un clúster que está y la interacción de que él sea homogéneo porque usted lo calcula como si fueron su equipo.
+Student26: El otro es simplemente trabajos por mes o años de cómputo porque la intención esar un trabajo y pues que lo procese a la asc as asincrónicamente.
+Student26: O sea, uno es más sincrónico y el otro es más asincrónico.
+Student26: No sé si si vamos por el mismo camino.
+Student26: Claro que quería complementar.
+Teacher: Ya, ya vamos a complementar ahí.
+Teacher: Juan, tú tenías el turno, sino que se salió.
+Teacher: Perdón.
+Student13: Sí, qué pena, profe.
+Student13: No, yo quería comentar una cosa sencilla y es pues yo yo me pongo mucho como a pensar, por ejemplo, en estos sistemas que son que necesitan hablar de milisegundos y de fracciones de
+Teacher: No,
+Student13: milisegundo para una respuesta, como lo es un sistema estilo eh estos eh servidores que calculan o que hacen análisis financiero, ¿cierto?
+Student13: que tienen que mover pues que tienen que mover millones de dólares en microsegundos, puede ser una cosa así para poder tener una ganancia.
+Student13: Entonces yo yo me digo, si una parte de un clúster se se pierde o se acaba o se apaga o se le va la energía o la red falla, pues lo que pasa es que pues ya no son fracciones de milisegundos,
+01:25:00
+Student13: sino que ya estamos hablando de 2 3 4 milisegundos y en la competencia pues es dinero mal invertido que puede llegar a perderse, ¿cierto?
+Student13: Entonces, yo creería que,
+Teacher: Mhm.
+Student13: por ejemplo, es un ejemplo claro de de que por más que el clúster pueda seguir funcionando unas partes, pues ya la funcionalidad del clúster como tal ya se disminuye el punto de que no sirve, no nos interesa.
+Student13: Okay.
+Teacher: Bien, [estudiante], ¿qué vas a aportar?
+Student8: Profe, no, que de pronto se está confundiendo el concepto de clúster en un entorno como cubernetes y y cloud con este clúster de uno montar como el el sistema de Sí.
+Teacher: infraestructura.
+Student8: El sistema de de computación distribuida.
+Student8: Creo que puede ir por ahí la confusión.
+Teacher: Sí,
+Student8: M.
+Teacher: sí,
+Student22: Eh,
+Teacher: es cierto.
+Teacher: Dime, [estudiante].
+Student22: pues yo acabo de investigar y ya encontré cuál es qué es lo que sucedió.
+Teacher: Velocidad rápida.
+Teacher: Listo.
+Student22: Eh, a ver,
+Teacher: Cuéntame.
+Student22: o sea, usted está en lo correcto y yo estoy en lo correcto, sino que hay dos tipos de clúster,
+Teacher: Mm.
+Student22: que es clúster de alto rendimiento, HPC y clúster de alta disponibilidad.
+Teacher: Mm.
+Teacher: Los.
+Teacher: Has.
+Student22: Y eso es todo.
+Teacher: Sí. No, no está bien.
+Teacher: Sino que ojo,
+Student22: Sí.
+Teacher: depende del problema.
+Teacher: O sea, yo no siempre voy a necesitar alta disponibilidad.
+Teacher: Es lo es lo ideal en muchos de los sistemas que vamos a estar hablando de ahora en adelante.
+Teacher: Pero si yo estoy haciendo eh el renderizado de de la película animada, yo esperaría que los 10 nodos que yo compré estén se estén aprovechando al máximo para sacar la película lo más pronto posible.
+Teacher: En cambio, si yo estoy pensando en alta disponibilidad es porque lo que yo estoy buscando es de que siempre esté disponible mi sistema y que ese sistema de procesar siempre esté en funcionamiento y que cada vez que un usuario vaya a hacer una petición siempre le
+Teacher: responda.
+Teacher: Sí, ahí es cuando yo estoy hablando de alta disponibilidad, pero en alta disponibilidad pensemos en que voy a duplicar el gasto solamente para garantizar el la disponibilidad.
+Teacher: O sea, que si quiero tener el rendimiento de 10 equipos y lo quiero en alta disponibilidad, entonces voy a comprar 20 porque debo garantizar la alta disponibilidad de que lo que no puedo hacer aquí lo puedo hacer en el otro lado.
+Teacher: Y ahí habla un tema de redundancia y ya cuando estamos hablando de nube, entonces hablamos de eh características multirregión, etcétera, etcétera, pero es alta disponibilidad diferente al clúster que yo tengo que construir y montarlo en mi en mi
+Teacher: oficina, ¿cierto?
+Teacher: Por eso, por eso aquí quedaba,
+Student22: Yeah.
+Teacher: eh, digámoslo así, estaba marcado el tema de high performance computar un solo computador para que esa tarea se ejecute en el menor tiempo posible.
+Teacher: ¿Qué pasa si un nodo falla en el cluster?
+Teacher: Mi mi rendimiento, el tiempo de respuesta de mi aplicación se va a reducir.
+Teacher: ¿Por qué?
+Teacher: Porque la tarea que yo había distribuido a ese nodo la voy a tener que redistribuir entre los nodos que quedan, ¿cierto?
+Teacher: y eso va a ser de que me demore un poco más en dar la respuesta de a la solución que yo estaba haciendo.
+Teacher: Entonces, ese es como el el el la afectación que tenemos si se nos cae un nodo.
+Teacher: En el grid no hay ningún tipo de afectación porque son solamente compartir recursos, ¿no?
+Teacher: No vamos a decir, "Es que voy a atender más rápido o más lento." No me interesa atender más rápido o más lento.
+Teacher: Probablemente voy a atender menos usuarios o menos peticiones por minuto o por segundo o por hora, como lo como lo quieran ver, ¿cierto?
+Teacher: Pero en términos generales no hay ninguna afectación real del funcionamiento del sistema.
+Teacher: Cambio en el cluster si voy a tener una pérdida de rendimiento.
+Teacher: Yo estaba esperando que me que me diera un resultado en 2 horas y se demoró 3 horas y media.
+Teacher: Para mí es una pérdida de rendimiento.
+Teacher: Mi sistema no está funcionando como yo esperaba que funcionara.
+Teacher: Sí, diferente a la alta disponibilidad de decir es que ay, es que yo estoy intentando ingresar y no puedo ingresar a hacer la tarea.
+Teacher: Eso ya es otro problema.
+Teacher: que para resolverlo vamos a necesitar meter más platica.
+Teacher: ¿Listo?
+Teacher: Eh, creo que por ahora podemos dejar así.
+Teacher: No sé si les queda alguna duda, inquietud sobre sobre este tema del clúster y el grif.
+Teacher: Dime [estudiante].
+Student26: Eh, nada, profe, está muy dinámica la clase y me gusta mucho así.
+Student26: Me parece que es más más bacana y creo que me parece más atractiva.
+Student26: Eh, nada, es solo una cosita.
+Student26: Eh, yo tengo que viajar y voy a estar ausente por las próximas tres clases.
+01:30:00
+Student26: Eh, no sé si hay una manera de de pronto, profe, de que las grabe.
+Student26: Yo sé que las está le está haciendo transcript, pero pero la clase visual definitiva Y yo sé que que el Classroom da la opción de de que
+Teacher: M.
+Student26: el porque hay otros profesores que están grabando las clases, entonces como no me da para para hacer lacronada a ver si de pronto al menos puedo ver el reco.
+Teacher: Dale,
+Student11: Sí, profe,
+Teacher: no hay problema.
+Student11: yo le iba yo le iba a preguntar exactamente lo mismo que si podía haber alguna forma de que él poder volver a ver como la grabación de la clase.
+Teacher: Tienen ganas de volverse a a escuchar esta hora y media de chácchara que yo he
+Student11: La verdad,
+Teacher: hecho.
+Student11: la verdad es que yo me repito las otra vez como para volverlas a entender.
+Student22: Alo.
+Teacher: Eso se llama alta disponibilidad.
+Teacher: Tiene el doble de tiempo para atender clases.
+Student11: M.
+Teacher: Dale.
+Teacher: No, no, no hay problema.
+Teacher: Listo.
+Teacher: Entonces, a partir de la próxima clase la sigo grabando.
+Teacher: Listo.
+Teacher: Eh, Juan,
+Student13: Profe,
+Teacher: [estudiante].
+Student13: qué pena, lo molesto es que yo eh yo soy profe, ¿cierto?
+Student13: Pero de colegio, entonces eh la verdad ando hasta aquí con no sé si usted conozca los piares,
+Teacher: Sí.
+Student13: estoy llenando piares hasta la conciencia porque con lo del terremoto estamos un poquito
+Teacher: Mm.
+Student13: empremados con eso.
+Student13: Entonces la verdad a mí me está quedando muy duro como como sacarle un documento de un día para otro y no le alcancé a entregar eso y ahí ya vi que era hasta las 6:30.
+Student13: ¿Hay algún problema con eso?
+Teacher: Dale.
+Teacher: No, no, ya, ya le activo, pues para que lo puedas enviar.
+Teacher: Hay problema.
+Teacher: O sea,
+Student13: Bueno,
+Student26: Eso sí,
+Student13: muchas gracias,
+Teacher: la idea era forzarlos a que lo hicieran,
+Student26: también sí.
+Student13: profe.
+Teacher: pero si si tienes problema, no hay ningú no hay
+Student13: Muchas gracias.
+Student26: Eso también le iba a decir, "Profe,
+Teacher: problema.
+Student26: si si es tan amable,
+Student13: Yeah.
+Student26: porque pues, o sea, yo sé que usted piensa que eso lo hizo ahí, el código lo generó efectivamente un modelo,
+Teacher: Sí.
+Student26: pero créeme que el contexto me tardó casi como unas 4 horas generar el contexto y hasta mire que el diseño no es el mismo.
+Student26: Y el diseño se denota al de hecho es un sistema de diseño que yo generé y es parecido a Apple.
+Teacher: Sí.
+Student26: Entonces se tardó mucho.
+Student26: A ver si de pronto le pone un poquitico más, porque sí, de un día para otro días.
+Student26: ¡Uf!
+Student26: Pero
+Teacher: No, no era para que lograran hacer la tarea, porque si no vienen a asistir a clase y no hacen nada.
+Student26: dificilísimo.
+Teacher: Listo.
+Teacher: Dale.
+Teacher: Igual normalmente a mí me gusta los talleres dejarlos jueves y revisarlos el martes, ¿cierto?
+Teacher: Pero dale.
+Teacher: Ahí ya creo que habilité la posibilidad de que manden la tarea los que los que faltan.
+Student26: Listo.
+Teacher: Listo.
+Teacher: Dale.
+Teacher: No, jóvenes, disculpen ahí la hora.
+Teacher: Nos vemos en la próxima clase.
+Teacher: Ya sabemos que la vamos a grabar.
+Teacher: Bueno, vamos a compartir eh la información y nada, nos vemos entonces eh con más introducción a la a los sistemas distribuidos en la próxima clase.
+Teacher: Listo, nos vemos el martes.
+Student26: Gracias, profe.
+Student13: Profe, cuídese mucho.
+Student26: Muy amable.
+Teacher: Dale,
+Student13: Gracias.
+Teacher: que esté muy bien.
+Student3: Salo,
+Student18: Hasta luego.
+Student3: profe.
+Student3: Yeah.
+Student18: Yeah.
+Student4: Chao, profe.
+Teacher: Hasta
+Student13: Yeah.
+Student9: Salo, profe.
+Student9: Gracias, Yeah.
+Teacher: luego.
+Student11: Hasta luego, profe.
+Student11: Yeah.
+Teacher: Chao, Isabela.
+Student28: Hasta luego, por
+Student8: Hasta luego, profe.
+Student8: Gracias.
+Teacher: Hasta luego, [estudiante].
+Teacher: Chao.
+La reunión finalizó después de 01:33:15 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+

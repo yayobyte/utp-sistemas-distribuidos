@@ -78,7 +78,7 @@
 | ✅ Comunicación más efectiva / feedback inmediato | ❌ Mayor **latencia** |
 | ❌ Si **falla uno, falla todo** | ❌ No hay garantía de entrega, se pierde información |
 
-> **Yayo (aporte clave):** *el acoplamiento no es ni bueno ni malo, depende de lo que se implemente.*
+> **Estudiante (aporte clave):** *el acoplamiento no es ni bueno ni malo, depende de lo que se implemente.*
 > **Profesor:** para sistemas distribuidos, **desacoplado es lo ideal**; para rendimiento, acoplado es mejor.
 
 ### Ejemplo cotidiano del desacoplamiento (profesor)
@@ -210,7 +210,7 @@ El maestro se da cuenta de que el trabajador falló y tiene **2 opciones**:
 | **Replicación / Maestro en backup** | Un servidor de respaldo recibe **notificación** de cada tarea/avance del maestro principal; si el principal falla, el de respaldo continúa. | 💰 Se paga a un trabajador **por estar sentado sin trabajar**. |
 | **Promoción / Elección** | Promover a uno de los trabajadores más experientes/capaz a **nuevo maestro**, mediante un **algoritmo de elección**. | Coste de implementar el algoritmo de elección. |
 
-> **Conceptos relacionados (ver más adelante en el curso):** *fallos*, *tolerancia a fallos*, *idempotencia* (Yayo: registrar el identificador de la transacción para poder **repetir/reintentar** si falló).
+> **Conceptos relacionados (ver más adelante en el curso):** *fallos*, *tolerancia a fallos*, *idempotencia* (aporte de un estudiante: registrar el identificador de la transacción para poder **repetir/reintentar** si falló).
 
 ---
 

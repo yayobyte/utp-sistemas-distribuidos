@@ -1,0 +1,784 @@
+Hora de inicio de la reunión: 2026-09-17 18:27 GMT-5
+Asistentes
+Student1, Student2, Student3, Student4, Teacher, Student5, Student6, Student8, Student28, Student9, Student12, Student13, Student14, Student15, Student16, Student18, Student19, Student20, Student21, Student22, Student35, Student25, Student27
+Transcripción
+Teacher: y hagamos la transmisión en vivo.
+Teacher: Pregunto, ustedes si pudieron ver el video de la semana pasada, no sé si lo vieron, pero pudieron entrar al enlace y revisar.
+Teacher: Sí, funcionó.
+Student35: Sí, profe, sí funciona.
+Student5: Yeah.
+Teacher: Ah, bueno, eso quiere decir que Student24 ya me vio otras dos horas más de clase.
+Teacher: Listo.
+Teacher: Nada, vamos a comenzar entonces.
+Teacher: Dale.
+Teacher: Buenas noches a todos.
+Teacher: ¿Cómo están?
+Teacher: Espero que todo muy bien.
+Teacher: Bienvenidos a una nueva sesión, una nueva clase de del curso.
+Teacher: Vamos a continuar con lo que veníamos hablando de los sistemas distribuidos.
+Teacher: Creo que en la última clase nos quedamos hablando del cloud computing.
+Teacher: Entonces voy a compartir pantalla y vamos a hablar un poco más sobre el cloud computing.
+Teacher: Ver aquí esta esta.
+Teacher: Me confirman si ven la pantalla.
+Student5: Sí, señor.
+Student5: No.
+Teacher: Sí, listo.
+Teacher: Eh, okay.
+Teacher: Entonces, nosotros estuvimos hablando de los distintos modelos de computación distribuida que que estábamos trabajando.
+Teacher: Entonces, hablamos del cluster computing, que dijimos que era la, digámoslo así, la forma de computación en la cual nosotros vamos a dedicar un hardware o una infraestructura para trabajar o para resolver un solo problema.
+Teacher: Generalmente lo vamos a estar trabajando para HPC, para High Performance Computer o computación de alto rendimiento, donde todo ese hardware lo vamos a utilizar para para responder en menos tiempo una tarea que demora mucho tiempo o también lo vamos a poder utilizar o o
+Teacher: generalmente cuando estamos hablando de alta disponibilidad también vamos a estar trabajando con cluster computing, tener varios equipos conectados en una red y de una vez intercambian información entre ellos, ¿cierto?
+Teacher: O pueden pueden balancearse el trabajo entre ellos.
+Teacher: ¿Listo?
+Teacher: También hablamos del grid, que el grid es como el clúster eh empresarial, ¿cierto?
+Teacher: es donde vamos a estar uniendo múltiples entidades y vamos a estar compartiendo recursos.
+Teacher: No, no tiene las mismas especificaciones o no se espera que resuelva el mismo problema que el que el cluster, pero eh pero también lo podemos hacer simplemente como una herramienta o como
+Teacher: un recurso para extender la los recursos o para aumentar los recursos que tengo disponibles dentro de mi sistema.
+Teacher: También hablamos del volunteer, ¿cierto?
+Teacher: Que era un modelo de computación distribuida, un modelo de computación tipo Grid, pero que en lugar de hacerse entre entidades, lo vamos a hacer entre un proyecto y unos usuarios o unos voluntarios, ¿cierto?
+Teacher: Generalmente se basa en que los voluntarios donan sus recursos de acputo y entonces entre más voluntarios tengamos, pues mayor va a ser la la los recursos o la capacidad que tenemos dentro de nuestro sistema distribuido, ¿cierto?
+Teacher: Eh, normalmente es un sistema simétrico, o sea, que el proyecto puede utilizar mis recursos, pero yo no puedo utilizar los recursos del proyecto.
+Teacher: Y eh digámoslo así, que nosotros eh vamos a encontrar varios proyectos que eh están trabajando de este modelo.
+Teacher: Hablamos también del utility, que es usar la computación o dotar la computación o que nosotros pudiéramos usar la computación como si fuera un servicio público donde si necesito más recursos, pues puede aumentar los recursos de manera dinámica y mi factura pues se cobraría basado en en
+Teacher: la cantidad de recursos que nosotros utilizamos y viceversa, ¿cierto?
+Teacher: que si necesitamos menos recursos, pues simplemente se me baja la tarifa, la tarifa eh de cobro o la factura va a ser mucho menor.
+Teacher: y empezamos a hablar un poco sobre lo que era el cloud computing y habíamos dicho que el cloud computing era simplemente tener la posibilidad de llegar a los recursos de cómputo, procesador, memoria, almacenamiento, etcétera, poder llegar a esos recursos de cómputo utilizando la red.
+00:05:00
+Teacher: Y el concepto más utilizado o más extendido para nube siempre ha sido la nubes, la nube pública o la nube de internet, ¿cierto?
+Teacher: lo que podemos nosotros acceder manera directa, pero también había nube privada, nube híbrida.
+Teacher: ¿Listo?
+Teacher: Okay.
+Teacher: En Cloud Computing, cuando estamos hablando de cloud computing, casi todo lo que vamos nosotros a encontrar es que van a haber una serie de servicios o una serie de recursos que nos lo venden o nos lo alquilan o nos lo
+Teacher: arriendan, como lo quieran ver, en un modelo que se llama como servicio.
+Teacher: ¿Listo?
+Teacher: O sea, casi todo lo vamos a llamar as service.
+Teacher: Entonces, los tres modelos comunes es tener infraestructura, tener plataforma como servicio y tener software como servicio, ¿cierto?
+Teacher: Pero existen múltiples modelos y van a encontrar ustedes muchos más de los que yo tengo aquí listados.
+Teacher: Entonces, eh cualquier servicio que nosotros podamos conseguir en la nube, sea público o sea privado, pero un servicio donde yo voy a delegar la responsabilidad de x tarea a un servicio en la nube, es lo que nosotros llamamos cloud computing,
+Teacher: ¿listo?
+Teacher: Donde puede ser base de datos como servicio, funciones, contenedores, escritorios, autenticación.
+Teacher: Bueno, hay una gran cantidad de de recursos que ya son ofrecidos como servicios en la nube y nosotros pues simplemente podemos adoptar alguno de esos servicios para resolver un problema que tengamos nosotros dentro de nuestra compañía, ¿cierto?
+Teacher: Entonces, no necesariamente tengo que desarrollar o tengo que eh trabajar todo el el todos los recursos de manera interna, sino que yo puedo delegar algunos servicios a la no.
+Teacher: Creo que hasta aquí fue donde llegamos la vez pasada y identificamos que generalmente nosotros vamos a estar trabajando con infraestructura como servicio o IAS, que es como la forma como lo vamos a estar encontrando principalmente.
+Teacher: Vamos a hablar de plataforma como servicio o PAS, ¿cierto?
+Teacher: Que es el acrónimo de de ese servicio y Sofarasa Service o SAS.
+Teacher: Listo.
+Teacher: Esto sí, esos conceptos sí los habían escuchado o esas esos acrónimos los habían escuchado o no.
+Student22: Sí.
+Teacher: Bueno, entonces vamos a hablar un poco sobre cómo es esto de Elías, paz y sas pensando en que estamos hablando de computación, ¿cierto?
+Teacher: Entonces, vamos a hablar aquí, aquí tengo una diapositiva donde habla sobre las responsabilidades en los modelos cloud de esos diferentes servicios.
+Teacher: Eh, en el primer caso vamos a tener aquí el modelo on premise, que la semana pasada, eh, la clase pasada hablamos de él y qué era un el modelo un premis.
+Teacher: Cuando hablamos de premises, ¿de qué estamos hablando?
+Student8: que era en el lugar, profe,
+Teacher: como en el
+Student8: o sea,
+Teacher: lugar.
+Student8: como en la en la pues en la no sé si infraestructura, pero en el lugar físico del cliente.
+Teacher: Mm.
+Student8: Yeah.
+Teacher: Okay.
+Teacher: Hace parte de de la solución de cómputo que vamos a tener nosotros del lado del cliente, ¿cierto?
+Teacher: Del lado del cliente o en un modelo de collocation, ¿se acuerdan de ese concepto de colocation?
+Teacher: Pero al final son máquinas mías donde yo voy a ser el responsable de hacer toda la gestión.
+Teacher: Listo.
+Teacher: Tenemos aquí en comparación lo que vamos a hablar aquí de infraestructura como servicio, plataforma como servicio y software como servicio.
+Teacher: Y vamos a a ver esto como cuál es la responsabilidad que tenemos nosotros como clientes o el proveedor de servicio sobre todas las herramientas de cómputo.
+Teacher: y vamos a hablar de herramientas de cómputo, todo lo que tiene que ver con las redes, el almacenamiento, los servidores, la virtualización, el sistema operativo, eh herramientas o que necesitamos nosotros para ejecución, bueno, ambiente de ejecución, los datos y las aplicaciones.
+Teacher: Cuando nosotros estamos en el modelo premise, nosotros vamos a ser nosotros como cliente o como administradores de la plataforma vamos a tener la responsabilidad completa sobre los recursos de cómputo.
+Teacher: Eso significa que es nuestra responsabilidad la red, o sea, que que el equipo esté conectado a la red, que la red sea segura, que tenga el ancho de banda adecuado para para trabajar o para recibir las peticiones de los usuarios que nosotros estamos eh atendiendo,
+00:10:00
+Teacher: etcétera, etcétera.
+Teacher: ¿Listo?
+Teacher: Entonces, en este modelo premise, básicamente nosotros eh debemos estar encargados de la red, debemos garantizar de que nuestro sistema tenga el almacenamiento adecuado y y suficiente para para su atención.
+Teacher: vamos a tener una infraestructura de servidores o una o la serie de máquinas que vamos a estar disponiendo para nuestro sistema distribuido.
+Teacher: Si el sistema necesita hacer virtualización o o la infraestructura que estamos creando eh se va a utilizar para virtualizar algunos servicios, pues entonces aquí vamos a tener también o va a ser parte de nuestra responsabilidad.
+Teacher: Nosotros vamos a tener que hacerle el mantenimiento al virtualizador.
+Teacher: A cada una de las máquinas virtuales tienen unos sistemas operativos.
+Teacher: Normalmente pues el equipo, el área de sistemas o el área de TI va a tener que hacerle también gestión a todos esos sistemas operativos de todas las máquinas virtuales que tenemos nosotros en nuestro sistema.
+Teacher: los middleware o herramientas de desarrollo, herramientas de intercambio de información que nosotros podríamos llegar a utilizar dentro de nuestra plataforma, también hace parte de nuestra responsabilidad.
+Teacher: Todo el ambiente de ejecución, ¿cierto?
+Teacher: Si nosotros necesitamos eh no sé si nuestra aplicación va a a ser una aplicación escrita en PHP, pues nosotros tenemos que tener eh todo lo que es son los servidores HTTP y y los plugins adecuados para que nuestra aplicación funcione.
+Teacher: Si vamos a estar trabajando con una aplicación.net, net.
+Teacher: Entonces debemos tener instalado el el netore o o la herramienta pues que con el cual nosotros vayamos a ejecutar nuestras aplicaciones y todo eso así.
+Teacher: O sea, es nuestra responsabilidad que tengamos todo el ambiente o todas las herramientas del ambiente necesarias para poder eh recibir las las aplicaciones.
+Teacher: que con las cuales vamos a estar trabajando.
+Teacher: Vamos a estar a cargo de los datos.
+Teacher: También vamos a estar eh también vamos a ser responsables de el almacenamiento y el correcto ajuste de los de nuestra de nuestro sistema gestor de base de datos.
+Teacher: Nosotros vamos a elegir si vamos a trabajar con una base de datos eh SQL o no SQL.
+Teacher: y cuál no es SQL hacer la instalación del motor.
+Teacher: Vamos a estar eh y además de eso, pues todo el tema de cómo se guarda, cómo se almacena, en dónde lo va a almacenar la información, los backups, todo eso es parte de nuestra responsabilidad.
+Teacher: Y por último, las aplicaciones, o sea, que yo voy a desarrollarlas o comprarlas y montarlas dentro de esta infraestructura y esa y esa gestión de esas aplicaciones, pues también va a ser nuestro nuestra responsabilidad.
+Teacher: Entonces, este es el modelo que más nos gusta, más nos gusta, digo yo, en términos de de cultura colombiana, ¿cierto?
+Teacher: somos muy dados a que queramos llevar el control o tener el control de de la infraestructura que estamos adquiriendo o que vamos a a estar utilizando en nuestros sistemas, pero no somos realmente eh
+Teacher: conscientes de la cantidad de responsabilidades y la cantidad de trabajo que esto puede llegar a implicar, ¿cierto?
+Teacher: Eso pensando en que tenemos un centro de datos pequeño, pero si tenemos un centro de datos donde vamos a estar trabajando con 10, 15 servidores, pues se vuelve un trabajo bastante complicado, ¿cierto?
+Teacher: Y si los servicios o los servidores que estamos comprando son heterogéneos, tienen diferentes sistemas operativos, tienen diferentes herramientas, middleware, etcétera, pues se vuelve cada vez más complejo.
+Teacher: Vamos a tener que tener personas especializadas en las herramientas que se están utilizando en cada una de las máquinas para poder darle gestión o dar eh la atención adecuada a nuestros servicios.
+Teacher: Pero ya cuando nos estamos montando en el modelo de cloud computing, vamos a tener una responsabilidad compartida.
+Teacher: Eso significa que va a haber de estos digámoslo así de todos estos recursos o de todos estos elementos de la computación van a haber unos que van a ser parte van a ser responsabilidad del del proveedor y otros que
+Teacher: vayan a hacer la responsabilidad del cliente, ¿cierto?
+Teacher: Y entonces aquí vamos a hablar, por ejemplo, de infraestructura como servicio.
+Teacher: Vamos a entender de hasta de qué se trata.
+Teacher: Entonces, si nosotros estamos hablando de que queremos o vamos a adquirir infraestructura como servicio, eh lo que estamos haciendo es quitándonos la responsabilidad de una parte eh esencial de de la plataforma y se la Yeah.
+Teacher: a delegar a un proveedor de servicios que es el que se va a encargar de gestionar esos servicios o esos recursos.
+00:15:00
+Teacher: ¿Qué hace parte de la responsabilidad del proveedor de servicio?
+Teacher: Ah, toda la parte de red.
+Teacher: Primero, ¿no?
+Teacher: Si yo no tengo, si yo no voy a tener los los servidores o no voy a tener los equipos en mi dominio, pues yo no tengo no tengo que gestionar la red.
+Teacher: Eso lo va a gestionar la persona que va a estar, perdón, la empresa que va a estar eh dándonos el servicio como tal.
+Teacher: Esa red, recuerden que puede ser física o virtual.
+Teacher: Me tiene que decir de qué manera yo voy a poder acceder a los servidores o a los equipos desde desde mi red interna, ¿cierto?
+Teacher: Desde desde mi centro de mi centro de procesamiento, cómo voy a llegar a al servidor o a o a los recursos.
+Teacher: Eh, y también cómo se van a intercambiar información entre ellos.
+Teacher: ¿Listo?
+Teacher: Nos tiene que garantizar el almacenamiento.
+Teacher: Entonces ahí cuando estamos hablando de infraestructura es como si estuviéramos comprando un equipo completo.
+Teacher: Vamos a decir, "Mire, yo necesito tantos gigas en RAM, bueno, en en almacenamiento, necesito tantos teras o tantos gigas de almacenamiento disponible." le vamos a decir,
+Teacher: "Mire, para el servidor que necesito comprar solamente necesito 100 GB de almacenamiento." Listo,
+Teacher: eso significa que ese equipo no va a estar almacenando datos y como no va a estar almacenando datos, no necesito pagar por un almacenamiento que no necesito.
+Teacher: Lo que nosotros hacemos normalmente con el on premise es que tenemos que comprar los recursos que necesitamos hasta en un futuro que pudiésemos llegar a necesitar en el futuro, ¿cierto?
+Teacher: Cuando crezca nuestra aplicación o cuando crezca nuestro sistema, debemos eh, digámoslo así, debemos provisionar cuánto es el almacenamiento que yo quiero tener.
+Teacher: En cambio, con IA, no.
+Teacher: enas yo solamente o yo puedo pedir lo mínimo necesario para el recurso que nosotros estamos eh nosotros estamos eh trabajando, ¿listo?
+Teacher: O que nosotros necesitamos para nuestro sistema.
+Teacher: Entonces, el almacenamiento lo va a gestionar el proveedor.
+Teacher: Yo no tengo que pensar en discos duros, no tengo que pensar en qué pasa si se me daña un disco duro, qué pasa si se me rompe una eh, no sé, se me desconecta un un cable serial de del disco
+Teacher: duro, etcétera, etcétera, o si estamos trabajando con discos duros mecánicos o estamos trabajando con discos duros de estado sólido.
+Teacher: No tengo la necesidad de gestionar eso.
+Teacher: es parte de la responsabilidad que nos va a dar el proveedor de servicio.
+Teacher: Vamos a a no tengo que preocuparme por los servidores, por cuál es el tipo de servidor, qué marca, etcétera.
+Teacher: Eso no me interesa.
+Teacher: ¿Listo?
+Teacher: Eso lo va a gestionar el proveedor.
+Teacher: Que si necesito uno, que si necesito cinco, todo lo va a gestionar el proveedor.
+Teacher: El tema de la virtualización, ¿cuál va a ser la herramienta de virtualización?
+Teacher: ¿Cómo va a ser?
+Teacher: Eh, ¿qué tan bueno o qué tan malo es la gestión de recursos de esa herramienta de virtualización?
+Teacher: Si si las máquinas virtuales, bueno, si vamos a estar trabajando con máquinas virtuales o máquinas reales, todo eso me lo va a definir, en este caso cuando estamos trabajando con IAS, me lo define el proveedor, pero de aquí para arriba ya es responsabilidad del cliente,
+Teacher: ya es responsabilidad de nosotros como usuarios.
+Teacher: ¿Listo?
+Teacher: Entonces, el sistema operativo, a pesar de que el en IAs generalmente ya nos entregan un sistema operativo preinstalado, nosotros somos los encargados de hacer las actualizaciones, parches de seguridad, eh configuración de usuarios, bueno,
+Teacher: todo lo que sea necesario gestionar dentro del sistema operativo es parte de nuestras responsabilidades.
+Teacher: Si es virtualizado o no, yo no lo sé.
+Teacher: Yo solamente sé que tengo una máquina que tiene un sistema operativo y que tengo que gestionar ese sistema operativo de manera adecuada.
+Teacher: Si necesitamos Middleware, si necesitamos instalar herramientas de ejecución, si necesitamos eh almacenamiento de datos y todo el tema de las aplicaciones, todo eso hace parte de nuestra responsabilidad.
+Teacher: Al final es como si hubiésemos comprado un equipo, pero yo no, pero el equipo ya viene conectado a internet, ya viene con su sistema de almacenamiento tal cual como lo necesitamos, no tenemos capacidad ociosa, sino que podemos tener el almacenamiento que necesitamos,
+Teacher: si está virtualizado o no, no me interesa.
+Teacher: Simplemente tengo una máquina con un sistema operativo y ahí voy a instalar todas las herramientas y aplicaciones que queramos hacer dentro de nuestra empresa.
+Teacher: Listo.
+Teacher: todo el tema de backups de datos, todo el tema de garantizar de que mi sistema esté funcionando bien, que los usuarios externos puedan acceder y puedan llegar a los recursos dentro de nuestra máquina, es nuestra responsabilidad.
+00:20:00
+Teacher: ¿Listo?
+Teacher: Porque nosotros somos los que vamos a abrir los puertos, vamos a eh actualizar las herramientas, tener las herramientas, etcétera, para la aplicación que nosotros estamos gestionando.
+Teacher: ¿Listo?
+Teacher: ¿Queda claro eh el el plataforma como servicio, ¿sí?
+Student22: Sí.
+Teacher: Un ejemplo de esto de plataforma como servicio es como es cuando yo intento comprar una máquina virtual o una VPS en internet, ¿cierto?
+Teacher: Una virtual eh ay, se me olvidó el nombre, pero VPS que es eh un una unidad de procesamiento virtual, ¿cierto?
+Teacher: Entonces, me entregan un sistema operativo o un recurso que tiene sistema operativo RAM y almacenamiento con lo con lo mínimo necesario, ¿cierto?
+Teacher: con lo mínimo necesario para que nosotros podamos eh, digámoslo así, instalar nuestras aplicaciones, configurar el sistema operativo, hacer pues la personalización que nosotros queramos dentro de nuestra plataforma.
+Teacher: plataforma.
+Teacher: Ahora, si nos vamos al siguiente modelo, que es plataforma como servicio, ya la responsabilidad cambia.
+Teacher: Digamos que le vamos a dar más responsabilidades o o va a ser más responsable el proveedor de servicio que nosotros.
+Teacher: En este caso, eh, en este caso digamos que además de lo que ya vení nos venía dando en infraestructura, también se va a hacer cargo de todo lo que tiene que ver con el sistema operativo, el middleware y el y el ambiente de ejecución.
+Teacher: Entonces, esto hace de que nosotros nos desliguemos o no tengamos que preocuparnos por una serie de de tareas de administración adicionales como mantener actualizado el runtime,
+Teacher: actualizar las versiones de de las bibliotecas, eh hacer las actualizaciones y parches de seguridad del sistema operativo, eh activar o desactivar el acceso de de lugares externos a la plataforma, etcétera.
+Teacher: Todo eso va a seguir recayendo, va a seguir recayendo dentro de el mundo de la infraestructura.
+Teacher: ¿Qué sería nuestra responsabilidad entonces?
+Teacher: a gestionar los datos y las aplicaciones.
+Teacher: Probablemente ni siquiera tengo que que instalar eh la herramienta de almacenamiento.
+Teacher: Eh, en ese caso digamos que todo lo me lo entregaría el proveedor.
+Teacher: Si yo necesito tener acceso a eh, no sé, una base de datos My sequel, es porque el proveedor me está dando me está dando la me está dando dentro del paquete que estoy comprando acceso a una base de datos My Sequel o una base de datos Postgress o una base de datos
+Teacher: Mongo.
+Teacher: Sí, dependiendo de cuál sea la perdón, la plataforma que yo estoy necesitando.
+Teacher: pensemos en la plataforma como todos los recursos necesarios para que yo pueda llegar con mi aplicación e instalarla dentro de esa dentro de esa plataforma.
+Teacher: ¿Listo?
+Teacher: Entonces, un ejemplo muy común de esto de plataforma como servicios es todos estos eh, digámoslo así, todas estas empresas o todos estos servicios que podemos encontrar que eran de hosting.
+Teacher: No sé si han visto o han tenido la oportunidad de conocer est de empresas o de negocio, pero en el hosting a mí ya me están diciendo, "Mire, yo solamente puedo ejecutar aplicaciones escritas en PHP y o
+Teacher: HTML crudo o y la base de datos que van a tener es My Sequal y usted me está pagando es por tenerle eso." ¿Listo?
+Teacher: Entonces, en plataforma como servicio, yo, digámoslo así, yo como usuario voy a estar más limitado a cuáles son las herramientas que yo voy a poder tener dentro de esa plataforma.
+Teacher: El proveedor de servicio es el que define cuáles son las herramientas que nos dejan disponibles y nosotros nos tenemos que adaptar, perdón, a los a las características o a las herramientas que que nos está ofreciendo el proveedor.
+Teacher: Y no y nosotros nos vamos a encargar de todo lo que tiene que ver con la gestión de los datos y las aplicaciones.
+Teacher: actualizar la aplicación, eh no sé, revisar, monitorear de que la aplicación esté corriendo bien, que los usuarios sean estén siendo atendidos en un tiempo adecuado, etcétera.
+Teacher: Todo eso es parte de la responsabilidad nuestra.
+Teacher: eh hacer eh las copias de seguridad de los datos, hacer la recuperación en caso de que haya una pérdida, cualquier otra, no sé si tenemos que hacer un backup de nuestra aplicación es parte de nuestra responsabilidad porque
+Teacher: nuestra responsabilidad se encarga de todo lo que tiene que ver con la información o los datos que estamos manejando y de las aplicaciones que nosotros estamos corriendo dentro de la plataforma.
+00:25:00
+Teacher: Si hay un parche de seguridad o ocurrió algo que dice, "No, es que hay un hay una vulnerabilidad detectada en el sistema operativo Linux X, que por el puerto o por la aplicación tal están pueden explotar la eh
+Teacher: la seguridad de la herramienta.
+Teacher: Entonces, el que tiene que hacer la gestión de ese tipo de parches o ese tipo de bloqueos de seguridad lo hace es directamente el proveedor.
+Teacher: Sí, yo no yo como usuario no tengo que preocuparme por eso.
+Teacher: El proveedor es el que el que va a estar atento a cualquier vulnerabilidad, a cualquier problema de seguridad que podamos tener sobre la plataforma y ellos harán la las correcciones necesarias para cada una de ellas.
+Teacher: ¿Listo?
+Teacher: ¿Queda claro?
+Teacher: Eh, plataforma como servicio.
+Student8: Sí,
+Teacher: Sí.
+Student8: profe,
+Teacher: Y entonces, ¿qué sería software como servicio?
+Student8: profe, tipo Spotify, algo así que ya le venden a la aplicación.
+Teacher: Exactamente.
+Student8: Alel.
+Teacher: Donde ellos lo que nos ofrecen es la solución completa.
+Teacher: Ahí ya no toda la parte de las características de la aplicación, las actualizaciones de la aplicación, eh los nuevos requisitos o las nuevas funcionalidades, de quién son parte o quién es el dueño de eso, el proveedor del servicio,
+Teacher: ¿cierto?
+Teacher: eh la gestión de los datos, almacenamiento, backups, etcétera, etcétera.
+Teacher: ¿Quién es el gestor?
+Teacher: El proveedor de servicio.
+Teacher: O sea, que nosotros como usuarios no tenemos ningún tipo de responsabilidad sobre la plataforma o sobre la solución que estamos obteniendo dentro de los servicios cloud.
+Teacher: ¿Listo?
+Teacher: ¿Queda claro los tres?
+Teacher: La diferencia entre los tres, entre más a la derecha estemos nosotros en software como servicio, tenemos menor responsabilidad, pero dependemos más del proveedor de servicio.
+Teacher: Cuando estamos en plataforma, nosotros somos los que montamos la aplicación, somos los que montamos los datos y hacemos mantenimiento a esa a esa, digámoslo así, esa parte de nuestro sistema.
+Teacher: Pero toda la infraestructura de manera general, la infraestructura, el sistema operativo y las herramientas de desarrollo son responsabilidad del proveedor.
+Teacher: Y en infraestructura tenemos mucha más responsabilidad nosotros porque el proveedor solamente nos da un coco vacío y nosotros tenemos que llenarlo con los con los recursos o con las herramientas que nosotros necesitamos para que nuestras aplicaciones y los datos puedan correr de
+Teacher: manera adecuada.
+Teacher: Y ya si nos vamos a un modelo de on premises y pensando en la nube, trabajando con un modelo de collocation, pues todo esto es nuestra responsabilidad.
+Teacher: Digamos que en Collocation realmente la única responsabilidad que podríamos nosotros decir que le estamos dando al proveedor o que el proveedor nos puede ofrecer es la redes cómo podemos nosotros acceder a nuestras máquinas.
+Teacher: Pero si yo quiero podría mandar un cable directo a pues un cable independiente, una conexión independiente al centro de datos solamente para que nosotros podamos gestionar todo todas las capas del de la computación.
+Teacher: ¿Listo?
+Teacher: Entonces, en Collocation lo más normal y lo más común es que el proveedor me entregue la red, pero si yo no quiero esa, sino que yo quiero contratar con telefónica o con x o y empresa, la conexión a a de red a nuestros servidores lo puedo hacer.
+Teacher: Sí, no hay ningún tipo de impedimento en ese tipo de de requisitos.
+Teacher: o si lo tengo local, si lo tengo en mi centro de datos, pues más responsabilidad o o más claro me queda de que yo soy el encargado de tener los routers, los switches, etcétera, etcétera, eh adecuados para para la solución tecnológica que nosotros estamos viendo.
+Teacher: ¿Listo?
+Teacher: Aquí para dar un poco más de claridad, hay un ejemplo, no sé si lo han visto antes, que se llama Pixa as a Service.
+Teacher: Listo.
+Teacher: Esto vamos a ver una imagen y por acá la cualquiera es.
+Teacher: Abrámosla en una nueva pestaña.
+Teacher: Espero que se vea bien.
+Teacher: No, está muy chiquita.
+Teacher: Está.
+Teacher: Esa sí está mejor.
+Teacher: Listo.
+Teacher: ¿Qué es Pixadas Service?
+Teacher: Simplemente es un símil, una forma de de hacer una adaptación o una comparación de cómo es el modelo cloud para cualquier tipo de servicio.
+00:30:00
+Teacher: En este caso vamos a hablar de cómo podemos nosotros hacer pizza como si fuera un servicio o cómo podemos ofrecer o adquirir pizza como servicio, ¿cierto?
+Teacher: Entonces, pensando en esta en esta similitud, en este en esta comparación que podemos hacerlo, eh podríamos decir que yo puedo tener un modelo de pizza tradicional.
+Teacher: Ah, aquí sí también lo tengo, ¿cierto?
+Teacher: En el modelo on premises.
+Teacher: ¿Qué es on premises?
+Teacher: Que lo tengo en la casa, ¿cierto?
+Teacher: Entonces, yo voy a hacer una pizza en la casa.
+Teacher: ¿Cuál es mi responsabilidad?
+Teacher: Debo tener el queso, debo tener el queso, debo tener los toppings, debo tener la salsa de tomate o la pasta de tomate.
+Teacher: Tengo de tener eh la masa de la pizza, por decirlo así.
+Teacher: Necesito el fuego, necesito la candela, bueno, el horno, necesito gas o electricidad, depende de cuál sea el que vayamos a utilizar.
+Teacher: Necesito las bebidas y necesito la mesa donde voy a cocinar, eh, donde voy a donde voy a comer o vamos a hacer nuestra disposición de la pizza, ¿cierto?
+Teacher: En el modelo on premises, o sea, todo lo hago yo, yo debo garantizar de que tengo todos los recursos necesarios para poderlo hacer.
+Teacher: ¿Qué pasa si yo no tengo queso?
+Teacher: ¿Qué pasa si yo no tengo topping?
+Teacher: pues no vamos a poder hacer nada, ¿cierto?
+Teacher: Entonces yo como dueño del del recurso, digámoslo así, tengo que tener todos los elementos necesarios para que para que el para que el servicio se pueda prestar.
+Teacher: ¿Listo?
+Teacher: Vamos a hablar, vamos a pensar en en el modelo de infraestructura.
+Teacher: Entonces, ¿qué sería la infraestructura en un modelo de infraestructura como servicio para Pixasa Service?
+Teacher: Entonces, todo lo que está en azul es lo es mi responsabilidad y lo que me da el proveedor es lo que está en verde.
+Teacher: ¿Listo?
+Teacher: Entonces, si yo tuviese un modelo de Pixasa a Service sin pensar en infraestructura, o sea, vamos a decir, si yo quiero hacer una pizza, pero quiero que me entreguen lo mínimo o lo básico para hacer la pizza, entonces yo voy al supermercado o voy a algún sitio y me compro una,
+Teacher: digámoslo así, una una serie de elementos.
+Teacher: Bueno, yo no lo voy a hacer.
+Teacher: Yo voy a pedir, voy a llamar a alguien que me traiga los elementos para la pizza.
+Teacher: Y entonces ahí es donde en ese contrato me van a traer el queso.
+Teacher: Uy, este verde ya no se ve ahí.
+Teacher: Eh, vamos a pasarlo a rojo.
+Teacher: Entonces voy a pedir aquí el queso.
+Teacher: Me van a traer el queso, me van a traer los topping, me van a traer la pasta de tomate y me van a traer la base de pizza.
+Teacher: Ojo, es un servicio donde yo quiero hacer una pizza, yo tengo el horno, yo tengo, o sea, yo tengo algunos recursos y yo me voy a ser responsable.
+Teacher: Yeah.
+Teacher: esos recursos no voy a pagar por el gas de la empresa, etcétera.
+Teacher: Entonces, ellos solamente me ofrecen los materiales y yo tengo que hacer el resto de las tareas.
+Teacher: ¿Listo?
+Teacher: Entonces, esto a pesar de que de que se vea como si fuera algo externo o algo que no fuera infraestructura, realmente sin esto yo no podría hacer una pizza, ¿cierto?
+Teacher: Esos son los recursos necesarios para poder hacer una pizza.
+Teacher: Esto son recursos genéricos.
+Teacher: Yo los puedo utilizar para hacer una pizza, para hacer pan o simplemente para hacer un huevo frito, pero esto es lo que realmente me da valor como empresa de pizza.
+Teacher: Yo le voy a mandar una caja con todos los ingredientes, usted la recibe y simplemente la prepara a su gusto, ¿listo?
+Teacher: O la trabaja a su gusto.
+Teacher: Entonces, el proveedor me entrega esto, que es lo que ellos son buenos, hacen una muy buena salsa, tienen unos topping frescos y y variados.
+Teacher: etcétera, y me mandan el queso suficiente para la pizza que yo estoy pidiendo y la base de pizza, que probablemente es lo que menos me gusta o lo o lo más complicado de hacer una pizza en casa.
+Teacher: ¿Cierto?
+Teacher: Como como la responsabilidad del proveedor es tan pequeña, es solamente de disponerme de los recursos básicos para yo hacer el el la pizza, podemos hacer el símil a que esto es como si fuera la infraestructura, ¿cierto?
+Teacher: Estos son los elementos base para poder construir la pizza.
+Teacher: Estos son los elementos que yo como usuario necesito tener para poder recibir esos materiales y poderlos transformar en lo que yo quiero.
+Teacher: ¿Listo?
+Teacher: Ahora, ¿qué sería plataforma como servicio?
+Teacher: Imaginémonos eso.
+Teacher: ¿Qué sería una llegar a plataforma como servicio?
+00:35:00
+Teacher: Ah, pues simplemente el proveedor va a tener el queso, va a tener el topping, va a tener la salsa de tomate, va a tener la base de la pizza, va a tener el fuego, va a tener la el horno y va a tener la electricidad.
+Teacher: ¿Listo?
+Teacher: Así que, ¿qué me entrega el el la empresa o qué me entrega la Sí, el el proveedor?
+Teacher: Básicamente me va a entregar la pizza hecha.
+Teacher: ¿Qué es parte o cuál es mi responsabilidad?
+Teacher: Comprar las bebidas y poner la mesa.
+Teacher: Entonces, ¿esto qué sería?
+Teacher: un Pixa delivery.
+Teacher: Cuando nosotros pedimos piz a domicilio es equivalente a como si estuviéramos hablando plataforma como servicio, porque el proveedor hace todo el trabajo, pero el dónde yo voy a disponer o dónde voy a comerme esa pizza es parte de mi
+Teacher: responsabilidad, es lo que y con qué la voy a acompañar es parte de mi responsabilidad.
+Teacher: ¿Listo?
+Teacher: Por último, estamos hablando de software como servicio.
+Teacher: ¿Y qué sería software como servicio?
+Teacher: En este caso, que el proveedor va a tener el queso, va a tener los toppings, va a tener la salsa, va a tener la la base de la pizza, el fuego, el horno, el gas, las bebidas y la mesa.
+Teacher: ¿Cuál es este escenario?
+Teacher: Fuimos al restaurante, ¿cierto?
+Teacher: nos fuimos al a al restaurante de pizza y vamos a comer ahí y el proveedor tiene que disponer de todos los recursos.
+Teacher: ¿Listo?
+Teacher: O sea, ellos deben tener las mesas.
+Teacher: Si no tienen mesas, ¿será que yo podré ir a comer allá o me están ofreciendo todos los todo el servicio completo?
+Teacher: Entonces, ahí es donde está como la diferencia.
+Teacher: A diferencia de la pizza, cuando el proveedor tiene más responsabilidades, el precio va subiendo, ¿cierto?
+Teacher: Vamos a tener que pagar más por ese recurso.
+Teacher: Si yo sol si solamente me manda los materiales, tendría un precio diferente así ya me la entrega cocinada y debería de tener un precio diferente si yo voy a utilizar el el local para para comerme la piza, ¿cierto?
+Teacher: Igual si yo voy a comprar las bebidas, ahí se me subió el precio de de la salida, ¿cierto?
+Teacher: De la comida de Pixar.
+Teacher: Pero sería más o menos lo que nosotros podríamos entender aquí.
+Teacher: Teniendo en cuenta este símil, es lo mismo que va a pasar con nuestro nuestra infraestructura, ¿cierto?
+Teacher: Nuestra plataforma y es el proveedor me da los elementos básicos para yo poder tener capacidad de cómputo, redes, almacenamiento, servidores y virtualización.
+Teacher: Y yo me voy a enfocar en tener toda o de gestionar toda la infraestructura para poder lograr el objetivo como tal, ¿cierto?
+Teacher: Va a tener que tener el horno, voy a tener que saber usar el horno, saber controlar cuánto fuego, cuánta candela necesitamos para hacer una buena pizza.
+Teacher: Voy a tener que eh comprar las bebidas, las bebidas que yo quiera o las bebidas que que quiera mi pareja, etcétera, bla bla bla.
+Teacher: y voy a disponer de la mesa.
+Teacher: Si no tengo la mesa, pues okay, nos la comemos en la mano, pero pero al final yo soy el que tengo que soy responsable de esos elementos.
+Teacher: en la plataforma como servicio ya ya tengo casi todo listo.
+Teacher: Yo solamente tengo que poner la disposición final, los elementos que yo quiero personalizar del servicio, lo que yo quiero hacer de diferente del servicio.
+Teacher: Y por último vamos a tener software como servicio y es donde estamos delegando toda la responsabilidad del proveedor que la mesa si me gusta o no me gusta me me puso en una mesa adecuada suficientemente grande o muy pequeña,
+Teacher: va a cambiar la percepción que nosotros vamos a tener del servicio, pero al final.
+Teacher: Al final es esa todas esas decisiones de cuál va a ser la mesa, de cuántas sillas, etcétera, etcétera, las va a proveer el la va a dar el proveedor.
+Teacher: Nosotros simplemente vamos a utilizar todos los recursos para poder satisfacer nuestra necesidad.
+Teacher: No sé si si el ejemplo ayudó a aclarar un poco la diferencia entre IAS, pas y SAS o quedaron peor.
+Student22: No creo
+Teacher: Ahora, de todas estas de todos estos proveedores o mejor dicho de todos estos tipos o modelos de de SAS, perdón, de cloud, pues existen diferentes proveedores que me van a entregar diferentes plataformas o diferentes herramientas para que nosotros trabajemos ahí.
+00:40:00
+Teacher: En la base de nuestra pirámide, en la base de los servicios en la nube, pues siempre vamos a tener la infraestructura como servicio.
+Teacher: ¿Listo?
+Teacher: Y dentro de la infraestructura como servicio, vamos a tener múltiples proveedores que nos pueden dar esa infraestructura, que nosotros vamos a poder adquirir todos esos centros de cómputo o elementos de o nodos de cómputo para poder montar nuestro sistema operativo,
+Teacher: nuestras herramientas, nuestras aplicaciones y los datos.
+Teacher: Entonces, eh servicios como Amazon EC2, el Google Computine, que es como el equivalente, eh Rackspace, Apache Cloud Star, Soft Layer, Open Stack, Asure, el Asure Computra aquí dentro de este modelo.
+Teacher: Entonces son esos estos son proveedores, son empresas que me ofrecen servicios como infraestructura, como servicio.
+Teacher: Listo.
+Teacher: O sea, que con cualquiera de ellos puedo suplir una necesidad de infraestructura.
+Teacher: Ahora, eh, Stora Sasa Service, almacenamiento como servicio.
+Teacher: Entonces, digamos que está un poquito por encima de infraestructura, porque no es que nosotros podamos montar nuestras aplicaciones, pero es un servicio donde nosotros vamos a poder guardar información.
+Teacher: O sea, el recurso que vamos a tener es una infraestructura de almacenamiento y ahí vamos a tener el OneDrive, el Sadara, Storage, el Cloud, el Drive, el S3, el Drogbost, iCloud, el Google Cloud Storage, Cosi.
+Teacher: son servicios o son aplicaciones o como lo quieran ver ustedes que cumplen como con el objetivo de estoras service.
+Teacher: No son aplicaciones funcionales que van a resolver los problemas de nuestra empresa, pero sí nos van a suplir la perdón, la necesidad de almacenar información.
+Teacher: plataforma como servicio.
+Teacher: Entonces, ¿dónde podemos nosotros montar aplicaciones o o donde podemos tener una un ambiente de desarrollo, un ambiente donde podamos montar nuestras aplicaciones eh como tal?
+Teacher: Entonces, aquí está Microsoft Assure, Open Pass, Open Pass Suite.
+Teacher: Este Sales Force Platform nos da una plataforma para que nosotros montemos el Appen de Google, el OpenChief Origin, el Cloud Foundarry en AWS.
+Teacher: Muchos de los servicios de AWS están basados en este en este modelo de plataforma, ¿cierto?
+Teacher: donde ellos ya ofrecen ofrecen la plataforma y yo simplemente monto ahí las aplicaciones eh como tal.
+Teacher: Listo.
+Teacher: Eh, database a service cloud storage de este cloud storage creo que es el de Google Dynamo DV en AWS CB, Cassandra eh c*** Rose, Oracle Data Cloud, SQL Assure.
+Teacher: Aquí también entra Mongoatlas y herramientas adicionales que también no se generan almacenamiento en la nube, ¿cierto?
+Teacher: Entonces, eh en AWS hay una base de datos de grafos que se llama, ay, se me fue el nombre, lo tenía en la lo tenía cuando yo iba a empezar a hablar.
+Teacher: Pero entonces cada vez que que necesitemos soluciones de almacenamiento de base de datos, ya no solamente guardar archivos, sino que ya tengan un gestor de de información, pues Neptun.
+Teacher: Gracias, [estudiante].
+Teacher: Se llama Neptun.
+Teacher: Sí, señor.
+Teacher: Este eh tenemos un servicio que está por encima de la plataforma que se llama database asa service.
+Teacher: Listo, bases de datos como servicio y podemos adquirir cualquiera de estos recursos en la nube.
+Teacher: Function as service.
+Teacher: Entonces está el cloud functions, las lambdas, eh ay, el open wis este se me olvidó.
+Teacher: ¿Cómo es que se llama?
+Teacher: ¿De qué empresa es?
+Teacher: Y este rayito creo que ya no existe, pero tenemos diferentes proveedores o diferentes herramientas con las cuales nosotros eh podemos dotar este estas funciones como servicio que ya tienen que ver mucho más o se parecen mucho más a la plataforma,
+Teacher: pero en un modelo distinto, un modelo de de computación distinta a la que nosotros normalmente usamos como plataforma.
+Teacher: plataforma son servidores que están siempre disponibles y que yo monto las aplicaciones aquí.
+Teacher: Digamos que este modelo no necesita servidor o los servidores no necesariamente van a estar prendidos todo el tiempo.
+Teacher: Y por último, y digamos que en la en la cúspide de nuestro pirámide vamos a tener el software como servicio y es muy todas esas aplicaciones que nosotros conocemos y que podemos adquirir o que podemos nosotros comprar.
+00:45:00
+Teacher: Yeah.
+Teacher: en en internet.
+Teacher: Entonces, por ejemplo, el Office 365, ¿eso qué es?
+Teacher: Es una aplicación, pero es una aplicación que está corriendo en la nube, que yo puedo acceder desde diferentes lugares, diferentes recursos.
+Teacher: Puedo hacerlo desde mi máquina local, lo puedo hacer desde el celular, etcétera, ¿cierto?
+Teacher: Entonces, esto es un software y va a estar funcionando como cualquier tipo de software que nosotros eh trabajemos, pero yo estoy pagando, yo estoy llegando a él por la nube, no porque compramos el software y lo instalamos en mi máquina,
+Teacher: sino que lo tengo en la nube.
+Teacher: Esta herramienta SLAC.
+Teacher: SLC, a pesar de que muchos de nosotros tenemos instalado Slack como la herramienta de comunicación empresarial, etcétera, Slack es una herramienta en la en línea, es una herramienta en la nube, ¿cierto?
+Teacher: Solamente que tiene un una aplicación local para que sea más fácil y más intuitivo para la gente eh estarla trabajando, pero Slack puede funcionar desde el navegador sin ningún problema.
+Teacher: Sendex, la plataforma para manejo de tickets.
+Teacher: Saleford, la plataforma de de agua de de venta, ¿cierto?
+Teacher: CRM y gestión de clientes.
+Teacher: Sugar CRM, una versión open source eh de la gestión de clientes.
+Teacher: Aquí está Gsite, pero ahorita se llama Google Wordspace, pero es todas esas todas las herramientas en las cuales yo puedo ir gestionando mi aplicación, ¿cierto?
+Teacher: Todas estas son distintos proveedores, distintas empresas, distintas soluciones que nosotros normalmente llamamos cloud computing.
+Teacher: ¿Listo?
+Teacher: Pero tenemos que tener en cuenta de que en cloud computing existen diferentes tipos de modelos o diferentes modelos de computación.
+Teacher: los que más vamos a o digámoslo así los grupos principales, infraestructura, plataforma y software como servicio.
+Teacher: Yo podría decir que todos estos los podríamos ver como un ejemplo de software como servicio, o sea, Drive.
+Teacher: Drive es un software que yo no puedo gestionar, yo no puedo cambiar las funcionalidades, no le puedo agregar más eh funcionalidades ni nada, pero lo tengo en la nube, ¿cierto?
+Teacher: O sea, yo puedo entrar a al a My Drive y hacer pues la gestión de de los archivos que tengo ahí almacenados.
+Teacher: Y existen muchas plataformas que hacen eso, no necesariamente tienen que tener un cliente de escritorio para poder funcionar.
+Teacher: Vamos bien hasta ahí.
+Teacher: Yo espero que sí.
+Teacher: Mobile Computing.
+Teacher: Microsoft Asure sería un ejemplo de paz.
+Teacher: Sí, Microsoft Assure.
+Teacher: Y eso que no todos los servicios.
+Teacher: Listo, porque en todas las nubes nos vamos a dar cuenta de que tienen eh aplicaciones que cumplen con alguna de estos con alguno de estos niveles, digámoslo así.
+Teacher: ¿Listo?
+Teacher: En en A en en Asure, en Asure tenemos plataforma como servicio.
+Teacher: Sí, vamos a tener varias herramientas para poder montar solo las aplicaciones, pero también me da infraestructura.
+Teacher: Mira que ellos tienen aquí, aquí creo que se llama Asure Compute.
+Teacher: Sí. Entonces, yo puedo comprar una máquina o disponer de una máquina virtual.
+Teacher: y solamente me lo entregan con Windows o con Linux y yo empiezo a gestionarlo desde recién instalado, por decirlo así.
+Teacher: Entonces, Asure me entrega herramientas IAS, Asure me entrega herramientas PAS, Asure me entrega herramientas eh herramientas eh function service ASON me entrega aplicaciones como servicio.
+Teacher: ¿Listo?
+Teacher: Y bases de datos como servicio también tiene ASON.
+Teacher: Entonces, digamos que las nubes en general tienen tienen una combinación de todos estos servicios.
+Teacher: No es que los tengan todos ni todos tengan todos, sino que entre más completa o más grande sea la plataforma Nube, pues va a tener más o menos servicios como tal.
+Teacher: Eh, un hay una, digámoslo así, hay una plataforma nube que es muy conocida, pero no sé qué tanto las conozcan ustedes, que se llama Digital Ocean.
+Teacher: ¿Han escuchado digital o no?
+Student22: Sí,
+Teacher: ¿Qué servicios en la nube me ofrece Digital
+Student5: No.
+Teacher: Ocean?
+Student22: pues yo he utilizado los BDS.
+Teacher: Las máquinas virtuales, ¿cierto?
+Student22: Sí.
+Teacher: Pero mira que mira que ellos ofrecen compute, o sea, las máquinas virtuales, pero me las ofrecen en droplets, o sea, las máquinas virtuales, ellos lo llaman droplets.
+00:50:00
+Teacher: Puedo montar en cubernetes, puedo tener una plataforma de para crear aplicaciones, o sea, este sería como una especie de platformas a service, functions para toda la parte de funciones como servicio, eh hosting, un hosting normal, o sea,
+Teacher: para almacenar HTML, por decirlo así.
+Teacher: Eh, bueno, containers, herramientas para hacer backups, marketplace, snapshots, bueno, ahí hay de todo, bases de datos.
+Teacher: Entonces, mire que a pesar de que no se habla mucho de todas las nubes como tal, muchos de esos proveedores de servicios me ofrecen diferentes servicios que resuelven diferentes problemas.
+Teacher: ¿Listo?
+Teacher: Entonces, eh aquí ya tienen, mire, aquí tienen un un Elastic Search o un Open Search, perdón, Mongo Div, tienen My Sequel, Postgress, Cafka, o sea, hay diferentes servicios que que yo voy a poder utilizar o voy a poder adquirir a partir de
+Teacher: un contrato con esas empresas.
+Teacher: Yeah.
+Teacher: y y vamos a poder dar solución de cómputo sin necesidad de comprarlo eh en house, ¿cierto?
+Teacher: O en premises.
+Teacher: Bien, vámonos.
+Teacher: Aquí vamos con el otro modelo de computación que que ahora vamos a decir que es muy conocido, pero que desde sus inicios, cuando se empezó a hablar de la computación como tal, se veía como algo utópico,
+Teacher: algo que probablemente en algún momento se llegaría a dar por el hecho de que de la necesidad de tener centros de cómputo de equipos de cómputo en en lugares no fijos, digámoslo así.
+Teacher: Entonces, al principio se estaba hablando de computación móvil cuando empezaron a aparecer los laptops o la o los computadores, eh, no los personales, porque el computador personal era el que teníamos en la casa o en la oficina, sino el computador móvil,
+Teacher: el laptop que nosotros vamos a poder llevar de entre la casa, la oficina, la universidad, etcétera, etcétera.
+Teacher: ¿Cierto?
+Teacher: Ahí es cuando empezaron a hablar de lo que era en la computación móvil y era cómo podríamos nosotros aprovechar esos recursos de esas máquinas en pro de la computación, ¿cierto?
+Teacher: Porque esos recursos son recursos que no son fijos, no son estáticos, no están en el mismo punto de la red, son volátiles, o sea, entran y salen de la red de una manera dinámica, etcétera, etcétera, etcétera.
+Teacher: Entonces es esos elementos o poder incluir estos elementos dentro de nuestro sistema era un era un reto o era una necesidad que veíamos hace tiempo que era importante que nosotros tuviéramos en cuenta.
+Teacher: Pero ahora esos dispositivos móviles pues pasaron de ser solamente las laptops, que eran las que tenían procesador, memoria y podíamos ejecutar aplicaciones en un equipo móvil a lo que hoy conocemos como celulares, ¿cierto?
+Teacher: O sí, asistentes personales, tablet y celulares.
+Teacher: Eh, ¿por qué?
+Teacher: Porque esos dispositivos ahora se han convertido en herramientas de trabajo del día a día.
+Teacher: ¿Listo?
+Teacher: y y herramientas de trabajo porque tienen los mismos recursos o unos recursos equivalentes a lo que tenemos nosotros en las laptops, pero en pequeños, digámoslo así, en una pequeña escala.
+Teacher: ¿Listo?
+Teacher: Entonces, básicamente decíamos de que la computación distribuida era un software, un sistema distribuido que incluye dispositivos portátiles con acceso remoto.
+Teacher: Esto del acceso remoto es el hecho de que no siempre están en un solo lugar y teníamos que intercambiar información con esos dispositivos porque normalmente no van a estar corriendo los servicios no van a estar corriendo en la máquina móvil,
+Teacher: sino que van a estar en un equipo remoto.
+Teacher: Sure.
+Teacher: Vamos a tener conectados de forma inalámbrica, eh, formando redes adoc.
+Teacher: ¿Qué es esto?
+Teacher: ¿Han escuchado esta palabra ADOC o qué entienden ustedes por una red ADOC?
+Teacher: Cuando nosotros diseñamos redes, no sé si ya vieron Cisco uno, pues comunicaciones dos o no, pero cuando yo estoy definiendo una red, normalmente yo tengo que definir la topología y dependiendo de la topología, yo voy a elegir cuáles son los dispositivos o las herramientas o cómo se van a comunicar los
+Teacher: diferentes componentes, ¿cierto?
+Teacher: ¿Cuál es el camino que van a tomar eh los eh los mensajes para hablar entre los distintos componentes?
+Teacher: Una red ADOC es una red que se va creando, una topología que se va creando, digámoslo así, al vuelo, se va creando a medida de que se va necesitando, ¿listo?
+00:55:00
+Teacher: no tiene una topología fija, sino que eh digámoslo así se va construyendo, se va formando a partir de entradas y salidas de dispositivos en en tiempo, digámoslo así, en tiempo real o o al instante.
+Teacher: Entonces, una esa es una de las características que tienen los dispositivos móviles y es que no tienen una topología fija porque yo puedo estar conectado a un router, a un switch, a un un access point en un momento y al instante siguiente puedo estar conectado
+Teacher: a otro access point, ¿cierto?
+Teacher: a otro punto de acceso y eso hace de que la red o la forma como yo voy a planear o o guiar el eh la comunicación dentro de mi sistema sea diferente, sea un poco más compleja.
+Teacher: ¿Listo?
+Teacher: Y las redes en la computación móvil son mucho más complejas, son mucho más limitadas, vamos a decirlo así.
+Teacher: ¿Listo?
+Teacher: Eh, tienen limitaciones de recursos del dispositivo.
+Teacher: Ya no es tan así porque ya podemos saber de que un dispositivo móvil casi que tiene los mismos recursos que un computador o que una tablet o o perdón que una laptop, ¿cierto?
+Teacher: Ya tenemos eh celulares con ocho procesadores, ocho corees, 12 16 GB en RAM.
+Teacher: Eh, tienen almacenamiento de un tera, eh tienen, bueno, tienen de todo para poder procesar cualquier tipo de sistema en ese dispositivo.
+Teacher: ¿Cuál es el limitante más grande que tienen estos dispositivos?
+Teacher: Generalmente la batería, ¿cierto?
+Teacher: Que es el limitante principal de muchos de estos dispositivos, pero en términos generales ya tenemos unos recursos de cómputo bastante potentes en en estos dispositivos móviles, tanto en laptops, tablets y celulares, ¿cierto?
+Teacher: El control de consumo de energía, pues es el el talón de aquiles de estos dispositivos, porque si yo pongo tareas que necesitan mucho procesamiento, que hacen que el procesador funcione demasiado, pues va a consumir muy rápido la batería y entonces el mi sistema va a estar va a tener una poca
+Teacher: disponibilidad como tal.
+Teacher: El ancho de banda de la comunicación es variable y tiene que ver con usar las redes móviles.
+Teacher: Son redes, ¿no?
+Teacher: Eh, rendimiento.
+Teacher: Hola, ¿me escuchan?
+Teacher: Por aquí me dijo que se perdió la conexión.
+Student8: Profe, se cayó un momento.
+Student8: Acabo de volver a escucharlo.
+Teacher: Ah, bueno, dale.
+Teacher: Eh, lo que estaba hablando es de que en estos dispositivos móviles el ancho de banda, ¿cierto?, No es
+Teacher: es diferente a lo que hacen como tal, sino de campos electromagnéticos, de información que se está cruzando entre ellas.
+Teacher: Entonces, vamos a a tener
+Student8: No sé si fui solo yo otra vez, profe,
+Student22: No, sí,
+Student8: pero está caído.
+Student22: se están cortando.
+Student8: Baila
+Teacher: algunas limitantes o algunas eh
+Student8: profe, se cortó otra vez.
+Student8: Literalmente cuando empezó a hablar de lo del ancho de banda se cayó.
+Teacher: del ancho de banda.
+Student22: Ironi.
+Teacher: Okay,
+Student22: Yeah.
+Teacher: entonces volvamos a hablar, vuelvo a hablar del ancho de banda.
+Teacher: Entonces el ancho de banda, ¿cierto?
+Teacher: En esta en esto computación móvil, pues es nuestro talón de aquiles porque sabemos de que todos estos dispositivos móviles hoy en día su canal de comunicación principal es, ¿cuál?
+Teacher: Es el aire, ¿cierto?
+Teacher: es utilizar las redes inalámbricas.
+Teacher: Y las redes inalámbricas tienen grandes dificultades por el ancho de banda.
+Teacher: Primero, son más lentas en transmitir información y segundo, son muy susceptibles a a la corrupción o al ruido o a la pérdida de información en la red, ¿cierto?
+Teacher: Porque existe ruido donde el ruido no es la bulla que hacemos eh las personas o el o qué tan ruidoso sea el sitio donde estamos, sino los campos electromagnéticos y y las y los distintas comunicaciones en distintas eh longitudes de onda que vamos teniendo nosotros en nuestro ambiente,
+Teacher: ¿cierto?
+Teacher: Entonces, eh el ancho de banda de de no hay una garantía de que la transmisión siempre vaya a ir a la misma velocidad, así estemos en un mismo punto eh conectados a nuestro sistema.
+01:00:00
+Teacher: Entonces, ese eh eso también es como uno de esos retos que se tienen que cumplir o que se tienen eh atacar cuando estamos hablando de computación móvil, el la posibilidad de trabajar en modo desconectado, ¿cierto?
+Teacher: Yo puedo seguir trabajando, yo podría llegar a seguir trabajando en el sistema aún cuando no tenga red o aún cuando no esté conectado a la red, ¿cierto?
+Teacher: ¿Por qué?
+Teacher: Porque yo tengo recursos locales, tengo recursos disponibles de manera local para seguir trabajando, para poder seguir haciendo algunas cosas y tiene mayores amenazas a la seguridad y privacidad porque pues estamos descargando, estamos transmitiendo información privada por canales públicos,
+Teacher: ¿cierto?
+Teacher: el canal, digámoslo así, el canal de datos que tenemos, que el el el aire puede ser susceptible a violaciones de seguridad o captura de información de lo que está pasando por la red, ¿cierto?
+Teacher: Entonces, eh la computación móvil pues es, a pesar de que es uno de esos recursos que tenemos nosotros hoy al día, pero tiene una serie de retos que debemos ir atendiendo o ir atacando eh al tomar la decisión de utilizar la computación móvil.
+Teacher: Listo.
+Teacher: En computación móvil vamos a hablar de todo tipo de computación, como les decía, ¿cierto?
+Teacher: podemos hablar de computación en laptops, o sea, utilizando eh equipos portátiles, podemos utilizar eh lo que llamamos unos eh asistentes inteligentes o PDAs.
+Teacher: Ya no son tan comunes porque pues las PDA en su momento fueron la solución porque tenían la posibilidad de hacer conexiones utilizando radiofrecuencia.
+Teacher: Ahora ya digámoslo así que el internet móvil o las redes celulares pues nos han dotado de una capacidad de de transmisión mucho más alta, pero hay algunas empresas que todavía siguen trabajando con con PDA o con equipos eh
+Teacher: asistentes personales, digámoslo así, que son unos computadores en forma de teléfonos o radios o algo así por el estilo, donde van a estar eh pasando información entre entre el dispositivo y y la red de la empresa.
+Teacher: El las tablets y celulares utilizando red pública o privada también hacemos exactamente lo mismo.
+Teacher: Si tenemos el trabajamos dentro de la empresa con una tablet, pues es computación móvil, vamos a estar eh utilizándola como un elemento de entrada o de salida de nuestro sistema.
+Teacher: Incluso vamos a hacer algún tipo de de procesamiento, procesamiento dentro de cada uno de esos nodos.
+Teacher: Vamos bien hasta ahí o no.
+Teacher: Y claro,
+Student22: Sí. Yeah.
+Teacher: ese modelo de computación,
+Student8: Sí, profe.
+Student8: M.
+Teacher: la computación ubicua.
+Teacher: Entonces aquí ya tiene que ver con tener computación o o computadores en cualquier lugar.
+Teacher: ya no es una herramienta que utiliza el humano para acceder o para interactuar con el sistema, sino que son dispositivos que son capaces de interactuar con el sistema.
+Teacher: Ahí hay una, digámoslo así, una línea de diferencia entre mobile yquitos.
+Teacher: Eh, y tiene que ver es con la autonomía, ¿cierto?
+Teacher: En mobile nosotros vamos a hablar de que el sistema no está en funcionamiento mientras el usuario no lo esté usando.
+Teacher: Y voy a colocar unas comillas muy grandes y es porque el sistema, todo lo las aplicaciones que están corriendo en nuestro celular pueden seguir funcionando.
+Teacher: Si no, no podríamos recibir notificaciones, no podríamos eh darnos cuenta de que nos llegó un correo, etcétera.
+Teacher: Pero en términos generales, el sistema no hace nada.
+Teacher: O sea, el dispositivo no hace nada.
+Teacher: No va a poder descargar un vídeo, no va a poder eh descargar el correo hasta que el usuario no interactúe con él, ¿cierto?
+Teacher: No va a poder enviar información hasta que el usuario no interactúe con él.
+Teacher: Eh, en cambio, la computación ubicua hace parte de del resto de elementos de cómputo, dispositivos de cómputo que sí son capaces de estar enviando y recibiendo información sin necesidad de la interacción humana.
+Teacher: ¿Listo?
+Teacher: No quiere decir de que trabajen de manera autónoma, sino que eh no tiene que haber un humano que diga enviar y otro que diga recibir.
+Teacher: Sí, ellos van a estar enviando y recibiendo información eh de manera constante.
+Teacher: ¿Listo?
+Teacher: Y generalmente vamos a hablar de elementos o dispositivos que ya tienen dotada la capacidad de gestionar su, ¿cómo lo digo?
+Teacher: De gestionar los eh la información que está viajando entre ellos.
+Teacher: Entonces ahí vamos a estar hablando de eh dispositivos weable.
+01:05:00
+Teacher: Hola, buenas.
+Teacher: Hola.
+Teacher: Hola.
+Teacher: Yo no sé,
+Student5: Listo, profe.
+Student5: Volvió.
+Teacher: no sé si es una.
+Teacher: Espérame un momentico.
+Teacher: Intento hacer algo aquí.
+Teacher: Cambio de red.
+Teacher: Hola, ¿me escuchan?
+Student22: Sí, sí.
+Student22: M. Yeah.
+Teacher: Sí, es que no sé,
+Student5: Ah.
+Student5: M.
+Teacher: hoy ha estado molestando la red bastante en la casa, entonces no sé si es que estuvieron trabajando y todavía nos están haciendo daño, pero bueno, aquí Yeah.
+Teacher: Eh, entonces en computación ubicua vamos a estar hablando de dispositivos que van a estar intercambiando información, ¿cierto?
+Teacher: Entonces, ahí es donde van a entrar eh dispositivos como los relojes inteligentes que generalmente pueden estarse pueden estar enviando información del estado de ánimo, de la presión de la de la presión, de la oxigenación que tiene el cuerpo,
+Teacher: la ubicación en la que se encuentran.
+Teacher: O sea, son dispositivos que pueden estar enviando o recibiendo información de manera autónoma.
+Teacher: ¿Listo?
+Teacher: Eh, hay algunos otros dispositivos que no necesariamente los tienen encima, pero pueden ser, por ejemplo, eh esos tenis o sí, tenis que están utilizando algunas empresas, algunos eh no son proveedores,
+Teacher: estos son eh marcas que pueden monitorear la presión, como caminan, como corren, eh evaluar eh la potencia al momento de saltar, al cómo están cayendo, o sea,
+Teacher: que son capaces de capturar información y esa información la envían a un centro de datos donde que pueda ser procesada y que podamos tomar decisiones a partir de ello, ¿cierto?
+Teacher: En general vamos a estar hablando de que la computación ubicua hace hace referencia a todos esos elementos que tenemos o que están en el ambiente y que nosotros podemos interactuar con ellos o que ellos van a interactuar o van a tomar decisiones a partir
+Teacher: de lo que ven de nosotros.
+Teacher: Y y dentro de este mundo de los WAS, perdón, de la de la computación ubicua, pues está esos conceptos que venimos hablando desde hace unos años de las casas inteligentes o empresas inteligentes, ¿cierto?
+Teacher: que generalmente hablan de gestión de sensores, gestión de eh, no sé, de iluminación, cámaras, todo eso que siempre está trabajando y que pueden tomar decisiones y que yo puedo tomar decisiones a partir de de los datos que se puedan capturar por estos dispositivos.
+Teacher: ¿Listo?
+Teacher: Entonces ahí es donde nosotros eh podemos estar inmersos o podríamos nosotros llegar a decir que con la computación ubicua nosotros podríamos llegar a estar encerrados o digámoslo así estar dentro de un ambiente en el cual el ambiente
+Teacher: se se adecúa o trabaja con nosotros o puede ser que nosotros seamos los que estemos interactuando con el ambiente y ahí es donde hablamos de computación con testware.
+Teacher: O sea, comportamiento que depende del ambiente o del contexto.
+Teacher: Y ahí es donde entran eh ejemplos como el hecho de que a partir de que yo voy pasando, yo voy llegando a la oficina, tienen unas cámaras de reconexión biométrica, eh miran mi cara y entonces me habilitan la posibilidad de entrar a a la oficina
+Teacher: Yeah.
+Teacher: Y a medida que voy pasando por los pasillos, se van prendiendo los pasillos.
+Teacher: Incluso si yo quiero abrir una una puerta o una oficina, pues dependiendo de los roles, permisos que yo tenga, eh puedo o no puedo acceder a a a x o oficinas o x o y puertas, cosas así por el estilo,
+Teacher: hacen parte de ese modelo de de ubicus computing, ¿cierto?
+Teacher: Entonces, si soy yo el que estoy interactuando o son cosas que están interactuando con el sistema, pues vamos a hablar de que tenemos internet de las cosas, que es de acuerdo a los elementos cotidianos, neveras, eh no sé,
+Teacher: neveras, lavadoras, eh microondas, etcétera.
+Teacher: Eh, son todos esos elementos que pueden estar intercambiando información, sean conmigo o sean con un sistema que se comunique conmigo o sean entre ellos, ¿cierto?
+01:10:00
+Teacher: ellos puedan tomar algún tipo de decisión o los elementos que tienen que ver con el contexto, dónde estoy, eh qué permisos tengo, quién soy, etcétera, y que el sistema es capaz de reconocerme y tomar decisiones a partir de ello.
+Teacher: Un ejemplo, un ejemplo de ubicus computing que tengo yo así y es que en algún momento en un sitio turístico, digamos, eh ofrecier ofrecían el servicio de que yo, por ejemplo, salía,
+Teacher: yo entraba al a la empresa, ve, al hotel, en el hotel me daban una llave, un dispositivo de identificación y yo podía salir Eh, yo podía salir del del hotel, irme a los sitios turísticos, estar tomando fotos,
+Teacher: estar haciendo pues distintas cosas durante el día.
+Teacher: Y al final del día, cuando llegué al hotel, nos me ofrecían la posibilidad de imprimir las fotos que había tomado eh en ese en el recorrido que que hicimos, ¿cierto?
+Teacher: Y entonces, ¿cómo sabían de que yo era un cliente y que yo podía imprimir las fotos?
+Teacher: Simplemente porque el dispositivo que me habían entregado tenía la posibilidad, tenía la capacidad de identificar qué fue lo que estuvimos haciendo, dónde estuvimos y por ende podría incluso conectarse a mi celular y descargar las fotos y poderlas mandar a imprimir dentro de los recursos de cómputo que tenía la el
+Teacher: hotel.
+Teacher: No tenía yo que conectarme, no tenía yo que mandar la tarea, simplemente me pidió que si que si quería eh hacer ese tipo de de acción o ese tipo de de recurso y simplemente lo iba a hacer por mí.
+Teacher: ¿Listo?
+Teacher: Eh, también existen otros, hay un ejemplo de el del tema de de la hay una ciudad, un país, una isla, no estoy muy seguro, donde todo es a partir de de dispositivos inteligentes, no son inteligentes,
+Teacher: sino que pues pueden tomar decisiones a partir Yeah.
+Teacher: el contexto donde nosotros estamos.
+Teacher: Entonces ahí también entra este contest contest computing y el internet de las cosas, pues sí, son los ejemplos ya más cotidianos que nosotros tenemos.
+Teacher: Eh, el carro que me pide que lo cargue, me puede mandar una notificación al al celular o pueden notificar que lo están robando, etcétera, cosas así por el estilo.
+Teacher: el el la nevera que me puede recomendar comidas o qué recetas hacer con los recursos que tenemos dentro de la nevera, que es capaz de contar y gestionar la el la vida útil de los elementos que yo meta en la nevera,
+Teacher: que tiene la capacidad de detectar cuándo yo ingresé un alimento y cuántos días lleva ese alimento ahí y por lo tanto pues cuál sería su vida útil o cuándo sería su fecha de vencimiento.
+Teacher: Entonces, cosas así por el estilo que que ya son elementos que pueden tomar decisiones o que pueden eh ser un poco más razonables o que pueden razonar a partir de la información que tienen y nos pueden eh comunicar.
+Teacher: Puede que sea la comunicación con nosotros o con otros sistemas que queramos nosotros gestionar.
+Teacher: Listo.
+Teacher: Aquí hay un ejemplito de Filmora para que vean algo de lo que tiene que ver con con esto de la computación.
+Teacher: Eh, el otro modelo, computación en en el borde, computación en la niebla.
+Teacher: ¿Qué es esto de la computación en el borde o en la niebla?
+Teacher: Y es, digámoslo así, una extensión de lo que es el cloud computing.
+Teacher: ¿Listo?
+Teacher: Porque nosotros sabemos que el cloud es allá en la nube donde están los servidores, los centros de datos, está todo eh guardado en un recurso que tiene un proveedor y que nosotros pues vamos a a consumir desde ese lugar,
+Teacher: ¿cierto?
+Teacher: Pero no siempre necesitamos de que todo esté corriendo de manera centralizada, ¿cierto?
+Teacher: No, no siempre es útil para nosotros de que todas las peticiones vayan a un solo sitio.
+Teacher: Y ahí es donde entra este modelo de computación Edge y F. Esto no es muy no es muy antiguo.
+Teacher: Este realmente es un un problema o un modelo de computación muy nueva, pero que ayuda a a bajar la latencia, a reducir la latencia en la computación que nosotros estamos haciendo.
+Teacher: Ahora, ¿qué es la latencia?
+Teacher: ¿Quién me dice qué es latencia?
+Teacher: No sé si ya habíamos hablado de
+Student8: Profe, era el tiempo en como entre que yo mando un mensaje,
+Teacher: eso.
+Student8: por ejemplo, y ese mensaje llega al otro lado, se procesa y todo eso.
+Teacher: ¿Sabes?
+Teacher: El tiempo, el delta time, el delta es la diferencia de tiempo que vamos a tener enviar un mensaje y recibir la respuesta,
+01:15:00
+Student8: Sí.
+Teacher: ¿cierto?
+Teacher: que incluye transporte, procesamiento y transporte.
+Teacher: porte de vuelta.
+Teacher: Pues si ustedes se han dado cuenta, muchos de las soluciones NUVE se encuentran en centros de datos que están muy alejados de nosotros, ¿cierto?
+Teacher: Eh, si pensamos en Google, en Asure y en AWS, muchos de los recursos que vamos a tener nosotros disponibles están en Estados Unidos, por ejemplo.
+Teacher: Y si voy a montar una aplicación y voy a poner una aplicación, la monto en Estados Unidos.
+Teacher: Y la pregunta es, ¿y qué pasa si mis clientes están en la Patagonia?
+Teacher: ¿Qué pasa si mis clientes se encuentran en España?
+Teacher: ¿Qué pasa si mis clientes se encuentran en en Australia o en Nueva Zelanda?
+Teacher: ¿Cierto?
+Teacher: Entre más lejos estemos nosotros o entre más lejos encuentre el cliente de donde nosotros estamos procesando la información, pues vamos a tener una mayor latencia, ¿cierto?
+Teacher: Y eso hace de que muchos de nuestros servicios pues dejen de ser funcionales o útiles simplemente por el hecho de que la gente no se soporta o no aguanta o no puede esperar el tiempo de espera que que ofrecen esos centros de datos,
+Teacher: ¿cierto?
+Teacher: Entonces ahí entra una un digámoslo así una un ejemplo como para aclarar eso y es no sé si ustedes han visto la diferencia entre abrir una película en Netflix y abrir una película en una plataforma como
+Teacher: como Amazon Amazon Prime o con Disney.
+Teacher: Si no tienen Amazon, pues con Disney.
+Teacher: ¿Ustedes han visto la diferencia de la experiencia de usuario
+Student5: Claro, la de Claro es muy mala.
+Teacher: o la de Cal?
+Student5: Claro, superlenta.
+Teacher: La Claro Mobile.
+Teacher: Sí, Claro Mobile.
+Teacher: Eh, Claro, claro vídeo es una porquería.
+Teacher: Perdón, no es muy buena, cierto, pero tiene que ver con eso, ¿cierto?
+Teacher: Y es de dónde van a traer la información y cómo traen la información.
+Teacher: Entonces, en el F computing o en el Edge o F computing es un, digámoslo así, es un modelo de computación donde ya no voy a estar procesando todo en la nube, en el centro de datos donde está, sino que lo voy a estar procesando en un lugar más cercano al usuario,
+Teacher: más cercano al cliente.
+Teacher: ¿En qué parte?
+Teacher: No sé, puede ser muy cerca de la nube muy cerca del usuario.
+Teacher: Por eso se llama el FOC.
+Teacher: ¿Que qué es FOC?
+Teacher: La niebla, ¿cierto?
+Teacher: es lo que está entre la tierra y la nube, es la niebla, la neblina.
+Teacher: Entonces, en alguno en algún lugar de la neblina es donde nosotros vamos a estar procesando o preprocesando la información que tiene que gestionar el usuario, bajando los tiempos de el rendimiento, la latencia y aumentando la escalabilidad de que yo pueda tener cada vez más usuarios,
+Teacher: así tenga mi centro de datos en Estados Unidos, yo pueda tener usuarios en diferentes lugares del mundo con unos tiempos de respuesta mucho más adecuados a a lo que ellos están esperando, ¿cierto?
+Teacher: Entonces ese es un modelo de computación nueva, necesita unos recursos distintos, unos recursos un poco más eh, digámoslo así sofisticados y más cercanos al usuario.
+Teacher: ¿Listo?
+Teacher: Entonces eh por ejemplo, aquí dice Netflix ubican nodos con contenido más frecuentes en sus ISPs, ¿cierto?
+Teacher: Entonces, Netflix, eh todos saben de que el contenido de Netflix no es el mismo que tenemos nosotros acá en Colombia al que ven en Estados Unidos, ¿cierto?
+Teacher: Entonces, quiere decir de que Netflix de alguna manera ha segmentado cuáles son las películas, cuáles son las series más comunes y me las deja más cercanas de tal manera que si hay una alta demanda de recursos y estamos viendo,
+Teacher: no sé, la serie de moda en Colombia, en Brasil y en Argentina, pues va a colocar ese contenido, esos datos que necesitan procesarse o que necesitan enviarse a cada uno de esos lugares, lo saca de ese centro de datos.
+Teacher: global y lo pone en un centro de datos, en un en un punto mucho más cercano para que la gente lo pueda disfrutar o que tenga menos latencia, menos tiempo de viaje y procesamiento para poder adquirir los recursos.
+Teacher: Pero hay otros sistemas de de streaming que no tienen esa tecnología y por eso entre más lejos estemos, más lento vamos a estar de recibiendo esos recursos.
+Teacher: ¿Listo?
+Teacher: Entonces, ese es el modelo de F Computer.
+Teacher: Y aquí me quitaron el video.
+Teacher: Y por último tenemos el autonomic computing.
+Teacher: ¿Listo?
+Teacher: ¿Y qué es este autonomic computing?
+Teacher: Es un sistema que busca eh, digámoslo así, asimilar el sistema nervioso humano, ¿cierto?
+01:20:00
+Teacher: ¿Cómo y cómo así que busca asimilar el comportamiento del sistema nervioso?
+Teacher: Bueno, porque es que no sé si ustedes se han dado cuenta, pero el sistema nervioso es el sistema más autorreparable, pues que es capaz de gestionar de una manera perfecta y dependiendo de las consideraciones que se tienen,
+Teacher: es capaz de ajustar todo su funcionamiento a a los recursos que tiene disponibles.
+Teacher: Entonces, el sistema nervioso es el encargado de transmitir todas las sensaciones al cuerpo, capturar todos los todas las entradas, el tacto, el gusto, etcétera, la vista, todo eso es capaz de de traerlo, procesarlo y entregarlo.
+Teacher: ¿Qué pasa si yo pierdo una mano?
+Teacher: Mi sistema es capaz de autoajustarse para seguir tomando decisiones a partir de de los recursos que le quedan disponibles.
+Teacher: ¿Qué pasa si pierde la vista?
+Teacher: Lo mismo, agudizar a otras.
+Teacher: o hará que sienta otro tipo de sensaciones, otro tipo de elementos que respondan o que que sustituyan el la fuente de datos que ya no tiene, ¿cierto?
+Teacher: Entonces, la computación autónoma es un modelo de computación, en este caso futurista, esta no es la que esté más eh más implementada, pero que tiene unas funciones unas funciones auto o unas funciones self que se espera que tengan ellas.
+Teacher: Todos esperamos de que eh en la computación autónoma sea autoconfigurable, o sea, que sin necesidad de un humano el sistema sea capaz de configurarse solo, sea autorreparable, sea autooptimizable y autoprotegida.
+Teacher: O sea, que él este sistema sea capaz de trabajar sin necesidad de intervención humana.
+Teacher: cuando, digámoslo así, en los casos en los que necesite un humano, él debería de poder tomar la decisión de manera autónoma.
+Teacher: ¿Listo?
+Teacher: Generalmente para configurar, para reparar, optimizar y proteger un sistema, necesitamos de humanos y ahí es donde entran los administradores, los de seguridad, etcétera, etcétera, etcétera.
+Teacher: Necesitamos humanos para poder proteger ese sistema.
+Teacher: Pues pensemos en un modelo, en un en un en un sistema de cómputo que no necesite de los humanos.
+Teacher: ¿Listo?
+Teacher: Entonces ahí me hace recordar a dos sistemas, pueden que haya más, pero hay dos sistemas que cumplen con estas características y que nosotros conocemos.
+Teacher: ¿Cuáles son?
+Teacher: Ojo, están en la ciencia ficción.
+Student8: Una chupería,
+Teacher: Por ejemplo,
+Student8: profe.
+Teacher: alguien le suena la palabra Skynet.
+Teacher: ¿Qué es Skynet?
+Student8: una super inteligencia artificial que como Terminator sería, no recuerdo de qué película,
+Teacher: Ajá.
+Student8: pero que exterminó los humanos y todo.
+Teacher: Pero ojo, mira que era un sistema que se autoconfiguró, reparó, optimizó y se autoprotegió, ¿cierto?
+Teacher: era un sistema de inteligencia tal que tenía la capacidad de crear robots para mejorarse o para configurarse o o él se reconfiguró, cambió la programación que tenía por una donde eh empezó a ver de que los humanos eran
+Teacher: realmente la plaga de del mundo o eran los que podían llegar a atacarla.
+Teacher: Entonces empezó a defenderse, ¿cierto?
+Teacher: Él era capaz de reparar su propio sistema, él era capaz de optimizar su sistema, es capaz de protegerse.
+Teacher: Otro otro sistema de de la ciencia ficción que entra dentro de este mismo modelo podría ser, por ejemplo, de de Matrix, ¿cierto?
+Teacher: de Matrix, donde tenía máquinas de configuración o herramientas de configuración, era capaz de reconfigurarse, de reajustarse.
+Teacher: Entonces, tenía creaba software para para controlar o para gestionar eso.
+Teacher: Tenía el arquitecto y el arquitecto podía estar reconfigurando o recreando nuevas veces la matriz.
+Teacher: era capaz de repararse, tenía equipos eh de reparación de de las máquinas, ¿cierto?
+Teacher: Y había software que se podía autorreparar.
+Teacher: Ahí estaban los agentes que eran los encargados de reparar cualquier anomalía que encontraran dentro del software.
+Teacher: Tenían la posibilidad de hacer autooptimización, entonces poder hacer la destrucción de la de los humanos para volver a regenerar, crear una nueva versión de la matriz, etcétera, etcétera, y tenían la posibilidad de la autoprotección.
+Teacher: Entonces, mire que ahí aparecían las máquinas que que eran las que iban en búsqueda de de los humanos que estaban fuera de la matrix, ¿cierto?
+01:25:00
+Teacher: Entonces, son sistemas muy complejos, son sistemas donde no existe la necesidad de de la de la intervención humana para trabajar, ¿cierto?
+Teacher: Eso es básicamente el objetivo que tenemos con la computación autónoma.
+Teacher: Y a pesar de que estamos hablando de ciencia ficción, podemos decir de que estamos cada vez más próximos a tener o a poder construir un sistema que sea capaz de hacer este tipo de cosas, ¿cierto?
+Teacher: Entonces, digamos que a pesar de que es la el modelo de computación que no se encuentra totalmente implementado, no lo tenemos nosotros al día de hoy, así como la era la computación móvil en un futuro, es muy probable que tengamos aunque sea parte de la cotidianidad dentro de nuestro tipo de
+Teacher: sistemas con los cuales vamos a estar interactuando.
+Teacher: ¿Listo?
+Teacher: Eh, nada, dejemos aquí y vemos los objetivos en la próxima clase.
+Teacher: ¿Listo?
+Teacher: Vamos a hablar de cuáles son los objetivos del sistema distribuir.
+Student22: Bueno, profe,
+Teacher: Dale.
+Student22: hasta luego.
+Teacher: Bueno,
+Student8: Vale, profe.
+Teacher: espero que esté muy bien.
+Student8: Gracias.
+Teacher: Nos vemos.
+Student8: M.
+Student22: Bien.
+Teacher: Nos vemos el jueves, el martes creo.
+Student22: Aha.
+Student2: S.
+Teacher: Dale,
+Student1: Gracias,
+Teacher: que estén bien.
+Student1: profe.
+Student1: Feliz noche para todos.
+Teacher: Feliz noche,
+La reunión finalizó después de 01:27:39 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+

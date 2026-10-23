@@ -1,0 +1,844 @@
+Hora de inicio de la reunión: 2026-09-08 18:29 GMT-5
+Asistentes
+Student1, Student2, Student3, Student4, Teacher, Student5, Student6, Student7, Student8, Student9, Student10, Student11, Student12, Student13, Student14, Student15, Student16, Student17, Student18, Student19, Student20, Student21, Student22, Student23, Student24, Student25, Student26, Student27
+Transcripción
+Teacher: algunas cositas, análisis y cositas así por el estilo en en la sesiones separadas, encuestas por ahora no todavía no.
+Teacher: Listo, perfecto.
+Teacher: Así que eh básicamente nosotros lo que queremos es entrar al mundo de entender o o darnos la idea de por qué los sistemas distribuidos son importantes, ¿cierto?
+Teacher: Nosotros hasta ahora hemos aprendido mucho de sistemas, espero, y la idea general es que ustedes puedan empezar a hablar o adentrarse en este nuevo concepto que es el tema de los sistemas distribuidos.
+Teacher: Pero antes de centrarnos en las definiciones que tienen estos dos autores, yo quisiera saber desde el punto de vista práctico que ustedes tienen o lo que conocen o han escuchado, ¿qué creen ustedes que es un sistema distribuido?
+Teacher: Ojo, desde la experiencia o de lo que han escuchado o de la percepción que tienen de la materia.
+Teacher: Creo que no alcanzamos a hacer esta introducción en en la sesión del jueves, ¿o sí?
+Teacher: Creo que no, pero entonces [estudiante],
+Student8: No, profe, no,
+Teacher: dime.
+Student8: profe, nada.
+Student8: Pues yo la eh noción que tengo de sistema distribuido es de pronto un poco basada en lo que conozco de criptomonedas y cómo funciona, por ejemplo, blockchain, que es un mismo software corriendo en muchos equipos diferentes y pues eso presenta diferentes
+Student8: desafíos como lo son la sincronización entre esos ordenadores, la latencia entre las tareas que están haciendo y en general el el principal beneficio es la escalabilidad a nivel de rendimiento y de capacidad de la red,
+Student8: pero pues trae consigo otros desafíos este tipo de arquitecturas.
+Student8: Yeah.
+Teacher: Okay.
+Teacher: Sí, cierto.
+Teacher: ¿Alguien más?
+Teacher: Si quieren levanten la mano, no se preocupen.
+Teacher: Aquí, aquí no nos cansamos.
+Teacher: O o nadie tiene idea de nunca ha escuchado el concepto de sistema distribuido.
+Teacher: Sea el único avanzado solo
+Student26: Eh,
+Teacher: [estudiante].
+Student26: profe, pues o sea, viendo la presentación como como bien lo mencioné ahorita, se mencionan sistemas como software as a service, platform as a service y eh infrastructure as a service, pero yo nunca escuché el el término de sistema distribuido,
+Student26: siempre más fácil, pues como los sistemas como servicio, pero nunca escuché la definición y en eso pues si SP mucha uso DVA as a
+Teacher: Okay.
+Student26: service y muchas otras cosas, pero no conocía el término así.
+Student26: Eso es lo que lo que a lo que se refiere.
+Student26: Yeah.
+Teacher: Dale, [estudiante].
+Student8: que por ahí como otro otro portechore es que por ejemplo habían lo que hizo eh alfaf de Google, que era como descubrir el plegamiento de unas proteínas con inteligencia artificial.
+Student8: En eso e hay hay un problema grande, bueno, o había antes de Alfold grande con saber cómo estaban plegadas las proteínas y con un sistema distribuido, varios usuarios en la red prestaron como su poder de cómputo en algún punto
+Student8: para ayudar a solucionar ese tipo de problemas.
+Student8: Entonces, eh nada,
+Teacher: ¿Y
+Student8: pues también eso como que muchas veces cuando hay problemas muy muy grandes que computacionalmente son difíciles de abordar, h puede servir mucho para fragmentar el problema en pedacitos más pequeños y repartirlos en la red.
+Student8: M.
+Teacher: por qué puede llegar ahora a ver un problema tan difícil computacionalmente hablando tan difícil de tratar?
+Teacher: ¿Por qué no podemos comprar un supercomputador y hacer ese trabajo ahí?
+Student8: Pues yo creo que acá una de las cosas más importantes a tener en cuenta es eh la parte económica, ¿no?
+Student8: Comprar de pronto miles de RAMs es más caro que simplemente pedirle un poquito de computación a ciertos usuarios o o alquilar o a través de una recompensa o por ejemplo comprar un servidor de
+Student8: de máximo rendimiento para una tarea que uno va a ejecutar 20 minutos, pues no paga la comprada.
+Student8: más bien eh alquilo un servicio cloud con servidores potentes para correr este tipo de de aplicaciones.
+Student8: Entonces es una solución que nace sobre todo también de la parte económica y de escalabilidad del proyecto.
+Teacher: Bien, bien, muy buena, buen aporte ahí y tienes mucho y tiene mucho sentido y tiene mucha razón.
+Teacher: ¿Listo?
+Teacher: ¿Por qué?
+Teacher: Porque de dónde viene el problema de distribuir el sistema y tiene que ver mucho con los recursos.
+00:05:00
+Teacher: ¿Sí?
+Teacher: ¿Qué recursos son los que nosotros normalmente utilizamos o los que normalmente eh requerimos en los sistemas de cómputo que nosotros trabajamos?
+Teacher: Procesador, memoria y almacenamiento.
+Teacher: Digamos que esos son los tres recursos de cómputo que más utilizamos nosotros para las soluciones que nosotros sabemos hacer, ¿cierto?
+Teacher: Pero hasta ahora, digámoslo así, ustedes se han enfocado solamente en los recursos que tenemos en la máquina donde vamos a instalar el software, ¿cierto?
+Teacher: Entonces, ¿cuánta memoria RAM necesito para que mi sistema funcione?
+Teacher: Pues yo voy a decir en esta máquina necesito 10 GB en RAM, 12 GB en RAM, 36 GB en RAM, ¿ve?
+Teacher: 32 GB en RAM, ¿cierto?
+Teacher: ustedes van a elegir una capacidad de cómputo suficiente o unos recursos de cómputo suficientes para que su aplicación se maneje de manera correcta.
+Teacher: Pero, ¿y qué pasa?
+Teacher: ¿Y qué pasa si necesito más de los recursos que yo puedo conseguir?
+Teacher: Ahora pregunta, los equipos que ustedes tienen, cada uno de ustedes tienen un computador, espero que tengan acceso a un computador.
+Teacher: Y ese computador, ¿cuánto es la capacidad máxima de cómputo?
+Teacher: ¿Cuáles son los recursos máximos que pueden ustedes disponer de él?
+Teacher: Entonces, dependiendo de qué sistema tengo o qué compré, pues voy a tener equipos que tienen 8 GB en RAM, otros pueden tener 16, pueden tener un procesador Core 3, Core 5, Core 7, eh, etcétera, etcétera, ¿cierto?
+Teacher: Core9.
+Teacher: Y cada uno de ellos, pues me va dando características adicionales, o sea, entre mejor sea el equipo que yo compre, pues mejor va a ser el rendimiento de mi aplicación.
+Teacher: ¿Y qué pasa si yo necesito más o o la herramienta que quiero utilizar o el sistema que quiero eh trabajar eh necesita más recursos de los que yo tengo disponibles, ¿cómo hago entonces para seguir creciendo?
+Teacher: Entonces uno dice, pues compremos un equipo mejor, ¿cierto?
+Teacher: Una la solución más fácil es si este equipo yo lo estoy viendo lento, ¿cuál es la solución?
+Teacher: Comprese otro que tenga mejores requerimientos, ¿cierto?
+Teacher: Y si supero los requerimientos de ese equipo, ¿qué hago?
+Teacher: Comprese otro que que tenga más requerimientos o que tenga más recursos de los que usted está usando ahorita.
+Teacher: ¿Listo?
+Teacher: Y así hasta dónde podemos crecer.
+Teacher: ¿Cuál es el equipo más grande o con cuántos recursos de procesadores, memoria y almacenamiento ustedes conocen?
+Teacher: El equipo más grande que puedan comprar y qué precio puede
+Student8: Profe,
+Teacher: tener
+Student8: pues de de equipos grandes en el mundo, pues los data centers, pero que esté como al alcance de uno,
+Teacher: equipos.
+Student8: eh, equipos equipos como de 40 millones o así,
+Teacher: Equipos.
+Student8: que es como el tope de gama que tendrán como cuatro teras de almacenamiento y así, pero pues es una barbaridad.
+Teacher: ¿Será que eso es una barbaridad?
+Teacher: Vamos a vamos aquí vamos a intentar
+Student8: Depende.
+Teacher: acá
+Student8: Mentira, no, si uno se gana 80 palos mensuales, pues como el
+Teacher: más grande que puedo comprar.
+Teacher: Eh, los mejores PCs, los mejores portátiles.
+Teacher: Eh, vamos a decirle, vamos a cambiar aquí.
+Teacher: Ah, es que este no me gusta, perdón.
+Teacher: Vámonos a Google,
+Student26: Tres ricos.
+Teacher: pero no de vuelos y vamos a decir de
+Student26: M.
+Teacher: que me está haciendo trampa.
+Teacher: Este, ¿qué qué están diciendo por
+Student8: Ese Mac Studio de 512 GB de
+Teacher: allá?
+Student8: RAM,
+Teacher: La Mac estudio.
+Teacher: Okay.
+Teacher: ¿Cuántos gigas?
+Student8: 512 GB de RAM unificada con GPU.
+Student8: Eso es para correr inteligencia artificial.
+Student8: Vale como 000.
+Teacher: Okay.
+Student8: Yeah.
+Teacher: más grande que puedo comprar con precio.
+Teacher: A ver si sale por aquí, ¿eh?
+Teacher: No, estos computadores más chichis que me salen acá.
+Student14: Es que entendió como grande a las pulgadas.
+Teacher: Es que bueno,
+Student8: el tamaño más potente.
+Student8: Yeah.
+Teacher: con más recursos.
+Teacher: Pongámosle aquí CPU, RAM y almacenamiento.
+00:10:00
+Teacher: Okay.
+Teacher: Entonces, mira, aquí tengo uno.
+Teacher: Vea, el computador con más recursos disponibles en el mercado actual de estaciones de trabajo profesionales es el el HP Set of Fury, configurado al máximo con un precio que ronda los $4,000.
+Teacher: Eso es así algo así como unos 300 millones de pesos.
+Teacher: ¿Lo conocen o no?
+Teacher: O tienen la posibilidad de Hacemme una vaca para comprarlo.
+Teacher: Procesador Intel Seon de 60 hasta 68 núcleos con 128 hilos.
+Teacher: Memoria RAM soporta.
+Teacher: Ah, no me dice cuántos.
+Teacher: Cientos de gigabytes o terabytes de RAM.
+Teacher: Ojo, terabytes de RAM.
+Teacher: Almacenamiento.
+Teacher: Tampoco me dice almacenamiento y gráficos.
+Teacher: Capacidad para múltiples discos SCD y de alta velocidad.
+Teacher: No sé qué pa pa.
+Teacher: Porque el el Mac Studio que me estaban ustedes comentando dice que pueden llegar a alcanzar hasta los $,000.
+Teacher: O sea, que eso es chichi para el computador más grande que me puedo yo comprar, ¿cierto?
+Teacher: Pero digámoslo aquí, ya no lo voy a decir, no voy a decir aquí computador, voy a cambiar la palabra por servidor empresarial a ver si tenemos un
+Teacher: poquito más de suerte.
+Teacher: Okay.
+Teacher: $300,000.
+Teacher: Ojo, un computador.
+Teacher: Un computador.
+Teacher: Listo.
+Teacher: Entonces, estamos hablando de que tenemos la posibilidad de conseguirnos un equipo bastante poderoso, con unas grandes capacidades, con unos grandes recursos de, mire, puedo tener hasta 896 núcleos.
+Teacher: en un solo equipo.
+Teacher: ¿Qué les parece?
+Teacher: ¿Po o suficiente para lo que para un sistema o no?
+Teacher: ¿Qué?
+Teacher: No alcanza soporte.
+Teacher: Ojo, en RAM soporta 48 teras.
+Teacher: Eso, o sea, eso entra dentro de las de los conocimientos que nosotros tenemos.
+Teacher: Sí, eso significa que vamos a pagar $300,000, ¿cierto?
+Teacher: Aproximadamente 10000 millones de pesos por un solo computador.
+Teacher: ¿Listo?
+Teacher: Y la pregunta es, ¿y qué pasa si el sistema que nosotros estamos desarrollando necesita más recursos que esos?
+Teacher: O estos recursos no son suficientes o ustedes creen que el buscador de Google no necesitará más de 896 núcleos para atender las solicitudes de todo el mundo?
+Teacher: ¿Ustedes qué creen?
+Student8: Sí, profe, claro.
+Teacher: Entonces, ¿qué hacemos?
+Teacher: Si mi sistema va a ser accedido por millones y millones de usuarios de manera simultánea y me van a estar haciendo búsquedas, me van a estar pidiendo procesar información y yo quiero darles una respuesta rápida, ágil y eficiente a cada uno de mis usuarios,
+Teacher: ¿cierto?
+Teacher: una búsqueda en Google, eh, generalmente y ahora que tiene la pues se demora, pero generalmente eh demora a milisegundos, ¿cierto?
+Teacher: Y me trae cientos de resultados.
+Teacher: Entonces, ¿cómo cómo logramos eso?
+Teacher: ¿Cómo logramos esa ese rendimiento eh con un solo equipo atendiendo múltiples usuarios, ¿cierto?
+Teacher: Entonces, digamos que el concepto de la computación distribuida aparece desde ese punto en el que nosotros tecnológicamente no tenemos la capacidad de seguir creciendo, de seguir agregándole recursos a nuestro sistema pensando en el sistema eh
+Teacher: centralizado, en el sistema monoservidor o monoequipo, ¿cierto?
+Teacher: que es el modelo que veníamos o que conocemos dentro de las empresas.
+Teacher: Y es que generalmente nosotros lo que hacemos dentro de las empresas es comprar un gran computador para montar los sistemas o el sistema que va a gestionar la empresa y en ese computador pues podrá crecer o podrá atender a usuarios hasta los recursos que tenga ese
+Teacher: computador.
+Teacher: Si necesito más, pues puedo agregarle más slot, pero si ya copié toda la capacidad disponible y necesito más, necesito más, ¿qué hacemos?
+00:15:00
+Teacher: ¿Cómo lo resolvemos?
+Teacher: Entonces, desde los años 1600, ¿sí?
+Teacher: Desde los años de UPA, desde hace mucho tiempo, se empezó a hablar del concepto de computación distribuida.
+Teacher: ¿Y qué es esa modelo de computación distribuida?
+Teacher: y es de poder separar la aplicación o que la aplicación que nosotros vamos a desarrollar pueda ejecutarse en múltiples eh computadores o necesiten eh necesite usar recursos de múltiples computadores para poder cumplir con
+Teacher: la tarea que nosotros estamos eh pensando.
+Teacher: Eso no es sencillo, ¿cierto?
+Teacher: No es fácil hacer de que mi sistema pueda correr en múltiples computadores.
+Teacher: ¿Listo?
+Teacher: ¿Por qué?
+Teacher: Porque una de las tareas que vamos a tener que hacer es separar responsabilidades, separar funcionalidades y hacer de que los distintos computadores se comuniquen entre sí.
+Teacher: Y eso no es sencillo.
+Teacher: Nosotros en el modelo de desarrollo que veníamos conociendo hasta ahora, hasta antes de hablar de sistemas distribuidos, la única forma, yo yo lo que hacía era crear múltiples o o mejor dicho múltiples módulos y esos módulos eran dependientes,
+Teacher: ¿cierto?
+Teacher: Si yo necesitaba ir y consultar algo del otro módulo, pues hacía una petición, una llamada a una función del otro módulo y me devolvía unos datos.
+Teacher: El mecanismo de comunicación entre todo el sistema era la memoria.
+Teacher: ponga un dato en la memoria y venga, yo leo el dato de la memoria o devuelva un haga un retorno en una función y eso al final es una una variable que nosotros estamos guardando en memoria y eso pues para
+Teacher: nosotros es relativamente sencillo dependiendo del lenguaje que estemos utilizando.
+Teacher: Estamos en SEASMAS, eso es un gallo, pero en en el en el lenguaje en los lenguajes que nosotros estamos utilizando ahora, pues es bastante sencillo comunicar nuestro gran sistema utilizando los recursos que tengo de manera local, la memoria,
+Teacher: el disco duro y utilizando los procesadores o compartiendo los procesadores que tenemos disponibles.
+Teacher: Pero estas definiciones tanto de Tanembaum como el de Coloris, Culuris, sí, estos dos señores eh empezaron a hablar de sistemas distribuidos desde los años 90.
+Teacher: Recuerden que la computación personal apareció en los años 80s, empezando los años 80, ¿cierto?
+Teacher: Y en los años 90 ya estábamos hablando de computación distribuida.
+Teacher: ¿Por qué?
+Teacher: Porque antes de la computación personal, antes de que nosotros tuviéramos acceso al computador, todo se hacía en lo que llamábamos en ese tiempo los mainframes.
+Teacher: ¿Y qué eran un mainframe?
+Teacher: un gran computador, un computador que que costaba tanta plata que solamente los las grandes empresas podían tener.
+Teacher: Y ahí en ese mainfame colocábamos todas las aplicaciones que necesitábamos y como era para trabajar desde las empresas entonces lo que armaban era unos sistemas que llamábamos los terminales no inteligentes,
+Teacher: las terminales de de interfaz o las terminales brutas que eran una un monitorzote con un teclado que iban conectados por línea telefónica hacia el servidor.
+Teacher: Listo.
+Teacher: Y entonces por ese por ese canal de comunicación o por esa línea telefónica mandaba el vídeo y nosotros podíamos mandar eh lo que tecleáramos.
+Teacher: ¿Listo?
+Teacher: Y entonces el servidor era el que hacía todo eso.
+Teacher: O sea, que dependiendo de cuántos usuarios yo quería manejar dentro de mi servidor, yo tenía que comprar pues las terminales, pero el servidor, la capacidad del servidor tenía que ser suficiente para el número de usuarios que teníamos.
+Teacher: ¿Listo?
+Teacher: Entonces, si crecíamos en la empresa, pues tendríamos muy probablemente que cambiar el servidor porque los recursos no eran suficientes para para poder atender a todos los usuarios que teníamos.
+Teacher: Entonces, desde los años 90, cuando todavía estábamos en el en el mundo de la computación empresarial y que apenas estamos empezando con el tema de las redes de redes o el internet, éramos estábamos basados más en las redes internas.
+Teacher: Entonces ahí empezaron a decir, bueno, ¿y por qué no distribuimos nuestro sistema?
+Teacher: Porque no creamos aplicaciones independientes que sean capaz de compartir recursos o que cada una tenga unos recursos y que podamos compartir el procesamiento o la gestión del sistema de manera inteligente.
+Teacher: Entonces ahí es donde vienen estos estas definiciones que se ven diferentes, pero apuntan hacia lo mismo, porque Coloris dice que un sistema distribuido para él era uno donde el hardware o el software, perdón,
+00:20:00
+Teacher: que habían componentes de software o hardware que estaban localizados en la red y que necesitaban coordinar sus acciones, que necesitaban eh hablarse entre ellos, coordinarse, enviarse mensajes y y mandarse tareas entre ellos usando un paso de mensajes.
+Teacher: ¿Listo?
+Teacher: Entonces, ese era la el la concepción que tenía Coloris sobre lo que era un sistema distribuido.
+Teacher: Listo.
+Teacher: Pero eh Tanenbound, nuestro amigo Tanenbound, que es otro de sus grandes eh pensadores, digámoslo así, los filósofos de la computación moderna, eh fue nuestro amigo Tanenbaun, escribió muchos libros sobre muchos temas.
+Teacher: Eh, y él tenía la percepción de un sistema distribuido como una colección de elementos de cómputo autónomos que hacían de que la unión entre ellos se vieran como una sola cosa, como si fuera un solo sistema,
+Teacher: no se no era múltiple sistemas hablando entre sí como lo como la versión de coloris, sino que él decía, "No, un sistema distribuido es uno que a pesar de que está puesto en diferentes máquinas,
+Teacher: el usuario debe verlo como si fuera un solo sistema, si fuera una sola cosa, sin importar cuántas máquinas intervienen en el sistema.
+Teacher: Para el usuario debería ser una cosa, debería solamente ser el sistema.
+Teacher: Y ahí pues entonces podemos eh digámoslo así, cada uno de nosotros o si vemos distintos autores, vamos a ver que tenían diferentes eh versiones o diferentes percepciones de lo que era un sistema distribuido, pero haciendo una abstracción,
+Teacher: haciendo un modelo eh un poco más generalista de lo que podría ser una definición de sistema distribuido, podríamos dejarlo como en estas características que vamos a hablar aquí o que están aquí.
+Teacher: enumeradas.
+Teacher: Primero, son un conjunto de nodos conectados por una red.
+Teacher: ¿Listo?
+Teacher: Entonces, ¿qué tipo de nodos podemos tener conectados en una red?
+Teacher: Pueden ser máquinas reales, equipos físicos, pueden ser máquinas virtuales o contenedores.
+Teacher: ¿Qué es una máquina virtual?
+Teacher: ¿Quién me explica o qué concepto tienen de máquina virtual?
+Teacher: ¿Qué es una máquina virtual?
+Teacher: Si ve que es que ustedes se
+Student8: Profe, pues es una como una máquina eh emulada a la que yo
+Teacher: esconden.
+Student8: le doy un pedacito de mi CPU, un pedacito de mi RAM y un pedacito de mi almacenamiento dentro de mi ordenador principal.
+Teacher: ¿Y para qué hacemos eso?
+Student8: Entonces, eh, por ejemplo, una de las ventajas es que aisla esa máquina de mi máquina real.
+Teacher: Okej.
+Student8: Entonces, por ejemplo, a nivel de seguridad, cualquier eh cosa que afecte esa máquina, pues no va a afectar mi máquina principal.
+Student8: Y por ejemplo, eh empresas que prestan servicios cloud como Google, pues obviamente van a tener servidores enormes y no van a alquilar todo el servidor, sino eh cierta ciertas máquinas virtuales con ciertos recursos más limitados, ¿no?
+Student8: Porque alquilar un servidor eh completo de esos, pues valdría una fortuna y quizás no es lo que necesitamos.
+Student8: Entonces, me permite porcionar como el el rendimiento,
+Teacher: Bien.
+Student8: me permite porcionar los recursos y también como encapsular todo en un ambiente
+Teacher: realmente.
+Student8: seguro,
+Teacher: Pero entonces si lo quería seguro, ¿por qué no le no compré una máquina con los recursos que necesitaba en lugar
+Student8: porque es más es es más flexible virtualizar en el sentido de que si yo necesito después un servidor más grande,
+Teacher: de ponerme a virtualizar?
+Student8: pues puedo y necesito cerrar, por ejemplo, o sea, ya no necesito ciertas máquinas virtuales, pues eh no le renta un data center estar comprando ordenadores cada que que necesita eh digamos liberar recursos y reaprovisionarlos.
+Student8: Entonces, con estas máquinas virtuales, mata esas máquinas virtuales y puede juntarlas en una sola más grande si es necesario.
+Teacher: Dale.
+Teacher: Sí, exactamente.
+Teacher: Entonces, las máquinas virtuales no es más que una emulación o una o un espacio, un ambiente independiente que nosotros vamos a colocar dentro de una máquina física.
+Teacher: O sea, yo voy a poder compartir los recursos que tengo dentro de una máquina física entre múltiples máquinas virtuales.
+Teacher: Entonces, digamos que por un tema de consolidación de recursos, o sea, de no tener que instalar o de no tener en mi centro de datos 200 máquinas montadas, yo puedo tener una sola máquina que tenga 200 máquinas virtuales,
+00:25:00
+Teacher: ¿cierto?
+Teacher: Tienen las mismas características que cualquier máquina física.
+Teacher: Lo único que sucede es que están compartiendo todo el elemento físico, o sea, son máquinas que su procesador no es un procesador físico dedicado, sino que es una emulación de un procesador físico que tiene la máquina host.
+Teacher: ¿Listo?
+Teacher: Pero es básicamente eso.
+Teacher: Y entonces, ¿qué será un contenedor?
+Teacher: Es una caja donde metemos materiales para traer de la China, ¿cierto?
+Teacher: Pero, ¿qué en este contexto que es un contenedor?
+Teacher: Si yo estoy diciendo que yo puedo crear un un sistema distribuido a partir de máquinas reales,
+Student8: Prof.
+Teacher: virtuales o contenedores.
+Teacher: ¿Qué es un
+Student8: Un contenedor es un sistema que se monta como sobre el mismo sistema operativo y digamos que
+Teacher: contenedor?
+Student8: tiene la ventaja de que no tiene que emular eh desde cero como todas las capas, sino que yo solo monto como las últimas capas.
+Student8: Es decir,
+Teacher: Ok.
+Student8: eh puedo puedo tener mis aplicaciones corriendo, digamos, sobre la CPU real o sobre el sistema operativo.
+Student8: Eh, pero de todas formas sigo en una abstracción, digamos que me me tiene encapsulado como si estuviera en una máquina virtual, por así decirlo, pero estoy compartiendo capas con el sistema operativo real y con la máquina real.
+Teacher: Digamos que es otra especie, es algo similar a a las máquinas virtuales.
+Teacher: Es es como si yo dentro de mi máquina pudiese tener múltiples máquinas, pero eh realmente aquí ya no solamente compartimos la parte física, sino que también vamos a compartir el sistema operativo.
+Teacher: Entonces, el sistema operativo del equipo que tiene los contenedores va a eh va a ser el mismo que todos los que vamos a tener en todos los contenedores.
+Teacher: Por ejemplo, si yo quiero una máquina eh Linux que para montar una aplicación y desplegar una aplicación en ella, eh esa ese contenedor para esa máquina Linux tiene que correr en un servidor Linux.
+Teacher: Yo no puedo montar en un servidor Windows o una máquina Linux a menos de que tenga una emulación de Linux en Windows, ¿ven?
+Teacher: cosas así por lo mismo.
+Teacher: Si yo necesito una máquina para montar un Windows Core, que es una versión de Windows eh liviana que podemos montar en un contenedor, no lo puedo hacer en un servidor Linux, tengo que hacerlo en uno de la arquitectura de Windows.
+Teacher: ¿Por qué?
+Teacher: Porque el sistema operativo, ya cada uno de los contenedores no puede tener un sistema operativo independiente.
+Teacher: Digamos que el kernel del sistema operativo debe ser similar, independiente de si vamos a utilizar Fedora, Ubuntu o Alpine como nuestros servidores de de del contenedor.
+Teacher: ¿Listo?
+Teacher: O sea, eh eh digamos que es un nivel de abstracción similar a la de las máquinas virtuales, pero más livianas que tener toda la máquina virtual y tener que emular el sistema operativo, un sistema operativo adicional, etcétera, etcétera,
+Teacher: etcétera.
+Teacher: ¿Listo?
+Teacher: Entonces, ya sabemos de que podemos crear un sistema distribuido con máquinas físicas, o sea, con nodos, con computadores, con máquinas virtuales, que es la eh representación de un nodo de eh de de una máquina, pero montada sobre otra máquina y por contenedores,
+Teacher: que es como la nueva el nuevo mecanismo, la nueva forma o una de las nuevas formas que tenemos para distribuir aplicaciones.
+Teacher: ¿Listo?
+Teacher: Eh, otra característica, conectadas por una red, ¿listo?
+Teacher: Que la red puede ser real utilizando cables, eh, tarjetas de red, etcétera, o puede ser virtual.
+Teacher: ¿Por qué puede ser virtual?
+Teacher: Porque las máquinas virtuales no tienen tarjeta de red.
+Teacher: Comparten la tarjeta de red del de la máquina donde está hospedada.
+Teacher: Lo mismo pasa con los contenedores.
+Teacher: No tiene una tarjeta de red.
+Teacher: comparte la tarjeta de red que que está en el en el equipo donde nosotros estamos hospedando el contenedor, pero las máquinas virtuales entre ellas, todas las máquinas que están dentro del mismo servidor pueden hablarse entre ellos sin utilizar el la tarjeta de
+Teacher: red física.
+Teacher: O sea, tienen una red virtual.
+Teacher: Lo mismo pasa con los contenedores, pueden tener una red virtual para comunicarse entre ellos.
+Teacher: Entonces, básicamente necesitamos máquinas o no dos y vamos a necesitar la red, que puede ser real o o virtual sin memoria compartida.
+Teacher: Y esto tiene que ver un poco con el concepto de que son máquinas independientes.
+Teacher: ¿Listo?
+Teacher: El hecho de que sean máquinas independientes hace de que no sea tan fácil leer espacios de memoria o leer ubicaciones de memoria que se encuentren en otros equipos.
+00:30:00
+Teacher: ¿Listo?
+Teacher: Generalmente cuando estamos trabajando en una sola máquina, yo puedo dejar datos en memoria y compartirlos para que otros procesos puedan leer esos datos.
+Teacher: ¿Listo?
+Teacher: Eso se utiliza un mecanismo, una una técnica que se llama memoria compartida distribuida.
+Teacher: Perdón, memoria compartida, la cual eh yo ubico un espacio de memoria dentro de la memoria física del computador.
+Teacher: Ubico ese espacio de memoria, le digo al sistema operativo, "Ey, ese espacio de memoria no es solo para mí. cualquier persona o cualquier otro proceso va a poder leer ese espacio de memoria y entonces voy a poder hacer
+Teacher: de que múltiples aplicaciones puedan activarse o desactivarse o ver e el valor de un de un dato dado y que todos puedan utilizar ese dato eh de manera en tiempo real, digámoslo así, al mismo tiempo.
+Teacher: Y si alguien hace un cambio, todos van a ver el cambio.
+Teacher: En un sistema distribuido, vamos a hablar de sistemas distribuidos cuando no exista esa memoria compartida real.
+Teacher: Listo.
+Teacher: O sea, no hay una forma fácil de que nosotros podamos leer un espacio de memoria en en otra máquina, digámoslo así.
+Teacher: Otro otra característica sin reloj común, eso ahorita no nos eh digámoslo así, no nos dice mucho, pero tiene que o hace referencia a que cada máquina puede tener un reloj diferente, puede tener un instante o un tiempo diferente,
+Teacher: puede ir a velocidades distintas.
+Teacher: ¿Listo?
+Teacher: Entonces eso es como una de esas características que nosotros vamos a tener ahí sobre el reloj.
+Teacher: Vamos a tener dispositivos de entrada o salida asociados a cada procesador.
+Teacher: Eso significa que si yo quiero acceder, bueno, ya no podemos hablar de la impresora porque ya las impresoras nuevas van conectadas a la red, pero si yo quisiera tener un sensor, los sensores no se conectan a la red,
+Teacher: normalmente van a uno de los equipos que es el que recibe las señales del sensor.
+Teacher: Si yo quiero escribir en disco, no tengo un disco en la red.
+Teacher: Normalmente me tengo que conectar a uno de los nodos y ese nodo eh va a escribir en su disco la información que queramos nosotros compartir.
+Teacher: ¿Listo?
+Teacher: Entonces ahí es donde vamos viendo como como esa esas características del sistema distribuido, los fallos independientes eh de componentes del sistema distribuido.
+Teacher: Es esto habla más sobre ese que ahora no solo el sistema es el que puede tener problemas.
+Teacher: ¿Listo?
+Teacher: van a haber elementos externos al desarrollo o al código o al software.
+Teacher: Pueden tener voy a tener elementos externos a mi software que pueden hacer de que mi sistema no funcione bien.
+Teacher: pueden ser problemas con el sistema distribuid con el sistema operativo.
+Teacher: Pueden ser problemas con un controlador de uno de los dispositivos, puede ser un problema con un con un equipo físico.
+Teacher: Eh, la tarjeta de red falló, el cable de la el cable de red falló, el conector de la de cable de red falló, está fallando un switch, está eh fallando un un router.
+Teacher: Listo.
+Teacher: cosas que no tienen nada que ver con lo que nosotros estamos haciendo, puede hacer de que mi sistema deje de funcionar, porque ya no estamos en un mundo donde yo puedo encapsular todo en mi propio en mi propia máquina.
+Teacher: Voy a tener múltiples máquinas, múltiples nodos reales o virtuales a los cuales de necesitamos de que todos estén en funcionamiento, que todos hagan su tarea para que mi sistema funcione.
+Teacher: Y si hay algo externo que pueda hacer de que mi sistema deje de funcionar o que uno de los nodos deje de funcionar, entonces es lo que nosotros llamamos que puede haber un fallo independiente, o sea, no hay nada de lo que nosotros podamos controlar,
+Teacher: puede ser algo completamente estar y los nodos pueden ser de carácter heterogéneo.
+Teacher: ¿Qué entienden ustedes con esta palabra heterogéneo?
+Teacher: ¿Qué es algo heterogéneo?
+Student18: diferentes.
+Teacher: cosas distintas, ¿cierto?
+Teacher: Entonces, no, cuando yo hablo de que mi sistema distribuido eh pueden ser varias máquinas, pues las máquinas pueden ser similares, de tamaños iguales o pueden ser distintos.
+Teacher: pueden tener el mismo sistema operativo, pueden tener distinto sistema operativo, pueden tener el mismo sistema operativo, pero en versiones distintas, en versiones diferentes.
+Teacher: Entonces, no existe una regla que diga de que para poder crear un sistema distribuido todas las máquinas tengan que ser iguales.
+00:35:00
+Teacher: ¿Listo?
+Teacher: sino que lo que nosotros buscamos es que o una de las cosas que nos vamos a dar cuenta es de que tienen un carácter heterogéneo, que realmente vamos a vamos a tener máquinas que estén creadas por diferentes fabricantes,
+Teacher: que tengan diferentes dispositivos o dispositivos de diferente marca, que unos sean más rápidos que otros, unos sean más recientes que otros, etcétera, etcétera.
+Teacher: Listo.
+Teacher: Y la otra característica que nosotros quisiéramos de un sistema distribuido es de que tenga la visión de único sistema o un single system image.
+Teacher: ¿Listo?
+Teacher: Básicamente, ¿qué es?
+Teacher: Es que el usuario no tenga que ver o no tenga que ser consciente de cómo está construido el sistema el sistema distribuido para eh poder usarlo y para poder interactuar con él.
+Teacher: Para el usuario debería ser tan transparente como si dijera, "No, es que yo prendí mi máquina, abrí el sistema y ahí pude hacer todas mis tareas sin saber si el sistema está corriendo en la máquina local, está en una máquina remota o si está distribuyendo.
+Teacher: Yeah.
+Teacher: de las máquinas dentro de la red.
+Teacher: Entonces, eso es uno de los objetivos que tenemos nosotros con el sistema distribuido y es de que los usuarios no sean conscientes o que no tengan que conocer de que para poder acceder a esta a esta aplicación tengo que entrar por el puerto 8080 o me tengo que conectar a la
+Teacher: máquina tal, que allá es donde está corriendo esto.
+Teacher: Y esta otra aplicación está en en este otro lado, ¿no?
+Teacher: La idea es de que el sistema como tal nosotros podamos eh, digámoslo así, ponerlo tan transparente, tan único, como que el usuario no se tenga que preocupar por eso, no se tenga no tenga conciencia,
+Teacher: no tenga que tener el conocimiento de cómo está implementado el sistema para poder interactuar con él.
+Teacher: No siempre es fácil de alcanzar, pero siempre ah y no siempre deseamos de que tenga esa visión.
+Teacher: ¿Listo?
+Teacher: O sea, dependiendo de muchos factores o dependiendo del sistema que nosotros estemos trabajando, no no siempre es importante que el usuario sea eh o que yo pueda acceder a todos los recursos de la misma manera, digámoslo así.
+Teacher: Entonces, e ese es como uno de los conceptos que tenemos aquí.
+Teacher: ¿Listo?
+Teacher: ¿Qué ventajas tenemos nosotros eh versus un sistema centralizado?
+Teacher: ¿Qué ventajas utilizamos nosotros al desarrollar un sistema distribuido?
+Teacher: Pues vamos a tener una mayor economía.
+Teacher: ¿Por qué economía?
+Teacher: ¿Cuál es esa ventaja de economía?
+Teacher: Y es que ya vieron de que la máquina más potente que tenemos nosotros ahora, ¿cuánto nos cuesta?
+Student8: 10000 millones decía 300 millones
+Teacher: Algo al 100 millones de pesos para lograr tener eh 900 896 núcleos.
+Teacher: ¿Sí o no?
+Teacher: Pregunta.
+Teacher: Con estos 100 millones, ¿cuántos computadores core 9 para tener mínimo ocho núcleos?
+Teacher: ¿Cuántos procesadores de ocho núcleos podríamos nosotros comprar?
+Student13: como 100, profe.
+Teacher: Aproximadamente, pues 100 millones, o sea, está comprando equipos de millones.
+Student13: Ah,
+Teacher: Usted sí muy ch,
+Student13: no.
+Student13: Bueno, no son 00, no son como como de qué,
+Teacher: pero digamos que digamos que son
+Student13: como 400.
+Student26: poros 300, 400. Sí.
+Student13: Yeah.
+Teacher: equipos de digamos que a la Sí,
+Student26: M.
+Teacher: unos 400 nodos o 400 computadores.
+Teacher: 400 computadores con nueve núcleos llega más o menos a esta misma capacidad, ¿cierto?
+Teacher: ¿Cuánta ram estamos alcanzando con este computador?
+Teacher: Ponemos 400 núcleos.
+Teacher: Normalmente viene con 8 16 llegas en RAM.
+Teacher: 400. Ah, este 3600.
+Student13: 3600.
+Teacher: ¿Qué?
+Student13: Pues son
+Student8: No, 6400 GB de
+Student13: eh Sí.
+Student8: 16.
+Student13: Ah, bueno,
+Teacher: Okay.
+Student13: 16.
+Teacher: Y almacenamiento, pues si son 400 podemos llegar a tener hasta 400 teras.
+Teacher: Ahorita ya hay equipos de con dos con cuatro teras de almacenamiento, entonces podríamos tener alrededor de 1 pun 2 eh petabyte de de información, ¿cierto?
+00:40:00
+Teacher: que eso es mucha información, creo yo, con el mismo precio, ¿cierto?
+Teacher: Y tenemos ese esa capacidad.
+Teacher: Pero, ¿será que yo necesito comprar el todos o gastarme estos 100 millones de pesos para empezar mi proyecto en el modelo centralizado?
+Teacher: Sí,
+Student8: M.
+Teacher: porque esa es la capacidad.
+Teacher: Esos son los recursos que yo estoy esperando tener en un futuro.
+Teacher: Cuando mi sistema esté al tope de de funcionamiento, yo quisiera gastarme o tener un computador de 300 millones de dólares, vende $300,000 para poder soportar la carga o o el procesamiento que necesitamos de mi sistema en ese futuro.
+Teacher: Pero ahorita que estoy empezando en el proyecto, ¿será que necesito comprar este nodo este equipo o puedo comprar o puedo comprar una parte?
+Teacher: Voy a comprar 10 nodos, que eso ya me da eh 90 procesadores, bueno, 90 núcleos de procesamiento.
+Teacher: Me va a dar algo así como 10, serían 160 eh gigas de de RAM y algo así.
+Teacher: Yo creo que con eso podemos empezar a hacer nuestro sistema, ¿cierto?
+Teacher: Entonces, una de las características que tiene que tiene el los sistemas distribuidos es que me permite tener una buena relación rendimiento costo, ¿cierto?
+Teacher: O sea, yo no necesito tener el mayor la mayor cantidad de recursos para empezar, pero si lo hago con un modelo centralizado, si tengo que comprar el equipo donde voy a montar mi servicio mientras cuando ya esté eh terminado el desarrollo,
+Teacher: pues probablemente sí vamos a tener que hacer una alta inversión inicial sobre eso.
+Teacher: Capacidad de crecimiento y eso tiene que ver con ese mismo modelo que estaba hablando ahorita.
+Teacher: compré primero 10. podía pude haber comprado 400, pero compro 10, que son las que necesito hoy.
+Teacher: Y a medida que vaya creciendo la demanda, pues puedo ir agregando más nodos, ir agregando más recursos a mi sistema y hacer de que mi sistema pues pueda crecer en el tiempo.
+Teacher: Si hoy estoy utilizando 10 usuarios y empezó empecé a ver de que el sistema empezó a crecer el número de usuarios y ya está llegando a los 1000, entonces voy a poder agregar nuevos nodos para poder soportar esa carga
+Teacher: adicional o esos nuevos usuarios que están llegando a mi plataforma.
+Teacher: ¿Listo?
+Teacher: Entonces esa capacidad de crecimiento es algo muy importante que tiene los sistemas distribuidos versus los sistemas centralizados.
+Teacher: la posibilidad de si necesito más recursos poderlos crecer.
+Teacher: En cambio, cuando tengo mi máquina física centralizada donde para poder crecer esa máquina física, pues puede ser un poco más complejo.
+Teacher: Alto rendimiento.
+Teacher: Y en en el alto rendimiento quiero hacer referencia a la posibilidad de ejecutar múltiples tareas de manera simultánea.
+Teacher: ¿Listo?
+Teacher: Entonces, ya no estamos ligados a que el sistema operativo que estemos utilizando, sea bueno o malo, tenga que gestionar o que tenga que eh hacer el schedule, hacer la programación de qué procesos son los que van a poder acceder a los
+Teacher: procesadores que tenemos disponibles.
+Teacher: ¿Listo?
+Teacher: ¿Y cuándo entra cada uno de esos procesos a funcionar?
+Teacher: En cambio, con eh con los sistemas distribuidos, como son máquinas independientes, sean máquinas virtuales o reales, principalmente nosotros vamos a o cada una de ellas tiene unos recursos ya dedicados, eh,
+Teacher: cada una de ellas gestiona sus propios recursos y entonces cualquier tarea que nosotros estemos ejecutando ahí va a tener el dominio y control de todos esos recursos y pueden estarse ejecutando de manera simultánea.
+Teacher: tiene que ser un proceso guiado y secuencial, sino que podemos trabajarlo en paralelo.
+Teacher: También nos sirve para aplicaciones inherentemente distribuidas.
+Teacher: Eso hace referencia un poco a que no todos los sistemas los podemos centralizar, no todos lo podemos decir, lo voy a montar en un servidor y en ese servidor voy a consolidar toda la información de la empresa.
+Teacher: ¿Listo?
+Teacher: Entonces, hay empresas donde yo puedo necesitar eh distribuir la información, distribuir el procesamiento de información.
+Teacher: Y aquí como digámoslo así, para hacer un ejemplo y entender cuándo es e este modelo, pensemos en lo que es un banco.
+Teacher: Sí, usted en un banco, eh, vamos a decir, van Colombia como porque la mayoría de ustedes está en ella.
+00:45:00
+Teacher: Vamos a hablar de Bancolombia.
+Teacher: Ban Colombia tiene que centralizar toda la información de los clientes, ¿sí o no?
+Teacher: para que haya una sola versión de los clientes.
+Teacher: Entonces, cuando Bancolombia le va a hacer mantenimiento a su plataforma, pues entonces le dice a todos, "No, no entren porque voy a estar en mantenimiento." ¿Será que eso es
+Teacher: bueno?
+Teacher: Ojo, no quiero decir de que Bancolombia esté centralizado, pero pensemos en ese modelo.
+Teacher: ¿Será que es bueno que toda la información esté consolidada en un solo servidor en Medellín o en Bogotá?
+Student26: Profe, no pues tiene sus pro y sus contra, o sea, de hecho, Bancolombia se cayó cuando se cayó el servidor de Amazon y es el el del este y todo Bancolombia se cayó, pues porque utilizaba casi toda la plataforma metida ahí,
+Student26: pero es bueno y malo.
+Teacher: Mhm.
+Student26: O sea, una es pues porque obviamente sincronizar información de clientes entre varios CDNs puede ser complejo, pero le da mayor seguridad.
+Student26: Ahora, si se cae uno, pues se cae todo el sistema.
+Student26: Yo creo que no es que sea bueno o malo, sino que depende también mucho el contexto.
+Student26: Para uno como usuario, es maluquísimo, pues usted por allá rumbiando y a las 2 de la mañana Bancolombia haciendo una una actualización, usted se queda sin con qué pagar.
+Student26: M.
+Teacher: Ajá, exacto.
+Teacher: Pero entonces, ¿y será que Bancolombia está centralizado?
+Teacher: O sea, todo está funcionando desde desde Bogotá.
+Teacher: por decirlo así, o desde AWS ustedes no les ha tocado.
+Teacher: Ojo, yo sé que ahora en este mundo donde nosotros tenemos más banca móvil que física, pero ustedes no les ha tocado llegar a un a un a una oficina y que le digan, "Estamos sin línea, solamente soportamos consignaciones o no o no les ha
+Teacher: tocado." En mis tiempos,
+Teacher: en mis tiempos había eh uno podía ir a vivienda, a Banco, Caja Social, bueno, lo que sea.
+Teacher: Y era muy común de que dijeran, "No, hoy no podemos hacer transacciones nacionales." Listo.
+Teacher: O sea, no podemos hacer envíos a o pues consignaciones a cuentas por fuera de Pereira, pero si son de Pereira puedo hacer retiros, consignaciones desde la caja, no desde el cajero automático, sino desde la caja dentro de la oficina.
+Teacher: Podía ser consignaciones, podía ser retiros, no podía ser y pagos de servicios públicos, pero no pagos nacionales.
+Teacher: ¿Por qué creen ustedes que ellos tenían la capacidad de gestionar transacciones locales y no las nacionales?
+Student26: Sí, eso eso es un indicio de que no está centralizado, eso es un indicio que las cuentas vivían, de hecho creo que es así, si no estoy mal, las cuentas locales viven en los servidores locales o al menos en ese
+Student26: tiempo.
+Teacher: Mm.
+Student26: Pero si es por precisamente, por ejemplo, no estaba centralizado.
+Teacher: Entonces, en ese modelo, eh si yo sé que el problema de gestión de información no la voy a centralizar o no necesito centralizarla, Yeah.
+Teacher: Lo que yo necesito es de que cada una de las oficinas gestione sus propias cuentas, gestione sus propios créditos, gestione todo lo que hacen en la oficina debe quedar, entre comillas, en la oficina.
+Teacher: Pues entonces, ¿por qué tengo que centralizar la el sistema?
+Teacher: ¿Por qué tengo que decir, tengo que hacer una página web que lo lleve todo a Amazon, por ejemplo, o que lo instale en en un centro de datos en Bogotá?
+Teacher: No, no, eso no es necesario.
+Teacher: Yo lo que puedo hacer es crear soluciones independientes y esos soluciones independientes que compartan información como tal.
+Teacher: ¿Listo?
+Teacher: Entonces, yo estoy en San Andrés, meto el la tarjeta eh en un cajero, yo estoy casi seguro de que esa información no tiene que ir a no va no va a venir a Bogotá a preguntar cuánto tenía el saldo,
+Teacher: pero muy probablemente sí tendría que ir a donde yo saqué mi cuenta o donde yo eh saqué mi tarjeta de crédito para saber si tengo saldo o no, ¿cierto?
+Teacher: Entonces es ese tipo de de aplicaciones cuando yo sé que el la información no es no necesariamente debe ser centralizada, sino que yo puedo estar descentralizando la información y luego la centralizamos, lo podemos hacer.
+Teacher: Las cadenas de supermercados, vamos a al éxito.
+Teacher: ¿Será que el éxito todos los las distintos almacenes del éxito o distintas tiendas del éxito tendrán que ir a la misma base de datos centralizada?
+Teacher: sería una locura.
+Teacher: No habría forma de hacer eh la cantidad de facturas que hacen ellos al día, ¿cierto?
+Teacher: Entonces, si yo tengo la posibilidad de que descentralizo, cada una de las sedes tiene su centro de datos, tiene la gestión de sus cajas, su etcétera, etcétera, etcétera, pero yo puedo consolidar después, yo puedo extraer esa información o enviar el resumen de esa información a otros servidores para
+00:50:00
+Teacher: hacer eh análisis financiero, etcétera, pues sigue siendo un sistema, sigue siendo el mismo sistema, sino que está distribuido, o sea, su finalidad, su procesamiento La forma como podemos eh analizar el problema y resolverlo es
+Teacher: haciendo de que cada uno de las sedes o cada uno de los centros de datos esté distribuido.
+Teacher: Eh, el tema de la fiabilidad y disponibilidad, esto sí tiene que ver con la tolerancia falló.
+Teacher: O sea, ¿qué tan qué tan fácil o difícil es gestionar un error o un fallo dentro del sistema?
+Teacher: Con los sistemas distribuidos, la tolerancia a fallos es mucho mejor.
+Teacher: O sea, si algo falla, mi sistema podría seguir funcionando.
+Teacher: Puede que algo del sistema no funcione, pero mi sistema podría seguir funcionando.
+Teacher: ¿Listo?
+Teacher: A diferencia del sistema centralizado, porque, ¿qué pasa si algo falla en el sistema centralizado?
+Teacher: ¿Qué pasa si falla el disco duro?
+Teacher: ¿Qué pasa si falla la red.
+Teacher: Bueno, si necesito hacer procesamiento interno, no pasa nada.
+Teacher: Pero, ¿qué pasa si falla la red en ese en ese nodo centralizado?
+Teacher: ¿Qué pasa si se va la energía e en el centro de datos,
+Student8: Se cae todo, profe.
+Teacher: ¿cierto?
+Teacher: Entonces es poco tolerante a fallos porque no hay no hay un plan B. Si yo lo tengo todo en un solo equipo, no puedo tener un plan B. no existe una posibilidad de que yo pueda garantizar tener un un tema de respaldo
+Teacher: o cómo vamos a gestionar en caso de que algo falle.
+Teacher: En cambio, con los sistemas distribuidos es un poco más fácil, no quiere decir que sea facilísimo, sino que es mucho más tolerante a los fallos.
+Teacher: es de carácter abierto y heterogéneo.
+Teacher: O sea, que yo puedo trabajar con eh, digámoslo así, con las máquinas o los recursos que tengo y con los estándares que tengo.
+Teacher: Cuando hablamos de carácter abierto, hablamos de estándares, ¿listo?
+Teacher: de que toda la comunicación o toda la transmisión de información o toda la lo las herramientas que vamos a estar haciendo para que los diferentes nodos puedan trabajar en simultáneo es porque están utilizando eh tecnologías ya conocidas y que están probadas eh
+Teacher: para para ese fin.
+Teacher: Lo ideal en un sistema eh distribuido no es utilizar cosas propietarias o herramientas que que podamos tener limitantes para poder conseguir un proveedor.
+Teacher: Lo ideales siempre es utilizar herramientas de carácter abierto, o sea, que no haya una algo que solamente una empresa pueda cumplir, sino que yo pueda tener diferentes alternativas para resolver los problemas, principalmente aquí en este tema, tolerancia a fallos.
+Teacher: Y simplemente como como anécdota o como eh ejemplo, ¿qué pasa si ojo, no sé qué tanto conocen ustedes de equipos, pero normalmente yo llego y me compro un servidor, o sea, una máquina,
+Teacher: un nodo de cómputo empresarial y lo compro a una empresa, lo compro a Dell, a Julepacar, a a Lenovo, a alguna de esas empresas, le compró un un computador, un servidor, un nodo de cómputo, digámoslo así.
+Teacher: ¿Listo?
+Teacher: Y me falló la tarjeta de red.
+Teacher: ¿Qué hago?
+Teacher: ¿Cómo resuelvo ese problema?
+Teacher: ¿Cómo cómo resuelvo recuperar la tarjeta de red de ese nodo?
+Teacher: Tengo que llamar al proveedor, ¿cierto?
+Teacher: Tengo que llamar.
+Teacher: Señor Julepacar, yo tengo el servidor XYZ y se me dañó la tarjeta de red.
+Teacher: Ah, esa tarjeta no la tenemos en Colombia.
+Teacher: toca mandarle importar ¿Y cuánto tiempo se demora?
+Teacher: Ah, como eso hay que traerlo desde Estados Unidos, entonces se demora tres semanas o dos semanas para llegar.
+Teacher: Sí. ¿Y tenemos alternativa para resolver ese problema, no?
+Teacher: ¿Por qué?
+Teacher: Porque hay equipos donde su tecnología depende del modelo en el que en el que nosotros estemos trabajando, ¿cierto?
+Teacher: del modelo del del nodo que compramos o del modelo o de la versión o del año que nosotros estábamos trabajando.
+Teacher: Lo mismo pasa con los computadores de ahora.
+Teacher: Nosotros decimos, "Ah, es que yo compré mi computadora hace 5 años y se me dañó una la memoria RAM. Tengo que buscar una memoria RAM,
+Teacher: no me sirve la de última tecnología.
+Teacher: Me toca buscar una que sea compatible o que que esté allá.
+00:55:00
+Teacher: Pero, ¿qué si tenemos en el carácter abierto en esa tecnología?" Y es que si se me perdió,
+Teacher: se me dañó una memoria, puedo comprar cualquier memoria de cualquier fabricante que cumpla con el estándar SSD3, ¿cierto?
+Teacher: Entonces eso es carácter abierto y es que yo pueda decir, "No, entonces se la voy a comprar a de él, pero si él no la tiene, puedo comprar la esa memoria en en Hepacar o la puedo comprar en Kingston
+Teacher: o la puedo crear traer de Del o el que la tengamos disponible y yo voy a poder resolverlo de una manera mucho más fácil que si utilizamos una cosa que sea muy dependiente de un solo fabricante.
+Teacher: Entonces, siempre busquemos el carácter abierto y nuestros sistemas distribuidos pues pueden ser heterogéneo.
+Teacher: No todo tiene que ser de la marca Cisco, no todo tiene que ser de la marca Tricom.
+Teacher: Yo puedo tener la variedad eh en mi sistema.
+Teacher: Y la última ventaja es que se usa o tiene una gran facilidad para compartir recursos y datos.
+Teacher: Recuerden que los recursos que yo estoy hablando son los recursos de cómputo, memoria, RAM, procesador.
+Teacher: ¿Listo?
+Teacher: Que son como los tres recursos principales que tenemos.
+Teacher: Y si estamos en un sistema distribuido, toda esa memoria RAM, procesador puede ser compartida y almacenamiento pueden ser compartidas.
+Teacher: Lo mismo los datos.
+Teacher: Los datos, pues generalmente hace referencia al almacenamiento de los archivos, pues también los voy a poder compartir muy fácil con un sistema distribuido, no tengo que tenerlos en un solo lugar.
+Teacher: A pesar de que estén en diferentes lugares, pues yo voy a poder fácilmente navegar a ese otro lugar y leer la información.
+Teacher: Pero, ¿dónde está el problema de los sistemas distribuidos?
+Teacher: Primero que todo, las necesidades de un nuevo hardware, de un nuevo tipo de software.
+Teacher: ¿Y por qué necesitamos un nuevo tipo de software?
+Teacher: ¿Por qué creen ustedes?
+Teacher: Porque la forma como nos enseñaban a programar hasta ahora, ojo, hasta ahora no es no era para sistemas distribuidos, era para sistemas centralizados, para resolver con la memoria Oh.
+Teacher: que teníamos local con el almacenamiento que teníamos local y con los procesadores que teníamos locales.
+Teacher: Ahora tenemos que mirar cómo podemos usar la memoria de otros equipos, los procesadores de otros equipos y el almacenamiento de otros equipos en el mismo desarrollo del sistema.
+Teacher: Así que vamos a tener que aprender nuevas técnicas, nuevas herramientas, nuevos eh frameworks que nos permitan realizar ese tipo de de operaciones, ¿cierto?
+Teacher: Entonces, eso puede ser un poco chocante para muchos de nosotros.
+Teacher: O tendríamos que empezar a aprender nuevas herramientas o nuevas formas de programar, lo que ya sabíamos ya no nos sirve.
+Teacher: tenemos que aprender nuevas formas de programar, nuevas formas de eh estructurar nuestro código y lo y lo digo para los que utilizamos herramientas de, digámoslo así, lenguajes de alto nivel como Java, Python, Charp, que nosotros veníamos acostumbrados en el modo en el modo
+Teacher: local a un tipo de desarrollo, un tipo de una forma como podíamos nosotros desarrollar las aplicaciones, porque simplemente nosotros lo que hacíamos era darle doble clic a a un punto y se levantaba el proyecto y ahí podíamos realizar todas las tareas,
+Teacher: ¿cierto?
+Teacher: Pero ahora ya no es darle doble clic a un a un punto ex.
+Teacher: Voy a tener múltiples punto exes en múltiples máquinas y todas tienen que estar corriendo o comunicándose entre ellas.
+Teacher: Entonces, ya no yo no tengo el control de cuándo iniciar el sistema, sino que el sistema ya está iniciado y simplemente lo voy a estar utilizando.
+Teacher: Y ese modelo o esa forma de programar es distinta y tenemos que aprender esa nueva forma de hacer.
+Teacher: La red introduce problemas.
+Teacher: Listo.
+Teacher: Además del software, que ya sabemos que es complicado de hacer, vamos a tener problemas de pérdida de mensajes y saturación.
+Teacher: lo que llamamos la latencia, obsolescencia de los datos.
+Teacher: ¿Listo?
+Teacher: De que yo mandé a pedir una información y cuando me llegó la respuesta, no, eso ya cambió, entonces toca volverla a pedir.
+Teacher: ¿Listo?
+Teacher: Entonces todo esto es un nuevo problema, son problemas adicionales que nosotros estamos agregando a nuestro sistema.
+Teacher: Eh, el tema de la seguridad y confidencialidad.
+Teacher: Si estamos compartiendo datos ahora, ¿cómo vamos a hacer para garantizar de que no todas las personas vean los datos que no tienen acceso o a los que no tienen permiso?
+Teacher: Entonces puede llegar a ser un elemento adicional, un elemento que tenemos que gestionar de manera independiente para poder eh garantizar de que nuestro sistema pues pueda funcionar en en el tema.
+Teacher: Ya no es solamente limitar usuario y contraseña en el punto ex que nosotros hicimos, sino que cómo hacemos para que la información que va a viajar entre los diferentes nodos no traiga información que yo no tenga acceso.
+01:00:00
+Teacher: Listo.
+Teacher: si Si yo soy el jefe de ventas y trabajo en mi equipo local, pues ahí tengo todos mis clientes, mis ventas, mis negociaciones, etcétera, etcétera, etcétera.
+Teacher: Y nadie más de la empresa puede ver lo que yo estoy haciendo porque todo está en mi en mi computador.
+Teacher: Y ahora toda esa información está en la nube, por decirlo así, o está en otro sitio compartido, que es fácil de ver de compartir los datos y la información.
+Teacher: ¿Cómo hago para garantizar de que mi compañero no vea mis ventas, no vea mi la información de mis clientes, no vea la información de mi gestión, porque si no él me puede robar los clientes, me puede robar la información.
+Teacher: que a pesar de que está el jefe de nómina que está calculando las nóminas de todos los empleados, pues y y lo pone en el sistema, yo, Teacher, cuando ingresa el sistema no debería poder ver la información del sueldo de [estudiante] o de [estudiante] o
+Teacher: de Isabela, ¿cierto?
+Teacher: ¿Por qué?
+Teacher: Porque es información confidencial, es información que debe estar asegurada.
+Teacher: Ese tipo de cosas, ese tipo de información en un sistema distribuido, ya nos genera una nueva una nueva restricción, un nuevo una nueva un requisito no funcional que debemos gestionar programáticamente.
+Teacher: ¿Listo?
+Teacher: Eh, una definición de lo que puede llegar a ser un sistema distribuido, ya con lo que hemos visto hasta ahora podría ser lo que en un momento Lampor hizo su hizo su analogía o al menos
+Teacher: hizo una especie de definición donde él decía, "Un sistema distribuido es aquel en el que no puedes trabajar en tu máquina porque falló por el fallo de otra máquina que ni siquiera sabía que existías. Y esto tiene que ver mucho con las repercusiones que tenemos nosotros al momento de estar desarrollando nuestros
+Teacher: sistemas distribuidos.
+Teacher: Y ahí es donde vienen ejemplos como esa caída de de AWS que afectó a a Ban Colombia.
+Teacher: Yo estoy entrando una aplicación que tengo instalada en mi en mi máquina, lo tengo en mi celular, eh mi mi ¿Cómo es?
+Teacher: Mi plataforma móvil, mi aplicación móvil está en mi máquina.
+Teacher: Yo quiero acceder a a mis recursos, pero no puedo.
+Teacher: ¿Por qué?
+Teacher: Porque algo falló.
+Teacher: ¿Qué falló?
+Teacher: No sé.
+Teacher: Porque algo falló.
+Teacher: ¿Listo?
+Teacher: Entonces es un eso, ¿es eso qué es?
+Teacher: una buena definición de un sistema distribuido, no que esté bien hecho, pero si es un buen es un sistema distribuido.
+Teacher: Es aquel en el que no puedes trabajar en tu máquina porque falló otra máquina que ni siquiera era una máquina de los de las mías, de las que yo controlo, sino algo que está por fuera de mi de mi dominio.
+Teacher: No eran las máquinas virtuales que yo instalé, no eran los servicios que Yo monté, no era error en el código que yo instalé o que yo eh tengo desplegado en la nube.
+Teacher: Simplemente falló una máquina que no sabía que existía y que podía afectarme de una manera como pues tan drástica como lo llegó a afectar en su momento.
+Teacher: Esto es un buen es un buen ejemplo de lo que puede ser un sistema distribuido, pero desde el punto de vista de las desventajas.
+Teacher: ¿Cómo vamos hasta ahí?
+Student8: Bien,
+Teacher: Ya hablo mucho.
+Student8: profe, estamos
+Teacher: Listo.
+Teacher: Vamos a terminar hoy con este tema de las falacias,
+Student8: claros.
+Teacher: pero quiero que me digan qué es una falacia.
+Teacher: ¿Qué entienden ustedes con el concepto falacia?
+Student8: Mentira.
+Student8: M.
+Teacher: Mm.
+Teacher: Tampoco es una mentira, porque si no serían mentiras.
+Teacher: ¿Qué es una falacia?
+Teacher: Una falacia es una afirmación que nosotros podemos dar por hecha, pero que en la realidad no necesariamente es verdad, ¿cierto?
+Teacher: O sea, que en un momento determinado yo puedo convencerlos a ustedes de que de que lo que dije es cierto, pero podría ser que yo no esté diciendo completamente la verdad.
+Teacher: Entonces, son afirmaciones que se han dicho o se han hecho durante el tiempo y muchos de los administradores o muchos de los usuarios cuando quieren vender eh los eh la computación distribuida o sus soluciones de computación distribuida,
+Teacher: pueden llegar a caer en el en el en decirlas con plena fe y convicción de que están diciendo la verdad, pero que en un futuro, pues nos podemos dar cuenta de que no es tan cierto.
+01:05:00
+Teacher: ¿Listo?
+Teacher: Una falacia eh moderna es eh la IA va a eliminar o va a reemplazar a la a los programadores.
+Teacher: ¿Ustedes qué creen?
+Teacher: ¿Es una mentira o es una afirmación que podría ser cierta o puede ser falsa?
+Teacher: ¿Ustedes cómo la ven?
+Teacher: Creo que nosotros el jueves sí estuvimos hablando de de la de lo que deberían hacer los ingenieros o los desarrolladores versus los codificadores, ¿cierto?
+Teacher: Eso sí lo hablamos el jueves, pero es más o menos es cierto y es es una afirmación que se puede dar bajo un contexto, pero que realmente no es tan absoluta como debería ser.
+Teacher: Es una de las falacias que nosotros somos muy, yo digo nosotros, aunque yo nunca la he dicho porque yo no caigo en fala, porque esta yo ya me la sé, pero una de Yeah.
+Teacher: Eh, digámoslo así, una de las falacias en las que nosotros hemos caído normalmente cuando estamos trabajando con sistemas distribuidos tiene que ver con la red.
+Teacher: Y es que como la red es uno de los elementos cruciales dentro de nuestra definición o dentro de nuestra solución, eh muchas veces nosotros decimos, "No, es que tenemos que utilizar los mejores equipos para que la red sea confiable.
+Teacher: Sí, vamos a utilizar eh equipo Cisco y vamos a utilizar los últimos equipos que salieron, la última versión.
+Teacher: Voy a utilizar cableado eh UTP eh categoría 6E y vamos a a utilizar conectores eh cauchetados con no sé qué eh oro y no sé si me hago entender.
+Teacher: O sea, nosotros podemos dominar, nosotros podemos controlar cómo vamos a estructurar nuestra red, ¿cierto?
+Teacher: ¿Cuáles son los dispositivos que lo vamos a que vamos a utilizar?
+Teacher: ¿Cuáles son los conectores, las tarjetas de red que nosotros vamos a utilizar?
+Teacher: ¿Cierto?
+Teacher: Nosotros eso lo podemos controlar, pero eh una cosa es que nosotros controlemos o diseñemos bien nuestra red, otra cosa es que sea confiable.
+Teacher: ¿Y por qué no podemos confiar en la red?
+Teacher: ¿Por qué creen ustedes que no podemos confiar en la red?
+Teacher: Si nosotros estamos definiendo todo básicamente porque no es de nuestro control, no es de nuestro dominio, cualquier cosa puede fallar.
+Teacher: ¿Listo?
+Teacher: Yo puedo tener la red más segura o digámoslo así con las mejores eh características o con los mejores estándares que se están manejando en la actualidad, pero aún así cualquier tarjeta de red fallar, cualquier conector puede fallar.
+Teacher: Listo, el cable se dobló más de lo debido en en la en la construcción y ese cable pues no va a tener la velocidad ni la capacidad y probablemente pueda llegar a tener fallos en la transmisión y en la y en la en la gestión.
+Teacher: Entonces, a pesar de que yo pueda controlar o yo pueda definir de manera eh estricta mis los requerimientos que tenemos, yo no puedo garantizar la confiabilidad de mi red.
+Teacher: Y viendo la confiabilidad desde ese punto de que nunca va a fallar, de que siempre que los la red o el ancho de banda que estamos utilizando dentro de la red siempre va a ser igual.
+Teacher: Eh, otra falacia, la latencia es igual a cero.
+Teacher: ¿Qué es la latencia?
+Teacher: Nosotros ya hemos hablado de latencia, pero ¿qué es la latencia?
+Teacher: Es el tiempo que se demora en sistema en o mejor dicho, es el tiempo que tiene un un nodo o un elemento o un usuario cuando hace la petición.
+Teacher: Yeah.
+Teacher: recibir su respuesta.
+Teacher: Desde que yo hice la petición, ¿qué es lo que necesito?
+Teacher: ¿Cuánto tiempo se demora en que llegue la respuesta a mí?
+Teacher: ¿Cierto?
+Teacher: ¿Será que puedo decir de que mi sistema tiene una latencia igual a cero?
+Teacher: Que no se demora nada.
+Student8: No, profe, no.
+Teacher: Puede que sea muy ágil.
+Teacher: Puede que una una petición en Google se me demora 200 milisegundos, pero eso es cero, no es cero, ¿cierto?
+Teacher: Puede ser muy rápida, puede ser muy instantánea, pero no podemos hablar de que la latencia es cero.
+Teacher: Y si mi sistema tiene que hablar con múltiples nodos o tiene que eh gestionar la información con múltiples nodos, probablemente esa latencia va a ser mucho mayor.
+01:10:00
+Teacher: Sí, entre más nodos se vean involucrados en el procesamiento de mi petición, más lento o más latencia se va a a ir acumulando dentro de mis peticiones.
+Teacher: Entonces, esa es otra falacia que muchos administradores, desarrolladores, etcétera, pueden estar diciéndonos al momento de que quieran vender su producto o quieran vender que su solución quedó lo más optimizada posible.
+Teacher: El ancho de banda es infinito.
+Teacher: Ya sabemos que el ancho de banda depende del canal de comunicación y nunca es infinito.
+Teacher: A pesar de que utilizamos fibra óptica, que es como hoy en día el canal que que mejor ancho de banda nos puede ofrecer, no es infinito, ¿cierto?
+Teacher: Si fuera infinito, solamente necesitaríamos un hilo de fibra óptica para unir el mundo, pero en este caso no, no se puede.
+Teacher: Entonces, el ancho de banda, que es esa cantidad de paquetes, la cantidad de información que yo puedo enviar por la red eh de un lugar a otro nunca va a ser infinito, siempre va a estar limitado a los recursos o al menos el canal de comunicación que estemos
+Teacher: usando.
+Teacher: que la red es segura, no no vamos a tener problemas de seguridad, no va a haber gente que pueda intervenir nuestra red, podremos tener el administrador y los hackers más más buenos del mundo y aún así nuestra red va a ser
+Teacher: vulnerable.
+Teacher: La topología, la forma como vamos a conectar los equipos no cambia.
+Teacher: Probablemente sea cierto para muchos sistemas y sobre todo los sistemas centralizados.
+Teacher: Sí, porque todo va a estar concentrado en un solo lugar, pero en la realidad, a medida que vamos creciendo, a medida que va creciendo nuestro sistema, la red va cambiando, los nodos que están involucrados en el procesamiento de información van cambiando.
+Teacher: Entonces, esto eh probablemente para el gráfico o para la explicación que le estemos dando a nuestros administradores pueda ser cierto, pero debemos tener la certeza o al menos el la Yeah.
+Teacher: conocimiento de que la red siempre va a estar en en constante cambio, siempre si entra un nuevo dispositivo, eso afecta la topología de nuestro sistema.
+Teacher: Solo necesitamos un administrador para nuestro sistema distribuido falso con todas las fes que existen.
+Teacher: ¿Listo?
+Teacher: ¿Por qué creen ustedes que ya que no un solo administrador no es suficiente?
+Student6: Tak.
+Teacher: por la cantidad de componentes que hacen parte.
+Student8: Prof.
+Teacher: Dime, [estudiante],
+Student8: No, sí,
+Teacher: ¿qué vas a decir?
+Student8: eso que pues si estamos en una red distribuida, pues como Bitcoin es ridículo pensar que una sola persona puede administrar tantos nuevos.
+Teacher: Exactamente.
+Student8: Yeah.
+Teacher: O sea, administrar los nodos, gestionar el eh la base de datos, gestionar la aplicación, eh la infraestructura, eh la comunicación, todo eso,
+Teacher: todos esos elementos para que una sola persona, un solo administrador sea el encargado de gestionar todo mi sistema o de garantizar de que mi sistema funcione de manera adecuada, es poco eh creíble que que suceda, pero ¿qué es lo que sucede en muchas empresas,
+Teacher: sobre todo en las empresas pequeñas, que quieren tener el mejor el mejor sistema, que quieren entrar a competir con las grandes empresas, pero solamente piensan que con una sola persona de o un solo administrador del sistema es suficiente para que le dé mantenimiento a todo,
+Teacher: que mantenimiento físico, lógico y de seguridad a al sistema como tal.
+Teacher: Y es poco probable que eso suceda.
+Teacher: El costo de transporte es igual a cero.
+Teacher: ¿Ustedes qué dicen de esta?
+Teacher: El costo de transporte es igual a cero.
+Student8: Tampoco.
+Teacher: ¿Qué qué es el qué es el costo de transporte?
+Student8: Supongo que el costo de comunicar dos partes de esa red
+Teacher: Exacto.
+Student8: distribuida.
+Teacher: Y es que volvemos al tema, tiene que ver mucho es con el discurso con el que nosotros hablamos.
+Teacher: ¿Listo?
+Teacher: Porque muchas veces vamos a vamos a caer de pronto en el en el en el error de decir, "Mire, es que vamos a comunicar la sede central con la sede la Julita, por ejemplo.
+Teacher: Vamos a mandar cable de de la sede central o del CRI a la Julita para darle conectividad de de internet a los nodos de la Julita.
+01:15:00
+Teacher: ¿Cierto?
+Teacher: Entonces, ¿cuánto cuánto me va a costar el transporte de información y el envío de información por ese canal?
+Teacher: No, eso es cero porque ya lo compramos ya.
+Teacher: Eso eso eso no tiene un costo adicional.
+Teacher: ¿Será que eso no genera gastos adicionales?
+Student8: Los componentes se degradan, o sea, incluso si todo fuera perfecto,
+Teacher: Voy a va a haber voy a tener obsolescencia de equipos.
+Student8: los componentes se degradan.
+Student8: M.
+Teacher: Voy a tener que estar haciendo mantenimiento a a la red, ¿cierto?
+Teacher: va a estar, no sé, eh puede haber un fallo si es aéreo, puede haber un una caída de un poste si es subterráneo, puede haber una inundación o algo que que cambie el funcionamiento o la o la o me dañe la fibra que tengo,
+Teacher: ¿cierto?
+Teacher: o que alguien haga una una perforación y justamente me afecte eso.
+Teacher: Entonces, yo debo estar yo como administrador de infraestructura debería de tener la el conocimiento de decir de que cada línea adicional o cada conexión adicional que tengamos de nuestro sistema genera un costo de mantenimiento de de esa línea.
+Teacher: Vamos a tener que estar revisando los equipos terminales.
+Teacher: Vamos a estar revisando si la señal está llegando con suficiente potencia o tengo que meter repetidores en en el camino, cosas así por el estilo.
+Teacher: Y todo eso son costos y el hecho de que me tengan que pagar a mí para que yo esté pendiente de eso, ya es un costo de transporte, ¿cierto?
+Teacher: Entonces, para que lo tengamos ahí en cuenta.
+Teacher: Y por último, las redes homogénea.
+Teacher: ¿Qué es homogéneo?
+Teacher: distinto heterogéneo.
+Teacher: ¿Qué será que la red es homogénea?
+Student8: que todo eso igual, los equipos son iguales,
+Teacher: Todos los equipos de la red son iguales.
+Student8: todos están tien el mismo rendimiento y todo.
+Teacher: Puede que yo inicialmente compre compre compre unos equipos homogéneos,
+Student8: No.
+Teacher: ¿cierto?
+Teacher: Hago hago una licitación y me traigan todos los equipos de manera similar.
+Teacher: Pero a medida que va creciendo mi sistema o a medida que va creciendo mi red, los componentes pueden ser distintos.
+Teacher: No es el router que yo compraba hace 5 años no es el mismo que yo voy a conseguir hoy en día, ¿cierto?
+Teacher: Ni puede que sea el mismo fabricante y sea el mismo modelo, pero no va a ser los mismos componentes ni con las mismas eh sí, los componentes internos, ni con las mismas velocidades, ni los mismos procesadores que teníamos hace 5 años.
+Teacher: Entonces, cada vez que agreguemos nuevos equipos a la red, la red se va a ver afectada.
+Teacher: Por eso por acá decíamos que la topología no cambia, ¿no?
+Teacher: Si la la si la topología cambia es porque la y la red puede estar compuesta por diferentes elementos de diferentes fabricantes con diferentes tecnologías, etcétera.
+Teacher: Carácter abierto, manejan los mismos estándares, pero es homogénea.
+Teacher: Listo.
+Teacher: Eh, creo que aquí ya vamos a hablar sobre aplicaciones.
+Teacher: Est, pues ya me lo salté porque ya sabemos en dónde podemos ver los sistemas distribuidos o bueno, podemos empezar esto en la próxima clase y los modelos, pero les voy a vamos a dejar por hoy aquí, pero les voy a dejar taller y el taller lo vamos a traer para el miércoles,
+Teacher: bien, para el jueves, perdón.
+Teacher: Eh, ¿qué es el taller?
+Teacher: Disculpen, yo dejo de compartir aquí y les hablo del taller.
+Teacher: El taller que vamos a dejar para la próxima clase, o sea, para que lo traigan resuelto y lo vamos a discutir en la próxima clase, tiene que ver con dos conceptos que normalmente usamos en la computación distribuida, que es el concepto de cluster y el concepto de grid.
+Teacher: No sé si lo han escuchado, qué es un clúster y qué es un grit.
+Teacher: Si no lo han escuchado, pues parte de la investigación es que ustedes van a aprender o van a eh investigar sobre justamente eso.
+Teacher: ¿Listo?
+Teacher: Entonces, todos los estudiantes, talleres y la fecha límite va a ser el próximo jueves.
+Teacher: ¿Listo?
+Teacher: Eh, entonces, ¿cuál es la cuál es la tarea?
+Teacher: Véngame, comparto esta.
+Teacher: ¿Cuál es el la el taller como tal?
+Teacher: Espérame que se me perdió.
+Teacher: Aquí está.
+Teacher: Me confirman si ven ahí mi pantalla.
+Student6: Sí,
+Teacher: Sí.
+Student6: profe, sí se ve.
+Student11: Sí, profe.
+Teacher: Creo que creo que es mejor esta esta de aquí en lugar de esa otra.
+Teacher: ¿Cuál es el taller?
+Teacher: Ese es el taller que les voy a compartir ahora.
+01:20:00
+Teacher: ¿Qué dice?
+Teacher: ¿Qué es lo que quiero que hagan?
+Teacher: Investigar el hardware para conformación de un clúster y o un grid.
+Teacher: ¿Qué es eso?
+Teacher: O sea, hay dos conceptos que se fundamentan o hacen que nosotros hablemos de sistemas distribuidos.
+Teacher: Uno es la configuración cluster y otra es la configuración grid.
+Teacher: Las dos son configuraciones de hardware, ¿okay?
+Teacher: Son configuraciones de hardware.
+Teacher: El taller que quiero que traigan es que investiguen cuál es el cuáles son cuál es el hardware necesario para crear un cluster y cuál es el hardware necesario para crear el grid.
+Teacher: No sé si si se entiende.
+Teacher: O sea, tenemos esos dos conceptos, cluster y grid.
+Teacher: Y quiero decir, okay, si yo quiero montar un cluster, ¿qué hardware necesito?
+Teacher: O si quiero montar un grid, ¿qué hardware necesito?
+Teacher: el escenario.
+Teacher: ustedes son los jefes de sistema, los asesores de de informática o de TI de una empresa Y el gerente, por algún motivo, razón o circunstancia, escuchó de que él podía o que la solución para uno de sus problemas era montar
+Teacher: en la empresa un clúster para resolver ese problema, pero también le dijo que dependiendo de de unos casos también podría utilizar el grid.
+Teacher: Entonces llega el gerente a la empresa y les dice, "Ingeniero, por favor, explíqueme qué necesito comprar para montar un clúster en mi empresa para resolver el problema que tenemos nosotros acá o qué necesito para montar un grid en mi empresa." Entonces,
+Teacher: enfoquen el la investigación o el taller en el hardware.
+Teacher: No me interesa tanto el software porque para software vamos a hablar mucho aquí, el hardware, ¿está bien?
+Teacher: ¿Hay alguna duda?
+Teacher: ¿Queda claro?
+Teacher: Sí. Listo.
+Teacher: En la mitad, en la mitad ustedes van a tener que que entender para qué sirve un cluster y para qué sirve un grid.
+Teacher: Entonces, no es el objetivo del taller.
+Teacher: Yo quiero es hardware, yo quiero que me salgan aquí con qué nodos, qué redes, qué etcétera, etcétera.
+Teacher: ¿Qué necesitamos para eso?
+Teacher: Y aparte vamos a y pero como necesitan entender las diferencias entre ellos, entre cluster y grid, pues van a tener que investigar cuándo utilizamos o cuándo se necesita montar un clúster y cuándo necesita mostrar un grit.
+Teacher: Y en la próxima clase vamos a socializar este eh lo lo los hallazgos que ustedes encuentren y miramos y profundizamos un poco en este tema de la infraestructura.
+Teacher: ¿Listo?
+Teacher: Eh, nada, jóvenes, muchísimas gracias a todos por la asistencia.
+Teacher: Por favor, eh hagan el taller y nos vemos el jueves.
+Teacher: ¿Listo?
+Teacher: Dale, que tengan muy buena noche.
+Student14: aproba.
+Student14: Hasta luego.
+Student10: Hasta luego,
+Student23: Buenas noches.
+Student8: Gracias,
+Student12: O profe.
+Student8: profe.
+Student5: Gracias.
+Student11: Hasta luego, profe.
+Teacher: Vale, hasta luego.
+La reunión finalizó después de 01:23:26 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+

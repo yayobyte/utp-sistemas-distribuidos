@@ -1,0 +1,951 @@
+Hora de inicio de la reunión: 2026-09-24 18:33 GMT-5
+Asistentes
+Student2, Student3, Student4, Teacher, Student37, Student5, Student6, Student7, Student8, Student28, Student9, Student12, Student13, Student14, Student15, Student16, Student17, Student18, Student19, Student20, Student21, Student22, Student23, Student35, Student25, Student26, Student27
+Transcripción
+Teacher: Esto, ¿cómo es que se quedó llamando en vivo?
+Teacher: Hola, jóvenes.
+Teacher: Buenas noches a todos.
+Teacher: Espero que todo bien.
+Teacher: Vamos a continuar con nuestro con nuestra introducción a los sistemas distribuidos.
+Teacher: ¿Qué les ha parecido hasta ahora?
+Teacher: ¿Cómo han visto todo este tema de de los sistemas distribuidos?
+Teacher: ¿Era lo que se esperaba o ya tenían más o menos contexto o si es algo completamente nuevo?
+Student22: Pues creo que sí era lo que esperaba yo, la verdad.
+Student22: Tal vez un práctica, alguna práctica, pero pues igual así está entretenido, ¿no?
+Student22: Sí, yo sé que usted, pero pues sí.
+Student22: Yeah.
+Student5: Sí, sí, sí.
+Student5: Justamente eso, desde que esperaba, ¿no?
+Student5: O sea, no tenía conocimiento que podía esperar de la asignatura, pero sí ha sido bastante pesadito respecto a a eso que es teórica, teórica, teórica.
+Student5: No.
+Teacher: Sí, claro.
+Teacher: Esta esta desafortunadamente esta clase es para llenarnos de conocimiento o intentar eh aterrizar muchos conceptos que de pronto hemos escuchado y que no están muy claros y la idea es que pues podamos aterrizarlos y mirar
+Teacher: realmente en dónde cabe dentro de este mundo de los sistemas.
+Teacher: Eh, [estudiante],
+Student28: Profe, pues por mi parte sí me habían pintado mucho que a mí se me dijeron rico,
+Teacher: cuéntame.
+Student28: prepárese porque usted lo van a llenar de teoría más no poder.
+Student28: Y pues hasta ahora como se ha presentado la aclaración muy llevadera.
+Teacher: Ah, bueno,
+Student7: Yo también opino lo mismo, que a pesar de que que es teoría,
+Teacher: pero
+Student7: digamos que estamos hablando de temas muy actuales, entonces eso que sea como más llamativo.
+Student7: No.
+Teacher: claro, ¿no?
+Teacher: Y y tiene que ver mucho porque pues digamos que esto es la base de lo que hoy estamos viviendo en términos de tecnología, ¿cierto?
+Teacher: muchas empresas o mucho del desarrollo que nosotros conocemos hoy en día, pues se basa en todos estos conceptos que hemos venido hablando hasta ahora.
+Teacher: Nos faltan muchas cosas por hablar, nos falta todo un semestre para disfrutar, pero muy conceptual.
+Teacher: Realmente nos vamos a seguir yendo de esta manera así conceptual.
+Teacher: La idea es de que participen y podamos interactuar para que no quede como un monólogo de yo estar aquí hora y media echando echando les cuento y ustedes durmiendo, sino que pues si tienen alguna porte o tienen conocimiento o alguna duda
+Teacher: de algo que que esté relacionado con el tema, pues ahí lo podemos ir revisando y ir aclarando así como lo hemos hecho hasta ahora.
+Teacher: ¿Listo?
+Teacher: Eh, perfecto.
+Teacher: Eh, nosotros en la sesión pasada pues nos dedicamos a trabajar todo lo que era el o retomar o reafianzar los conceptos de los modelos de computación distribuida y nos quedamos pendientes de eh de hablar sobre los objetivos,
+Teacher: qué es lo que nosotros esperamos sobre o de los sistemas distribuidos en general, ¿cierto?
+Teacher: Ya sabemos cómo se construyen en teoría, eh sabemos en dónde lo podemos encontrar, para qué nos sirven, pero cuando yo decido tomar la decisión de desarrollar un sistema distribuido, pues qué es lo que yo debería buscar,
+Teacher: cuáles son esos objetivos a los cuales nosotros nos vamos a enfocar, ¿cierto?
+Teacher: Entonces, vamos a hablar sobre estos cinco objetivos que son básicamente los objetivos principales y con los cuales nosotros vamos a evaluar qué tan buen sistema distribuido es el que tenemos nosotros eh estamos desarrollando o estamos adquiriendo o estamos gestionando.
+Teacher: Recuerden que el objetivo de la clase es de que podamos tener herramientas para poder gestionar, administrar o crear sistemas distribuidos.
+Teacher: Entonces, debemos tener al menos claro todos estos conceptos para saber cómo lo podemos revisar.
+Teacher: Básicamente, un sistema distribuido eh tiene como objetivos cinco elementos principales.
+00:05:00
+Teacher: El primero es la transparencia.
+Teacher: Eh, ya vamos a hablar un poquito o adentrarnos un poquito más en ese concepto.
+Teacher: El otro es el rendimiento.
+Teacher: Ya hemos hablado mucho sobre el rendimiento y el por qué se creó los sistemas distribuidos o o fue esa evolución de los sistemas distribuidos.
+Teacher: Eh, la capacidad de crecimiento, ¿cierto?, de poder crecer a medida de que vamos necesitando las cosas.
+Teacher: El carácter abierto, que ya creo que ya tienen un concepto claro de qué es esto del carácter abierto, pero de todas maneras lo vamos a hablar ahora.
+Teacher: y el tema de la fiabilidad.
+Teacher: ¿Listo?
+Teacher: Entonces, empecemos con la transparencia.
+Teacher: ¿A qué hace referencia el objetivo de transparencia en los sistemas distribuidos?
+Teacher: Pues principalmente tiene que ver con eh la percepción que van a tener los usuarios sobre el sistema, ¿cierto?
+Teacher: Recuerden que nosotros como sistema distribuido eh buscamos eh reemplazar o buscamos competir con el modelo centralizado que venía desde hace mucho tiempo, ¿cierto?
+Teacher: Entonces nosotros debemos hacer garantizarle eh este digámoslo así este objetivo se enfoca en que los usuarios no tengan necesidad o no tengan conocimiento de cuál es la implementación o cómo está implementado el sistema, si está todo en un solo servidor o está en múltiples servidores,
+Teacher: si lo montaron en un grid o estamos utilizando un cluster o estamos utilizando nube o estamos utilizando volunteer.
+Teacher: Para el usuario final no debería tener, ¿qué pasó?
+Teacher: Para el usuario final no debería ser importante el el tema de cómo está implementado el sistema distribuido.
+Teacher: ¿Listo?
+Teacher: Entonces, eso es lo que busca ese objetivo de la transparencia y es que el sistema eh no o sea imperceptible o no sea tan, a ver, ¿cómo lo digo, que tenga la la posibilidad de ocultar su implementación de a los usuarios,
+Teacher: ¿cierto?
+Teacher: Vamos a hablar un poco sobre los distintos perfiles o los distintos tipos de transparencia que deberíamos nosotros buscar.
+Teacher: El primero, el de acceso, ¿cierto?
+Teacher: Entonces, si yo necesito un recurso, si necesito un archivo, si necesito acceder a a un dispositivo, etcétera, dependiendo del sistema que estemos creando,
+Student28: No.
+Teacher: pero la forma de acceder a ellos debería ser transparente.
+Teacher: O sea, yo no tendría que tener el conocimiento o tener que establecer aquí una relación, un conocimiento sobre dónde están las cosas, cómo puedo acceder a ellas, etcétera, ¿cierto?
+Teacher: Entonces, eh o si lo puedo acceder desde mi equipo, desde un equipo diferente.
+Teacher: Todo eso hace parte de este concepto de transparencia.
+Teacher: ¿Listo?
+Teacher: Entonces, eh realmente hablamos de que si yo necesito un recurso y el recurso está en mi máquina, pues tengamos la posibilidad de hacerlo de la misma manera como si estuviera en un equipo remoto o en una o en un nodo remoto,
+Teacher: ¿cierto?
+Teacher: O si está corriendo en el servidor.
+Teacher: El usuario debería pensar de que todo lo tiene aquí.
+Teacher: O sea, debemos volver al concepto igual al que venimos trabajando durante todo el de durante toda nuestra carrera donde estábamos desarrollando aplicaciones que corren en la máquina del usuario.
+Teacher: Pues ahora vamos a intentar de que esa aplicación que corre en la máquina del usuario, el usuario no sepa si está corriendo local o si está corriendo remoto.
+Teacher: Ese es como el primer el primer perfil de transparencia en el cual nosotros nos vamos a enfocar y es que el usuario no sepa si los recursos se están manejando local o se están manejando remotos.
+Teacher: El segundo es el de la posición.
+Teacher: O sea, que lo mismo, el usuario no debería conocer la ubicación o la localización de los recursos.
+Teacher: Eh, no lo voy a hablar desde el punto de vista físico, sino desde el punto de vista lógico del sistema, ¿cierto?
+Teacher: que yo no tenga que decir, "Ah, es que si voy a entrar al sistema de, no sé, el sistema de notas, entonces tengo que entrar al servidor 5co. Pero si voy a entrar a al sistema de,
+Teacher: no sé, de solicitudes, entonces tengo que entrar al servidor siete.
+Teacher: Y si quiero ver los materiales de las clases, entonces entro por el servidor classro o por el servidor Y, ¿cierto?
+Teacher: Entonces, la idea es de que yo como usuario no tenga que saber todo eso, sino que el sistema me ofrezca eh las posibilidades o o todos los accesos que yo necesite para poder localizar los distintos recursos.
+Teacher: Ojalá todos los servicios estuvieran en un solo sistema, ojalá todo lo que yo necesito hacer y trabajar lo tenga en un sistema y yo no tenga que saber en qué máquina es donde se está ejecutando.
+00:10:00
+Teacher: ¿Listo?
+Teacher: ni cuál es su ubicación, simplemente con la dirección o el nombre del servicio o el nombre del recurso que necesitemos que podamos localizar ese recurso.
+Teacher: El transparencia en la migración, o sea, que, ¿qué es esto de migración en los sistemas distribuidos?
+Teacher: Es la posibilidad de que un servicio esté corriendo en una máquina y lo queramos mover a otra.
+Teacher: No sé si ustedes han tenido la experiencia de de que si yo estoy trabajando con un sistema o tenemos un sistema instalado en una máquina y traen y compran una nueva máquina,
+Teacher: el tiempo que nos vamos a gastar en pasar la aplicación del uno al otro, pues de una máquina a otra máquina, normalmente va a haber un pequeño tiempo de de downtime.
+Teacher: ¿Cómo se dice eso?
+Teacher: Un tiempo donde no vamos a poder acceder al sistema, ¿cierto?
+Student13: como tiempo muerto, profe.
+Teacher: Un tiempo muerto, un tiempo de mantenimiento, como nos lo hacen pensar en muchas de las aplicaciones, vamos a estar en mantenimiento durante esas 2 horas, ya sabemos que esas 2 horas todo lo que hagamos puede ser perdido, ¿cierto?
+Teacher: Entonces ese proceso de que si yo tengo que migrar, si yo tengo que hacer una actualización, si yo tengo que mover una aplicación de un equipo a otro, debería ser transparente para el usuario.
+Teacher: Listo.
+Teacher: Que si tengo si estoy trabajando en la red, pero ya contraté con Amazon Web Services y ahora nos vamos a mover Amazon Web Service.
+Teacher: forma como accede el usuario al sistema no debería de cambiar.
+Teacher: La forma como o la percepción que debería de tener el usuario debería de ser que sigue trabajando de la misma manera.
+Teacher: Entonces, eh ese es como el el objetivo de inmigración y es que si yo voy a mover los recursos, voy a mover los servicios de un lugar a otro, pues el usuario no tenga que conocer la implementación o no tenga que conocer
+Teacher: esa ese detalle para poder acceder al servicio.
+Teacher: El tema de la concurrencia igual, ¿cierto?
+Teacher: Si yo estoy hablando de que mi sistema va a ser concurrente, yo no debería hacer de que el usuario eh se ve afectado porque existe concurrencia.
+Teacher: ¿Qué es la concurrencia?
+Teacher: Pues es la posibilidad que va a tener el sistema de recibir peticiones o de atender a múltiples clientes eh con los mismos recursos, ¿cierto?
+Teacher: Yo llego al a la página web y pido recursos y todos esos recursos me van a ser suministrados desde la página web o desde la aplicación web, ¿cierto?
+Teacher: Pero pueden haber múltiples usuarios accediendo al mismo tiempo al mismo recurso o a la misma aplicación.
+Teacher: Entonces, yo como usuario no debería ver eh afectado el funcionamiento del sistema simplemente porque hay más usuarios o menos usuarios en la plataforma.
+Teacher: Eh, es muy común que una de las explicaciones que dan los de sistemas es que los de sistemas son unos unas boletas, lo que dicen lo que digan es, no tenga paciencia porque el sistema está lento, es porque hay muchos usuarios o o estamos están accediendo muchas eh personas al mismo
+Teacher: tiempo.
+Teacher: ¿Listo?
+Teacher: Lo que sucede, por ejemplo, en en Black Friday, ¿cierto?, que empezamos a ver de que las aplicaciones o las eh los servicios o los las páginas web empiezan a bajar el rendimiento, empiezan a responder más lento, empiezan a fallar más,
+Teacher: a salir pantallas de error cada vez que navegamos y cosas así, simplemente porque hay más usuarios.
+Teacher: Pues lo ideal o el objetivo que nosotros deberíamos buscar es de que eso no se no se vea afectado.
+Teacher: Si necesito más recursos, pues utilicemos o definamos una arquitectura, definamos una solución que utilice más recursos o que logre conseguir más recursos a medida de que va necesitando para responder a los usuarios.
+Teacher: ¿Listo?
+Teacher: Entonces, el el uso el acceso concurrente no debería afectar a los usuarios.
+Teacher: ¿Listo?
+Teacher: Si hoy estoy solo o si lo hago en hora pico, pues el sistema debería funcionar de la misma manera.
+Teacher: ¿Listo?
+Teacher: Teniendo en cuenta de que en hora pico, pues siempre ponemos ese nombre, es como el momento en el que más usuarios pueden estar accediendo, estar trabajando o haciendo cosas dentro de la plataforma, ¿cierto?
+Teacher: Entonces, pues deberíamos garantizar de que la solución que tengamos no se vea afectada porque tengo más usuarios y terminemos tomando decisiones como, "No, voy a tener que hacer este proceso a las 12 de la noche,
+00:15:00
+Teacher: a la 1 de la mañana cuando sabemos que no hay mucha carga o que no hay muchos usuarios concurrentes.
+Teacher: Eso no debería ocurrir.
+Teacher: No, el usuario no se debería haber afectado de esa manera.
+Teacher: la replicación, el si existen copias, si existen duplicidad de información, si existe una copia de respaldo, un servicio de respaldo de los datos con los que yo estoy trabajando,
+Teacher: no debería ser un algo que deba conocer eh los usuarios, ¿cierto?
+Teacher: No debería ser algo que afecte a los usuarios.
+Teacher: ¿Por qué hablamos de esto?
+Teacher: Y es que cuando estamos hablando de que vamos a trabajar con réplicas o vamos a trabajar con copias, significa que vamos a estar haciendo las cosas varias veces, ¿cierto?
+Teacher: O sea, si yo voy a guardar un un archivo, voy a modificar un archivo, pero ese archivo tiene una copia en otro servidor, pues entonces tengo que ir a guardarlo en los dos servidores.
+Teacher: No sé si si se entiende el ejercicio, el el ejemplo.
+Teacher: Si yo voy a leer información, la puedo leer del servidor uno o la puedo leer del servidor dos donde encuentro la copia.
+Teacher: Pero ese tipo de de decisiones, ese tipo de operaciones, ese tipo de de eh operaciones que hacemos nosotros en el sistema puede hacer de que se demore más o que haya más latencia porque tiene que hacer más trabajo.
+Teacher: El objetivo que nosotros nos buscamos con la transparencia en el modelo replicación es de que si existen varias copias, dos, tres, cinco copias de la información en diferentes lugares dentro de mi sistema, no debería afectar al usuario.
+Teacher: Sí, que no termine diciendo, "No, es que funcionaba mejor antes cuando no tenía que hacer, no tenía replicación. o prefiero trabajar local y guardar el archivo local porque cuando lo subo a la nube se demora
+Teacher: mucho.
+Teacher: Eso no debería ser eh digámosle así no debería ser parte de ese conocimiento o de esa afectación que se que tengan los usuarios sobre la plataforma.
+Teacher: Eh, transparencia en los fallos no quiere decir de que le estemos mostrando cuando falla el sistema.
+Teacher: Es más, lo ideal es de que el usuario no tenga que preocuparse cuando algo falla, ¿cierto?
+Teacher: Si ocurrió un fallo, pero ese fallo no tiene que o no me afecta o no tiene nada que ver con lo que yo estoy haciendo, pues mi sistema debería seguir en funcionamiento, no debería haberse afectado por eso, ¿cierto?
+Teacher: Entonces ahí es donde entran y ese es uno de los, digámoslo así, uno de los objetivos más difíciles de de cumplir, porque vamos a darnos cuenta de que existen muchos fallos que no son de nuestro dominio, no los podemos controlar nosotros,
+Teacher: no tenemos forma de gestionarlos y pueden hacer de que nuestro sistema falle, ¿cierto?
+Teacher: Entonces, debemos buscar alternativas o pensar en alternativas donde esos fallos, si llega a ocurrir algún fallo en un componente que no es de nosotros, pues tengamos la posibilidad de responder con otros componentes que sean de otros proveedores para que si ese proveedor falló,
+Teacher: pues los otros no tengan ningún problema.
+Teacher: ¿Listo?
+Teacher: Eh, transparencia en el crecimiento.
+Teacher: Igual si dime, [estudiante], antes de que hablemos del
+Student28: Profe, una duda con los fallos.
+Student28: Entonces, lo según lo último que usted dijo,
+Teacher: crecimiento.
+Student28: es mejor, o sea, ya tengo un proveedor de x servicio, entonces es bueno, o sea, según lo que usted digo, es bueno tener otro proveedor de respaldo,
+Teacher: Siempre.
+Student28: o sea, es pagar los dos, pero así esté solo usando uno.
+Teacher: Sí, no debe de usar los dos.
+Teacher: Eso lo vamos a ver un poco más adelante, pero la idea es de que todo recurso que yo adquiera me tengo que sacar provecho.
+Teacher: Yo no voy a comprar eh capacidad ociosa, o sea, yo no voy a decir, voy a comprar este servidor por si el otro se daña para sacarle las partes.
+Teacher: Eso no tiene sentido.
+Teacher: ¿Cierto?
+Teacher: Si yo compro dos servidores, ¿por qué no poner a utilizar los dos?
+Teacher: Y si uno de ellos falla, pues el otro tiene que asumir la carga.
+Teacher: Sí, va a ser más lento, va a tener o o va a procesar menos peticiones que cuando estaban los dos.
+Teacher: Pero pues lo mismo lo mismo pasa con si voy a adquirir un servicio nube, pues, o sea, la teoría dice, no te cases con uno, ¿cierto?
+Teacher: La teoría dice, si tú tienes, si tú tienes un servicio o adquieres un servicio en la nube, pues no lo adquieras con un solo proveedor.
+Teacher: ¿Por qué?
+Teacher: Porque si ese proveedor tiene fallos, pues entonces mi sistema va a fallar.
+Teacher: Ya.
+00:20:00
+Teacher: Pero luego entra otro elemento que es el que siempre nos frena, que es cuál, el presupuesto, ¿cierto?
+Teacher: El hecho de tener yo contrato con dos proveedores, pues implica de que voy a gastar un poquito más.
+Teacher: Dime
+Student26: Ah, sí, profe, para complementar un poco lo del compañero,
+Teacher: [estudiante].
+Student26: pues yo no sé si uno realmente necesite dos servidores.
+Student26: Por ejemplo, si uno necesita concurrencia, eh, pues usted lo que hace es que compra instancias, ¿cierto?
+Teacher: Mhm.
+Student26: Si necesita, por ejemplo, eh este replicación, usted pues compra un CDN, ¿no?
+Student26: Pues que le repliquen varios servidores y si se cae uno pues tiene la copia duplicada en el otro y cuando suba se hace la sincronización
+Teacher: Sí,
+Student26: automática.
+Student26: O sea, uno realmente no compra dos servidores para uno manualmente ponerlos a que cierto dependiendo pues digamos el perfil de transparencia que usted necesite.
+Student26: compre un servicio que ya está hecho y eso es hasta más barato que comprarse dos equipos para usted mismo configurarlos que usted dijo
+Teacher: puede ser, claro, ¿no?
+Teacher: Y tiene sentido, pero recuerden que eso depende de cuál es el modelo con el que nosotros estamos solucionando el sistema distribuido.
+Teacher: Si lo voy a trabajar en sitio, por ejemplo, en eh si lo voy a trabajar en on premises, pues voy a tener que comprar los equipos, ¿cierto?
+Teacher: Pero si lo voy a trabajar en cloud, pues entonces tengo otras alternativas y dependiendo de cuál es la solución que yo quiera.
+Student26: Yeah.
+Teacher: Y todos los proveedores cloud nos ofrecen distintas herramientas para para resolver este tema de los fallos, pero aún así estamos superditados al al a los fallos, digámoslo así, que tengan ese proveedor.
+Teacher: Digámoslo de la siguiente manera.
+Teacher: Si ustedes quieren que en su casa nunca se les vaya al agua, ¿qué debería de suceder o qué deberían de tener ustedes para que el servicio nunca falle?
+Teacher: Digámoslo así.
+Teacher: Hablamos de alta disponibilidad.
+Teacher: Si yo quiero que el que el agua nunca falle, ¿qué deberían hacer ustedes para que nunca falle?
+Student26: Pues yo creo que de pronto un tanque es una como como tener varias fuentes que supla el agua, ¿no?
+Student26: Pues me imagino que sería como ese tanque que le ponen a las
+Teacher: Exactamente.
+Teacher: ¿Qué?
+Teacher: ¿Y en energía cómo lo
+Student26: casasm fuente de generación,
+Teacher: haríamos?
+Student26: puede ser un paneles solares o algo que genere Mhm.
+Teacher: Claro.
+Teacher: ¿Por qué?
+Teacher: Porque no quiero depender de un solo proveedor.
+Teacher: Eh, ¿por qué?
+Teacher: Porque si ese proveedor falla y yo quiero seguir operando, pues necesito una un elemento de respaldo.
+Teacher: Entonces, por eso es que vemos de que tenemos las UPS.
+Teacher: Las UPS nos dan 10 minutos de de autonomía, pero pero es una solución.
+Teacher: tenemos la eh por ejemplo la eh los paneles solares.
+Teacher: Si tenemos unos paneles solares con un sistema de almacenamiento de energía, pues es una solución equivalente a las UPSs, pero con mayor capacidad o con mayor autonomía.
+Teacher: Eh, y si yo estoy montando un centro de datos, quisiera montar un centro de datos para Amazon, ¿será que con la energía de telefónic de de energía de Pereira es suficiente?
+Teacher: No, yo tendría que mirar si traigo energía de de energía de Pereira, que creo que ahora se está trayendo desde desde Tolima, pero también tendría que hacer contrato de pronto con con la Check que está en dos quebradas
+Teacher: y que viene de Manizales, ¿cierto?
+Teacher: Entonces, hacer ese contrato garantiza de que si uno uno de ellos se va, pues el otro va a estar disponible y siempre garantizar eso.
+Teacher: Eso hace parte de soluciones que nosotros podemos hacer para evitar o para ser tolerante a los fallos, para que en el caso de que algo ocurra pues yo tenga posibilidades de de responder que se nos fue el internet o que claro tiene un problema en la zona,
+Teacher: pues entonces tengo que tener un contrato con otra empresa.
+Teacher: Ojalá no, hermana de Claro, ni que comparta redes con Caro para que si uno falla pues tengo mi centro, mi sistema alterno, ¿cierto?
+Teacher: mi centro de respaldo o mi canal de respaldo, pero si estoy pagando dos facturas, entonces solamente utilizo una de ellas y si solamente de cae prendo la otra, ¿no?
+Teacher: Pues la idea es de que yo pueda de alguna manera aprovechar esos dos canales y estarlos utilizando de la misma manera.
+Teacher: Lo mismo pasa para cualquier tipo de servicio que nosotros vayamos a definir en nuestro sistema distribuido.
+Teacher: ¿Listo?
+Teacher: Eh, dale.
+Teacher: No sé si hay alguna otra duda sobre o algo que más que quieran compartir sobre fallos o vamos a crecimiento.
+Teacher: Seguimos.
+Teacher: Listo.
+Teacher: Crecimiento.
+00:25:00
+Teacher: ¿Qué de qué habla la transparencia en crecimiento?
+Teacher: Lo mismo, así como teníamos eh decimos de que debe ser eh tolerante a la replicación y debe ser pues debe ser transparente en replicación y transparente en migración, pues también debería ser transparente en si yo hoy soy pequeño y mañana soy
+Teacher: grande.
+Teacher: No debería de tener unas o que hoy tengo un servicio respondiendo todas las solicitudes y si mañana tengo 100 servicios respondiendo solicitudes.
+Teacher: El hecho de que yo agregue más servicios o más elementos que respondan a nuestro sistema no significa que pueda mejorar o empeorar el rendimiento de nuestros usuarios.
+Teacher: Siempre debemos mantener, ojo, siempre deberíamos mantener un estándar de servicio a la hora de que nosotros estemos ofreciendo, porque si cuando tengo más usuarios, cuando tengo más instancias, mi sistema corre más rápido,
+Teacher: pues entonces el usuario va a empezar a pedir de que monte más instancias, ¿sí o no?
+Teacher: Y viceversa.
+Teacher: Y si yo bajo las instancias y y el usuario se siente que ahora lo están atendiendo más lento, pues entonces va va a rechazar o va a pedir que por favor le ponga más distancias.
+Teacher: Entonces, eh realmente nosotros debemos garantizar como un nivel de servicio equivalente o o continuo que sea adecuado para lo que nosotros estemos haciendo y en el momento en el que yo vaya creciendo, sea porque tengo que crecer en servicios para atender más usuarios,
+Teacher: sea porque se me creció el número de clientes y tengo que crecer, en los usuarios no deberían verse afectados, no deberían eh no deberían ver el impacto.
+Teacher: No quiere decir de que si usted cambia la máquina y vea un poco de mejoras, pues no se alegre.
+Teacher: Sí, será muy bueno, pero lo ideal es de que no vea unos unos delta de diferencia muy grandes, que no piense en que ve, es que después de las 8 de la noche eh funciona muy bien o después de las 8 de la noche
+Teacher: funciona mal y es porque estoy apagando servidores porque a esa hora ya no hay gente trabajando, ¿cierto?
+Teacher: Entonces la idea es esa, es que no haya ese esos picos.
+Teacher: Dime, [estudiante].
+Student5: Profe, y pregunta, instancias son son equipos, son servidores adicionales o o qué sea con instancias.
+Teacher: Desde el desde el punto de vista de la programación objetos, una instancia es un objeto creado a partir de una clase, pero es básicamente lo mismo.
+Teacher: Si yo tengo una plantilla y necesito más elementos que hagan lo mismo, pues lo que hago es crear instancias de servidores, instancias de contenedores o instancias de de podsas de x cosas, ¿sí?
+Teacher: Objetos que yo voy a ir creando adicionales para poder atender esas solicitudes que que van que va teniendo mi sistema, ¿cierto?
+Teacher: ¿Queda claro?
+Student5: Sí, profe.
+Student5: Gracias.
+Student5: Ah.
+Teacher: Dale.
+Teacher: Y por último, debe ser transparente en heterogeneidad.
+Teacher: El carácter heterogéneo no debe afectar a los usuarios.
+Teacher: saber de que si hoy estoy trabajando con un clústerogéneo o un clúster heterogéneo, no debería ser eh, digámoslo así, no debería ser eh un elemento que afecte al usuario,
+Teacher: que el hecho de que tuve que agregar un nuevo nodo y el nuevo nodo no es de la misma marca o no es de la misma referencia, no tiene los mismos recursos que los otros nodos que están en el clúster,
+Teacher: pero lo tengo que agregar para poder crecer.
+Teacher: hacer, pues entonces eh digamos que el usuario no debería haberse afectado, ¿cierto?
+Teacher: Simplemente por el hecho de que mi nuevo nodo, mi nuevo elemento que tengo o que es puedo acceder, los nuevos recursos son heterogéneos a lo que ya tenía.
+Teacher: Por eso en el mundo real, el clúster homogéneo, el clúster eh que cumple con las expectativas o con el diseño original, solamente lo vamos a tener mientras el sistema no crece, mientras el sistema no cambie.
+Teacher: Pero el hecho, en el momento en el que uno de los dispositivos falle, así sea un disco duro, ya sabemos de que ese nodo va a ser heterogéneo a todos los demás, porque ya el nuevo disco duro que voy a comprar no es un disco duro hecho hace 2 años,
+Teacher: hace 5 años, sino que va a ser un disco duro hecho con menos tiempo, que tiene mejor calidad, que tiene mejor rendimiento, puede tener mayor velocidad, etcétera, etcétera, ¿cierto?
+Teacher: Entonces hace de que mi sistema se convierta en heterogéneo eh de un momento a otro.
+Teacher: Si los nodos de los equipos sean lo mismo, va a ser heterogéneo.
+Teacher: y tengo que hacer una actualización de seguridad y no la hago en todos los nodos, voy a tener un sistema heterogéneo, ¿cierto?
+00:30:00
+Teacher: ¿Por qué?
+Teacher: Porque vamos a tener distintas características o distintas formas de procesar dependiendo de la máquina en la que estemos nosotros trabajando, ¿listo?
+Teacher: o si la solución era tener sistemas operativos independientes, porque cada una de las aplicaciones necesita unos requisitos distintos, pues entonces mi sistema ya es heterogéneo.
+Teacher: Entonces, eh la heterogeneidad de nuestro sistema o de nuestra infraestructura no debería afectar al usuario.
+Teacher: El usuario no debería haberse afectado por esto.
+Teacher: ¿Cómo vamos hasta ahí?
+Teacher: ¿Queda claro cada uno de ellos?
+Student5: Profe, de pronto entre la posición y el acceso, porque yo pues como que me perdí hablando de acceso,
+Teacher: Okay.
+Student5: hablábamos del local y el remoto, pero en posición,
+Teacher: Sí,
+Student5: entonces ya me quedé sin sin que Yes.
+Teacher: cuando hablamos de acceso es, por ejemplo, e es que yo para poder entrar al sistema tengo que estar en el servidor de la oficina, ejemplo.
+Teacher: Pero tiene que ser la máquina que me asignaron, si no no puedo acceder al sistema.
+Teacher: Realmente lo ideal, o sea, el objetivo como tal es de que yo me pueda yo pueda entrar o iniciar o o acceder al recurso si si estoy en mi máquina, estoy en la máquina del vecino o si estoy en otro lugar,
+Teacher: ¿cierto?
+Teacher: Hay algunas eh hay algunas oficinas o algunas empresas que permiten de que los trabajadores estén desde la casa, por ejemplo.
+Teacher: ¿Será que por el hecho de que estén en el computador eh en la casa no les permitirá acceder al sistema?
+Teacher: Entonces, ese tipo de de acceso, o sea, ese tipo es el tipo de acceso.
+Teacher: ¿Listo?
+Teacher: El deposición tiene que ver es con los recursos que yo puedo utilizar.
+Teacher: Entonces, yo estoy en mi casa trabajando home office, pero tengo que mandar imprimir algo eh para entregárselo al jefe.
+Teacher: ¿Dónde lo imprimo?
+Teacher: ¿En mi casa o en o en la impresora de la oficina?
+Teacher: ¿Cuál sería lo más lo más óptimo?
+Teacher: No, pues lo mando por correo, pero ¿cuál sería lo más óptimo?
+Student5: la oficina.
+Student5: Okay.
+Teacher: ¿Cierto?
+Teacher: Pero entonces, ¿será que yo tengo que decir, "No, venga, ¿quién me venga?" yo le mando un archivo para que me lo imprima allá o será que yo desde el sistema podría mandar a
+Teacher: imprimir independiente de si estoy.
+Teacher: Ojo, no tiene que ver con el acceso, es que los recursos están allá.
+Teacher: Entonces yo simplemente, independiente si los recursos están locales o remotos, los recursos, no yo, los recursos, no cómo yo accedo, sino dónde se encuentran.
+Teacher: Sin importar dónde se encuentren, yo voy a poder acceder a ellos.
+Teacher: Entonces, acceso es cómo llego a ellos, posición en donde se encuentran.
+Teacher: No sé si si queda clara la diferencia o lo dejé en las mismas o
+Student5: No,
+Teacher: peor.
+Student5: pues yo creo que mejor porque entonces ya ahí hablamos pero también de en acceso hablamos como se dice de cada uno de nosotros para poder acceder y la
+Teacher: O sea,
+Student5: posición sistema local
+Teacher: ¿desde dónde puedo yo acceder al sistema o a la a la Ajá,
+Student5: o remoto.
+Student5: La posición me creo que me va a entender.
+Teacher: exacto,
+Student5: Estamos hablando sobre todo del hardware, de esos recursos en los que podemos hacer uso.
+Teacher: exactamente.
+Teacher: Entonces, si ojo, ¿dónde se encuentra la base de datos?
+Teacher: Yo no sé si está en la oficina o si está en la nube, ¿cierto?
+Teacher: Y si y si la movieron de la oficina para la nube, para mí debería ser lo mismo.
+Teacher: Ahí estamos hablando.
+Teacher: Bueno, ahí hay un hay posición, o sea, es transparente para mí la posición y también el tema de la migración, ¿cierto?
+Teacher: Cuando ellos estén haciendo el movimiento de aquí para allá, yo no debería de verme afectado.
+Teacher: Yo no me tendrían que parar para decirme, "No, ahorita conéctese a tal sitio o conéctese por tal dirección." No,
+Teacher: eso debería ser transparente para el usuario como tal.
+Teacher: Listo.
+Teacher: Eh, y el tema del acceso es desde dónde puedo yo acceder.
+Teacher: Entonces, ¿a quién acceso podríamos nosotros decir, "Es que yo puedo acceder al sistema solamente desde desde el celular e desde el portátil o desde la el computador de la oficina?" Pero hay sistemas,
+Teacher: ojalá pues que es lo recomendado que yo pudiera acceder desde diferentes formas.
+Teacher: Puedo hacerlo desde el computador de la oficina, lo puedo hacer desde una tablet, lo puedo hacer desde el celular.
+Teacher: No van, no se va a ver igual, no voy a poder hacer las mismas cosas con la misma velocidad, pero lo puedo hacer.
+Teacher: Entonces, yo puedo acceder al recurso sin importar eh por dónde lo haga.
+Teacher: En cambio, en posición, yo voy a poder utilizar los elementos o o los recursos que tengo sin importar dónde se encuentre.
+00:35:00
+Teacher: Sí, claro.
+Student5: Sí, profe, muchas gracias.
+Student5: M.
+Teacher: Dale.
+Teacher: Eh, no sé si hay otra pregunta sobre estos perfiles de transparencia, ¿no?
+Teacher: Listo.
+Teacher: Un elemento claro, no siempre no siempre se puede conseguir ni siempre es buena.
+Teacher: ¿Qué significa?
+Teacher: Yo sé que esto suena muy bien, ¿cierto?
+Teacher: como objetivo suena muy bien, pero no siempre es fácil de garantizar de que nosotros logremos cumplir con todos estos objetivos.
+Teacher: ¿Por qué?
+Teacher: Porque muchos de estos objetivos o para lograr esto necesitamos o demasiado esfuerzo o demasiado presupuesto.
+Teacher: Sí, recuerden que el problema más grande que tenemos nosotros es cuál o por qué los sistemas no avanzan porque nos falta presupuesto.
+Teacher: ¿Por qué nosotros no tenemos redes 10 como en China?
+Teacher: porque no tenemos o las empresas que hacen la inversión no tienen el presupuesto o la plata para hacer esa inversión o no tienen forma de que nosotros paguemos por esos servicios.
+Teacher: ¿Listo?
+Teacher: Entonces, ese es ese es digamos que el limitante más grande tecnológico que nosotros tenemos se llama presupuesto y nosotros con ese presupuesto es que tenemos que jugar saber cómo combinamos las cosas o cómo garantizamos las cosas para para lograr para intentar que el
+Teacher: usuario no se vea afectado cuando ocurra alguno de estos elementos, ¿cierto?
+Teacher: Pero muchas veces nosotros simplemente por hacer un algo muy barato, pues terminamos obiando toda la transparencia.
+Teacher: Sí. Entonces, para poder acceder, no es que la solución más rápida es de que solamente desde el computador de del gerente puedan acceder a al sistema financiero, por ejemplo, o solamente del computador del gerente y y del contador.
+Teacher: Ah, pero es que entre un auxiliar, ¿no?
+Teacher: Pues que el contador le preste el computador al auxiliar para que pueda acceder al servicio.
+Teacher: Puede ser una solución que yo puedo dar o que se puede dar en un sistema, pero no es transparente, o sea, no genera ese nivel de transparencia que nosotros deberíamos buscar en un sistema distribuido.
+Teacher: Nosotros podríamos hacer lo que estábamos diciendo ahorita de la de la replicación, ¿cierto?
+Teacher: De que yo tengo dos nodos, pero uno está prendido y el otro está en standby y está esperando y este está trabajando aquí como loco y está quemado y el otro no está haciendo nada.
+Teacher: Esa puede ser una de las decisiones.
+Teacher: ¿Por qué?
+Teacher: Porque para mí es mucho más fácil, para mí es más sencillo implementarlo de esa manera.
+Teacher: Pero si yo tengo estos dos recursos, compro estos dos recursos y estoy distribuyendo con un balanceador de, bueno, más adelante hablamos de de elementos, pero tengo algo algo que podamos distribuir las tareas entre los diferentes componentes que tengo disponibles,
+Teacher: pues sería mucho mejor, ¿cierto?
+Teacher: Pues entonces, ¿pero qué depende?
+Teacher: Porque si yo lo hago de esa manera, entonces tengo que tener un elemento más que me cuesta un poco más, que voy a tener que pagar más por ese servicio y entonces muchas veces decimos, "No lo pongamos porque no hay plata." ¿Listo?
+Teacher: Entonces por esa razón y entonces mejor dejemos este otro en standby y le estamos haciendo backup para que el día que lo necesite, pues entonces simplemente sacamos el cable de lunes, lo pegamos en el otro y ya queda funcionando el sistema.
+Teacher: ¿Sí?
+Teacher: Entonces, mire que todo ese no siempre es fácil de conseguir esa transparencia y en algunos servicios tampoco nos interesa de que sean tan transparentes, ¿cierto?
+Teacher: Eh, entonces miren, por ejemplo, aquí hay un ejemplo.
+Teacher: Por ejemplo, hay ejemplo donde dice los diseñadores de Java RMI, que es una tecnología que vamos a ver más adelante, pero es una tecnología para eh hacer de que dos máquinas intercambien información o que una máquina publique un objeto y otro la pueda consumir.
+Teacher: Consideran que la invocación de métodos remotas no debe ser exactamente igual a la local.
+Teacher: Listo.
+Teacher: Lo que buscan es de que yo no tenga que conocer cómo localizo el otro servidor.
+Teacher: Él lo hace internamente.
+Teacher: Pero lo que propone ARMI es de que yo tengo que hacer unas configuraciones especiales o tengo que hacer unas agregarle unas características especiales al código para que entendamos de que esto es como se hace con RMI y así es como se hace sin RMI.
+Teacher: ¿Listo?
+Teacher: Entonces, digamos que como regla de diseño, prefirieron decir, mire, vamos a hacerlo de manera distinta, de tal manera que el usuario entienda de que esto es un objeto remoto y que esta forma es un objeto local.
+Teacher: ¿Listo?
+Teacher: El programador debe ser consciente de cuándo usa un método remoto por la latencia que conlleva y la posibilidad de que falle.
+00:40:00
+Teacher: ¿Listo?
+Teacher: Entonces, ese es básicamente como el eh a pesar de que buscamos la transparencia de que el usuario no tenga que preocuparse por eso, en algunos casos pues yo necesito eh saber si estoy accediendo de manera local o perdón,
+Teacher: que el recurso se encuentra local o se encuentra remoto.
+Teacher: Vamos bien hasta ahí.
+Teacher: El segundo objetivo, el de rendimiento.
+Teacher: ¿Y a qué hace referencia el rendimiento?
+Teacher: Y es de que la el sistema distribuido debe ser tan bueno o debe tener tan buenas prestaciones como un sistema centralizado, como cuando yo trabajaba en mi en mi propia máquina.
+Teacher: Yo trabajaba con mi Word, con mi Excel, con mi PowerPoint y todo lo tenía dentro de mi máquina.
+Teacher: Ahora Microsoft me lo está vendiendo en la nube y en la nube no va a haber un solo usuario accediendo al sistema.
+Teacher: Aquí en mi máquina yo solamente vi un usuario accediendo a este sistema y accediendo a los recursos o a trabajar en estos recursos.
+Teacher: En la nube pueden haber múltiples usuarios, ¿cierto?
+Teacher: accediendo a la aplicación, accediendo a este recurso.
+Teacher: Entonces, por ser que está en internet, entonces tengo que demorarme más o me o mi productividad se va a ver peor porque ya no lo tengo instalado en mi máquina o ya no voy a poder hacer las cosas porque es que eso no está aquí en mi máquina donde yo le digo abra el disco C,
+Teacher: sino que me toca que abrir el el el SharePoint, ¿cierto?
+Teacher: Entonces, mire que ese el rendimiento debe ser equivalente, independiente o mejor dicho comparado con el sistema centralizado.
+Teacher: Si yo abro Word, Excel PowerPoint en en la nube, pues yo debería ser tan productivo o con una o debería de tener una productividad equivalente a cuando yo tenía el software instalado en mi máquina local, ¿cierto?
+Teacher: Lo mismo para cualquier otro sistema, ¿cierto?
+Teacher: Yo debería ser tan productivo poder hacer las mismas cosas, eh, así el servicio esté atendiendo múltiples usuarios y debo compararlo con la experiencia que yo tenía cuando solamente me atendía a mí en un sistema centralizado,
+Teacher: en un servidor que hacía todas las tareas o cuando yo lo hacía en mi propia máquina.
+Teacher: Listo.
+Teacher: Y la y el otro concepto de rendimiento tiene que ver con la paralelización, ¿cierto?
+Teacher: ¿Y qué es eso?
+Teacher: la paralelización y es de poder ejecutar múltiples tareas o múltiples acciones eh de manera simultánea.
+Teacher: ¿Listo?
+Teacher: Es diferente a a atender a múltiples usuarios, ¿cierto?
+Teacher: Atender a múltiples usuarios es un solo sistema recibiendo peticiones de múltiples usuarios y dándole respuestas a múltiples usuarios.
+Teacher: En la ejecución paralela estoy haciendo referencia de que yo voy a lanzar una tarea y esa tarea para hacerla más rápida la voy a partir en pedazos y esos pedazos los voy a mandar a ejecutar o los voy a mandar a procesar de manera en paralelo.
+Teacher: Eso me va a garantizar que en el número, ojo, que que voy a reducir el tiempo de procesamiento o el tiempo de espera de una solución de un problema basado en el número de ejecuciones o el número de de elementos paralelos que yo estoy utilizando dentro de mi
+Teacher: sistema.
+Teacher: Y gracias a que nosotros en los sistemas distribuidos tenemos múltiples computadores con múltiples procesadores, con múltiples núcleos, pues entonces vamos a poder crecer o dividir más las tareas para que puedan hacerse o resolverse mucho más rápido.
+Teacher: ¿Vamos bien hasta ahí o no?
+Teacher: Esos son como los dos los dos las dos vistas que tenemos del rendimiento, o sea, por el el servicio multiusuario, o sea, porque vamos a mejorar el rendimiento gracias a la ejecución paralel.
+Teacher: ¿Listo?
+Teacher: Ah, en este en este rendimiento pues van a haber algunos elementos que vamos a tener que estar hablando, por ejemplo, usar cachés, eh hacer de que todos los todo lo que nosotros vamos a procesar no tenga que irse siempre al servidor,
+Teacher: sino que podamos eh eh delegar parte de ese de ese esfuerzo o de las o de las respuestas que normalmente me va a estar respondiendo el servidor, tenerlas de manera local, eh, o tenerlos en un elemento intermedio que me ayude a a responder o a resolver todas estas dudas
+Teacher: o estos problemas como trae el uso de replicación.
+Teacher: Si para mejorar el rendimiento, si yo veo que en una sola máquina No puedo atender bien a 100 usuarios, pues montemos otra instancia, otra máquina y distribuyamos 50 y 50. Va a mejorar el rendimiento de los usuarios, ¿cierto?
+00:45:00
+Teacher: Va a mejorar la atención multiusario que tenemos en el sistema.
+Teacher: Si si tengo un proceso que con los recursos que tengo local eh disponibles en este momento se meemora 8 horas en procesar.
+Teacher: Si ponemos más recursos, ponemos más procesadores, más memoria, más de todo, busquemos ese rendimiento.
+Teacher: Hagamos de que el hecho de que tengamos dos nodos que sean capaz de atender las mismas tareas, pues entonces pueda mejorar el rendimiento de mi sistema, ¿cierto?
+Teacher: Entonces, eso es lo que nosotros vamos a buscar con este objetivo de rendimiento.
+Teacher: Es fácil de de garantizar ese rendimiento en los sistemas distribuidos.
+Teacher: ¿Ustedes qué creen?
+Teacher: Ya vimos la transparencia, ¿será que el rendimiento es fácil de garantizar solamente metiendo
+Student26: No, profe, el rendimiento es muy complejo.
+Teacher: máquinas?
+Student26: pues se requiere plata y mucha cosa.
+Student8: Solo el mantenimiento es una cosa tremenda para mantenerlo.
+Student8: Entonces,
+Teacher: Okay.
+Teacher: No,
+Student8: no.
+Teacher: y la forma de programar, ¿cierto?
+Student8: Escalabilidad,
+Teacher: Porque es muy diferente como es es muy diferente como yo
+Student8: auto balanceo, autoescalabilidad.
+Student8: Ev.
+Teacher: programo cuando yo sé que solamente tengo un usuario a cuando yo digo, "No, es que tengo que aceptar 10,000 usuarios o 100,000 usuarios." ¿Cierto?
+Teacher: La forma de programar, la forma como yo debo gestionar las solicitudes o las peticiones debe cambiar.
+Teacher: [estudiante],
+Student28: Profe, pues yo creo que es complicado desde el punto inicial de que
+Teacher: cuéntame.
+Student28: existen estos recursos de terceros que no realmente hay recursos de los cuales no controlamos.
+Student28: Nosotros podemos tener todo muy optimizado con muy buen rendimiento, pero ejemplo, el usuario está en medio del monte, no le va no le va a servir.
+Student28: algo
+Teacher: Claro.
+Teacher: Entonces, mire que son cosas que yo esperaría que se resolvieran con un sistema distribuido, pero no siempre es fácil de lograr o tendríamos que empezar a adentrarnos a una nueva a unas nuevas características, unos nuevos modelos de desarrollo,
+Teacher: unas nuevas tecnologías que probablemente en el modelo centralizado no nos preocupaba, ¿cierto?
+Teacher: El rendimiento estaba garantizado por por el procesador, la RAM y el sistema operativo.
+Teacher: En cambio, ahora nosotros somos los encargados de buscar de qué manera podemos crear el sistema para que tenga un rendimiento adecuado y que responda como se espera del sistema.
+Teacher: Tercero, capacidad de crecimiento.
+Teacher: ¿Qué es esto de la capacidad de crecimiento?
+Teacher: ¿Cuál es este objetivo?
+Teacher: Pues básicamente, pues como su nombre lo dice, es tener la capacidad o que tenga la posibilidad de seguir creciendo con nuevos recursos o con nuevos elementos que que hagan de que mi sistema funcione cada vez mejor, no que mejore el rendimiento,
+Teacher: que funcione mejor.
+Teacher: ¿Qué es mejor?
+Teacher: ¿Funcionar mejor?
+Teacher: pues tener menos fallos o atender más usuarios o eh disponer de más recursos para que mi sistema pueda funcionar de la de la mejor manera.
+Teacher: Pensemos en un sistema eh cluster, ¿cierto?
+Teacher: Un sistema que vamos a definir para ejecutar una sola tarea y hacerla en el menor tiempo posible.
+Teacher: Ya, ya hablamos de que en el rendimiento necesitamos eh necesitamos eh la capacidad de trabajar en paralelo, ¿cierto?
+Teacher: Es coger una tarea y partirla en múltiples tareas y y distribuirlas entre los distintos modos.
+Teacher: Pero, ¿será que la aplicación que nosotros hagamos será capaz de usar recursos adicionales que nosotros eh dispongamos después?
+Teacher: O sea, si hoy hace la división en 20 tareas, en 20 eh tareas en paralelo y funciona bien o tiene un buen rendimiento, pero ahora quiero procesar más información o tengo tareas cada vez más demandantes, entonces yo puedo comprar más nodos y mi sistema es capaz de gestionar todos esos nodos,
+Teacher: es capaz de trabajar con esos nodos adicionales.
+Teacher: Eso es a eso es a lo que hace referencia la capacidad de crecimiento.
+Teacher: Y es, ¿será que con los recursos que tengo puedo mejorar o puedo crecer en recursos o puedo crecer en usuarios y mi sistema es capaz de soportarlo?
+Teacher: Entonces, eso de eso tiene que ver esta capacidad de crecimiento.
+Teacher: No es fácil tampoco, ¿cierto?
+Teacher: Pero lo vamos a ir analizando.
+00:50:00
+Teacher: Primero, lo primero que tenemos que hacer es evitar cuellos de botella.
+Teacher: ¿Han escuchado este concepto de cuello de botella?
+Teacher: ¿Qué hace el cuello de una botella?
+Teacher: Ojo.
+Student8: estrecha la salida.
+Teacher: Ajá.
+Teacher: Entonces nosotros podemos tener un un almacén, tenemos un algo que tiene la capacidad de guardar muchos recursos o de gestionar muchos recursos, pero va a haber un elemento que va a restringir la forma como va a
+Teacher: fluir la información o el o los elementos por el por el recurso, ¿cierto?
+Teacher: Por eso las botellas no las botellas no son vasos, digámoslo así.
+Teacher: Los vasos tienen la posibilidad de botar o de sacar todo el agua en un solo de un solo golpe, ¿cierto?
+Teacher: Las botellas no.
+Teacher: ¿Por qué?
+Teacher: porque le pusieron un cuello, que lo que sirve es para limitar la cantidad de líquido en en este caso que podemos nosotros sacar desde el punto de vista de sistemas.
+Teacher: Eh, vamos a hablar de cuello de botellas, eh las los componentes que se que limiten el funcionamiento de nuestro sistema, ¿cierto?
+Teacher: ¿Y qué puede ser un cuello botella en sistemas?
+Teacher: componentes centralizados, no es que todos tienen que pasar por este componente o todos tienen que hablar con este componente y entonces ese componente es el que me va a limitar la capacidad de crecimiento, porque yo solamente voy a poder crecer hasta los recursos o hasta la capacidad que tenga
+Teacher: ese componente centralizado.
+Teacher: Todos tenemos que ir a la base de datos.
+Teacher: cuánto puedo crecer en el acceso a eh en mi sistema a lo que me aguante la base de datos.
+Teacher: ¿Por qué?
+Teacher: porque él es el componente que que limita el recurso, que si yo necesito que él trabaje y él ya está al máximo, ya tiene el procesador al 99% y no sé qué, pues mi sistema no va a poder seguir creciendo porque ese componente centralizado está limitando
+Teacher: eso.
+Teacher: Tablas centralizadas, pues tiene que ver mucho con eso.
+Teacher: Puede ser una tabla o un archivo centralizado donde yo necesito ir a leer o necesito ir a escribir sobre un archivo y pues tengo 10,000 usuarios accediendo de manera simultánea al mismo archivo, pues ese archivo va a ser mi cuello botella,
+Teacher: porque no todos van a poder acceder a escribir de manera simultánea o a leer de manera simultánea, ¿cierto?
+Teacher: Entonces, lo primero que debemos hacer para para garantizar o para mejorar la capacidad de crecimiento es evitar cualquier tipo de cuello botella, evitar cualquier elemento que haga de que mi sistema no pueda crecer más o que no pueda
+Teacher: atender más usuarios de los que actualmente funcionan.
+Teacher: ¿Listo?
+Teacher: Componentes centralizados, tablas centralizadas o algoritmos centralizados.
+Teacher: Puede ser un sistema completo, un componente completo, puede ser los datos o puede ser eh un un algoritmo que solamente conoce una de las máquinas.
+Teacher: Tengo 100 máquinas, pero solamente una sabe una tiene el algoritmo que todas van a necesitar.
+Teacher: Entonces, e ese tipo de escenario lo debemos nosotros evitar.
+Teacher: ¿Cómo lo podemos hacer?
+Teacher: creando estructuras de datos entre varios nodos, reparto de estructuras de datos en varios nodos, o sea, ya no vamos a depender de uno solo, sino que lo vamos a distribuir en diferentes lugares.
+Teacher: vamos a tener réplicas o copias de la información o copias de del algoritmo o copias de las tablas en diferentes eh máquinas y realizar parte del procesamiento del cliente, o sea, dejar de depender del servidor, eso lo vamos a ver más adelante,
+Teacher: dejar de depender del servidor y utilizar los recursos locales, ¿cierto?
+Teacher: utilizar el celular, utilizar la laptop, el la tablet para preprocesar alguna parte de la información y quitarle carga a al nodo centralizado donde vamos a ir a guardar toda la información.
+Teacher: ¿Listo?
+Teacher: Eh, características deseables.
+Teacher: Bueno, realmente aquí no no es muy importante que ninguna máquina tenga información completa del estado del sistema.
+Teacher: O sea, que no debe haber una máquina que tenga que saber cómo está todo el sistema, porque sería mi sistema limitante.
+Teacher: Las decisiones se basan solo en información disponible localmente.
+Teacher: Que yo pueda tomar decisiones es con los recursos que tengo local y que no tenga que ir a decirle a otro servidor que decida por mí.
+Teacher: El fallo de la máquina no debe ser, no debe invalidar al algoritmo y no debe asumir la existencia de un reloj global.
+Teacher: Bueno, esto del reloj global lo vamos a ver más adelante cuando estemos hablando de la sincronización entre procesos, pero pues es parte como de las
+Student8: Por eso es por lo que Bitcoin no puede ponerle como fecha las transacciones.
+Teacher: soluciones.
+Teacher: Por ejemplo, en Bitcoin hay instantes en las que se, digámoslo así, se agrega el nodo al a a la a la cadena, ¿cierto?
+00:55:00
+Teacher: Pero no puede decir es que fue a tal hora, a tal día, ¿cierto?
+Teacher: Porque cada nodo puede tener una hora y día completamente distinto.
+Teacher: Esto lo vamos a ver más adelante.
+Teacher: El fallo de la máquina no debe invalidar el algoritmo.
+Teacher: No dependamos de diferentes recursos.
+Teacher: Estos son como como información general de cómo podemos nosotros resolver esta eh este problema de la capacidad de crecimiento.
+Teacher: Pero lo importante aquí es esto, es lo que está aquí arriba.
+Teacher: Digamos que estas son est son las los síntomas y estas son las soluciones, las estrategias para resolver el problema.
+Teacher: ¿Listo?
+Teacher: Eh, así que si yo quiero garantizar o o mejorar la capacidad de crecimiento o mejorar el objetivo de capacidad de crecimiento que vamos a tener en nuestro sistema, es porque vamos a aplicar alguna de estas estrategias.
+Teacher: Vamos a tener reparto es distribuir los datos en diferentes nodos o vamos a hacer replicaciones o vamos a trabajar con eh distribución de de procesamiento entre cliente y servidor.
+Teacher: ¿Listo?
+Teacher: Otro otro elemento, carácter abierto.
+Teacher: ¿Se acuerdan de qué estaba yo diciendo qué era lo carácter abierto?
+Teacher: Entonces, un sistema distribuido abierto o que tenga un carácter abierto es aquel que tiene que utiliza servicios, protocolos que sean o etcétera, pues diferentes que todos los elementos que con los cuales nosotros vamos a definir nuestro sistema distribuido de ser publicados y estándares,
+Teacher: o sea, que sean elementos que sean bien conocidos, vamos a decirlo así, que sean elementos conocidos y además estén trabajando junto ando con estándares.
+Teacher: Listo.
+Teacher: ¿Eándares de qué?
+Teacher: estándares de la industria, estándares de comunicaciones, estándares de almacenamiento, estándares, estándares, estándares.
+Teacher: ¿Listo?
+Teacher: Entonces, nosotros lo que buscamos con el carácter abierto en los sistemas distribuidos es dejar de o de depender de pequeños proveedores o de pequeñas soluciones que probablemente nos terminen terminen siendo nuestro talón de aquiles al momento de hacerle
+Teacher: mantenimiento o soporte a nuestro sistema.
+Teacher: ¿Listo?
+Teacher: ¿Por qué es importante que los servicios que utilicemos, los protocolos que utilicemos, etcétera, ya estén publicados y sean estándar?
+Teacher: Porque todos esos elementos van voy a poder tener o múltiples alternativas para resolverlos o me va a garantizar la interoperabilidad entre los diferentes elementos, ¿cierto?
+Teacher: Si yo estoy trabajando un protocolo que solo conoce un fabricante, pues solamente me voy a me voy a poder comunicar con ese fabricante.
+Teacher: Si hay un protocolo, una forma de intercambio de información que solamente funciona en un lenguaje, pues entonces solamente puedo utilizar ese lenguaje para poder establecer comunicación.
+Teacher: Y eso es lo que debemos evitar.
+Teacher: Busquemos eh alternativas abiertas de que podamos incluso definir podemos utilizar este servicio o este otro.
+Teacher: Cualquiera de estos dos nos puede resolver el problema.
+Teacher: Y si este no me funcionó, ah, pues lo reemplazo por este otro y ya.
+Teacher: Y mi sistema debería seguir en funcionamiento.
+Teacher: No quiere decir de que se haga eh online, pero podamos nosotros esas alternativas.
+Teacher: Si nos damos cuenta de que este componente que adquirimos no era el que necesitábamos, pues reemplacémoslo por otro.
+Teacher: Tomemos la decisión de cambiarlo y mi sistema debería ser eh seguir funcionando sin ningún problema.
+Teacher: ¿Por qué?
+Teacher: porque está utilizando un estándar que independiente de si lo hace la marca A o la marca B, pues va a va a responder al estándar y va a realizar las tareas que nosotros estamos esperando que haga.
+Teacher: Eh, facilita la interacción con otros sistemas abiertos, bueno, más o menos lo que estamos hablando.
+Teacher: Posibilita la migración de aplicaciones desde o a otros sistemas distribuidos, lo mismo que estamos hablando, o sea, podemos eh pasarnos o cambiar de tecnología y el sistema sigue siendo funcional.
+Teacher: la flexibilidad para cambiar o extender el sistema distribuido.
+Teacher: Lo mismo si yo voy a utilizar eh digámoslo así tecnología Ethernet para intercambiar información, pues utilicemos la que tengamos diferentes variantes con cual poder reemplazarla, ¿cierto?
+Teacher: Entonces vamos a trabajar con con tarjetas, pero entonces garanticemos de que esa tecnología que vayamos a utilizar sea abierta, que muchos proveedores puedan darnos ese soporte.
+Teacher: Si vamos a trabajar con eh, no sé, almacenamiento en estado sólido, pues que no haya una una tecnología que solamente un proveedor la pueda ofrecer o una un estándar que solamente un proveedor puede ofrecer, porque eso también puede llegar a ocurrir,
+01:00:00
+Teacher: que yo diga, "No, es que eh Hule Packar definió un nuevo sistema de almacenamiento que logra velocidades de de no sé, de 100 GHz por segundo, una cosa así loca, ¿cierto? O sea,
+Teacher: que puede leer a esa velocidad de en el almacenamiento y puede mandar información e en esas velocidades.
+Teacher: Sería fabuloso poder utilizar ese ese disco, pero el día que ese disco me falle, solamente tengo una alternativa para poderlo reemplazar sin perder el rendimiento de mi sistema, si me hago entender.
+Teacher: Entonces, busque, no busquemos el top, a menos de que sea algo que que necesitemos realmente ese top, pero no busquemos ese top, sino en un modo intermedio de que al menos vamos a garantizar de que si algún día uno de los componentes falla,
+Teacher: pues lo podamos reemplazar por otro.
+Teacher: Si un día un una herramienta software falla, la podamos la podamos reemplazar por otra que haga las mismas tareas y que exiga los mismos protocolos.
+Teacher: Listo.
+Teacher: Eh, esconde la heterogeneidad de los sistemas operativos, del hardware, del sistema operativo y los lenguajes.
+Teacher: Básicamente eso, digamos que este carácter abierto es el que nos garantiza de que los sistemas heterogéneos puedan ser parte de este sistema distribuido.
+Teacher: ¿Listo?
+Teacher: Porque no importa qué fabricante, qué marca, qué en qué año fue creado, la tecnología, pues digámoslo así va a ser compatible o utiliza estándares que no van a cambiar en el tiempo.
+Teacher: Vamos bien hasta ahí.
+Teacher: El cuarto objetivo, carácter abierto.
+Teacher: Y el último tiene que ver con la fiabilidad.
+Teacher: Yo sé que este chiste es viejo, pero no sé qué tantos de ustedes tienen contexto de este chiste.
+Teacher: Pues de esto.
+Student8: Sé que el presentador la cagó como en unas una cosa así de música, una cosa así super grande que todo el mundo estaba televisando,
+Student28: Es ese no es la del MS Universo.
+Student8: pero Ah, el universo.
+Student8: Sí.
+Teacher: Es que la es que la primera vez que tuve una Miss Universo por 2 minutos.
+Student8: Ah, que nos quitaron el Sí,
+Teacher: Sí.
+Student8: ya me acordé.
+Teacher: ¿Qué es eso?
+Student8: M.
+Teacher: O sea, ¿qué pasó ahí?
+Teacher: Pues no, no vamos a decir que entendió mal, pues alguna cosa tuvo que suceder.
+Teacher: Escuchó una cosa y le dijeron otra o él entendió otra cosa y pues simplemente dijo que ganó Colombia y no era así.
+Teacher: Pero pero tiene que ver con con este concepto de fiabilidad, ¿cierto?
+Teacher: Y es de que mi sistema debe debe ser fiable.
+Teacher: Los usuarios deben o digámoslo así, debemos garantizar de que nuestro sistema, independiente de cómo esté implementado, haga las cosas bien, ¿listo?
+Teacher: Y no vaya a dar información errónea.
+Teacher: ¿Listo?
+Teacher: Y una de las, digámoslo así, y uno de los eh comentarios que es muy común ver dentro de las empresas o de muchas empresas o de muchos sistemas es que ups, no fue un error en el sistema.
+Teacher: ¿Será que da una buena confianza o da una buena eh visión del sistema el hecho de que el sistema algunas veces genere errores o que me entregue información errónea?
+Teacher: ¿Ustedes creen que da tiene o el sistema distribuido daría la confiabilidad o la confianza que nosotros estamos esperando del sistema?
+Teacher: Entonces, la fiabilidad tiene que ver con eso y es garantizar que así haya un fallo el procesamiento o la respuesta del sistema no sea errónea.
+Teacher: ¿Listo?
+Teacher: Entonces, ¿cómo podemos garantizar la fiabilidad o la confianza del sistema?
+Teacher: Pues evitar componentes críticos o lo que llamamos puntos únicos de fallo o cuellos de botella.
+Teacher: El cuello de botella es el componente que nos limita la capacidad de crecer.
+Teacher: Aquí el concepto de punto único de fallo hace referencia a que si ese señor falla o si ese componente falla o si ese elemento falla, todo mi sistema entra en caos, ¿listo?
+Teacher: Mi sistema deja de funcionar.
+Teacher: Entonces, debemos evitar de toda forma que hayan componentes críticos o componentes eh centralizados o componentes que tengan la verdad absoluta para responder a las solicitudes que tenemos en el sistema, ¿cierto?
+Teacher: A eso lo vamos a llamar punto único de falla.
+01:05:00
+Teacher: Listo, vamos a seguir adentrándonos en este mundo y con algunos ejemplos vamos a darnos cuenta de cuándo, cuándo es punto eh cuánto es punto único de fallo o cuánto es eh cuello botella o cuándo son los dos para que podamos identificar eh estos conceptos un poco mejor.
+Teacher: ¿Listo?
+Teacher: ¿Cómo lo podemos resolver?
+Teacher: Utilizar replicación, ¿cierto?
+Teacher: Entonces, ¿qué en qué se basa la confianza?
+Teacher: en que yo siempre pueda tener recursos para atender las solicitudes que hagan los usuarios.
+Teacher: ¿Se imaginan ustedes que ustedes vayan a trabajar en Word y Word no le responda?
+Teacher: en el Word 365 en la nube y que Word no le responda o que borre toda la información que él mismo error del sistema que borre toda la información de que ya de todo lo que hemos trabajado.
+Teacher: Yeah.
+Student8: las bases de datos en Excel con los clientes.
+Teacher: Se imagina de que usted tenga su base de datos en AWS y AWC diga, "Ah, perdón, se se borraron todas las bases de datos. Se dañó el disco duro donde estaban todas las bases de datos o sus bases de datos,
+Teacher: ¿cierto?
+Student26: E Colombia diga, "Uy, qué pena, esa transacción no aparece.
+Teacher: Eso eso les da confianza sobre el sistema.
+Teacher: ¿Ustedes creen que ese sistema es confiable?
+Student22: Claro.
+Teacher: Es el que nos es el que nos tocó.
+Teacher: Diga, diga, es el que nos tocó.
+Teacher: No, no podemos hacer nada más.
+Teacher: pero les da la confiabilidad o la seguridad de que el sistema es bueno.
+Teacher: Entonces, eso es lo que debemos nosotros buscar con nuestro sistema y es evitar evitar que esos eh digámoslo así que esas malas operaciones del sistema lleguen a ocurrir.
+Teacher: ¿Listo?
+Teacher: Entonces, ¿cómo lo vamos a poder hacer?
+Teacher: Utilizando replicación.
+Teacher: Recuerden que la replicación es tener una copia de lo de lo mismo en otro lugar, en otro componente.
+Teacher: Puede ser eh replicación activa o pasiva.
+Teacher: Esto lo vamos a mirar un poco más adelante.
+Teacher: ¿Listo?
+Teacher: O sea, ahí están los conceptos como para que vean cómo se resuelve, pero vamos a ir hablando de ello mucho más adelante.
+Teacher: Eh, pero esta replicación tiene riesgos como el mantenimiento de la coherencia entre las réplicas.
+Teacher: Si yo tengo una copia, digámoslo así, si yo tengo una una réplica activa, quiere decir que cada vez que yo guardo en uno, lo estoy guardando en otro lugar.
+Teacher: Si guardo un dato en un archivo, lo en otro disco, voy a guardar el mismo dato eh del archivo.
+Teacher: Sí, si yo guardo en una base de datos, tengo otra base de datos a la que voy a guardar la misma información.
+Teacher: Listo.
+Teacher: Eso es replicación activa.
+Teacher: Replicación pasiva tiene que ver con yo lo guardo en uno y en un rato actualizo el otro.
+Teacher: o por las noches actualizo el otro.
+Teacher: Entonces ahí el problema es decir, "Okay, ¿y cómo puedo garantizar de que la réplica, la copia sí tiene la información actualizada?" O eh vamos a hablar de el concepto
+Teacher: de coherencia, cómo vamos a garantizar que lo que tenga el otro nodo de réplica sí sea coherente y si en un momento determinado tengo que utilizarlo para responder una solicitud, tenga la información adecuada.
+Teacher: Ojo, recuerden, estamos hablando de la confianza que me den la información que yo estoy esperando, no cualquier información que tenga ella ahí.
+Teacher: Otro que el la operación correcta en el sistema particionado por un error de red.
+Teacher: El sistema funciona bien, pero hubo un error en la red que afectó la respuesta.
+Teacher: Eh, yo mandé a reproducir una película en Netflix y me empezó a reproducir otra.
+Teacher: M. ¿Será que eso es aceptable?
+Teacher: Simplemente porque ah se trocó la información con la solicitud de otro usuario y y le mandé a a reproducir la película que no era.
+Teacher: ¿Será que es parte de lo que yo esperaría que funcionara mi sistema?
+Teacher: No, cierto.
+Student8: Imagín en B Colombia.
+Teacher: Ah, que que yo hice un retiro y se lo retiraron a otro, ¿cierto?
+Teacher: No tiene mucho sentido.
+Teacher: ¿Cierto?
+Teacher: Por eso es que todas esas herramientas o todos esos desarrollos o todas esas aplicaciones se vuelven muy complejas de mantener.
+Teacher: ¿Por qué?
+Teacher: Porque dependiendo del sistema que nosotros estemos desarrollando, la fiabilidad del sistema eh puede ser muy importante.
+Teacher: Hay otros donde no tiene que ser tan importante o tan estricta como pueda llegar a ser un banco, pero debemos tener un un buen nivel de fiabilidad de que el usuario pueda pueda eh tener confianza en el sistema.
+01:10:00
+Teacher: Voy a comprar unas boletas para para un concierto que cuando me saquen la plata me entreguen las boleta.
+Teacher: ¿Cierto?
+Teacher: Que yo no me quede con será que ya ya me descontaron ese esos 2 millones de pesos y será que sí quedó la compra de la boleta.
+Teacher: ¿Será que el pedido sí llegó?
+Teacher: Es que no me ha llegado el correo de la boleta.
+Teacher: Sí, me hago entender en este problema de la confianza.
+Teacher: Entonces, si yo confío en en las herramientas o confío en la en la plataforma, mi sistema, digámoslo así, los usuarios van a creer en ella y van a a seguir utilizando mi sistema como tal.
+Teacher: Aquí con este tema de la confiabilidad siempre caigo eh en un ejemplo o traigo un ejemplo a colación de algo que sucede, yo supongo que en muchas familias, ¿cierto?
+Teacher: Y es que le llegan a uno y le dicen, "Venga, eso de pagar de hacer las compras por internet, ¿sí será seguro." No sé si a alguno de ustedes le les ha llegado
+Teacher: esa pregunta.
+Teacher: ¿Será que eso de comprar por Mercadolibbre es seguro?
+Teacher: ¿Cierto?
+Student26: Es un poquito
+Teacher: Pero por Temu todos los días compran eso no le tienen le tienen más fe a Temu que a que a la plata del a la plata que le entregan al al de la tienda, ¿cierto?
+Teacher: A Temu todo lo que digan, pero será que por Mercadolibbre sí vale la pena.
+Teacher: No me robarán la platica.
+Teacher: Tiene que ver es con eso, con el nivel de confianza, el nivel de fiabilidad que ha tenido esa plataforma.
+Teacher: O se apenas paga, ya puede ver sus compras y puede ver el estado de la compra y puede ver de que ya lo están despachando, que que ya está en el avión, etcétera.
+Teacher: No ve que esté en el avión, pero pues va a haber esa trazabilidad.
+Teacher: Yeah.
+Teacher: Simplemente para garantizar que la fiabilidad, la confianza de que el sistema lo está haciendo bien.
+Teacher: Si yo hago una compra y no veo el y no veo el producto, no veo por ningún lado que lo compré, yo cómo garantizo, yo cómo doy fe de que mi sistema sí está funcionando bien, ¿cierto?
+Teacher: Y después no me digan, "No, ¿y cómo hago para pedir que me devuelvan la plata?" ¿Cierto?
+Teacher: Entonces, ese eso es como el objetivo número cinco.
+Teacher: ¿Cuál eran los objetivos entonces?
+Teacher: Recordando el primero era cuál, transparencia,
+Student26: Transparencia.
+Teacher: ¿cierto?
+Teacher: Okay.
+Teacher: Que para el usuario desde el punto de vista,
+Student5: la el acceso,
+Teacher: dime, [estudiante],
+Student5: el acceso
+Teacher: que que para el usuario sea transparente el acceso, la ubicación de los recursos.
+Teacher: ¿Qué más?
+Teacher: la migración, la replicación, la concurrencia, o sea, que cualquier cosa que pueda estar sucediendo en el sistema, el sistema no debería verse afectado, no debería tener conocimiento o no debería verse eh identificado o perdón,
+Teacher: tener que conocer cómo localizar un recurso simplemente por porque el sistema hace la conexión directa con ellos.
+Teacher: El segundo, el segundo objetivo, transparencia, segundo era rendimiento.
+Student28: rendimiento.
+Teacher: ¿Y de qué habla el rendimiento?
+Teacher: que el sistema debe funcionar bien con uno o con múltiples usuarios o que tenga la capacidad de partir las tareas en múltiples procesos eh en paralelo para mejorar el tiempo de respuesta en una tarea grande, ¿cierto?
+Teacher: Listo.
+Teacher: No necesariamente tengan que ser las dos, pueden ser independientes.
+Teacher: O soy bueno atendiendo múltiples usuarios o soy bueno eh partiendo las tareas en procesos en paralelo.
+Teacher: ¿Listo?
+Teacher: No necesariamente tiene que ser que tenga las dos.
+Teacher: El tercero, transparencia, rendimiento,
+Student28: Escarabilidad.
+Teacher: poder crecer, capacidad de crecimiento.
+Teacher: Exactamente.
+Teacher: Entonces, yo puedo crecer, puedo agregar más nodos a mi sistema distribuido y debe seguir funcionando sin problemas y podría mejorar y que mejore el rendimiento de mi sistema.
+Teacher: eh que pueda tener múltiples copias del mismo servicio y sea capaz de acceder o o utilizar esas copias, etcétera, para mejorar eh eh el crecimiento de usuarios o el crecimiento de peticiones que tenga mi plataforma.
+Teacher: Cuarto, transparencia, rendimiento, capacidad de crecimiento, carácter abierto.
+Teacher: de que siempre vamos a trabajar estándares, siempre vamos a trabajar con tecnología conocida, siempre vamos a utilizar eh componentes hardware, etcétera, donde podamos conseguir diferentes proveedores o diferentes formas de resolver el mismo problema.
+01:15:00
+Teacher: Puede ser software, puede ser software que sea complementario, puede ser eh puede ser lenguajes con los que yo pueda implementar diferentes funcionalidades o simplemente eh hardware que vamos a
+Teacher: utilizar o tecnología que vayamos a utilizar para para garantizar la transmisión o la la comunicación de nuestro sistema.
+Teacher: Y por último, la fiabilidad.
+Teacher: Son cinco objetivos sencillos eh que debemos buscar nosotros.
+Teacher: ¿Listo?
+Teacher: No siempre es fácil de mantener todos esos objetivos en funcionamiento, pero lo ideal es de que podamos tenerlos por completo.
+Teacher: Ahora, pregunta, ¿qué sistema conocen ustedes que cumpla con esos cinco objetivos?
+Teacher: Ustedes ya saben de que todo lo que nos rodea hoy en día tienen eh son sistemas distribuidos.
+Teacher: Bueno, la gran mayoría.
+Teacher: Pero, ¿cuál cumple con los cinco objetivos?
+Teacher: Transparencia, rendimiento, capacidad de crecimiento, carácter abierto y dale yao.
+Teacher: Y fiable.
+Student26: No, profe, yo creo que se cae por alguno, especialmente en fiabilidad en algún momento se cae.
+Student26: Se cayó Amazon, se cayó el servidor del East, que es casi donde está la mitad del internet, no se van a caer los otros.
+Teacher: Mhm.
+Student26: Entonces, yo creo que pues que tenga los cinco, yo yo no lo tengo presente, tendrá cuatro o tres de ellos.
+Teacher: o ninguno.
+Student26: Ah, si son si son si son sistemas colombianos, difícilmente lo
+Teacher: Okay.
+Student28: o en algún momento tendrá uno y otro no.
+Student26: tienen.
+Teacher: O sea, o sea, que Rapi, Rapi es muy malo.
+Teacher: Rapido es colombiano,
+Student26: Ah, bueno, no, yo saco a Rapid porque es una empresa ya muy multinacional, pero Sí,
+Teacher: pero pero es colombiana y se hizo con ingenieros
+Student26: sí, sí, sí, sí, sí.
+Student26: No, ahí sí, sí, sí, sí, sí, sí.
+Student26: No, no, tiene toda la razón.
+Student26: Ahí sí la saco.
+Teacher: colombianos.
+Student26: Pero yo he trabajado en muchos sistemas colombianos y de hecho trabajé en uno que hace transacciones inclusive plata, que hace software cooperativo para fondos de empleados y y
+Teacher: Qué cosa tan mala.
+Student26: no no no no es que no puedo decir ni siquiera pues algo moviendo plata.
+Student26: Y el tema, por ejemplo, de acceso a los usuarios, usted lo habló al principio, de hecho yo iba a poner ese ejemplo.
+Student26: Para usted poder tener acceso a los recursos, usted tenía que ir al computador de la oficina.
+Student26: Entonces era era complejísimo.
+Student26: ustedes.
+Teacher: No. Y hay cosas de cosas, [estudiante].
+Teacher: Yeah.
+Student28: Profe,
+Teacher: ¿Ustedes
+Student28: para usted Indra y Very Uber, ¿cumplen o no cumplen?
+Teacher: qué cree?
+Teacher: ¿Pero se cumple o no
+Student28: Yo creo que yo creo que llegan a fallar en el de
+Teacher: cumple?
+Student28: confiabilidad.
+Teacher: Okay.
+Teacher: Pero es parte, digámoslo así, es parte de ese objetivo que que se plantea, ¿cierto?
+Teacher: O sea, puede que hayan tenido una una propuesta eh muy digamos que no que no pudieron cumplir a cabalidad, pero lo que hicieron lo hicieron con la idea de de garantizar confianza, ¿cierto?
+Teacher: O sea, ese ese hecho de que no usted, ejemplo, siempre hay muchas cosas que puede decir o muchas perspectivas que podemos analizar el problema, ¿cierto?
+Teacher: Pero yo puedo decir el hecho de que yo no contrate a los a las personas, sino que cada persona se registre en la plataforma y use la plataforma para mí y que el usuario pueda ver quién es el usuario,
+Teacher: dónde viene, bla, bla, bla, etcétera, eso pudo haber sido una característica para garantizar que la fiabilidad o la confianza en mi sistema, ¿cierto?
+Student28: Profe, pero siendo así, a mí, por ejemplo, yo sí soy mucho de usar este tipo de plataformas fanático de usar los descuentos.
+Teacher: Mhm.
+Student28: Y por ejemplo, el tema de la confiabilidad a caso personal mío, hubo una vez de que yo pedí en en ese entonces, apenas están empezando las plataformas, entonces no estaba la opción de la moto, solo está la opción del carro.
+Student28: Y me acuerdo mucho que yo pedí un servicio y me dijeron, "Ya llegué y yo, ¿dónde?" Yo busqué y busqué la placa.
+Student28: Es que no, el picanto negro y yo picanto negro.
+01:20:00
+Student28: Y claro, era un picante negro que estaba por allá, pero tenía otra placa.
+Teacher: Hm.
+Student28: tenía otra placa y aparte el conductor aparecía con una foto y
+Teacher: Estaba
+Student28: era otra persona, pero no, al final sí era era por porque le había prestado la cuenta,
+Teacher: más viejito de otra persona.
+Student28: ¿no?
+Student28: La cuenta era de de un
+Teacher: Ya.
+Student28: conocido.
+Teacher: Okay.
+Student8: Vos te subiste de todas formas,
+Teacher: Pero entonces más berraco,
+Student8: mis respetos.
+Teacher: más confiado.
+Student8: Más confiado
+Teacher: Es que le hizo mucho.
+Teacher: Es que el descuento,
+Student8: así.
+Student28: Yo me subí únicamente porque yo aparecíado del conductor y le
+Teacher: el descuento está muy
+Student28: vi el celular y y en el celular se aparecía todo lo mío,
+Teacher: bueno.
+Student28: o sea, vi que sí era él.
+Student8: E
+Student28: Solo por eso.
+Teacher: Nada,
+Student28: N Es que el descuento
+Teacher: porque el descuento estaba muy bueno y los otros estaban muy careros.
+Teacher: diga.
+Student28: desde la UTEP hasta Frailes 1000 pesos.
+Student28: M.
+Teacher: Bueno.
+Student28: M.
+Teacher: Ah, ustedes como montan eso pero tiene que ver con eso, ¿cierto?
+Teacher: Entonces, mire que hay algunos que no logran tener todos los objetivos, hay otros donde se se enfocan en algún tipo de objetivo, ¿cierto?
+Teacher: y que y son muy buenos en eso.
+Teacher: Por ejemplo, Inriver y es todas estas plataformas eh son muy buenas para para el tema del rendimiento, por ejemplo.
+Teacher: No sé a ustedes cómo les ha ido, pero uno nunca dice, "Ay, está caído. Ay,
+Teacher: es que es que a esta hora hay muchos usuarios, no puedo pedir servicio." No habrán carros que respondan,
+Teacher: pero pero el digámoslo así la forma como los usuarios interactúan con la plataforma puede ser muy buenos.
+Teacher: En el tema de de transparencia, pues no tiene transparencia en ubicación porque yo tengo que hacerlo desde mi propio dispositivo, pero yo lo puedo hacer desde cualquier lugar del mundo, ¿cierto?
+Teacher: Yo no necesito estar en Pereira, no necesito estar en en puedo puedo estar en Pereira, puedo estar en Bogotá y puedo estar utilizando el mismo servicio, ¿cierto?
+Teacher: Entonces, mire que hay unas por otras hay eh conceptos o elementos que compensan o que o que tomaron la decisión de diseño de lograr un nivel de seguridad, un nivel de transparencia y otros niveles que no son tan transparentes,
+Teacher: unos elementos que no son tan transparentes, ¿cierto?
+Teacher: Por ejemplo, ¿dónde está el servidor de de Uber?
+Teacher: ¿Alguien sabe?
+Teacher: ¿Cuántas copias de Uber hay o cuántos servidores pueden estar respondiendo a Uber en este momento?
+Teacher: Mira que sí tiene unos buenos niveles de transparencia, tiene niveles de rendimiento muy buenos.
+Teacher: Carácter abierto, yo lo puedo hacer desde cualquier dispositivo.
+Teacher: Tengo la posibilidad de casi que con mi con mi iPhone 5 y con mi todo está, digámoslo así, todo está cubierto.
+Teacher: [estudiante] dice AWS, ¿estás completamente seguro?
+Teacher: Eh, ¿qué iba a decir
+Student26: Eh, profe,
+Teacher: yao?
+Student26: no, yo creo que de pronto la métrica es la que la que está, digamos, como compleja, porque yo no creo que ningún sistema los cumpla, sino que hay porcentajes de cumplimiento.
+Student26: O sea, la fiabilidad usted no es que la cumpla o no la cumpla,
+Teacher: Mhm.
+Student26: es qué porcentaje de usuarios confían en usted más no que todo al tiempo.
+Student26: Eso con igual con todos.
+Student26: O sea, yo estos parámetros, por ejemplo, los asemejo a una casa.
+Student26: Usted vive en una casa.
+Student26: Entonces, para usted, por ejemplo, tener confiabilidad, usted invierte dinero en seguridad.
+Student26: Usted mira si se va a vivir a una unidad donde tengan buena seguridad o si viven una unidad donde no tengan portería, ¿cierto?
+Student26: Eso le cuesta dinero.
+Student26: Aún así, inclusive la portería alguien se puede meter por detrás,
+Teacher: Sí.
+Student26: no es que usted diga, "No, estoy cubierto, alguien puede ingresar." Sií,
+Student26: ¿me entendés?
+Student26: Casi todos esos parámetros.
+Student26: Si usted necesita espacio, entonces usted vive en una casa que es más grande, pues le cuesta más.
+Student26: Entonces usted verá cuánto espacio.
+Student26: Pues si quiere vivir una mansión le cuesta mucho más todavía.
+Teacher: Sí.
+Student26: Lo mismo, cada parámetro que uno quiera acá incrementar en la aplicación le cuesta.
+Student26: El que que el que elija concurrencia, eh eh fiabilidad, el que usted elija le cuesta.
+Student26: Entonces, ¿cuánto dinero tiene usted?
+Student26: Okay.
+Teacher: Mhm.
+Teacher: Claro.
+Teacher: Y y eso es y eso hace parte de esas decisiones de diseño que tenemos que hacer o elecciones que tenemos que hacer cuando estamos diseñando un sistema distribuido.
+Teacher: Por último, aquí para terminar en este minutico, ¿qué es lo que vamos a estar viendo durante el el curso, ¿cierto?
+Teacher: O sea, todo lo que hemos hecho hasta ahora no es lo del curso, pero lo que hemos hecho hasta ahora pues es una introducción, es darnos aquí a entender un poco eh lo los elementos o dónde podemos aplicar los sistemas distribuidos,
+Teacher: cuándo los podemos aplicar, de qué manera los vemos, los conocemos, etcétera.
+01:25:00
+Teacher: Pero para poder crear un sistema distribuido, necesitamos tener el conocimiento de una serie de elementos, componentes, que aquí se llaman componentes, que vamos a ir viendo poco a poco durante el semestre, ¿cierto?
+Teacher: Entonces, ¿qué hace parte o qué es necesario para lograr un sistema distribuido?
+Teacher: Primero vamos a hablar sobre arquitecturas de comunicación, ¿listo?
+Teacher: Entonces, vamos a hablar de algunas arquitecturas, esas arquitecturas, ¿cómo se ven reflejadas en los sistemas distribuidos?
+Teacher: cómo podemos eh intercambiar información y cuáles los roles o o los componentes que vamos a estar implementando en nuestro sistema.
+Teacher: Segundo, los servicios de comunicación, ¿cierto?
+Teacher: ¿Cómo vamos a establecer comunicación?
+Teacher: ¿Qué meismos tenemos?
+Teacher: ¿Qué herramientas tenemos nosotros disponibles para lograr la comunicación?
+Teacher: Ustedes conocen algunas, pero vamos a ir hablando como de todo el abanico, de todos los recursos que tenemos nosotros disponibles.
+Teacher: Vamos a hablar de los sistemas de archivos o sistemas de ficheros distribuidos.
+Teacher: Lo mismo, eh tenemos la posibilidad de instalar un sistema distribuido que sea capaz de gestionar los archivos que están dentro de todo el sistema.
+Teacher: Entonces, yo puedo guardar información o puedo leer información de cualquiera de los discos duros de mi sistema distribuido de manera transparente, como si fueran archivos locales, como si lo estuviéramos en la misma máquina.
+Teacher: Eh, servicios de nombres.
+Teacher: Bueno, aquí vamos a hablar de dos temas, sistemas de archivos distribuidos y paralelos.
+Teacher: También vamos a hablar de los servicios de nombres y servicios de directorio.
+Teacher: Son no es DNS para que no van a colocar ese, sino o pensar solamente en ese, sino que existen múltiples servicios de nombres y servicios de directorios que utilizamos para garantizar o para aumentar la transparencia del sistema.
+Teacher: Eh, hay un componente que se llama memoria compartida distribuida.
+Teacher: está en muchos de los textos, recuerden, muchos de los textos vienen de los años 90 donde era un una posibilidad, una capacidad que podíamos nosotros tener.
+Teacher: Nosotros no la vamos a ver porque hoy en día nunca la usamos.
+Teacher: ¿Listo?
+Teacher: O sea, va tendría que ser que trabajen o entre a trabajar, a darle mantenimiento un software que fue hecho hace más o menos 40 años para que hablemos de memoria compartida, bueno, 40, 30 años para que hablemos de que llegue a tener la necesidad o la posibilidad de haber trabajado con
+Teacher: eso.
+Teacher: Pero básicamente era la capacidad de poder disponer de la memoria de otro equipo desde mi máquina, de yo poder utilizarla, poder leer información y bajar el el esfuerzo para desarrollar sistemas distribuidos.
+Teacher: Eh, gestión de procesos también, ¿cómo cómo se gestionan los procesos en un sistema distribuido?
+Teacher: ¿Cómo podemos trabajar con ellos?
+Teacher: Ahí es donde vamos a hablar un poco sobre la gestión del reloj.
+Teacher: Ah, no, la el reloj va en el otro, pero en la gestión de procesos vamos a hablar de del balanceo de carga.
+Teacher: ¿Qué es eso de balanceo de carga?
+Teacher: ¿Cómo es la planificación estática y dinámica?
+Teacher: Bueno, cosas así por el estilo.
+Teacher: Eh, servicios de sincronización y coordinación.
+Teacher: Eh, ¿cómo vamos a hacer de que los diferentes nodos trabajen eh como si fueran uno, cierto?
+Teacher: Y cómo vamos a garantizar de que los sistemas eh trabajen de manera adecuada, teniendo en cuenta las características de que utilizan la red, no tienen reloj común, eh cada uno pues puede tener son heterogéneos, entonces cada uno puede tener un procesador o una velocidad diferente,
+Teacher: etcétera, etcétera, etcétera.
+Teacher: Entonces, ¿cómo vamos a hacer para hacerlos trabajar en conjunto?
+Teacher: Y por último, la tolerancia a fallos y la seguridad, ¿cierto?
+Teacher: ¿Cómo vamos a qué herramientas tenemos para garantizar que si algo falla, cómo lo podemos recuperar o cómo podemos seguir en funcionamiento?
+Teacher: Y en el tema de seguridad, pues qué herramientas tenemos nosotros para asegurar nuestros sistemas distribuidos.
+Teacher: Esa sería como el objetivo que nos planteamos para lo que queda el semestre, intentar cubrir todos estos componentes o todos estos temas.
+Teacher: Y cada uno de ellos pues es uno de los módulos que vamos a estar viendo dentro de dentro del dentro del temario, ¿cierto?
+Teacher: Módulo 2, arquitecturas, comunicaciones en el tres, sistemas de archivos, el cuatro, eh servicios de nombres, el cinco, gestión de procesos, el seis, servicio de sincronización y coordinación el siete y servicio de tolerancia fallos y seguridad, nuestro módulo ocho y y el módulo uno,
+Teacher: que pues es el el que en el que estamos nosotros actualmente o que acabamos de terminar porque esto es lo último que iba a hablar sobre eso.
+Teacher: Así que, jóvenes, eso es todo lo que tenía yo para para comentarles.
+Teacher: sobre la introducción.
+Teacher: Espero que estas seis clasecitas hayan servido para para contextualizar todo este tema de lo que son los sistemas distribuidos y dónde los encontramos y cómo podemos hablar de ellos o trabajar con ellos.
+Teacher: Pero vamos a ir retomando muchos de los conceptos que vimos ahora en los siguientes módulos como terminando de afianzar eh qué fue lo que dijimos acá y dónde lo vamos a ver aplicado dentro de dentro de todos estos componentes.
+01:30:00
+Teacher: ¿Listo?
+Teacher: Así que, jóvenes, tengo eh para la próxima clase tallercito.
+Teacher: Entonces, les voy a poner un taller ahorita que les voy a publicar un taller que tiene que ver con ejemplos de los modelos de computación distribuida para que los vayan procesando y los vayan buscando y documentando aquí en el taller y hablamos de eso en la
+Teacher: próxima clase y empezamos el tema de arquitecturas.
+Teacher: ¿Listo?
+Teacher: Así que jóvenes, muchísimas gracias por todo y nos vemos el martes.
+Student8: Listo, profe.
+Student8: Muchas gracias.
+Student28: Está prego.
+Teacher: Dale, que esté muy bien.
+Student7: Es por que se
+Teacher: Chao.
+Student5: noch.
+Teacher: Chao.
+Student22: Profe, profe, disculpe, se puede un segundito, porfa si sigue
+Teacher: Dale,
+Student22: ahí,
+Teacher: no hay problema.
+Student22: profe,
+Teacher: Regálame un segundo.
+Student22: es que un momento,
+Teacher: Dale, ahorita sí.
+Student22: profe, es que yo tengo una cirugía este sábado Yeah.
+La reunión finalizó después de 01:31:07 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+
