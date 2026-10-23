@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { BookOpen, ExternalLink, LayoutGrid, Map as MapIcon, Server, X } from 'lucide-react';
+import { BookOpen, ExternalLink, GraduationCap, LayoutGrid, Map as MapIcon, Server, X } from 'lucide-react';
 import {
   getTallerPath,
   isTallerAvailable,
@@ -43,6 +43,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ id, isOpen, onClose }) => {
           <NavLink to="/curso" className={navClass}>
             <BookOpen size={15} />
             <span>Información del curso</span>
+          </NavLink>
+          <NavLink to="/clases" className={navClass}>
+            <GraduationCap size={15} />
+            <span>Clases</span>
           </NavLink>
           <NavLink to="/guia" className={navClass}>
             <MapIcon size={15} />

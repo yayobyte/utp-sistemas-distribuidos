@@ -1,0 +1,37 @@
+.cd-figure {
+  margin: 0;
+  padding: 16px;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-sm);
+}
+
+.cd-scroll { overflow-x: auto; }
+.cd-figure svg { display: block; width: 100%; min-width: 520px; height: auto; }
+
+.cd-figure figcaption {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--color-body-muted);
+}
+
+.cd-figure text { font-family: var(--font-mono); font-size: 11px; fill: var(--color-ink); }
+.cd-figure text.cd-label { fill: var(--color-body-muted); font-size: 10.5px; }
+.cd-figure text.cd-heading { font-family: var(--font-text); font-size: 12px; font-weight: 600; }
+.cd-figure text.cd-on-fill { fill: var(--color-on-primary); }
+
+.cd-node { fill: var(--color-canvas); stroke: var(--acc); stroke-width: 2; }
+.cd-node-filled { fill: var(--acc); }
+.cd-zone { fill: none; stroke: var(--color-hairline); stroke-dasharray: 4 4; }
+.cd-cloud { fill: var(--color-canvas-parchment); stroke: var(--color-body-muted); }
+.cd-edge { fill: none; stroke: var(--color-body-muted); stroke-width: 1.5; }
+.cd-arrow { fill: none; stroke: var(--acc); stroke-width: 2; }
+.cd-head { fill: var(--acc); }
+.cd-head-muted { fill: var(--color-body-muted); }
+.cd-cross { stroke: var(--color-error, #d1462f); stroke-width: 3; }
+.cd-dot { fill: var(--acc); }
+.cd-dot-light { fill: var(--color-canvas); }
+.cd-bar { fill: var(--acc); }
+.cd-bar-muted { fill: var(--color-hairline); }
+.cd-cell-you { fill: var(--acc); }
+.cd-cell-prov { fill: var(--color-canvas-parchment); stroke: var(--color-hairline); }
