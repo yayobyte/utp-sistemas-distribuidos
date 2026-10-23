@@ -5,6 +5,7 @@ import { HomePage } from './pages/HomePage';
 import { CursoPage } from './pages/CursoPage';
 import { Taller1Page } from './pages/Taller1Page';
 import { Taller2Page } from './pages/Taller2Page';
+import { GuiaEstudioPage } from './pages/GuiaEstudioPage';
 
 export const App: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ export const App: React.FC = () => {
         <Route element={<AppShell />}>
           <Route index element={<HomePage />} />
           <Route path="curso" element={<CursoPage />} />
+          <Route path="guia" element={<GuiaEstudioPage />} />
           <Route path="talleres/1/:section?" element={<Taller1Page />} />
           <Route path="talleres/2/:section?" element={<Taller2Page />} />
 

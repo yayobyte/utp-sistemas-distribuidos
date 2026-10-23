@@ -1,0 +1,815 @@
+Hora de inicio de la reunión: 2026-10-08 18:36 GMT-5
+Asistentes
+Student1, Student3, Student4, Teacher, Student37, Student5, Student6, Student8, Student28, Student9, Student10, Student11, Student14, Student15, Student16, Student17, Student18, Student19, Student21, Student22, Student23, Student35, Student25, Student26
+Transcripción
+Teacher: Hola, jóvenes, buenas noches.
+Teacher: ¿Cómo están?
+Teacher: Espero que todo muy bien.
+Teacher: Bienvenidos a nueva clase.
+Teacher: Estamos llegando ya a la clase número 10. Y aquí seguimos trabajando con nuestro amado y odiado arquitectura cliente servidor, ¿cierto?
+Teacher: Eh, déjame comparto pantalla y continuamos con la discusión de esta arquitectura.
+Teacher: Ahí ven mi pantalla.
+Student8: Sí, señor.
+Student9: Sí, probé.
+Teacher: Listo.
+Teacher: En la clase pasada estuvimos viendo eh algunas de las de las variantes del modelo, ¿cierto?
+Teacher: Habíamos hablado de que teníamos la variante con caché, que es tener ese almacenamiento temporal en uno de sus lados y pues nos va a mejorar la el rendimiento porque si lo tengo al lado del cliente, pues el cliente no va a estar haciendo muchas peticiones del servidor y si lo hacemos del lado del servidor,
+Teacher: pues la caché puede ayudar a minimizar el gasto o la cantidad de procesamiento que necesitamos para dar respuesta rápida, ¿cierto?
+Teacher: Pero usar la caché pues tiene problemas como cómo manejamos la obsolescencia, cómo hacemos de que de que mi sistema eh sea confiable así no tenga los datos eh actualizados, ¿cierto?
+Teacher: Y el otro tema tiene que ver con cada cuánto vamos a actualizar la caché, cómo va a ser el proceso de actualización de caché, ¿cierto?
+Teacher: Eh, luego estuvimos hablando del modelo con proxy, ¿cierto?
+Teacher: de cliente servidor con Proxi, que sabemos que es un nodo intermediario y ese nodo intermediario pues recibe o captura todas las peticiones de su lado o de o que están de su lado y las puede enviar a la retro.
+Teacher: Y eh lo mismo podemos tener un proxy del lado de los servidores, ¿cierto?
+Teacher: de tal manera de que los servidores no tengan que ser accedidos de manera directa, sino que todos lo podamos pasar a partir del del proxy reverse y ahí podamos nosotros acceder a los recursos.
+Teacher: Eh, tengan en cuenta de que podemos hacer la combinación de proxic con caché, ¿cierto?
+Teacher: De que el proxip maneje la caché, una caché externa que no tengamos que definirla dentro de los clientes, sino que lo maneje directamente la caché.
+Teacher: Y entonces, pues vamos a a tener como el mejor de los dos mundos que que vimos en la clase pasada, ¿cierto?
+Teacher: También estuvimos hablando del servidor jerárquico, pues cliente servidor jerárquico, que es poder segmentar sea el el nivel de responsabilidades o sea el dominio de de atención, ¿cierto?
+Teacher: Entonces, aquí hablábamos de que podíamos tener un nivel, un servidor jerárquico, digámoslo así, multicapa o de división vertical, donde eh cada, digámoslo así, va a haber una capa que es el que atiende los usuarios, pero esa capa puede atender algunas cosas,
+Teacher: pero hay otras que él no sabe hacer, pero en lugar de decirle al cliente que hable con otro servidor, él recibe la petición y se la puede mandar a un servidor de más alto nivel y así sucesivamente, ¿cierto?
+Teacher: Entonces ahí podemos ir dividiendo como las responsabilidades del servicio o de todos los servicios y van a haber unas que se pueden procesar del lado más cercano del cliente como van a haber otras peticiones que se van a procesar en un nivel superior.
+Teacher: También hablamos de la división horizontal, donde todos los nodos son igualitos, pero no tienen el conocimiento completo del sistema, o sea, no tienen que saber o no tienen que tener toda la información del sistema.
+Teacher: Entonces, eh entonces ahí nosotros lo que vamos a hacer es hacerle las peticiones y si él no sabe, pues va a hablar con alguno de sus nodos hermanos o de sus servidores idénticos o similares para que para intentar resolver las peticiones de los usuarios.
+Teacher: Listo.
+Teacher: También estuvimos hablando del reparto de carga y el concepto de el si podemos hacer escalado vertical o horizontal.
+Teacher: En el escalado vertical no hay reparto de carga, simplemente estamos aumentando servicios para aumentando recursos para mejorar el servicio, pero tenemos el escalado horizontal que es coger el servicio y replicarlo o tener múltiples copias de lo mismo.
+00:05:00
+Teacher: Y al tener esas múltiples copias, pues vamos a poder distribuir el el esfuerzo o la carga o las peticiones entre los distintos servidores.
+Teacher: hablábamos de, bueno, la diferencia gráfica de lo que es scale up y scale outíamos nosotros con el scale out, ¿cierto?
+Teacher: Y es, ¿qué pasa con los datos?
+Teacher: ¿Qué pasa si tengo los datos del mismo lado?
+Teacher: C o cada servidor gestiona sus propios datos.
+Teacher: Entonces, cuando hacemos scale out, pues tenemos la dificultad o el problema de cómo vamos a garantizar que se sincronice la información.
+Teacher: Entonces ahí o tenemos que hacer un proceso de réplica o de sincronización de información para mantener todos los datos en línea, ¿cierto?
+Teacher: para que todo todos los servidores tengan los datos eh actualizados.
+Teacher: O la otra es separar la capa de almacenamiento, las capa de datos en una nueva capa, pero no podemos dejar un solo servidor porque volvemos al al inicio de que tengo un solo servidor, que es mi cuello botella,
+Teacher: mi punto crítico de fallo, etcétera, entonces lo tengo que replicar, ¿cierto?
+Teacher: Pero ahora vamos a tener que ver cómo hacemos para que los datos se puedan replicar en distintos servidores.
+Teacher: Y eso es justamente lo que vamos a hablar el día de hoy.
+Teacher: O sea, hoy vamos a empezar hablando con con la variante de qué pasa cuando yo tengo múltiples nodos que tienen la capacidad de hacer lo mismo, ¿cierto?
+Teacher: y que vamos a lograr de o y los tengo configurados de tal manera de que sea resiliente, o sea, que sea capaz de soportar la caída de uno de los servicios o de varios servicios.
+Teacher: Eso es lo que nosotros llamamos cliente servidor con alta disponibilidad.
+Teacher: Y la alta disponibilidad hace referencia a que mi sistema tiene que seguir en funcionamiento aún cuando se caiga alguno de los servidores, aún cuando haya alguna deficiencia en el en el servicio o haya algún tipo de fallo en el servicio,
+Teacher: mi sistema debe seguir dándole respuesta a los usuarios siempre van a seguir siendo atendidos.
+Teacher: Eso es lo que nosotros llamamos alta disponibilidad y la única forma de garantizar alta disponibilidad es teniendo réplicas.
+Teacher: teniendo réplicas como como estas que estábamos hablando aquí, ¿cierto?
+Teacher: Y es que de este servicio voy a tener otros más de tal manera de que estos otros, en el caso de que uno falle, los otros puedan seguir funcionando, los otros puedan seguir atendiendo a los servicios.
+Teacher: Así que no vamos a depender de un solo nodo, vamos a tener unos nodos redundantes o unos elementos redundantes que están replicando el servicio o están replicando eh los datos.
+Teacher: Lo mismo pasará entonces del lado de los datos.
+Teacher: Entonces ahora ya no vamos a pensar en que tenemos un solo servidor de datos, un solo servidor de base de datos, sino que vamos a tener un conjunto de servidores que pueden atender las mismas solicitudes, que deberían tener la posibilidad de guardar la información de la misma manera,
+Teacher: ¿cierto?
+Teacher: O que yo pudiese preguntarles a cada uno de ellos cómo lo vamos a hacer.
+Teacher: Ahora, cuando tiene que ver con el tema de los datos, nosotros eh tenemos que pensar en cómo hacemos la sincronización de ella, ¿cierto?
+Teacher: O sea, cómo sincronizamos la información, porque es es diferente cuando yo tengo un servicio que gestiona eh peticiones de manera independiente a la parte de los datos, porque los datos hay un concepto que es importante en este mundo de los sistemas
+Teacher: distribuidos y es la consistencia y tiene que ver con la fiabilidad de mi sistema.
+Student5: Evet.
+Student5: Yeah.
+Teacher: Y la consistencia hace referencia a que si yo hago una consulta en el a mi servicio de espero que me traiga la versión actualizada me espero que me entregue la información lo más actualizada posible.
+Teacher: Entonces, ese concepto de de la consistencia cuando tengo datos replicados cuando tengo servidores replicados o servidores de datos replicados se vuelven un gran problema y es cómo vamos a garantizar la replicación, cómo vamos a garantizar de que los distintos nodos queden actualizados con la misma
+Teacher: información.
+Teacher: Ahí es donde entran estas soluciones alternativas o estos esto que llamamos las los tipos de replicación, ¿cierto?
+Teacher: ¿Qué es esto?
+Teacher: Y es que eh dependiendo de dependiendo de cómo yo quiera trabajar o gestionar los datos en mi sistema replicado o de alta disponibilidad, entonces yo voy a poder seleccionar entre replicación activa o replicación pasiva.
+Teacher: ¿Listo?
+Teacher: Voy a mostrarles una gráfica y ahorita volvemos a la explicación.
+Teacher: ¿Qué es la replicación activa?
+Teacher: la replicación activa, cuando yo tengo nodos eh nodos en réplica o nodos eh iguales que hacen las mismas operaciones o en este caso vamos a guardar los datos, pues entonces cuando llega una petición del cliente, lo que hace el cliente es y hay replicación activa,
+00:10:00
+Teacher: nosotros lo que nosotros como clientes tenemos que enviar la petición a todos los servidores de la réplica que están en réplica.
+Teacher: Eso significa que cuando yo hago una petición, voy a guardar un dato, ese guardar datos o crear un nuevo usuario lo tengo que mandar o esa petición se tiene que mandar al proceso uno, a la al servidor uno,
+Teacher: al servidor dos y al servidor tres.
+Teacher: ¿Por qué?
+Teacher: Porque como tengo replicación activa, todos los servidores tienen que realizar las mismas operaciones, tienen que mantener el mismo estado, de tal manera que si uno de ellos falla, pues los otros tengan todo el historial o hayan ejecutado las mismas actividades o las mismas
+Teacher: peticiones una y otra vez.
+Teacher: ¿Listo?
+Teacher: Eso es básicamente lo que nosotros tenemos con la replicación activa.
+Teacher: ¿Qué pasa con la replicación pasiva?
+Teacher: Pues en lugar de enviar la petición a todos los servidores, vamos a escoger uno.
+Teacher: Vamos a escoger un nodo primario.
+Teacher: ¿Listo?
+Teacher: Y ese nodo primario es el que va a asumir la carga de todo nuestro sistema.
+Teacher: O sea, todo todos los clientes van a intentar hablar con este nodo primario y este nodo primario es el que va a procesar y le va a dar respuesta a los clientes.
+Teacher: ¿Listo?
+Teacher: ¿Qué es lo que hace el nodo primario?
+Teacher: ¿Por qué lo llaman replicación pasiva?
+Teacher: Y es que dependiendo del algoritmo que vamos a ver ahora, del algoritmo que elijamos, pues este proceso de actualizar el estado del nodo primario a los nodos secundarios se va a hacer de distinta forma.
+Teacher: ¿Listo?
+Teacher: Pero al final el cliente habla con el nodo primario, el nodo primario le da respuesta y una vez ya atendió al cliente, él inicia o él debe garantizar de que los estados
+Teacher: de los otros servidores réplica también tengan también tengan el nuevo estado, hagan las modificaciones que están eh que fue realizado en este momento, que tengan actualizad estos datos y que si en un momento determinado yo tengo que utilizar este otro
+Teacher: nodo para obtener información, o sea, para volverlo a modificar, pues el estado esté actualizado.
+Teacher: Vamos, mir, hasta ahí.
+Teacher: O sea, se entiende el concepto de replicación activa y pasiva.
+Teacher: ¿Qué es esto entonces?
+Student5: No.
+Teacher: ¿Cómo funciona la replicación activa?
+Teacher: La replicación activa trabaja de una forma muy sencilla y es todos los servidores tienen que recibir las mismas peticiones.
+Teacher: Todos los servidores deben procesar las mismas peticiones.
+Teacher: ¿Listo?
+Teacher: Cuando yo estoy trabajando en replicación activa y ese y ese cliente tiene tres servidores a los que tiene que mandar la petición, pues es el cliente o es responsabilidad del cliente enviarle la información a los distintos servidores y el cliente para poder decir que ya terminé de procesar o
+Teacher: que ya se terminó el el procesamiento o el guardado o la actualización de los datos, tiene que esperar a la respuesta de todos los servidores.
+Teacher: Eso no le sirve con que uno termine.
+Teacher: Tienen que terminar todos los servidores.
+Teacher: Dime
+Student26: Profe,
+Teacher: [estudiante].
+Student26: y si es una buena práctica que el cliente mande tres peticiones en vez de poner un gatewayight o algo en la mitad para que el gateway sea el que haga la la
+Teacher: Y y el y el gateway entonces es mi punto crítico de
+Student26: petición,
+Teacher: fallo
+Student26: obviamente, pero aquí entonces sería el cliente o qué pues yo No.
+Teacher: e aquí.
+Teacher: Digamos que aquí lo que queremos es que los tres servidores estén actualizados.
+Teacher: Entonces, si yo quiero que los tres servidores estén actualizados y elijo el modelo de replicación activa, es responsabilidad del cliente enviarle a los tres servidores la información.
+Student26: ¿Qué pasa si falla una petición?
+Student26: Una de las tres, por ejemplo, es que es que
+Teacher: Si si este si este no se puede procesar, si este señor dice que salió un error, espera, si este dice que salió un error y las otras están bien, eh digamos que no se da por válido, no se da por actualizado el servicio,
+Teacher: se da como hubo un error en el en el en la petición y entonces el cliente va a recibir error o debe asumir el error porque no se pudo modificar.
+Teacher: los tres procesos.
+Student26: O sea, se hace como una transacción Yeah.
+Teacher: Claro, ojos, depende de lo que estemos hablando.
+Teacher: Si es replicación activa en procesamiento, le mando el procesamiento a los traders.
+Teacher: Casi nunca vamos a ver eso, ¿cierto?
+Teacher: que yo tenga tres servidores que que van a atender o que van a hacer procesamiento y le mando la petición a los tres.
+Teacher: No tiene mucho sentido.
+Teacher: ¿Dónde vemos más eh en acción este tema de la replicación activa?
+00:15:00
+Teacher: Cuando tenemos servidores de bases de datos, ¿cierto?
+Teacher: Tenemos tres servidor, tres tres servidores de bases de datos y quiero que todas tres tengan la misma información o que estén guardando la misma información de que sea resiliente o que esté de alta disponibilidad, que si uno de los servidores falla,
+Teacher: pues los otros dos puedan seguir en funcionamiento y tengan los datos actualizados con replicación activa, en ese caso de las bases de datos.
+Teacher: Entonces yo tengo que saber cuántos servidores hay y enviarle la información a todos los servidores.
+Teacher: Y cuando lo todos los servidores me respondan, "Okay, entonces yo digo, listo, guardé bien, se guardó bien la información y puedo continuar con el proceso." Pero si alguno de ellos o
+Teacher: todos fallan, pues entonces el sistema falló.
+Teacher: ¿Vamos bien hasta ahí o no?
+Teacher: O sea, de alguna manera, si este falla y los otros quedaron bien,
+Student5: Ven,
+Teacher: el cliente cuando se dé cuenta de que este falló tendría que decirle a los otros, "No, no, devuélvalo porque porque no se puedo guardar." Dime,
+Student5: qué pena.
+Teacher: [estudiante].
+Student5: Yo creo que no anemo llegué tardecito.
+Student5: Sí, qué pena.
+Student5: Y segundo, no estoy entendiendo una cosa.
+Student5: Si hace una sola petición, los servidores tienen la misma información, ¿por qué debe de responder los tres?
+Student5: Ah.
+Teacher: Porque los tres tienen que estar actualizados.
+Teacher: O sea, si tú si viene una petición y dice, "Cree el usuario [estudiante] y lo atiende este, tengo que hacer decirle que también lo atienda este y lo atienda este." ¿Para qué?
+Teacher: para que los tres estados de los tres servidores tengan el mismo valor o tengan los mismos datos.
+Teacher: Porque si yo le digo que lo procese este y le pregunto a este, ¿cuántos usuarios tengo, entonces este dice, "Ah, tengo dos." Ah,
+Teacher: pero aquí, pero yo a [estudiante] ya lo creé.
+Teacher: No, aquí no.
+Teacher: Entonces, cuando yo tengo replicación activa, defino que el proceso de de almacenamiento, el proceso de de replicación va a ser activa, tengo que enviar la petición a todos los servidores para que todos procesen la tarea.
+Teacher: Ya yo iba a decir
+Student26: Sí,
+Teacher: algo,
+Student26: sí, profe.
+Student26: Entonces yo como lo estoy entendiendo es que aquí el cliente es otro servidor, o sea,
+Teacher: puede ser otro servidor.
+Student26: es que es que yo aquí viéolo tipo cliente,
+Teacher: Sí.
+Student26: digamos, una aplicación un
+Teacher: Recuerde, recuerde que puedo tener eh puedo tener servidores jerárquico,
+Student26: Pronten.
+Teacher: ¿cierto?
+Teacher: Yo puedo decir, "Es que tengo una capa de de lógica de negocio que habla con la capa de datos." Entonces,
+Teacher: la capa de lógica de negocio vendría siendo el cliente de la capa de datos.
+Teacher: Y esa capa de lógica de negocio cuando dice, "Necesito guardar esta información o necesito actualizar esta información", tiene que enviar la petición a todos los servidores para que quede actualizado en todos los servidores, porque estoy buscando alta disponibilidad.
+Student26: Vale, vale.
+Student26: Sí, está bien.
+Student26: Sino sino que como dice cliente, yo lo veo literalmente como una la aplicación mandando la la solicitud a los tres clientes y y y me queda como corto pensarlo porque siento que que muy fácil se cae.
+Student26: Si es un servidor es más sencillo.
+Student26: Cloudfare, cuando usted está con un CDN, pues Cloudfare, él mismo se encarga de hacer la distribución, pero usted solo apunta a un servicio.
+Teacher: Pero es que pero es que Cloudford no es un no es un servidor,
+Student26: Sí, sí,
+Teacher: es un sitio donde descargó los recursos,
+Student26: pero cuando usted tiene
+Teacher: pero pero el servicio, o sea, cuando tú haces una petición al servidor, ojo, al servidor, pero el servidor no procesa los datos, sino que hay otro servidor que procesa datos, que es lo normal.
+Teacher: Nosotros vamos a hacer nuestra aplicación en Note, pero tengo un Postgress, pero tengo un My Sequel, pero son mi servidor tiene el va a asumir un rol de cliente para poder hablar con el servidor de base de datos.
+Student26: Ok.
+Student26: Ok.
+Student26: I see más clar.
+Teacher: Sí,
+Student26: Oh.
+Teacher: o sea, puede ser, digámoslo así, no es no es que tengamos que ser tan explícitos de que el cliente, el usuario final, la aplicación frontend tenga que ir a los datos, ¿no?
+Teacher: El que esté, no, el que esté solicitando el servicio, que en este caso puede ser un otro servidor, puede solicitar el servicio de almacenamiento o que haga tal operación sobre la base de datos o sobre el servicio de almacenamiento como tal.
+Teacher: ¿Listo?
+Teacher: Entonces, aquí lo que estoy diciendo es o lo que quiero reflejar es que el cliente, la persona que tiene una petición por hacer, recuerden que en arquitectura cliente servidor está él.
+Teacher: El cliente es el que necesita hacer algo y el servidor el que lo hace.
+Teacher: ¿Sí?
+Teacher: Entonces, en este caso, el cliente, el que necesita que hagamos algo, tiene una serie de servidores en réplica activa.
+Teacher: Entonces, como está en una réplica activa, tiene que hacer la la petición a todos los servidores de manera independiente.
+00:20:00
+Teacher: ¿Listo?
+Teacher: No es que haga una sola petición y le llegue a todos, hace petición de manera independiente porque tiene tres servidores a los que tiene que atender, a los que tiene que avisarle de que haga la transacción.
+Teacher: Si este, digámoslo así, si este no responde simplem si este no responde simplemente porque no está disponible, okay, atiendo con estos dos y este pues está down.
+Teacher: Pero si este devuelve error, entonces todos deben devolver la el movimiento, deben cambiar el estado al estado anterior.
+Teacher: Vamos bien hasta ahí.
+Teacher: Ese es el concepto de replicación activa.
+Teacher: Todos procesan la misma petición.
+Teacher: Vea, todos los servidores reciben reciben y procesan la petición del cliente.
+Student5: tiempo.
+Teacher: ¿Listo?
+Teacher: Es ese es el concepto de replicación activa.
+Teacher: ¿Qué replicación pasiva?
+Teacher: solamente uno reciba la el primario va a recibir la petición y los secundarios están a la espera.
+Teacher: ¿A la espera de qué?
+Teacher: De que empiece el proceso de actualización.
+Teacher: ¿Y cuál es ese proceso de actualización?
+Teacher: Ah, depende.
+Teacher: Tenemos tres posibles procesos de replicación pasiva que es es aplicar el hot standby, que en el hot standby es básicamente acabo de recibir la transacción, la acabo de procesar, cambié el estado de mi base de datos o cambié el estado de mi sistema,
+Teacher: le di respuesta al cliente y ese estado que acabe de de cambiar lo voy a empezar a propagar a los otros servidores.
+Teacher: Los otros servidores no están atendiendo a los usuarios, no están atendiendo a los clientes, perdón, están simplemente ahí en standby esperando a que algo suceda o o que el primario no pueda responder, entonces ellos pueden empezar a responder el tema.
+Teacher: Entonces, entonces con el hot standby, proceso terminado, proceso que debo empezar a sincronizar.
+Teacher: Y la sincronización no es decirles que procesen de nuevo los datos, ¿sí?
+Teacher: O sea, no es mandarle la misma petición a los otros.
+Teacher: El la sincronización es si esto fue lo que ya calculé, así tenía que quedar el sistema, entonces le digo a los otros nodos, mire, el sistema tiene que quedar en este estado.
+Teacher: Si así me tiene que quedar la base de datos, la base de datos queda así.
+Teacher: No tiene que volver a procesar los datos, no tiene que recibir la misma petición y procesarla.
+Teacher: Tiene que simplemente voy a actualizar el estado final, cómo quedó después del procesamiento.
+Teacher: ¿Listo?
+Teacher: Pero entonces en el hot standby apenas le devuelve el o cambia el estado de del sistema, empieza el proceso de propagación a los otros.
+Teacher: ¿Cómo que el proceso de propagación?
+Teacher: Entonces, el cliente hizo la petición, el proceso lo procesó, cambió el estado, guardó la la información, le dio la respuesta al cliente, pero una vez acaba de terminar la respuesta al cliente, enseguida inicia el proceso de replicación a los otros nodos.
+Teacher: ¿Listo?
+Teacher: Entonces le dice, "Ey, el nuevo estado es tal, el nuevo estado es tal, el nuevo estado es tal, el saldo de la cuenta es tal, el saldo de la cuenta es tal, el saldo de la cuenta es tal,
+Teacher: el número de usuarios es tal y el el y el usuario nuevo es tal y eso tiene que propagarse a todos los otros servidores.
+Teacher: Dime
+Student26: Profe,
+Teacher: [estudiante].
+Student26: ¿y esto se da por capas o qué?
+Student26: Porque digamos esto es de alta disponibilidad.
+Student26: Entonces, bueno, vale, se cayó uno,
+Teacher: Mm.
+Student26: entonces sigue funcionando el otro.
+Student26: Quedan como en cola.
+Teacher: Sí.
+Student26: Me imagino que algunas actualizaciones de estado, es lo que entiendo de esta, que lo que pasa es que no es la misma transacción, sino que de un el principal le pasa a los otros actualizaciones de estado,
+Teacher: de estado,
+Student26: para que quede igual.
+Teacher: no del no de proceso, sino de
+Student26: Mm.
+Student26: Exacto.
+Teacher: estado.
+Student26: No sé si eso es como se hace tipo como Docker, que es como por capas.
+Student26: Pum, pum,
+Teacher: Mm.
+Student26: pum.
+Student26: O listo o bueno,
+Teacher: M.
+Student26: o como sea, tipo cambio, un repositorio que lo que hace es que hace diferencias entre Pero entonces, ¿cómo qué ocurre cuando cuando hay una diferencia y el otro arranca, digamos, se cayó el principal o el secundario por un tiempo,
+Student26: hay transacciones que no quedaron y vuelve y arranca?
+Student26: ¿Cómo se van haciendo?
+Teacher: Pues ahí depende de cuál es el modelo que estemos aplicando.
+Student26: M.
+Teacher: Entonces, en el hot standby, apenas apenas llega la transacción se se empieza la propagación a los a los secundarios, ¿cierto?
+Teacher: El warm standby no lo voy a hacer uno a uno, o sea, no voy a hacer la transacción uno a uno, sino no voy a hacer la propagación uno a uno, sino que yo voy guardando el estado por x tiempo o por x número de transacciones o por
+Teacher: x eh modificaciones de o cambios de estado.
+Teacher: Y cuando tengo ese conjunto de datos o ese conjunto de elementos, esa actualización completa es la que voy a pasar al al otro.
+00:25:00
+Teacher: No lo voy a hacer uno a uno, sino que puedo armar un paquete de actualizaciones.
+Teacher: Ese es el que nosotros llamamos el warm standby.
+Teacher: Y hay otro que es called standby.
+Teacher: ¿Y qué es el code de standby?
+Teacher: Pues los secundarios no van a recibir actualizaciones.
+Teacher: ¿Sí?
+Teacher: ¿Cuándo las va a recibir?
+Teacher: cuando el primario decide cuándo hacer la el la migración o cuándo hacer la actualización de estado.
+Teacher: Ese es, digámoslo así, yo voy a estar atendiendo a los usuarios, voy a estar atendiendo a los clientes, perdón, todas las peticiones y cuando no tenga nada para hacer, pues entonces yo inicio el proceso de de sincronización de estado.
+Teacher: Pero si estoy ocupado, no me voy a enfocar en atender a los usuarios.
+Teacher: En este es inmediato, o sea, he estado cambiado, he estado actualizado.
+Teacher: En este voy a a ir haciendo un acumulador como espero 5 minutos, espero una hora y después de todas las transacciones de esa hora las voy a propagar o cuando me dé la gana.
+Teacher: O sea, ya aquí podemos definir todos los días a medianoche o cuando eh la carga esté bajita o o sea, ya podemos elegir aquí un modelo y el y en este caso los call standby, los s están desactivados,
+Teacher: o sea, no están haciendo nada, no casi que ni responden a las solicitudes de de del cliente.
+Teacher: ¿Listo?
+Teacher: Entonces, esas son como los tres modelos para hacer la replicación pasiva.
+Teacher: ¿Cuál elegir?
+Teacher: ¿Por cuál es el mejor?
+Teacher: ¿Qué pasa con el hot con el hot standby?
+Teacher: Y es que mi proceso o mi o mi servicio que está procesando todas las tareas y que tiene la responsabilidad completa está haciendo dos tareas.
+Teacher: M. tiene que atender al usuario y hacer y garantizar la sincronización de los datos.
+Teacher: Eso significa que este proceso va a estar que se explota la cabeza o que o va a estar muy lento porque puede estar en el proceso de replicación antes de poder recibir peticiones de clientes, ¿cierto?
+Teacher: Entonces, en el modelo de Hot Standby existe una alta probabilidad de que mi sistema pierda rendimiento.
+Teacher: ¿Por qué pierde rendimiento?
+Teacher: porque estoy procesando o o estoy haciendo dos tareas, proceso, le entrego respuesta y tengo que garantizar de que los otros servidores queden actualizados.
+Teacher: Cuando los otros su estado quede actualizado, ya soy casi que disponible para poder hacer una nueva actualización, porque no puedo estar actualizando por un lado y y recibiendo peticiones y cambiando el estado porque no tiene mucho sentido eso.
+Teacher: Como ese proceso va a estar tan ocupado y y en el Hond standby va a estar, digámoslo así, que partiendo su tiempo, su procesamiento a dos tareas.
+Teacher: Por eso podemos pasarnos al warm standby.
+Teacher: En lugar de que petición por petición la esté guardando, esté haciendo la actualización, voy a esperar un conjunto de transacciones, un conjunto de de movimientos, un conjunto de cambios de estado y después de que ya procesé todos esos cambios de estado,
+Teacher: inicio un proceso en background para hacer la actualización de de los estados.
+Teacher: Pero mientras estoy actualizando el estado, no puedo recibir más modificaciones, no puedo recibir eh manipulaciones de mi sistema.
+Teacher: ¿Por qué?
+Teacher: porque estoy sincronizando y me lo están cambiando, no tiene mucho sentido.
+Teacher: En cambio, en el call standby, yo no voy a no voy a actualizar los datos, solamente me voy a enfocar en procesar las peticiones que tengan los clientes y en garantizar de que el cliente reciba respuesta lo más pronto posible.
+Teacher: Cuando no tenga nada para hacer, cuando el recurso esté disponible o cuando yo elija, como administrador decida cuándo hacer la copia del estado del uno al otro, pues entonces ahí es cuando se realiza el cambio de estado.
+Teacher: En el call de standby el rendimiento es mucho mejor.
+Teacher: en el call de standby, ¿cierto?
+Teacher: Pero la posibilidad de pérdida de información es mucho más grande porque como estamos dependiendo de un solo servicio, recuerden que toda decisión que que defina que un servicio va a
+Teacher: estar atendiendo o que vamos a depender de ese servicio para todo es mi punto crítico de fallo, ¿cierto?
+Teacher: Si este señor falla, mi sistema va a fallar.
+Teacher: Por eso estamos buscando la replicación.
+Teacher: Por eso estamos buscando la alta disponibilidad, pero si decido hacerlo por Hot Standby, pues entonces sabemos de que el rendimiento de este servidor o este servidor va a estar doblemente ocupado.
+Teacher: Uno atendiendo al usuario y después de atender al usuario actualizándole el estado a los otros servidores.
+Teacher: Y entre más nuevos servidor.
+00:30:00
+Teacher: copia tenga más tiempo se puede demorar, ¿cierto?
+Teacher: Porque tiene que garantizar de que todos los nodos eh secundarios queden actualizados antes de poder recibir una siguiente petición.
+Teacher: ¿Cómo la ven?
+Teacher: Ah, bueno.
+Teacher: ¿Y qué pasa con la replicación activa?
+Teacher: Pues es como si estuviéramos esperando o estuviéramos procesando en paralelo tres veces en la misma solicitud.
+Teacher: Todos los procesos van a estar en funcionamiento, todos van a estar gastando recursos, todos van a estar eh procesando la información, pero yo tengo que esperar a que todos los procesos terminen antes de poderle decir al cliente, "Listo,
+Teacher: ya terminé y continúe con su proceso, continúe con lo que esté haciendo." Entonces,
+Teacher: en la en la replicación activa existe una alta probabilidad de que tengamos retrasos o que la latencia aumente, porque tengo que esperar a que tres procesos independientes en tres máquinas distintas respondan a la solicitud de almacenamiento o de cambio de estado.
+Teacher: En cambio, la replicación activa solamente tengo que esperar uno, entonces podría ser mucho más efectivo tener mayor rendimiento, pero en la replicación activa tengo el problema de que si lo tengo en hot standby, entonces llega, cambio el estado y tengo que actualizar.
+Teacher: Entonces voy a tener un rendimiento de la mitad de la capacidad de mi servidor.
+Teacher: En el otro todo el servidor está dedicado.
+Teacher: En este la mitad, digámoslo así, la mitad porque es o o proceso o actualizo.
+Teacher: No puedo recibir una petición de modificación cuando apenas esté actualizando a los estados porque me modificaría el estado y tendría que volver a empezar el proceso de modificación de estados.
+Teacher: No sé si me hago entender o o o todo este enredo se
+Teacher: entiende.
+Student26: Pues profe, yo yo lo entiendo.
+Student26: Me imagino que que ahí pues como una lista de pros y contra y posibles riesgos en la sincronización y todo.
+Student26: Sería bueno como tenerlos por ahí listaditos.
+Teacher: Bueno,
+Student26: Yeah.
+Teacher: pregunta, ¿qué creen ustedes que pase si yo no si yo no busco o yo no selecciono hot standby, sino warm standby?
+Teacher: ¿Cómo será el rendimiento de mi sistema?
+Teacher: ¿Qué esperaríamos nosotros si en lugar de que cambio de estado hecho estado que tengo que actualizar, sino que pues voy guardando un periodo de tiempo, un número de transacciones, etcétera, para empezar el proceso de de
+Teacher: actualización?
+Student26: Bueno, acá hay dos medias de rendimiento.
+Student26: Una es si está disponible o no disponible, alta disponibilidad y el otro es qué tan rápido lo hace el servidor.
+Student26: Pues en teoría, si el servidor no hace el update ahí mismo, asumo que sería más rápido, pero no está disponible ahí mismo.
+Student26: Entonces una medida compromete la otra, No.
+Teacher: Sí, exactamente.
+Teacher: Entonces, La decisión que nosotros tomemos en cuál va a ser el modelo de replicación que nosotros vayamos a hacer, pues implicará en qué tan bueno o malo, o qué tan eficiente o no, qué tanto es el la mejora de rendimiento o no que vamos a tener en colocar otro servidor.
+Teacher: Sí. ¿Y qué pasa si monto 10 servidores?
+Teacher: Si es en el standby tengo que esperar a que 10 servidores respondan.
+Teacher: Si es en replicación eh perdón, si es en replicación activa, tengo que esperar a que 10 servidores respondan, pero si es en replicación pasiva, tengo que esperar a que me responda un cliente, que responda la petición del servidor,
+Teacher: pero el servidor va a estar ocupado otro tiempo actualizando el estado de los otros servidores de los otros nueve servidores.
+Teacher: Y entonces es tiempo que no va a poder atender a más usuarios porque no puede modificar su estado hasta que garantice que todos estén actualizados.
+Teacher: Y si escogemos eh warm standby, okay, vamos a mejorar el rendimiento de mi sistema, pues va a ser mucho más rápido, mucho más efectivo, pero tenemos el riesgo de que si el primario falla, el los secundarios no están actualizados.
+Teacher: Y entonces si entro a trabajar o promuevo uno de los secundarios como primario, pues existe una pequeña probabilidad, una pequeña eh sí existe la posibilidad de que perdamos un pequeño bloque de información,
+Teacher: el bloque que se estaba acumulando y que no se alcanzó a sincronizar.
+Teacher: Y con el C standby, pues es el modelo, digámoslo así, el peor modelo, el que me el mayor rendimiento me puede dar de atención a los usuarios o atención a los clientes, pero tenemos la más baja,
+Teacher: alta disponibilidad que nosotros podríamos llegar a tener de los datos.
+Teacher: ¿Por qué?
+Teacher: Porque si yo digo cada 6 horas hágale la actualización o espere a a que a horas no pico o a horas fuera de oficina para actualizar.
+00:35:00
+Teacher: Entonces, ¿qué pasa con todo lo que sucedió en el día?
+Teacher: Se puede llegar a perder, ¿cierto?
+Teacher: Eso pensemos este call standby como el proceso o el modelo de que tenemos en muchas empresas de de hacer los backups de seguridad, ¿cierto?
+Teacher: Usted cada cuánto tiene una copia de seguridad de la información que usted tiene su en su equipo, ¿no?
+Teacher: Cada semana o o hago la copia al final del día o Pero, ¿qué pasa con toda la información del día?
+Teacher: Si mañana mi computador, yo estoy trabajando y son las 5 de la tarde y cayó un rayo en los aguaceros que están dando ahora, cayó un rayo y me quemó en el computador.
+Teacher: ¿Qué pasa con mi copia de seguridad?
+Teacher: ¿Qué pasa con la información con la que yo voy a seguir trabajando el día de mañana?
+Teacher: ¿Cierto?
+Teacher: Entonces ese modelo de cuando tenga tiempo, cuando yo me acuerde, cuando esté disponible es el modelo call stand by.
+Teacher: ¿Listo?
+Teacher: Entonces el primario guarda el estado de almacenamiento persistencia replicado hasta que el secundario esté esté disponible.
+Teacher: Vamos bien hasta ahí.
+Teacher: ¿Por qué hablo mucho del rendimiento?
+Teacher: ¿Por qué creen ustedes que es importante el rendimiento al momento en elegir la alta disponibilidad?
+Teacher: Estamos pensando en alta disponibilidad, pero ¿por qué para por qué yo los estoy enfocando en el tema del rendimiento?
+Student5: Pues tenemos muy buen respaldo, pero de nada nos sirve si no contesta, si es lento.
+Teacher: Exactamente.
+Teacher: Yo puedo tener la el mejor sistema de respaldo, pero si procesar la información o si enviar a guardar el sistema me va a demorar 5 segundos o 5 minutos o un minuto para no irnos tan lejos.
+Teacher: Si cada vez que yo le diga guardar se va a demorar un minuto porque está garantizando la replicación de los datos, pues el el usuario no va a estar contento.
+Teacher: El usuario va a estar bastante eh no va a estar muy contento, no va a estar muy eh conforme con el rendimiento de mi aplicación.
+Teacher: Y recuerden que uno de los objetivos que estamos buscando nosotros en el sistema distribuido es el rendimiento y es de que si me comparan con un sistema centralizado, si me comparan con una aplicación que está corriendo en mi en mi equipo,
+Teacher: debe ser igual o mejor.
+Teacher: Listo.
+Teacher: Pero si yo decido eh o para mí es importante la alta disponibilidad, tengo que saber de qué manera la pongo la pongo disponible para no para no eh afectar el proceso de rendimiento.
+Teacher: Tengamos en cuenta algo y creo que es algo que de pronto no lo no lo han visto o no lo enseñaron cuando está nos estaban enseñando a que a que hiciéramos múltiples copias de seguridad o múltiples copias de las de los datos.
+Teacher: Y es que garantizar la alta disponibilidad o agregar más nodos no significa que se multiplica el rendimiento.
+Teacher: Sí, que es que hoy tengo uno, lo voy a poner otro, entonces ya voy a tener el doble de rendimiento.
+Teacher: No, puede que tenga un 1.8, un 1.9, nu, pero no es un no es una no es una eh medida lineal, no es un es una transformación lineal, número de nodos, eh capacidad de rendimiento o capacidad de procesamiento.
+Teacher: ¿Por qué?
+Teacher: Porque ahora cuando tengo más nodos tengo que hacer algún tipo de gestión, sea distribuirlo entre los diferentes nodos, estar verificando cuál es el que tiene datos, cuál es el que tiene recursos y cuál no, que ya empieza a afectar el rendimiento.
+Teacher: O en ese caso, cuando yo digo, "No, es que para Lo importante es tener un clúster para alta disponibilidad. Entonces,
+Teacher: el clúster ya no va a funcionar como si fuera uno solo, sino que va a ser va a funcionar como si fuera punto nu de de del sistema, porque voy a tener uno procesando y el otro haciendo lo mismo o uno procesando y el otro esperando a que el otro
+Teacher: caiga, a que el otro a que el otro me actualice para poder tener los datos actualizados.
+Teacher: Entonces ahí es donde vamos a tener nosotros ese ese efecto y para que lo tengamos en cuenta en este tema de la alta disponibilidad.
+Teacher: ¿Listo?
+Teacher: Eh, ¿cómo la ven?
+Teacher: Preguntas, dudas sobre la replicación activa y pasiva en servidores de alta disponibilidad.
+Teacher: ¿Qué pasa aquí?
+Teacher: ¿Será que yo puedo tener alta disponibilidad en esta capa?
+Teacher: o cómo funcionaría la alta disponibilidad en esta capa.
+Teacher: ¿Cómo cómo creen ustedes que sería lo mejor?
+Teacher: ¿Será que necesitamos datos de alta disponibilidad, datos o mejor dicho hacer algún algoritmo de replicación en la capa del medio?
+00:40:00
+Student26: Esa capa no es de procesamiento solamente,
+Teacher: Sí, es de procesamiento.
+Student26: ¿no?
+Teacher: ¿Será que también lo Okay.
+Teacher: Entonces, mire que en este caso, si yo tengo este escenario donde el cliente va a llegar a unas servidores replicados, ¿sí?
+Teacher: Vamos a tener unos servidores con escalamiento vertical, eh, horizontal, perdón, o sea, varios servidores que hacen lo mismo, pero el almacenamiento de cada servidor está dentro del servidor.
+Teacher: Entonces, yo tengo que definir cómo va a ser este proceso de actualización.
+Teacher: que si ese señor hace una petición, la petición viene aquí y se redirige a uno de los servidores, uno de los servidores.
+Teacher: Y si ese servidor es el que va a procesar la información y necesita actualizar el estado, entonces puedo utilizar otro standby para que actualice después de que lo cambie o puedo en el caso de que lo quiera hot replication replicación activa active
+Teacher: replication entonces mandaría la petición a los tres nodas para que todos procesen la información y todos tengan la actualización de de los datos.
+Teacher: ¿Sí?
+Teacher: Entonces, mire que aquí es donde estamos afectando nuestro sistema.
+Teacher: Aquí es donde vamos a tomar la decisión de qué hacer.
+Teacher: Y si no quiero hot replication de que cada petición vaya a los tres, porque lo que quiero es mejorar el rendimiento, no la alta disponibilidad, sino mejorar el rendimiento.
+Teacher: Entonces, okay, cada petición va a ir a un servidor distinto, pero cada modificación del estado tiene que aplicarse en los otros dos servidores.
+Teacher: Y entonces ahora ya estoy afectando es este lado.
+Teacher: Vamos a hacer un un una replicación pasiva, pero en hot standby, en warm standby o en call standby.
+Teacher: ¿En cuál de los tres modelos queremos hacerlo?
+Teacher: Yeah.
+Teacher: Pero si yo saco los datos de aquí, yo ya puedo tener alta disponibilidad o mejora de rendimiento en el escalamiento vertical de esta capa, en el escalamiento horizontal de esta capa.
+Teacher: Sí, voy a tener una mejora de rendimiento porque ya no necesito que todos los procesores procesen la misma petición, sino que todos los servidores o cada servidora atiende una petición distinta.
+Teacher: ¿Listo?
+Teacher: Pero como no está el almacenamiento acá, tenemos que identificar cómo vamos a hacer la gestión de los datos acá.
+Teacher: Si vamos a mandar con un replicación activa, entonces cada guardado de este servidor tiene que guardarse en los tres al mismo tiempo.
+Teacher: Cada guardado va a los tres.
+Teacher: Cada guardado va a los tres.
+Teacher: Listo.
+Teacher: O guardamos en uno y que empiece el proceso de replicación por detrás.
+Teacher: Pero ya saben cuál es el cuáles son las implicaciones de utilizar cualquiera de estos modelos de replicación.
+Teacher: ¿Listo?
+Teacher: No sé si hay alguna pregunta, alguna duda, algo que pronto no haya quedado en cuenta con esto de la alta disponibilidad.
+Teacher: La alta disponibilidad no es transparente, no es tener una un servidor espejo.
+Teacher: Necesitamos saber cómo sincronizamos eh la información que deben tener los dos servidores.
+Teacher: Vamos bien ahí.
+Teacher: El último modelo, la última forma para descargarle responsabilidades al servidor o depender menos del servidor para que mi sistema sea más resiliente o más tolerante a fallos, es utilizar código móvil.
+Teacher: A diferencia de todo lo que hemos hablado, que lo normal es que el cliente cuando necesite algo, lo que va a decirle al servidor es, "Ey, necesito que haga tal operación y estos son los datos de entrada y él me entrega los datos de salida." El proceso
+Teacher: normal de sistema que conocemos nosotros desde tercer semestre o desde el inicio de los tiempos, ¿cierto?
+Teacher: Y es que el sistema recibe una entrada, procesa y salida.
+Teacher: Pero cuando estamos hablando del servidor es que tenemos múltiples procesos o múltiples operaciones que podemos hacer.
+Teacher: Y el cliente lo que hace es decir, "Ey, necesito que me haga tal tal operación. Estos son los datos de entrada y me devuelve una salida." La última opción que es
+Teacher: esta, ya no vamos a estar mandando eh solamente los datos, ¿no?
+Teacher: No vamos a llamar una función con unos argumentos.
+Teacher: La idea del código móvil es que en lugar de que viaje los datos, lo que vamos a hacer es de que viaje código, ¿sí?
+Teacher: Que viaje código fuente o viaje el bloque compilado o el bloque ejecutable y la ejecución se haga puede ser en el lado del servidor o puede ser en el lado del cliente.
+Teacher: ¿Listo?
+Teacher: Entonces ahí vamos a hablar de código bajo demanda, vamos a hablar de evaluación remota y vamos a hablar de los agentes.
+Teacher: móviles.
+00:45:00
+Teacher: Empecemos con el modelo de código por demanda.
+Teacher: ¿Qué es esto de código por demanda?
+Teacher: Y es que en lugar de que el servidor sepa hacer cosas, ¿cierto?
+Teacher: o que el servidor tenga eh el conocimiento general de toda la aplicación.
+Teacher: Lo que voy a hacer es que le voy a pedir al servidor o le voy a decir al servidor, "Servidor, necesito hacer esto." Y en lugar de recibirle los parámetros,
+Teacher: procesarlo del lado del servidor y entregar una respuesta, el servidor lo que hace es entregarme o unas líneas de código o un bloque de código o un programa que yo pueda ejecutar de manera local.
+Teacher: Listo.
+Teacher: Y con esa y con ese programa que voy a ejecutar de manera local, entonces a ese programa es al que le mando los datos, se procesan y me entrega el resultado.
+Teacher: En este caso, el servidor ya no está atendiendo nada, ya no está procesando información, es más, no tiene esa responsabilidad de mi sistema.
+Teacher: El él es como el repositorio de de recursos y esos recursos usted los tiene que descargar para poderlos trabajar de manera local.
+Teacher: Eh, de este código de por demanda digamos que existen muchos ejemplos y ahora eh últimamente pues se ven mucho más o se ve mucho más aplicado esto.
+Teacher: ¿Para qué?
+Teacher: buscando que los recursos de la máquina cliente, los recursos de eh sean mejor utilizados, que tengan ese eh un mayor rendimiento, una mayor eficiencia en la en el procesamiento.
+Teacher: Pero esto es diferente a yo tener que instalar una aplicación en el equipo cliente, ¿cierto?
+Teacher: No es que estoy instalando la aplicación en el equipo cliente.
+Teacher: Todas las aplicaciones o todo el código, todas las eh las actualizaciones que yo voy a hacer, las voy a hacer del lado del servidor.
+Teacher: Pero el cliente cada vez que necesita algo, lo que hace es descargar el bloque de código que tiene que que correr o que tiene que ejecutar de manera local.
+Teacher: ¿Dónde se veía eso?
+Teacher: Hace mucho tiempo, digo mucho tiempo, es hasta Java 8. Hoy estamos en la 29 27 creo, pero hasta Java 8 tenemos la posibilidad de crear unos en Java algo que se llamaban los applets.
+Teacher: ¿Qué eran los applets?
+Teacher: Los applets eran unas aplicaciones compiladas que podían ser con interfaz gráfica e o generalmente iban con interfaz gráfica para que yo pudiera ingresar los datos y él me mostrarme los resultados.
+Teacher: Y esos amplets nosotros los desarrollábamos, los montábamos al servidor, pero no se ejecutaban del lado del servidor.
+Teacher: Cada vez que el usuario quería eh realizar una acción, lo que hacía era descargar el applet para ejecutarlo desde el navegador.
+Teacher: El navegador en ese tiempo tenía la capacidad de ejecutar scripts o de ejecutar applets.
+Teacher: ¿Listo?
+Teacher: Y ahí eh yo podía hacer todo el procesamiento.
+Teacher: o o entregarle toda la información, etcétera, y solamente dejamos al servidor lo que no sea lo o lo que no pudiéramos nosotros descargar a nuestro lado del de a nuestro lado del cliente, digámoslo así.
+Teacher: Eh, otro, no sé si ustedes alcanzaron a conocer lo que era Flash o las animaciones en Flash, ¿cierto?
+Teacher: que era otra tecnología que se usó mucho hace mucho tiempo, pero hoy no hoy ya no está tan tan visible, pero esas animaciones o esas aplicaciones que nosotros hacíamos básicamente eran código que montábamos un servidor,
+Teacher: el usuario lo descargaba y lo corría del lado del cliente.
+Teacher: ¿Listo?
+Teacher: animaciones.
+Teacher: Varios de los juegos en línea o juegos web que conocimos en su tiempo trabajaban con este modelo de animaciones Flash.
+Teacher: Eh, media player tampoco ya no ya no aplica porque ya tenemos eh componentes nativos en en HTML para la reproducción de multimedia, pero antes teníamos que descargar o el servidor tenía que proveernos de un
+Teacher: media player o un o un reproductor de de elementos móviles para poder ejecutar, para ver un video, para escuchar una canción, etcétera, etcétera, etcétera.
+Teacher: Los modelos 3D también la renderización de elementos 3D no se hace del lado del servidor, se hace del lado del cliente.
+Teacher: Entonces, todas estas aplicaciones de modelos 3D lo que hacen es ir al servidor, descargar la imagen, el el escenario, lo que sea y ponerlo aquí de manera visible de nuestro lado.
+Teacher: ¿Conocen algún otro ejemplo donde estemos usando código por demanda?
+Student26: Y, profe, el código al día todavía de JavaScript se le manda al cliente para que lo ejecute.
+Teacher: Eso, eso que nosotros llamamos SPAS, que son las aplicaciones que desarrollamos en Angular, en React, en View, en Selt, etcétera, que lo que hacen es coger o montar una serie de datos o de elementos HTML, CSS, JavaScript, que ya sabemos que esos elementos normalmente corren del lado del navegador,
+00:50:00
+Teacher: pues eso es básicamente código por demanda, ¿cierto?
+Teacher: e yo necesito poder entrar a la aplicación eh YouTube.
+Teacher: Pues entonces toda esa todo YouTube o mejor dicho toda la interfaz gráfica de YouTube corre del lado de de mi navegador, no está corriendo en el servidor de YouTube, no está renderizando y redesplegándose en y convirtiéndose en HTML en el servidor
+Teacher: de YouTube.
+Teacher: Se está haciendo desde mi máquina.
+Teacher: ¿Listo?
+Teacher: Entonces, eso es lo que nosotros llamamos código por demanda, porque vamos a descargar todo el código que necesitamos para ejecutar la aplicación que necesitamos de manera local.
+Teacher: ¿Listo?
+Teacher: Eso, esto normalmente lo con las aplicaciones PWA SPA, es básicamente ese modelo, Pero en el desarrollo actual hay un concepto llamado PA que no sé si lo han escuchado, lo han visto o tienen referencia.
+Teacher: Eh, pongámoslo por aquí arriba.
+Student26: Eso es server side rendering,
+Teacher: Está SPA y el PWA.
+Teacher: SPA, Simple Page Application, ¿cierto?
+Teacher: es una aplicación que solamente tiene un HTML y sobre ese HTML se va a estar construyendo todo.
+Teacher: Ese tipo de aplicaciones es justamente código por demanda porque vamos a bajar un JavaScript que es capaz de modificar el HTML en tiempo real.
+Teacher: ¿Listo?
+Teacher: Pero todo lo que descargo es el los JavaScript para estar manipulando, modificando la interfaz gráfica.
+Teacher: Los PWA es una extensión del SPA, o sea, al final vamos a escribir lo mismo, pero estas aplicaciones Progressive Web Apps, son aplicaciones que se van a descargar o yo tengo la posibilidad de instalarlas en mi
+Teacher: dispositivo y se van a comportar como si fueran aplicaciones nativas en el dispositivo.
+Teacher: son aplicaciones web, pero yo tengo la posibilidad de decirle, "Ey, instálate en mi Android o instálate en mi iPhone o instálate en mi sistema operativo Windows o en Linux o en Mac y lo vamos a ver en el como si fuera una aplicación
+Teacher: más dentro de dentro de mi sistema operativo.
+Teacher: Si lo tengo Windows, la puedo poner en la barra de en la barra de de tareas, puedo abrirla, puede un icono en el escritorio y esa abre una aplicación como si fuera local de mi máquina, pero realmente es una página web.
+Teacher: ¿Listo?
+Teacher: Pero, ¿qué es lo que hace PWA?
+Teacher: Va a descargar todo el código que necesito acá.
+Teacher: Si hay una actualización de la aplicación, él él automáticamente la descarga.
+Teacher: Entonces, eso es básicamente código por demanda.
+Teacher: Listo, ahí les dejo dos conceptos para que sigan aprendiendo, sigan estudiando, sigan escudriñando.
+Teacher: Y los que ya no sé si alcanzaron a ver los nombres, SPA, single page application, PA para la Progressive Web Apps, anótenlo por ahí para que para que vayan aprendiendo un poquito más de cosas, ¿eh?
+Teacher: Evaluación remota.
+Teacher: Ese es el segundo modelo, evaluación remota.
+Teacher: ¿Qué es la evaluación remota?
+Teacher: Y es, en lugar de que el cliente eh llame una función y le mande unos parámetros para obtener una respuesta, ahora lo que quiero es que el o lo que va a suceder es que el cliente va a crear un script,
+Teacher: va a crear una serie de comandos en un lenguaje que entiende el servidor y en lugar de decirle, "Ey, yo necesito que me cree un usuario, yo le voy a decir cuáles son las instrucciones que debe Yeah. ejecutar el servidor para que que realice ese esa tarea,
+Teacher: ¿cierto?
+Teacher: Para que realice eh la creación del usuario.
+Teacher: Entonces, en lugar de que el cliente envíe datos, vamos a hacer de que envíe código, que envíe scripts, ¿listo?
+Teacher: Y esos scripts los va a recibir el servidor y los va a ejecutar porque simplemente es un ejecutor de scripts.
+Teacher: Entonces, eso es esa es la el segundo modelo, ¿cierto?
+Teacher: Ese es el segundo modelo donde yo en lugar de mandarle datos le voy a mandar son scripts.
+Teacher: Eh, en este en este ejemplo o en este caso ejemplos de este modelo puede ser lo que sucede con las impresoras.
+Teacher: No sé si ustedes saben cómo funcionan las impresoras o cómo nosotros hacemos para mandar datos a la impresora.
+Teacher: ¿Cómo le decimos a la impresora que imprima?
+Teacher: No me diga que con el botoncito de imprimir en en el en el Word, sino qué es lo que realmente hace el Word, qué es lo que realmente hace las aplicaciones para mandar las tareas de impresión.
+00:55:00
+Teacher: Y es que las impresoras no saben de imágenes, no saben de video, no saben de texto.
+Teacher: Las impresoras solamente hablan un lenguaje llamado postscript, ¿listo?
+Teacher: Que es un lenguaje como de comandos.
+Teacher: y datos, los cuales si yo quiero que haga alguna cosa la impresora, pues simplemente tengo que mandarle cuáles son los comandos, instrucción por instrucción de qué es lo que quiero que haga al momento en el que vaya a mandar a imprimir.
+Teacher: Entonces, si por ejemplo yo tengo unas márgenes, entonces eh tengo, no sé, tres, cuatro líneas en blanco, entonces yo lo que tengo que decir es o lo que se le dice a la impresora es tiene línea en blanco,
+Teacher: tiene línea en blanco, tiene línea en blanco.
+Teacher: Entonces, ya sabe que lo que tiene que hacer es mover el rodillo o ir sacando la hoja, tres espacios, porque las instrucciones que yo le dio era que le mandara datos en blanco.
+Teacher: Luego le digo, imprima en imprima en este tamaño con este caracter o con esta fuente, imprima lo siguiente, el siguiente texto.
+Teacher: Entonces, él preconfigura la impresora o confonfigura la línea y hace la impresión de esa línea.
+Teacher: Luego cambia de línea, etcétera, etcétera, etcétera.
+Teacher: O sea, tengo que ser bastante explícito en cada una de las instrucciones que debe realizar.
+Teacher: Estoy mandando las instrucciones para que la máquina se mueva.
+Teacher: ¿Listo?
+Teacher: Entonces, postcript es ese lenguaje, es ese es esa hoja de script donde yo le voy a decir cuáles son todas las instrucciones, cuáles son los paso a paso que que tiene que realizar para hacer la impresión de lo que nosotros estamos
+Teacher: pidiendo.
+Teacher: Esto funciona con las impresoras que nosotros conocemos, pero también con impresoras térmicas, con las impresoras Bluetooth, con todo tipo de impresoras, utilizan Postcript como el lenguaje para nosotros mandar.
+Teacher: Entonces, ya no vamos a mandar, "Ah, es que eh quiero que me prima el archivo holamundo.txt, no, tengo que coger ese, yo como aplicación tengo que coger el hola mundo y leer toda la información y decirle a la impresora cómo quiero que lo imprima.
+Teacher: Todo monoespaciado o si viene con formato con los formatos.
+Teacher: Si hay imágenes, le tengo que decir cómo imprime las imágenes o cuáles son los pixel que tiene que pintar en en qué píxel y en qué color tiene que pintar en la hoja, etcétera, etcétera, etcétera.
+Teacher: O sea, es un lenguaje bastante explícito.
+Teacher: Cuando mandamos trabajos en por lotes, en lugar de en lugar de decirle, "Mire, estos son los datos que quiero que actualice, yo le mando todos los datos o todo un bloque de información y ese bloque de información del lado del
+Teacher: servidor lo tienes que ir leyendo y lo tienes que ir procesando." Eso también es lo que nosotros llamamos evaluación remota.
+Teacher: el el equipo local no recibió o no cogió todos los datos y los fue procesando para entregarlos uno a uno o para decirle al servidor que tenía que hacer con cada uno.
+Teacher: No, yo le mando el bloque de datos, yo no me preocupo por eso, solo eso lo hace el servidor y el servidor pues toma cada uno de esos datos o cada uno de esas tareas o cada uno de esos archivos y los tiene que ir procesando uno por uno.
+Teacher: El NCL, que es uno de los lenguajes que se utilizan para las configuraciones en routers y bueno, en algunos dispositivos de red.
+Teacher: también eh funciona de esa manera y el lenguaje que todos conocemos, espero, y que sabemos que tenemos que aprender y que tenemos que utilizar para el desarrollo de aplicaciones, que es el SQL.
+Teacher: ¿Listo?
+Teacher: ¿Por qué el SQL?
+Teacher: Porque usted en el SQL no le está diciendo a la base de datos, eh, quiero crear un usuario, quiero eh modificar una factura o quiero eliminar un registro, sino que yo tengo que darle un script, tengo que escribir una serie de instrucciones en el lenguaje que conoce el servidor.
+Teacher: Entonces, yo tengo que traducir los datos que tengo en mi aplicación en el lenguaje que conoce el servidor.
+Teacher: ¿Listo?
+Teacher: Entonces, cuando nosotros enviamos sentencia SQL al servidor, estamos aplicando el concepto de evaluación remota.
+Teacher: El servidor no sabe hacer nada o sabe hacer de todo, pero me tienen que mandar qué instrucciones son las que tengo que hacer.
+Teacher: Porque él con solo decirle guarde un usuario no sabe qué hacer.
+Teacher: Tengo que decirle, hágale un insert into into el nombre de la tabla, entre paréntesis las columnas values.
+Teacher: Tengo que darlo de manera explícita en en el lenguaje que él entiende, no en algo que normalmente vamos a utilizar en nuestro sistema.
+Teacher: ¿Está claro?
+Teacher: ¿Tienen algún otro ejemplo de evaluación remota?
+Teacher: ¿Se les ocurre algún otro ejemplo?
+Student8: Sí. Eh, cuando bueno, no sé si específicamente cuenta para este caso, pero una conexión es SH o no para yo
+01:00:00
+Teacher: una conexión sh.
+Student8: ejecutar,
+Teacher: Mm,
+Student8: por ejemplo, lotes de trabajo.
+Student8: No.
+Teacher: sí, podría ser, pero ojo, si la conexión es SH, yo la estoy haciendo yo y estoy mandando los comandos uno a uno, no.
+Teacher: Pero si yo por un CICD eh envío o o empiezo a mandar cosas o o le digo, "Mire, haga esto, haga esto, haga esto, el servidor de CICD es un está aplicando evaluación remota, ¿cierto? Porque yo le estoy dando las instrucciones y él simplemente está ejecutando lo que yo le estoy diciendo que
+Teacher: haga." Está otro.
+Teacher: Sí, sí conocen el concepto de CCD, ¿cierto?
+Student26: Espera,
+Teacher: o de integración continua y del despo.
+Student26: espera.
+Student8: Integración continua y despliegue continuo.
+Teacher: Okay.
+Student8: M.
+Teacher: Entonces, cuando yo escribo un yo escribo un script o cuando yo escribo un una plantilla donde le digo, "Mire, haga esto, haga esto, haga esto, él no sabe, él no sabe hacer nada. Yo le tengo que definir un archivo de configuración donde le digo qué es lo que quiero que haga y él simplemente va a ejecutar.
+Teacher: Tiene la capacidad de ejecutar lo que sea, pero no pero él como servicio normal no sabe hacer nada.
+Teacher: soy yo o el usuario o el cliente el que le tiene que mandar las instrucciones exactas con los nombres de datos exactos, etcétera, para que él sepa cómo abordar o cómo afrontar la tarea que estamos necesitando que realice.
+Teacher: ¿Algún otro ejemplo?
+Teacher: ¿Algo que más?
+Teacher: ¿Algún otro que se le ocurra?
+Teacher: Nunca mandamos a a ejecutar scripts en el servidor, pero realmente como lo que más lo más natural para nosotros es esto, lo que son los postcript y lo que es el SQL, nosotros generalmente mandamos son comandos de ese tipo.
+Teacher: No sé si en Cisco ustedes han tenido la oportunidad de de hacer configuraciones sobre sobre las máquinas virtuales o las máquinas reales de Cisco, ¿cierto?
+Teacher: Ustedes tienen que escribir unos comandos y esos comandos son los que interpreta el el dispositivo.
+Teacher: Esos comandos usted solamente le dice, "Ey, quiero que me abra un o quiero que me abra una puerta o que me haga una subred entre tal lado a tal lado." No,
+Teacher: usted tiene que usted tiene que aprenderse los comandos de ese dispositivo para podérselos enviar.
+Teacher: El el ese dispositivo es un servidor que es capaz de ejecutar los comandos que tú le digas, pero se lo tiene que dar en el formato que él conoce.
+Teacher: Entonces, el cliente tiene que transformar su tarea en instrucciones para que el servidor lo entienda.
+Teacher: Eso es lo que nosotros llamamos evaluación remota.
+Teacher: ¿Listo?
+Teacher: Y mire que sigue siendo cliente servidor.
+Teacher: Alguien necesita algo, alguien lo puede hacer.
+Teacher: Tengo que mandarle la operación.
+Teacher: Solamente que el servidor no no tiene operaciones pregrabadas, sino que tengo que mandarle el script de las operaciones que quiero que haga.
+Teacher: Entonces, lo mismo, nosotros hacemos un select de este tipo y él me entrega ese resultado.
+Teacher: Entonces, esto, estas esta instrucción él la entiende, la procesa y simplemente me entrega la respuesta.
+Teacher: Por último, vamos a hablar de los agentes móviles.
+Teacher: ¿Listo?
+Teacher: ¿Y qué son los agentes móviles?
+Teacher: son piezas de código o piezas o código fuente o aplicaciones que yo voy a hacer en mi máquina, pero no se van a ejecutar en mi máquina, se van a ejecutar en otra máquina.
+Teacher: ¿Cómo la ven?
+Teacher: Son piezas de código, piezas de software que pueden crearse en una máquina, pero pueden utilizar recursos de otra máquina.
+Teacher: pueden viajar por la red, hacer parte de las aplicaciones que están corriendo dentro de otra máquina y utilizar los recursos de esa otra máquina para realizar las tareas que nosotros eh necesitamos.
+Student8: Eso suena mucho a a este malware de denegación de servicios.
+Student8: Estaba hecho como para copiarse y replicarse en todos los dispositivos
+Teacher: Po
+Student8: IoT.
+Student8: No sé si se acuerda como por allá el 2016 que tumbaron como un tercio de internet prácticamente con una denegación de servicio horrible por eso hacían como piezas de código pero consumían los recursos de los dispositivos IOT.
+Teacher: los recursos locales.
+Teacher: Ajá.
+Teacher: Ah, exacto, puede ser.
+Teacher: Aunque aquí estamos hablando de agentes móviles eh sanitos, ¿cierto?
+Teacher: De los que sí necesitamos que corran en nuestro sistema, pero sí es ese es un modelo como ese y es un modelo donde yo lo hago aquí, pero no se va a correr aquí.
+01:05:00
+Teacher: O puede que yo lo pueda correr aquí o puede que lo corra en otras máquinas y así sucesivamente.
+Teacher: ¿Listo?
+Teacher: Eh, eso el estos agentes móviles, digamos que fue una una tecnología que empezó, yo diría que en los años 2000, por ahí, alrededor de los 2000,
+Teacher: donde veíamos un futuro promisorio sobre este modelo de de desarrollo, ¿cierto?
+Teacher: un modelo donde yo desarrollaba una aplicación eh con mis recursos locales, podía probar de manera local, podía eh desarrollar, pero si en un momento determinado nosotros necesitábamos ir hacia otro
+Teacher: equipo para buscar alguna cosa o para utilizar los recursos de ese equipo, pues simplemente hacíamos de que este programa que estaba corriendo en mi máquina se fuera por la red, dejara de existir Yeah.
+Teacher: mi máquina y quedara en la máquina remota.
+Teacher: Listo.
+Teacher: Eso sí, para poder garantizar eso, pues necesitábamos un ambiente de ejecución donde tuviesen la capacidad de moverse, ¿cierto?
+Teacher: No, no podían moverse cualquier máquina.
+Teacher: tenían que crear un ambiente de ejecución o un middleware.
+Teacher: Básicamente es el concepto un middleware que es como una capa por encima del sistema operativo.
+Teacher: una capa donde nosotros vamos a o ya está preconfigurado una serie de operaciones y esas operaciones pueden ser mover un una pieza de software, mover un ejecutable, por decirlo así, pues no descargar un ejecutable, sino mover el proyecto,
+Teacher: el proceso en ejecución hacia otra máquina y utilizar y poder tener los permisos y recursos de en la máquina destino, ¿cierto?
+Teacher: donde normalmente podría eh aplicábamos nosotros este tipo de de agentes buscando información que necesitaba el usuario.
+Teacher: O sea, si yo estoy en mi máquina, pero necesito buscar una información que no está en mi máquina, sino en alguna de las máquinas vecinas, pues yo podía crear un agente que se encargara de hacer ese tipo de de tareas,
+Teacher: ¿cierto?
+Teacher: Eh, negociando o cerrando tratos a mi nombre.
+Teacher: Sí. Entonces yo podría decir, "Mire, como yo no puedo estar allá, entonces simplemente ve hasta el equipo eh donde se esté procesando la información y haz mi firma o pon mi firma electrónica o o revisa y legaliza el contrato,
+Teacher: ¿cierto?
+Teacher: cosas así por el por el estilo.
+Teacher: Un agente móvil tiene la capacidad de decidir a qué servidores moverse y eso es otra de las cosas interesantes y es que los agentes móviles también se llegaron a llamar agentes inteligentes.
+Teacher: nada que ver con los agentes de inteligencia artificial que conocemos hoy en día, sino que el agente móvil era independiente, o sea, era un era un hijo que nosotros creábamos de manera local y que él podía decidir o
+Teacher: podía moverse por el ambiente, moverse por ese middleware entre las diferentes máquinas, eh él se podía mover y tomar las decisiones que quisiera, ¿no?
+Teacher: no tenía que predestinar o preconfigurar, mire, salte a la máquina uno, salte a la máquina tres, salte a la máquina cinco, sino que a partir de las experiencias o el estado en en el que encontrase, cada vez que se movía de máquina podía decir,
+Teacher: "Ya es hora de devolverme o puedo o necesito saltar a algún otro lugar para buscar más información." Todo eso
+Teacher: hacía parte de este modelo de desarrollo que eran los agentes móviles.
+Teacher: Eh, bueno, podía moverse entre uno más servidores y era una extensión del modelo cliente servidor.
+Teacher: ¿Por qué dice que era una extensión o o porque realmente no aplica como tal el concepto de cliente servidor?
+Teacher: ¿Listo?
+Teacher: ¿Por qué?
+Teacher: porque el cliente ya no es un componente del sistema que necesite información y le pregunta a otro, sino que ahora hicimos un componente que es auto autogestionable, ¿cierto?
+Teacher: Que se puede gestionar de manera autónoma.
+Teacher: Entonces, él puede viajar a otros nodos, tomar eh información de esos nodos, procesarla y si necesita más moverse a otro lado o tomar decisiones de listo, ya terminé de hacer mi tarea, pues simplemente me devuelvo.
+Teacher: No hay un cliente ni hay un servidor, simplemente tengo una gente que es capaz de ejecutarse como tal.
+Teacher: Listo.
+Teacher: Es como si pensáramos en que yo tuviese una aplicación cliente que fuera a cada uno de los servidores a tomar sus datos como si fuera uno local.
+Teacher: Ese es sería como el el símil un poco más acertado de hablar de los agentes móviles.
+Teacher: Para este tema de los agentes móviles, pues yo tengo tuve la experiencia de de conocer un proyecto académico.
+Teacher: Desafortunadamente se quedó en la academia.
+01:10:00
+Teacher: porque no se pudo implementar en su momento, pero era un un proyecto bastante interesante.
+Teacher: Uno de los grandes problemas de la humanidad, uno de los grandes problemas que tenemos nosotros en la actualidad y desde hace mucho tiempo es el tema de de la interoperabilidad de información o de la interoperabilidad de servicios, ¿cierto?
+Teacher: Principalmente en el área de la salud.
+Teacher: Entonces, eh el hecho de que yo pueda ir a una clínica o a otra clínica para que atiendan, me atiendan para x o y servicio, eh, hace un poco complejo el modelo de trazabilidad de de la información o la trazabilidad del
+Teacher: paciente, ¿cierto?
+Teacher: Entonces, eh y entra en un problema de de disponibilidad de la información, porque yo voy a una cita médica y el médico no sabe qué pasó antes, a menos de que lo hayan atendido dentro de la dentro del mismo hospital.
+Teacher: Pero si me mandó a hacerme un examen en otro lado y vuelvo, él no tiene información o no tiene forma de poder identificar esos datos eh dentro del sistema, no tiene forma de poder hacer un análisis eh previo de de la información.
+Teacher: Entonces, ¿cuál es la única solución?
+Teacher: Ah, pues traiga el papelito, traiga el informe o haga la interoperabilidad entre el sistema eh de mi IPS, de mi de mi hospital con el sistema donde le tomaron la radiografía.
+Teacher: Pero hay muchos exámenes, hay muchos especialistas, hay muchas cosas que no siempre están eh ligadas entre eso.
+Teacher: el proyecto de agentes móviles que que se planteó en su momento.
+Teacher: Yo estaba todavía eh estudiando cuando eso, o sea, hace hace un buen rato el proyecto lo que buscaba era crear un sistema de agentes móviles que tuviese la capacidad de consultar la historia clínica de un paciente de manera autónoma.
+Teacher: M. O sea, que si yo, por ejemplo, soy el médico y digo, "Ve, necesito ver el o voy a atender a Teacher, eh, tengo su identificación, etcétera, y tal, y entonces voy y consulto." Lo más normal que tenemos en los sistemas clientes servidor es que consultamos sobre
+Teacher: nuestro servidor local.
+Teacher: No tenemos forma de consultar en los servidores remotos porque no hay forma de hacerlo de manera directa.
+Teacher: Entonces, el sistema de agentes móvil lo que decía es una vez yo haya hecho la solicitud de consulta, se levantaba una se iniciaba un agente móvil y ese agente móvil iba a poder correr entre las distintos hospitales, ¿sí?
+Teacher: iba a poder ir y saltar a al servidor de otro hospital, consultar la información que ese hospital tuviese de del paciente, pues guardarla o almacenarla y saltar al siguiente hospital para ir a consultar si allá fue atendido o
+Teacher: no, etcétera, y así sucesivamente llevarse toda la trazabilidad.
+Teacher: ¿Listo?
+Teacher: Entonces, al final, cuando ya había recolectado toda la información o tenía todo el resumen de todo lo que ha sucedido, podía volver a viajar a la a la máquina cliente o a la máquina inicial y entregarle la información al
+Teacher: al médico.
+Teacher: Ese era el proyecto y ese proyecto, digámoslo así, en su demo estaba bastante interesante.
+Teacher: Habían algunos problemas técnicos de cómo estandarizar las bases de datos, porque cada hospital no usaba la misma base de datos, pero pero pues eso era parte de ese proceso evolutivo que podíamos hacer nosotros con los agentes.
+Teacher: Dime,
+Student8: Profe,
+Teacher: [estudiante],
+Student8: ¿cómo se gestionaba para entonces la seguridad de un agente de ese tipo?
+Teacher: yo confío en ti.
+Teacher: Sí. O sea, el no había eh algo
+Student8: O sea, como entre entre hospitales sabemos que no nos vamos a hacer nada.
+Student8: más de arriba ahí.
+Teacher: así y tranquilo, deje que mi agente pueda esculcar su base de datos que solamente va a sacar lo que necesita.
+Teacher: Sí, eso era un tema de de confianza, creo yo, que también tuvo parte en en las en las, ¿cómo se dice?, en las pocas posibilidades que se le dio a la tecnología, porque hay gente recelosa,
+Teacher: hay gente que que cree que la bueno, la información es valiosa, la información es es eh privada, pero y no les gusta compartirla, ¿cierto?
+Teacher: Porque no sé no sé cuál es la razón de de querer dominar solamente la información ella.
+Teacher: Eh, pero eh eso pudo haber sido uno de esos elementos que críticos que hicieron de que el proyecto no no funcionara o no pudiera pasar a una fase de académica a productiva, ¿cierto?
+Teacher: Eh, pero ahí está ahí estaba la situación.
+01:15:00
+Teacher: en ese momento, o sea, cuando yo estaba estudiando, o sea, en el momento en el que estábamos analizando, estábamos jugando con con agentes móviles, el no estaba tan popularizado el internet, no era tan común los servicios web, es más,
+Teacher: no creo que existieran, no me acuerdo de que existieran los servicios web, teníamos aplicaciones web, pero no teníamos servicios.
+Teacher: Entonces era un modelo o fue ese primer modelo de integración que se planteó.
+Teacher: Luego alguna algunos modelos de arquitecturas, incluso de soluciones técnicas pues fueron devaluadas por nuevas tecnologías que fueron llegando, ¿cierto?
+Teacher: Pero pero sí, esto es, digámoslo así, un ejemplo de o un o una experiencia de algo que conocí de los agentes móviles al interior.
+Teacher: Aquí en la Universidad Tecnológica también estuvimos trabajando o tuvimos algunos proyectos de de investigación y de grado basados en el modelo de agente móvil, pero como les digo, a long time ago.
+Teacher: Okay.
+Teacher: Hoy en día hay algunas aplicaciones de agentes móviles, pero ya no es tan común.
+Teacher: Listo, ya no es tan, digámoslo así, tecnológicamente ya no es tan atractivo para muchas empresas, porque eh para poder aplicar o para poder desarrollar este tipo de aplicaciones necesitaban un nivel un poquito más experto, un poquito más de bajo nivel,
+Teacher: digámoslo así, de desarrollo.
+Teacher: Ahora buscamos herramientas que sean mucho más fáciles o mucho más fáciles de desarrollar, pero en ese momento pues teníamos que contratar personas con unas habilidades específicas en en desarrollo de agentes móviles y que tuvieran conocimiento sobre esas herramientas para hacerlo.
+Teacher: Entonces, no es muy, digámoslo así, no es muy utilizado, pero pues es una de las posibles soluciones que nosotros podíamos llegar a utilizar o podríamos plantear una nueva versión de agentes móviles utilizando las herramientas que tenemos hoy en día.
+Teacher: ¿Listo?
+Student8: Creo que sería muy muy muy interesante combinar este concepto con literal
+Teacher: Dime.
+Student8: como inteligencia artificial, porque ahora sí pueden tomar decisiones autónomas,
+Teacher: Es que es que yo creo que por ahí va.
+Student8: entre comillas.
+Student8: Yeah.
+Teacher: Yo creo que por ahí va la la vaina, porque ahora estamos hablando de que tenemos agentes que son capaces de hacer tareas de manera independiente, pero no hemos explorado en este modelo de los agentes eh móvil, de los agentes inteligentes.
+Teacher: No hemos explorado la la posibilidad de que puedan saltar o que puedan moverse a otros lugares para seguir consumiendo recursos o seguir eh explotando información, ¿cierto?
+Teacher: Eh, dentro de los dentro del mundo de la gente de la gente inteligente nos hemos dedicado a concentrar.
+Teacher: Volvemos al al modelo de la concentración.
+Teacher: tenemos una gente que corre en mi máquina o que corre en ese servidor y que puede acceder a los recursos que tengo en esta máquina, pero no es descabellado que yo pudiese decir, "Mire, este agente, por favor, vaya a este otro equipo que también tiene el ambiente necesario para poderse ejecutar y aproveche los
+Teacher: recursos de allá, búsqueme en en los archivos que tiene la secretaria o haga alguna cosa así y tráigame el consolidado de la información." Eso eso es algo que todavía no se ha explorado.
+Teacher: Yo creo que eh no es por técnica, sino por la forma como se ha venido evolucionando todo este tema de la inteligencia artificial, que ha hecho de que estén compitiendo más por hacer el agente más inteligente y no por el el agente
+Teacher: más funcional.
+Teacher: Pero mire que hay algunas aplicaciones, creo que hay aplicaciones como Tre Solo, no sé si conocen Tre Solo, es una ID de agentes tipo Cursor, pero ellos desarrollaron una aplicación móvil que hace
+Teacher: lo mismo.
+Teacher: Creo que chat GPT Word también lo puedo instalar en en mi dispositivo móvil y yo puedo hacer de que tome haga tareas en mi máquina, en mi celular o que utilice el servidor o que utilice mi computador, ¿cierto?
+Teacher: Entonces, mire que ahí ya ya vamos como entrando como en este mundo de tenemos agentes que pueden entrar a múltiples máquinas.
+Teacher: faltaría como armar esas redes de confianza entre diferentes agentes o entre diferentes equipos para que podamos tener un modelo muy similar a lo que tuvimos de agentes móviles en su momento.
+Teacher: ¿Listo?
+Teacher: Okay, vamos a dejar por aquí hoy.
+Teacher: Hoy hemos metido mucha información.
+Teacher: Vamos a hablar, nos queda pendiente el último concepto que quiero hablar de de la arquitectura cliente servidor, ¿cierto?
+Teacher: ¿Qué son los aspectos de diseño?
+Teacher: Son cinco preguntas, cinco conceptos, cinco aspectos que debemos tener en cuenta cuando estamos aplicando, cuando vamos a desarrollar una aplicación, un cliente servidor.
+01:20:00
+Teacher: Ya hemos visto muchas cosas.
+Teacher: Hemos visto eh cuál es el modelo, cliente y servidor, cómo se comunican, son altamente acoplados, ese acoplamiento genera o ese alto acoplamiento y y la la distribución de roles genera de que tengamos un cuello de botella y punto crítico de fallo.
+Teacher: Hemos hablado de diferentes opciones o diferentes aplicaciones que podríamos hacer o distribuciones que podríamos hacer para descargarle carga al servidor, cliente eh cliente más grueso o utilicemos caché o distribuyamos eh
+Teacher: las responsabilidades en un servidor jerárquico o trabajemos, hagamos scale out, hagamos escalamiento eh horizontal para mejorar el rendimiento o hagamos, mirem ¿Qué modelo de replicación podemos utilizar cuando necesitamos sistemas de alta disponibilidad?
+Teacher: principalmente en el en el tema de almacenamiento.
+Teacher: Eh, vimos también aquí código móvil, o sea, podemos hacer de que el servidor me entregue código para que yo lo corra local, yo puedo entregarle el código para que él lo ejecute.
+Teacher: O en este caso, el último que vimos que eran los agentes móviles, o sea, vimos diferentes opciones para dejar de depender tanto del servidor, ¿cierto?
+Teacher: o para que el servidor no se quede, no sea el que tiene todo el conocimiento y el punto crítico de fallo.
+Teacher: Entonces, con cualquiera de estos modelos o combinando todos estos modelos, eh podríamos nosotros dar una solución o una arquitectura un poco más flexible para el para esta arquitectura como tal.
+Teacher: Pero estos estos aspectos de diseño son como temas que yo debo tomar una decisión, temas que yo debo identificar cuál es la mejor opción para el problema o para el escenario donde nosotros vamos a diseñar eh esto estos elementos.
+Teacher: Entonces, vamos, son cinco aspectos, esquema a múltiples servicios y a múltiples clientes.
+Teacher: O sea, ¿cómo vamos a atender si vamos a atender un usuario con todos los recursos o vamos a utilizar los recursos para atender múltiples clientes?
+Teacher: Eh, ¿cómo hacer la gestión de conexiones?
+Teacher: Si por cada petición se tiene que conectar o se conecta y puede hacer varias peticiones, ¿cómo va a ser la localización del servidor?
+Teacher: ¿Cómo va a hacer el cliente para ubicar el servidor?
+Teacher: si lo va a hacer de manera directa o vamos a agregar elementos que aumenten la transparencia en el servicio eh en la localización, perdón, si el servicio que vamos a desarrollar va a ser con estado o sin estado y cómo se va a comportar cuando
+Teacher: ocurra un fallo.
+Teacher: Todos estos, digámoslo así, todos estos elementos, todas estas aspectos los vamos a ir mirando uno por uno y eh la idea es de que vayamos analizando cuándo, en qué escenario nos eh nos es conveniente utilizar cada una de las opciones que tenemos en cada uno de ellos.
+Teacher: Entonces, cuando vayamos a definir nuestro arquitectura, cliente, servidor, muy probablemente vamos a tener que decidir de estos cinco aspectos cuál va a ser el comportamiento que nosotros queremos que se le aplique en ese modelo.
+Teacher: En puede que en otra interacción utilicemos otros aspectos o tengamos que tener definido otros aspectos, etcétera.
+Teacher: Entonces, esa es como la idea.
+Teacher: Dejemos aquí hoy y en la próxima clase, la próxima semana, ya, uy, como se están yendo de rápido las semanas.
+Teacher: Ya la próxima semana vamos entonces a hablar sobre los aspectos de diseño y vamos a intentar eh aterrizar todos estos conceptos para para terminar la arquitectura cliente servidor.
+Teacher: ¿Listo?
+Teacher: Jóvenes?
+Teacher: No tengo mucho más para comentarles, así que nos vemos la próxima semana.
+Student22: Gracias, profe.
+Student22: Saló.
+Teacher: Hasta luego.
+Teacher: Dime, [estudiante].
+Student9: H luego, profe.
+Student28: Tendría que poner.
+Student5: Una pregunta y estima la de este primer
+Teacher: Dime.
+Student5: 30% laación Usted
+Teacher: Sí, claro, eso está ya listo,
+Student5: Sí,
+Teacher: ¿no?
+Teacher: O sea, yo creo que terminaría tema la semana del 19 al
+Student5: así eso.
+Teacher: 23, que es la semana del 30%.
+Teacher: Ya tenemos unas notas de talleres que faltaría subirlas,
+Student5: Ah.
+Teacher: pero y podríamos lograr hacer esta evaluación antes de eso.
+Teacher: Si no es antes de eso, justo la semana después.
+Teacher: Ya depende de cómo nos rinda esta las clases de la próxima semana.
+Student5: Pues justamente ese es el tema, o sea, literalmente es una evaluación teórica 100%, ¿no?
+Student5: Oo.
+Teacher: Imagínate que antes eran tres temas, hoy solamente son dos.
+Teacher: Sí, es netamente técnico, eh, teórica, ojo, pero tengamos en cuenta algo y es no les voy a preguntar eh según según Tan en bound, ¿cuál es la definición?
+01:25:00
+Teacher: no aplicar todos estos conceptos en un problema, bueno, en problemas eh donde tengamos que tener en cuenta los conceptos de la introducción y en los temas de arquitectura.
+Teacher: Sí, es más o menos así el proceso de evaluación.
+Student5: Ah, listo.
+Teacher: Son uno o dos escenarios donde ustedes van a tener que depende, miremos cómo nos va, pero puede ser, ey, definitectura para resolver este problema.
+Teacher: teniendo en cuenta tales aspectos o teniendo en cuenta tales eh restricciones.
+Teacher: Entonces, ahí vamos a revisar qué tan bueno o qué tan bien estamos haciendo el proceso de de análisis del problema y con los con lo que sabemos, cómo lo podemos desarrollar.
+Teacher: Eso sí lo tenemos que desarrollar con los aspectos que estamos viendo.
+Teacher: Si yo ya sé microservicios, etcétera, felicitaciones, pero necesito que hablemos de los cuatro arquitecturas que estamos hablando acá.
+Teacher: ¿Listo?
+Teacher: Eh, dale.
+Teacher: No, eso es como como para que lo tengan ahí en cuenta.
+Teacher: Bueno, jóvenes, ¿no?
+Teacher: Nos vemos entonces la próxima semana.
+Student8: Vale, profe, gracias.
+Student8: M.
+La reunión finalizó después de 01:26:21 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+

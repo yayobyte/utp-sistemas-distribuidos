@@ -1,0 +1,884 @@
+Hora de inicio de la reunión: 2026-10-01 18:34 GMT-5
+Asistentes
+Student1, Student2, Student3, Student4, Teacher, Student37, Student5, Student6, Student7, Student8, Student28, Student9, Student14, Student15, Student16, Student17, Student18, Student19, Student21, Student22, Student23, Student35, Student25, Student26, Student27
+Transcripción
+Teacher: ¿Qué me hizo?
+Teacher: Me perdió.
+Teacher: Aquí está.
+Teacher: Bueno, buenas noches, jóvenes.
+Teacher: ¿Cómo están?
+Teacher: Espero que todo muy bien.
+Teacher: Eh, vamos a continuar con lo que veníamos hablando la clase pasada.
+Teacher: Estuvimos hablando sobre las arquitecturas y hablábamos de dos conceptos o un concepto que era bastante interesante, que era el el concepto de grado de acoplamiento, ¿cierto?
+Teacher: ¿Quién me recuerda de qué se trataba eso del grado de acoplamiento?
+Teacher: ¿Quién se apunta ahí?
+Teacher: ¿Qué era el grado de acoplamiento o de qué estábamos hablando en ese momento?
+Teacher: ¿Por qué tan callados?
+Teacher: Elegimos a uno
+Student8: era el grado como de dependencia entre dos sistemas o de entre dos cosas
+Teacher: entre dos componentes,
+Student8: X.
+Teacher: dos elementos al momento de hacer la comunicación, ¿cierto?
+Teacher: Y habíamos hablado de que eran dos tipos de acoplamiento.
+Student8: Ajá.
+Teacher: ¿Cuál era?
+Student27: Sí,
+Student8: Oh.
+Student27: profe.
+Student27: El acoplamiento es el espacial y el temporal.
+Teacher: Ajá.
+Teacher: El acoplamiento espacial y temporal.
+Student27: Vamos aquí.
+Teacher: E [estudiante] Mejía, ¿estás por ahí?
+Teacher: ¿Qué era acoplamiento espacial?
+Student19: Profe, buenas noches.
+Teacher: Buenas noches,
+Student19: El acoplamiento espacial era de que se tiene que saber la identificación del otro componente para poder que le llegue el mensaje.
+Teacher: O sea, necesitamos saber dónde está o cómo localizarlo de alguna manera para tener para poder enviar el mensaje.
+Teacher: Muy bien.
+Teacher: Y a ver, Student24, ¿qué era el acoplamiento temporal?
+Student35: eh que pues que dos componentes necesitaban estar disponibles eh al mismo
+Teacher: Se le fue la voz o solo a
+Student35: tiempo
+Teacher: mí.
+Student35: ahí me escucha,
+Teacher: Ahora
+Student35: profe,
+Teacher: sí.
+Student35: que estaba diciendo que pues dos componentes necesitaban estar disponibles al al mismo al mismo tiempo.
+Teacher: Ajá.
+Teacher: Entonces, eh básicamente lo que hablaba del acoplamiento temporal es que en el mismo instante de tiempo debían estar activos y predispuestos para para la comunicación, tanto el emisor como el receptor o los componentes que van a intercambiar información.
+Teacher: ¿Listo?
+Teacher: Y también estuvimos hablando de la arquitectura maestro trabajador.
+Teacher: ¿Quién quién se acuerda de qué se trataba eso?
+Teacher: ¿Quién lo quiere recordar o lo hago recordar?
+Student5: Pero no con esa
+Teacher: No,
+Student5: amenaza.
+Teacher: no lo pues simplemente elijo a alguien y lo pongo a hablar si no quieren si no quieren ser
+Student5: Bueno, profe,
+Teacher: voluntarios.
+Student5: de que me acuerden se trata de que el maestro es quien recibe pues todas las las tareas y la distribuye de manera bueno equitativa, ¿no?
+Student5: que él busca quién está especializado para x tarea y le asign tarea.
+Student5: En ese orden deas los trabajadores pueden ser generales
+Teacher: Mhm.
+Student5: o especialistas en en una tarea.
+00:05:00
+Student5: ¿Qué más?
+Student5: Ah, usted nos decía algo muy pues a mí se me quedó como muy puntual, es que el maestro no es el que genera cuello de botella, sino que el cuello de botella se genera es por la eficiencia o la cantidad de trabajadores que tengamos.
+Teacher: Mm.
+Student5: versus la cantidad de peticiones que que se nos pida.
+Teacher: Exacto.
+Teacher: Recuerden que el cuello botella tiene que ver con el escalamiento, ¿cierto?
+Teacher: ¿Qué tanto?
+Teacher: qué tantas peticiones o qué tantos eh si tareas puedo recibir para poder eh trabajarlos dentro de mi sistema.
+Teacher: Y aquí el maestro no es el cuello de botella porque no es el que va a limitar la posibilidad de de atender más tareas.
+Teacher: Ahí depende mucho de la elección o la selección o la disponibilidad de trabajadores que tengamos nosotros disponibles.
+Teacher: Perfecto.
+Teacher: Y eh y el otro elemento que habíamos hablado en clase tenía que ver con la tolerancia a fallo, ¿cierto?
+Teacher: ¿Qué pasa si se cae un trabajador?
+Teacher: pues que simplemente el trabajo que estaba haciendo pues simplemente lo vamos a delegar o o el maestro se dará cuenta de que el esclavo no está disponible y simplemente redirige o reasigna esa tarea a otro trabajador.
+Teacher: O también puede hacer que no es como básicamente o la otra es que nosotros reemplacemos o coloquemos un nuevo trabajador asignado al máster para que para que asuma las responsabilidades o las tareas que tenía este trabajador, ¿cierto?
+Teacher: Entonces, o puedo quedarme sin ese recurso y distribuirlo entre los que quedan o simplemente iniciar o asignar un nuevo trabajador y ese trabajador pues va a ayudar a balancear o o a ejecutar las tareas que estaban pendientes por
+Teacher: el trabajador que ya no está disponible.
+Teacher: ¿Listo?
+Teacher: ¿Y qué pasa si se cae el maestro?
+Teacher: ¿Qué habíamos dicho?
+Student8: colapsa al sistema, entonces toca o ascender a un trabajador a maestro o cambiar de maestro o algo.
+Teacher: Eh, exacto.
+Teacher: Entonces, aquí el maestro no es cuello de botella, pero sí es punto crítico de fallo, ¿cierto?
+Teacher: Que ese era el otro concepto que que son que es complejo desde el punto de vista del crecimiento o de las bueno, escalabilidad está el cuello de botella y el punto crítico de fallo es sobre la fiabilidad o la tolerancia a
+Teacher: fallos.
+Teacher: Entonces, en este caso, el maestro eh tiene la, digámoslo así, la el la desventaja de que viene siendo mi punto crítico de fallo.
+Teacher: Entonces voy a tener que tener replicación o tener un maestro espejo Shadow que esté asign que esté recibiendo todo lo que recibe el maestro, o sea, que tenga todo el mismo conocimiento que el maestro tiene para que en el caso de que el maestro falle
+Teacher: pues eh tengamos otro que lo pueda reemplazar o hacer un proceso de elección y elegir entre los trabajadores el que tenga las mejores capacidades y convertirlo en maestro, ¿cierto?
+Teacher: Eh, con este modelo de tener la replicación, pues hay un problema o hay una, digámoslo así, una dificultad y es que vamos a tener un recurso que tenemos ahí comprado, que estamos pagando por él o que ya pagamos por él si lo tenemos en on premises y no está siendo
+Teacher: aprovechado por el sistema, ¿cierto?
+Teacher: Entonces, esa es como una de las dificultades que tenemos si pensamos en tenerlo replicado.
+Teacher: Y el otro problema o el o la otra situación es que y ¿qué pasa si los trabajadores que tengo no tienen las capacidades suficientes para asumir este rol?
+Teacher: ¿Cierto?
+Teacher: ¿Qué pasa si los trabajadores o digámoslo así los nodos trabajadores que vamos a tener no tienen o no los configuramos con herramientas de de gestión?
+Teacher: Entonces, si eso es si eso es así, entonces vamos a tener que modificar o agregar dentro de las características de mi trabajador eh algunas tareas de administración similares a las del maestro.
+Teacher: Es como si tuvieran un maestro apagado dentro de cada uno de los trabajadores y en el caso de que el trabajador cambie a ser maestro, pues cambia el rol, cambia su su funcionalidad, digámoslo así.
+Teacher: es como si apaga el las capacidades de trabajador y prende las de maestro.
+Teacher: Entonces, serían como como un dos en uno y eso pues termina siendo un poco complejo o hacer un poco complejo el desarrollo de las aplicaciones.
+Teacher: ¿Listo?
+Teacher: Ahora vamos a hablar de las de propósito general que aplicamos también en los sistemas distribuidos, ¿cierto?
+00:10:00
+Teacher: O sea, son arquitecturas que se pueden usar en otros tipos de sistemas e incluso en los sistemas centralizados, pero que fueron utilizadas o nos apoyamos en los sistemas distribuidos para trabajar con ellas.
+Teacher: entre las que vamos a estar hablando nosotros acá en clase, cliente servidor, editor suscriptor y peer toer.
+Teacher: Listo, vamos a empezar con cliente servidor.
+Teacher: Es la arquitectura más conocida que nosotros tenemos en, digámoslo así, en nuestro ambiente.
+Teacher: Pues diría yo que la primera arquitectura que salió, la primer forma como nosotros intentamos resolver los problemas de tengo clientes y tengo un serv, pues tengo unas personas que necesitan hacer tareas y tengo alguien que sabe hacer esas tareas.
+Teacher: ¿Listo?
+Teacher: Y en esta arquitectura pues tenemos dos roles.
+Teacher: Voy a devolverme esta gráfica para que, perdón, esta diapositiva para que vean estos roles.
+Teacher: Y es que en esta arquitectura tenemos dos roles claramente definidos.
+Teacher: un rol cliente que es el componente del sistema que necesita procesar algo, necesita atender algo o necesita que le atiendan una solicitud y vamos a tener otro componente llamado servidor,
+Teacher: que es el que sabe ejecutar solicitudes.
+Teacher: ¿Listo?
+Teacher: Entonces, el cliente no sabe hacer nada.
+Teacher: El cliente no tiene responsabilidades dentro del sistema.
+Teacher: El cliente solamente puede ser una pantalla o puede ser una pues un terminal o puede ser un dispositivo que está conectado al servidor y necesita, no sé, hacer un cálculo, necesita eh mostrar eh en un dashboard, en una figura,
+Teacher: un si el estado de la empresa está en verde o si está en rojo, ¿cierto?
+Teacher: o si está en amarillo, o sea, si está si estamos en peligro, estamos en advertencia o si estamos si está todo bien.
+Teacher: Entonces, el cliente no sabe eh cómo calcular si está bien o no.
+Teacher: Entonces, necesita hacer una solicitud del servidor.
+Teacher: El servidor analiza la información, la procesa y le da la respuesta a ese cliente.
+Teacher: Entonces, son dos roles muy claros y muy eh bien definidos.
+Teacher: El cliente es quien solicita un servicio o es el que necesita el servicio y el servidor es el que proporciona el servicio.
+Teacher: ¿Listo?
+Teacher: Básicamente es, yo necesito hacer algo, yo soy el cliente y no lo puedo hacer, yo soy el cliente.
+Teacher: El servidor es el que está ahí disponible para hacer las tareas que yo le yo tenga para dar.
+Teacher: Vamos bien hasta ahí.
+Teacher: En este en este rol o en este modelo, el cliente es el elemento activo.
+Teacher: ¿Por qué vamos a decir que es el elemento activo?
+Teacher: Porque es la persona o el componente que inicia la comunicación.
+Teacher: ¿Listo?
+Teacher: El servidor es un elemento pasivo.
+Teacher: ¿Por qué pasivo?
+Teacher: Porque no va a estar haciendo nada en el sistema a menos de que reciba solicitudes del cliente.
+Teacher: ¿Listo?
+Teacher: Vamos bien hasta ahí, pues se va entendiendo el el modelo.
+Student8: Sí, profe.
+Teacher: Pensemos pensemos en en una analogía para entender cuál es el rol del pues cada uno de los roles y cómo está definido.
+Teacher: Entonces, podemos pensar en que nosotros tenemos que ir a el banco siempre es lo más fácil, pero yo quería decir, por ejemplo, vamos a ir al a la empresa de servicios públicos a poner una queja, ¿cierto?
+Teacher: Eh, nos cobraron más de lo que nosotros creemos que debieron cobrar y entonces vamos a ir a hacer una queja.
+Teacher: ¿Quién es el que inicia la comunicación?
+Teacher: ¿Quién es el que tiene que ir a buscar quién le resuelve el problema?
+Student8: El cliente.
+Student8: Yeah.
+Teacher: Nosotros, ¿cierto?
+Teacher: Entonces, nosotros vamos a asumir el rol del cliente, ¿sí?
+Teacher: Porque nosotros somos los que necesitamos solicitar un servicio, necesitamos que nos atiendan, necesitamos que alguien más resuelva mi problema.
+Teacher: ¿Listo?
+Teacher: ¿Y qué es el servidor?
+Teacher: El y ¿quién sería el servidor?
+Teacher: el asesor,
+Student8: la empresa.
+Student8: M.
+Teacher: el asesor, la persona que está allá disponible para recibir a los clientes y atender solicitudes.
+Teacher: ¿Listo?
+Teacher: Entonces, el cliente solicita, el servidor proporciona, tiene el conocimiento para cómo resolver esos eh esas solicitudes o esos servicios.
+Teacher: ¿Qué pasa si no hay clientes?
+Teacher: ¿Qué pasa si no hay personas necesitadas de poner una queja?
+Student8: El proceso no arranca.
+Teacher: ¿Qué pasa con el servidor?
+Student8: El proceso nunca arranca.
+Teacher: El servidor nunca arranca.
+00:15:00
+Student8: El proceso de la queja nunca
+Teacher: Okay.
+Teacher: El servicio no se va a dar.
+Student8: arranca.
+Teacher: Pero, ¿qué pasa con los servidores?
+Student8: Pues está como idol,
+Teacher: ¿Están o no están?
+Student8: como en espera.
+Student8: A ver.
+Teacher: Están jugando solitario.
+Teacher: Dígalo bien.
+Teacher: ¿Cierto?
+Teacher: están ahí a la espera de que llegue un cliente.
+Teacher: Por eso es que decimos de que los servidores son pasivos.
+Teacher: Sí. El hecho de que no hayan solicitudes de clientes hace de que el servidor no tenga nada para hacer.
+Teacher: ¿Listo?
+Teacher: Entonces el servidor va a estar ahí, voy a estar pagando por él, pero no estoy resolviendo ninguna solicitud.
+Teacher: ¿Listo?
+Teacher: ¿Por qué?
+Teacher: Porque los servidores son pasivos, no inician ningún proceso, no va no va a haber ningún servidor que diga, "Bejo, revisemos a ver si le cobramos mal a los clientes." No,
+Teacher: ninguno lo va a hacer, ¿cierto?
+Teacher: Entonces, desde el punto de vista de sistemas, vamos a tener las mismas características y es que el cliente va a ser un nodo de cómputo o un nodo o un elemento que va a estar necesitando hacer cosas.
+Teacher: Entonces tiene que hablar con otro componente que llamamos servidor y ese servidor es el que sabe hacer las cosas.
+Teacher: ¿Listo?
+Teacher: Y ese servidor entonces está ahí a la espera de que los le pidan algo.
+Teacher: Apenas le pide procesa la información y le da una respuesta y después de que le da la respuesta vuelve a quedar en espera.
+Teacher: ¿Listo?
+Teacher: y no y no se va a mover de la espera hasta que llegue otra solicitud del cliente.
+Teacher: Es un modelo bastante sencillo, es fácil de entender, es fácil de implementar, pero desde el punto de vista de Ah, bueno, antes de antes de eso, ¿qué acoplamiento tiene este modelo?
+Teacher: ¿Ustedes cómo lo ven?
+Teacher: ¿Qué acoplamiento tiene la arquitectura cliente servidor?
+Student8: muy alto.
+Teacher: los dos.
+Student8: Los dos están acoplados, tanto espacial como temporal.
+Student8: espacial porque yo necesito la IP del server y temporal porque el cliente
+Teacher: Okay.
+Student8: necesita que le contesten a mismo.
+Teacher: Porque yo Exactamente.
+Teacher: Hay alto acoplamiento espacial porque el cliente tiene que saber a dónde preguntar, ¿cierto?
+Teacher: No le puede preguntar a cualquier servidor, tiene que saber a qué servidor le tiene que preguntar la tarea que o el problema o la solicitud que él está buscando y es altamente acoplado temporalmente porque yo necesito que esa ese
+Teacher: servidor me reciba la petición y empiece a trabajar en este momento en ella.
+Teacher: ¿Listo?
+Teacher: No es que les voy a dejar una carta, le voy a mandar un correo y me toca esperar 15 días a ver cuándo lo responden, ¿no?
+Teacher: En este en este caso el cliente hace la solicitud del servidor y el servidor una vez reciba la petición empieza a procesarla y ojalá hasta que llegue a un resultado para que el cliente eh digámoslo así quede satisfecho.
+Teacher: ¿Listo?
+Teacher: Entonces, acoplado tanto espacial y temporalmente.
+Teacher: Listo.
+Teacher: Desde el punto de vista de los sistemas distribuidos, ¿eso es bueno?
+Teacher: Nosotros ya habíamos hablado algo de eso, ¿cierto?
+Teacher: Es bueno que el sistema sea acoplado espacialmente y temporalmente.
+Student8: Hay mejor performance, más rendimiento.
+Teacher: Voy a tener un mejor rendimiento, pero es una pero es un mal o va a tener una mala fiabilidad o una mala tolerancia fallos.
+Teacher: ¿Listo?
+Teacher: Pero adicional a todo eso, vamos a tener otro problema y es de que nuestro servidor va a ser nuestro cuello de botella.
+Teacher: ¿Por qué creen ustedes que ahora sí el servidor es un cuello de botella?
+Teacher: Porque vamos a depender de él, de la capacidad de resolución que tenga, del tiempo que se demore respondiéndole a cada uno de las peticiones para que, digámoslo así, para poder atender a más usuarios.
+Teacher: ¿Listo?
+Teacher: Si el servidor es un servidor muy lento o es alguien que o las tareas que tiene que hacer ese servidor se demoran mucho, pues voy a poder atender muy pocos usuarios por unidad de tiempo.
+Teacher: Cuando digo unidad de tiempo es o por segundo, si son servidores con buenas capacidades, o por minuto o por hora.
+Teacher: Entonces, ¿cuántas eh solicitudes puede hacer en en un minuto?
+Teacher: No, en un minuto solamente logra hacer dos solicitudes.
+Teacher: ¿Listo?
+Teacher: ¿Y qué pasa si llegan 10,000 solicitudes?
+Teacher: pues van a estar en espera o van a estar en cola o van a estar esperando hasta que le logre a la velocidad que tenga el servidor atender todas esas solicitudes.
+Teacher: ¿Listo?
+Teacher: No hay forma de mejorar, entre comillas, no hay forma de mejorar esto.
+Teacher: ¿Por qué?
+Teacher: Porque este componente, este elemento que es el que se encarga de tener toda la lógica o la cómo satisfacer a los clientes, es el que va a determinar cuántos usuarios o cuántas peticiones puedo atender en un instante de tiempo.
+00:20:00
+Teacher: ¿Listo?
+Teacher: Entonces, aquí el servidor sí es un cuello botella.
+Teacher: En el maestro trabajador, el maestro no es cuello botella, son es la velocidad de los trabajadores, pero yo lo puedo suplir agregando más trabajadores.
+Teacher: En cambio, en el cliente servidor, ese este nodo servidor, este componente servidor va a tener toda la responsabilidad de atender a los clientes y eso hace de que si vienen más clientes o si quiero que atienda más clientes,
+Teacher: ese servidor va a ser el elemento que me va a frenar la capacidad de atender a más usuarios, de poder crecer en el número de peticiones o en el número de usuarios atendidos.
+Teacher: Además es un punto crítico de fallo, o sea, que el servidor también va a ser el elemento en el que si se llega a caer, todo mi sistema cae.
+Teacher: Listo.
+Teacher: Y hay otra desventaja que tiene esta arquitectura y es, ¿y qué pasa con los recursos del cliente?
+Teacher: ¿Qué pasa con los recursos de cómputo que tiene el cliente?
+Teacher: No se están utilizando porque el cliente lo único que hace es mostrar información o poner un botón.
+Teacher: Yo presiono el botón y el y el servidor es el que hace toda la tarea.
+Teacher: Las capacidades o los recursos de cómputo que tenemos en el cliente o en ese nodo como tal no se están utilizando o no se están aprovechando de la mejor manera.
+Teacher: Listo.
+Teacher: Entonces es muy fácil identificar este modelo cliente servidor, ¿cierto?
+Teacher: Porque simplemente yo debo verificar si el usuario o mejor dicho si yo necesito algo, pero ese algo está en otro computador o está en otro nodo y necesito solicitar esas esas tareas a ese nodo,
+Teacher: pues entonces ese nodo que sabe hacer las cosas es mi servidor y yo que soy el que necesito y no soy capaz con los recursos que tengo para resolver los problemas, soy el cliente.
+Teacher: Listo.
+Teacher: Una característica importante de este modelo y es que el servidor ofrece una colección de servicios y el cliente debe conocer qué servicios atiende cada servidor.
+Teacher: O sea, que si yo voy a un banco, yo sé cuáles son los servicios que me puede atender el asesor del banco.
+Teacher: Sí, pero si yo voy al banco a pedir que por favor me liquiden la factura de servicios públicos, ojo, me liquiden o me entreguen una copia de la factura de agua, pues el banco no va a ser capaz de hacerlo,
+Teacher: ¿cierto?
+Teacher: ¿Por qué?
+Teacher: porque él o o los usuarios o o los asesores del banco saben hacer o resolver los servicios que ofrece el banco.
+Teacher: Entonces el cliente tiene que saber qué servicios hace este servidor, qué servicio hace este servidor y si necesito servicios que hace este, pues lo hablo con él y si necesito este hablo con él.
+Teacher: O sea, que el cliente, desafortunadamente necesita saber qué servicios están ofreciendo cada uno de los servidores.
+Teacher: Y si tengo múltiples servidores, pues el cliente tiene que saber qué servicios me atiende cada uno de esos servidores y como está acoplado temporal espacialmente, entonces tiene que saber y dónde está cada servidor que me atiende esos servicios.
+Teacher: ¿Cómo vamos por ahí?
+Teacher: Bien,
+Student5: Profe, en este orden de ideas,
+Teacher: dime.
+Student5: a ver si la idea queda clara, el servidor es el que recibe las peticiones al mismo tiempo quien las atiende,
+Teacher: Ajá.
+Student5: quien da solución y hasta que no termina con un
+Teacher: Sí,
+Student5: cliente, no hace otro cliente.
+Teacher: lo normal de un servidor es que no.
+Teacher: Ojo, vamos a hablar.
+Teacher: Nos fal aquí nos faltan como 4 semanas hablando de cliente servidor, pero eh lo normal es que a mí me vienen y me traen una tarea, me dicen, "Teacher, necesito que me me revise este código fuente y será que yo me
+Teacher: pongo a revisar el código fuente y luego me entretengo haciendo otra cosa." Yo debería enfocarme en esa
+Teacher: tarea, ¿cierto?
+Teacher: Decirle, "Mire, encontré tales de tales problemas. Resuelva.
+Teacher: Cuando yo le doy la respuesta, ya tengo recursos disponibles o estoy disponible para atender otras solicitudes.
+Teacher: Ese es el modelo normal, digámoslo así, de cliente servidor.
+Student5: Entonces, ahí es donde usted dice que se desaprovechan los recursos
+Teacher: Claro, porque ese cerebro suyo,
+Student5: que
+Teacher: esa memoria y no en qué está aportando al sistema.
+Teacher: Mire que en el maestro trabajador, tanto maestro como trabajador tienen roles útiles, ¿cierto?
+00:25:00
+Teacher: El maestro es el que recibe, coordina, gestiona la eh a los trabajadores, recibe las respuestas y consolida la información para entregar.
+Teacher: Y los trabajadores pues son elementos activos que pues elementos que están eh procesando información y son capaces de hacer, o sea, que tanto el nodo que tenga el maestro como los nodos trabajadores tienen tienen aprovechan sus recursos de cómputo,
+Teacher: ¿cierto?
+Teacher: En el en el cliente servidor, los clientes tienen recursos de cómputo, tienen procesador, tienen memoria, tienen disco duro, tienen dispositivos, ¿cierto?
+Teacher: Pero para el sistema no los están usando para nada o muy o para pocas cosas.
+Student5: Profe, qué pena.
+Teacher: Dime.
+Student5: solamente fui yo o algún compañero se entrecortó también el profe
+Teacher: Sí, sí escucharon eh la explicación del cliente servidor.
+Teacher: O sea, en el en este caso el servidor, perdón, en el modelo cliente servidor, el cliente tiene recursos, tiene procesador, tiene memoria, tiene disco duro, tiene dispositivos, pero no los usa para procesar nada, ¿cierto?
+Teacher: Digamos que eh esos recursos de cómputo, ese procesador y esa memoria y eso para lo único que sirven es para localizar al servidor y decirle, "Servidor, haga y el servidor tiene que recibir la petición, ir a procesar la información,
+Teacher: eh si tiene que ir a la base de datos, buscar la base de datos.
+Teacher: Si tiene que hablar con otros servicios, habla con otros servicios o con otros servidores, consolida la información y le entrega.
+Teacher: Entonces, la los recursos de la máquina cliente, esa eso que nosotros compramos para poder entrar al sistema, no lo estoy utilizando en el sistema.
+Teacher: O sea, que estoy gastando plata y no lo estoy aprovechando para mejorar el rendimiento de mi sistema en esta arquitectura.
+Teacher: cabe entonces por ejemplo en las
+Student5: M.
+Teacher: oficinas generalmente las oficinas tienen pues un sistema donde registran y hacen pues todas las tareas y y guardan la información de del sistema.
+Teacher: Si utilizamos la arquitectura cliente servidor, nosotros vamos a comprar unos nodos que vamos a llamar servidores, que es donde vamos a montar las aplicaciones que van a utilizar los usuarios.
+Teacher: Pero a los usuarios voy a tener que comprarles un computador o les voy a comprar una laptop o les voy a comprar tablets, etcétera, para que puedan acceder al sistema, para que puedan realizar las tareas dentro del sistema,
+Teacher: ¿cierto?
+Teacher: Todas las tareas que está haciendo el usuario las está haciendo ¿dónde?
+Teacher: O sea, imaginemos, vamos a a iniciar sesión, ¿qué hace el cliente?
+Teacher: poner una pantallita login y usuario, pero cuando yo le doy clic aquí a a iniciar sesión, ¿dónde se procesa esa solicitud?
+Teacher: En el servidor, ¿cierto?
+Teacher: Servidor es el que tiene que recibir ese username y password, el nombre de usuario y password o el correo electrónico y password.
+Teacher: Va a verificar si ese correo electrónico existe en la lista de base de de los usuarios de la base de datos.
+Teacher: captura los datos, verifica que el password sí coincida con la contraseña que está guardada, verifica que el usuario si esté activo, que no tenga que cambiar la contraseña, bla, bla, bla, bla, bla.
+Teacher: Pues, ¿quién está haciendo todo ese procesamiento?
+Teacher: El servidor.
+Teacher: Y el servidor al final le dice, "Por favor, cambie la contraseña. O bienvenido o credenciales inválidas." y el y el
+Teacher: cliente, la aplicación cliente o el mod el nodo de cómputo cliente, ¿qué hace?
+Teacher: Simplemente recibe la información y se la muestra al usuario.
+Teacher: ¿Qué pasa con los recursos de ese cliente?
+Teacher: No estoy utilizando procesamiento, no estoy utilizando memoria, no estoy utilizando prácticamente nada, simplemente captura información, envía, recibe y muestra y muestra el resultado.
+Teacher: ¿Listo?
+Teacher: Eso es lo que o por eso es que nosotros decimos de que se están aprovechando mal los recursos de la máquina cliente, porque si esa esos recursos, ese procesador, esa memoria, esa RAM que yo sé que va a estar desocupada mientras está esperando
+Teacher: que que el servidor haga las tareas, pues eso debería estar haciendo algo.
+Teacher: Deberíamos de aprovechar esos recursos.
+Teacher: Estamos comprando ese equipo con ese Pentium, ese Corey 5 y ese esas 8 GB de RAM y esos eh 512 GB de almacenamiento, deberíamos de aprovecharlos para el sistema, serían más recursos que podríamos utilizar,
+Teacher: pero en esta arquitectura el cliente no tiene esa responsabilidad.
+Teacher: Bien, mal o alguna otra duda?
+Teacher: Yeah.
+00:30:00
+Teacher: Sí, queda claro, [estudiante].
+Student5: Sí, señor.
+Teacher: Listo.
+Teacher: Entonces, como sabem,
+Student5: Una preguntica que me quedó como en el aire.
+Teacher: Dime, dime, dime.
+Student5: Usted nos decía que el servidor tiene eh un catálogo,
+Teacher: Ah,
+Student5: una cantidad de servicios lista y atiende un cliente a la
+Teacher: sí,
+Student5: vez,
+Teacher: sí.
+Student5: es decir, que también está desaprovechando el servidor de los recursos que tiene varios servicios y un cliente va a pedir un servicio diferente al primer cliente que está en en cola, no lo va a atender.
+Teacher: Mm.
+Teacher: Sí, exacto.
+Teacher: Pero cuando termine de atender a ese cliente, va a tener todos los recursos disponibles para atender la otra tarea.
+Teacher: Ojo, tengan en cuenta de que imagínense que el cliente llegó y me puso a hacer algo.
+Teacher: Yo estoy colocando todos mis recursos, toda mi procesador, todo mi memoria, todo mi almacenamiento en resolver.
+Teacher: Bueno, y los recursos adicionales en resolver la tarea que me mandó el cliente, eso me va a garantizar de que lo voy a atender en el menor tiempo posible.
+Teacher: ¿Qué pasa si me llegan 10 usuarios y me dicen, "Mire, es que yo tengo yo quiero que me que me hagan 10 cosas distintas, mi ancho de banda no va a ser suficiente, ¿cierto? El ancho de banda del servidor puede que puede atender a los 10,
+Teacher: pero no lo haría en el en el menor tiempo posible porque tendría que distribuirse entre 10 tareas distintas.
+Teacher: ¿Listo?
+Teacher: Por eso, por eso hay que tener en cuenta cuando estamos hablando de qué tipo de problema es el que queremos nosotros resolver.
+Teacher: Entonces, si yo lo si el la tarea que yo quiero que se resuelva es la renderización de 2 horas de películas animadas y le acabo de mandar la tarea, pues yo necesito que todos los recursos estén atendiendo esa tarea,
+Teacher: no que se ponga a atender otras cosas, porque si no, entonces esa película no se va a demorar dos días en renderizarse, sino que se va a demorar cuatro o cinco o seis porque tengo el servidor ocupado haciendo otras cosas.
+Teacher: ¿Listo?
+Teacher: En cambio, si él recibe esa tarea y se concentra en esa tarea, pues entonces a pesar de que pueda hacer muchas otras, él se concentra en esa tarea y la va a hacer lo mejor posible.
+Teacher: Vamos bien ahí.
+Teacher: Pero como sabemos de que digamos que uno uno de los problemas, tenemos tres problemas a atacar, cuello de botella, punto crítico de fallo y recursos de clientes mal utilizados.
+Teacher: Entonces, cuello botella, no puedo atender a más usuarios simplemente porque estoy centralizando el, digámoslo así, el procesamiento de la información.
+Teacher: Yeah.
+Teacher: Punto crítico de fallo, si se cae el servidor, se va el sistema al piso y el cliente está desocupadito, no está haciendo nada, nada más que esperando a que el servidor termine.
+Teacher: Entonces, una de las posibilidades que tenemos para bajarle la carga al servidor y aprovechar un poco los recursos de la máquina, entonces tenemos eh que podemos repartir funcionalidad entre el cliente y servidor, ¿cierto?
+Teacher: Entonces, vamos a decir que eh que el cliente le voy a dar le voy a agregar más responsabilidades dentro de mi sistema.
+Teacher: O sea, que el cliente va a tener que procesar parte de la información del sistema y el servidor se va a encargar de otra parte.
+Teacher: ¿Listo?
+Teacher: Entonces, de esta manera voy a bajarle la carga al servidor.
+Teacher: No tiene que atender muchas cosas porque van a haber otras que se pueden ir atendiendo del lado del cliente.
+Teacher: Ya.
+Teacher: Y este concepto de darle responsabilidad al cliente para ir atendiendo tareas que normalmente debería ser el servidor, pero ahorita las va a hacer el cliente, es lo que nosotros llamamos el grosor del cliente.
+Teacher: ¿Qué tan grueso es el cliente que nosotros tenemos?
+Teacher: No sé si han escuchado ese concepto de que yo tengo un cliente grueso, un cliente delgado, un cliente pesado, un cliente ligero, pero básicamente es eso y es qué tanta responsabilidad, qué tantas funcionalidades del sistema están recayendo del lado del cliente,
+Teacher: ¿loisto?
+Teacher: Y qué tantas responsabilidades estoy dejando del lado del servidor.
+Teacher: En el modelo tradicional de cliente servidor estamos hablando de clientes livianos.
+Teacher: un cliente liviano, ligero o delgado, simplemente es un cliente que tiene muy pocas responsabilidades del sistema, o sea, que no tiene que hacer prácticamente nada del sistema,
+Teacher: simplemente mostrar la pantalla y recoger recoger la información que tiene el usuario, ¿cierto?
+Teacher: Digamos que no tiene que procesar nada, simplemente dejar ahí unos campos para que el usuario llene y que cuando presione el botón yo codo todos esos campos y los mando y viceversa, ¿cierto?
+00:35:00
+Teacher: Y recibir y recibo la información y se las muestro al usuario.
+Teacher: Eso es la única responsabilidad.
+Teacher: Eso sería un cliente ligero.
+Teacher: Un cliente pesado puede ser esas aplicaciones que nosotros veníamos haciendo hasta ahora, donde nosotros validábamos usuarios, abríamos las ventanas, eh íbamos a gestionar eh eh productos, entonces abríamos la ventana de productos,
+Teacher: listábamos los productos, pero toda la lógica está concentrada en en la aplicación cliente.
+Teacher: ¿Y cuál sería mi servidor?
+Teacher: Ah, pues mi servidor sería mi base de datos o sería otro nodo que se encargue de hacer otras tareas diferentes.
+Teacher: Entonces, yo le estoy diciendo que el cliente, la aplicación que le voy a instalar en cada una de las máquinas de los usuarios, va a tener una mayor cantidad de responsabilidades del sistema.
+Teacher: ¿Listo?
+Teacher: M. y el servidor va a tener pocas responsabilidades.
+Teacher: Cuando yo creo clientes pesados, cuando delego responsabilidades sobre los clientes pesados, mi sobre clientes, los servidores bajan el, digámoslo así, bajan la ocupación y al bajar la ocupación pueden atender más clientes.
+Teacher: ¿Por qué?
+Teacher: porque están atendiendo ya cosas muy pequeñas y entre más pequeños sean las tareas que yo le delego al servidor, más usuarios o más clientes voy a poder atender.
+Teacher: Sí, porque los clientes no me van a estar llamando por cualquier cosa, sino que me van a llamar solo en los casos donde necesite los servicios que tiene el servidor y el resto de las tareas las hace el cliente.
+Teacher: Entonces, esto es como cuando hacemos un trabajo en grupo, ¿cierto?
+Teacher: Y entonces yo delego, por favor, eh, Juan hace esto, Pedro hace esto, Andrea hace esto y todos los recursos del proyecto se están aprovechando del lado del cliente.
+Teacher: O sea, a esos usuarios que tienen o que tienen recursos para poder atender las cosas, pues pueden hacer sus tareas.
+Teacher: Ojo, no es maestro trabajador, estoy diciendo trabajamos en grupo.
+Teacher: Listo.
+Teacher: Y solamente me van a preguntar lo que lo que no entiendan, lo que no lo que necesiten, ¿cierto?
+Teacher: Yo soy capaz de hacer todas esas tareas, pero solamente tengo la responsabilidad de atender pocas peticiones.
+Teacher: Entonces, si estamos en ese modelo donde cada uno está trabajando de manera individual, puede resolver la mayoría de problemas y cuando tengan una duda me preguntan, ¿cuántos usuarios puedo yo atender yo como recurso servidor?
+Teacher: ¿Cuántos usuarios podría yo atender?
+Teacher: ¿Cuántos estudiantes yo podría atender?
+Teacher: ¿Cierto?
+Teacher: Podría atender muchos.
+Teacher: ¿Por qué?
+Teacher: Porque tengo recursos, perdón, tengo la disponibilidad por atender más usuarios simplemente porque me están preguntando cosas muy puntuales.
+Teacher: Pero si cada uno de ustedes me estuviera preguntando, "Profe, ¿y cómo cómo abro la página de de Google? ¿Y profe y dónde y en qué página lo Google?
+Teacher: ¿Y cómo le pregunto eh a para que me busque los resultados?
+Teacher: ¿Y cómo leo este resultado?
+Teacher: ¿Y qué extraigo de este resultado?
+Teacher: Pues si yo soy el que tengo que hacer todas las tareas, pues entonces una sola petición que me llegue, yo voy a tener que ir a buscar y decirle, "Mire, usted lo que tiene que hacer es esto, le trae esta información,
+Teacher: resúmalo de esta manera, este es el resultado que usted necesitaba y así sucesivamente.
+Teacher: Entonces, ahí voy a tener menos tiempo para atenderlos.
+Teacher: Pero si ustedes aprovechen sus recursos, pues van a tener o voy a voy a tener una mayor capacidad de atender más clientes en en el mismo instante de tiempo.
+Teacher: ¿Listo?
+Teacher: Entonces, ya dejo de ser el cuello de botella porque ustedes ya tienen la capacidad de atender muchas de las solicitudes que normalmente o que generalmente se espera que yo la resuelva.
+Teacher: ¿Listo?
+Teacher: Entonces, eso es lo que nosotros hablamos aquí con el reparto de responsabilidades o de funcionalidad entre cliente y servidor.
+Teacher: Si hay poca si hay poco repardo, si el cliente no hace muchas tareas eh de procesamiento, es un cliente liviano.
+Teacher: Si tiene mucha carga o o bastante, digámoslo así, bastantes responsabilidades del sistema, entonces se vuelve en un cliente grueso.
+Teacher: ¿Listo?
+Teacher: ¿Cuál es la por qué hacerlo?
+Teacher: Simplemente para resolver cosas que probablemente no necesiten la centralización o no necesiten la intervención del servidor, ¿cierto?
+Teacher: Eh, cosas como que si el usuario está ingresando datos en una pantalla y yo aquí le estaba pidiendo la edad y colocó eh, no sé, escribió 35 en letras, ¿sí?
+Teacher: T R. Yo puedo validar y y le digo, "Ey, no, aquí no van letras, aquí van números. ¿Cierto?
+00:40:00
+Teacher: que necesito que me agregue el número de identificación y la identificación no le ingresó antes de enviar los datos, pues yo le puedo decir, ojo, yo como cliente le puedo decir, "Ey, mire, este dato te hace falta te hace faltar validarlo o te hace falta
+Teacher: ingresarlo." Cosas que si yo todo eso se lo mando al servidor,
+Teacher: pues el servidor va a recibir la información, va a decir, "Está incompleto, devuelve y le dice, e, este documento está incompleto o te hace falta la cédula o te hace falta tal cosa." ¿Listo?
+Teacher: Si esas responsabilidades se las damos al cliente, pues vamos a quitarle esas funciones o esa responsabilidades al servidor y eso va a hacer de que mi servidor pueda atender más usuarios.
+Teacher: ¿Por qué?
+Teacher: Porque no va a estar preocupado de hacer las cosas triviales o las cosas sencillas o las cosas que se podrían resolver del lado del cliente.
+Teacher: Vamos bien hasta ahí.
+Teacher: eh va a haber una mayor autonomía y esto va a hacer de que el sistema sea mucho más ágil que el usuario perciba que el sistema es mucho más rápido.
+Teacher: ¿Por qué?
+Teacher: Porque todas las cosas se están haciendo de manera local o muchas de las del procesamiento, muchos de los cálculos, muchas de las tareas que tenemos se hacen de manera local.
+Teacher: Imagínense ustedes que están haciendo un sistema de de facturación y que cada vez que agregan un elemento al carrito o un elemento a la factura, tuviesen que ir al servidor a preguntarle, "Hola, ¿y cuál es el nuevo saldo?" Y cuál es y y cuánto es el conteo de de elementos que
+Teacher: tiene el carrito, ¿cierto?
+Teacher: Entonces, ese tipo de cosas y calcúlme el IVA y me y me lo devuelve, ese tipo de tareas yo podría delegárselas al cliente.
+Teacher: El cliente sabe hacer eso y es posible que lo haga bien.
+Teacher: Entonces le quito esa responsabilidad al servidor, le doy esas responsabilidades al cliente y el cliente pues simplemente ente cada vez que agrega un nuevo producto, el mismo cliente hace el proceso, utiliza su procesador para calcular cuánto es el nuevo saldo,
+Teacher: cuántos son los impuestos, cuánto es el número de productos y todo y y puede validar información que va dentro de de la aplicación cliente.
+Teacher: Puede verificar, ey, pero es que este producto ya lo ingresó, entonces aumente la cantidad dentro de dentro del listado y no lo agregue como un elemento adicional, cosas así por el estilo.
+Teacher: ¿Listo?
+Teacher: eh y tiene una mejor escalabilidad porque necesito menos recursos del servidor.
+Teacher: El servidor va a estar más desocupado y solamente le van a llegar las solicitudes ya después de que el cliente validó, confirmó, calculó los totales que necesitaba calcular, le manda los datos al servidor y el servidor no tiene que volver a procesar esa información,
+Teacher: simplemente puede ir y guardar los datos.
+Teacher: Esas son las ventajas que tiene el repartir carga, hacer clientes pesados.
+Teacher: Pero, ¿qué pasa?
+Teacher: Eh, pero qué pasa con con las, digámoslo así, si eso es lo bueno, siempre debe haber algo malo.
+Teacher: Si no, entonces por se inventó el cliente servidor de esta manera, ¿cierto?
+Teacher: Y entonces tiene que ver un poco con el tema de del mantenimiento.
+Teacher: ¿Listo?
+Teacher: Si yo hago clientes gruesos, el mantenimiento va a ser mucho más caro que si yo hago un cliente delgado.
+Teacher: Cuando yo hablo de mantenimiento puede ser eh el tema de de una actualización, ¿cierto?
+Teacher: Si yo voy a hacer una actualización al sistema, la puedo hacer eh me si es en un cliente grueso, pues entonces me toca ir equipo por equipo haciendo la actualización de ese nuevo C. Listo.
+Teacher: Y de alguna manera tengo que bloquear que los equipos que no estén actualizados entren a mi sistema.
+Teacher: Entonces, estoy haciendo mayor trabajo o tengo que agregar un mayor funcionalidades a mi sistema simplemente para controlar si usted está actualizado o no, si tiene la última versión o no, si ya tiene la corrección del problema que encontramos o que corregimos o no.
+Teacher: Entonces, y tengo que ir máquina por máquina haciendo la instalación de de esa nueva versión.
+Teacher: ¿Listo?
+Teacher: Y el otro, la seguridad.
+Teacher: Si si el cliente tiene la posibilidad de hacer algún tipo de cálculo, hacer guardar una información temporal en memoria, alguna cosa y procesar información de manera local, pues, ¿qué tan seguro es eso?
+Teacher: Sí, porque digamos que podría en un momento determinado alguien ingresar o algún otro proceso, ingresar a los espacios de memoria de mi proceso y leer información.
+Teacher: o puede llegar un hacker y capturar esa información que tiene memoria, descargarla y trabajar con ella.
+Teacher: ¿Por qué?
+Teacher: Porque es que el cliente es el que tiene la información.
+Teacher: El cliente es el que está haciendo las cosas.
+00:45:00
+Teacher: El cliente tiene tiene toda la o mucha de la responsabilidad del sistema.
+Teacher: Entonces, cada uno de los clientes es un foco de inseguridad, es un foco donde puede haber un fallo de seguridad de del sistema.
+Teacher: ¿Listo?
+Teacher: Entonces, ¿cuál es mejor?
+Teacher: ¿Clientes gruesos o clientes delgados?
+Teacher: ¿Ustedes qué dicen?
+Teacher: Tienen cosas buenas y tienen cosas malas.
+Teacher: Pero, ¿qué es qué es mejor?
+Teacher: ¿Tener un cliente grueso o tener un cliente delgado?
+Teacher: ¿Un cliente pesado?
+Teacher: Un cliente
+Student26: No, yo creo que hay que hacer un balance.
+Student5: también.
+Teacher: ligero.
+Student26: Yo diría que hay que hacer un balance porque lo que usted mencionó, un cliente grueso, pues la actualización es compleja.
+Student26: Si el cliente tiene reglas de negocio, entonces es más complejo también, digamos.
+Student26: O sea, usted dijo, por ejemplo,
+Teacher: Actualizar esas reglas,
+Student26: siente,
+Teacher: ¿cierto?
+Student26: claro, que el cliente calcule el IVA, que el cliente, digamos, que sea un sistema pues contable.
+Student26: Entonces, las reglas
+Teacher: No, no.
+Teacher: Y no y no solo contable.
+Student26: del
+Teacher: ¿Qué pasa si al gerente se le ocurre una nueva un nuevo descuento por volumen y bla bla bla bla bla?
+Teacher: Tengo que aplicárselo a todos los clientes,
+Student26: claro,
+Teacher: ¿cierto?
+Student26: claro.
+Teacher: Porque todas esas reglas de negocio pues afectan a al cliente.
+Student26: Sí.
+Teacher: En cambio, si yo lo tuviese en un servidor centralizado o en un cliente ligero, el cliente no se afecta, pero hago la actualización en el servidor y le aplica a todos los
+Student26: Sí. Es que pues bueno, yo yo no sé en esta arquitectura de sistemas distribuidos,
+Teacher: clientes.
+Student26: esta arquitectura pues qué tan eficiente sea porque es más complejo.
+Student26: O sea, el cliente realmente no es no es no es como la arquitectura cotidiana que el cliente es simplemente una página web.
+Student26: Usted le manda el script a la página web para que lo ejecute local, pero aquí puede ser un
+Teacher: Pero es que pero es que la pero es que la página web es un la arquitectura web es un
+Student26: nodo.
+Teacher: modelo cliente servidor.
+Student26: Sí, sí, sí, pero es más fácil.
+Teacher: El navegador es el cliente y el servidor es el
+Student26: Claro, pero a lo que voy es que es más fácil porque usted al cliente le manda el script para que lo ejecute de una.
+Teacher: servidor.
+Student26: Usted le si usted va a hacer una actualización usted este es el script y si usted actualizó en el servidor esa actualización usted se la manda al cliente cada que el cliente hace la petición en la en la arquitectura,
+Student26: digamos, que no es distribuida.
+Student26: Aquí no sé,
+Teacher: Mm.
+Student26: yo no pues no lo conozco, entonces no sé si es un nodo
+Teacher: Pero ojo,
+Student26: físico.
+Teacher: las aplicaciones web son un sistema distribuido.
+Student26: Ah, bueno, entonces ahí sí
+Teacher: Hay clientes, hay hay componentes independientes conectados por una red,
+Student26: ya.
+Teacher: heterogéneos con memoria común,
+Student26: Ah,
+Teacher: sin memoria común.
+Student26: sí, sí, tienes razón.
+Student26: Claro que sí.
+Student26: Bueno, en en tema web es diferente.
+Student26: Yo creo que usted simplemente al servidor le usted, o sea,
+Teacher: Seguro.
+Student26: usted a pesar de que compilan el servidor, pero usted le manda el script al usuario para que lo ejecute y se, o sea, ocúpese su procesador, su capacidad.
+Student26: Yeah.
+Student26: de procesamiento, pero usted ejecútelo allá.
+Student26: Claro, si usted le manda el JavaScript,
+Teacher: Y las aplicaciones hechas en Lara así
+Student26: pero pero es que el Arabel es backen,
+Teacher: funcionan, ¿no?
+Student26: entonces el backen sí se tiene que ejecutar el servidor.
+Teacher: Ojo, es es un servicio web.
+Student26: Por eso el servicio web como tal, el backen se ejecuta en el servidor,
+Teacher: Bueno,
+Student26: pero pero la parte visual,
+Teacher: sí.
+Student26: todo lo que usted ponga, o sea, cuando está creando la parte web, usted tiene las dos opciones.
+Student26: O server side rendering, ¿qué quiere decir?
+Student26: usted lo renderiza desde el servidor o clien o single
+Teacher: Es que usted usted es que usted me está hablando de la solución ya después de mucho
+Student26: p.
+Teacher: tiempo.
+Teacher: O sea, usted está hablando de lo de hoy.
+Student26: Pues es que
+Teacher: Sí, pero es que esa es una de las posibles soluciones porque no siempre me sirve server
+Student26: Exacto, exacto.
+Teacher: rendering o no siempre me sirve ese tipo de
+Student26: Claro, no no.
+Teacher: solución.
+Student26: Claro, de hecho, de hecho eso ha ido y eso va y viene, porque antes, por ejemplo, estábamos en server side rendering, después nos pasamos a single page application y después otra vez que que server side rendering
+Teacher: Nos tocó volvernos,
+Student26: es nos tocó devolvernos y ya como pues hay dispositivos móviles,
+Teacher: nos tocó volvernos otra vez a procesar el servidor.
+Student26: entonces ya no se puede así que ya, o sea, eso cambia mucho, pero entonces obviamente o sea al punto que yo quería llegar era la actualización, o sea, si usted le manda muchas reglas de negocio al cliente, uf,
+Student26: vaya, actualícelas, eso es dificilísimo.
+Student26: Eso es dificilísimo.
+Student26: Entonces, yo creo que para responder la pregunta inicial, yo no sé si es cliente pesado o ligero.
+Student26: Yo diría pues como que normalitos, como nosotros estemos ahí, como como en la mitad, pues no sé, pienso yo.
+Teacher: Okay, pero entonces mire que hay que analizar o hay que pensar en cuál es el nivel de responsabilidad que quiero darle al cliente, ¿cierto?
+Student26: Sí, sí, sí,
+Teacher: Porque puede ser muy básica,
+Student26: sí.
+Student26: Yeah.
+Teacher: puede ser cero, como decirle, voy a hacer una aplicación web que lo que simple, una aplicación en PHP que solo devuelva HTML y pues cada vez que yo necesite algo tengo que llamar al servidor, el servidor lo procesa y me vuelve el HTML.
+00:50:00
+Teacher: Y en este caso, el HTML es lo que el cliente es lo único que el cliente va a usar, lo que el cliente va a renderizar, digámoslo así, o a poner bonito, porque es código y lo tiene que poner bonito,
+Teacher: lo tiene que poner visible.
+Teacher: Pero así como dices tú, hay otras aplicaciones donde le delego la responsabilidad de mi aplicación al front o a o al cliente, donde yo voy a ir agregando y agregando funcionalidades al cliente y el servidor pues puede ser algo muy
+Teacher: chiquito, algo que que ni siquiera procese información.
+Teacher: ¿Y por qué lo hacemos así?
+Teacher: Ah, porque de esa manera yo tengo la posibilidad de que mi mi aplicación eh uses un solo servidor y un solo servidor como tal y pueda atender 100, 200, 500 usuarios.
+Teacher: En cambio, si yo lo paso a a Arabel, ese mismo ese mismo servidor ya no me puede atender todas esas peticiones.
+Teacher: ¿Por qué?
+Teacher: Porque va a estar haciendo todo el trabajo o el trabajo pesado de toda la aplicación.
+Teacher: ¿Listo?
+Student26: Sí, sí.
+Student26: De hecho, no sé si usted recientemente vio ese meme de que Chrome se come la memoria y y
+Teacher: No, eso no es un meme.
+Student26: recién Sí.
+Teacher: Eso no es un meme, es una realidad.
+Student26: Y es que el problema no es de Chrome, es que de hecho el problema es porque nos movimos a single page application, que es lo contrario de server side rendering.
+Student26: Entonces todo el todo programador le estaba mandando el script al al usuario para que lo ejecutara y el usuario con un montón de de tabs abiertos y con toda la carga de procesamiento de todas las páginas web que estaba visitando y no era que
+Teacher: He.
+Student26: Chrome se comiera la memoria, sino que los programadores diseñamos las páginas para que el usuario las usara y Garbas Collection, olvídese de eso.
+Student26: O sea, todo el mundo diseñó es un JavaScript.
+Student26: Es olvídese eso no es como Java que automáticamente lo hace,
+Teacher: Es muy liviano.
+Student26: pero JavaScript come la memoria como quiera.
+Teacher: Ajá, exacto.
+Teacher: Entonces, aquí es donde vamos a analizar justamente eh cómo podemos repartir esa carga, ¿cierto?
+Teacher: o qué es lo que nosotros podríamos llegar a llamar eh cargas entre cliente y servidor o o reparto de funciones entre cliente y servidor.
+Teacher: Entonces, si pensáramos que tenemos una aplicación construida en un en una arquitectura de tres capas o en un modelo de tres capas donde tengo una capa de presentación, una capa de lógica de negocio y una capa de acceso a datos donde las capas no
+Teacher: signifiquen que sean aplicaciones independientes y no puede ser una sola aplicación que esté partida en tres o que tenga tres carpetas, una de presentación, una aplicación y otra de datos.
+Teacher: Lo que hablamos aquí es que nosotros podríamos distribuir los distintos niveles o darle distintas niveles de responsabilidades al al cliente, ¿cierto?
+Teacher: Yo podría ser de que parte de la interfaz gráfica de usuario, parte de la responsabilidad de mostrar la información y capturar los datos de la información se la voy a delegar al cliente y el resto construcción de la de la interfaz
+Teacher: gráfica.
+Teacher: ¿Qué es lo que vamos a mostrar?
+Teacher: ¿Cómo se llenan?
+Teacher: cuáles son los datos que voy a tener en las tablas, etcétera, se lo lo voy a dejar del lado del servidor.
+Teacher: Voy a tener toda la lógica de la aplicación, o sea, todo el procesamiento y también tengo la base de datos.
+Teacher: ¿Listo?
+Teacher: Entonces, este es el modelo clásico de las páginas HTML o de las aplicaciones web que lo que hacen es recibir peticiones y devolver HTML porque parte de la interfaz gráfica del usuario la voy a la voy a delegar a la máquina cliente,
+Teacher: o sea, el navegador debe tener la capacidad de coger HTML y CSS y ponerlo a la vista, o sea, y pintarlo, decorarlo dentro de la pantalla.
+Teacher: Sí, esa es la responsabilidad que le estamos dando al navegador.
+Teacher: ¿Hay algún tipo de responsabilidad lógica?
+Teacher: No,
+Student26: Yeah.
+Teacher: solamente estoy dándole solamente un pequeño bloque de la interfaz gráfica de coger ese HTML.
+Teacher: el SDS y volverlo eh volverlo visible, volverlo bonito a los ojos.
+Teacher: Pero la construcción de ese HTML lo hacemos nosotros, la aplicación nosotros y las bases de datos.
+Teacher: Otra posibilidad, le puedo delegar todo lo que tiene que ver con la interfaz gráfica de usuario.
+Teacher: Entonces, no andamos toda la interfaz gráfica de usuario, pero en el servidor queda la capa de aplicación y la capa de base de datos.
+Teacher: Ese es el modelo tradicional.
+Teacher: frontend y backend que nosotros llamamos, ¿cierto?
+Teacher: Donde el frontend lo que hace o voy a llevar parte toda esa aplicación o todos los elementos se los voy a dejar al lado del lado del usuario para que el usuario pueda interactuar con eso de manera rápida y eficiente.
+Teacher: Pero toda la lógica, todas las operaciones, todo lo que queremos nosotros hacer dentro de la aplicación se la vamos a llevar a la al backend.
+Teacher: Así que el frontend, este, este tipo de frontend, por decirlo así, no va a calcular cosas, no va a validar cosas porque no tiene lógica, solamente le estamos delegando la interfaz gráfica de usuario.
+00:55:00
+Teacher: ¿Listo?
+Teacher: Luego vamos a irnos a este modelo donde tengo toda la interfaz gráfica de usuario y parte de la lógica de aplicación.
+Teacher: Sí, no toda, parte de la lógica de aplicación.
+Teacher: Entonces aquí el, digámoslo así, este cliente es más autosuficiente, va a tener toda la interfaz gráfica, o sea, toda la forma de que el usuario pueda ver y trabajar con nuestras aplicaciones y va a tener parte del procesamiento,
+Teacher: va a poder hacer algunas cosas, eh calcular el total de la factura, calcular los impuestos, calcular los descuentos.
+Teacher: Si yo cambio el valor de descuento, es capaz de calcular el descuento y totalizarlo, pero no significa que haga toda la lógica, que valide todas las reglas de negocio, ¿cierto?
+Teacher: Porque van a haber otras reglas que se van a aplicar del lado del servidor y todo lo que tiene que ver con la gestión de base de datos.
+Teacher: Otro modelo, otro modelo, otro posible reparto es delegarle toda la interfaz gráfica y toda la lógica de la aplicación.
+Teacher: ¿Sí?
+Teacher: Y vamos a dejar por fuera la base de datos.
+Teacher: Un ejemplo más claro de este modelo es las aplicaciones que aprendimos a hacer nosotros cuando estábamos trabajando en bas en bases de datos, ¿cierto?
+Teacher: Nosotros creábamos una aplicación en Python, en Java, en C, en HTML y se conectaba a una base de datos que estaba en otro servidor, ¿cierto?
+Teacher: en otra máquina, en otra máquina o en la misma, pero pues estaba de manera independiente.
+Teacher: El servidor de base de datos hace unas cosas, eh, la aplicación que nosotros desarrollamos hace todo.
+Teacher: Listo.
+Teacher: Si esta aplicación la fuéramos a desplegar entre múltiples clientes, la base de datos sería una única para todos los usuarios, pero toda Está.
+Teacher: de aplicación estaría en cada uno de las instalaciones que nosotros hagamos.
+Teacher: Y por último, pues podemos llegar hasta el punto donde parte del almacenamiento, parte de la gestión de los datos se lo podemos delegar al cliente.
+Teacher: Sí. O sea, que el cliente tiene estas responsabilidades incluso de almacenamiento de algo de alguna información y del lado del servidor de base de datos o el servidor solamente tendríamos otra parte, una parte más pequeña del almacenamiento general que necesitamos de toda la
+Teacher: aplicación.
+Teacher: ¿Queda claro ahí los distintos modelos que podemos hacer?
+Teacher: Quiero que piensen en una aplicación que ustedes conozcan y que estén en este último punto.
+Teacher: que tenga total la responsabilidad de interfaz de usuario, total la responsabilidad de la aplicación, parte de la responsabilidad del almacenamiento y poca y digamos que el lado del servidor tenemos eh una poca gestión de la del almacenamiento.
+Teacher: Dime Yay.
+Student26: Esas aplicacioncitas de de como de contabilidad personal, hay algunas que usted queda con un parte de los datos y otro pedacito es como backup, pero generalmente usted los tiene ahí.
+Student26: Y obviamente el resto, pues toda la lógica de negocio, la interfaz de
+Teacher: Pero,
+Student26: usuario,
+Teacher: ¿será que ese backup realmente está en el servidor y lo tenemos en el servidor?
+Student26: no hay unas no son no todas no son iguales, hay unas que pues por temas de privacidad le dicen a usted, no los datos, usted tenga sus datos ahí.
+Student26: Hay otras que dicen, "Ah, bueno, hay un modelo o por una suscripción,
+Teacher: Okay,
+Student26: venga, yo le hago un backup encriptado." Entonces,
+Student26: esa cumpliría con este
+Teacher: pero pero si es un backup no hay no hay gestión.
+Teacher: O sea, no es que la aplicación vaya a hablar con mi backend para traer información o para consolidar información o
+Student26: pedacito.
+Teacher: para enviar información al backend.
+Teacher: Sí. O sea, es como si yo dijera, "No, es que esta es mi mi aplicación. Pero parte de esta aplicación o parte de la información de esta aplicación la voy a gestionar de del lado del
+Student26: que esté cortada,
+Teacher: servidor.
+Student26: que esté cortada.
+Teacher: Sí, sí.
+Teacher: No, no es que yo tenga la porque si no al final sería una aplicación centralizada y si no y si no hacen backup, pues la tengo en mi equipo y si se murió, se murió.
+Teacher: Pero pero de una aplicación que esté dentro de este modelo, que parte de la información se maneje de manera local en el cliente y otra parte de la información vaya al centro, a la base de datos, perdón, a la máquina servidor.
+Student26: No, ahí sí no se me viene a la mente en este momento.
+Student26: Pues debe haber, pero no se me viene a la mente.
+Teacher: Ninguna.
+Student26: A ver si le echo cabeza.
+Student26: M. Yeah.
+Teacher: ¿Alguien más?
+Teacher: M. ¿Alguna?
+01:00:00
+Teacher: 37.
+Student26: Es que esa de partir los datos es dura, profe, por el tema de la sincronización, o sea, o o datos que usted necesite de acceso rápido, pues los puede dejar en el backen y la y datos que usted necesite muy constantemente se los manda al cliente.
+Student26: No se me viene a la mente.
+Teacher: Mhm.
+Teacher: No, ninguna.
+Student7: No pueden ser como los juegos móviles,
+Teacher: como los juegos móviles.
+Student7: pues digamos que una parte está almacenada en el en el digamos que en el celular que es como toda
+Teacher: Ok.
+Student7: la estructura y ya digamos eh por ejemplo los datos de guardado, los que mejor dicho los que se conectan en línea, que son digamos que no se puede jugar sin acceso a la línea porque tienen que mirar en qué mundo va,
+Student26: Ah, sí,
+Student7: en qué rango va, todo eso.
+Student26: sí.
+Student26: Yo creo que esos aplicarían porque usted tiene casi toda la la los datos, usted que ha hecho y todo, pero los datos de del progreso si están en el servidor y si usted no se
+Student7: Exacto.
+Student26: loguea.
+Student7: Si no loguea, pues obviamente no va a poder jugar o no va a poder iniciar donde estaba.
+Student26: Claro.
+Student26: Sí. Y la aplicación sí o si está en el juego,
+Teacher: Okay.
+Student26: porque usted tiene que calcular ahí en el juego, usted tiene que calcular velocidad, trayectorias, proyectiles.
+Teacher: Entonces, mire que en las aplicaciones de tipo juegos móviles o digamos los juegos online o los las aplicaciones eh que descargamos al celular o descargamos en una consola, pero que tienen la responsabilidad online,
+Teacher: ¿sí?
+Teacher: Tienen un modelo de este tipo, ¿cierto?
+Teacher: Imaginémonos, no sé, un juego como League of Legends, ¿lo conocen?
+Teacher: LOL.
+Teacher: ¿Ustedes no les tocó
+Student26: Claro,
+Teacher: LOL?
+Student26: le llaman el bazuco.
+Student8: Lastimosamente,
+Student26: No.
+Student8: lastimosamente nos tocó ese
+Teacher: Solo los grandecitos.
+Teacher: Yo veo que los otros se quedan callados.
+Student8: electrónico.
+Teacher: Solo los grandecitos conocemos LOL.
+Teacher: Listo.
+Teacher: Eh,
+Student8: Apenas,
+Teacher: son son juegos en los que usted descarga un archivo o un archivo de, no sé, de 10 GB para correr de manera local.
+Teacher: Sí, para correrlo de manera local, pero parte de la información va a venir aquí centralizada.
+Teacher: ¿Cierto?
+Teacher: ¿Por qué?
+Teacher: ¿Por qué necesitas centralizar?
+Teacher: Ah, porque yo necesito interactuar con otros usuarios.
+Teacher: en pero la interacción no significa de que la el servidor tenga que hacer algún tipo de operación extraña.
+Teacher: puede ser simplemente un modelo de notificación de datos, dónde se encuentra la persona, etcétera, y que cada vez que nosotros nos movamos o estemos haciendo o o digámoslo así adquiramos una recompensa, pues simplemente vamos y consolidamos la recompensa,
+Teacher: pero General.
+Teacher: ente vamos a tener los datos de manera local.
+Teacher: ¿Listo?
+Teacher: Los sistemas eh que digámoslo así, los sistemas en línea o los sistemas móviles que pueden estar en modo desconectado, ¿cierto?
+Teacher: también entran dentro de este modelo, un un sistema donde nosotros podamos ir a un sitio donde no haya señal o un sitio remoto y podamos capturar información, procesar información eh y luego eh consolidar esa información
+Teacher: o descargar esa información a nuestra base de datos.
+Teacher: Pues si estoy offline, yo debo tener una base de datos local para guardar la información, ¿cierto?
+Teacher: y voy a guardar esa información de o parte de esa información realmente va a residir en mis datos, pero va a haber otra información que puede ser el detalle o puede ser solamente el consolidado que nosotros podemos llevar al servidor,
+Teacher: ¿cierto?
+Teacher: Y entonces mire que ahí eh es otro tipo de aplicaciones que nosotros podríamos tener.
+Teacher: Eh, Facebook, Facebook eh es una aplicación local que guarda sus datos de manera local.
+Teacher: Si estoy desconectado, todavía puedo ver mis fotos, todavía puedo ver eh notificaciones o mensajes anteriores.
+Teacher: Puede que no vea lo nuevo, pero todavía tengo la posibilidad de interactuar o de hacer cosas en en mi en mi Facebook.
+Teacher: No estoy seguro si yo en modo desconectado pueda subir fotos.
+Teacher: Ojo, no estoy seguro, pero muy probablemente yo puedo guardarla y luego cuando tenga red pues simplemente sincronizo.
+Teacher: ¿Cuál es la foto?
+Teacher: ¿Cuál es la información?
+Teacher: Y y se la comparto a los usuarios, etcétera.
+Teacher: ¿Sí?
+Teacher: Entonces, mire que voy a poder encontrar aplicaciones en cualquiera de estos repartos y cada uno de ellos me va a definir qué tan grueso es el es el cliente y el servidor.
+Teacher: Ahora pregunta, las aplicaciones de inteligencia artificial, ¿ustedes cómo la ven en qué?
+01:05:00
+Teacher: como un cliente grueso, un cliente delgado, están para este, están para este lado o están para este lado.
+Teacher: ¿Ustedes cómo la ven?
+Teacher: Las aplicaciones de, no sé, el chat GPT que ustedes tienen en el celular o que descargan en en el computador, codex, todas estas herramientas que nos han venido como como cayendo encima.
+Teacher: ¿En dónde la ven ustedes?
+Teacher: Ojo, no estoy hablando de la aplicación web, porque si esa aplicación web, ¿dónde está?
+Teacher: ¿Está por aquí o está por acá?
+Teacher: Estoy hablando de la aplicación que ustedes instalan equipo, en el celular o en el computador.
+Teacher: ¿Será que tiene poca responsabilidad la aplicación cliente o tiene mayor responsabilidad la aplicación cliente?
+Teacher: [estudiante].
+Student28: Profe, en mi opinión, pues como usted ya dijo, la web es cliente ligero, pero en mi opinión la la mobile, ¿cierto?
+Student28: A mi parecer sigue siendo un cliente ligero pero más grueso que el web.
+Student28: O sea, me explico, yo lo seguiría catalogando como un cliente ligero, pero no a la misma ligereza que el web.
+Teacher: Déjame ver esto.
+Teacher: ¿Por qué quedó tan grande?
+Teacher: Lo puedo reducir.
+Teacher: Okay.
+Student5: No.
+Teacher: Yo podría decir aquí que el web está dentro de este modo, pero es que no es necesariamente ahí, es que está como aquí, porque dependiendo, por ejemplo, el modelo que y eso que las aplicaciones nuevas hechas con Rad Angular y
+Teacher: esto podrían estar, digámoslo así, que esos cuadros de texto no les puede cambiar el el tamaño.
+Teacher: Single page application.
+Teacher: Realmente están como desde aquí.
+Teacher: Aquí podemos hacer rayitas.
+Teacher: Sí,
+Student28: Ah.
+Teacher: rayitas están desde aquí hasta acá y web estaría como desde aquí hasta acá, ¿cierto?
+Teacher: Pero aplicaciones web que estén dentro del dentro del mundo del PWA.
+Teacher: Sí saben que es un PA.
+Student8: Facebook
+Student18: A ver.
+Student8: application page
+Teacher: ¿Cómo?
+Teacher: ¿Cómo no es página web?
+Student8: web application.
+Teacher: No, no.
+Teacher: Progressive Progressive Web Apps,
+Student8: Ah.
+Teacher: o sea,
+Student8: Ah.
+Teacher: las aplicaciones web progresivas,
+Student8: Yeah.
+Teacher: ¿cierto?
+Teacher: Esa single page application progressive web apps.
+Teacher: ¿Qué tiene las Progressive Web Apps?
+Teacher: que yo voy a prácticamente tengo hasta almacenamiento dentro de la página web en el dispositivo.
+Teacher: Sí, esas Progressive Web App son las que yo puedo instalar en mi máquina, en mi dispositivo, en mi en mi computador o en mi o en mi celular.
+Teacher: Son páginas web, pero las puede instalar como si fueran aplicaciones nativas, entre comillas nativas, como si fueran aplicaciones instaladas desde la tienda de del dispositivo.
+Teacher: Entonces, mire que y esto es el mundo web.
+Teacher: Ahora, una aplicación como Chat GPT está en dónde estará dentro del mundo web de las SPA, PA.
+Teacher: Ojo, son aplicaciones web.
+Teacher: y en qué rango pueden estar, porque las SPA pueden ser tan pequeñas como que solo dego la interfaz gráfica, paso todo el JavaScript, toda la lógica de la aplicación la paso en JavaScript aquí, pero yo ya puedo tener mi aplicación hecha en Note o hecha en en Python o hecha en Java del lado
+Teacher: del servidor, ¿cierto?
+Teacher: Y ellos solamente muestran muestran información y capturan la información y se la mandan al backet.
+Teacher: Entonces, puede ser un SPA desde este lado o puedo llegar a un SPA que tenga la, digámoslo así, toda la lógica de la aplicación, todas las todas las eh reglas de negocio se las puedo dejar del lado de de la
+Teacher: página web y solamente dejar la base de datos o solamente dejar una backend for frontend, una database as service como supabase, como Firebase.
+Teacher: etcétera,
+Student26: Firebase.
+Teacher: ¿cierto?
+Teacher: Entonces, yo podría dejar que toda mi aplicación esté aquí corriendo del lado del cliente y simplemente
+Student26: Sí, usted está señalando algo,
+Teacher: dejar la base de datos afuera,
+Student26: profe.
+Student26: Usted está señalando algo.
+Teacher: creo.
+Student26: Es que yo no veo el cursor.
+Teacher: Pues entonces sí lo estoy señalando, pero no.
+01:10:00
+Teacher: Entonces, aquí.
+Student26: Oke,
+Teacher: Ah, sí, esa era, sí.
+Teacher: O sea, ay, es que se me borró el PWA, pero bueno.
+Teacher: Entonces, PA por aquí, Progressive Web Apps, las single page application pueden estar por aquí cuando solamente te lego la lógica de negocio y el resto de la aplicación está en el backend.
+Teacher: o pueden o lo puedo llevar hasta aquí donde la lógica eh toda la aplicación hecha en Angular o en React la tenemos de este lado y hace todo.
+Teacher: Y aquí del lado del servidor pues simplemente vamos a tener la base de datos.
+Teacher: Por ejemplo, una aplicación hecha en NextJS sería una aplicación por acá por en esta capa, ¿cierto?
+Teacher: porque va a haber parte de la aplicación que corre del lado del cliente y otra parte de la aplicación va a correr del lado del servidor.
+Teacher: Entonces, mire que hoy en día tenemos todas estas posibilidades de aprovechar los recursos que tengo en la máquina cliente, eh simplemente delegando parte de la responsabilidad, pero es más difícil hacer una actualización aquí porque la
+Teacher: tecnología que yo haya definido para hacerlo me debe permitir hacer una un proceso de actualización muy rápido.
+Teacher: Si no, voy a terminar haciendo un trabajo muy pesado.
+Teacher: Si yo defino que no voy a trabajar en el mundo web, sino que voy a trabajar en el mundo del escritorio.
+Teacher: Entonces, tener una aplicación como estas hecha en Java, hecha en punto net o hecha en en esto en Note
+Student26: Eso.
+Teacher: con Express,
+Student26: M.
+Teacher: pues entonces voy a terminar que haciendo de que cada 5 minutos tenga aquí un iconito de e actualizar, hay una nueva actualización, por favor actualice.
+Teacher: Hay una nueva actualización, por favor actualice.
+Teacher: Pero eso significa que tengo que hacer una aplicación o tengo que hacer de alguna manera una gestión de actualizaciones que no es no hacen parte de la funcionalidad de mi aplicación, pero sí de la decisión de diseño que tomamos de elegir C.
+Teacher: servidor con cliente grueso.
+Teacher: ¿Listo?
+Teacher: ¿Cómo vamos hasta ahí?
+Teacher: Bien.
+Teacher: Ahora, ¿qué otras formas tenemos nosotros para resolver este problema?
+Teacher: Digamos que la forma más sencilla es distribuir entre cliente y servidor, pero si ya nos dimos cuenta que a pesar de que distribuimos lo que podíamos pasar al cliente, mi servidor sigue siendo o sigue quedando con muchas responsabilidades o mi sistema es tan
+Teacher: grande que las responsabilidades que tiene el servidor, pues entonces se vuelven un poco complejas.
+Teacher: Entonces, aquí vamos a ver distintas opciones que tenemos para para resolver del lado del servidor.
+Teacher: Del lado del cliente, traigámonos las cosas al cliente.
+Teacher: Del lado del servidor, pues resolvámoslo de otra manera.
+Teacher: Entonces, ¿cómo podemos resolverlo del lado del servidor?
+Teacher: Entonces, tenemos distintas opciones.
+Teacher: Cliente, servidor con caché o con cage.
+Teacher: En español es caché.
+Teacher: ¿Qué es la caché?
+Teacher: ¿Alguien?
+Teacher: Bueno, eso lo vamos a ver en la próxima clase, pero ¿qué es la caché?
+Student26: Es una memoria temporal.
+Student8: Memoria próxima.
+Teacher: Es una memoria temporal.
+Student26: Ahí está.
+Teacher: Entonces, ¿cómo podemos hacer que nuestro sistema cliente servidor trabaje con una memoria temporal?
+Teacher: Cliente servidor usando proxis.
+Teacher: ¿Listo?
+Teacher: ¿Cómo desarrollar un cliente servidor jerárquico?
+Teacher: ¿Cómo desarrollar un cliente servidor con con reparto de carga?
+Teacher: ¿Cómo voy a distribuir esto?
+Teacher: ¿Cómo voy a hacer de que este servidor no sea el único servidor que que estamos atendiendo, sino que pueda vamos a distribuir la responsabilidad a múltiples servidores, cómo puedo tener cliente servidor con alta disponibilidad?
+Teacher: Y vamos a hablar un poco sobre este tema de la alta disponibilidad y cómo vamos a tener, bueno, y el último modelo o la última variación que podría ser cliente servidor con código móvil.
+Teacher: ¿Por qué hablamos de código móvil?
+Teacher: Porque lo normal que hablamos en la arquitectura cliente servidor es que yo le digo, "Ey, yo quiero servidor, por favor, eh, guárdame o quiero crear un usuario, le mando los datos y el servidor es el que procesa la información y devuelve una respuesta." Entonces,
+Teacher: normalmente las peticiones o las solicitudes que hace el cliente es qué tarea quiero hacer y los datos, los argumentos de esa tarea, ¿cierto?
+Teacher: En cambio, hay una posibilidad que en lugar de yo mandar el nombre del servicio, el nombre de la tarea y los datos, yo le mando el código que quiero que haga.
+Teacher: Entonces, puede ser que el código suba del cliente al servidor o que el servidor se lo entregue al usuario.
+Teacher: Entonces, esas son como las posibilidades que tenemos y vamos a ir hablando, vamos a ir discutiendo de ellas poco a poco.
+Teacher: ¿Listo?
+Teacher: Eh, jóvenes, dejemos hoy por aquí porque ya hablar de este primero nos vamos a gastar más de 10 minutos, mucho más de 10 minutos, espero.
+01:15:00
+Teacher: Y eh vamos a dejar esto, pues vamos a dejar la clase de hoy por aquí.
+Teacher: No sé si tienen alguna duda, alguna inquietud sobre lo que estuvimos hablando el día de hoy.
+Student26: Yo no tengo inquietud sobre el que hablamos, pero con el tema de la de ir presencial, ¿hay algo resuelto con ese tema?
+Student26: M.
+Teacher: Pues lo que es, yo paro aquí la grabación porque no me queda chisme.
+La reunión finalizó después de 01:15:43 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+

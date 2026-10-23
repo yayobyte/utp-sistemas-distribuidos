@@ -1,0 +1,1459 @@
+00:00:13 - 00:00:25 >> Teacher: 00:00:14 - 00:00:25 Listo, muy buenas
+noches a 00:00:15 - 00:00:25 todos, cómo están? Espero que 00:00:17 - 00:00:25 muy bien
+nada los 00:00:30 - 00:00:35 Le doy la bienvenida a otra a 00:00:30 - 00:00:40 otra nueva
+sesión de la clase 00:00:31 - 00:00:40 listo vamos a continuar con el 00:00:35 - 00:00:41 tema
+que veníamos hablando sobre 00:00:36 - 00:00:42 la distribución de la 00:00:40 - 00:00:47
+introducción a los sistemas 00:00:40 - 00:00:47 distribuidos y seguir hablando 00:00:41 -
+00:00:47 sobre De dónde viene, por qué? 00:00:52 - 00:00:54 es tan importante este tema
+00:00:52 - 00:00:57 listo voy a compartir aquí 00:00:53 - 00:00:57 pantalla. Aquí sería mejor la
+00:00:53 - 00:00:57 ventana por si necesito abrir 00:00:54 - 00:00:57 más cosas. 00:01:05 -
+00:01:10 Bien, ahí pueden ver mi 00:01:05 - 00:01:10 pantalla. 00:01:11 - 00:01:18 Dale
+nosotros nos quedamos en la 00:01:12 - 00:01:18 sesión. del martes pasado, nos 00:01:17 -
+00:01:23 quedamos justamente en esta 00:01:17 - 00:01:23 diapositiva cierto y es 00:01:18 -
+00:01:23 entendiendo Cuáles son las 00:01:18 - 00:01:23 aplicaciones. 00:01:27 - 00:01:30
+donde nosotros realmente vamos a 00:01:28 - 00:01:33 a estar viendo este tema de los
+00:01:29 - 00:01:33 sistemas distribuidos, o sea, en 00:01:29 - 00:01:38 dónde vamos a poder
+aplicar este 00:01:30 - 00:01:38 conocimiento que vamos a ir 00:01:33 - 00:01:39 adquiriendo
+Durante este 00:01:33 - 00:01:40 semestre entonces. uno de los 00:01:38 - 00:01:45 elementos
+principales, pues son 00:01:38 - 00:01:45 los entornos empresariales 00:01:39 - 00:01:45 cierto
+todo lo que son las 00:01:40 - 00:01:45 empresas. 00:01:49 - 00:01:51 y aplicaciones que
+corren al 00:01:49 - 00:01:53 interior de la empresa la 00:01:50 - 00:01:53 gestión empresarial.
+Nosotros 00:01:50 - 00:01:54 vamos a poderlo implementar o 00:01:51 - 00:01:58 vamos a
+poder implementar un 00:01:53 - 00:01:59 sistema distribuido para ese 00:01:53 - 00:01:59 tipo
+de aplicaciones, 00:01:54 - 00:02:03 básicamente vamos a sustituir 00:01:58 - 00:02:04 los
+grandes mainframes o los 00:01:59 - 00:02:06 grandes computadores que 00:01:59 - 00:02:11
+teníamos en en la antigüedad o 00:02:03 - 00:02:11 que mucha en muchas empresas 00:02:04
+- 00:02:11 Todavía existen como sistemas 00:02:06 - 00:02:11 legados o como sistemas de
+00:02:15 - 00:02:20 Y vamos a reemplazarlo por unos 00:02:16 - 00:02:20 buenos sistemas
+distribuidos 00:02:16 - 00:02:24 cierto, vamos a crear un 00:02:19 - 00:02:24 sistema distribuido
+donde ya no 00:02:20 - 00:02:25 todo lo vamos a consolidar en un 00:02:20 - 00:02:28 una sola
+máquina, sino que 00:02:24 - 00:02:29 podemos tener múltiples máquinas 00:02:24 - 00:02:30
+que estén intercambiando 00:02:25 - 00:02:33 información entre. Sí en 00:02:29 - 00:02:33
+entornos de altas prestaciones 00:02:29 - 00:02:33 ya habíamos hablado un poco de 00:02:30 -
+00:02:33 estos 00:02:34 - 00:02:40 ejemplos de los sistemas de 00:02:35 - 00:02:41 altas
+prestaciones y 00:02:35 - 00:02:42 básicamente, pues habla de de 00:02:39 - 00:02:47 esos
+sistemas donde necesitamos 00:02:40 - 00:02:47 procesar grandes, volúmenes de 00:02:41 -
+00:02:47 información o necesitamos 00:02:43 - 00:02:47 ejecutar. 00:02:53 - 00:02:55 sistemas
+o programas que 00:02:53 - 00:02:57 necesitan una gran cantidad de 00:02:54 - 00:02:57
+recursos y la idea es de que 00:02:54 - 00:03:02 podamos hacerlo en de una manera 00:02:55 -
+00:03:02 que no sea mucho más 00:02:57 - 00:03:02 beneficiosa, O al menos nos de 00:02:57 -
+00:03:02 un poco más de 00:03:08 - 00:03:13 También vamos a tener sistemas 00:03:08 -
+00:03:13 de alta disponibilidad y 00:03:09 - 00:03:13 rendimiento que es 00:03:14 - 00:03:20
+más o menos al ejemplo que el 00:03:14 - 00:03:24 compañero nos estaba comentando
+00:03:15 - 00:03:24 la vez pasada que que estábamos 00:03:19 - 00:03:24 en esta discusión de
+Cuál era la 00:03:20 - 00:03:24 diferencia entre hpc y 00:03:26 - 00:03:32 y alto y alta
+disponibilidad 00:03:27 - 00:03:32 cierto, o sea, Recuerden que hpc 00:03:27 - 00:03:36 o
+sistemas de altas 00:03:31 - 00:03:37 prestaciones o de alto 00:03:32 - 00:03:38 rendimiento
+Busca es que una 00:03:32 - 00:03:38 tarea con todos los recursos 00:03:37 - 00:03:47 que
+tengo disponibles ejecutarlo 00:03:37 - 00:03:47 en el menor tiempo posible 00:03:38 - 00:03:47
+cierto pero en algunos casos en 00:03:41 - 00:03:47 escenarios Hay personas o hay 00:03:49 -
+00:03:54 situaciones o hay negocios o 00:03:49 - 00:03:54 sistemas que deben estar siempre
+00:03:50 - 00:03:54 disponibles cierto? 00:04:00 - 00:04:03 aplicaciones donde no es posible
+00:04:01 - 00:04:08 que podamos tener caída nuestra 00:04:01 - 00:04:08 plataforma durante
+mucho tiempo 00:04:02 - 00:04:08 páginas como Google como Amazon 00:04:03 - 00:04:08
+como 00:04:15 - 00:04:17 Netflix son plataformas que 00:04:15 - 00:04:19 siempre deben estar
+disponibles, 00:04:16 - 00:04:19 o sea lo que busca como como 00:04:16 - 00:04:20 valor de
+ganancia, dentro del 00:04:17 - 00:04:24 sistema es que el usuario puede 00:04:19 - 00:04:25
+ingresar en cualquier momento en 00:04:20 - 00:04:29 cualquier desde cualquier lugar 00:04:20
+- 00:04:29 cierto Y entonces ahí es vamos 00:04:24 - 00:04:29 a necesitar servicios de alta
+00:04:25 - 00:04:29 disponibilidad y cuando 00:04:30 - 00:04:37 necesitamos ese tipo de de
+00:04:30 - 00:04:37 sistemas pues tenemos que hablar 00:04:31 - 00:04:37 de sistemas
+distribuidos, o sea 00:04:38 - 00:04:43 todos estos conceptos que han 00:04:38 - 00:04:46
+venido a nosotros en los últimos 00:04:39 - 00:04:47 años tienen que ver mucho. Es 00:04:42 -
+00:04:51 con aplicaciones de los sistemas 00:04:43 - 00:04:51 distribuidos. sistemas 00:04:46 -
+00:04:51 distribuidos de gestión de base 00:04:47 - 00:04:51 de datos más o menos como
+00:04:53 - 00:04:58 el el ejemplo que hemos venido 00:04:54 - 00:04:58 hablando de del banco
+cierto 00:04:54 - 00:04:58 donde donde decimos que 00:05:00 - 00:05:05 el sistema puede
+tener bases de 00:05:01 - 00:05:05 datos independientes en cada uno 00:05:02 - 00:05:05 de
+los sitios y 00:05:08 - 00:05:13 y las Perdón los empleados van a 00:05:08 - 00:05:16 estar
+conectándose al al sistema 00:05:09 - 00:05:17 local Pero entre los sistemas 00:05:12 -
+00:05:17 van a poder estar intercambiando 00:05:13 - 00:05:21 información entonces en ese en
+00:05:16 - 00:05:22 ese modelo también es importante 00:05:17 - 00:05:26 O también es útil
+este tema de 00:05:17 - 00:05:26 los sistemas distribuidos 00:05:21 - 00:05:26 sistemas de
+procesamiento de 00:05:22 - 00:05:26 datos masivos Big Data cuando 00:05:27 - 00:05:32
+hablamos no sé si ustedes tienen 00:05:28 - 00:05:32 claro el concepto de Big Data 00:05:28 -
+00:05:32 Qué es Big Data 00:05:34 - 00:05:39 Antes de asumir Qué es Big Data 00:05:35 -
+00:05:40 para ustedes. 00:05:38 - 00:05:42 >> Student5: Y profe, pues como 00:05:39 - 00:05:43 dice para nosotros para mí es 00:05:40 -
+00:05:45 como una cantidad de 00:05:42 - 00:05:45 información muy grande. 00:05:43 -
+00:05:49 >> Teacher: Y 00:05:43 - 00:05:49 que es muy grande. 00:05:45 -
+00:05:50 >> Student5: en cantidad 00:05:49 -
+00:05:51 >> Teacher: 00:05:49 - 00:05:51 Pues para usted qué sería una
+00:05:50 - 00:05:56 una cantidad de datos muy 00:05:50 - 00:05:56 grande. 00:05:51 - 00:05:56
+>> Student5: no hablar de 00:06:01 - 00:06:07 >>
+Teacher: 00:06:02 - 00:06:07 Un disco duro lleno dos discos 00:06:03 -
+00:06:08 duros llenos sería un gran 00:06:03 - 00:06:12 cantidad de datos. Podríamos 00:06:07
+- 00:06:12 nosotros estar hablando de estar 00:06:07 - 00:06:12 procesando a niveles de
+00:06:08 - 00:06:12 petabytes, 00:06:15 - 00:06:19 Sí o sea, vamos a hablar de que 00:06:15 -
+00:06:20 nuestro sistema tiene la 00:06:16 - 00:06:22 posibilidad de estar leyendo 00:06:19 -
+00:06:27 grandes, volúmenes de 00:06:19 - 00:06:27 información gran cantidad de 00:06:20 -
+00:06:27 información información que 00:06:22 - 00:06:27 puede ser. 00:06:30 - 00:06:36 Que
+pueden ser datos en una base 00:06:31 - 00:06:36 de datos o en un Jason o en un 00:06:31 -
+00:06:40 xml que esos datos 00:06:35 - 00:06:40 estructurados donde cada 00:06:36 - 00:06:40
+información está dentro de un 00:06:36 - 00:06:40 campo o puede 00:06:41 - 00:06:46 ser
+datos, no estructurados como 00:06:42 - 00:06:46 un archivo de logs o pueden ser 00:06:42 -
+00:06:46 datos binarios 00:06:48 - 00:06:53 videos audios, etcétera, todo 00:06:49 - 00:06:53
+ese tipo de de datos o de 00:06:49 - 00:06:53 procesamiento de datos 00:06:54 - 00:07:00 y de
+esos datos sacar 00:06:55 - 00:07:01 información son casi imposibles 00:06:55 - 00:07:05
+realizarlos y no estamos 00:07:00 - 00:07:06 trabajando en un mundo de los 00:07:00 -
+00:07:06 sistemas distribuidos listo, el 00:07:01 - 00:07:10 Big Data básicamente se 00:07:05 -
+00:07:11 concentra o o su función es 00:07:06 - 00:07:14 poder consolidar información de
+00:07:10 - 00:07:15 diferentes Fuentes que no 00:07:10 - 00:07:15 siempre va a ser una base
+de 00:07:11 - 00:07:19 datos estructurada como las que 00:07:14 - 00:07:19 nosotros
+normalmente. Manejamos 00:07:15 - 00:07:22 sino que pueden venir de 00:07:15 - 00:07:23
+distintos lugares de distintas 00:07:19 - 00:07:23 Fuentes Y con toda esa 00:07:19 - 00:07:27
+información nosotros vamos a 00:07:22 - 00:07:27 procesarla y vamos a generar 00:07:23 -
+00:07:27 resultados El ejemplo del 00:07:23 - 00:07:27 pronóstico creo que yo les 00:07:30 -
+00:07:34 Dije el ejemplo del pronóstico 00:07:30 - 00:07:34 de clima cierto, eso es una un
+00:07:31 - 00:07:34 ejemplo de lo que 00:07:36 - 00:07:41 es procesamiento de Big Data
+00:07:36 - 00:07:46 cierto o de grandes datos 00:07:37 - 00:07:46 masivos de datos, vamos a
+tener 00:07:41 - 00:07:46 información de satélites, vamos 00:07:41 - 00:07:46 a tener
+información de 00:07:49 - 00:07:53 de sensores de viento de 00:07:49 - 00:07:54 sensores de
+olas o de movimiento 00:07:50 - 00:07:54 en el mar etcétera y vamos a 00:07:50 - 00:07:57
+coger toda esa información y la 00:07:53 - 00:07:58 vamos a procesar y vamos a 00:07:54 -
+00:08:01 generar un resultado a partir de 00:07:54 - 00:08:01 eso. Entonces eso es a lo que
+00:07:57 - 00:08:02 Nosotros llamamos procesamiento 00:07:58 - 00:08:06 de datos masivos o
+llamamos Big 00:08:01 - 00:08:06 Data desde el punto de vista 00:08:02 - 00:08:06 empresarial
+Pues también vamos a 00:08:07 - 00:08:12 tener ejemplos de Big Data 00:08:07 - 00:08:12
+cierto donde podemos capturar 00:08:08 - 00:08:12 información de redes 00:08:13 - 00:08:18
+sociales o eh de distintas 00:08:14 - 00:08:18 Fuentes digámoslo así Y a partir 00:08:14 -
+00:08:18 de toda su 00:08:19 - 00:08:23 información. Nosotros pudiésemos 00:08:20 - 00:08:27
+generar conocimiento generar 00:08:20 - 00:08:27 decisiones o crear información 00:08:23 -
+00:08:27 que nos ayude a tomar decisiones 00:08:23 - 00:08:27 Ahí es donde nosotros
+00:08:28 - 00:08:35 hablamos de procesamiento de Big 00:08:29 - 00:08:41 Data aplicaciones
+multimedia lo 00:08:30 - 00:08:41 que hablábamos de la 00:08:32 - 00:08:45 renderización de
+películas o 00:08:36 - 00:08:45 gestión de videos creación de 00:08:41 - 00:08:45 información o
+de datos todo eso 00:08:41 - 00:08:45 tiene que ver con 00:08:48 - 00:08:53 aprovechamiento
+del de este 00:08:48 - 00:08:53 mundo de los sistemas 00:08:49 - 00:08:53 distribuidos
+sistemas 00:08:49 - 00:08:53 industriales 00:08:54 - 00:08:56 y aplicaciones de control Todo
+00:08:54 - 00:08:59 lo que tiene que ver con las 00:08:55 - 00:08:59 Industrias y la
+automatización 00:08:56 - 00:08:59 de las Industrias cierto que 00:08:56 - 00:08:59 nosotros
+podamos 00:09:00 - 00:09:06 ver empresas que tienen una 00:09:00 - 00:09:09 línea de
+producción o una línea 00:09:01 - 00:09:10 de ensamblaje y en cada puesto 00:09:05 -
+00:09:10 pues se hace diferentes cosas 00:09:06 - 00:09:14 cierto. o sea que estemos 00:09:09
+- 00:09:15 trabajando con robots sea que 00:09:10 - 00:09:19 estemos trabajando con sensores
+00:09:10 - 00:09:20 sea que estemos trabajando con 00:09:14 - 00:09:20 diferentes
+herramientas para 00:09:15 - 00:09:22 poder lograr que todos esos 00:09:19 - 00:09:23
+elementos se puedan puedan 00:09:20 - 00:09:27 trabajar de la manera adecuada 00:09:20 -
+00:09:27 es muy probable que tengamos 00:09:22 - 00:09:27 que implementar sistemas
+00:09:23 - 00:09:27 distribuidos listo. 00:09:28 - 00:09:32 Un ejemplo o digámoslo así El
+00:09:29 - 00:09:33 ejemplo más claro para entender 00:09:30 - 00:09:36 Qué es un buen
+sistema 00:09:32 - 00:09:37 distribuido que es un sistema 00:09:32 - 00:09:41 distribuido que
+cumple con todo 00:09:33 - 00:09:41 lo que nosotros esperamos de un 00:09:36 - 00:09:41
+sistema distribuido es lo que 00:09:37 - 00:09:41 Nosotros llamamos 00:09:42 - 00:09:47
+internet, pregunta, Qué es 00:09:42 - 00:09:47 internet para ustedes que es 00:09:43 - 00:09:47
+internet. 00:09:48 - 00:09:55 no me digan que una enorme 00:09:48 - 00:09:55 sistema
+distribuido Qué es 00:09:49 - 00:09:55 internet para ustedes que es 00:09:50 - 00:09:55
+internet. 00:09:58 - 00:10:02 es un conjunto de nodos cierto 00:09:59 - 00:10:02 conectados por
+una red de 00:09:59 - 00:10:06 carácter heterogéneo, o sea, 00:10:01 - 00:10:07 que todos los
+nodos que estaban 00:10:02 - 00:10:09 conectados a internet, no tienen 00:10:02 - 00:10:10
+que ser exactamente iguales no 00:10:06 - 00:10:10 tienen reloj común, no tienen 00:10:07 -
+00:10:11 memoria, compartida se acuerdan 00:10:09 - 00:10:16 de las características o la
+00:10:10 - 00:10:17 definición de sistema de 00:10:10 - 00:10:21 distribuido que les planteé por
+00:10:11 - 00:10:21 al principio. Tiene una visión 00:10:17 - 00:10:21 única por nosotros no
+decimos 00:10:17 - 00:10:21 Mira es que este es el 00:10:22 - 00:10:28 internet de x cosa y el
+de y 00:10:23 - 00:10:28 simplemente es la forma de 00:10:23 - 00:10:30 acceder a unos
+servicios la 00:10:27 - 00:10:31 forma de acceder a unos recursos 00:10:28 - 00:10:31 y que
+esos recursos digamos las 00:10:28 - 00:10:36 independientes desde donde lo 00:10:30 -
+00:10:36 estoy haciendo si lo estoy 00:10:31 - 00:10:40 haciendo desde el celular desde
+00:10:32 - 00:10:41 mi computador o desde el 00:10:36 - 00:10:42 computador del de la
+universidad 00:10:36 - 00:10:45 Voy a poder acceder a los 00:10:41 - 00:10:45 mismos
+servicios, bueno, 00:10:41 - 00:10:46 hablando de sin tener en cuenta, 00:10:42 - 00:10:50
+pues las algunas limitaciones 00:10:45 - 00:10:50 que nos dan en algunos en 00:10:45 -
+00:10:50 algunas redes, pero básicamente 00:10:46 - 00:10:50 es eso 00:10:51 - 00:10:55 es
+tener un equipo conectado a 00:10:51 - 00:10:56 una red y poder acceder a todos 00:10:52 -
+00:11:00 esos recursos. Nosotros no 00:10:55 - 00:11:00 decimos de que existen 00:10:55 -
+00:11:00 diferentes internet, tenemos un 00:10:56 - 00:11:00 solo 00:11:01 - 00:11:06 internet y
+ese es el concepto de 00:11:01 - 00:11:06 visión única del sistema Y es 00:11:02 - 00:11:06 que
+independiente de 00:11:07 - 00:11:12 cómo esté formado, Cuántos 00:11:08 - 00:11:16 nodos,
+salgan parte de ese 00:11:08 - 00:11:16 sistema entonces. nosotros, 00:11:11 - 00:11:16
+nosotros como usuarios, No 00:11:12 - 00:11:16 deberíamos de tener. 00:11:18 - 00:11:24 la
+necesidad de conocer Cuál es 00:11:19 - 00:11:24 su estructura Cuál es su 00:11:19 - 00:11:28
+topología Cuál es su Cómo está 00:11:23 - 00:11:29 formado cierto. Nosotros no 00:11:24 -
+00:11:30 tenemos que saberlo simplemente 00:11:24 - 00:11:33 sabemos de que si tenemos
+00:11:28 - 00:11:34 acceso a internet, vamos a poder 00:11:29 - 00:11:34 llegar a los recursos
+los 00:11:30 - 00:11:38 recursos pueden ser 00:11:33 - 00:11:38 aplicaciones pueden ser
+00:11:34 - 00:11:38 almacenamiento, etcétera, 00:11:34 - 00:11:38 etcétera listo. 00:11:39 -
+00:11:45 Otro punto donde vemos bastante 00:11:40 - 00:11:46 el tema de los sistemas bueno
+00:11:40 - 00:11:50 que ahorita se ha vuelto muy 00:11:45 - 00:11:55 popular. Es este tema de
+los 00:11:45 - 00:11:55 sistemas únicos, Qué es un 00:11:46 - 00:11:55 sistema, ubico es un
+sistema 00:11:50 - 00:11:55 donde estamos ya no solo. 00:11:56 - 00:12:01 haciendo
+procesamiento de 00:11:56 - 00:12:01 información o gestión de la 00:11:57 - 00:12:06
+información que nosotros como 00:11:57 - 00:12:06 humanos podemos suministrarle 00:12:01 -
+00:12:07 al a la empresa, pues al sistema 00:12:01 - 00:12:10 Perdón sino que ya van a ser
+00:12:06 - 00:12:10 dispositivos que van a poder 00:12:06 - 00:12:11 agregar información al
+sistema 00:12:07 - 00:12:15 cierto y ahí es donde vamos a 00:12:10 - 00:12:15 empezar a
+hablar de por ejemplo, 00:12:11 - 00:12:15 todo esto todos estos avances 00:12:11 - 00:12:15
+que 00:12:16 - 00:12:21 hemos visto sobre los vehículos 00:12:16 - 00:12:25 inteligentes ya no
+solo son 00:12:17 - 00:12:25 sistemas que corren solamente 00:12:20 - 00:12:26 en la máquina
+local o en el 00:12:21 - 00:12:30 equipo, sino que muchos de Ya 00:12:25 - 00:12:31 están
+conectados a internet, 00:12:26 - 00:12:35 pueden ser monitoreados en 00:12:26 - 00:12:35
+internet, pueden mandar 00:12:30 - 00:12:35 información y y Descargar 00:12:31 - 00:12:35
+información de manera? 00:12:36 - 00:12:42 independiente utilizando la red 00:12:37 - 00:12:43
+Y entonces puedo tomar o los 00:12:38 - 00:12:46 sistemas pueden tomar decisiones 00:12:42
+- 00:12:46 o pueden interactuar o pueden 00:12:42 - 00:12:47 ejecutar algunas tareas 00:12:43
+- 00:12:54 dependiendo de todos de esa 00:12:46 - 00:12:54 intercambio información que
+00:12:46 - 00:12:54 tenemos entre los distintos 00:12:47 - 00:12:54 nodos. podemos tener.
+00:13:00 - 00:13:02 lo que Nosotros llamamos como 00:13:01 - 00:13:02 domótica toda la parte
+00:13:01 - 00:13:03 automatización de de sensor, 00:13:01 - 00:13:07 pues tener sensores
+tener 00:13:02 - 00:13:07 bombillos inteligentes tener 00:13:03 - 00:13:07 apertura de puertas
+utilizando. 00:13:08 - 00:13:14 sistemas biométricos y esos 00:13:08 - 00:13:18 sistemas
+biométricos conectados 00:13:09 - 00:13:19 al sistema todos esos elementos 00:13:13 -
+00:13:19 que hacen parte de una solución 00:13:14 - 00:13:22 completa de sistema una
+00:13:18 - 00:13:23 solución completa de informática 00:13:19 - 00:13:23 pues al final se tiene
+que 00:13:19 - 00:13:27 implementar como si fueran 00:13:22 - 00:13:27 sistemas distribuidos
+cada uno 00:13:23 - 00:13:27 de esos elementos cada uno de 00:13:23 - 00:13:27 esos
+00:13:28 - 00:13:34 componentes que hacen parte de 00:13:29 - 00:13:35 todo ese digámoslo
+así de todo 00:13:29 - 00:13:41 lo necesario para que el 00:13:33 - 00:13:41 sistema tome
+decisiones hace de 00:13:34 - 00:13:41 que nuestro sistema se convierta 00:13:35 - 00:13:41
+en un sistema distribuido 00:13:42 - 00:13:50 Y dónde vamos a estar viendo 00:13:43 -
+00:13:50 todos estos sistemas Pues en en 00:13:43 - 00:13:55 todo tipo de de negocios cierto
+00:13:50 - 00:13:55 tanto en sistemas 00:13:50 - 00:13:55 computacionales como los que
+00:13:50 - 00:13:55 nosotros usamos cierto. 00:14:01 - 00:14:04 en grandes datacentes como
+como 00:14:02 - 00:14:06 Amazon como gcp etcétera donde 00:14:02 - 00:14:07 vamos a tener
+gran capacidad de 00:14:03 - 00:14:07 procesamiento de información 00:14:04 - 00:14:13
+almacenamiento y vamos a poder 00:14:06 - 00:14:13 gestionar un sistema o una 00:14:07 -
+00:14:13 empresa a partir de lo que 00:14:07 - 00:14:13 tenemos nosotros aquí. 00:14:16 -
+00:14:18 podemos tener las las líneas 00:14:16 - 00:14:20 industriales los sistemas 00:14:17 -
+00:14:21 industriales también hacen parte 00:14:17 - 00:14:21 de de esos sistemas distribuidos
+00:14:18 - 00:14:25 cada uno de estos elementos que 00:14:20 - 00:14:25 tenemos nosotros
+aquí pueden 00:14:21 - 00:14:25 servir como elementos de entrada 00:14:21 - 00:14:25 o
+00:14:27 - 00:14:32 de salida del sistema cierto 00:14:27 - 00:14:32 Entonces si un robot tiene
+que 00:14:28 - 00:14:35 hacer una acción significa que 00:14:31 - 00:14:36 cada uno de estos
+robots debe 00:14:32 - 00:14:37 ser gestionado por nuestro 00:14:32 - 00:14:41 sistema y este
+robot Recibió la 00:14:35 - 00:14:42 información de Qué era lo que 00:14:36 - 00:14:43 tenía
+que hacer en un momento 00:14:37 - 00:14:49 determina. Do Entonces esto 00:14:41 -
+00:14:49 también puede ser todo este tema 00:14:42 - 00:14:49 de sistemas distribuidos toda
+00:14:43 - 00:14:49 la parte de 00:14:53 - 00:14:55 de multimedia los carros la 00:14:53 -
+00:14:58 computación los dispositivos en 00:14:54 - 00:14:58 general ya conocemos neveras
+00:14:54 - 00:14:58 inteligentes lavadoras 00:14:55 - 00:14:58 inteligentes. 00:14:59 - 00:15:04
+en general televisores 00:14:59 - 00:15:05 inteligentes Tenemos una gran 00:15:00 - 00:15:06
+cantidad de dispositivos que 00:15:04 - 00:15:09 que tienen la capacidad de 00:15:05 -
+00:15:14 capturar o de presentar 00:15:05 - 00:15:14 información que esté ocurriendo 00:15:06
+- 00:15:14 en un poco más grande Vamos 00:15:09 - 00:15:14 bien hasta ahí o no? 00:15:15 -
+00:15:25 sí Ya se van a dormir aquí. 00:15:26 - 00:15:28 listo, entonces Aquí voy a 00:15:26 -
+00:15:31 hablar, vamos a empezar a hablar 00:15:27 - 00:15:31 un poco sobre los modelos de
+00:15:28 - 00:15:31 computación distribuida, Qué es 00:15:28 - 00:15:31 eso de los 00:15:32 -
+00:15:38 modelos y es que a diferencia a 00:15:33 - 00:15:39 pesar de que ya hemos hablado
+de 00:15:33 - 00:15:42 lo que es el Cris de cluster 00:15:37 - 00:15:42 como como
+infraestructura que 00:15:38 - 00:15:44 vamos a tener que comprar muchos 00:15:41 - 00:15:48
+equipos o voy a poder distribuir 00:15:42 - 00:15:48 muchos equipos en diferentes, 00:15:42 -
+00:15:48 lugares y conectarlos por 00:15:44 - 00:15:48 redes. 00:15:52 - 00:15:55 no es la
+única forma de hacer 00:15:53 - 00:15:57 computación. Sí Recuerden que 00:15:54 - 00:15:57
+vamos a hablar de computación 00:15:54 - 00:16:01 como la capacidad de hacer el 00:15:55 -
+00:16:01 procesamiento de información en 00:15:57 - 00:16:06 distintos lugares cierto en este
+00:15:57 - 00:16:06 caso, como estamos hablando 00:16:01 - 00:16:06 distribuido, pues vamos
+a estar 00:16:01 - 00:16:06 diciendo que vamos a estar. 00:16:08 - 00:16:13 Procesando
+información del 00:16:08 - 00:16:13 sistema en distintos lugares 00:16:09 - 00:16:13 listo y en
+este caso 00:16:15 - 00:16:21 existen nueve modelos o por 00:16:16 - 00:16:21 ahora tenemos
+nueve modelos que 00:16:16 - 00:16:24 hace 20 años muchos de ellos 00:16:20 - 00:16:29
+eran utopía o eran cosas que 00:16:21 - 00:16:29 pensábamos que iban a pasar en 00:16:21 -
+00:16:29 el futuro o teníamos unos 00:16:24 - 00:16:29 pequeños. 00:16:31 - 00:16:33
+pequeñas aplicaciones que podían 00:16:32 - 00:16:35 ser potencialmente útiles en la 00:16:32
+- 00:16:35 computación distribuida, pero 00:16:33 - 00:16:39 que hoy en día Muchos de ellos
+00:16:34 - 00:16:46 pues ya hacen parte pues de la 00:16:35 - 00:16:46 cotidianidad cierto, El
+Avance 00:16:38 - 00:16:46 Que hemos tenido en los últimos 00:16:39 - 00:16:46 diez años. ha
+sido 00:16:49 - 00:16:51 digámoslo así más grande que 00:16:49 - 00:16:54 toda la historia de
+la 00:16:50 - 00:16:54 computación Recuerden que la 00:16:50 - 00:16:54 computación empezó
+en los años 00:16:51 - 00:16:54 50 y en los años 80 apenas 00:16:55 - 00:17:05 apareció el
+computador personal 00:16:56 - 00:17:05 pero del año dos mil del daño 00:16:56 - 00:17:05
+después del año 2000 hubo una 00:17:00 - 00:17:05 gran explosión de 00:17:06 - 00:17:09 de
+necesidad de computación y 00:17:07 - 00:17:14 por eso es que han aparecido 00:17:07 -
+00:17:14 todos estos servicios y todas 00:17:08 - 00:17:14 estas herramientas que hoy
+00:17:09 - 00:17:14 conocemos en día pero 00:17:17 - 00:17:19 han existido desde Siempre
+00:17:18 - 00:17:22 listo, Cuáles son los modelos de 00:17:18 - 00:17:23 computación
+distribuida cluster 00:17:19 - 00:17:27 computer involuntaire computer 00:17:19 - 00:17:27
+inutility Cloud Mobile 00:17:22 - 00:17:27 ubiquitus, Edge Edge o f*** 00:17:23 - 00:17:27
+computing y autonomía 00:17:28 - 00:17:34 listo vamos a ir hablando un 00:17:29 - 00:17:35
+poco sobre cada uno de ellos El 00:17:30 - 00:17:38 cluster, estuvimos hablando de 00:17:34 -
+00:17:38 ellos En en la clase pasada 00:17:34 - 00:17:38 cierto. Estábamos diciendo que
+00:17:35 - 00:17:38 era un 00:17:40 - 00:17:47 software un sistema distribuido 00:17:40 -
+00:17:47 Dedicado para qué Para Cuántos 00:17:41 - 00:17:47 trabajos. En el cluster. 00:17:49
+- 00:17:55 Para uno cierto, o sea, estamos 00:17:50 - 00:17:55 buscando que todos estos
+00:17:50 - 00:17:59 recursos de cómputo sirvan para 00:17:54 - 00:17:59 resolver un problema
+un problema 00:17:55 - 00:17:59 que necesita grandes capacidades 00:17:55 - 00:17:59 y
+00:18:00 - 00:18:05 quiero mejorarlas los recursos 00:18:01 - 00:18:09 disponibles para mejorar
+el 00:18:01 - 00:18:10 tiempo de respuesta o reducir 00:18:04 - 00:18:11 el tiempo que se
+demora en 00:18:05 - 00:18:14 procesar esas grandes tareas. 00:18:10 - 00:18:14 Listo, eso es
+lo que Nosotros 00:18:10 - 00:18:14 llamamos un closter computer 00:18:11 - 00:18:14
+entonces. 00:18:16 - 00:18:21 podemos utilizarlo buscando 00:18:16 - 00:18:21 altas
+prestaciones o buscando 00:18:17 - 00:18:21 alta disponibilidad y ahí 00:18:22 - 00:18:27 entra
+como como la discusión que 00:18:22 - 00:18:30 que teníamos ahí o La 00:18:26 - 00:18:31
+explicación que yo les quería 00:18:26 - 00:18:31 les estaba dando en la clase 00:18:27 -
+00:18:35 pasada cierto puede ser para 00:18:30 - 00:18:35 altas prestaciones todo este
+00:18:31 - 00:18:35 recurso de cómputo buscando un 00:18:36 - 00:18:42 solo objetivo o
+simplemente para 00:18:37 - 00:18:42 garantizar una alta 00:18:37 - 00:18:46 disponibilidad
+listo 00:18:41 - 00:18:46 dependiendo del objetivo que yo 00:18:42 - 00:18:46 esté buscando
+voy a tener más o 00:18:42 - 00:18:46 menos. 00:18:47 - 00:18:52 voy a gastar más o menos
+00:18:48 - 00:18:52 presupuesto listo por unidad de 00:18:48 - 00:18:52 cómputo. 00:18:53 -
+00:18:58 me explico si yo tengo altas 00:18:54 - 00:18:58 prestaciones, lo estoy colocando
+00:18:55 - 00:18:58 todos los nodos que compramos 00:18:55 - 00:18:58 todos los 00:19:00 -
+00:19:05 equipos que compramos en pro del 00:19:01 - 00:19:06 sistema en mantener el
+sistema 00:19:02 - 00:19:07 en funcionamiento y reducir el 00:19:05 - 00:19:08 tiempo de
+respuesta o el tiempo 00:19:05 - 00:19:10 de procesamiento de ese de ese 00:19:07 - 00:19:18
+problema en cambio Si yo hablo 00:19:07 - 00:19:18 de alta disponibilidad 00:19:08 - 00:19:18
+Simplemente estoy buscando que 00:19:10 - 00:19:18 mi sistema. pueda 00:19:24 - 00:19:26
+guardar o mejor dicho pueda 00:19:25 - 00:19:27 atender a más usuarios y además 00:19:25 -
+00:19:29 de eso los usuarios 00:19:26 - 00:19:29 independientes, si ocurre un 00:19:26 -
+00:19:29 fallo dentro del sistema los 00:19:27 - 00:19:29 usuarios 00:19:31 - 00:19:35 sigan
+pudiendo acceder a nuestro 00:19:32 - 00:19:39 sistema listo entonces muchos de 00:19:32 -
+00:19:39 los sistemas. o muchos de las 00:19:34 - 00:19:39 aplicaciones que nosotros 00:19:35
+- 00:19:39 conocemos ahora. 00:19:40 - 00:19:45 Buscan que nuestro cumplir con 00:19:41 -
+00:19:49 el concepto de alta 00:19:41 - 00:19:49 disponibilidad Y es de que 00:19:44 - 00:19:49
+siempre estén disponibles 00:19:45 - 00:19:49 aplicaciones como Facebook 00:19:52 -
+00:19:56 Es poco probable o digámoslo, 00:19:52 - 00:20:00 así sería algo muy trágico de
+00:19:53 - 00:20:01 que un usuario quiere entrar o 00:19:56 - 00:20:02 un o un grupo de
+usuarios que 00:19:56 - 00:20:05 van a entrar a Facebook en un 00:20:01 - 00:20:05 momento
+y Facebook no les 00:20:01 - 00:20:05 responda listo entonces para 00:20:02 - 00:20:05 poder
+garantizar eso 00:20:07 - 00:20:13 debo hacer una configuración de 00:20:07 - 00:20:13 mi
+closter para altas para alta 00:20:08 - 00:20:13 disponibilidad listo. 00:20:19 - 00:20:21 se
+puede ejecutar varias 00:20:19 - 00:20:22 aplicaciones mediante partición, 00:20:20 - 00:20:23
+o sea, yo puedo coger el cluster 00:20:21 - 00:20:24 partirlo como en varias partes, 00:20:21 -
+00:20:28 o sea, yo puedo tener una sola 00:20:23 - 00:20:29 infraestructura, pero puedo
+00:20:23 - 00:20:29 decir Mire voy a partir o voy a 00:20:24 - 00:20:35 segmentar o voy a
+desagrupar 00:20:28 - 00:20:35 todos estos recursos y los voy a 00:20:29 - 00:20:35 distribuir
+de tal manera para 00:20:29 - 00:20:35 que con estos recursos. 00:20:40 - 00:20:42 podamos
+ejecutar x o de tareas 00:20:41 - 00:20:44 listo, entonces ahí entran 00:20:41 - 00:20:45
+herramientas o procesos como los 00:20:42 - 00:20:49 que me comentaban la vez pasada
+00:20:42 - 00:20:49 como el tema de la 00:20:44 - 00:20:49 virtualización o segmentación de
+00:20:45 - 00:20:49 de recursos cierto. 00:20:51 - 00:20:57 que yo puedo coger esta gran
+00:20:52 - 00:20:57 máquina y separarla o darle o 00:20:58 - 00:21:03 se reservar parte de los
+00:20:58 - 00:21:03 recursos para ejecutar una tarea 00:20:59 - 00:21:05 otros recursos para
+otra tarea 00:20:59 - 00:21:05 si sucesivamente a pesar de que 00:21:03 - 00:21:10 el cluster,
+como tal 00:21:03 - 00:21:11 filosóficamente hablando es 00:21:05 - 00:21:13 para una sola
+tarea, pues la 00:21:05 - 00:21:14 tarea. hacer repartirlo entre 00:21:10 - 00:21:16 varias tareas
+Listo o una tarea 00:21:11 - 00:21:21 podría ser virtualización Yo 00:21:13 - 00:21:21 estoy
+montando este cluster para 00:21:14 - 00:21:21 hacer virtualización o estoy 00:21:16 - 00:21:21
+montando este cluster para 00:21:23 - 00:21:25 ejecutar varias tareas de manera 00:21:24 -
+00:21:28 simultánea Listo o sea para 00:21:24 - 00:21:29 trabajar por ejemplo con el 00:21:25 -
+00:21:33 sistema financiero para trabajar 00:21:28 - 00:21:34 con el sistema de recursos
+00:21:29 - 00:21:34 humanos con el sistema de almas 00:21:29 - 00:21:39 de de inventario con
+el sistema 00:21:33 - 00:21:39 de producción O sea a pesar de 00:21:34 - 00:21:42 que es un
+solo cluster yo puedo 00:21:38 - 00:21:46 segmentar esos recursos para 00:21:39 - 00:21:46
+para los para distintas tareas 00:21:39 - 00:21:46 utilizando el concepto de 00:21:42 - 00:21:46
+partición listo. 00:21:50 - 00:21:54 Qué más es un sistema 00:21:50 - 00:21:59 fuertemente
+acoplado a pesar de 00:21:51 - 00:21:59 que no hemos hablado por ahora 00:21:54 - 00:21:59
+del tema del acoplamiento 00:21:54 - 00:21:59 cierto. 00:22:01 - 00:22:06 el concepto de ser
+fuertemente 00:22:02 - 00:22:07 acoplado. Es que depende mucho 00:22:02 - 00:22:07 de que
+todos los nuevos estén en 00:22:03 - 00:22:11 funcionamiento si hay algún 00:22:06 - 00:22:11
+nodo o algunos nodos fallan en 00:22:07 - 00:22:11 su procesamiento cambia el 00:22:07 -
+00:22:11 rendimiento 00:22:12 - 00:22:17 cambia la capacidad que va a 00:22:13 - 00:22:17
+tener nuestro sistema 00:22:13 - 00:22:17 distribuido listo. 00:22:18 - 00:22:23 y hace de que
+para poder que el 00:22:19 - 00:22:24 sistema funcione de manera 00:22:19 - 00:22:27 correcta
+O al menos tenga unos 00:22:23 - 00:22:28 tiempos de respuesta correctas 00:22:24 - 00:22:28
+necesita de que todos los 00:22:24 - 00:22:32 componentes o todos los 00:22:27 - 00:22:33
+elementos que necesitan 00:22:28 - 00:22:33 intercambiar información, pues 00:22:28 -
+00:22:38 estén ejecutando de la manera 00:22:32 - 00:22:43 adecuada en el momento
+adecuado 00:22:33 - 00:22:43 sincronizados. Bueno, que vaya a 00:22:33 - 00:22:43 tener una
+serie de pasos o 00:22:38 - 00:22:43 herramientas que 00:22:45 - 00:22:49 que cumplan o que
+garanticen de 00:22:46 - 00:22:50 que toda la información y que 00:22:47 - 00:22:50 todo el
+paso de información y de 00:22:47 - 00:22:53 datos y de procesamiento se 00:22:49 - 00:22:54
+esté haciendo de la manera 00:22:50 - 00:22:54 adecuada Necesito una poca 00:22:50 -
+00:22:58 dispersión geográfica ya 00:22:53 - 00:22:58 habíamos hablado de que 00:22:54 -
+00:22:58 generalmente los clusters yo los 00:22:55 - 00:22:58 puedo hacer los 00:23:00 -
+00:23:04 tengo que hacer en un solo sitio 00:23:00 - 00:23:04 pero no están. 00:23:06 -
+00:23:11 digámoslo así no es tan estricto 00:23:06 - 00:23:11 no tienen que estar todos en el
+00:23:07 - 00:23:15 mismo salón o en la misma sala o 00:23:07 - 00:23:15 en la misma bodega
+listo, Yo 00:23:11 - 00:23:16 podría crear un cluster con 00:23:12 - 00:23:20 nodos que se
+encuentran en No 00:23:15 - 00:23:20 remotos pero garantizando lo que 00:23:15 - 00:23:20
+habíamos hablado ayer y era el 00:23:16 - 00:23:20 tema de 00:23:21 - 00:23:26 redes de alta
+velocidad que es 00:23:21 - 00:23:30 el siguiente que el siguiente 00:23:22 - 00:23:30 punto
+cierto yo debo garantizar 00:23:25 - 00:23:30 que mi sistema tenga redes de 00:23:26 -
+00:23:30 alta velocidad listo para qué 00:23:33 - 00:23:39 Para poder que así estemos en en
+00:23:34 - 00:23:40 diferentes edificios o en 00:23:34 - 00:23:41 diferentes zonas. podamos
+00:23:35 - 00:23:44 seguir garantizando esa 00:23:40 - 00:23:44 velocidad de procesamiento y
+o 00:23:40 - 00:23:44 sea y ese alto rendimiento que 00:23:45 - 00:23:54 nosotros estamos
+buscando con el 00:23:46 - 00:23:54 sistema clusterizado listo 00:23:47 - 00:23:54
+Generalmente utilizamos 00:23:49 - 00:23:54 sistemas homogéneos 00:23:56 - 00:24:01 pero
+también puedo hacer closter 00:23:57 - 00:24:03 de manera heterogénea, listo, 00:23:57 -
+00:24:08 Por qué podemos tener closer de 00:24:00 - 00:24:08 manera heterogénea, si
+estamos 00:24:01 - 00:24:08 hablando de equipos, por 00:24:03 - 00:24:08 ejemplo de
+computadores pues 00:24:10 - 00:24:15 hoy hoy voy a montar un cluster 00:24:11 - 00:24:15 y
+hoy tengo la necesidad O tengo 00:24:11 - 00:24:15 el presupuesto de conseguir diez 00:24:12
+- 00:24:15 nodos, pues esos diez nodos 00:24:16 - 00:24:24 muy Probablemente sean 00:24:16
+- 00:24:24 homogéneos cierto los compro el 00:24:17 - 00:24:24 mismo proveedor con las
+mismas 00:24:19 - 00:24:24 características. 00:24:27 - 00:24:33 etcétera, etcétera con el mismo
+00:24:28 - 00:24:33 sistema operativo, vamos a 00:24:28 - 00:24:37 montar o vamos a a tener
+esos en 00:24:29 - 00:24:37 equipos con la con la 00:24:33 - 00:24:37 homogeneidad deseada
+digámoslo 00:24:33 - 00:24:37 así pero 00:24:39 - 00:24:43 nuestro sistema está funcionando
+00:24:39 - 00:24:43 con esos 10 nodos y ha 00:24:40 - 00:24:44 funcionado bien durante diez
+00:24:40 - 00:24:48 años pero a los diez años hemos 00:24:43 - 00:24:48 detectado, que
+necesitamos 00:24:43 - 00:24:48 agregar un poco más de recursos 00:24:50 - 00:24:53
+necesitamos agregar un poco más 00:24:50 - 00:24:54 de dedos para procesar más 00:24:51 -
+00:24:58 información o porque la 00:24:53 - 00:24:59 información que estamos 00:24:53 -
+00:25:02 procesando ha crecido entonces 00:24:54 - 00:25:03 necesitamos más procesadores
+00:24:58 - 00:25:07 etcétera, entonces yo tengo que 00:24:59 - 00:25:08 buscar. nuevos nodos
+para que 00:25:02 - 00:25:10 puedan hacer parte del cluster 00:25:03 - 00:25:10 cierto. Será
+que los nuevos que 00:25:07 - 00:25:13 voy a encontrar dentro de diez 00:25:08 - 00:25:18
+años son Exactamente iguales y 00:25:10 - 00:25:19 homogéneos a los que voy a 00:25:11 -
+00:25:23 encontrar hoy. Cuando lo estoy 00:25:13 - 00:25:24 comprando. o si uno de los dos
+00:25:18 - 00:25:24 equipos Se dañó y tengo que 00:25:19 - 00:25:25 reemplazarlo por otro
+será que 00:25:23 - 00:25:28 en el momento en el que lo vaya 00:25:24 - 00:25:29 a
+reemplazar encontraré el mismo 00:25:24 - 00:25:32 equipo que compré hace 10 años.
+00:25:28 - 00:25:33 >> Student1: difícilmente 00:25:29 - 00:25:34 profe 00:25:32 - 00:25:39
+>> Teacher: 00:25:33 - 00:25:39 cierto Y entonces se se acabó el 00:25:33 -
+00:25:39 cluster, ya no podemos seguir 00:25:34 - 00:25:39 trabajando con el cluster. 00:25:48 -
+00:25:50 No necesariamente cierto 00:25:48 - 00:25:53 Entonces a pesar de que de que
+00:25:49 - 00:25:53 yo recomendaría o siempre se 00:25:49 - 00:25:54 recomienda de que el
+cluster se 00:25:50 - 00:25:58 haga con nodos homogéneos, no 00:25:53 - 00:25:58 siempre es
+fácil listo, no 00:25:53 - 00:25:58 siempre es posible garantizar de 00:25:54 - 00:25:58 que
+00:25:59 - 00:26:04 todos los nuevos del cluster 00:25:59 - 00:26:04 seden homogéneos a
+menos de que 00:26:00 - 00:26:04 terminemos. 00:26:05 - 00:26:10 creando un cluster y
+dándole 00:26:05 - 00:26:10 obsolescencia de manera conjunta 00:26:06 - 00:26:14 decir todos
+estos nodos. esos 00:26:09 - 00:26:14 viejos y ya no pueden compartir 00:26:10 - 00:26:14
+recursos, no pueden compartirse 00:26:10 - 00:26:14 tareas con 00:26:17 - 00:26:22 nuevos
+Entonces en ese caso, si 00:26:18 - 00:26:22 es si es necesario por 00:26:18 - 00:26:26
+crecimiento o por reemplazo, Yo 00:26:21 - 00:26:27 podría utilizar un equipo 00:26:22 -
+00:26:29 diferente con unas 00:26:22 - 00:26:30 características similares, pero 00:26:26 -
+00:26:30 ya sabemos que tecnológicamente 00:26:27 - 00:26:32 no van a ser iguales cierto.
+00:26:29 - 00:26:37 Desde el sistema operativo desde 00:26:30 - 00:26:37 las velocidades o la
+tecnología 00:26:30 - 00:26:37 que estén utilizando para el 00:26:33 - 00:26:37
+almacenamiento. 00:26:39 - 00:26:42 las tecnología que estemos 00:26:40 - 00:26:47 utilizando
+en el procesador muy 00:26:40 - 00:26:47 probablemente hayan variaciones 00:26:41 -
+00:26:47 entre entre diferentes versiones 00:26:42 - 00:26:47 cierto o incluso simplemente.
+00:26:51 - 00:26:55 decimos sí es un core i5 o un 00:26:51 - 00:26:55 Intel cero, pero
+generación uno 00:26:52 - 00:26:56 generación, yo compré generación 00:26:52 - 00:26:59 uno
+y ahorita van en la 00:26:55 - 00:27:04 generación cinco no voy a poder 00:26:55 - 00:27:04
+conseguir computadores con 00:26:56 - 00:27:04 generación uno hoy cierto 00:26:59 - 00:27:04
+Entonces ese es el tipo de 00:27:07 - 00:27:12 de homogeneidad que nosotros 00:27:07 -
+00:27:12 vamos a empezar como a jugar 00:27:08 - 00:27:12 cierto, qué? Qué tan qué tanto
+00:27:09 - 00:27:12 puede llegar a afectarme el 00:27:13 - 00:27:18 hecho de que dentro de n
+años yo 00:27:14 - 00:27:22 tenga que agregar nuevos nodos y 00:27:14 - 00:27:22 esos
+nuevos nodos, no sean 00:27:17 - 00:27:22 exactamente iguales a los que yo 00:27:18 -
+00:27:22 compré en en un inicio. 00:27:23 - 00:27:31 Normalmente tienen un carácter 00:27:24
+- 00:27:31 estático, o sea que después de 00:27:24 - 00:27:31 creado el cluster es poco
+00:27:26 - 00:27:31 probable. 00:27:37 - 00:27:39 de que podamos estar modificando 00:27:38
+- 00:27:40 el tamaño del cluster O sea que 00:27:38 - 00:27:41 estemos agregando y quitando
+00:27:39 - 00:27:45 nodos listo Generalmente si yo 00:27:39 - 00:27:45 digo o elegido
+seleccione que 00:27:41 - 00:27:45 íbamos a tener diez nodos es 00:27:41 - 00:27:45 porque
+con esos diez nodos 00:27:47 - 00:27:53 voy a garantizar el 00:27:48 - 00:27:53 funcionamiento
+el o la capacidad 00:27:48 - 00:27:56 de mi sistema en cambio y si 00:27:52 - 00:27:56 necesito
+más, pues pongo otro 00:27:53 - 00:28:00 nodo y ya sé que mi closter es 00:27:53 - 00:28:00
+de 11 nodos y se va a quedar 00:27:56 - 00:28:00 así hasta que necesite más 00:27:56 -
+00:28:00 recursos cierto. 00:28:02 - 00:28:07 En cambio con otros modelos 00:28:03 - 00:28:08
+Vamos a darnos cuenta de que son 00:28:04 - 00:28:13 muy volátiles que pueden entrar
+00:28:07 - 00:28:13 o salir recursos y mi sistema 00:28:07 - 00:28:13 sigue funcionando sin
+ningún 00:28:09 - 00:28:13 problema. 00:28:17 - 00:28:19 uso habitual de componentes de
+00:28:17 - 00:28:22 Hardware estándar, Pues 00:28:18 - 00:28:22 básicamente lo que
+hablábamos 00:28:18 - 00:28:23 nosotros de manejar tecnologías 00:28:19 - 00:28:27
+conocidas que tuviéramos fácil 00:28:22 - 00:28:27 reemplazo etcétera, simplemente 00:28:22 -
+00:28:27 como para garantizar de que el 00:28:28 - 00:28:33 crecimiento o la poca 00:28:28 -
+00:28:34 dependencia de un solo proveedor 00:28:29 - 00:28:37 para poder resolver los
+00:28:33 - 00:28:38 problemas de nuestro sistema y 00:28:33 - 00:28:38 generalmente en el
+cluster, 00:28:34 - 00:28:41 necesitamos un planificador de 00:28:37 - 00:28:42 trabajos, Qué
+es eso del 00:28:38 - 00:28:45 planificador de trabajo, Yo sé 00:28:38 - 00:28:46 que ustedes
+Cuando estuvieron 00:28:41 - 00:28:46 investigando sobre el cluster 00:28:42 - 00:28:50
+muchos de ustedes terminaron 00:28:45 - 00:28:51 con un concepto que era maestro 00:28:46
+- 00:28:55 trabajador o que teníamos que 00:28:46 - 00:28:55 tener un maestro y teníamos que
+00:28:50 - 00:28:55 tener unos nodos trabajadores o 00:28:51 - 00:28:55 esclavos o 00:29:00 -
+00:29:06 O esclavos trabajadores y hay 00:29:01 - 00:29:09 otro o secundarios listo, uno
+00:29:01 - 00:29:10 maestro y otro secundarios ese 00:29:05 - 00:29:10 ese concepto de
+maestros 00:29:06 - 00:29:14 secundarios significa de que 00:29:09 - 00:29:15 necesitamos
+alguien que esté 00:29:10 - 00:29:16 alguno de los nodos va a tener 00:29:10 - 00:29:20 que
+tomar la responsabilidad de 00:29:15 - 00:29:20 gestionar a los otros listo 00:29:15 - 00:29:24
+Entonces ahí es donde nosotros 00:29:19 - 00:29:25 hablamos de que para poder tener
+00:29:20 - 00:29:26 un cluster y poder que todos 00:29:21 - 00:29:26 esos recursos que tengo
+00:29:25 - 00:29:31 acumulados dentro de mi 00:29:25 - 00:29:31 infraestructura trabajen como
+00:29:26 - 00:29:36 uno solo voy a necesitar un 00:29:26 - 00:29:36 nodo. Que se encargue de
+00:29:31 - 00:29:37 gestionar todas las tareas que 00:29:31 - 00:29:40 sea capaz de dividir las
+tareas 00:29:36 - 00:29:40 que que vamos teniendo entre los 00:29:36 - 00:29:41 n2
+disponibles para que todos 00:29:37 - 00:29:45 los nodos estén en 00:29:40 - 00:29:45
+funcionamiento y poder mejorar O 00:29:40 - 00:29:45 poder aprovechar al máximo los
+00:29:46 - 00:29:52 recursos que tenemos nosotros 00:29:46 - 00:29:56 adquiridos en pro del
+sistema. 00:29:51 - 00:29:56 Queda claro hasta ahí, o sea, 00:29:51 - 00:29:56 mire que aquí
+ya hablando del 00:29:52 - 00:29:56 desde el punto de 00:29:57 - 00:30:02 vista práctico o de
+modelo de 00:29:58 - 00:30:02 computación a pesar de que ya 00:29:58 - 00:30:05 sabemos
+que puede ser para uno, 00:30:01 - 00:30:06 yo puedo tener múltiples 00:30:02 - 00:30:10
+aplicaciones si hago partición 00:30:02 - 00:30:10 entonces ya sé que de esos diez 00:30:05 -
+00:30:10 nodos, voy a sacar dos para 00:30:06 - 00:30:10 gestionar recursos 00:30:11 -
+00:30:17 humano, otros tres para para 00:30:12 - 00:30:21 contabilidad otros dos y así mi
+00:30:12 - 00:30:22 cluster si sigue funcionando 00:30:16 - 00:30:22 como cluster listo y esos
+tres 00:30:17 - 00:30:26 nodos, que estoy de 00:30:21 - 00:30:27 Particionando ya saben que
+son 00:30:22 - 00:30:28 los recursos que tiene 00:30:22 - 00:30:31 disponibles el sistema que
+00:30:27 - 00:30:31 vamos a montar ahí eso lo puedo 00:30:27 - 00:30:32 hacer o simplemente
+tengo un 00:30:28 - 00:30:36 gran sistema si logramos tener 00:30:31 - 00:30:41 un sistema
+que necesite todos 00:30:31 - 00:30:42 esos recursos podemos tener ese 00:30:36 - 00:30:46
+gran sistema que pueda atender 00:30:36 - 00:30:46 todas esas solicitudes. Y luego 00:30:41 -
+00:30:46 viene el grid computing listo 00:30:42 - 00:30:46 entonces. 00:30:47 - 00:30:52 qué es
+un grit computing, no sé 00:30:48 - 00:30:52 si ustedes me comentaron de que 00:30:48 -
+00:30:52 un grinder o un cluster pero con 00:30:49 - 00:30:52 velocidades 00:30:53 - 00:30:56
+lentas y tiene mucho sentido 00:30:54 - 00:31:00 digámoslo así porque en el grid 00:30:54 -
+00:31:01 computing es como si 00:30:55 - 00:31:01 estuviéramos haciendo un 00:30:56 -
+00:31:05 cluster. Con nodos en 00:31:00 - 00:31:05 diferentes lugares, o sea, si 00:31:01 -
+00:31:05 estuviéramos haciendo un cluster 00:31:08 - 00:31:14 global listo, pero la la 00:31:09 -
+00:31:14 digámoslo así la diferencia 00:31:09 - 00:31:14 principal es que su 00:31:16 - 00:31:20
+función o su principal objetivo 00:31:16 - 00:31:21 no es el alto rendimiento listo 00:31:17 -
+00:31:25 a diferencia del cluster, que 00:31:20 - 00:31:26 buscamos es un alto rendimiento
+00:31:20 - 00:31:30 tener recursos para mejorar la 00:31:25 - 00:31:30 ejecución de mi sistema
+en el 00:31:25 - 00:31:32 grit a pesar de que podemos 00:31:26 - 00:31:37 decir que es un
+cluster virtual 00:31:30 - 00:31:37 entre comillas en unas comillas 00:31:30 - 00:31:37 muy
+grandes es un cluster de 00:31:32 - 00:31:37 diferentes nodos. 00:31:39 - 00:31:44 su su idea
+su problema 00:31:39 - 00:31:44 específico no está bajar en una 00:31:40 - 00:31:44 sola tarea
+sino en tener. 00:31:46 - 00:31:51 múltiples tareas poder ejecutar 00:31:47 - 00:31:51 múltiples
+tareas de manera 00:31:47 - 00:31:51 simultánea y 00:31:52 - 00:31:58 Tienen un menor grado
+de 00:31:53 - 00:31:59 acoplamiento, Qué significa que 00:31:53 - 00:32:03 no hay una
+dependencia de que 00:31:58 - 00:32:08 los nodos que están conectados 00:31:58 - 00:32:08
+al grid siempre estén en 00:31:59 - 00:32:08 funcionamiento y estén a la 00:32:03 - 00:32:08
+espera o estén en el en 00:32:10 - 00:32:12 el en el estado adecuado para 00:32:11 - 00:32:15
+poder estar trabajando cada uno 00:32:11 - 00:32:15 de los nodos puede estar 00:32:12 -
+00:32:15 trabajando en distintas tareas y 00:32:12 - 00:32:15 si 00:32:16 - 00:32:22 un nodo no
+tiene recursos o está 00:32:17 - 00:32:23 ocupado y no puede atender 00:32:17 - 00:32:25
+solicitudes de otros nodos, 00:32:22 - 00:32:29 pues simplemente no le mandemos 00:32:22 -
+00:32:30 tareas a ese nuevo listo tiene 00:32:23 - 00:32:30 un menor grado de acoplamiento
+00:32:25 - 00:32:35 O sea que si algo falla pues. 00:32:30 - 00:32:35 El sistema va a seguir
+00:32:30 - 00:32:36 funcionando con lo que hay Listo 00:32:31 - 00:32:39 o sea, no hay tanta
+dependencia 00:32:35 - 00:32:40 de todos los recursos y pues el 00:32:35 - 00:32:44 tiempo de
+respuesta va a variar 00:32:38 - 00:32:44 dependiendo de Cuántos recursos, 00:32:39 -
+00:32:44 tengo disponibles, pero no hay 00:32:40 - 00:32:44 una 00:32:45 - 00:32:50
+dependencia real entre los 00:32:46 - 00:32:50 diferentes elementos muchas 00:32:46 -
+00:32:54 veces en el grit, nosotros vamos 00:32:47 - 00:32:55 a mandarle una tarea a un nodo
+00:32:50 - 00:32:58 y ese nodo en algún momento lo 00:32:50 - 00:32:59 procesará, no tiene
+que ser en 00:32:55 - 00:32:59 tiempo real no tiene que ser que 00:32:55 - 00:33:04 mientras
+yo lo mando él me 00:32:58 - 00:33:04 tiene que responder al instante 00:32:59 - 00:33:08
+puede ser de que yo le mandé la 00:32:59 - 00:33:09 tarea y esa tarea va a quedar 00:33:04 -
+00:33:09 ahí esperando una hora dos horas 00:33:04 - 00:33:14 cinco horas o hasta el otro día
+00:33:08 - 00:33:14 listo y al otro día empezar a 00:33:09 - 00:33:15 procesarla y nos entregará
+la 00:33:09 - 00:33:23 respuesta, o sea, no hay una 00:33:14 - 00:33:23 garantía de de
+inmediatez, en el 00:33:14 - 00:33:23 tema del procesamiento cuando 00:33:16 - 00:33:23
+estamos utilizando. gri 00:33:27 - 00:33:29 extenderse a varios dominios de 00:33:27 - 00:33:32
+administración Y aquí tiene que 00:33:28 - 00:33:32 ver un poco con el con un 00:33:28 -
+00:33:37 concepto y es que no 00:33:29 - 00:33:37 necesariamente cuando estamos 00:33:32 -
+00:33:37 trabajando en grid vamos a estar 00:33:33 - 00:33:37 hablando de que tenemos.
+00:33:38 - 00:33:44 Que tenemos un solo 00:33:38 - 00:33:44 administrador o una sola
+empresa 00:33:39 - 00:33:48 que monta el grip los ejemplos 00:33:43 - 00:33:52 que hemos
+venido hablando hasta 00:33:44 - 00:33:52 ahora como el del banco y todos 00:33:45 -
+00:33:52 estos otros Pues nosotros 00:33:48 - 00:33:52 pensamos que 00:33:55 - 00:33:57 que
+toda la infraestructura cada 00:33:55 - 00:34:00 uno de los centros de datos que 00:33:56 -
+00:34:00 se van a crear y se van a 00:33:56 - 00:34:03 conectar deben ser propietarios
+00:33:57 - 00:34:08 de la misma. Cierto que yo como 00:34:00 - 00:34:08 como banco x, pues
+tengo que 00:34:01 - 00:34:08 montar todos los centros de 00:34:03 - 00:34:08 datos y No
+necesariamente. 00:34:12 - 00:34:16 listo, Yo puedo hacer de que 00:34:13 - 00:34:21 cada
+centro de datos pueda ser 00:34:13 - 00:34:21 de una empresa distinta de una 00:34:14 -
+00:34:21 de un de una sí de una empresa 00:34:16 - 00:34:21 o de una organización 00:34:25 -
+00:34:30 completamente diferente Por ende 00:34:25 - 00:34:31 pueden tener decisiones de
+00:34:26 - 00:34:31 infraestructura o de decisiones 00:34:27 - 00:34:35 de de administración
+00:34:30 - 00:34:35 completamente distintas entre 00:34:31 - 00:34:35 los diferentes nodos listo
+y eso 00:34:31 - 00:34:35 pues puede hacer 00:34:36 - 00:34:41 de que mi sistema funcione
+mejor 00:34:37 - 00:34:45 o no dependiendo Pues de de esa 00:34:37 - 00:34:46 de esos
+dominios de 00:34:40 - 00:34:46 administración que hablan aquí 00:34:41 - 00:34:49 Listo o sea
+pueden ser 00:34:45 - 00:34:50 interdepartamentales si estoy 00:34:46 - 00:34:50 dentro de la
+misma empresa y 00:34:46 - 00:34:54 estoy puedo tener diferentes 00:34:49 - 00:34:54
+departamentos o diferentes 00:34:50 - 00:34:54 dependencias o puedo ser entre 00:34:50 -
+00:34:54 diferentes 00:34:56 - 00:35:00 empresas listo para que lo 00:34:57 - 00:35:01
+tengamos en cuenta O sea un grit 00:34:58 - 00:35:06 no solo se crea con presupuesto
+00:35:00 - 00:35:06 de un solo de una sola empresa 00:35:00 - 00:35:06 sino que puedo hacer
+de que 00:35:01 - 00:35:06 múltiples empresas. 00:35:11 - 00:35:13 trabajen o donen o Perdón
+no van 00:35:11 - 00:35:13 a donar pongan a disposición sus 00:35:12 - 00:35:16 centros de
+datos o sus centros 00:35:12 - 00:35:21 de cómputo para extender los 00:35:13 - 00:35:22
+recursos que vamos a tener 00:35:13 - 00:35:26 disponi. En nuestro cluster en 00:35:16 -
+00:35:26 nuestro grip, perdón. los 00:35:21 - 00:35:26 recursos no son dedicados O sea
+00:35:22 - 00:35:26 que 00:35:28 - 00:35:34 El grid convive con con los 00:35:29 - 00:35:34
+sistemas de cada de cada 00:35:29 - 00:35:37 organización, o sea, muy 00:35:33 - 00:35:38
+probablemente si yo hago una 00:35:34 - 00:35:38 unión entre mi empresa y otra 00:35:34 -
+00:35:42 empresa, pues ellos van a estar 00:35:37 - 00:35:43 utilizando su centro de datos
+00:35:38 - 00:35:45 para algunos elementos de su 00:35:38 - 00:35:46 sistema Nosotros vamos
+a estar 00:35:43 - 00:35:46 procesando otros, pero en el 00:35:43 - 00:35:50 momento en que
+nosotros 00:35:45 - 00:35:55 necesitemos más recursos de los 00:35:46 - 00:35:55 que
+tenemos aquí local, pues 00:35:46 - 00:35:55 puedo ir y ocupar los recursos 00:35:50 -
+00:35:55 que estén disponibles. 00:36:00 - 00:36:04 del del de nuestro compañero o 00:36:01 -
+00:36:05 de nuestro Partner de del grito 00:36:01 - 00:36:05 listo, entonces ahí vamos a
+00:36:02 - 00:36:10 tener en cuenta de que no los 00:36:04 - 00:36:10 recursos que vamos a
+tener 00:36:05 - 00:36:11 nosotros para el sistema no son 00:36:05 - 00:36:15 recursos
+dedicados, no son 00:36:10 - 00:36:15 recursos, que siempre van a 00:36:10 - 00:36:18 estar
+disponibles para nuestro 00:36:11 - 00:36:19 sistema sino que van a estar 00:36:15 - 00:36:20
+compartidos entre múltiples, 00:36:15 - 00:36:20 sistemas o múltiplos. 00:36:19 - 00:36:21
+aplicaciones que van a estar 00:36:19 - 00:36:26 corriendo en cada uno de los 00:36:20 -
+00:36:26 centros de datos Generalmente 00:36:20 - 00:36:26 son sistemas heterogéneos Por
+00:36:21 - 00:36:26 qué Porque yo puedo hacer. 00:36:27 - 00:36:32 Un grito de nodos
+individuales o 00:36:27 - 00:36:32 de nodos únicos o puedo hacer 00:36:28 - 00:36:32 grips
+entre 00:36:33 - 00:36:36 clusters o de nodos con clusters 00:36:33 - 00:36:37 Sí entonces para
+que lo tengamos 00:36:34 - 00:36:41 en cuenta cada centro de datos 00:36:36 - 00:36:41 cada
+uno de los nodos que 00:36:36 - 00:36:41 nosotros vamos a conectar en el 00:36:42 - 00:36:48
+grit puede ser tan grande o tan 00:36:42 - 00:36:48 pequeño como sea los recursos 00:36:43 -
+00:36:52 que tenga cada Cada 00:36:47 - 00:36:53 departamento eso no todos tienen 00:36:48
+- 00:36:57 que ser iguales no tienen que 00:36:48 - 00:36:58 tener las mismas capacidades,
+00:36:52 - 00:36:58 sino que pues son sistemas que 00:36:53 - 00:37:04 pueden ir. se pueden
+ir creando 00:36:57 - 00:37:04 de manera independiente y luego 00:36:58 - 00:37:04
+simplemente vamos a estar 00:36:59 - 00:37:04 compartiendo recursos. 00:37:08 - 00:37:11 en
+pro del sistema Y por último 00:37:09 - 00:37:14 son sistemas dinámicos cuando 00:37:10 -
+00:37:14 hablamos de dinámicos, es que no 00:37:10 - 00:37:15 son estáticos son sistemas
+que 00:37:11 - 00:37:18 pueden aparecer nuevos nodos 00:37:14 - 00:37:19 con el tiempo y
+pueden 00:37:14 - 00:37:23 desaparecer listo, o sea, no es 00:37:18 - 00:37:24 como el cluster,
+que yo sé que 00:37:18 - 00:37:30 tome la decisión de crecer en un 00:37:19 - 00:37:30 nodo
+más y voy a seguir con los 00:37:23 - 00:37:30 once nodos de ahora en adelante, 00:37:24 -
+00:37:30 sino que aquí puedo agregar. 00:37:34 - 00:37:36 elementos al grid y se pueden
+00:37:35 - 00:37:39 eliminar los elementos al grid 00:37:35 - 00:37:40 de manera intermitente
+de manera 00:37:36 - 00:37:40 esporádica, no, no hay una 00:37:36 - 00:37:42 planeación, no,
+no existe una 00:37:39 - 00:37:45 una restricción donde diga de 00:37:40 - 00:37:46 que los
+recursos siempre tienen 00:37:40 - 00:37:46 que estar disponibles para el 00:37:43 - 00:37:50
+para el grito en cualquier. 00:37:45 - 00:37:50 Momento se pueden salir en 00:37:46 - 00:37:50
+cualquier momento puede haber un 00:37:46 - 00:37:50 problema de 00:37:51 - 00:37:57
+conexión y mi sistema debería 00:37:52 - 00:38:00 seguir funcionando como si nada. 00:37:55 -
+00:38:00 en cada uno de estos modelos de 00:37:56 - 00:38:01 computación, yo les he dejado
+un 00:37:57 - 00:38:06 videíto para que por favor le 00:38:00 - 00:38:06 gasten el tiempo y vean
+un poco 00:38:00 - 00:38:06 más una explicación adicional 00:38:01 - 00:38:06 sobre cada uno
+de ellos. 00:38:08 - 00:38:13 Qué es voluntad. 00:38:18 - 00:38:20 es otro modelo de
+computación 00:38:19 - 00:38:24 Cuál es el modelo de 00:38:19 - 00:38:24 computación, es un
+modelo donde 00:38:20 - 00:38:25 el sistema distribuido en lugar 00:38:21 - 00:38:29 de ser
+digámoslo, así es una 00:38:24 - 00:38:34 especie de grid, pero que en 00:38:24 - 00:38:39
+lugar de que los nodos de este 00:38:25 - 00:38:39 grit. sean donados por una 00:38:29 -
+00:38:39 empresa Envoltir los que están 00:38:34 - 00:38:39 probando. 00:38:42 - 00:38:47 las
+capacidades de cómputo o los 00:38:42 - 00:38:47 centros de datos o los nodos de 00:38:43 -
+00:38:47 procesamiento son personas 00:38:44 - 00:38:47 voluntarias voluntarias como
+00:38:49 - 00:38:54 tú y como yo como ustedes o como 00:38:50 - 00:38:54 yo cierto son
+personas que 00:38:50 - 00:38:54 tienen un recurso de 00:38:55 - 00:39:00 cómputo
+computador un computador 00:38:56 - 00:39:00 en la casa, pues de mesa o un 00:38:56 -
+00:39:00 portátil, 00:39:04 - 00:39:12 etcétera y quieren donar a un 00:39:05 - 00:39:12
+proyecto o a un a un proyecto a 00:39:06 - 00:39:12 una iniciativa o a 00:39:18 - 00:39:20
+quieren donar sus recursos poner 00:39:18 - 00:39:23 a disposición los recursos que 00:39:19 -
+00:39:23 no estén utilizando en pro de un 00:39:20 - 00:39:23 proyecto listo Entonces yo yo
+00:39:20 - 00:39:23 llego y miro que hay una 00:39:24 - 00:39:29 hay un proyecto que está no
+sé 00:39:25 - 00:39:29 necesita procesar para 00:39:30 - 00:39:35 para encontrar o para
+intentar 00:39:31 - 00:39:35 descifrar Cuál es las cadenas de 00:39:31 - 00:39:35 ADN para
+curar 00:39:36 - 00:39:42 el cáncer listo Ese es el 00:39:37 - 00:39:42 proyecto Entonces ese
+proyecto 00:39:37 - 00:39:47 lo está haciendo una 00:39:41 - 00:39:47 universidad de X
+imaginémonos La 00:39:42 - 00:39:50 tecnológica en su departamento 00:39:43 - 00:39:55 de
+medicina medicina no tiene 00:39:47 - 00:39:55 el presupuesto para comprar un 00:39:47 -
+00:39:55 súper computador o crear un 00:39:50 - 00:39:55 sistema distribuido. 00:39:59 -
+00:40:01 para procesar toda la 00:39:59 - 00:40:04 información que tiene que 00:40:00 -
+00:40:04 procesar entonces lo que hacen 00:40:01 - 00:40:04 es crear un proyecto proyecto
+00:40:01 - 00:40:04 voluntario donde los las 00:40:05 - 00:40:11 personas del común usuarios
+00:40:06 - 00:40:12 normales de de sistemas Pueden 00:40:06 - 00:40:15 decir Bueno yo mi
+computador 00:40:10 - 00:40:15 normalmente lo uso dos horas al 00:40:11 - 00:40:15 día tres
+horas al día el resto 00:40:12 - 00:40:15 del 00:40:16 - 00:40:23 tiempo donde yo no necesito el
+00:40:17 - 00:40:28 computador podría estar 00:40:18 - 00:40:28 disponiendo ese procesador
+esa 00:40:19 - 00:40:29 memoria. y ese almacenamiento 00:40:23 - 00:40:33 para que para
+recibir un 00:40:28 - 00:40:34 trabajo y ayudar en en el 00:40:28 - 00:40:37 procesamiento de la
+información 00:40:29 - 00:40:37 del proyecto. Ese es el tipo de 00:40:33 - 00:40:38 el tipo que
+Nosotros llamamos 00:40:34 - 00:40:39 computación voluntaria entonces 00:40:37 - 00:40:44
+donde el sistema distribuido 00:40:37 - 00:40:44 está creado es a partir de 00:40:38 - 00:40:44
+recursos donados por personas. 00:40:45 - 00:40:50 no por empresas en el grit 00:40:45 -
+00:40:50 Generalmente es una misma 00:40:46 - 00:40:50 empresa. 00:40:53 - 00:40:58 monta
+toda la infraestructura 00:40:53 - 00:40:58 del grip o se une con otras 00:40:54 - 00:40:58
+empresas para crear esa 00:40:54 - 00:40:58 infraestructura de 00:40:59 - 00:41:04 una
+empresa con muchos usuarios 00:41:00 - 00:41:04 listo no 00:41:07 - 00:41:11 no estamos
+descartando el hecho 00:41:08 - 00:41:12 de que haya una empresa que diga 00:41:08 -
+00:41:17 yo quiero donar mis recursos 00:41:09 - 00:41:17 Pero mira que no está Yo no
+00:41:11 - 00:41:17 estoy pagando por esos recursos 00:41:12 - 00:41:17 de cómputo yo no
+estoy. 00:41:19 - 00:41:23 digámoslo así no tengo una 00:41:19 - 00:41:24 compensación no no
+voy a recibir 00:41:20 - 00:41:27 una remuneración por por poner 00:41:23 - 00:41:28 estos
+computadores ni voy a 00:41:24 - 00:41:31 tener que comprar computadores 00:41:24 -
+00:41:32 adicionales para procesar mayor 00:41:27 - 00:41:32 información simplemente a partir
+00:41:28 - 00:41:37 del número de usuarios o el 00:41:31 - 00:41:37 número de voluntarios que
+00:41:32 - 00:41:38 tengamos en el proyecto Pues voy 00:41:32 - 00:41:41 a poder distribuir las
+tareas y 00:41:37 - 00:41:42 Por ende va a ser que yo pueda 00:41:37 - 00:41:44 avanzar muy
+rápido o avanzar muy 00:41:41 - 00:41:49 lento en la investigación en el 00:41:41 - 00:41:53
+proceso que estemos nosotros 00:41:42 - 00:41:53 desarrollando listo pueden ser 00:41:48 -
+00:41:53 pueden ser lo que nosotros vamos 00:41:49 - 00:41:53 a 00:41:56 - 00:42:01 a
+nombrar como recursos pueden 00:41:57 - 00:42:02 ser ciclos de procesador O sea 00:41:57 -
+00:42:02 traer información y procesarla y 00:41:58 - 00:42:07 convertirla en otra cosa o
+00:42:01 - 00:42:07 espacios de almacenamiento, eso 00:42:02 - 00:42:12 es otro otro otra otro
+recurso 00:42:02 - 00:42:12 que normalmente vamos nosotros 00:42:07 - 00:42:13 a encontrar
+listo y generalmente 00:42:07 - 00:42:15 son proyectos de carácter 00:42:12 - 00:42:16 altruista
+folding at home set 00:42:12 - 00:42:20 home cada uno de ellos tiene un 00:42:13 - 00:42:20
+objetivo específico que quiere 00:42:15 - 00:42:20 procesar información, pero la 00:42:16 -
+00:42:20 información que tiene que 00:42:21 - 00:42:24 procesar es demasiada es mucha
+00:42:21 - 00:42:28 información, pero no tienen los 00:42:22 - 00:42:33 recursos de cómputo
+suficientes 00:42:23 - 00:42:33 para poderlas procesar entonces. 00:42:28 - 00:42:33
+simplemente pueden ustedes 00:42:28 - 00:42:33 pueden 00:42:34 - 00:42:39 registrarse como
+voluntarios y 00:42:34 - 00:42:40 configurar su máquina como uno 00:42:35 - 00:42:48 de los
+nodos del grit al cual 00:42:39 - 00:42:48 va a poder recibir información y 00:42:40 - 00:42:48
+va a poder procesarla mientras 00:42:40 - 00:42:48 el equipo esté desocupado. 00:42:52 -
+00:42:54 es similar a la computación en 00:42:52 - 00:42:57 grid Dinámico recursos, no
+00:42:53 - 00:42:58 dedicados dispersión geográfica 00:42:54 - 00:42:58 pero aquí no vamos a
+estar 00:42:54 - 00:43:01 hablando de que son 00:42:57 - 00:43:02 organizaciones sino
+individuos, 00:42:58 - 00:43:02 o sea las los que ponen los la 00:42:58 - 00:43:08 computación
+o los recursos de 00:43:01 - 00:43:08 cómputo son individuos no son 00:43:02 - 00:43:08
+organizaciones no son empresas, 00:43:03 - 00:43:08 no son 00:43:13 - 00:43:15 instituciones
+son personas del 00:43:14 - 00:43:18 común que pueden o no estar 00:43:14 - 00:43:18
+relacionadas con el proyecto con 00:43:15 - 00:43:18 la empresa que está ejecutando 00:43:15
+- 00:43:18 el proyecto Pero al final 00:43:19 - 00:43:24 está donando sus recursos listo
+00:43:20 - 00:43:24 y aquí Ah bueno y a diferencia 00:43:20 - 00:43:24 del grit que 00:43:25 -
+00:43:29 que los recursos son utilizados 00:43:26 - 00:43:33 de manera común eso quiere decir
+00:43:26 - 00:43:33 de que si mi centro de datos 00:43:28 - 00:43:33 necesita recursos o si yo o
+mi 00:43:29 - 00:43:33 sistema 00:43:34 - 00:43:40 necesita recursos, puede entrar 00:43:35 -
+00:43:41 a pedirle a los a los compañeros 00:43:35 - 00:43:44 del grit que le preste recursos
+00:43:40 - 00:43:44 o mandarles tareas para que 00:43:40 - 00:43:44 ellos procesen y ellos
+también 00:43:46 - 00:43:51 van a poder hacerlo conmigo, sí, 00:43:47 - 00:43:53 o sea,
+digamos que los recursos 00:43:48 - 00:43:58 del grit son son compartidos 00:43:51 - 00:43:58
+entre todos los integrantes del 00:43:51 - 00:43:58 grito en cambio en volumitir 00:43:53 -
+00:43:58 con Putin no es tan 00:44:04 - 00:44:10 tan simétrico el el la 00:44:04 - 00:44:14
+computación Porque si yo me 00:44:05 - 00:44:14 registro ante el proyecto mis 00:44:09 -
+00:44:14 recursos van a estar donados al 00:44:10 - 00:44:14 proyecto pero 00:44:16 -
+00:44:21 yo si necesito más recursos no 00:44:17 - 00:44:22 voy a poder contar con los
+00:44:17 - 00:44:22 recursos del proyecto, no sé si 00:44:18 - 00:44:26 me hago entender. Sí o
+sea, 00:44:21 - 00:44:26 ellos, van a poder utilizar mi 00:44:22 - 00:44:30 máquina Pero yo si
+Necesito 00:44:22 - 00:44:30 hacer algo y tengo un proyecto 00:44:26 - 00:44:35 y necesito
+recursos de cómputo 00:44:26 - 00:44:35 Generalmente no voy a poder 00:44:30 - 00:44:35
+aprovechar los recursos del 00:44:30 - 00:44:35 proyecto. 00:44:37 - 00:44:41 Por eso hablas
+de de la 00:44:37 - 00:44:42 asimetría en los roles, ya no 00:44:38 - 00:44:45 somos
+integrantes del grid que 00:44:41 - 00:44:46 todos podemos hacer de todo o 00:44:41 -
+00:44:50 que podemos intercambiar o 00:44:42 - 00:44:50 compartir los recursos, sino 00:44:45
+- 00:44:50 que ahora yo como usuario puedo 00:44:46 - 00:44:50 donar mis recursos, puedo
+00:44:51 - 00:44:57 recibir tareas y procesarlas de 00:44:52 - 00:44:57 manera local, pero yo no
+voy a 00:44:52 - 00:45:01 tener la posibilidad de ir a 00:44:56 - 00:45:01 hablar al proyecto y
+decirle 00:44:57 - 00:45:01 Bueno yo ya les estuve prestando 00:44:57 - 00:45:01 su 00:45:02 -
+00:45:07 computadora en mi computador 00:45:03 - 00:45:07 Durante un mes, ahora necesito
+00:45:03 - 00:45:07 ayudar a entrenar la 00:45:10 - 00:45:14 una red neuronal. Lo voy a
+00:45:10 - 00:45:19 entrenar un un llm para para 00:45:11 - 00:45:19 datos locales, no ahí sí,
+tengo 00:45:14 - 00:45:19 yo que resolver con mis propios 00:45:14 - 00:45:19 recursos.
+00:45:20 - 00:45:27 la asimetría listo 00:45:30 - 00:45:37 Y por último tenemos tenemos el
+00:45:31 - 00:45:37 tema de que envoltir con los 00:45:31 - 00:45:37 usuarios o los si los
+usuarios 00:45:32 - 00:45:37 son anónimos. 00:45:38 - 00:45:44 Qué significa eso de que sea
+00:45:39 - 00:45:48 anónimo de que no normalmente no 00:45:39 - 00:45:48 vamos a necesitar
+ni Iniciar 00:45:44 - 00:45:48 sesión, no ellos no van a saber. 00:45:50 - 00:45:56 ellos como
+proyecto no van a 00:45:51 - 00:45:56 saber exactamente de que es el 00:45:52 - 00:46:00
+equipo de Teacher que que 00:45:52 - 00:46:00 tiene el correo tal el número 00:45:56 -
+00:46:00 telefónico nada no hay, no hay 00:45:56 - 00:46:00 digámoslo así. Yo yo estoy
+00:46:01 - 00:46:07 donando mi recurso de cómputo de 00:46:02 - 00:46:11 manera, voluntaria
+y anónima, Sí 00:46:03 - 00:46:11 y todo el que digámoslo así y 00:46:07 - 00:46:15 cada vez
+que el proyecto tengo 00:46:07 - 00:46:20 una tarea adicional para 00:46:11 - 00:46:20 mandar,
+me la me la va a poder 00:46:11 - 00:46:20 enviar sin ningún tipo de 00:46:15 - 00:46:20
+digamos así de 00:46:22 - 00:46:24 de direccionamiento de de las 00:46:22 - 00:46:27 tareas,
+no voy a decir, ve 00:46:23 - 00:46:27 aprovechemos este equipo que 00:46:23 - 00:46:28 tiene
+Teacher que tiene buenos 00:46:24 - 00:46:31 recursos y haga tal cosa no se 00:46:27 - 00:46:32
+mandan tareas de manera 00:46:28 - 00:46:32 independiente y yo simplemente 00:46:28 -
+00:46:34 voy a procesar o mi o mi 00:46:31 - 00:46:35 máquina se va a encargar de 00:46:32 -
+00:46:35 procesar la tarea que le 00:46:32 - 00:46:39 enviaron puede ser una tarea 00:46:34 -
+00:46:45 muy grande, puede ser una tarea 00:46:35 - 00:46:45 chiquita. Él simplemente se va a
+00:46:39 - 00:46:49 dedicar a procesar listo por 00:46:39 - 00:46:49 aquí había. un Ah bueno el
+tema 00:46:45 - 00:46:49 de de la de que de que el 00:46:45 - 00:46:49 sistema de bo.
+00:46:50 - 00:46:56 es Dinámico si el si nosotros 00:46:51 - 00:46:56 hablamos que el grid
+podían 00:46:52 - 00:46:56 entrar o salirnos 00:46:58 - 00:47:02 del grip de manera dinámica O
+00:46:58 - 00:47:03 sea no, no es que yo cree un un 00:46:59 - 00:47:06 grit y ese grit nunca
+más va a 00:47:02 - 00:47:11 poder crecer, no voy a poder 00:47:03 - 00:47:12 agregar nuevas
+empresas o no voy 00:47:03 - 00:47:12 a agregar nuevas centros de 00:47:06 - 00:47:13 datos
+de mi empresa. Ese es 00:47:11 - 00:47:14 Dinámico cierto, por eso es 00:47:12 - 00:47:15
+Dinámico No no es como el 00:47:12 - 00:47:19 cluster que generalmente siempre 00:47:13 -
+00:47:19 son los mismos equipos y si 00:47:14 - 00:47:19 agrego más van a seguir siendo
+00:47:15 - 00:47:19 esos equipos no voy a estar 00:47:21 - 00:47:26 agregando y quitándonos
+de mi 00:47:22 - 00:47:26 sistema distribuido en el 00:47:22 - 00:47:32 volotil como los usuarios
+son 00:47:25 - 00:47:32 los que están donando sus 00:47:26 - 00:47:32 recursos, pues no
+existen o 00:47:26 - 00:47:32 existe menos. 00:47:38 - 00:47:41 es garantía de que los
+recursos 00:47:39 - 00:47:41 estén disponibles en un momento 00:47:40 - 00:47:44
+determinado, entonces hoy puede 00:47:40 - 00:47:44 hoy pueden haber cien 00:47:41 -
+00:47:45 voluntarios donando recursos 00:47:41 - 00:47:50 mañana o en dos minutos puede
+00:47:44 - 00:47:50 pasar a uno o a ningún 00:47:44 - 00:47:55 voluntario y entonces no se
+está 00:47:45 - 00:47:56 procesando nada. etcétera, o 00:47:50 - 00:48:01 sea, es un sistema
+bastante 00:47:50 - 00:48:01 volátil pero sirve para que yo 00:47:55 - 00:48:06 como empresa
+que no tengo los 00:47:56 - 00:48:06 recursos para Para procesar la 00:48:01 - 00:48:07
+información que tengo disponible 00:48:01 - 00:48:10 lo que puedes crear un proyecto 00:48:06
+- 00:48:15 altruista o un proyecto de 00:48:06 - 00:48:15 computación voluntaria y llamar
+00:48:07 - 00:48:15 la atención o hacer algún tipo 00:48:10 - 00:48:15 de 00:48:20 - 00:48:24
+de captura de atención para que 00:48:21 - 00:48:25 personas puedan entrar a donar 00:48:21
+- 00:48:25 sus recursos a mi proyecto y 00:48:22 - 00:48:28 entre más voluntarios o es más
+00:48:24 - 00:48:29 rápido, voy a procesar la 00:48:25 - 00:48:29 información entre menos
+00:48:25 - 00:48:34 voluntarios está y y como les 00:48:28 - 00:48:34 digo los nodos que están
+ahí 00:48:29 - 00:48:39 pueden ser volátiles. Hoy es 00:48:29 - 00:48:39 ahorita está
+trabajando, pero 00:48:34 - 00:48:43 por algún motivo razón o 00:48:34 - 00:48:44 circunstancia
+el el propietario 00:48:39 - 00:48:44 del recurso de cómputo necesita 00:48:39 - 00:48:49 la
+máquina, pues se le va a 00:48:43 - 00:48:49 respetar el digámoslo así la 00:48:44 - 00:48:53
+prioridad de atender las tareas 00:48:45 - 00:48:53 del usuario cuando esté ocioso, 00:48:49 -
+00:48:54 es cuando puede estar trabajando 00:48:49 - 00:48:56 en el proyecto Entonces eso
+00:48:53 - 00:49:01 hace de que digámoslo, así que 00:48:53 - 00:49:06 mi tasa de
+procesamiento o mi 00:48:54 - 00:49:07 ritmo de procesamiento sea 00:48:56 - 00:49:07
+Dinámico Listo, vamos bien 00:49:01 - 00:49:08 hasta ahí. 00:49:06 - 00:49:11 >> Student5: La misma 00:49:07 - 00:49:11 característica la
+tiene el grid 00:49:08 - 00:49:11 normal. 00:49:13 - 00:49:18 >> Teacher:
+00:49:13 - 00:49:18 No necesariamente Pues sí, 00:49:14 - 00:49:19 perdón, sí pero 00:49:18 -
+00:49:20 >> Student5: No, como tan 00:49:18 -
+00:49:27 impactante nada, no tan fuerte 00:49:19 - 00:49:27 Porque igual usted nos decía que
+00:49:20 - 00:49:28 en este grid podían estar y 00:49:22 - 00:49:29 luego no estar. 00:49:27 -
+00:49:32 >> Teacher: 00:49:28 - 00:49:33 Sí pero no están impactante,
+00:49:28 - 00:49:34 digámoslo Así cuando yo estoy 00:49:29 - 00:49:37 hablando de grid
+computing, 00:49:32 - 00:49:38 estamos entre entidad somos o yo 00:49:33 - 00:49:41 como
+empresa estoy montando 00:49:34 - 00:49:42 varios centros de datos o me 00:49:37 - 00:49:42
+uno con otras empresas para 00:49:38 - 00:49:46 intercambiar los recursos 00:49:41 - 00:49:46
+intercambiar información entre 00:49:42 - 00:49:46 nosotros cierto, cuántos son los 00:49:42 -
+00:49:46 integrantes 00:49:48 - 00:49:58 del grito cuatro cinco los que 00:49:49 - 00:49:58 los
+que firmamos el el convenio 00:49:50 - 00:49:58 cierto? Será que otra empresa 00:49:53 -
+00:49:58 podrá entrar al grip. 00:49:59 - 00:50:04 puede que entre, pero con todo 00:49:59 -
+00:50:04 un proceso entre yo digo 00:50:00 - 00:50:04 burocrático, pero pues 00:50:05 -
+00:50:09 es un proceso de de convenios y 00:50:05 - 00:50:10 que venga usted que va a
+ofrecer 00:50:06 - 00:50:14 que el que va a recibir en 00:50:09 - 00:50:15 contraprestación bla
+bla bla 00:50:09 - 00:50:19 bla, Cuántos recursos. Usted va 00:50:10 - 00:50:19 a tener
+disponibles para 00:50:14 - 00:50:19 nosotros usted como va a 00:50:15 - 00:50:19 utilizar
+nuestros recursos 00:50:20 - 00:50:28 usted no puede utilizar esto 00:50:20 - 00:50:28 nuestros
+recursos para almacenar 00:50:21 - 00:50:28 pornografía hablar, o sea, es 00:50:23 - 00:50:28
+un tema un poco más. 00:50:30 - 00:50:35 más burocrático más más 00:50:30 - 00:50:35
+contractual para poder agregar o 00:50:31 - 00:50:35 quitar nodos Ah que 00:50:36 - 00:50:41
+uno de las empresas tuvo un 00:50:37 - 00:50:41 desastre o se le cayó la línea 00:50:37 -
+00:50:41 internet y no 00:50:43 - 00:50:49 tengo recursos, Sí mi mi grid 00:50:44 - 00:50:49
+baja, pero yo sé que ese es un 00:50:44 - 00:50:49 nodo que digamos la sí 00:50:45 - 00:50:49
+permanente. 00:50:50 - 00:50:55 Sí en algún momento volver a 00:50:51 - 00:50:55 estar y y
+solamente él va a 00:50:51 - 00:50:55 poder estar en el 00:50:57 - 00:51:01 utility Son son
+usuarios, son 00:50:58 - 00:51:05 personas independientes entonces 00:50:58 - 00:51:05 la
+dinamicidad vamos a estar 00:51:00 - 00:51:06 entrando y saliendo en cualquier 00:51:01 -
+00:51:09 momento. eh? Si ellos están en 00:51:05 - 00:51:09 procesamiento de nómina, por
+00:51:05 - 00:51:09 ejemplo, pues yo sé que esos 00:51:06 - 00:51:09 recursos van a 00:51:11
+- 00:51:15 estar ocupados, entonces tendré 00:51:11 - 00:51:16 que utilizar los recursos de
+00:51:12 - 00:51:18 otro de otra empresa, sí o 00:51:15 - 00:51:23 utilizar los recursos 00:51:15
+- 00:51:23 disponibles del resto de 00:51:16 - 00:51:23 empresas que estén en mi grit 00:51:18
+- 00:51:23 en cambio en voluntil. 00:51:24 - 00:51:29 no hay nada que hacer, o sea, 00:51:24 -
+00:51:29 pues yo le mandé una tarea y 00:51:25 - 00:51:29 respóndame cuando pueda.
+00:51:31 - 00:51:34 si el usuario empezó voluntario 00:51:32 - 00:51:38 y estaba juicioso y
+luego le 00:51:32 - 00:51:39 tocó irse para para otra ciudad 00:51:33 - 00:51:39 y allá no tiene
+acceso a 00:51:34 - 00:51:42 internet, por ejemplo pues. No 00:51:38 - 00:51:43 va a poder ser
+voluntario 00:51:39 - 00:51:43 durante un tiempo entonces ese 00:51:39 - 00:51:48 tipo de
+digámoslo así ese tipo 00:51:43 - 00:51:48 de diferencias en en la 00:51:43 - 00:51:52
+capacidad de procesamiento que 00:51:44 - 00:51:52 tenemos entre el uno y el otro 00:51:48 -
+00:51:52 en el uno es un poco más 00:51:48 - 00:51:52 estática cierto, es más fija 00:51:53 -
+00:51:59 en el número de recursos que 00:51:54 - 00:52:00 vamos a tener disponibles versus
+00:51:55 - 00:52:01 un bolutir que puedo puedo 00:51:59 - 00:52:06 tener picos de
+procesamiento, 00:51:59 - 00:52:06 puedo tener ausencia de 00:52:00 - 00:52:06
+procesamiento en cualquier 00:52:01 - 00:52:06 momento? 00:52:14 - 00:52:19 Dele lo que le
+sobre al grito el 00:52:14 - 00:52:19 resto la prioridad de que usted 00:52:15 - 00:52:25 funcione
+de manera eficiente 00:52:18 - 00:52:25 con los recursos que usted 00:52:19 - 00:52:25
+adquirió para su sistema Pero si 00:52:20 - 00:52:25 tiene recursos. 00:52:26 - 00:52:31
+ociosos, pues esos aportenlos o 00:52:27 - 00:52:31 pueden ser utilizados por los 00:52:27 -
+00:52:31 elementos del 00:52:32 - 00:52:38 Y y en nuestro caso, nosotros 00:52:33 - 00:52:39
+Generalmente no tenemos recursos 00:52:34 - 00:52:42 ociosos cierto si nosotros 00:52:38 -
+00:52:43 tenemos un computadorcito ahí 00:52:38 - 00:52:47 medio perrata con 16 gigas en
+00:52:39 - 00:52:48 RAM y un procesador Core i5, 00:52:42 - 00:52:48 para programar muy
+probablemente 00:52:43 - 00:52:52 mientras estemos programando 00:52:47 - 00:52:52
+estemos trabajando, voy a estar 00:52:48 - 00:52:52 utilizando grandes cantidades de 00:52:48
+- 00:52:52 los 00:52:53 - 00:53:02 recursos Y dónde entran esos 00:52:54 - 00:53:03 proyectos
+o dónde entran a a 00:52:57 - 00:53:07 funcionar? Pues normalmente 00:52:58 - 00:53:08
+cuando entra el el dispensador 00:53:02 - 00:53:08 de pantalla o cuando se apaga la 00:53:03 -
+00:53:10 pantalla, pues ya sabemos que 00:53:07 - 00:53:11 que el equipo está disponible
+00:53:08 - 00:53:12 entonces puedo estar haciendo 00:53:08 - 00:53:15 procesamiento. en
+background 00:53:11 - 00:53:15 sin necesidad de utilizar la 00:53:11 - 00:53:19 pantalla, pero
+una vez el 00:53:12 - 00:53:19 usuario vuelve intenta ingresar 00:53:15 - 00:53:19 y a trabajar
+en el equipo, pues 00:53:15 - 00:53:19 tengo que parar la ejecución 00:53:21 - 00:53:26 para
+darle los recursos 00:53:22 - 00:53:28 disponibles al usuario cierto en 00:53:22 - 00:53:29 los
+centros de cómputos entre 00:53:26 - 00:53:34 empresas, pues No necesariamente 00:53:26 -
+00:53:35 cada vez que vayan a procesar 00:53:29 - 00:53:39 necesitan todos los recursos
+00:53:29 - 00:53:39 entonces. ahí puedo utilizar lo 00:53:34 - 00:53:40 que quede disponible lo
+que esté 00:53:35 - 00:53:41 ocioso en el sistema. 00:53:39 - 00:53:41 >> Student5: Sí, señor. 00:53:40 - 00:53:43 >> Teacher: 00:53:41 - 00:53:45 Sí sí queda claro, Pues sí 00:53:41 - 00:53:46 aclare el 00:53:42 -
+00:53:47 >> Student5: Gracias. 00:53:45 -
+00:53:52 >> Teacher: 00:53:46 - 00:53:52 Dale utility computing Qué es
+00:53:47 - 00:53:52 útil. 00:53:55 - 00:53:59 Pensemos, pensemos que la 00:53:55 - 00:53:59
+computación sea como un servicio 00:53:56 - 00:53:59 público y aquí y 00:54:02 - 00:54:06
+aquí es donde voy a empezar a 00:54:02 - 00:54:07 hablar un poco sobre cómo sería 00:54:03
+- 00:54:11 ese tema de de pensar en la 00:54:06 - 00:54:12 computación como un servicio
+00:54:06 - 00:54:15 público y Es algo similar a lo 00:54:07 - 00:54:15 que nosotros podemos
+vivir, no 00:54:11 - 00:54:15 sé si todos ustedes tienen 00:54:12 - 00:54:15 concepto de de
+cómo 00:54:19 - 00:54:24 funciona el sistema acueducto 00:54:19 - 00:54:24 alcantarillado gas,
+etcétera 00:54:20 - 00:54:26 energía donde a mí me cobran 00:54:23 - 00:54:31 por lo que
+consumo en lo que no 00:54:24 - 00:54:31 me consumo, pues no me lo cobran 00:54:26 -
+00:54:31 cierto, o sea si yo yo hago un 00:54:26 - 00:54:31 contrato con una empresa. 00:54:32
+- 00:54:36 De acueducto de agua y ellos me 00:54:33 - 00:54:37 van a cobrar por el agua que
+yo 00:54:33 - 00:54:41 consumo cierto ellos me van a 00:54:35 - 00:54:41 poner aquí tubería.
+Me la van a 00:54:36 - 00:54:45 llevar a la casa y el hecho de 00:54:40 - 00:54:45 que yo esté
+tenga la tubería en 00:54:41 - 00:54:45 la casa, no significa que tenga 00:54:41 - 00:54:45 que
+pagar por 00:54:47 - 00:54:52 agua, hay unos costos fijos un 00:54:48 - 00:54:52 cargo básico
+que cargo de 00:54:48 - 00:54:52 administración por 00:54:53 - 00:54:58 por mantener las
+redes y bueno, 00:54:54 - 00:54:58 bla bla bla bla, pero pero yo 00:54:55 - 00:54:58 no, si yo no
+00:55:00 - 00:55:05 tengo consumo, pues no debería 00:55:00 - 00:55:09 de pagar por
+consumo cierto, no 00:55:01 - 00:55:14 no tendría sentido de que yo 00:55:05 - 00:55:14
+pagara por por algo que no me 00:55:05 - 00:55:14 que no he gastado. listo, pero 00:55:09 -
+00:55:14 cuando yo gaste 00:55:15 - 00:55:20 yo sé que mi factura se va a 00:55:15 - 00:55:20
+subir cierto, o sea, no tengo no 00:55:16 - 00:55:20 es un costo fijo 00:55:21 - 00:55:26 sino
+que es un costo variable y 00:55:22 - 00:55:26 ese costo depende de 00:55:28 - 00:55:32 de
+cuándo utilizo o cuando no 00:55:28 - 00:55:33 utilizo el recurso que estamos 00:55:29 -
+00:55:35 buscando pasa lo mismo con el 00:55:30 - 00:55:40 gas, si yo si yo no uso el gas
+00:55:32 - 00:55:40 durante todo el mes Solamente me 00:55:33 - 00:55:40 van a cobrar Los
+costos fijos 00:55:35 - 00:55:40 pero si 00:55:44 - 00:55:50 Y hacer tamales, pues entonces
+00:55:45 - 00:55:54 muy probablemente ese mes donde 00:55:46 - 00:55:55 voy a estar
+consumiendo más o 00:55:50 - 00:55:56 voy a estar cocinando más, pero 00:55:50 - 00:55:59
+se me va a subir el consumo el 00:55:54 - 00:55:59 valor de la factura es más o 00:55:55 -
+00:56:00 menos lo que queremos hacer con 00:55:56 - 00:56:04 la computación teniendo en
+00:55:59 - 00:56:04 cuenta que la computación puede 00:55:59 - 00:56:04 ser procesamiento
+00:56:00 - 00:56:04 almacenamiento, 00:56:05 - 00:56:10 etcétera, etcétera y es pensar
+00:56:05 - 00:56:11 en que nosotros vamos a a 00:56:06 - 00:56:15 alguien en alguien en algún
+00:56:10 - 00:56:16 lugar tiene unos recursos de 00:56:10 - 00:56:20 cómputo listo a los cuales
+yo 00:56:11 - 00:56:21 voy a tener acceso o voy a 00:56:15 - 00:56:25 poder entrar a utilizarlos
+en un 00:56:16 - 00:56:25 momento determinado. Por alguna 00:56:20 - 00:56:25 razón, motivo
+circunstancia, yo 00:56:21 - 00:56:25 necesito. 00:56:27 - 00:56:32 de esos recursos de
+cómputo, 00:56:28 - 00:56:32 pues simplemente yo los pido o 00:56:28 - 00:56:32 yo los
+empiezo a usar. 00:56:33 - 00:56:38 y la empresa me va a cobrar por 00:56:34 - 00:56:42 el
+tiempo o por el uso que yo 00:56:34 - 00:56:42 esté haciendo del sistema de 00:56:37 -
+00:56:42 cómputo, pero si no lo uso, pues 00:56:38 - 00:56:42 no me debería de cobrar nada.
+00:56:45 - 00:56:50 del consumo, no sé si queda ahí 00:56:46 - 00:56:50 un poco claro, el el
+concepto ya 00:56:47 - 00:56:50 pensando en la parte física 00:56:52 - 00:56:56 Es como si
+estuviéramos 00:56:52 - 00:56:56 alquilando los recursos de 00:56:52 - 00:56:56 cómputo el
+señor compró 00:56:58 - 00:57:07 su computador con tantos 00:56:58 - 00:57:07 procesadores
+tanta RAM y tanto 00:56:59 - 00:57:07 almacenamiento y yo para no sé. 00:57:02 - 00:57:07 x
+00:57:12 - 00:57:14 periodo o x funcionalidad de mi 00:57:12 - 00:57:14 sistema necesito
+recursos 00:57:13 - 00:57:20 adicionales a los que yo tengo 00:57:13 - 00:57:20 de manera
+local entonces 00:57:14 - 00:57:20 simplemente voy a ese proveedor 00:57:14 - 00:57:20 le
+digo Hey alquíleme. 00:57:24 - 00:57:29 otros tres procesadores unas 00:57:24 - 00:57:29
+tantos gigas de memoria y tanto 00:57:25 - 00:57:29 almacenamiento durante tres 00:57:26 -
+00:57:29 días. 00:57:31 - 00:57:35 entonces me cobran tres días de 00:57:32 - 00:57:36
+utilización de esos recursos, si 00:57:32 - 00:57:36 pido más procesadores me cobran 00:57:33
+- 00:57:40 más por procesador Si necesito 00:57:35 - 00:57:41 más Ram me piden más Ram Si
+00:57:36 - 00:57:44 necesito más almacenamiento me 00:57:36 - 00:57:45 cobran por más
+almacenamiento, 00:57:40 - 00:57:49 pero una vez terminado el tiempo 00:57:41 - 00:57:49 del
+consumo pues simplemente 00:57:44 - 00:57:49 como ya no necesito recursos, 00:57:45 -
+00:57:49 pues simplemente lo libero y 00:57:50 - 00:57:55 solamente en mi factura voy a
+00:57:51 - 00:57:55 tener el costo de los días o del 00:57:51 - 00:57:55 periodo en el que
+estuve 00:57:56 - 00:58:01 utilizando los recursos de 00:57:57 - 00:58:02 cómputo listo es más
+como un 00:57:57 - 00:58:06 modelo de consumo o facturación 00:58:00 - 00:58:11 por
+demanda si yo lo uso. 00:58:01 - 00:58:11 Factura si no lo uso no me 00:58:02 - 00:58:11
+factura. Se entiende el 00:58:06 - 00:58:11 concepto de lutility. 00:58:19 - 00:58:24 Define más
+un modelo de trabajo 00:58:20 - 00:58:24 que una plataforma O sea no es 00:58:21 - 00:58:24
+tanto 00:58:26 - 00:58:34 El el software para hacerlo sino 00:58:26 - 00:58:34 el Cómo se va a
+hacer el consumo 00:58:27 - 00:58:34 Cómo se va a hacer el uso de 00:58:29 - 00:58:34 esta
+plataforma listo. 00:58:37 - 00:58:47 la idea de computación 00:58:37 - 00:58:47 utilitaria
+apareció gracias a 00:58:42 - 00:58:47 John Mccartney en el año 1961. 00:58:53 - 00:58:55
+pregunta, será que él estaba 00:58:54 - 00:58:58 pensando en la nube cuando dijo 00:58:54 -
+00:58:58 hizo esta esta pregunta, esta 00:58:55 - 00:58:58 digámoslo Así esta idea la 00:58:55
+- 00:58:58 computación podría algún 00:58:59 - 00:59:05 día estar organizada como un
+00:59:00 - 00:59:09 servicio público como una 00:59:00 - 00:59:09 utilidad pública. como tal
+como 00:59:04 - 00:59:09 el sistema de teléfono es una 00:59:05 - 00:59:09 utilidad pública.
+00:59:10 - 00:59:15 Listo o sea, que yo cobro Mejor 00:59:11 - 00:59:20 dicho a mí me
+cobraban porque 00:59:12 - 00:59:20 ahora pues el teléfono no 00:59:12 - 00:59:20 funciona
+así, pero antes me 00:59:15 - 00:59:20 cobraban. 00:59:22 - 00:59:24 el sistema de telefonía,
+me 00:59:22 - 00:59:26 cobraba por el número de 00:59:23 - 00:59:26 llamadas o por el tiempo
+que me 00:59:23 - 00:59:31 demoraba llamando si yo no 00:59:24 - 00:59:31 llamaba en el mes
+pues Los 00:59:26 - 00:59:31 costos eran muy bajitos o no me 00:59:27 - 00:59:31 cobraban
+listo. 00:59:32 - 00:59:37 Esa esa misma idea es la que 00:59:33 - 00:59:37 queremos con la
+computación si 00:59:33 - 00:59:41 llegó Black Friday y 00:59:36 - 00:59:41 necesitamos
+recursos de cómputo, 00:59:37 - 00:59:41 pues usémoslo y atendamos a 00:59:37 - 00:59:41
+todos los 00:59:42 - 00:59:47 usuarios en Black Friday y pasó 00:59:43 - 00:59:47 Black Friday
+ya no necesito 00:59:43 - 00:59:47 recursos no me 00:59:49 - 00:59:54 cobres sino por lo que
+usé 00:59:49 - 00:59:59 durante Black Friday el resto 00:59:50 - 00:59:59 del tiempo cuando mi
+consumo 00:59:54 - 00:59:59 esté mínimo pues me deben cobrar 00:59:55 - 00:59:59 lo
+mínimo. 01:00:01 - 01:00:11 Y desde el 61 viene el concepto 01:00:02 - 01:00:11 Hola Y qué
+computación había en 01:00:02 - 01:00:15 el 61? Quién me alguien? Tiene 01:00:05 - 01:00:15
+así como una idea de qué tipo 01:00:11 - 01:00:15 de computación se estaba 01:00:11 -
+01:00:15 hablando en el en el 61. 01:00:17 - 01:00:23 No me iban a decir que que 01:00:17 -
+01:00:24 Amazon aws. 01:00:22 - 01:00:28 >> Student5: Pero bueno, pues no sé 01:00:23 - 01:00:29 si se de pronto lo correcto, 01:00:24 -
+01:00:30 pero estamos hablando de 01:00:28 - 01:00:31 computadores solamente de 01:00:29
+- 01:00:32 oficina, o sea, ni siquiera 01:00:29 - 01:00:32 estamos hablando de personales
+01:00:30 - 01:00:37 nada. 01:00:31 - 01:00:37 >> Teacher: 01:00:32 -
+01:00:37 Ni siquiera habían oficina en 01:00:32 - 01:00:37 ese tiempo. 01:00:38 - 01:00:44
+tiempo tampoco existía, verdad 01:00:38 - 01:00:49 Hola buena buena buena tu 01:00:39 -
+01:00:49 pregunta yo no creo que sea tan 01:00:40 - 01:00:49 viejo. Espérame a ver 01:00:44 -
+01:00:49 preguntemos. 01:00:56 - 01:01:06 computación vamos a colocar aquí 01:01:01 -
+01:01:06 a ver 01:01:15 - 01:01:20 no, pero yo no estoy hablando de 01:01:15 - 01:01:20 IBM
+mire vea el origen de IBM 01:01:16 - 01:01:20 las raíces datan de la década de 01:01:17 -
+01:01:20 1880 01:01:23 - 01:01:35 décadas antes de los desarrollos 01:01:24 - 01:01:35 en la
+década del 61 o antes IBM 01:01:24 - 01:01:35 ha escrito su formación pero 01:01:31 -
+01:01:35 no, no era ni 01:01:42 - 01:01:47 los primeros computadores Cómo 01:01:42 -
+01:01:47 se llamaba el primer computador. 01:01:50 - 01:01:55 >> Student13: No es eso del enyac 01:01:51 - 01:01:56 o un computador por allá
+01:01:52 - 01:01:57 viejísimo que que él era los 01:01:55 - 01:01:57 transistores gigantes por
+allá 01:01:56 - 01:01:58 como los treinta cuarenta una 01:01:56 - 01:02:05 cosa así. 01:01:57 -
+01:02:06 >> Teacher: 01:01:57 - 01:02:07 En los cuarenta en el 45 mire.
+01:02:00 - 01:02:10 En el 45 apareció el enyac. Y 01:02:05 - 01:02:10 de lenier vinieron
+creciendo una 01:02:06 - 01:02:11 serie de computadores, pregunta 01:02:07 - 01:02:11 eso era
+para empresas. 01:02:10 - 01:02:12 >> Student13: No
+eso era de 01:02:11 - 01:02:18 investigación. 01:02:11 - 01:02:18 >> Teacher: 01:02:12 - 01:02:19 de investigación Ajá 01:02:17 - 01:02:19 >> Student13: pues como que como 01:02:18 - 01:02:21 que metía mucha
+plata los 01:02:19 - 01:02:26 militares por Pues por la 01:02:19 - 01:02:26 promesa de que en
+esa época 01:02:21 - 01:02:26 podían utilizarlo para hacer 01:02:21 - 01:02:26 cálculos para la
+guerra. 01:02:27 - 01:02:31 >> Teacher: Y 01:02:27 - 01:02:31 cómo
+utilizaban ese computador o 01:02:28 - 01:02:34 sea después de que la 01:02:28 - 01:02:34
+universidad de X lo creo Cómo 01:02:31 - 01:02:35 podían utilizar ese computador 01:02:34 -
+01:02:36 >> Student13: pues eso era con 01:02:35 -
+01:02:41 unas tarjetas que que las 01:02:35 - 01:02:41 >> Student7: tarjetas perforadas 01:02:40 - 01:02:42 >> Teacher:
+01:02:41 - 01:02:43 Pues tiempo después fueron las 01:02:41 - 01:02:43 tarjetas perforadas al
+principio 01:02:42 - 01:02:45 no, no. 01:02:42 - 01:02:46 >> Student13: Ah no las tableros 01:02:43 - 01:02:47 conectables 01:02:45 - 01:02:48 >>
+Teacher: 01:02:46 - 01:02:49 había programación siquiera Ajá 01:02:46 -
+01:02:49 eso era con transistores. Venga, 01:02:47 - 01:02:54 yo conecto esto tan tan y hago
+01:02:48 - 01:02:54 cosas cierto. 01:02:49 - 01:02:54 >> Student22: Me 01:02:49 -
+01:02:54 pasó todo también. 01:02:55 - 01:03:00 >> Teacher: 01:02:56 -
+01:03:01 Exactamente entonces mire que en 01:02:56 - 01:03:02 ese tiempo crearon el en línea
+o 01:02:57 - 01:03:06 crearon los distintos 01:03:01 - 01:03:06 computadores que vinieron en
+01:03:01 - 01:03:11 evolución a partir de leniec, 01:03:02 - 01:03:16 pero era digámoslo así
+para 01:03:06 - 01:03:16 poder utilizar ese computador 01:03:06 - 01:03:16 era por demanda.
+sí, O sea si 01:03:11 - 01:03:16 yo tenía si yo era 01:03:18 - 01:03:23 el ejército de Estados
+Unidos o 01:03:19 - 01:03:24 la armada, etcétera y tenía una 01:03:19 - 01:03:25 información
+que quería procesar 01:03:20 - 01:03:28 yo que tenía que hacer Buscar 01:03:24 - 01:03:28
+donde procesarla, la puedo hacer 01:03:24 - 01:03:32 a mano cierto y empezar a 01:03:25 -
+01:03:32 procesarlo y hacer los cálculos 01:03:28 - 01:03:33 a mano o podría utilizar una
+01:03:28 - 01:03:37 herramienta que era un poco más 01:03:32 - 01:03:37 inteligente O al
+menos resolvía 01:03:32 - 01:03:37 los problemas matemáticos los 01:03:33 - 01:03:37 más
+que 01:03:38 - 01:03:43 los problemas matemáticos que 01:03:38 - 01:03:47 hacía operaciones
+mucho más 01:03:39 - 01:03:47 rápido, entonces íbamos y le 01:03:42 - 01:03:47 dejábamos
+esas tareas, a que 01:03:43 - 01:03:47 ellos lo hicieran cierto. 01:03:48 - 01:03:53 en ese
+momento cobraban por el 01:03:49 - 01:03:54 tiempo de uso de la computadora 01:03:49 -
+01:03:58 y ahí es donde cuando estaban 01:03:53 - 01:03:59 las tarjetas perforadas, pues
+01:03:53 - 01:04:03 entonces yo llegaba a perforada 01:03:58 - 01:04:04 mis tarjetas en mi
+casa o en la 01:03:58 - 01:04:08 oficina y luego llegaba, ya 01:03:59 - 01:04:08 pasaba todas
+las tarjetas y al 01:04:03 - 01:04:08 final el computador me decía el 01:04:04 - 01:04:08
+resultado es tal. 01:04:09 - 01:04:14 Y Listo Ya resolví todas estas 01:04:09 - 01:04:19 este
+gran cantidad de tarjetas 01:04:10 - 01:04:19 que tenía aquí ya las 01:04:14 - 01:04:19
+contabilicé en en dos horas, 01:04:14 - 01:04:19 pues entonces. 01:04:21 - 01:04:25 los dueños
+de negocio de la 01:04:21 - 01:04:26 universidad Me cobraba por por 01:04:22 - 01:04:26 el uso
+de dos horas y porque dos 01:04:23 - 01:04:30 horas Porque después de que yo 01:04:25 -
+01:04:31 terminaba pues venía el 01:04:26 - 01:04:35 siguiente cliente a hacer su 01:04:26 -
+01:04:35 tarea dentro del computador 01:04:30 - 01:04:35 entonces nuestro amigo McCartney
+01:04:39 - 01:04:44 está aquí nuestro amigo macarni 01:04:40 - 01:04:44 en el 61 hablaba de
+ese tipo de 01:04:40 - 01:04:44 computación y 01:04:47 - 01:04:53 es que en lugar de que yo
+yo 01:04:47 - 01:04:57 tuviese una membresía o yo yo 01:04:48 - 01:04:57 tuviese que hacer
+cola por 01:04:49 - 01:04:58 decirlo así para para poder 01:04:53 - 01:05:02 Acceder al recurso
+de cómputo 01:04:57 - 01:05:03 La idea era que el recurso de 01:04:58 - 01:05:03 cómputo
+estuviera siempre 01:04:58 - 01:05:04 disponible que yo lo tuviese 01:05:02 - 01:05:09 ahí en
+mi casa por decirlo así 01:05:03 - 01:05:09 así como llega la línea 01:05:03 - 01:05:09
+telefónica y la tengo en mi 01:05:04 - 01:05:09 casa. 01:05:10 - 01:05:15 y Bueno en ese
+momento lo que 01:05:16 - 01:05:21 el servicio la utilidad pública 01:05:17 - 01:05:25 era la
+línea telefónica cierto. 01:05:20 - 01:05:25 en ese tiempo no me cobraba agua 01:05:20 -
+01:05:25 ni nada de eso porque no había 01:05:32 - 01:05:34 Pero él decía Pues así como me
+01:05:32 - 01:05:35 tiraron cable y lo tengo en la 01:05:33 - 01:05:35 casa y puedo llamar o no.
+Y si 01:05:33 - 01:05:39 llamo me cobran Y si no llamo no 01:05:34 - 01:05:39 me cobran. lo
+mismo Debería ser 01:05:35 - 01:05:44 la computación, lo mismo 01:05:36 - 01:05:44 deberían
+ser el acceso a sus 01:05:39 - 01:05:44 computadores los del 61 cierto. 01:05:46 - 01:05:51
+Deberían ser recursos que yo 01:05:46 - 01:05:51 tuviese acceso para utilizarlo 01:05:47 -
+01:05:56 cuando yo lo necesite y cuando 01:05:50 - 01:05:57 yo lo necesite que me cobren y
+01:05:51 - 01:05:59 cuando no los necesito, pues no 01:05:51 - 01:06:00 me cobra. Listo,
+entonces mire 01:05:56 - 01:06:04 que desde ese momento cuando 01:05:57 - 01:06:04 apenas
+estábamos en las 01:05:59 - 01:06:04 primeras ideas de lo que era la 01:06:00 - 01:06:04
+computación. 01:06:06 - 01:06:11 Empezar, ya estábamos ya 01:06:06 - 01:06:11 macarni.
+Estaba hablando de 01:06:07 - 01:06:11 debería la computación 01:06:13 - 01:06:22 Debería
+ser un servicio público 01:06:14 - 01:06:22 o una utilidad pública algo que 01:06:14 - 01:06:22
+algo que yo pudiese acceder, 01:06:17 - 01:06:22 simplemente. 01:06:29 - 01:06:32 por
+demanda si necesito Si 01:06:30 - 01:06:35 necesito el recurso, pues puedo 01:06:30 -
+01:06:35 disponerlo, pero por disponerlo 01:06:31 - 01:06:39 me van a cobrar listo, entonces
+01:06:32 - 01:06:40 no es no es por turno, no es 01:06:35 - 01:06:40 que yo levante el teléfono
+Ah 01:06:35 - 01:06:44 está ocupado, esperemos a que 01:06:39 - 01:06:44 otro a que el otro
+cuelgue sino 01:06:40 - 01:06:44 que simplemente levanto el 01:06:41 - 01:06:44 teléfono hago
+mi 01:06:46 - 01:06:50 llama mi mi marcado llegan a 01:06:46 - 01:06:50 hablo con la persona
+hablo un 01:06:47 - 01:06:50 minuto dos minutos 01:06:52 - 01:06:55 tres minutos, una hora me
+van a 01:06:52 - 01:06:58 cobrar una hora de servicio, es 01:06:53 - 01:06:58 más o menos ese
+modelo para el 01:06:55 - 01:07:01 utinity computer y necesitamos 01:06:56 - 01:07:06 un
+esquema de tarificación, o 01:06:58 - 01:07:06 sea, vamos a tener una serie de 01:06:58 -
+01:07:06 tarifas o un modelo de Cuánto 01:07:01 - 01:07:06 me cuesta. 01:07:07 - 01:07:12 el
+impulso Cuánto me cuesta y es 01:07:08 - 01:07:12 que aquí viene el detalle y es y 01:07:08 -
+01:07:12 cómo cobro la computación. 01:07:14 - 01:07:21 Cómo cobro la ram, Cómo cobro el
+01:07:15 - 01:07:21 procesador Cómo cobro el 01:07:15 - 01:07:21 almacenamiento, cómo lo
+cobro? 01:07:25 - 01:07:29 Cierto No es tan fácil 01:07:25 - 01:07:30 determinar ese ese
+cómputo 01:07:26 - 01:07:34 porque un sistema puede 01:07:29 - 01:07:35 necesitar mucho
+procesamiento y 01:07:29 - 01:07:35 Ram pero no necesitar 01:07:30 - 01:07:40
+almacenamiento. Y otro puede 01:07:34 - 01:07:40 ser que necesite durante el 01:07:35 -
+01:07:42 período de tiempo necesite más 01:07:39 - 01:07:47 almacenamiento que
+procesamiento 01:07:40 - 01:07:47 Entonces cómo hacemos nosotros 01:07:40 - 01:07:47 para
+cobrar por por la 01:07:42 - 01:07:47 computación entonces. 01:07:50 - 01:07:55 digamos que
+uno de los de los 01:07:50 - 01:07:55 meollos o uno de los elementos 01:07:51 - 01:07:55 que
+hacen parte o que hacen. 01:07:58 - 01:08:03 un poco difícil ese concepto de 01:07:58 -
+01:08:08 la computación utilitaria es el 01:07:59 - 01:08:08 hecho de cómo cobrar Cómo cobrar
+01:08:00 - 01:08:08 por los recursos será que para 01:08:03 - 01:08:08 mí es lo mismo.
+01:08:11 - 01:08:16 tener usar mucha computación y 01:08:12 - 01:08:21 poco almacenamiento
+o utilizar 01:08:12 - 01:08:21 mucho almacenamiento y poca 01:08:13 - 01:08:21 procesamiento
+Entonces cómo lo 01:08:16 - 01:08:21 vamos a cobrar listo. 01:08:24 - 01:08:26 Nada yo sé
+que tienen dudas de 01:08:24 - 01:08:27 de dónde vamos de ejemplos de 01:08:25 - 01:08:32
+esto, pero no les voy a decir 01:08:26 - 01:08:33 porque ustedes lo van a 01:08:26 - 01:08:33
+investigar. Estoy hablando de 01:08:27 - 01:08:37 de los conceptos cierto. y 01:08:32 - 01:08:37
+ahora vamos a hablar de Cloud 01:08:33 - 01:08:37 que es la palabra de moda o el 01:08:33 -
+01:08:37 concepto de moda 01:08:38 - 01:08:45 que todos que todos ustedes 01:08:39 -
+01:08:46 manejan cierto, qué es Cloud 01:08:39 - 01:08:50 computing? ustedes que son los
+01:08:42 - 01:08:50 duros del Cloud Qué es 01:08:46 - 01:08:50 computación en la nube
+entonces. 01:08:53 - 01:08:54 >> Student13: Pues No
+01:08:53 - 01:08:58 necesariamente tiene que ser un 01:08:54 - 01:09:02 servicio o Pues si es
+un 01:08:54 - 01:09:02 servicio pero no tiene que ser 01:08:57 - 01:09:02 un servicio como
+estilo, el que 01:08:58 - 01:09:02 uno adquiere que paga una 01:09:04 - 01:09:09 empresa Pero
+si es por lo menos 01:09:05 - 01:09:09 poder acceder remotamente a unos 01:09:05 - 01:09:15
+a un procesamiento o un 01:09:08 - 01:09:15 almacenamiento, o sea, unas 01:09:09 - 01:09:15
+capacidades computacionales o de 01:09:10 - 01:09:15 almacenamiento. 01:09:17 - 01:09:21
+desde un dispositivo que no 01:09:17 - 01:09:21 tenga esas capacidades y 01:09:18 - 01:09:22
+utilizarlo para hacer las tareas 01:09:18 - 01:09:22 más complejas. 01:09:21 - 01:09:23 >>
+Teacher: 01:09:21 - 01:09:29 Pero hay una característica por 01:09:22 -
+01:09:31 la cual se les dice nube y es 01:09:22 - 01:09:31 por qué A qué se le llama la 01:09:23
+- 01:09:32 nube? 01:09:29 - 01:09:34 >> Student1: donde sea 01:09:31 - 01:09:34 >> Teacher: Y 01:09:31 - 01:09:36 cómo Y cuál es la forma de tener 01:09:32 -
+01:09:37 acceso a donde sea? 01:09:34 - 01:09:37 >> Student13: el internet 01:09:36 - 01:09:40 >> Teacher: 01:09:37 - 01:09:41
+Por el internet cierto nosotros 01:09:37 - 01:09:45 hablamos Generalmente de nube 01:09:38 -
+01:09:45 porque son recursos de cómputo 01:09:40 - 01:09:45 que están disponibles por el
+01:09:41 - 01:09:45 canal de comunicación o 01:09:46 - 01:09:52 poner nuestro sistema de
+01:09:47 - 01:09:56 comunicación que tenemos 01:09:47 - 01:09:56 preferido que es el internet
+si 01:09:51 - 01:09:56 está disponible pero no está en 01:09:52 - 01:09:56 internet será Cloud
+01:09:58 - 01:10:04 creado el sistema Pero yo no 01:09:59 - 01:10:04 puedo acceder por
+internet será 01:10:00 - 01:10:04 Cloud 01:10:12 - 01:10:17 Sí o no, pero no debería cierto,
+01:10:12 - 01:10:17 aunque aunque Cloud no está 01:10:13 - 01:10:17 pues. 01:10:18 -
+01:10:21 digámoslo así 100% ligado a que 01:10:18 - 01:10:22 sea internet realmente estamos
+01:10:19 - 01:10:26 hablando de redes, pero la red 01:10:21 - 01:10:27 que comparte o que
+hace que 01:10:21 - 01:10:27 podamos compartir o que podamos 01:10:22 - 01:10:31 acceder
+desde cualquier lugar, 01:10:26 - 01:10:32 que ese es el el concepto más 01:10:27 - 01:10:36
+importante de de Cloud Y es que 01:10:31 - 01:10:36 podemos acceder desde cualquier
+01:10:31 - 01:10:40 lugar, pues la digámosla si la 01:10:32 - 01:10:41 única red que nos da
+acceso a 01:10:36 - 01:10:41 muchas cosas es internet, Dime 01:10:37 - 01:10:42 de Juan
+01:10:40 - 01:10:45 >> Student13: Sería como
+comentar 01:10:41 - 01:10:46 que inclusive por el principio 01:10:42 - 01:10:46 dije que que no
+era un servicio 01:10:45 - 01:10:47 pago, no siempre porque hay 01:10:45 - 01:10:49 nubes
+privadas cierto, hay 01:10:46 - 01:10:49 empresas que 01:10:46 - 01:10:50 >> Teacher: 01:10:47 - 01:10:50 Ajá 01:10:49 - 01:10:51 >> Student13: generan su nube 01:10:50 - 01:10:54 privada tienen una capacidad
+01:10:51 - 01:10:54 computacional o de 01:10:51 - 01:10:54 almacenamiento 01:10:55 -
+01:11:03 lo que sea en un en un espacio 01:10:56 - 01:11:03 de la empresa y simplemente
+pues 01:10:56 - 01:11:03 como los empleados son 01:11:07 - 01:11:09 trabajan por fuera
+trabajan 01:11:07 - 01:11:11 desde casa, bueno o en otras 01:11:08 - 01:11:11 ciudades, pues
+les brindan esa 01:11:08 - 01:11:12 conectividad y muchas veces ni 01:11:09 - 01:11:17 siquiera
+es a través del 01:11:11 - 01:11:17 internet, sino que puede ser a 01:11:11 - 01:11:18 través de
+unas intranets que ya 01:11:12 - 01:11:19 tienen muy muy robustas. 01:11:17 - 01:11:19 >>
+Teacher: 01:11:18 - 01:11:24 Entonces, mira que hay un 01:11:18 - 01:11:24
+concepto bastante interesante y 01:11:19 - 01:11:24 esto y es que el concepto de 01:11:19 -
+01:11:24 nube. 01:11:27 - 01:11:32 Un lugar donde voy a poder 01:11:28 - 01:11:32 procesar
+información cierto 01:11:28 - 01:11:32 donde voy a poder 01:11:33 - 01:11:38 ejecutar las
+aplicaciones voy a 01:11:34 - 01:11:39 poder localizar los recursos 01:11:35 - 01:11:43 etcétera
+Pero siempre hemos 01:11:38 - 01:11:43 estado hablando de de que bueno 01:11:38 - 01:11:43
+Y para poder acceder a ella pues 01:11:45 - 01:11:51 es por la red, pero no No 01:11:45 -
+01:11:51 necesariamente las nubes tienen 01:11:46 - 01:11:55 que ser públicas Listo o sea,
+01:11:50 - 01:11:56 no todas las nubes tienen que 01:11:51 - 01:12:00 estar de acceso a todo el
+mundo 01:11:51 - 01:12:00 yo por ejemplo no puedo entrar 01:11:55 - 01:12:00 a la red de
+donde se está 01:11:56 - 01:12:00 procesando la 01:12:02 - 01:12:07 información bancaria, Sí
+yo 01:12:02 - 01:12:07 puedo acceder a unos servicios 01:12:03 - 01:12:07 que están en en la
+01:12:09 - 01:12:15 nube están en en algún centro de 01:12:10 - 01:12:20 cómputo cierto, pero
+no al pero 01:12:10 - 01:12:20 no a todos los nodos de ese 01:12:15 - 01:12:20 centro de
+cómputo listo Entonces 01:12:15 - 01:12:20 vamos a hablar de que las 01:12:22 - 01:12:29 Son
+son entornos, sí son son 01:12:22 - 01:12:29 espacios o son recursos donde yo 01:12:23 -
+01:12:29 voy a estar ejecutando. 01:12:30 - 01:12:35 las aplicaciones donde van a 01:12:30 -
+01:12:35 estar ejecutando las 01:12:31 - 01:12:35 aplicaciones, que a mí me 01:12:31 -
+01:12:35 interesa acceder listo. 01:12:41 - 01:12:43 para esto vamos a utilizar 01:12:42 -
+01:12:46 software, o sea, vamos a poder 01:12:42 - 01:12:46 diseñar o crear software para
+01:12:43 - 01:12:46 ese tipo de nubes y voy a 01:12:43 - 01:12:46 necesitar 01:12:48 - 01:12:54
+Hardware para crear la nube 01:12:49 - 01:12:55 realmente pensemos en la nube 01:12:49 -
+01:12:58 como esos recursos. a los 01:12:53 - 01:12:58 cuales, yo voy a poder acceder
+01:12:54 - 01:12:58 por la red listo y aquí entra el 01:12:55 - 01:12:58 concepto. 01:12:59 -
+01:13:04 decía el compañero Y es que 01:13:00 - 01:13:09 existen diferentes tipos de 01:13:00
+- 01:13:09 nubes, Entonces está la nube 01:13:04 - 01:13:10 Pública que es la que todos
+01:13:04 - 01:13:13 podemos acceder por internet. 01:13:09 - 01:13:13 la donde vamos a poder
+acceder a 01:13:09 - 01:13:14 todos los recursos a toda la 01:13:10 - 01:13:18 información
+etcétera que que 01:13:13 - 01:13:18 tenemos Generalmente en la nube 01:13:13 - 01:13:18
+pública. Nosotros podríamos 01:13:14 - 01:13:18 encontrar, por 01:13:19 - 01:13:24 ejemplo
+todas las páginas 01:13:20 - 01:13:24 estáticas de de internet cierto 01:13:20 - 01:13:24 todo lo
+que es que 01:13:26 - 01:13:34 los artículos los foros etcétera 01:13:27 - 01:13:34 que no me
+cobran por por 01:13:28 - 01:13:34 publicar o por hacer cosas, eso 01:13:30 - 01:13:34 viene
+siendo. 01:13:35 - 01:13:39 Un servicio una nube pública 01:13:36 - 01:13:43 Porque allá
+donde se coloca es 01:13:37 - 01:13:43 para que todos puedan acceder, 01:13:39 - 01:13:43 yo
+puedo tener una nube privada. 01:13:46 - 01:13:51 Sí una nube privada es un 01:13:46 -
+01:13:52 servicio que está que es a la 01:13:47 - 01:13:56 cual solamente va a poder 01:13:51 -
+01:14:00 acceder o una organización o un 01:13:51 - 01:14:00 conjunto de empleados,
+etcétera, 01:13:56 - 01:14:03 etcétera, Qué puede estar en en 01:13:56 - 01:14:08 internet o
+puede estar. un 01:14:00 - 01:14:08 premis habían escuchado esta 01:14:00 - 01:14:08 palabra
+un premis. Saben a qué 01:14:03 - 01:14:08 hace referencia? 01:14:12 - 01:14:17 >> Student13: colocación de la 01:14:13 - 01:14:18 empresa o
+de la entidad la que 01:14:14 - 01:14:19 usted estaba allá en el lugar 01:14:17 - 01:14:21 >>
+Teacher: O 01:14:18 - 01:14:22 sea, exactamente vamos a hablar 01:14:18
+- 01:14:22 un premis a toda la 01:14:19 - 01:14:26 infraestructura o toda la 01:14:21 - 01:14:26
+gestión tecnológica que nosotros 01:14:22 - 01:14:26 vamos a hacer de manera Autónoma
+01:14:22 - 01:14:26 dentro de 01:14:27 - 01:14:33 nuestra organización ojo aquí yo 01:14:28 -
+01:14:37 voy a decir nuestra organización 01:14:28 - 01:14:37 Pero puede estar en estar por
+01:14:33 - 01:14:37 fuera, pero nosotros somos los 01:14:33 - 01:14:37 responsables. 01:14:39
+- 01:14:45 completamente de la 01:14:40 - 01:14:45 Administración gestión de la 01:14:40 -
+01:14:46 nube o de los recursos de 01:14:41 - 01:14:48 cómputo listo, digo yo que 01:14:45 -
+01:14:48 puede ser En mi en mi empresa o 01:14:45 - 01:14:53 puede ser en un centro de
+datos 01:14:46 - 01:14:53 que yo haya alquilado para que 01:14:48 - 01:14:54 me tenga los
+equipos, pero yo 01:14:48 - 01:14:58 soy el responsable de ello el 01:14:53 - 01:14:58 centro
+de datos no hace nada, 01:14:53 - 01:14:58 son simplemente lo hago yo 01:14:54 - 01:14:58
+entonces cuando 01:14:59 - 01:15:04 cuando yo soy el responsable de 01:14:59 - 01:15:11 toda
+la gestión de mi sistema, a 01:15:00 - 01:15:11 eso es lo que nosotros vamos a 01:15:01 -
+01:15:11 llamar un sistema. listo on 01:15:04 - 01:15:11 premises Está bien. 01:15:13 - 01:15:18
+O puedo y dentro de esos 01:15:14 - 01:15:19 sistemas son premisas, es lo que 01:15:14 -
+01:15:22 Nosotros llamamos o dentro de 01:15:17 - 01:15:22 la nube privada, podemos tener
+01:15:18 - 01:15:25 sistemas son premios, o sea los 01:15:21 - 01:15:29 sistemas que tenemos
+en nuestra 01:15:22 - 01:15:29 oficina o que nosotros le 01:15:22 - 01:15:29 hacemos la
+gestión o sistemas 01:15:25 - 01:15:29 externos, sí. 01:15:32 - 01:15:35 recursos o problemas
+que hemos 01:15:33 - 01:15:37 comprado o servicios que hemos 01:15:34 - 01:15:39 comprado
+a algún proveedor y 01:15:34 - 01:15:39 simplemente pues estamos 01:15:35 - 01:15:40
+utilizando esos recursos puede 01:15:37 - 01:15:40 haber también un sistema. 01:15:39 -
+01:15:41 >> Student7: Profe, pero igual 01:15:40 -
+01:15:44 siempre va a necesitar de 01:15:40 - 01:15:45 internet para poder acceder a 01:15:41
+- 01:15:46 ellas. 01:15:44 - 01:15:49 >> Teacher: 01:15:45 - 01:15:50 Sí o
+no, Porque por ejemplo en 01:15:45 - 01:15:53 el un premis como decía Juan 01:15:46 -
+01:15:54 ahora en el on premis en lugar 01:15:49 - 01:15:54 de yo tener internet, yo debo
+01:15:50 - 01:15:58 tener algún canal de 01:15:53 - 01:15:58 comunicación para llegar a la
+01:15:54 - 01:15:58 oficina y un canal de 01:15:54 - 01:15:58 comunicación puede ser 01:16:00
+- 01:16:09 utilizando una VPN a través de 01:16:01 - 01:16:09 internet o haciendo una llamada
+01:16:02 - 01:16:14 a un pvx Pues a un pbx Y eso 01:16:05 - 01:16:14 establece la
+comunicación. 01:16:09 - 01:16:14 digámoslo así análoga por por 01:16:09 - 01:16:14 línea
+telefónica. 01:16:16 - 01:16:21 Ya no se ve casi porque pues ya 01:16:16 - 01:16:26 ese tipo de
+de comunicación, No 01:16:17 - 01:16:26 no es que la estemos utilizando 01:16:21 - 01:16:27
+mucho Pero puede ser un 01:16:22 - 01:16:31 mecanismo de digámoslo así de 01:16:26 -
+01:16:31 computación, puede ser la misma 01:16:26 - 01:16:34 intranet que yo pueda acceder
+a 01:16:27 - 01:16:40 un servidor a un servicio 01:16:31 - 01:16:40 dentro de la red interna,
+pero 01:16:31 - 01:16:40 desde afuera no. sí, me hago 01:16:34 - 01:16:40 entender. 01:16:41 -
+01:16:43 >> Student7: Sino que Pues digamos
+01:16:42 - 01:16:44 que de alguna otra forma para 01:16:42 - 01:16:44 hacerlo remoto.
+01:16:43 - 01:16:45 >> Teacher: 01:16:43 - 01:16:47 Digamos. 01:16:44 -
+01:16:48 >> Student7: se va a necesitar de 01:16:45 -
+01:16:49 internet. 01:16:47 - 01:16:52 >> Teacher: 01:16:48 - 01:16:54 hoy
+en día Muchas digámoslo así 01:16:48 - 01:17:00 por la facilidad del acceso a 01:16:49 -
+01:17:00 internet, es que es que ustedes 01:16:52 - 01:17:00 les tocó un mundo muy fácil. A
+01:16:54 - 01:17:00 mí me tocó. 01:17:03 - 01:17:05 la posibilidad de que la única 01:17:03 -
+01:17:07 forma de conectarme por internet 01:17:04 - 01:17:08 era por el teléfono. Sí Entonces
+01:17:04 - 01:17:12 a ustedes les tocó muy fácil de 01:17:05 - 01:17:12 que lo tienen a la mano
+y lo 01:17:07 - 01:17:13 tienen de manera permanente, 01:17:08 - 01:17:15 pero para yo
+acceder a internet 01:17:12 - 01:17:16 cuando yo empecé a estudiar a mí 01:17:13 - 01:17:19
+me tocaba esperar a que fueran 01:17:13 - 01:17:19 las diez de la noche que nadie 01:17:15 -
+01:17:20 fuera a llamar a la casa para 01:17:16 - 01:17:23 poder utilizar el teléfono 01:17:19 -
+01:17:24 porque era el canal de 01:17:19 - 01:17:24 comunicación para poderme 01:17:20 -
+01:17:28 conectar a Internet esa misma 01:17:23 - 01:17:29 tecnología yo la podía hacer
+01:17:24 - 01:17:32 para llegar a la oficina cierto 01:17:28 - 01:17:33 llamaba a la oficina y la
+01:17:28 - 01:17:33 oficina me daba señal y yo 01:17:29 - 01:17:39 simplemente con la señal o
+sea, 01:17:32 - 01:17:39 con el módem y todo los recursos 01:17:33 - 01:17:39 analógicos
+podía establecer la 01:17:34 - 01:17:39 comunicación de 01:17:41 - 01:17:48 Recuerdo dos
+tiempos horribles 01:17:42 - 01:17:49 ustedes están muy chiquitos 01:17:42 - 01:17:49 cuando
+eso ustedes, no les tocó 01:17:45 - 01:17:50 nada [estudiante] 01:17:48 - 01:17:50 >> Student13: Lo que quería 01:17:49 - 01:17:54 comentar es
+que o sea, digamos 01:17:50 - 01:17:58 que hay cosas que nosotros no 01:17:50 - 01:17:58
+nos tocan porque también somos 01:17:54 - 01:17:59 como Colombia los que llegamos
+01:17:55 - 01:18:04 un poquito tarde a la 01:17:58 - 01:18:04 tecnología cierto, pero si no va
+01:17:58 - 01:18:08 a Estados Unidos en Nueva York 01:17:59 - 01:18:09 quien en algunas
+ciudades como 01:18:04 - 01:18:09 Chicago ellos hay empresas que 01:18:04 - 01:18:12
+teniendo por ejemplo decir aquí 01:18:08 - 01:18:13 en Pereira hay una en 01:18:09 - 01:18:13
+dosquebradas teniendo su 01:18:09 - 01:18:17 oficinas y ellos con el 01:18:12 - 01:18:23
+proveedor de servicios antes de 01:18:13 - 01:18:23 que internet mandaban un 01:18:13 -
+01:18:23 cableado interno propio de la 01:18:17 - 01:18:23 misma empresa entonces. 01:18:24
+- 01:18:29 en dos locaciones distintas y 01:18:24 - 01:18:29 tenían una intranet cableada y
+01:18:25 - 01:18:30 después ya después ya de todo 01:18:26 - 01:18:33 eso hace usted
+trabajara, por 01:18:29 - 01:18:33 ejemplo en la otra empresa y ya 01:18:29 - 01:18:34 hubiera
+unos nodos de wi-fi. Lo 01:18:30 - 01:18:34 que hubiera ellos igual se 01:18:33 - 01:18:35
+conectaban a través de ese 01:18:33 - 01:18:38 cableado interno que seguía sin 01:18:34 -
+01:18:38 una intranet 01:18:34 - 01:18:39 >> Teacher: 01:18:35 - 01:18:39
+sí 01:18:38 - 01:18:42 >> Student13: pero de Pues en
+un 01:18:39 - 01:18:43 área mucho más mucho más grande 01:18:39 - 01:18:48 cierto,
+digamos que a nosotros 01:18:42 - 01:18:48 no nos toca porque eso acá en 01:18:42 - 01:18:49
+Pereira no sucede a nosotros nos 01:18:43 - 01:18:50 tocó ya el internet o sí. 01:18:48 -
+01:18:55 >> Teacher: 01:18:49 - 01:18:55 No, no también también existe
+01:18:49 - 01:18:55 empresas como media Commerce 01:18:50 - 01:18:55 como telefónica de
+Pereira 01:18:59 - 01:19:04 telefónica une, pues une ahora 01:19:00 - 01:19:04 ya no es
+telefónica esas 01:19:00 - 01:19:04 empresas todavía venden el 01:19:01 - 01:19:04 servicio de
+01:19:05 - 01:19:10 de cableado directo Pues de de 01:19:06 - 01:19:10 comunicación privada
+digámoslo 01:19:06 - 01:19:10 así de no utilizar canales 01:19:07 - 01:19:10 comunes, sino que
+nos tiran 01:19:11 - 01:19:16 cable de desde centro hasta 01:19:12 - 01:19:16 hasta no sé.
+01:19:18 - 01:19:23 vamos a unir la universidad 01:19:19 - 01:19:23 tecnológica con la
+universidad 01:19:19 - 01:19:23 libre y podríamos tirar cable. 01:19:25 - 01:19:30 o o contratar
+con la universidad 01:19:26 - 01:19:30 con telefónica que nos mande un 01:19:27 - 01:19:35
+canal de comunicación directa 01:19:27 - 01:19:35 entre la tecnológica y el y la 01:19:30 -
+01:19:36 universidad libre sin necesidad 01:19:31 - 01:19:42 de utilizar la red pública, o
+01:19:35 - 01:19:42 sea, sin necesidad de hacer una 01:19:35 - 01:19:43 una red privada virtual
+sino que 01:19:37 - 01:19:49 tengo mi red privada. Física 01:19:42 - 01:19:50 digámoslo así
+donde todo lo que 01:19:42 - 01:19:50 pase por ese canal es solamente 01:19:45 - 01:19:51
+información de la empresa. 01:19:50 - 01:19:52 >> Student13: alguna última 01:19:50 - 01:19:56 anotación y por ejemplo yo sé 01:19:51 - 01:20:00
+que a WS ofrece un servicio en 01:19:52 - 01:20:00 el que ellos también te 01:19:55 - 01:20:01
+conectan directamente a la a la 01:19:56 - 01:20:05 a la red de ellos sin tener que 01:20:00 -
+01:20:06 pasar por las redes 01:20:00 - 01:20:08 internacionales y un montón y si 01:20:01 -
+01:20:13 usted Pues sí tiene que pasar, 01:20:05 - 01:20:14 pero no es hacen como un canal
+01:20:06 - 01:20:15 directo y te sales de todos 01:20:08 - 01:20:15 esos protocolos de 01:20:13
+- 01:20:19 >> Teacher: 01:20:14 - 01:20:24 Yo sé que a WS tiene un
+servicio 01:20:15 - 01:20:24 que ya ahorita no me acuerdo 01:20:15 - 01:20:25 cómo se llama
+donde ellos te 01:20:19 - 01:20:29 ponen un te ponen un nodo? en 01:20:24 - 01:20:29 en los
+premios en tu oficina o 01:20:24 - 01:20:33 en donde tengas los servidores? 01:20:28 -
+01:20:33 y puedes gestionar los 01:20:29 - 01:20:38 servidores locales como si 01:20:29 -
+01:20:38 fueran servidores en la nube. Y 01:20:33 - 01:20:38 todos dentro del modelo privado.
+01:20:42 - 01:20:44 de de WS cierto, pero no sé 01:20:42 - 01:20:47 exactamente si ellos lo
+que 01:20:43 - 01:20:48 hacen es encriptar por la red 01:20:43 - 01:20:52 pública la información
+porque no 01:20:47 - 01:20:53 creo que tiren cable hasta 01:20:47 - 01:20:53 Colombia creo
+que el nodo más 01:20:48 - 01:20:54 cerquita que tenemos de aws en 01:20:52 - 01:20:54
+Brasil y y todos nos conectamos 01:20:53 - 01:21:01 esa. 01:20:53 - 01:21:01 >> Student13: al de Estados 01:20:54 - 01:21:01 Unidos sí 01:21:02 -
+01:21:05 >> Teacher: 01:21:03 - 01:21:06 exactamente Entonces entonces
+no 01:21:03 - 01:21:06 creo que haya una forma física 01:21:04 - 01:21:10 de conexión directa,
+pero yo sé 01:21:05 - 01:21:10 que si tienen ese servicio de 01:21:06 - 01:21:10 que yo puedo
+gestionar mis nodos 01:21:06 - 01:21:10 de intranet. 01:21:11 - 01:21:16 Como si fueran
+recursos 01:21:12 - 01:21:16 públicos, pues recursos en la 01:21:13 - 01:21:16 nube de de WS
+y puedo 01:21:17 - 01:21:23 gestionarlos y montarles 01:21:18 - 01:21:25 aplicaciones y sacar
+01:21:18 - 01:21:30 almacenamiento. Bueno como si 01:21:23 - 01:21:30 fueran como si fueran
+nodos de 01:21:23 - 01:21:30 aws gestionados por a WS listo 01:21:35 - 01:21:37 y aquí voy a
+digamos la si voy a 01:21:35 - 01:21:40 entrar en este en este concepto 01:21:36 - 01:21:40 no
+sé si Lo alcanzamos a 01:21:37 - 01:21:41 explicar bien, pero Generalmente 01:21:37 -
+01:21:43 cuando hablamos de nube o 01:21:40 - 01:21:44 cuando hablamos de Cloud 01:21:40
+- 01:21:44 computing, no estamos hablando 01:21:41 - 01:21:48 de tener computadores en la
+01:21:43 - 01:21:48 nube, ojo no solo estamos 01:21:44 - 01:21:48 hablando de tener
+computadores 01:21:44 - 01:21:48 en la nube, estamos 01:21:49 - 01:21:54 hablando de
+computación, o sea, 01:21:50 - 01:21:54 de poder procesar información y 01:21:50 - 01:21:54
+en ese modelo 01:21:55 - 01:22:01 Nosotros tenemos como distintos 01:21:56 - 01:22:02
+niveles de procesar de que haga 01:21:57 - 01:22:05 lo que nosotros hacemos 01:22:01 -
+01:22:10 referencia de procesar 01:22:01 - 01:22:10 información una de ellas. Es que 01:22:02
+- 01:22:10 yo puedo adquirir alquilar 01:22:05 - 01:22:10 comprar. 01:22:12 - 01:22:19 contratar
+infraestructura y que 01:22:12 - 01:22:19 me lo cobren como servicio y es 01:22:13 - 01:22:19
+lo que Nosotros llamamos el ias. 01:22:14 - 01:22:19 cierto 01:22:24 - 01:22:26 que
+básicamente es un recurso de 01:22:25 - 01:22:28 Hardware virtual, o sea, yo lo 01:22:25 -
+01:22:29 que voy a estar comprando es una 01:22:26 - 01:22:29 especie de computador en la
+nube 01:22:26 - 01:22:33 así como nosotros compramos un 01:22:28 - 01:22:34 computador
+para tener en la 01:22:29 - 01:22:34 oficina, vamos a comprar un 01:22:29 - 01:22:41
+computador que me lo va a 01:22:33 - 01:22:41 gestionar el proveedor de 01:22:34 - 01:22:41
+servicios con el que esté 01:22:34 - 01:22:41 haciendo el contrato listo y 01:22:43 - 01:22:48
+Como es un computador, pues va a 01:22:44 - 01:22:52 tener red va a tener un sistema
+01:22:44 - 01:22:53 operativo, va a tener o sea, 01:22:47 - 01:22:53 todo lo mismo todo lo
+necesario 01:22:48 - 01:22:57 para poder yo poder llegar al 01:22:52 - 01:22:57 servidor montar
+mis aplicaciones 01:22:53 - 01:23:02 o configurar mi sistema 01:22:53 - 01:23:02 etcétera,
+etcétera listo 01:22:57 - 01:23:02 Entonces cuando yo hago guías. 01:23:04 - 01:23:09
+Podemos hacer una similitud a 01:23:05 - 01:23:13 comprar un equipo, pero lo tengo 01:23:05 -
+01:23:13 lo tengo instalado en el 01:23:09 - 01:23:14 servidor allá en en el centro de 01:23:09 -
+01:23:18 datos de aws. Listo a eso a lo 01:23:13 - 01:23:18 que Nosotros llamamos 01:23:13 -
+01:23:23 infraestructura, qué más puede 01:23:14 - 01:23:23 ser infraestructura redes, o
+01:23:18 - 01:23:24 sea, toda la parte de redes y yo 01:23:18 - 01:23:28 necesito
+intercomunicar 01:23:23 - 01:23:29 diferentes computadores. Tengo 01:23:23 - 01:23:35 que
+comprar o alquilar O puedes 01:23:28 - 01:23:35 comprar una red o pagar por una 01:23:28 -
+01:23:35 red que me una los distintos 01:23:29 - 01:23:35 computadores que tengo. 01:23:41 -
+01:23:43 el equipo que me manda WS para 01:23:42 - 01:23:44 mi centro de datos para
+01:23:42 - 01:23:45 gestionar ese recurso ese equipo 01:23:43 - 01:23:45 no es gratis. Me toca
+comprar o 01:23:43 - 01:23:49 me toca alquilar o pagar por el 01:23:44 - 01:23:49 uso de ese
+equipo que ellos me 01:23:45 - 01:23:49 van a mandar y me van a poner 01:23:45 - 01:23:53
+aquí cierto eso es lo que 01:23:49 - 01:23:53 Nosotros llamamos 01:23:49 - 01:23:57
+infraestructura, pensemos en 01:23:49 - 01:23:57 todo lo físico que nosotros 01:23:53 -
+01:23:57 necesitamos para hacer 01:23:53 - 01:23:57 computación listo. 01:23:59 - 01:24:04
+existe otro modelo que es lo que 01:23:59 - 01:24:05 Nosotros llamamos platform, assa
+01:24:00 - 01:24:09 service, o sea en lugar de que 01:24:04 - 01:24:09 me entregue una
+infraestructura 01:24:05 - 01:24:09 que me entregue algo físico me 01:24:10 - 01:24:18
+entregan una plataforma Sí ya 01:24:10 - 01:24:18 viene preconfigurado con algunas 01:24:11 -
+01:24:18 herramientas algunos 01:24:13 - 01:24:18 aplicaciones. 01:24:20 - 01:24:22 un
+sistema operativo que no lo 01:24:21 - 01:24:25 voy a gestionar yo ya 01:24:21 - 01:24:26
+simplemente me están dando 01:24:22 - 01:24:26 acceso a una plataforma para que 01:24:22 -
+01:24:30 yo lo busque como si fuera un 01:24:26 - 01:24:30 servicio listo y esas 01:24:26 -
+01:24:30 plataformas como servicios 01:24:26 - 01:24:30 normalmente la 01:24:31 - 01:24:37
+como nos hemos como Paz p. As 01:24:32 - 01:24:41 plataformas. Listo, entonces 01:24:36 -
+01:24:41 proporciona una plataforma de 01:24:36 - 01:24:41 desarrollo de software O sea si
+01:24:37 - 01:24:41 yo 01:24:43 - 01:24:52 quiero montar mi aplicación y y 01:24:43 - 01:24:52
+mis datos en en la nube, pero 01:24:44 - 01:24:53 solamente me quiero enfocar en 01:24:47 -
+01:24:53 la aplicación y los datos. pues 01:24:52 - 01:24:57 simplemente no con no contrato
+01:24:52 - 01:24:58 una máquina completa donde yo 01:24:53 - 01:25:02 tengo que aprender si
+usted va 01:24:57 - 01:25:02 operativo asegurarlo hacerle 01:24:57 - 01:25:02 mantenimiento
+etcétera, sino que 01:24:58 - 01:25:02 monto la plataforma y 01:25:03 - 01:25:08 necesito una
+plataforma que me 01:25:03 - 01:25:08 corra Java y base de datos 01:25:04 - 01:25:08 móviles
+o que me 01:25:11 - 01:25:18 corra php y o que me corra punto 01:25:12 - 01:25:18 net con sql
+server cierto. 01:25:13 - 01:25:18 Compro la plataforma. 01:25:22 - 01:25:24 que eso está
+montado en Linux en 01:25:23 - 01:25:26 Windows en no me importa en la 01:25:23 - 01:25:26
+versión no me importa que hay un 01:25:24 - 01:25:29 problema de seguridad en el 01:25:24 -
+01:25:30 sistema operativo y tengo que 01:25:26 - 01:25:31 apartarlo no es mi problema. Eso
+01:25:26 - 01:25:34 es el problema del proveedor 01:25:30 - 01:25:34 listo a mí él me estaba
+01:25:30 - 01:25:34 ofreciendo la plataforma en las 01:25:31 - 01:25:34 mejores 01:25:35 -
+01:25:41 condiciones que que me la pueda 01:25:36 - 01:25:42 dar y yo esto voy a utilizar esa
+01:25:37 - 01:25:47 plataforma para poder alojar mi 01:25:41 - 01:25:47 aplicación y los datos
+por los 01:25:41 - 01:25:47 cuales vamos a estar trabajando 01:25:42 - 01:25:47 Y por último.
+01:25:50 - 01:26:02 Podemos adquirir software como 01:25:50 - 01:26:02 si fuera un servicio
+que ahí es 01:25:51 - 01:26:02 donde entra el concepto de 01:25:57 - 01:26:02 Vamos bien
+hasta ahí o no? 01:26:04 - 01:26:10 >> Student5:
+De pronto la 01:26:05 - 01:26:14 definición del primero. Porque 01:26:09 - 01:26:14 hablamos
+de recursos dejarlos 01:26:10 - 01:26:18 virtuales. 01:26:13 - 01:26:19 >> Teacher: 01:26:14 - 01:26:20 porque normalmente Ah bueno 01:26:15 - 01:26:20 porque creo
+que 01:26:18 - 01:26:22 >> Student5: cuando
+usted nos dice 01:26:20 - 01:26:24 que que envían el equipo como 01:26:20 - 01:26:26 tal el
+01:26:23 - 01:26:31 >> Teacher: 01:26:23 - 01:26:32 no, es que ahí vamos
+Ahí vamos 01:26:24 - 01:26:36 con el tema y Yo puedo yo 01:26:26 - 01:26:36 puedo. digamos
+así Yo podría 01:26:31 - 01:26:36 llegar y decirle mire quiero que 01:26:32 - 01:26:36 me
+compre. 01:26:37 - 01:26:42 o hoy quiero adquirir un 01:26:37 - 01:26:42 computador HP
+01:26:44 - 01:26:46 tres, veinticinco con tantas 01:26:45 - 01:26:51 vigas en RAM tanto
+01:26:45 - 01:26:52 almacenamiento tanto procesador 01:26:46 - 01:26:56 cierto, pues todo
+todas las 01:26:46 - 01:26:57 características. del del equipo 01:26:51 - 01:26:57 que yo quiero
+cierto eso es una 01:26:52 - 01:27:01 forma de yo adquirir Hardware 01:26:56 - 01:27:01 Pero
+cuando estamos hablando de 01:26:57 - 01:27:01 Hardware en la nube, lo más 01:26:58 -
+01:27:01 común Lo más 01:27:02 - 01:27:06 común es que nosotros adquiramos 01:27:03 -
+01:27:10 son máquinas virtuales se 01:27:04 - 01:27:10 acuerdan la diferencia entre 01:27:06 -
+01:27:10 una máquina física y una máquina 01:27:06 - 01:27:10 virtual la máquina 01:27:11 -
+01:27:16 física Es fierro, la máquina 01:27:12 - 01:27:21 virtual escoger ese fierro y 01:27:13 -
+01:27:21 partirlo en pedacitos, Pues los 01:27:16 - 01:27:21 recursos de esa máquina y
+01:27:16 - 01:27:21 partirla en pedacitos. 01:27:25 - 01:27:30 esa ese partir en pedacitos es
+01:27:25 - 01:27:30 decirle yo a Google Hey Necesito 01:27:26 - 01:27:30 un pedacito de su
+máquina que 01:27:31 - 01:27:35 tenga cuatro procesadores doce 01:27:31 - 01:27:36 gigas en
+RAM y y un tera de 01:27:32 - 01:27:39 almacenamiento. Eso no 01:27:35 - 01:27:40 significa
+que Google tenga que 01:27:35 - 01:27:44 ir a buscar un computador físico 01:27:36 - 01:27:44
+que tenga ocho terras en rambe 01:27:39 - 01:27:45 ocho gigas en RAM Montero 01:27:40 -
+01:27:49 almacenamiento y cuatro 01:27:44 - 01:27:50 procesadores lo compre y lo 01:27:44 -
+01:27:50 pegue a la red, sino que desde 01:27:45 - 01:27:52 los computadores o de los
+01:27:49 - 01:27:55 recursos o del cluster que ellos 01:27:50 - 01:28:01 tienen implementado
+pueden 01:27:50 - 01:28:01 segmentar esos recursos para 01:27:52 - 01:28:02 darle a usted el
+servicio de de 01:27:55 - 01:28:05 infraestructura la red no van a 01:28:01 - 01:28:05 ponerle
+un pascor a ese 01:28:01 - 01:28:09 computador van a tener una red 01:28:02 - 01:28:09 virtual
+que les va a permitir 01:28:05 - 01:28:10 intercambiar información sea con 01:28:06 - 01:28:14
+el resto del mundo o con los 01:28:09 - 01:28:14 otros nodos o con los otros 01:28:09 -
+01:28:14 computadores que compremos 01:28:10 - 01:28:14 dentro de nuestro 01:28:15 -
+01:28:22 de la infraestructura que que 01:28:16 - 01:28:22 estamos adquiriendo con el 01:28:16
+- 01:28:23 proveedor, no sé si me hago 01:28:17 - 01:28:26 entender. Por eso habla muchas
+01:28:22 - 01:28:30 veces habla de de recursos 01:28:22 - 01:28:30 virtuales no habla de
+recursos 01:28:25 - 01:28:30 físicos, sino virtuales hay un 01:28:26 - 01:28:30 tipo de 01:28:31 -
+01:28:37 hay un tipo de contratación, hay 01:28:32 - 01:28:38 un tipo de servicio que uno
+01:28:32 - 01:28:42 puede hacer con con los 01:28:37 - 01:28:42 proveedores de de nuevo con
+los 01:28:37 - 01:28:42 Data centers que se llama 01:28:38 - 01:28:42 colocation. 01:28:43 -
+01:28:48 bolígrafo cuadro de texto 01:28:50 - 01:29:01 Colocation ahí se ve la palabra 01:28:51
+- 01:29:01 que escribe o no? Sí, sabe. 01:29:04 - 01:29:12 Yo voy a comprar la 01:29:04 -
+01:29:12 infraestructura O sea yo voy a 01:29:05 - 01:29:12 comprar los equipos. Yo 01:29:07 -
+01:29:12 llamado. 01:29:18 - 01:29:20 Teacher voy a montar una 01:29:19 - 01:29:23
+plataforma y voy a comprar Mi HP 01:29:19 - 01:29:23 x ta ta ta ta ta con estas 01:29:20 -
+01:29:28 características y pum, pero yo 01:29:20 - 01:29:29 no tengo. un centro de datos O
+01:29:23 - 01:29:33 sea no, no tengo una oficina con 01:29:24 - 01:29:33 los Con la seguridad
+con la 01:29:28 - 01:29:33 infraestructura para mantener 01:29:29 - 01:29:33 ese centro de
+datos 01:29:34 - 01:29:40 siempre disponible O sea que 01:29:35 - 01:29:44 tenga
+refrigeración, pues tenga 01:29:35 - 01:29:44 el cuarto frío que tenga 01:29:39 - 01:29:44
+seguridad biométrica que tenga. 01:29:47 - 01:29:52 internet o acceso a red 01:29:48 -
+01:29:52 redundante O sea que si una, si 01:29:49 - 01:29:52 une se cae, pues tenga otro otro
+01:29:49 - 01:29:52 canal dedicado que tenga. 01:29:56 - 01:30:01 los temas de energía que
+tenga 01:29:56 - 01:30:01 múltiples canales o que tenga 01:29:57 - 01:30:01 posibilidad de
+01:30:03 - 01:30:09 tener una Ups que me soporte el 01:30:03 - 01:30:13 sistema por un día y o
+una 01:30:04 - 01:30:13 planta de de generación de 01:30:08 - 01:30:13 energía que me
+soporte un día de 01:30:09 - 01:30:13 una caída de internet no 01:30:15 - 01:30:20 tengo esos
+recursos de manera 01:30:16 - 01:30:24 local Entonces yo lo que hago es 01:30:16 - 01:30:24
+mi mi Hardware lo voy a poner 01:30:19 - 01:30:24 en uno de los centros de datos. 01:30:27 -
+01:30:32 de digámoslo así del país y 01:30:28 - 01:30:32 ellos me van a colocar. Eso es
+01:30:28 - 01:30:32 mis computadores en su centro de 01:30:29 - 01:30:32 datos entonces ahí
+01:30:33 - 01:30:38 ya es un Hardware físico y lo 01:30:34 - 01:30:38 único que me están
+ofreciendo es 01:30:34 - 01:30:38 conectividad y toda la parte de 01:30:35 - 01:30:38
+seguridad. 01:30:40 - 01:30:45 y bueno, mantenimiento no tanto, 01:30:41 - 01:30:45 porque si
+algo se daña es es mi 01:30:42 - 01:30:45 problema 01:30:46 - 01:30:51 porque es mi equipo
+pero pues 01:30:47 - 01:30:51 sí, pero va a estar monitoreando 01:30:48 - 01:30:51 Y si hay
+algún 01:30:52 - 01:30:57 problema en un disco duro, 01:30:53 - 01:30:58 entonces me van a
+informar si 01:30:53 - 01:30:59 hay si hay temas con la red 01:30:57 - 01:31:03 Ellos nos
+proveen las soluciones 01:30:57 - 01:31:03 de red etcétera etcétera 01:30:58 - 01:31:07
+entonces en modelo de 01:30:59 - 01:31:12 colocation. en este modelo de 01:31:03 - 01:31:12
+colocation, nosotros digamos que 01:31:07 - 01:31:12 que somos los responsables del 01:31:07
+- 01:31:12 Hardware pero 01:31:13 - 01:31:15 toda la parte de conectividad, 01:31:13 -
+01:31:18 me la da el proveedor, pero 01:31:14 - 01:31:18 cuando yo ya estoy hablando de
+01:31:15 - 01:31:18 infraestructura como servicio. 01:31:19 - 01:31:24 Generalmente ojo a
+menos de que 01:31:20 - 01:31:24 yo pido una máquina que no 01:31:20 - 01:31:27 exista o
+que no existe en los 01:31:23 - 01:31:28 recursos que tienen en sus 01:31:24 - 01:31:29
+máquinas Entonces ellos sí 01:31:24 - 01:31:34 tendrían que comprar una 01:31:27 - 01:31:34
+máquina dedicada o una máquina 01:31:28 - 01:31:34 independiente para poder 01:31:29 -
+01:31:34 ofrecer el 01:31:38 - 01:31:40 el recurso que yo necesito pero 01:31:38 - 01:31:43 en
+términos generales en 01:31:39 - 01:31:44 infraestructura estamos hablando 01:31:39 -
+01:31:48 Generalmente de Hardware 01:31:40 - 01:31:51 virtual. máquinas virtuales 01:31:43 -
+01:31:52 redes virtuales almacenamiento 01:31:44 - 01:31:57 virtual Pues discos duros
+01:31:48 - 01:31:57 virtuales digámoslo así. Como 01:31:52 - 01:32:02 coger un disco duro
+grande y 01:31:52 - 01:32:02 segmentarlo en pedacitos. No sé 01:31:57 - 01:32:02 si si queda
+claro ahí el 01:31:58 - 01:32:02 concepto. 01:32:04 - 01:32:07 y el colocation que pues es un
+01:32:05 - 01:32:11 modelo muy querido acá en 01:32:06 - 01:32:16 Colombia es malísimo pero
+es 01:32:07 - 01:32:17 muy muy querido acá en Colombia 01:32:11 - 01:32:17 muy querido Por
+qué Porque en 01:32:11 - 01:32:23 las empresas públicas. En las 01:32:16 - 01:32:23 empresas
+públicas no les gusta 01:32:17 - 01:32:23 saber de que se van a gastar dos 01:32:17 - 01:32:23
+mil millones en 01:32:26 - 01:32:29 en computación y no les va a 01:32:27 - 01:32:31 quedar
+máquina o que va a quedar 01:32:27 - 01:32:32 todo en la nube o mejor dicho 01:32:28 -
+01:32:33 que va a quedar en el aire que 01:32:29 - 01:32:36 van a hacer un consumo que van
+01:32:32 - 01:32:36 a gastar una gran cantidad de 01:32:32 - 01:32:36 plata y no va a quedar el
+01:32:33 - 01:32:36 chechere 01:32:38 - 01:32:43 Entonces cuando estamos haciendo 01:32:38
+- 01:32:44 un proyecto para las empresas 01:32:39 - 01:32:48 públicas. pues para una 01:32:43
+- 01:32:48 alcaldía una gobernación pues 01:32:43 - 01:32:48 para cualquier entidad pública
+01:32:44 - 01:32:48 la 01:32:49 - 01:32:54 contraloría etcétera y se 01:32:49 - 01:32:54
+necesita recursos de cómputo 01:32:50 - 01:32:57 entonces o compramos máquinas y 01:32:53
+- 01:32:58 las montamos en el centro de 01:32:54 - 01:33:01 cómputo de de la alcaldía, pero
+01:32:54 - 01:33:01 si la alcaldía no tiene la 01:32:57 - 01:33:02 capacidad ni la posibilidad de
+01:32:58 - 01:33:04 hacerlo entonces yo lo que 01:33:01 - 01:33:09 tengo que hacer es
+comprar los 01:33:02 - 01:33:14 equipos y ponerlo en un Data 01:33:02 - 01:33:14 Center en la
+modalidad de 01:33:04 - 01:33:15 colocation Listo, pero ojo Eso 01:33:09 - 01:33:21 es un caso
+excepcional. Existen 01:33:14 - 01:33:21 muchos otros modelos que 01:33:14 - 01:33:21
+probablemente Ustedes han estado 01:33:15 - 01:33:21 viendo han escuchado o 01:33:24 -
+01:33:27 si no lo han escuchado Pues los 01:33:25 - 01:33:29 van a empezar a escuchar cierto
+01:33:26 - 01:33:29 porque esto es parte del día a 01:33:26 - 01:33:29 día Data service
+funciones a 01:33:27 - 01:33:29 Service 01:33:30 - 01:33:36 containers a Services texto
+01:33:31 - 01:33:36 gasta service autentication 01:33:32 - 01:33:36 Services analítica backups
+01:33:37 - 01:33:42 negocios comunicaciones 01:33:37 - 01:33:42 contenido registro login
+01:33:45 - 01:33:50 monitoreo redes pagos robotas a 01:33:46 - 01:33:51 service búsquedas
+hasta Services 01:33:47 - 01:33:54 seguridad a Services todas las 01:33:47 - 01:33:55 Services
+etcétera, existen 01:33:51 - 01:33:58 ahora Gracias a todos los 01:33:51 - 01:33:58 posibles
+combinaciones de 01:33:54 - 01:34:03 computación que podemos tener, 01:33:55 - 01:34:03
+vamos a poder. encontrar 01:33:58 - 01:34:03 múltiples modelos de 01:33:58 - 01:34:03
+computación. 01:34:08 - 01:34:10 a nuestra disposición listo, 01:34:09 - 01:34:11 pero digamos
+que los que 01:34:09 - 01:34:14 principalmente nosotros nos 01:34:10 - 01:34:14 vamos a o
+vamos a englobar, 01:34:10 - 01:34:14 sería estos tres que es 01:34:11 - 01:34:14
+infraestructura plataforma. 01:34:16 - 01:34:22 Y Software todos estos son como 01:34:17 -
+01:34:25 un ejemplo de alguno de ellos 01:34:18 - 01:34:26 cierto. Entonces por ejemplo
+01:34:22 - 01:34:26 escritorio como servicio es 01:34:22 - 01:34:30 poder acceder a una a un
+01:34:25 - 01:34:30 escritorio virtual pero el de 01:34:26 - 01:34:31 escritorio no es el de mi
+01:34:27 - 01:34:35 máquina sino de un computador 01:34:30 - 01:34:35 que está en la nube,
+eso qué 01:34:30 - 01:34:35 sería sería muy parecido a como 01:34:36 - 01:34:41 tener
+plataforma o software como 01:34:37 - 01:34:45 servicio cierto ese tipo de 01:34:37 - 01:34:45
+recursos autenticación como 01:34:40 - 01:34:45 servicio Ah un servicio al cual 01:34:41 -
+01:34:45 yo le voy a delegar todo en 01:34:46 - 01:34:51 la gestión de usuarios, toquen
+01:34:47 - 01:34:51 seguridad autorización etcétera, 01:34:47 - 01:34:51 eso es 01:34:54 -
+01:35:00 software como servicio un 01:34:55 - 01:35:01 sistema como como dropbox como
+01:34:55 - 01:35:07 Drive como eso qué es estoras a 01:35:00 - 01:35:07 service? Sí es un
+sistema de 01:35:00 - 01:35:07 almacenamiento no hace nada más 01:35:01 - 01:35:07 es
+solamente almacenamiento. 01:35:11 - 01:35:13 Entonces es un tórax hasta 01:35:11 -
+01:35:16 serbios Y así sucesivamente 01:35:12 - 01:35:17 existen para digamos Así que
+01:35:13 - 01:35:21 para cada cosa podemos encontrar 01:35:13 - 01:35:22 uno de estos
+gestión de 01:35:16 - 01:35:22 contenedores. Esto Esto es una 01:35:17 - 01:35:25
+combinación de plata, eso 01:35:21 - 01:35:27 plataforma como servicio este 01:35:22 -
+01:35:33 containers y funciones de 01:35:22 - 01:35:33 Service es plataforma como 01:35:25 -
+01:35:33 servicio datavizas a Service es 01:35:28 - 01:35:33 software, o sea 01:35:37 -
+01:35:43 O sea, todo lo que tenemos acá 01:35:37 - 01:35:47 la podemos resumir en estas tres
+01:35:38 - 01:35:48 Listo o es infraestructura o es 01:35:42 - 01:35:48 una máquina o recursos
+que 01:35:43 - 01:35:52 encontramos físicamente y lo 01:35:47 - 01:35:53 vamos a pedir virtual
+o es una 01:35:48 - 01:35:54 plataforma todo ya todos los 01:35:48 - 01:35:59 recursos están
+consolidados 01:35:52 - 01:36:04 para que yo pueda montar mi 01:35:53 - 01:36:04 aplicación
+o vamos a comprar la 01:35:54 - 01:36:05 aplicación listo. Nada, vamos a 01:35:59 - 01:36:08
+dejar aquí hoy. me comí hasta 01:36:04 - 01:36:08 las ocho y diez vamos a dejar 01:36:04 -
+01:36:08 aquí hoy Y continuamos entonces 01:36:05 - 01:36:08 en la próxima clase. 01:36:10 -
+01:36:14 listo 01:36:11 - 01:36:15 >> Student5:
+Muchas gracias 01:36:13 - 01:36:19 >> Teacher: 01:36:14 - 01:36:19 Dale
+que esté muy bien. 01:36:15 - 01:36:19 >> Student1: Muchas gracias 01:36:16 - 01:36:19
+profe feliz noche para todos. 01:36:19 - 01:36:19 >> Teacher: 01:36:19 -
+01:36:20 Hasta luego.
