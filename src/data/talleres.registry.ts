@@ -46,6 +46,25 @@ export const talleresRegistry: TallerEntry[] = [
   {
     id: '3',
     number: 3,
+    title: 'Ejemplos de Arquitecturas de Sistemas Distribuidos',
+    shortTitle: 'Ejemplos de Arquitecturas',
+    topic: 'Tema 2 · Arquitecturas',
+    corte: 'Parcial 1',
+    status: 'en-progreso',
+    points: 50,
+    classroomUrl: COURSE_CLASSROOM_URL,
+    summary:
+      'Dos aplicaciones reales para cada una de las 4 arquitecturas vistas en clase: Maestro/Trabajador, Cliente/Servidor, Editor/Subscriptor y Peer to Peer.',
+    objective:
+      'Nombrar ejemplos de aplicaciones de las diferentes arquitecturas de computación distribuida, para demostrar que estos conceptos se han utilizado para solucionar problemas de computación en el pasado y en la actualidad.',
+    sections: [
+      { slug: 'ejemplos', label: 'Ejemplos por Arquitectura' },
+      { slug: 'matriz', label: 'Matriz Comparativa' },
+    ],
+  },
+  {
+    id: '4',
+    number: 4,
     title: 'Comunicación con Sockets & Java RMI',
     shortTitle: 'Sockets & Java RMI',
     topic: 'Tema 3 · Comunicación',
