@@ -5,6 +5,7 @@
 
 .tema-intro { --acc: #2f6fdb; }
 .tema-arq { --acc: #8a4bd6; }
+.tema-com { --acc: #1f9a8a; }
 
 .clase-back {
   display: inline-flex;

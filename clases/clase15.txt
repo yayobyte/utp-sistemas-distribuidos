@@ -1,0 +1,774 @@
+Hora de inicio de la reunión: 2026-10-27 18:30 GMT-5
+Asistentes
+Student1, Student2, Student3, Student4, Student5, Teacher, Student6, Student7, Student8, Student9, Student10, Student11, Student12, Student13, Student14, Student15, Student16, Student17, Student18, Student19, Student20, Student21, Student22, Student23, Student24, Student25, Student26, Student27
+Transcripción
+Teacher: Buenas noches, jóvenes.
+Teacher: ¿Cómo están?
+Teacher: Espero que todo muy bien.
+Teacher: Eh, nada, bienvenidos a esta nueva sesión, esta nueva clase donde ya vamos a entrar en el tema número tres, ¿cierto?
+Teacher: Pero antes de hablar del tema número tres, pues hay dos elementos, dos temas que debemos revisar.
+Teacher: Regálenme aquí un segundo.
+Teacher: Comparto mi pantalla.
+Teacher: Y a ver qué pasa.
+Teacher: Cuéntenme si ven mi pantalla.
+Student15: Sí, profe.
+Teacher: Listo.
+Teacher: Dale.
+Teacher: Tengo dos temas antes de empezar con la clase.
+Teacher: El primero tiene que ver con las exposiciones.
+Teacher: ¿Listo?
+Teacher: Eh, necesito que por favor me agreguen en un comentario los grupos, o sea, los equipos de cinco personas que con los cuales nosotros vamos a realizar estas exposiciones.
+Teacher: Estos son los temas de las exposiciones, ¿listo?
+Teacher: Vamos a hablar sobre criptomonedas, vamos a hablar sobre microservicios.
+Teacher: Eh, aquí esto que habla de Spring Cloud, pues es como un framework para implementar microservicios.
+Teacher: Pero está abierto para que ustedes puedan hablar de algún otro framework que de pronto conozcan.
+Teacher: Eh, contenedores y cubernetes.
+Teacher: Entonces, hablar sobre el los elementos de contenedores y el tema de cubernetes, aplicaciones eh qué es, cómo funcionan y cómo desarrollar o qué hay que tener en cuenta para eh desde el lado del front y el lado del back.
+Teacher: Listo.
+Teacher: Eh, lo que es GRPC y Even Sourcing Messaging o Even Sourcing Architecture.
+Teacher: Ahorita le pongo acá el resto.
+Teacher: Eh, y por último, de Bobs y de Execops.
+Teacher: Listo.
+Teacher: Recuerden que recuerden que la idea de las exposiciones es que hagan una investigación tanto de lo generalista como de lo digámoslo así de lo técnica, principalmente enfocado en lo que tiene que ver con los sistemas distribuidos.
+Teacher: ¿Listo?
+Teacher: Entonces, eh si por ejemplo van a hablar de criptomonedas o de cryptocurrency, pues van a hablar muy probablemente de de qué es, para qué se usa.
+Teacher: etcétera, etcétera.
+Teacher: Pero lo ideal es de que aterricen todos esos conceptos y lo digámoslo así, lo extrapolen o lo traigan a a colación en el mundo de los sistemas distribuidos.
+Teacher: O sea, eh qué arquitectura, acoplamiento, lo que hemos estado viendo, las transparencias, qué componentes utiliza, etcétera, etcétera, etcétera.
+Teacher: ¿Listo?
+Teacher: Lo mismo con cada uno de los de de los temas de de las perdón, de los temas de exposición.
+Teacher: Sí. Entonces, simplemente vamos a a trabajar o a profundizar en el tema de los sistemas distribuidos o cómo estos eh elementos o estos temas están apoyados en el concepto de los sistemas distribuidos o cómo hacen parte de este tema de los
+Teacher: sistemas distribuidos.
+Teacher: ¿Listo?
+Teacher: Eh, como les digo, entonces necesito que por favor se vayan agreg agreguen un comentario con el grupo.
+Teacher: Eh, estos, por ejemplo, aquí Verónica ya avanzó, ya hizo la tarea.
+Teacher: Entonces, por ejemplo, Verónica, como fue la primera, hace parte del grupo A, pero no significa que va a hacer la primera exposición.
+Teacher: ¿Listo?
+Teacher: Entonces, por ahora vayan ahí discutiendo por el chat o armando los grupos por el chat.
+Teacher: Si ustedes ya, digámoslo así, son amigos y quieren hacerse eh por interno lo mismo, un vocero entra y agrega, pues manda el comentario con quiénes están, quiénes van a ser parte del equipo y ahí vamos distribuyendo.
+Teacher: Listo.
+Teacher: Si no salen los cinco grupos ahora, pues ya saben que tienen ahí una forma de de coordinarse, digamoslo así, y o busquen una forma de coordinarse y agreguen pues los grupos que salgan.
+Teacher: Aquí hay ah que ya hay 23 personas, 22 personas.
+Teacher: Podemos armar cuatro grupos, ¿cierto?
+00:05:00
+Teacher: Entonces, la idea es de que vayan quedando de una vez los grupos para poder hacerle las asignación de las exposiciones, ¿no?
+Teacher: Eh, no tampoco tengo claro el tema de de la fecha porque estuve viendo ahora antes de que empezáramos clase estuve viendo y eh nos hace falta como un mesecito de clases, ¿no?
+Teacher: Entonces, eso significa que pues digámosle así con el efecto terremoto nos cortaron casi un mes de clase, casi cuo semanas de clase, así que tengo que hacer un ajuste en el cronograma, en los temas y cómo vamos a terminar de evaluar el curso.
+Teacher: ¿Listo?
+Teacher: Entonces, eh de esa manera, pues entonces además de la exposición, pues vamos a tener que revisar cómo abordamos los seis temas que tenemos pendientes por ver en, creo yo que en tres semanas o más o menos seis clases que que todavía nos
+Teacher: quedan de la parte teórica.
+Teacher: Recuerden que las exposiciones ustedes tienen la libertad de hablar todo lo que quieran porque tienen una clase para ustedes solitos.
+Teacher: ¿Listo?
+Teacher: Recuerden que tenemos hasta el 5 de diciembre para para tener notas finales.
+Teacher: Entonces, pues está bastante apretado nuestro nuestro fin de semestre.
+Teacher: Listo, porque sí, no
+Student15: Profe, ¿me repite esa parte porfa,
+Teacher: no.
+Student15: que tenemos toda la clase para exponer.
+Teacher: Ajá.
+Teacher: Ustedes como son cuatro, cinco, eh, tienen toda la hora y media para que hagan la exposición.
+Teacher: ¿Listo?
+Teacher: Y así fueran uno, pues de este tema pues se puede hablar un curso completo de 120 horas.
+Teacher: La idea es de que me saquen solamente hora y media.
+Teacher: ¿Listo?
+Teacher: enfocándose en el tema de los sistemas distribuidos.
+Teacher: Eh,
+Student15: Y entonces,
+Teacher: ¿qué más?
+Student15: eh, qué pena, profe, pero entonces usted no escoge la fecha o nosotros le vamos diciendo como ah,
+Teacher: Dime,
+Student15: profe, nosotros tal día, tal grupo, tal día o qué.
+Teacher: yo escojo la fecha,
+Student15: Yeah.
+Teacher: o sea, digámoslo así, si si aparecen los seis grupos, eh yo voy a elegir cuándo vamos a hacer las exposiciones.
+Teacher: No, no va a ser ahorita el jueves tampoco, pero voy a ahora que se creen los grupos, digámoslo así, que estén formados los grupos, pues entonces voy voy asignando, voy o hacemos la distribución de de exposiciones y de una vez
+Teacher: vamos asignando las cuándo se van a hacer.
+Teacher: ¿Listo?
+Teacher: Eh, segundo tema, yo por aquí les dejé una preguntica que nadie respondió.
+Teacher: Este, 20 de octubre, sí, la semana pasada.
+Teacher: La circular del 20 de la circular 20 del 14 de octubre, creo que fue esto que del 16 de octubre que casi casi nos están obligando a que nosotros vayamos a a la universidad.
+Teacher: Les dejé el comentario de que comentaran y veo que no hay ningún comentario.
+Teacher: Entonces, yo supongo que no hay ninguna discusión o no hay nada que decir sobre eso.
+Teacher: si eso es así o si no hay alguna causa, justificación para para evitar ir a la universidad, exceptuando pues los dos que están por fuera, entonces es muy probable que vamos a tener que ir los días que tenemos el salón habilitado,
+Teacher: que creo que como es el bloque 14 tengo, creería yo, que es el día martes que nos veríamos en la universidad.
+Teacher: A ver, martes, no, los jueves es en el 13, ese salón no está habilitado, el martes es en el 15. Entonces, eh para que lo tengamos en cuenta, como veo que no hay no quedó ninguna eh, digámoslo así,
+Teacher: no hay ninguna ningún tema sobre sobre este o no hay ningún ninguna observación sobre este tema.
+Teacher: Pues entonces miramos a ver si empezamos a a ir los martes a al salón.
+Teacher: Eh,
+Student12: Profe, igual igual sí, o sea,
+Teacher: dime.
+Student12: si no si las personas que no van a ir no van a ir a la universidad igual van a seguir transmitiendo porta.
+Teacher: Eso es lo que está como en en veremos, porque la idea es que sí, pero no sé cómo está las redes del 15. Normalmente la red del 15 no es muy buena y que toca utilizar la red del UTP,
+Teacher: entonces no sé qué tan viable o qué tan buena calidad que la grabación.
+00:10:00
+Teacher: igual el tema pues de de qué grabar y qué es lo que vamos a a ir mostrando o cómo se escuche, porque ya no voy a tener este micrófono, sino que voy a estar hablando eh digámoslo así para el
+Teacher: salón y el eco y bueno, cosas así.
+Teacher: Hay cositas que tengo que tenemos que ajustar ahí en ese tema, pero la idea es que si no se puede grabar, pues si no queda muy buena calidad,
+Teacher: tocaría me tocaría hacer referencia con las grabaciones que tengo viejitas que encontré por allá en el Classroom de del 2022 de sí, de pandemia y tocaría estudiar a partir de ese offline o de esos recursos,
+Teacher: digámoslo así.
+Teacher: Eh, sí.
+Teacher: Entonces ahí para que lo tengan en cuenta o si tienen alguna algo que quieran discutar o justificar sobre el tema, por favor déjenlo en los comentarios y con eso pues yo puedo ir y justificar la
+Teacher: asistencia o no asistencia eh con la dirección de jornada especial y también con la dirección de ingeniería de asistentes.
+Teacher: Listo.
+Teacher: Pero nos han estado, digámoslo así, motivando a que volvamos al campus para tanto como para utilizar los recursos, para mejorar pues la experiencia de clase y ayudar pues también a
+Teacher: reactivar los elementos alrededor de de de tener gente en la universidad.
+Teacher: Bueno, eh, no, eh, incentivando, ¿cierto?
+Teacher: ¿Y quién más?
+Teacher: Y bueno, y el bueno, esta es la segunda parte y la tercera pues es el parcial.
+Teacher: Listo.
+Teacher: Por ahí vi que hay dos que tuvieron como dificultades para enviar el parcial, pues el ejercicio que les dejé para el fin de semana.
+Teacher: Entonces, voy a habilitarlo ahora para que lo puedan mandar en entre hoy y mañana.
+Teacher: bien eh, para que lo puedan subir entonces o puedan enviar, darle enviar al al al trabajo que ya realizaron.
+Teacher: Okay.
+Teacher: Eh, tenemos estos dos grupos y medio y ya yo se salió el grupo.
+Teacher: Mira, no mando a Cristian Juan Felipe.
+Teacher: E ah,
+Student26: Profe, yo me llamo Cristian, sino que Yayo es como me conocen en el bajo mundo.
+Teacher: verdad, verdad, verdad.
+Teacher: Bueno, entonces mire que aquí faltan otros tres integrantes para este nuevo grupo.
+Teacher: ¿Listo?
+Teacher: Eh,
+Student1: mucho.
+Teacher: ahí veo que en el chat hay varios huérfanos.
+Teacher: Pues entonces van vayan tomando de ahí y vayan coordinando.
+Teacher: No sé cómo van a hacer para para coordinarse para para repartirse tema o para reunirse a consolidar el tema, pero ahí les dejo la la inquietud.
+Teacher: ¿Listo?
+Teacher: Nada, vamos a empezar entonces con el tema del día de hoy, ¿cierto?
+Teacher: Vamos a hablar sobre comunicación en sistemas distribuidos.
+Teacher: ¿Qué es esto?
+Teacher: Es que ya estuvimos hablando de arquitectura, ya estuvimos hablando de que habían componentes que intercambiaban información, unos hacían peticiones, otros le respondían, pero eh no hemos hablado con cuál es la forma en que ellos se comunican, ¿cierto?
+Teacher: Nosotros estuvimos hablando de muchos componentes y creo que lo único que hablamos cuando estábamos hablando de editor suscriptor era que existía un mecanismo de comunicación llamada comunicación a grupo, pero no hemos profundizado, no hemos hablado un poco sobre ello,
+Teacher: ¿cierto?
+Teacher: Básicamente los mecanismos o los herramientas de comunicación se dividen en tres partes.
+Teacher: ¿Listo?
+Teacher: comunicación por paso de mensajes, o sea, toda la información que quiero mandar entre cliente y servidor, entre maestro y trabajador, entre editor, suscriptor, todo lo voy a meter en un mensaje como si fuera que empaquetáramos dentro de un sobre
+Teacher: y enviamos hacia un destinatario.
+Teacher: ¿Listo?
+Teacher: Entonces, esa es lo que nosotros llamamos la comunicación por paso de mensajes.
+Teacher: Van a haber otros que son los middleware de comunicación o herramientas que nos van a permitir realizar el la comunicación ocultando la capa de comunicación, digámoslo así.
+00:15:00
+Teacher: O sea, eh yo voy a implementar el código sin preocuparme por el tema de cómo hago para llegar hacia el destino.
+Teacher: Y por último, vamos a hablar de los servicios web, ¿cierto?
+Teacher: Como como el tercer mecanismo o tercera herramienta de comunicación que tenemos nosotros disponible.
+Teacher: Y vamos a empezar con el paso de mensajes.
+Teacher: ¿Listo?
+Teacher: Entonces, el modelo de paso de mensajes es un modelo centralizado que lo que hace o su objetivo es intercambiar información.
+Teacher: ¿Listo?
+Teacher: O sea, poder enviar datos de un punto A a un punto B utilizando un canal de un canal de comunicaciones que permita el paso de mensajes.
+Teacher: Existen múltiples canales, existen múltiples herramientas con los cuales podemos implementar esto, pero eh y podríamos decir que es el mecanismo, el modelo más utilizado
+Teacher: o utilizado en la gran mayoría de de servicios que no tienen que ver con el web.
+Teacher: O sea, yo puedo hacer de que dos aplicaciones corriendo dentro de un clúster o dentro de un grid intercambien información sin tener que publicar servicios rest, ¿cierto?
+Teacher: O servicios web.
+Teacher: Entonces, eh paso de mensaje sería como ese mecanismo que más utilizamos nosotros.
+Teacher: ¿Listo?
+Teacher: Eh, ¿cómo podemos evitar o cómo podríamos nosotros hacer esto del paso de mensaje?
+Teacher: Digamos que en un modelo centralizado, cuando teníamos un sistema centralizado, la forma más sencilla de intercambiar información entre dos procesos o entre dos aplicaciones que están en ejecución era utilizando un concepto llamado memoria compartida.
+Teacher: ¿Y qué es eso de la memoria compartida?
+Teacher: Es decirle al sistema operativo que una parte de la memoria del proceso con el que yo estoy trabajando la quiero compartir para que otros procesos la puedan leer.
+Teacher: ¿Listo?
+Teacher: Entonces es un, digámoslo así, es un ajuste, una modificación al flujo normal de ejecución o de asignación de recursos, porque yo voy a decir que una parte de mi espacio de memoria, recuerden que cuando yo inicio un proceso,
+Teacher: me asignan un espacio de memoria, yo voy a decir que de ese espacio de memoria voy a tener una parte que va a ser compartida y otros procesos van a poder acceder a él.
+Teacher: Si no voy a trabajar con un modelo de proceso, sino que voy a trabajar con el modelo de hilos, pues entonces es mucho más sencillo porque recuerden que la memoria del proceso que ejecuta los hilos es compartida entre todos los hilos.
+Teacher: Entonces, más fácil, yo puedo crear una variable y todos los hilos tendrían la posibilidad de ir a leer esa variable sin ningún problema, ¿cierto?
+Teacher: ¿Por qué?
+Teacher: Porque toda la memoria pues está ya compartida.
+Teacher: Eh, pero cuando ya estamos trabajando en sistemas distribuidos donde tengo elementos que están en diferentes eh en diferentes equipos o diferentes nodos, pues entonces ya no existe la forma de memoria compartida,
+Teacher: porque un nodo no tiene la posibilidad de ir a leer espacios de memoria de otra de otra máquina, ¿cierto?
+Teacher: O al menos no es fácil hacer ese tipo de de compartir ese tipo de información.
+Teacher: Entonces nos pasa o nos obliga a que cambiemos nuestro mecanismo de de intercambio de información y ahí es donde aparece esto de los pasos de mensaje.
+Teacher: ¿Sí?
+Teacher: Entonces, como no puedo compartir memoria, pues entonces lo que tengo que hacer es utilizar un canal de comunicación para enviar el mensaje de un lavado a otro.
+Teacher: ¿Listo?
+Teacher: En el modelo de paso de mensajes tenemos distintos tipos de pasos de mensajes.
+Teacher: Podemos tener paso de mensaje uno a uno o de lo que llamamos punto a punto.
+Teacher: Ese ese mensaje tiene un origen y tiene un destino.
+Teacher: Tiene un emisor y un receptor.
+Teacher: Y el mensaje solamente va a estar o se o se va a enviar entre esos dos componentes, entre ese emisor y ese receptor.
+Teacher: No existe nada más.
+Teacher: Existe otro modelo que es un modelo de na un, o sea, que n elementos pueden comunicarse con un solo componente.
+Teacher: Otro mecanismo de paso de mensaje sería este.
+Teacher: Este este mecanismo es el que nosotros utilizamos más en la en las aplicaciones o en las arquitecturas como cliente servidor, porque yo voy a publicar un puerto y voy a hacer de que n elementos o n clientes se puedan comunicar con ese mismo puerto.
+Teacher: O sea, los n clientes o las n elementos que o los n nodos que necesiten comunicarse conmigo, yo les voy a publicar un puerto y esos n elementos usando ese mismo puerto pues van a poder establecer comunicación conmigo.
+Teacher: ¿Listo?
+Teacher: Ese lo utilizamos para comunicación cliente servidor y también lo podemos utilizar cuando nuestro cliente servidor es implementado como modelo de de eventos porque varias peticiones, varios clientes están conectados al mismo puerto, al mismo al mismo canal,
+00:20:00
+Teacher: por decirlo así.
+Teacher: ¿Listo?
+Teacher: Y vamos a tener otro modelo que es un modelo de n o de n de muchos a muchos.
+Teacher: ¿Listo?
+Teacher: Y en ese modelo vamos a hablar de que tenemos un canal de comunicación que se llama una cola de mensaje.
+Teacher: ¿Listo?
+Teacher: ¿Por qué cola de mensajes?
+Teacher: Porque estamos utilizando paso de mensajes.
+Teacher: Entonces, la cola que vamos a estar utilizando es una cola de mensajes.
+Teacher: ¿Listo?
+Teacher: ¿Qué características tienen eh estos canales?
+Teacher: pues siempre va a haber un emisor y un receptor.
+Teacher: Y la forma de comunicación siempre va a ser enviar y recibir.
+Teacher: O sea, los mensajes que se van a que se van a encontrar en este modelo siempre va a ser un método sent y un método reisip.
+Teacher: ¿Listo?
+Teacher: Con el sent el emisor puede enviar mensajes, enviar paquetes, enviar un mensaje y con el recibir pues yo puedo recibir un mensaje que venga por ese canal.
+Teacher: ¿Por cuál canal?
+Teacher: por cualquiera de estos tres.
+Teacher: ¿Listo?
+Teacher: Por eso se llama paso de mensajes.
+Teacher: La comunicación puede ser directa o indirecta.
+Teacher: ¿Qué significa eso de que la comunicación es directa o indirecta?
+Teacher: Si yo estoy trabajando con punto a punto o de n a uno o de uno a uno de n a un, yo puedo decir de que la comunicación que estoy haciendo es una comunicación directa.
+Teacher: ¿Listo?
+Teacher: una comunicación directa, porque yo sé que la información viaja desde el editor o desde el emisor al receptor.
+Teacher: ¿Listo?
+Teacher: Cuando un cliente manda una petición por aquí, va a llegar hacia el receptor en este en este mismo sentido.
+Teacher: ¿Listo?
+Teacher: puede ser indirecta cuando yo no sé cómo va a llegar la información de este elemento a este elemento.
+Teacher: Yo no tengo muy claro cómo va a hacer para llegar de aquí del mensaje que yo mando por aquí para que se vaya hasta acá.
+Teacher: ¿Listo?
+Teacher: Entonces ahí en esa cuando hablamos de comunicación indirecta es cuando tengo un desacoplamiento espacial.
+Teacher: ¿Listo?
+Teacher: Y yo puedo tener comunicación simétrica o asimétrica.
+Teacher: simétrica significa que puede ser de ambas vías y puedo enviar datos y recibir datos o simplemente va a ser de un solo camino.
+Teacher: O sea, solamente puedo enviar datos.
+Teacher: Listo, no voy a poderlo recibir, solamente enviar datos.
+Teacher: Para esto vamos a necesitar unos canales.
+Teacher: Vea que aquí necesitamos un canal por donde vamos a enviar el mensaje.
+Teacher: Los canales pueden ser unidireccionales o bidireccionales.
+Teacher: Lo mismo puedo ese canal lo puedo utilizar solamente para envío o lo puedo utilizar para envío, para ida y vuelta.
+Teacher: Sí, o sea, yo puedo utilizar mi canal para esto.
+Teacher: Dependiendo del canal también vamos a tener una capacidad distinta.
+Teacher: voy a poder mandar mensajes más grandes o mensajes más cortos, más mensajes o menos mensajes, etcétera.
+Teacher: ¿De qué depende?
+Teacher: Del canal, de cuál es el el mecanismo, la herramienta o el canal de comunicación que estamos nosotros utilizando.
+Teacher: Eh, necesitamos o o es de nuestra responsabilidad del tema de la sincronización.
+Teacher: ¿Qué es esto de la sincronización?
+Teacher: Si alguien envía, el otro espera el mensaje.
+Teacher: ¿Listo?
+Teacher: Entonces debemos nosotros tener en cuenta y es en muchos de los elementos de comunicación, para poder que la comunicación se dé, tengo que tener los dos elementos sincronizados.
+Teacher: Tengo que tener un acoplamiento temporal.
+Teacher: está.
+Teacher: Entonces, yo puedo enviar una cuando yo vaya a enviar una información, el otro elemento debería estar en modo de espera o en modo recepción.
+Teacher: Y eso es parte o es una parte fundamental, un aspecto general de estos pasos de mensajes, independiente de cuál sea el modelo que estemos utilizando, si conexión directa utilizando el número de proceso o conexión utilizando puerto, que es na1,
+Teacher: o utilizando cola de mensajes para poder que la comunicación se dé.
+Teacher: Este elemento tiene que estar en modo envío y este elemento tiene que estar en modo recepción.
+Teacher: Si no está en modo recepción, no va a haber comunicación.
+Teacher: ¿Listo?
+Teacher: Pero uno de los elementos más difíciles o más complicados que tenemos en la comunicación de paso de mensajes tiene que ver con y cómo voy a garantizar que la información que sale de el componente A o del emisor llega y se
+Teacher: interpreta de manera adecuada en el en el receptor.
+00:25:00
+Teacher: Y ahí es donde nosotros vamos a hablar de los formatos de representación y es cómo vamos a hacer para enviar la información desde el nodo A al nodo B. ¿Y por qué esto es un problema, ¿cierto?
+Teacher: ¿Por qué tenemos que pensar o por qué tenemos que preocuparnos por eso?
+Teacher: Porque no todos los computadores, no todas las elementos, no todos los dispositivos utilizan la misma representación de información o no manejan la misma información, sobre todo en los datos binarios o en los datos eh numéricos, ¿cierto?
+Teacher: Ustedes cuando vieron lenguajes de programación y vieron el C, vieron, espero que hayan visto C y si no, pues vieron Java, vieron Python, vieron eh distintos distintos eh lenguajes de programación,
+Teacher: en esos lenguajes existen unos tipos de datos y esos tipos de datos tienen una representación en memoria, ¿cierto?
+Teacher: Entonces yo decía, por ejemplo, que en C++ o en C, cuando yo decía que tengo una variable tipo int, significa que estoy ocupando eh 2 bytes, ¿cierto?
+Teacher: O sea, que yo podría representar dentro de un número int hasta 64,000 números, desde 32,000 algo hasta el -32,000 algo.
+Teacher: Pero si yo quería un elemento más grande, ya no utilizaba el int, sino que utilizaba el long.
+Teacher: que ya tenía 4 bytes, o sea, que ya me daba hasta 2,000 millones de o 4,000 millones de información desde menos 2,000 millones hasta más 2000 más 2000 millones.
+Teacher: Pero si yo necesitaba un número o representar un número más grande, el long no me servía, sino que tenía que utilizar el long, que ya eran 8 byes, ¿cierto?
+Teacher: Pero si comparamos los tipos de datos a como los interpreta, por ejemplo, Por ejemplo, Java.
+Teacher: Java tiene unos tipos de datos muy parecidos a al C o digámoslo así, heredó los mismos tipos de datos, pero tienen representaciones distintas.
+Teacher: En C un caracter, un char de un solo byte, en Java es de dos.
+Teacher: En C un entero es de 2 bytes, en Java es de cuatro.
+Teacher: El long de de de C era de 4 bytes, en Java es de 8. Entonces, ¿qué pasa si yo estoy intentando enviar información de un programa escrito en C y lo va a recibir un programa escrito en Java?
+Teacher: Entonces, existe la posibilidad de que haya una discrepancia de tipos, de que no se entienda porque los tipos de datos no no son correctos.
+Teacher: C me mandó 2 bytes y yo intento leer 4 bytes.
+Teacher: Entonces, voy a leer los 2 bytes que mandó inicial y basura, ¿cierto?
+Teacher: y datos adicionales o puede que el siguiente dato que él mandó yo lo represente como si fuera un solo dato.
+Teacher: Entonces, eso esa forma o esa negociación que vamos a tener que hacer para que ambos elementos entiendan cómo es la información que se está enviando, pues es parte de esto que nosotros llamamos el formato de representación.
+Teacher: Si vamos a decir de que el formato de representación es binario, pues es binario, pero debemos entrar en ese acuerdo de cómo yo voy a o qué es lo que yo estoy esperando, cuántos bytes estoy esperando o cómo va a ser la o la eh el
+Teacher: protocolo de comunicación que vamos a hacer.
+Teacher: Primero, mándeme en un entero cuánto es el tamaño del paquete y luego mándeme todos los datos en binario y luego al final termine con X cos, ¿cierto?
+Teacher: o primero le voy a mandar un número, luego le voy a mandar una cadena, luego le voy a mandar una lista.
+Teacher: Todo eso debe estar escrito dentro de ese formato de representación y tanto el emisor como el receptor deberían de respetar ese formato, ¿cierto?
+Teacher: Pero por pero nosotros debemos tener en cuenta al momento de hacer esa negociación este tema de okay, ¿cuál es el tamaño de los datos numéricos?
+Teacher: Si yo digo que voy a mandar un entero, es un entero suyo o un entero mío.
+Teacher: Listo.
+Teacher: El orden de los bytes.
+Teacher: Ya vamos a hablar de esto.
+Teacher: Si estoy utilizando un formato de texto, recuerden que en Java el char es de 2 byte, en C es de un byte.
+Teacher: Entonces, si me manda un flujo, me manda un puntero de de chars desde Java, ¿cómo lo voy a leer en C?
+Teacher: tengo que leer un byte y el otro lo desecho o leo los dos byte y miro a ver qué hago con eso, qué cómo lo vamos a hacer, cómo vamos a a hacer de que ese formato de texto se entienda tanto en el origen como en el
+Teacher: destino.
+Teacher: Y ese tema del orden de los bytes tiene que ver con algo de las arquitecturas.
+Teacher: de los procesadores.
+00:30:00
+Teacher: Y es que existen dos tipos de arquitecturas para la representación de los números o de los bytes en memoria.
+Teacher: Uno se llama Little Indian y el otro se llama Big Indian.
+Teacher: Y básicamente habla de cómo cómo se representa la información dentro de los bytes cuando o cómo se guarda la información en un conjunto de bytes cuando tengo más de un byte para guardar información.
+Teacher: Ejemplo, yo dije que un entero en Java ocupaba 4 bytes, ¿cierto?
+Teacher: Eso significa que tiene 32 bits que a los cuales yo le puedo poner un uno y un cer.
+Teacher: Listo.
+Teacher: Entonces, tengo 4 bytes.
+Teacher: ¿Dónde se guarda?
+Teacher: De los 4 bytes, ¿dónde se guarda la información?
+Teacher: Por ejemplo, quiero guardar el número cinco.
+Teacher: ¿Cómo escribo el cinco en esos 4 bytes?
+Teacher: ¿Se acuerdan de eso o no?
+Teacher: O ustedes no llegaron hasta eso cuando estaban cuando estaban empezando.
+Teacher: Tengo cuatro bytes.
+Teacher: Este, este, este y este.
+Teacher: Listo.
+Teacher: Recuerden que los cada byte tiene Vamos a cambiar de color para partir esta esto en lineecitas.
+Teacher: Cada byte estaba compuesto de 8 bits, ¿cierto?
+Teacher: Sí, se acuerdan de eso no.
+Teacher: Ay, mira, esto no raya.
+Teacher: No le gusta las líneas parejas.
+Teacher: Bueno, entonces hagamos las divididitas, torciditas.
+Teacher: Ya me torcidé mucho, pero tácate yate.
+Teacher: Lo mismo acá, lo mismo acá y lo mismo acá.
+Teacher: ¿Cierto?
+Teacher: Vamos a partir esta última.
+Teacher: Y cada casillita de estas la nosotros podemos guardar un uno y un cero, ¿cierto?
+Teacher: Entonces, si yo quiero guardar el número cinco, si este es el dato a guardar, quiero guardar el número cinco, ¿cómo lo guardo en esa estructura de bytes?
+Teacher: ¿Se acuerdan?
+Teacher: Tengo estos 4 bytes.
+Teacher: Sí, tengo estos 4 by.
+Teacher: ¿Dónde guardo el cinco?
+Teacher: Si tengo estos 4 bytes, lo guardo aquí, lo guardo acá, lo guardo acá, lo distribuyo entre los cuatro.
+Teacher: ¿No se acuerdan?
+Teacher: Vamos a hacer aquí flechitas.
+Student6: Eh, profe, sería, pues que me acuerde de derecha a izquierda.
+Student6: menor
+Teacher: Okay.
+Student6: peso.
+Teacher: Menor peso derecha izquierda quiere decir que yo voy a si yo coloco un uno aquí pesa menos o tiene un valor menor si lo pongo acá y este pesa menos que si lo pongo acá y así sucesivamente, ¿cierto?
+Teacher: Normalmente o digámoslo así la teoría dice que estos son elementos de 2 a la n, ¿cierto?
+Teacher: dos y aquí ponganos la n.
+Teacher: Upa, pongámosla aquí arriba.
+Teacher: Aquí hay una n y la movemos un poquito.
+Teacher: Listo.
+Teacher: Entonces este era el bit, este era el bit 1 2 3. Entonces, este era 2 a la 0, 2 a la 1, 2 a la 2, a la 3 y así sucesivamente.
+Teacher: ¿Cierto?
+Teacher: Aquí al final pues sería 2 a la 32 porque vamos a tener 4, ¿qué significa?
+Teacher: Que para poder representar ese número cinco, nosotros lo que íbamos a colocar o lo que íbamos a hacer era colocar un uno.
+Teacher: Vamos a colocar un uno aquí.
+Teacher: Ah, esto no le gusta las líneas, definitivamente.
+Teacher: Vamos a colocar un número uno aquí, ¿cierto?
+Teacher: que representa a la 2 a la 0, o sea, que 1 * 1 en el de 2 a la 1, o sea, el dos no teníamos ese componente, entonces aquí colocábamos un cero, ¿cierto?
+Teacher: Y de dos a la cu de dos a la dos, que es 4, teníamos otro uno.
+Teacher: ¿Y qué pasaba con este resto de cosas?
+Teacher: ¿Qué pasa con todo este resto de posiciones?
+Student6: No me acuerdo del término, pero en su momento ellos se completaban con cero para llenar y formar la palabra completa para que fuera del mismo tamaño de la otra.
+00:35:00
+Teacher: Exactamente.
+Teacher: Entonces,
+Student6: Pero se acuerda del término, profe.
+Teacher: si yo no realmente lo que vamos a hacer es simplemente rellenar en ceros o limpiar todos estos campos o todos estos bits para que solamente la información útil sea esta, ¿cierto?
+Teacher: Para nosotros la información útil es esta.
+Teacher: Porque aquí es donde estoy representando el cinco.
+Teacher: Todo esto es basura, por decirlo así.
+Teacher: Esto o es relleno.
+Teacher: Todo el resto de ceros que pusimos a la izquierda es relleno.
+Teacher: Esta esta forma de representación es la que nosotros llamamos Little Indian.
+Teacher: ¿Listo?
+Teacher: ¿Por qué Little Indian?
+Teacher: Porque el elemento que está más a la derecha, o sea, el byte, ¿sí?
+Teacher: digámoslo así, el by más alejado de la memoria, por decirlo por decirlo así, es el menos significativo, es el más pequeño, el más Sio la memoria, si yo leyera la memoria, la yo diría que la memoria la voy a leer de aquí,
+Teacher: o sea, este es el primer byte que yo leo, este es el segundo byte que yo leo, este es el tercer byte que yo leo y este es el cuarto byte.
+Teacher: O sea, que para poder saber cuál es el valor que viene en ese en ese número entero, tengo que leerme los 4 bytes, consolidar los 36 los 32 bits y hacer la operación para identificar qué número es el que
+Teacher: viene, ¿cierto?
+Teacher: En este caso, un 10. ¿Qué pasa si yo colocara un uno aquí?
+Teacher: Se nos despelotaba la cabeza, ¿cierto?
+Teacher: porque ya significaba un número completamente distinto.
+Teacher: Eh, quitemos ese uno de acá.
+Teacher: Bien, esto es lo que nosotros llamamos o este o a ver o representar la información de esta manera es la arquitectura que nosotros conocemos como lirolínea.
+Teacher: ¿Listo?
+Teacher: O sea, al final, o sea, el final es el más pequeño, Little Indian.
+Teacher: Okay.
+Teacher: Pero hay otros procesadores que no utilizan este modelo.
+Teacher: Hay otros procesadores que utilizan uno llamado Big Indian.
+Teacher: ¿Y qué es el Big Indian?
+Teacher: ¿Cuál es el menos representativo y cuál es el el que vale más?
+Teacher: Pues el menos representativo sería este.
+Teacher: Este bit es el que vale 2 a la 0. Este bit es el 2 a la 1 y así hasta 2 a la 30 1, ¿cierto?
+Teacher: O sea, que, ¿qué pasó con ese cinco que yo mandé de Little Indian y lo recibió un dispositivo IoT o lo recibió una máquina que tiene un PLC o que tiene un microprocesador que
+Teacher: utiliza el proceso de lectura de memoria con Big India?
+Teacher: ¿Qué pasó con ese número CCO que yo mandé?
+Teacher: llegó con el valor 83,886,00080.
+Teacher: ¿Está bien o está mal?
+Teacher: ¿Será que eso está bien o no?
+Student9: Bien, si el C se reparece a ese número,
+Teacher: Sí,
+Student9: igualitos.
+Teacher: es igualitico.
+Student9: Okay.
+Teacher: Yo y si y si hago la multiplicación con otro número me da el mismo valor, ¿cierto?
+Teacher: Eso es lo que nosotros llamamos el orden de los bits.
+Teacher: Y es que no todos los procesadores, ¿okay?, que la mayoría de computadores que nosotros vamos a utilizar utilizan un procesador Intel un procesador AMD y esos procesadores son compatibles o tienen una, digámoslo así,
+Teacher: tienen una alta compatibilidad en en sus operaciones y en sus en su representación de información, ¿cierto?
+Teacher: Okay, pero que ¿qué garantía tenemos de que un procesador ARM o un procesador de los que utilizan los los celulares o el procesador que está utilizando mi nevera o el procesador que está utilizando un sensor utiliza esta arquitectura?
+Teacher: Mira que es que esta arquitectura es demasiado, ¿cómo lo diría yo?
+Teacher: Eh, muy optimista en que tiene recursos.
+Teacher: que la memoria no es un problema, pero en esos pequeños dispositivos la memoria es un problema, ¿cierto?
+Teacher: Y no podemos pensar en que yo puedo representar un cinco con 4 bytes si en esta arquitectura yo solamente necesitaría uno, ¿cierto?
+00:40:00
+Teacher: O sea, el bit este yo solamente necesitaría este byte para representar el cinco.
+Teacher: Entonces, ¿para qué voy a llenar de ceros si yo aquí puedo escribir el cinco?
+Teacher: Puedo colocar 101 y esto en ceros y ya con eso es suficiente para que el otro reciba el mensaje, para que el procesador sea capaz de entender qué información era la que venía.
+Teacher: Entonces, mire que es mucho más sencillo y mucho más fácil para un procesador trabajar en Big Indian que en LOL India.
+Teacher: Pero el estándar que nosotros nos acostumbramos o que venimos eh acostumbrados desde el X86 de los primeros PCs o de los computadores personales era utilizando LOL L. Pero tengo entendido de que los procesadores, bueno, no sé los últimos,
+Teacher: pero los que se utilizaban en los dispositivos de de networking, de de red, los switches, los routers, todos esos hace tiempo venían con procesadores de esta arquitectura.
+Teacher: Como les digo, no sé ahora porque no estoy muy empapado de la del de la tecnología detrás de la infraestructura de hoy, pero los primeros Cisco, los primeros Tricom venían con un procesadores en Big Indian.
+Teacher: Y entonces cuando cuando nosotros programábamos o hacíamos la configuración de esos dispositivos, el programador o la aplicación con la que programábamos sabía cómo tenía que mandar la información y la tenía que enviar de la manera contraria, digámoslo así,
+Teacher: o la representación contraria a como nosotros nos enseñaron a representar la información en memoria, ¿cierto?
+Teacher: simplemente porque utilizan una arquitectura completamente distinta, pero en los sistemas distribuidos no tengo esa garantía.
+Teacher: Recuerden que los sistemas distribuidos generalmente son sistemas heterogéneos y los sistemas heterogéneos pues hacen de que yo pueda hoy tener un modelo o un o un componente de un tipo y luego o se dañó ese dispositivo,
+Teacher: compró uno nuevo y ese nuevo viene con otra arquitectura.
+Teacher: ¿Listo?
+Teacher: Entonces ese modelo de paso de mensajes, entonces tendríamos que cambiarlo, tendríamos que identificar, okay, este nuevo componente que acaba de llegar, al cual yo le tengo que estar enviando información o voy a estar recibiendo información, me lo va a mandar en Big India o Lol Indian.
+Teacher: Si cambió la arquitectura del procesador, entonces tengo que cambiar la implementación de cómo representar o cómo interpretar la información en mi en mi en mi aplicación, ¿cierto?
+Teacher: porque me va a llegar la información de una manera extraña.
+Teacher: El sensor de temperatura me devolvió que estábamos a 5º y yo recibí que estábamos a 83,0000 de grados.
+Teacher: Sí, no tiene mucho sentido.
+Teacher: Entonces ese tipo de solamente porque el sensor viejo me lo mandaba de una manera y el nuevo sensor o el nuevo termómetro que llegó, pues viene o envía la información o representa la información de una manera distinta.
+Teacher: Entonces, ese es uno de los grandes problemas que tenemos en la comunicación de cliente, servidor, perdón, entre emisor y receptor utilizando pausa de mensajes.
+Teacher: El último elemento que habla aquí tiene que ver con el aplanamiento o la serialización de estructuras de datos.
+Teacher: Y es que yo también puedo por el canal de comunicación enviar estructuras, no mandar datos independientes y no mandar una estructura de datos.
+Teacher: Y si recuerdan lo que es una estructura, pues es simplemente un tipo de dato que tiene por dentro más datos.
+Teacher: Si estamos hablando de lenguaje C, una estructura de una estructura eh que debe serializada, podría ser un un stru que tenga el nombre, el apellido, la dirección y que guarde todo en un solo paquete, en una sola variable.
+Teacher: Entonces ese cuando eso va a pasar por la red, necesitamos saber cómo va a ser el lenguaje para serializar, convertir ese objeto, convertir esa estructura en datos.
+Teacher: ¿Cuál va a ser la cabecera de inicio?
+Teacher: ¿Cuál va a ser los separadores de los campos?
+Teacher: ¿Cuál va a ser la el footer o el o el fin del mensaje, cierto?
+Teacher: y automáticamente el el lenguaje de programación realiza esa serialización y al otro lado yo tengo que saber cómo lo deserializo o lo aplano.
+Teacher: ¿Listo?
+Teacher: Lo mismo si yo mando los datos los datos de un objeto hecho en Java, no significa que un programa hecho en en programación orientado objetos en Charp me diga o tenga claro cómo se aplanó, cómo se serializó los datos.
+Teacher: cierto, entre Java y Java se entienden, pero entre distintos lenguajes o distintos eh aplicaciones escritos en diferentes diferentes tecnologías, probablemente no.
+00:45:00
+Teacher: Entonces, eso también hace parte de los problemas del formato de representación porque enviar los datos por la red puede ser muy ambiguo y pueden haber muchos problemas ahí, pero ahí es donde entra el concepto del marshalling.
+Teacher: ¿Y qué es el marshallink?
+Teacher: Marchalim es el proceso en el cual nosotros vamos a convertir una o hacer eh cambiar de representación de la representación nativa a una representación intermedia que sea entendido por tanto por origen como por destino, tanto por el emisor como por el receptor.
+Teacher: Entonces, el Marshalling lo que hace es coger la información que yo tengo que mandar, pasarla, convertirla a otro formato distinto al digámoslo así a la representación nativa.
+Teacher: Voy a cambiarlo a otro formato y ese formato es el que viaja, el que voy a mandar.
+Teacher: Y cuando se reciba ese formato, él tiene la posibilidad de decodificar o de hacer el marmall de la información, o sea, coger ese dato codificado o que fue cambiado a un nuevo modelo y leo ese nuevo modelo,
+Teacher: lo convierto o intento hacer la operación contraria de codificación o de marshalling, le hacemos el marshall y vamos a recibir la información que nosotros estábamos esperando.
+Teacher: ¿Qué puede hacer?
+Teacher: ¿Qué puede ser este proceso de marcha y marchal?
+Teacher: Y es que yo cojo un dato binario, yo cojo el cinco y en vez de tenerlo como un dato binario, lo voy a convertir en una cadena.
+Teacher: ¿Sí?
+Teacher: Y esa cadena de caracteres la mando.
+Teacher: Al otro lado, reciben una cadena de caracteres, cogen esa cadena y hacen la conversión a número y ya tengo la representación numérica del C. Entonces, un uno de los ejemplos de trabajar con marshall marshall podría ser coger un objeto,
+Teacher: un objeto cualquiera, un objeto Java y convertirlo en XML o convertirlo en Jason.
+Teacher: envió el Jason y al otro lado recibe el Jason y lo puedo convertir a un objeto del tipo de los tipos que yo manejé dentro de mi sistema.
+Teacher: Si yo tengo un Jason y lo mando de Java, cojo, tengo un objeto Java, lo convierto a Jason y lo mando a un servidor que es de Python.
+Teacher: Python es capaz de convertir ese Jason en un en un diccionario o es capaz de coger ese Jason y convertirlo en un objeto.
+Teacher: Sí, pero ya es ese proceso de marchal y un marchal.
+Teacher: Pero porque decidimos de que el formato de representación o el formato en el que nos vamos a comunicar es contexto.
+Teacher: ¿Listo?
+Teacher: Pero comunicarnos con texto es una muy mala idea.
+Teacher: ¿Por qué es mala idea?
+Teacher: Por el tamaño de los datos.
+Teacher: Porque en yo en 4 bytes de un entero puedo representar números de hasta 10 dígitos más o menos.
+Teacher: Pero si con en esos 4 bytes si lo si convierto 4 bytte a cadena, esos cuatro dígitos o esos, perdón, esos 10 dígitos que están en 4 bytes se me convierten si estamos en Java, por ejemplo, o en o en Charp,
+Teacher: esos cuatro dígitos se me van a esos cuatro esos cuatro bytes para representar 10 dígitos se me pueden convertir en 20 bytes para representar los mismos 10 dígitos.
+Teacher: ¿Listo?
+Teacher: Y entonces el mensaje que yo voy a enviar por la red es un mensaje de 20 bytes, no de cuatro.
+Teacher: Entonces, hay que tener mucho cuidado con el proceso de marchal y un marchal eh que el mecanismo o el elemento de de comunicación o el o el convenio en el que nosotros hagamos.
+Teacher: Porque si nosotros elegimos una hacer un marchal, un marshalling basado en texto, vamos a tener vamos a disminuir el ancho de banda y vamos a aumentar el tamaño de los mensajes.
+Teacher: ¿Listo?
+Teacher: Por esa razón, digámoslo así, eh inicialmente el lenguaje preferido para hacer el marchaling entre distintos sistemas de distintos lenguajes era el XML, porque XML era un lenguaje común o un lenguaje agnóstico al a la tecnología
+Teacher: o al o lenguaje de programación que estuviéramos trabajando y podíamos intercambiar la información con programas hechos en Java, otros en Punet, otros en Python, otros en Delfi, bueno, en Pascal, etcétera.
+Teacher: etcétera, ¿cierto?
+Teacher: porque era un estándar o mecanismo común, pero ese estándar agregaba mucho texto.
+Teacher: Si si solamente convertir el número me podía pasar de 4 bytes a 20 bytes, agréguele las cabeceras de del XML, un símbolo mayor que un carácter mayor que un nombre de campo, un símbolo eh mayor que el valor en texto,
+00:50:00
+Teacher: los 20 bytes, los 20 bytes que estábamos hablando ahorita.
+Teacher: y luego agréguele un caracter eh menor que un slash, el mismo nombre de la etiqueta y cierre el nombre de la etiqueta.
+Teacher: Entonces, esos cuadro bytes se podrían convertir en 100 o podrían ser mucho más dependiendo del nombre de la etiqueta que nosotros hayamos colocado.
+Teacher: Entonces, ese proceso de marshall eh y un marshall pues genera un procesamiento adicional o genera un reproceso que algunas veces o en muchos casos pues puede llegar a ser traumático para el rendimiento de nuestro sistema.
+Teacher: Por eso pasamos del XML a Jason, porque Jason tiene una representación en carácter mucho más pequeña.
+Teacher: puede ser más fácil de leer, puede ser un poco más eh digámoslo así, menos verboso o necesito menos canal o menos ancho de banda para mandar el mismo mensaje, pero yo podría utilizar cualquier otro mecanismo, pues yo podría eh convertir todo el mensaje en unos y ceros en
+Teacher: bytes o en un dato binario, pero ese formato binario que yo voy a utilizar al final o al momento en el que yo lo lea o que yo lo reciba, lo voy a decodificar de la manera adecuada.
+Teacher: ¿Listo?
+Teacher: Eh, nada.
+Teacher: Entonces mire que este proceso del marcha y un marchal nos va a permitir garantizar de que el tanto el objeto origen como el objeto destino se entiendan de la misma manera.
+Teacher: Entonces, mira que aquí, por ejemplo, muestran un ejemplo de si yo tengo estos bytes o o esta o esta información en memoria y lo tengo en Little Indian, de esta manera lo voy a representar en Little Indian del digámoslo así de lo que está más a la
+Teacher: izquierda es lo es el primer byte, pero en Big Indian lo voy a tener al revés, ¿cierto?
+Teacher: O sea, voy a entenderlo de o voy a leerlo o se van a mandar los mensajes de manera diferente.
+Teacher: Entonces, eso es más o menos el lo que queremos.
+Teacher: Y con el proceso del marchal y un marchal, entonces yo lo que voy a hacer es que si yo lo mando de esta manera, al hacer el marshall me lo debe representar de esta manera para que al final el mensaje llegue de
+Teacher: manera correcta.
+Teacher: Eh, este proceso de marchal y un marchal, dependiendo de la tecnología que estemos usando, puede ser manejado por nosotros o puede ser manejado por el por la tecnología.
+Teacher: Si yo escojo sockets, que yo supongo que muchos de ustedes han escuchado del concepto de socket, ¿cierto?
+Teacher: es el mecanismo de comunicación o para establecer la comunicación más básica y más extensible que tenemos nosotros en los mecanismos, pues en las comunicaciones entre procesos.
+Teacher: Si yo utilizo sockets, el proceso el proceso de marchal y un marchal es responsabilidad del programador.
+Teacher: O sea, nosotros como programadores tenemos la responsabilidad de definir cómo vamos a mandar los datos y cómo lo vamos a recibir.
+Teacher: ¿Y por qué digo yo que es responsabilidad del programador?
+Teacher: Y es porque el programador como tal es el que tiene que definirlo, tiene que escribir código con el algoritmo, con el protocolo de comunicación que va a haber entre el entre el emisor y el receptor.
+Teacher: Pero si estamos utilizando, no vamos a usar socket, sino que vamos a utilizar mecanismos como MPI o MAC, que son dos mecanismos de comunicación o de paso de mensajes entre procesos de comunicación uno a muchos o de muchos,
+Teacher: o sea, como de cliente servidor, de muchos a uno.
+Teacher: Si estoy utilizando herramientas como esta, el marchal y un marchal de mensajes lo hace de manera automática.
+Teacher: Listo.
+Teacher: No, no tengo yo que preocuparme por esto, sino que estas dos bibliotecas o estas dos herramientas eh garantizan de que tanto el el componente o el elemento origen como el elemento destino van a entender o van a recibir la información y la van a interpretar de la misma manera.
+Teacher: ¿Listo?
+Teacher: otros mecanismos, los mecanismos que llamamos middleware como RPC, RMI, Corba, esos elementos eh ya resuelven ese problema del marshall y un marshall de manera automática.
+Teacher: Yo no tengo que preocuparme solamente con eso de pasos de mensajes, o sea, el primer bloque, paso de mensaje por digamos de uno a uno, de muchos a uno o de muchos a muchos, dependiendo de qué herramientas estemos utilizando,
+Teacher: puede ser responsabilidad mía o puede ser gestionado de manera automática.
+Teacher: No sé si tienen alguna duda hasta aquí o vamos bien.
+00:55:00
+Teacher: ¿Qué formatos de representación existen?
+Teacher: Pues entre más estándar, mejor.
+Teacher: Recuerde el concepto de carácter abierto.
+Teacher: Si utilizamos estándares es mucho mejor que si nos inventamos protocolos nuevos.
+Teacher: Eh, hay algunos hay algunos formatos de representación implícitos y explícitos.
+Teacher: Los implícitos es que digamos que tanto origen como destino, emisor como receptor conocen eh el la la forma como se envía los mensajes.
+Teacher: Entonces, por ejemplo, si estamos utilizando RMI, RPC, Corba, ya existe, ya hay un convenio de cuál es el el modelo, perdón, opa, opa.
+Teacher: ¿Cuál es el modelo que nosotros vamos a utilizar para enviar información y que no se pierda?
+Teacher: no se tergiverse la información.
+Teacher: Listo.
+Teacher: Si estoy utilizando Corba, utilizamos XDR.
+Teacher: Si estoy utilizamos utilizando RPC, utilizamos XDR.
+Teacher: Si estamos utilizando Corba, utilizamos CDR.
+Teacher: ¿Qué es?
+Teacher: ¿Qué son esas siglas?
+Teacher: Pues simplemente el formato de representación que fue elegido por cada uno de ellos.
+Teacher: O la otra es que lo hagamos de forma explícita, que nosotros digamos al momento de enviar la información cuál es el formato que voy a mandar.
+Teacher: Entonces, XML.
+Teacher: Entonces, yo puedo decir, "Mira, es que yo estoy mandando los datos en XML o los estoy mandando en Jason o lo estoy mandando en en archivo en en datos de texto separados por comas." Listo.
+Teacher: Yo puedo establecer la comunicación entre origen y destino de cualquier manera, pero debo decir cuál es el formato o tengo que informar o tengo que coordinar cuál es el formato de manera explícita, o sea, la tecnología no me lo da,
+Teacher: yo soy el que lo tengo que dar.
+Teacher: ¿Cuáles son esos formatos, digamos, que más estándar o que más se utilizan?
+Teacher: el XDR para RPC eh es un tipo de dato binario, o sea, que es optimizado y y ocupa menos eh ancho de banda, digámoslo así, y tiene información de los campos y los tipos de datos.
+Teacher: O sea, que dentro del formato binario hay una parte que dice cuál es el dato y otro bloquecito que dice qué tipo de dato es o qué tipo de dato o cuánto ocupa ese tipo de dato.
+Teacher: Digámoslo así, hay soluciones basadas en XML.
+Teacher: Pues también esos son de eso es un sistema un formato de representación basado en texto, es explícito y tiene campos y tipo, ¿cierto?
+Teacher: Nosotros podemos decir, es que este es el campo nombre y este es el contenido.
+Teacher: Y con eso pues ahí tenemos toda la información.
+Teacher: Eh, los tipos de datos de XML, necesitamos un otro lenguaje, otra otro elemento llamado XML SC.
+Teacher: El Jason es un formato de representaciones de texto, es explícita por campos y tipos, o sea, es similar a esta, pero la estructura del texto o la estructura, si del texto que nosotros creamos es distinta, digamos que se puede optimizar mucho mejor o puede ocupar menos ancho de banco.
+Teacher: Normalmente no tiene no tiene definición de tipos, pero hay un digámoslo así, hay un proyecto que no todos los equipos o no todos los desarrolladores utilizan llamado Jason Esquema, que me permite definir cuál cuál va a ser ese modelo de de comunicación o cuáles son los tipos de datos
+Teacher: válidos que vamos a poder utilizar dentro del JSON.
+Teacher: Hay otro que se llama Protocol Buofers.
+Teacher: Este es creado por Google, es binario y no es no es explícita en campos y tipos, o sea, es un modelo que, digámoslo así, está optimizado para para otro tipo de comunicación y ya tanto origen y destino sabe cómo
+Teacher: cómo son los mensajes que que van a viajar por ese canal.
+Teacher: Eh, Java serialization solamente es binario, solamente lo usa Java.
+Teacher: Eh, y otros como ASN1, Apache Trif, Apache Abro, Bason, por ejemplo, eh herramientas como Cafka utilizan Abro, herramientas como como Mongo Div representan su información en Bason,
+Teacher: que es un como un Jason pero binario.
+Teacher: O sea, hay diferentes formas de representar la información.
+Teacher: Yo puedo transmitir la información de diferentes maneras dependiendo de cuál sea el el sistema o cuál sea la necesidad que nosotros estemos buscando.
+Teacher: La recomendación, busque protocolos que utilicen eh datos binarios, ¿cierto?
+Teacher: Sería lo recomendado, pero vamos a tener que analizar tanto origen y destino si son capaces de entender estos protocolos binarios.
+Teacher: Si no es nos va a tocar con el modelo de texto, pero ya sabemos que ocupa más ancho de banda, es menos es menos eficiente.
+Teacher: Vamos a tener que convertir texto a tipos de datos.
+Teacher: eh internos para poder realizar operaciones o poder entender qué es lo que está llegando.
+01:00:00
+Teacher: Entonces, eso no siempre o aumenta un poco más la latencia y aumenta un poco más el tiempo que se demora en enviar la información, en procesarla, etcétera.
+Teacher: Aquí ya cuando estamos hablando del sistema de comunicación de paso de mensajes, pues tenemos que existen diferentes tipos de operación o diferentes tipos de recepción.
+Teacher: Ya sabemos de que por pasos mensajes uno tiene que enviar y el otro tiene que recibir, pero esa recepción puede ser síncrona o asíncrona.
+Teacher: O sea, yo puedo hacer de que el canal de comunicación tenga la posibilidad de que yo pueda mandar el mensaje así el otro componente no esté no esté listo, no esté en modo lectura.
+Teacher: ¿Listo?
+Teacher: Entonces ese o modo recepción, perdón.
+Teacher: Entonces ese es un elemento que puede llegar a ser interesante en algunas decisiones de arquitecturas que nosotros vayamos a utilizar.
+Teacher: Entonces, yo puedo decidir de que mi sistema sea bloqueante o que yo mando la petición y me quedo bloqueado hasta que llegue la respuesta.
+Teacher: O puede ser no bloqueante o puede ser lo que llamamos asíncron.
+Teacher: Yo mando la petición, se recibe en algún lado y no me devuelve nada.
+Teacher: Yo esperaré en un momento, en algún otro momento, que llegue la respuesta.
+Teacher: ¿De qué?
+Teacher: Eh, ¿cuál es mejor?
+Teacher: Depende de qué es lo que nosotros estemos trabajando, ¿cierto?
+Teacher: Si si yo quiero que la respuesta que procede el servidor o que o la respuesta que me quiere dar el receptor eh lo más pronto posible, lo ideal es tenerlo en modo bloqueante porque al momento en el que el receptor
+Teacher: se convierte en emisor y envía el mensaje, pues entonces yo lo voy a recibir por el canal que estemos utilizando, ¿cierto?
+Teacher: Pero si yo lo manejo de manera sincrona, pues no hay una garantía de que el mensaje se procese, ¿cierto?
+Teacher: No hay una garantía de que yo tenga eh o que llegue la información al otro lado, se procese y luego me de una respuesta.
+Teacher: ¿Por qué?
+Teacher: Porque no hay ese, digámoslo así, no existe ese nivel de sincronía, no existe ese nivel de acoplamiento entre emisor y receptor como para saber si ya llegó o no llegó la respuesta o si llegó o no llegó al mensaje.
+Teacher: Generalmente, generalmente este modelo eh o los modelos o los modos de operación eh pueden llegar es donde nosotros empezamos como a analizar, okay, cómo sabemos si el mensaje llegó o no llegó.
+Teacher: Pues si es bloqueante, pues mientras esté conectado al servidor y establezca la comunicación, pues y si estoy bloqueado, digámoslo así, significa que alguien lo recibió o que yo mandé el mensaje y estoy esperando que llegue la respuesta.
+Teacher: ¿Listo?
+Teacher: Pero ahí es donde y cuánto tiempo vamos a esperar, cuánto tiempo es prudente para para esperar la respuesta o para tomar alguna decisión sobre la ejecución.
+Teacher: Y ahí es donde entra en el tema de los timeout o la espera temporizada y es yo lo voy a bloquear, pero voy a esperar máximo x tiempo.
+Teacher: Si en ese tiempo no me no recibo respuesta, pues simplemente descarto la petición y miro a ver si le digo al cliente que no se puedo procesar o si hago un reintento o si espero o hago o qué voy a hacer con con
+Teacher: el sistema, ¿cierto?
+Teacher: o puedo utilizar el modelo de esperas múltiples, ¿cierto?, que es la que utilizamos con con las opciones asíncronas y es yo voy a yo voy a mandar la petición y cuando llegue no sé si va a ser en un minuto,
+Teacher: no sé si va a ser en 5 minutos, no se va a hacer en una hora, pero cuando llegue el mensaje va a ser bien recibido.
+Teacher: Entonces, voy a hacer una petición asincrona y el y el nodo o el componente no va no se va a quedar bloqueado, va a poder seguir trabajando, seguir enviando otras peticiones a otros elementos y dándole esperas independientes a cada una de esas
+Teacher: peticiones que que estoy haciendo de manera diferente.
+Teacher: Y es posible que la última petición que hice me responda primero y la pueda procesar más rápido que la primera petición porque necesitaba hacer una operación mucho más grande.
+Teacher: Entonces, aquí vamos a tener que analizar si nuestro la necesidad que tenemos en nuestro sistema amerita tener un modelo síncrono o con recepción bloqueante o un modelo asíncrono con recepción no bloqueante.
+Teacher: ¿Listo?
+Teacher: ¿Dónde quedarán los mensajes si estoy en un modelo no bloqueante?
+Teacher: O sea, si yo mando si yo mando una petición al servidor y el servidor no me ha respondido y yo no me voy a quedar esperando la respuesta del servidor, ¿dónde queda ese mensaje?
+01:05:00
+Teacher: ¿Dónde creen ustedes?
+Teacher: Uno, puedo utilizar una cola de mensaje, ¿cierto?
+Teacher: Mandé mensaje a la cola y espero que la cola se lo entregue al otro.
+Teacher: Otro, si estoy utilizando conexión directa, pues puedo tener algo que llamamos un buofer.
+Teacher: Sí, el buofer no es más que un espacio de memoria o un espacio donde voy a guardar todas las peticiones que no he podido procesar o toda la información que está llegando a mi sistema y que no he
+Teacher: logrado procesar o que no tengo la capacidad de procesar.
+Teacher: Entonces, eh cuando tenga la disponibilidad, voy y leo el buofer y voy a poder ir recibiendo los mensajes o la información que está llegando por ese bufer.
+Teacher: ¿Listo?
+Teacher: Y aquí pues está el, digámoslo así, el mecanismo de comunicación o la herramienta de comunicación que más utilizamos para la comunicación de paso de mensajes de uno a uno o de n a uno.
+Teacher: Cuando hablamos de esa de la comunicación uno a uno, donde solamente hay un destinatario, digamos que puedo trabajar con socket o puedo trabajar con el número del proceso.
+Teacher: Yo puedo decirle al sistema operativo que busque al proceso X, que tiene el número X y mándele un mensaje.
+Teacher: ¿Listo?
+Teacher: No hay forma de que múltiples elementos puedan llegar al mismo al mismo destino, digámoslo así.
+Teacher: Bueno, cada uno tendría que mandarle mensajes de manera independiente, pero pero el socket es un mecanismo de comunicación que me permite abrir un puerto y establecer comunicación puerto a puerto.
+Teacher: O sea, tanto el origen, el emisor como el destino abren unos puertos.
+Teacher: ¿Qué son esos puertos?
+Teacher: Los puertos son simplemente una, digámoslo así, un componente lógico del sistema operativo que habilita o da la posibilidad de utilizar o me asignan un número y por ese número todo mensaje o toda comunicación que envíe por ese número va se va a unir o va a enviarse por un
+Teacher: canal que se establece de manera previa, o sea, se conectan inicialmente, establece el canal y ese canal pues va a quedar de manera bidireccional.
+Teacher: Le puedo enviar información y puedo recibir información utilizando ese mismo canal.
+Teacher: Entonces, ¿cómo funciona el socket?
+Teacher: Vamos a hacer bolitas y cuadritos.
+Teacher: Tengo un componente servidor y tengo un componente cliente.
+Teacher: Esos componentes le dicen al sistema operativo, "Ey, yo necesito establecer." Bueno,
+Teacher: el servidor lo que hace es abrir un puerto.
+Teacher: Lo voy a hacer aquí con una bolita.
+Teacher: abren un puerto y ese puerto pues si es de servidor le ponen un número.
+Teacher: Entonces normalmente yo puedo decir que este es mi servidor 8080 o este es mi puerto 8080. ¿Listo?
+Teacher: O sea, que para el sistema operativo, cuando alguien haya una comunicación o envíen una información por el puerto 8080, él va a entender de que es para el servicio que yo desarrollé, ¿cierto?
+Teacher: Yo desarrollé este servicio, lo publiqué en el puerto 8080 y entonces cualquier comunicación que llegue al sistema operativo por el puerto 8080 me lo va a reenviar o me lo va a redirigir a mi aplicación.
+Teacher: Y el cliente también va a tener que crear su propio puerto o su propio socket, ¿no?
+Teacher: Crea un socket y este socket va a tener un número aleatorio, va a obtener el número 53,847.
+Teacher: ¿Por qué ese número?
+Teacher: Porque sí, porque cuando yo necesito que un cliente o que un eh emisor hable con un receptor, no me importa dónde esté el emisor o porque puerto eh tenga abierto el canal, no me interesa.
+Teacher: Pero yo lo que sí me interesa es establecer la conexión entre este señor y este señor.
+Teacher: ¿Listo?
+Teacher: Entonces, cuando yo quiero establecer la comunicación entre cliente y servidor, entre editor, suscriptor, entre maestro, trabajador, etcétera, y estoy utilizando socket como mi mecanismo de comunicación, yo tengo que abrir un puerto de salida en el lado del cliente y tengo que tener un puerto
+Teacher: de entrada en el lado del servidor o del bueno, del vamos a cambiar ese ese nombre cliente servidor del emisor.
+01:10:00
+Teacher: Ah, lo borré.
+Teacher: Vamos a hacerlo otra vez aquí a manual.
+Teacher: Tengo un emisor que abrió un puerto.
+Teacher: Cco 4 3 2 1 y tengo un receptor que abre un puerto por un número conocido.
+Teacher: 80. Y el socket lo que hace es habilitarme este puerto, decirle al sistema operativo que me habilite este puerto y le digo, "Ey, necesito conectarme a la máquina R por el puerto 8080." Entonces,
+Teacher: lo que hace es crear un canal de comunicación, crear un una tubería que va desde este socket hasta este otro socket.
+Teacher: Listo.
+Teacher: Establezco esta comunicación y esta comunicación entonces ya está abierta para poder enviar y recibir mensajes.
+Teacher: Si yo voy a enviar, entonces este señor, el emisor, crea un mensaje y lo manda con un send.
+Teacher: Sí, envía un mensaje y este señor tiene que estar en modo reci.
+Teacher: Listo.
+Teacher: Para poder recibir el mensaje, si estoy en un modelo no bloqueante, este socket, digámoslo así, va a tener como una especie de de bolsita de de canasto donde todo lo que llegue aquí y este no esté listo, pues lo va a mandar al canasto.
+Teacher: Esto es lo que nosotros llamamos el bufer.
+Teacher: Sí, es como una especie de canasto en el que todos los mensajes que van llegando, mientras este no esté pendiente, el sistema operativo lo que va a hacer es venir aquí y mandarlo al canester.
+Teacher: No sé si se ve bien el bufer, pero ahí está.
+Teacher: Eso es básicamente lo que nosotros hacemos.
+Teacher: Si es bloqueante, la comunicación tiene que estar.
+Teacher: Si este señor no está pendiente, a este señor no se le responde.
+Teacher: Se queda bloqueado mientras mientras estoy en el modelo envío.
+Teacher: Apenas este diga lo recibí.
+Teacher: Entonces, ya puedo continuar con la siguiente mensaje que normalmente es que voy a estar esperando la respuesta.
+Teacher: si es bloqueante, si no es bloqueante, pues esto lo hará en cualquier momento.
+Teacher: Listo, en cualquier momento del tiempo, eh, él llamará el método receif y va a ver si hay datos en el buofer o no.
+Teacher: Este también tendría un buoofer si estoy utilizando datos bloqueantes, ¿ve?
+Teacher: No bloqueantes.
+Teacher: ¿Queda claro el la forma de comunicación entre el emisor y el receptor utilizando el socket?
+Teacher: Sí. Bueno, espero que sí.
+Teacher: Eh, si la aplicación no requiere bloquear en recepción, entonces si hay un error si el buofer está vacío o simplemente pues puedo descargar o decirle que me traiga lo que haya, los datos que que estén ahí pendientes por recibir.
+Teacher: Listo.
+Teacher: Ahí no hay ningún, digámoslo así, no hay ningún enredo.
+Teacher: ¿Cómo podemos implementar las arquitecturas que nosotros vimos utilizando paso de mensajes utilizando socket, por ejemplo.
+Teacher: Entonces, en el modelo cliente servidor, yo voy a tener que o lo normal es que nosotros tengamos un modelo sincronizado, ¿cierto?
+Teacher: Que cuando el cliente envíe un mensaje por el canal, hace una petición, el servidor está en modo recibo.
+Teacher: ¿Listo?
+Teacher: Y cuando el servidor va a enviar la información, utiliza el canal en modo envío o en modo send, manda el mensaje y el cliente para poderlo recibir debe estar en modo recibo.
+Teacher: O sea, que mire que la sincronización es estar en el en el modo contrario para poder establecer la comunicación.
+Teacher: Si el cliente envía, el servidor debe recibir.
+Teacher: Si el servidor envía, el cliente debe estar en modo recepción o o debe estar recibiendo en el modelo editor suscriptor utilizando pool, o sea, que el mismo suscriptor pide o solicita la descarga de eventos.
+Teacher: En el modelo editor suscriptor voy a tener un canal de envío para la suscripción y para la consulta de C eventos.
+Teacher: En cambio, voy a di ese que tengo aquí es el intermediario, es el broker, es el Cafka, es el Rabid Mq, es la herramienta que nosotros hayamos seleccionado para que nos sirva aquí de editor, pues como intermediario para el para el editor publicador,
+01:15:00
+Teacher: el editor suscriptor, perdón.
+Teacher: Entonces, este señor recibo o este señor eh intermediario pues debe estar sincronizado como si fuera un servidor.
+Teacher: Si este envía, este debe estar en modo recibir.
+Teacher: Si este va cuando él recibe una consulta eh él debe devolver una respuesta, pues esta respuesta tiene que estar el envío y el suscriptor en modo recibido.
+Teacher: Listo.
+Teacher: O sea, si estoy utilizando socket, pero debo estar utilizando el mismo canal.
+Teacher: Si estoy utilizando socket, digamos que la conexión tendría que ser permanente.
+Teacher: ¿Por qué?
+Teacher: Porque el intermediario no debería tener que hacer conexión o no debería tener que hacer eh ubicación o localización de dónde está el suscriptor.
+Teacher: Deberíamos de tener abierto el canal para que cuando haya un nuevo evento, pues simplemente mando la información de aquí para allá.
+Teacher: ¿Listo?
+Teacher: ¿Qué pasa con el editor?
+Teacher: Lo mismo, pero al revés.
+Teacher: Recuerde que el editor es el elemento activo, ¿cierto?
+Teacher: Entonces, el editor debe enviar una notificación o enviar un evento y ese evento lo va a recibir el intermediario para poder hacer un envío, por ejemplo, al suscriptor.
+Teacher: Y yo también podría venir a dar una respuesta o podría venir a dar una confirmación de recibido o algo que yo quisiera notificarle al editor de que el mensaje lo llegó y que fue procesado.
+Teacher: Entonces, yo voy a utilizar el mismo canal para el modelo de recepción, pero el editor en este caso debería estar sincronizado en modo recibo para poderlo hacer.
+Teacher: ¿Listo?
+Teacher: en notificación push, el editor suscriptor con push.
+Teacher: Lo que cambia es la forma como como digámoslo así que ya no van a haber dos mensajes del lado del cliente, perdón, del lado del suscriptor, sino que tendríamos solamente uno, ey, suscríbase a tal evento y cuando llega ese evento,
+Teacher: pues simplemente yo notifico.
+Teacher: ¿Listo?
+Teacher: O sea, que yo solamente hago un envío y no vuelvo a preguntar, no vuelvo a hacer solicitudes al servidor, sino que hago un envío y quedo con el canal abierto para que cuando llegue un mensaje, pues simplemente me sea notificado o me llegue la información a la al
+Teacher: suscriptor.
+Teacher: ¿Listo?
+Teacher: Eh, en este caso con el editor suscriptor push, pues yo aquí podría tener una respuesta si yo le digo que necesito confirmar que llegó el mensaje del editor o simplemente pues puedo ignorar este canal.
+Teacher: ¿Y qué pasaría con peer to peer si estamos utilizando socket?
+Teacher: Pues en este caso necesitamos dos sockets.
+Teacher: Recuerde que peer to peer cumple con las dos funciones.
+Teacher: Cada entidad cumple las dos funciones.
+Teacher: La función de hacer solicitudes y la función de procesar solicitudes.
+Teacher: O sea, funciona como cliente y servidor al mismo tiempo.
+Teacher: Pero entonces para poder implementar peer to peer utilizando socket, vamos a necesitar dos socket.
+Teacher: Sí. Uno para uno de recepción.
+Teacher: que debería ser un puerto conocido y un puerto de envío, que debería ser un puerto dinámico que que el sistema operativo lo puede entregar cualquier número.
+Teacher: Entonces, como como cada entidad, cada nodo, cada elemento de mi red peer to peer tiene estas dos posibilidades que yo podría estar haciendo una solicitud, pero de una vez me podría estar recibiendo una petición de de otro de otro usuario.
+Teacher: Entonces, en este modelo yo necesito dos canales.
+Teacher: uno, uno para el envío y otro para la recepción.
+Teacher: ¿Listo?
+Teacher: Entonces, digamos que aquí no estamos hablando de un socket, sino que vamos a necesitar dos sockets, porque de manera simultánea, mientras yo estoy enviando, podría también estar recibiendo recibiendo peticiones.
+Teacher: Entonces, entonces este sería como la implementación si estuviéramos utilizando socket o utilizamos envío de mensajes para implementar cualquiera de estas arquitecturas.
+Teacher: Si vamos a ser prácticos y somos eh conscientes de la tecnología, este sería como la forma como realmente nosotros estamos logrando eh establecer la comunicación, porque socket es como el mecanismo de comunicación más
+Teacher: básico o que por debajo de todo siempre vamos a utilizar.
+Teacher: Si estamos trabajando RPC, al final se convertirá en un socket, pero el el marchal y el marchas ya está definido por RPC.
+01:20:00
+Teacher: Si estamos trabajando con Corba, lo mismo, vamos a tener un marcha, un marcha definido por Corba y todo al final se va a mandar como un flujo de de datos, un flujo de bytes por RPC, ve por el socket.
+Teacher: Y lo mismo con P2P, tendríamos estos dos canales o estos dos socket abiertos, uno para envío, otro para recepción y al final pues estableceríamos la comunicación bidireccional de esta manera.
+Teacher: Listo.
+Teacher: Antes de hablar de la comunicación al grupo, que no nos va no alcanzamos hoy, voy a ver cómo terminamos con con la con la encuesta de exposiciones.
+Teacher: No quedaron sino tres grupos.
+Teacher: Entonces voy a distribuir el trabajo para estos tres grupos que fueron los únicos que quedaron, ¿cierto?
+Teacher: No sé si Cristian o Yayo tiene la posibilidad de completar el grupo con los que salieron ahí en el chat, pues si puedes editar el mensaje.
+Student26: Creo que no se puede editar.
+Student26: Me toca eliminarlo y crear otro.
+Teacher: Bueno, entonces entonces agrégalo.
+Teacher: Entonces agrégalo sin ningún problema.
+Teacher: ¿Listo?
+Teacher: y agreguen y completen los cinco.
+Student1: Yeah.
+Teacher: Mire que ahí hay varios que que están pendientes.
+Student6: Pero denos un momentico ahí, por lo menos escribimos quién falta.
+Student6: Yo también falto por grupo.
+Teacher: Dale.
+Teacher: Bueno, entonces terminen ese proceso y ahora
+Student6: Oh.
+Teacher: que vea los mejor dicho, al rato, en un rato que vea los mensajes y cree los grupos, los voy a escribir acá y eh voy a hacer un sorteo de las exposiciones a los grupos, ¿listo?
+Teacher: O sea, los tres grupos que están aquí, bueno, cuatro, ya apareció Juan.
+Teacher: Entonces, aquí voy a tener el grupo U, B, C y D. Listo.
+Teacher: Y con y con esos voy a distribuir qué es posición en la que les toca.
+Teacher: Listo.
+Teacher: Y ahora les comparto ahí una imagen con cuál fue el resultado de la de la de la distribución.
+Teacher: ¿Está bien?
+Teacher: No sé si tienen alguna duda, alguna inquietud.
+Teacher: Recuerden comentarios sobre el elemento de aquí de de la de la circular número 20. para saber ustedes.
+Teacher: Tenemos hasta la próxima semana o tenemos hasta el jueves para que tomemos una decisión si nos vamos a ver el martes en en clase.
+Teacher: ¿Listo?
+Teacher: En la universidad.
+Teacher: Dale.
+Teacher: Entonces, eh, Yayo, no borres el mensaje porque si no pierde el turno, ¿eh?
+Student26: Hágale,
+Teacher: No, no borre mensaje,
+Student26: yo incluyo.
+Teacher: agregue uno nuevo.
+Teacher: Listo.
+Student26: Hágale, pues.
+Student26: Listo.
+Student26: Profe,
+Teacher: Dale,
+Student26: no olvid extender el el tiempito para la entrega del del tallercito ese del domingo.
+Teacher: dale.
+Teacher: Listo.
+Teacher: Bueno, aquí Juan Pablo llegó.
+Student26: Oh.
+Teacher: Bueno, ahí están todos.
+Teacher: Jóvenes, nos vemos el jueves, entonces.
+Teacher: Listo.
+Student6: armando el grupo Daniel
+Teacher: No, tranquilo, tranquilo.
+Student6: Ricano
+Teacher: Dale.
+Teacher: Voy a voy a parar la grabación y y está acá.
+Student6: Castaño.
+La reunión finalizó después de 01:23:35 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+

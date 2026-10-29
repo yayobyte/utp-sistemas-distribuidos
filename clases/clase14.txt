@@ -1,0 +1,390 @@
+Hora de inicio de la reunión: 2026-10-22 18:30 GMT-5
+Asistentes
+Teacher, Student9, Student14, Student26, Student6, Student8, Student1
+Transcripción
+Teacher: Okay, Bueno la idea como tal del ejercicio del taller o del parcial práctico o en la parte práctica del parcial, pues es hacer un análisis de un proyecto cierto, yo voy a analizar uno aquí en clase y ustedes tienen que hacer lo mismo con el ejercicio que les voy a dejar ok.
+Teacher: El proyecto el proyecto que me tocó a mí se llama Astro Search una red internacional de telescopios y análisis astronómico Cuál es el escenario la agencia espacial internacional coordina la red Astro Search una plataforma que conecta telescopio robotizados centros de análisis, científico universidades y miles de astrofísicos aficionados el sistema opera bajo una infraestructura combinada de cluster computer en el centro de datos principal y voluntad computación voluntaria distribuida en internet para las tareas de superco.
+Teacher: Super cómputo fotométrico no sé si ustedes tienen El dominio de del escenario, o sea si conocen de este tema de de cómo funcionan las redes.
+Teacher: De astrofísica o astronómicas pero la La idea es esta es que analicen el problema como tal ahora.
+Teacher: Cuáles son los requerimientos de ingeniería O sea qué es lo que vamos nosotros analizar primero portal de investigación y control operativo autenticación y registro se requiere una plataforma administrativa sincrona donde más de diez mil astrónomos acreditados inician sesión configuren tiempos de observación en telescopios y registren hallazgos oficiales la tasa de operaciones alcanzó unas quince mil peticiones concurrentes.
+Teacher: En eventos astronómicos mayores la integridad de las credenciales y el catal y los catálogos oficiales existen una exige una stencia inmediata significa transacciones ácidas no nos preocupemos por eso pues si tienen el concepto bien y si no pues básicamente habla de que cada vez que yo guardo una información.
+Teacher: Todos los datos Mejor dicho ese dato debe ser único irrepetible y además de eso.
+Teacher: Inmediata en la base de datos cierto y los tiempos de respuesta deben ser inferiores a 200 milisegundos ojo ojo a las restricciones.
+Teacher: Malla de alertas y fenómenos transitorios supernovas esteroides cuando un telescopio detecta una anomalía fotométrica en tiempo real explosión de una supernova o una un asteroide cercano se genera una alerta crítica que debe notificarse de manera asíncrona e ininterrumpida a miles de observatorios y aplicaciones móviles de respuesta rápida en menos de trescientos milisegundos El emisor el emisor no conoce la cantidad ni las direcciones ip de los receptores.
+Teacher: Tercer elemento tercer esto lo llaman desafíos.
+Teacher: Búsqueda de exoplanetas y y cómputo fotométrico el procesador fotométrico para detectar la atenuación de luces millones de estrellas requiere analizar petabyte de datos la agencia no cuenta con un presupuesto para un súper computador dedicado por lo que fragmenta el análisis de en millones de paquetes pequeños que son distribuidos a computadores personales de ciudadanos voluntarios en internet.
+Teacher: Replicación de catálogos y mapas celestes Los observadores regionales requieren intercambiar periódicamente archivos voluminosos de mapas celestes HD en en calidad HD archivos de tipo fits de 30 gigas a 100 gigas cada uno el enlace One en los centros de datos principalmente colapsaría si descarga Si descargáramos todos los datos desde un servidor central Okay Cuál es la idea del proyecto del taller o del examen es analizar todo el contexto cierto analizar cada uno de estos elementos y digámoslo así primero vamos a identificar cuál sería la arquitectura más adecuada Sí vamos a a revisar.
+Teacher: Para resolver este desafío el del portal de investigadores.
+Teacher: Cuál de las cuatro arquitecturas que nosotros vimos es la que más se ha más se acerca o más llega al resultado o cubre o ayuda a a resolver este problema cierto entonces?
+Teacher: Y así con cada una de las de los dos problemas es posible de que todo todas digamos, no es que la arquitectura que más se adecua es cliente servidor, Pues si esa es nuestra decisión vamos a tener que analizar el Por qué las otras arquitecturas no caben o por qué las otras arquitecturas no serían candida?
+Teacher: Cuál sería el problema de utilizar las otras arquitecturas listo?
+Teacher: Y así vamos a irnos una por una entonces básicamente Qué vamos a hacer, vamos a hacer una descomposición y una matriz de decisiones arquitectónicas, vamos a crear una matriz un cuadrito una una tabla donde vamos a decir.
+Teacher: Para cada para cada problema o para cada.
+Teacher: Escenario o para cada subsistema, cuál va a ser la arquitectura?
+Teacher: Que vamos a elegir Porque la vamos a elegir, cuál es la digámoslo si el nivel de acoplamiento que tiene vamos a tener en este sistema y porque bueno, el Por qué vamos a descartar.
+Teacher: Eso lo vamos a colocar en este otro evaluación del modelo listo Entonces vamos aquí a analizar.
+Teacher: Porque vamos a utilizar volunteer con y no otros modelos de computación porque utilizamos grit y no vamos a utilizar cluster.
+Teacher: Ve por qué utilizamos closer y no vamos a utilizar grip, Perdón puntos críticos de fallo aquí en este elemento de puntos críticos de fallo, resiliencia y transparencias, vamos es analizar la solución que nosotros vamos a plantear.
+Teacher: Necesitamos Entonces vamos a decir Okay vamos a A tomar esta decisión por x o y emotivo Pero entonces aquí dentro de la solución como tal tenemos los siguientes puntos críticos de fallo.
+Teacher: Elementos que si fallan pues Se cae por completo La la solución.
+Teacher: Qué posibilidad o qué, herramienta o Qué elemento voy a utilizar para evitar de que esto pueda ocurrir Y qué tipo de transparencia.
+Teacher: Nosotros vamos a aplicar Sí pues sí, vamos a tener algún tipo de transparencia el objetivo de transparencia que tiene varios niveles.
+Teacher: Identificar aquí, Qué tipo de transparencia queremos nosotros dar o estamos logrando con esto que o con la solución que nosotros estamos.
+Teacher: Dando y al final pues vamos a mostrar el diagrama arquitectónico básico, no, No necesitamos un alto nivel de un nivel muy detallado, sino más o menos, qué fue lo que ustedes identificaron como que hacía parte del sistema y cómo estaban interconectados y una sustentación oral, la sustentación oral es simplemente ustedes van a hacer un video de uno o dos minuticos explicando.
+Teacher: La solución al problema todos van a tener el mismo problema O sea no tiene que explicar el problema van a explicar es la solución a la que ustedes llegaron teniendo en cuenta, pues describiendo Cuáles son como las falencias o las buenas prácticas que que tomaron Al momento de hacer el análisis Entonces vamos a empezar con nuestro con nuestro primer punto vamos a hacer las composición y una matriz de decisiones arquitectónicas entonces para hacer esa matriz Pues yo necesito primero identificar para cada uno de estos problemas, cuál sería?
+Teacher: La solución más adecuada cierto Entonces vamos a mirar ese primero.
+Teacher: Vamos a manejar Diez mil astrónomos.
+Teacher: Que van a estar haciendo en este caso solamente se se enfocan en en dos escenarios, el login Pues en el registro cierto el inicio de sesión y el otro escenario es guardar información o guardar las dicen los catálogos la Los hallazgos cierto Entonces vamos a revisar eso vamos a hablar de que esta estamos hablando de que los elementos o las operaciones que que más se van a generar aquí tiene que ver con el inicio de sesión y el registro de hallazgos el registro de hallazgos como tal, o sea aquí digamos lo que de una manera sencilla Yo podría decir Ok Cuál es la arquitectura Que digámoslo así más se nos acomoda a un inicio de sesión y a un registro de hallazgos será que con maestros trabajador cliente servidor pirpiro o editar suscriptor, entonces digámoslo, así que el escenario es muy Entonces yo rápidamente voy a identificar que Es un cliente servidor cierto.
+Teacher: Okay este esta este módulo lo podemos resolver o la arquitectura que más se adecua es cliente servidor.
+Teacher: Maya de alertas de fenómenos transitorios cuando un telescopio detecta una anomalía fotométrica genera una alerta crítica entonces aquí aquí hay unas Aquí hay un un elemento clave.
+Teacher: E ininterrumpida a miles de observatorios Todo esta frase es bastante importante.
+Teacher: Dispositivos móviles para una respuesta rápida en menos de 300 milisegundos el emisor, o sea, por regalado no conoce la cantidad de ni las direcciones ip de los receptores Cuál es la arquitectura para este subsistema.
+Teacher: Cierto
+00:05:00
+00:10:00
+Student9: Necesitamos suscriptores publicadores.
+Teacher: No, no falto sino decir y los móviles se suscriben.
+Teacher: Entonces vamos a trabajar con editor suscriptor o pop como como lo conocemos por ahí cierto.
+Teacher: Tercero búsqueda de exoplanetas y cómputo fotométrico el procesamiento fotométrico para detectar la tonación de luz de millones de señas requiere analizar petabyte de datos.
+Teacher: Me perdió aquí estamos para un súper computador dedicado por lo que fragmenta el análisis millones de paquetes pequeños que son distribuidos a computadores personales y voluntarios por internet.
+Student9: Vuelve.
+Teacher: Símbolo pero ojo Cuál es el modelo arquitectural que vamos a utilizar en este en este módulo
+Student9: Eso es
+Teacher: Fragmente el análisis
+Student9: Maestro esclavo maestro es
+Student14: De pronto
+Teacher: Y distribuir el computadores bueno.
+Teacher: El paquetes pequeños que son distribuidos entonces mire que aquí.
+Teacher: El la arquitectura podría llegar a ser cliente servidor cierto, pero si el digámoslo así sí se fragmenta el análisis en millones de paquetes es porque vamos a mandarlo a millones de servidores.
+Student9: Sí profe
+Teacher: Cierto Entonces yo podría decir que es cliente.
+Student9: A cada uno de los de los voluntarios.
+Teacher: Exacto pero entonces tiene más sentido hablar de que estoy si estoy en un voluntario con Piolín será que yo le voy a montar un servidor a cada uno de los a cada uno de los nodos voluntarios
+Student9: Ahí tiene más sentido maestro.
+Student14: Para nada.
+Teacher: Okay entonces esto es maestro trabajador.
+Student9: Y mi servidor central?
+Teacher: En el exactamente este es Editor suscriptor.
+Student9: Maestro
+Teacher: Y este es cliente servidor.
+Teacher: Este suscriptor maestro de trabajador listo y por último los observatorios regionales requiere intercambiar periódicamente archivos voluminosos de mapas de más de 30 de 30 a 100 GB de almacenamiento Vamos a poner aquí como elementos clave para el análisis.
+Teacher: Este también es un elemento clave.
+Teacher: Aunque es un un ejemplo pero pues es un elemento clave y aquí me dan una una Qué Qué dice esta restricción?
+Student26: Que no es cliente servidor.
+Teacher: Para el contacto listo, entonces me queda más fácil maestro trabajador aplica.
+Teacher: Editor suscriptor
+Student9: No tampoco
+Student14: No, nada.
+Teacher: Entonces por descarte Realmente lo podemos utilizar.
+Student9: Almacenamiento distribuido
+Teacher: Lo podemos utilizar para compartir recursos y almacenamiento, pues es uno de los recursos que nosotros podemos compartir cierto que podemos utilizar o o dar a disposición a nuestros.
+Teacher: A nuestros otros usuarios cierto, sino que el almacenamiento es uno de los que más utilizamos Pero recuerde que por ejemplo Skype no guarda almacenamiento, sino transmisión de datos.
+Teacher: Entonces en este caso, como vamos a transmitir información de un archivo a otro en lugar de subirlo a un servidor y luego descargarlo.
+Teacher: O tener todos los archivos en el servidor, pues entonces es mejor que el que tenga la información o el nodo que tenga la información pues.
+Teacher: Pase de manera directa o comparten de manera directa los archivos con el con el que lo necesite cierto que lo tenga que Pasar o hacer o mandar el archivo por diferentes nodos dentro de la red, sino que podamos establecer esa conexión directa entre pares cierto entre elementos pares, Okay ya hemos analizado, hemos identificado Cuál es la mejor arquitectura para cada uno de ellos Entonces vamos a hacer nuestra tablita de descomposición listo entonces en esa tablita descomposición voy a inventarme aquí una tabla.
+Teacher: Vamos a insertar una tabla.
+Teacher: De vamos a poner aquí cinco y vamos a y son cuatro escenarios, listo.
+Teacher: Bueno, pongamos una para el título e insertemos otra fila.
+Teacher: Te vamos a vamos a analizar Aquí Cuál es el desafío o Vamos a colocar Aquí Cuál es el modelo o arquitectura.
+Teacher: Vamos a mirar Aquí Cuál es el acoplamiento.
+Teacher: Parece la Y la justificación?
+Teacher: Después ponemos esto podemos dejarlo aquí en negrito.
+Teacher: Y centradito.
+Teacher: Yo como que soy medio cuadriculado para esto listo Entonces el primer requerimiento era portal investigadores Entonces vamos a decir te quiero el portal investigadores.
+Teacher: La arquitectura era la acoplamiento espacial en esta arquitectura es como Es alto o bajo?
+00:15:00
+Student9: Saber dónde está el servidor y
+Teacher: Exactamente y el acoplamiento temporal.
+Teacher: Sí por qué sabemos que es alto?
+Teacher: Porque yo no puedo hacer un inicio de sesión asíncrono por ejemplo o que yo mando la petición y y al rato que me respondas cierto, yo voy a hacerlo rápido y igual que los hallazgos.
+Teacher: O sea la idea de que los hallazgos es que apenas sucedan yo pueda mandar la información a nuestro servidor cierto y que se pueda gestionar Entonces vamos a tener aquí un acoplamiento temporal alto, Porque primero y sin trono.
+Teacher: O necesito una una alta sincronía y el acoplamiento espacial es alto porque pues tenemos que conocer el servidor, o sea los clientes.
+Teacher: Conocen
+Student26: Porque es cliente servidor.
+Teacher: Y puede servidor, sí.
+Teacher: Digamos que redundante pero pues esa es la justificación de Por qué es alto Cuál es la justificación de Por qué ese y por qué los otros no?
+Student26: Porque ellos se tienen que autenticar y la respuesta tiene que llegar, o sea usted no puede entrar al sistema sin autenticar y tiene que tener la respuesta inmediata para esos creyentes servidor.
+Teacher: Ajá requiere transacciones así Y comunicación asíncrona.
+Teacher: Listo, por qué descartamos?
+Student26: Pues precisamente por el login, hay que conocer.
+Student26: El el pues hay que conocer el nodo primero, o sea usted tiene que Conocer en cualquiera de las otras Usted tiene que primero saber con quién va es quién se va a conectar entonces?
+Student26: Creo que palo es que no, no sé si exista otro.
+Teacher: Otra arquitectura
+Student26: Sí pues porque es que inclusive cuando uno hacía los los antiguos el casada el Ares usted tiene que lograr primero el sistema se tiene que lograr con el con el con el central.
+Teacher: Por el nódulo de gestión.
+Student26: Pues ninguna fue realmente descentralizado alguien se tiene que bloquear Entonces ya sabía quién era quién pero eso hacía una petición Rest Bueno, así lo lo creo, no sé.
+Teacher: En ese en ese tiempo no habían.
+Student26: O de pronto una
+Teacher: Es más.
+Student26: Petición, pues en ese tiempo era que de tipo http uno que no sé.
+Teacher: Yo sí normal lo vaya axo alguna cosa así.
+Teacher: Maya de alertas Está aquí, vamos a ponerlo a todos otra vez a nueve, entonces la malla de alertas habíamos dicho que era que editor suscriptor entonces pongámosle aquí Editor suscriptor el acoplamiento espacial
+00:20:00
+Student26: No
+Teacher: Si ese editor suscriptor cómo será Ah okay, entonces?
+Teacher: Tener un bajo acoplamiento y un bajo aco.
+Student26: Sí este
+Teacher: Tanto espacial como temporal por qué?
+Teacher: Porque normalmente utilizamos un Brokers para este tipo de de elementos cierto.
+Teacher: Entonces bajo espacialmente Porque no voy a conocer Quiénes a quienes les tengo que mandar las notificación, o sea el editor no sabe a quién se les envía y el acoplamiento temporal Pues también sería abajo porque no digámoslo así no, no existe un una forma de garantizar la insta.
+Teacher: Del problema Bueno tendríamos que decir que utilizamos justificación.
+Student26: Para esos kafka no para que gestiones a Cola y mande el mensaje, pues cuando se pueda entregar o
+Teacher: Con qué tipo de notificación sería mejor
+Student26: Aquí es con Push no.
+Teacher: Uso
+Student26: Aquí es con Push no, cuando pasa algún evento según el mensaje, hay que enviarlo instantáneamente según alcancía, a leer, no?
+Teacher: Exactamente Entonces digamos que como es un modelo donde yo necesito Bueno aquí, aquí viene una discusión, qué tan importante o qué tan Qué tan necesario es de que apenas llegue una alerta la alerta era de qué?
+Student26: Por eso lo dice el
+Teacher: De más de
+Student26: Enunciado No pues uno ya, pues no es tan importante, pero creo que el enunciado lo pide.
+Teacher: Aquí dice que es una alerta crítica.
+Teacher: Entonces como es una alerta crítica debe ser lo más rápido posible o podría esperar.
+Student26: Por eso yo lo entendí que como esa alerta crítica hay que enviarla de una Entonces sería puso.
+Teacher: Entonces vamos a utilizar
+Student26: Si no fuera crítica entonces usted pone un Lista negra que haga un pool, Pues sí cada cierto tiempo, no?
+Teacher: Podemos dejar de que los interesados lo descarguen cuando cuando estén disponibles cierto.
+Student26: Por la escalabilidad No pues hay nodos que se van agregando, se van saliendo entonces.
+Teacher: Por qué descartamos descarta clientes servidor por Por realmente por el el flujo de eventos cierto, porque es un solo he visto un emisor y múltiples consumidores, eso no es cliente servidor por ningún lado cierto.
+Teacher: No, porque Recuerden que
+Student26: Eso es porque lo elegimos primero cierto, o sea, elegimos suscriptor, pero según yo tenía entendido.
+Teacher: Ajá
+Student26: O sea, uno de entrada descarta clientes servidores, precisamente cuando se va a agregar un nuevo servicio, o sea si hay un observador que se va a agregar Entonces es más complejo, no, no tanto por la cantidad sino exacto
+Teacher: Que agregar un nuevo consumidor significa crear un nuevo servidor y decirle al cliente que lo mande Entonces yo descarto esa arquitectura simplemente por la forma como o por el modo o el número de usuarios a los que yo tengo que notificar porque si no tendría que hacer servidores por cada usuario y registrarlo en el sistema y que el editor tenga que mandar ese esos múltiples eventos a cada uno de los usuarios cierto.
+Student26: Eso eso fue como por el dinamismo no O sea como por la por la que no no se puede modificar tanto las redes lo que le le entendí cierto.
+Teacher: Okay Por qué no es maestro trabajador
+Student26: Es por la por el acoplamiento, pero no sé.
+Teacher: Realmente por los roles ojo porque eres maestro trabajador porque en el modelo maestro trabajador las tareas llegan al maestro y se delegan a los trabajadores en este caso no estoy delegando tareas, sí soy solamente notificando, verás si lo uso no lo usa.
+Teacher: O si los a los que les llega a los que tienen equipos celulares y y los astrónomos les interesa o no les interesa ese evento cierto entonces.
+Teacher: Por eso no es maestro trabajador porque los trabajadores.
+Teacher: Están esperando tareas, están esperando cosas para hacer en este caso no es exactamente que están esperando tareas.
+Teacher: Están es este ahí en el digámoslo así en el en el Limbo nada más para ser notificados y ya cada uno tomará una acción o le notificará al usuario o al o hará algún tipo de de ajuste sobre sobre las visualizaciones que están haciendo cierto.
+Teacher: Por qué no es?
+Teacher: Por qué se descartaría
+00:25:00
+Student26: Tiene que haber una centralización No pues la intención es recoger información.
+Teacher: Recuerden que el Es compartir recursos cierto yo yo me voy a contactar con otro par para o pedir hacerle hacerle una solicitud para enviarle información listo en este caso dentro del contexto del ejercicio el editor genera un evento pero no está inundando toda la red o no está mandando ese evento para que todo el mundo lo conozca solamente los aquí habla de A miles de observatorios y aplicaciones móviles.
+Teacher: Bueno, no, no hay un dominio, no, no me dice que que no, pero vea aquí ya aquí ya viene otra otra duda, aquí dice es una alerta crítica pero de manera asíncrona O sea que yo podría tomar como decisión de mi arquitectura que en vez de usar notificaciones Push podría ser notificaciones Porque esa sincrona cierto, no necesito tiempo real no es un elemento crítico según eso, o sea la alerta es crítica, pero no, no la comunicación entonces aquí podría ser mejor una notificación pública.
+Student26: Crítica pero no urgente
+Teacher: Pero en urgente exactamente Sí porque si se que se explotó una supernova Pues eso no, no va a ser de que no suba el calor acá.
+Teacher: Por decirlo así
+Student26: Depende depende de para donde coja las
+Teacher: Exacto bueno Y así con las otras cierto la búsqueda de exoplanetas, eso era maestro trabajador.
+Teacher: Pues planetas estará maestro trabajador acoplamiento
+Student26: Todo esto es alto el maestro necesita saber los nodos, no?
+Teacher: Acoplamiento temporal
+Student6: Debes saber cuándo terminan las tareas para asignar la otra
+Teacher: Pero no hay una dependencia de si termina ya o termina dentro de cinco horas porque como estoy utilizando computación voluntaria.
+Teacher: En este caso no me da No no es tan crítico.
+Teacher: Yo voy a cuando yo esté cuando yo necesito Perdón acoplamiento espacial.
+Teacher: Yo como maestro Necesito saber dónde están todos los o a qué trabajadores o a qué nodos de cómputo les puedo mandar tareas?
+Teacher: Porque me tengo que conectar con cada uno de ellos.
+Teacher: Pero El el nodo digamoslo, así se puede demorar cinco segundos como me puede demorar un mes para terminar la tarea de qué depende?
+Teacher: De los recursos y de la capacidad o del tiempo que esté disponible para para procesar Entonces yo no necesito que haya un acoplamiento temporal.
+Teacher: Tan digámoslo así instantáneo para poder hacer el procesamiento de los datos, Sí yo pude haber recibido la tarea y no empezar a trabajar en ella al instante.
+Teacher: O estar trabajando en otra tarea Cuando me llegue una nueva tarea para para procesar Entonces no hay una digamos, así no hay una acoplamiento temporal real o o estricto en en este escenario ojo en este escenario.
+Teacher: No sé si si queda Yo sé que habíamos hablado de que normalmente maestro trabajador era acoplado temporalmente Sí porque si hay un trabajador no está, qué hacemos?
+Student26: Se lo asigna a otro.
+Teacher: Qué pasa si yo distribuyo el trabajo.
+Teacher: Cierto, pero entonces Pero sigue siendo y como estamos trabajando en voluntad cierto, es una computación voluntaria, Pues los nodos, los nodos hijos o los nuevos externos son volátiles pueden estar en un momento y luego pueden desaparecer Entonces no hay una dependencia de que mi sistema dependa de que el otro elemento funcione así estemos trabajando el maestro trabajador no hay una no hay no existe esa alta dependencia entre el uno y el otro para que los dos tenga que estar en funcionamiento para mandar la tarea, Yo podría.
+Teacher: Dejar la tarea aquí como en pendiente Hasta que el otro se conecte y diga Listo Ya estoy aquí le mando la tarea pero no voy a dejar de de trabajar por decirlo así porque ese no no está disponible.
+00:30:00
+Student26: Profe O sea que este acoplamiento temporal depende es el modelo de computación O sea si fuera un grid Entonces si la el acoplamiento sería alto, no?
+Teacher: En cluster, Sería más alto en
+Student26: Perdón en cluster, sí sí.
+Teacher: No están dependiente, digámoslo así.
+Teacher: Listo, entonces aquí justificación el maestro divide las tareas, etcétera ta ta ta se descarta que les de servidor porque pues.
+Teacher: Ellos los los computadores no son servidores son Realmente procesadores de información, no descartamos editor suscriptor porque tengo que conocer quién es y él me tiene que responder o sea tiene que ser de doble vía entonces editar suscriptor los suscriptores no van a no van a poderle devolver notificaciones al al maestro o al editor y virtupir lo mismo cierto, eso no es para esto, pero la idea es de que aquí si escriban.
+Teacher: Detalladito cierto con calma.
+Teacher: No tienen una hora para hacerlo Y por último nuestro último catálogo sin mapas o replicación de catálogos.
+Teacher: Esto esto era p2p.
+Teacher: Y cuál es el acoplamiento espacial en p2p?
+Teacher: Para que hay un acoplamiento espacial?
+Teacher: Sí pero no
+Student26: Pero si no, no, el nodo no tiene que saber dónde está el otro de alguna manera, así sea.
+Teacher: O sea, inicialmente, inicialmente pueden que ni se ni sepan dónde están, pero al momento en el que van a establecer la comunicación, Sí cierto.
+Student26: Alguien le dice a alguien, o sea, alguien alguien?
+Student26: Me dice a mí Dónde está el otro no de alguna manera.
+Teacher: Entonces digamos que el acoplamiento acá, o sea uno no puede estar prendido ver no puede estar en cualquier lugar o el recurso que yo necesito puede estar en este lugar o en otro y para mí es indiferente, o sea, para mí no me es indiferente de que esté en un mismo lugar, por qué?
+Teacher: Porque cuando yo voy a establecer la comunicación Pues el elemento.
+Teacher: Digámoslo así en ese momento es cuando yo tengo que conocer.
+Teacher: En donde se encuentra Entonces yo podría decir aquí que es alto.
+Teacher: Cierto, pero pero digámoslo, así que que flexible o algo así cierto Y por qué flexible por eso porque porque hoy puede estar en el equipo uno.
+Teacher: Y conectado por Recuerden que en tu piel las redes virtual.
+Teacher: Cierto, o sea, el nodo que está al lado mío, puede estar en la china, pero virtualmente o lógicamente dentro de la red virtupir Estoy al lado.
+Teacher: Entonces puede ser que sea un nodo de al lado, o sea un nodo y el mismo nodo podría llegar a estar al otro lado del mundo, Entonces la ubicación o la dirección o la forma como llego a ese nodo puede ser flexible, puede cambiar dentro del modelo o dentro de la implementación Y lo mismo pasa con el acoplamiento temporal será que Yo espero que esa distribución sea De manera sincronal, o sea, se tienen que dedicar solo a eso.
+Student26: O sea no
+Teacher: O sea si yo voy a hacer una petición, ahí necesito tal archivo.
+Teacher: El nodo el nodo que lo tiene Tiene que estar respondiéndome o tiene que estar esperando esa pregunta para responderme.
+Teacher: Recuerde que el acoplamiento temporal es que el uno si cuando el uno solicita algo el otro está escuchando está pendiente para poderle responder o para poder procesar las peticiones cierto mantener sincronizados Si el uno habla el otro escucha.
+Student26: Profe Yo sé que usted ahí le puso bajo y es el es la persona que tiene el conocimiento absoluto, pero yo diferir un poquito porque básicamente lo que está diciendo es no se puede compartir o la restricción que está pidiendo es No utilice cliente servidor el enunciado Pues porque no se puede descargar toda esa cantidad de datos al tiempo.
+Student26: Entonces lo que está diciendo venga.
+Student26: Es básicamente Es perdón, es básicamente pierdo porque hay mucho que Descargar entonces si yo pido el otro tiene que estar ahí para entregarme yo lo yo.
+Teacher: Sí
+Student26: Lo pondría alto.
+00:35:00
+Teacher: Sí pero el que está digámoslo así el que tiene el archivo que el que tiene el recurso podría estar ocupado o podría no estar.
+Student26: Okay.
+Teacher: Pero cuando esté pero lo dejo con flexible porque yo no voy a limitar el funcionamiento, no voy a parar la descarga Por decirlo así, porque el nodo no está, lo dejó pendiente hasta cuando esté.
+Teacher: Sí o sea, sí, Para poder transmitir la información necesita de estar los dos, pero si no está la tarea, ya se mandó o la tengo ahí pendiente o no está descargando está descargando un bit por segundo Por decirlo, así no tiene que estar dedicado solamente para responderlo qué es lo que hace el servidor el servidor, pues se tiene que dedicar a resolver el solicitud del cliente, por eso están altamente acoplado.
+Teacher: Listo y por qué no puede ser clip de servidor?
+Teacher: Porque no puede ser porque no puede ser maestro, por qué no puede ser editor suscriptor porque no pide la de de esta última columna es justifiquemos eso.
+Teacher: El segundo evaluación del modelo de computación distribuida o sea en el ejercicio me dicen Debe se está utilizando cluster computing y se está utilizando voluntil Por qué la implementación de esto Cierto que allá arriba decía.
+Teacher: Con Por qué cluster Y por qué justifiquemos el por qué?
+Teacher: >> Student6: diciendo que no cuentan con los recursos suficientes y delega, pues esas tareas a literalmente lo hice a equipos voluntarios.
+Teacher: Okay, Entonces digamos que si el ejercicio no fuera tan explícito Aunque chévere, que sea explícito.
+Student6: Espero que así sea la actividad no profe
+Teacher: Sí yo espero que no, yo espero que los ponga a pensar un poquito pero
+Student6: Tas grandes tienen
+Teacher: Pero pero la idea es que analicemos el porqué de las cosas cierto Entonces para ese para ese módulo para ese subsistema, el de el De búsqueda de exoplanetas, yo necesito distribuirla toda la información que tengo entre diferentes nodos o en diferentes tareas para que cada tarea se enfoque o en una región del del universo.
+Teacher: Bueno, etcétera, etcétera, entonces yo necesito un alto separarlo en múltiples tareas para poder realizar Esa esa gestión.
+Teacher: Lo puedo hacer si tengo un súper cluster, o sea una cosa gigante donde puedo a cada una de las tareas, le pueda delegar un procesador O a cada procesador le dele dos o tres tareas para que no para que tengamos un tiempo de respuesta bastante eficiente, pero ya la restricción me dice, no lo tengo Entonces qué solución me queda, pues hagamos por un tiro o utilicemos un grit si tuviésemos y utilizar la red de de universidades y identidades estas, pero igual el número de entidades y universidades no es lo suficientemente grande como para distribuir todas las tareas que tengo.
+Teacher: Entonces por eso justifica.
+Teacher: Tiene sentido que trabajemos con voluntad.
+Teacher: Porque se aprovecha el poder de cómputo inactivo porque vamos a digámoslo así a tener esos recursos adicionales esos recursos disponibles con cuando los usuarios no estén utilizando su computador, que no estoy pagando por ellos Entonces digámoslo, así que el presupuesto también es una justificación de Por qué vamos a utilizar esto.
+Teacher: El modelo digámoslo así.
+Teacher: A pesar de que es volátil, o sea, de que no, yo no tengo la garantía ni se me va a procesar la información en el menor tiempo posible, porque los nodos se pueden desconectar porque mientras el usuario está utilizando el computador pues no voy a estar ocupándole parte del computador en procesar la información porque es computación voluntaria.
+Teacher: Yo debo respetar el el tiempo de trabajo del del usuario Entonces Okay eso entonces.
+Teacher: Esas son como como los elementos que por los cuales, nosotros escogimos boletín listo, Por qué no Mobile porque no todos los equipos son móviles, por qué no?
+Teacher: Bueno, no, aquí no es necesario que descartemos los otros sino que justifiquemos porque el enunciado dice que necesitamos.
+Teacher: Porque cluster Y no y no nube Y por qué no Cloud Por qué en una cosa así hoy un o un sistema distribuido un grid por todo el mundo sino closter computer Porque necesitamos una Baja latencia porque nos están pidiendo por todo lado dentro del ejercicio no están diciendo es que tiene que responder en tantos milisegundos tiene que responder en en tantos segundos si tengo esas restricciones significa que yo debo tener el sistema más eficiente entre comillas del mundo habrán cosas que no son eficientes, pero pues yo debo garantizar esa ese alto rendimiento y el alto rendimiento lo obtenemos con closter computer listo, ese sería como
+00:40:00
+Student26: Entendido que el cluster computing era homogéneo y aquí aquí en volume computing cada persona trae su equipo y y realmente de homogéneo no tiene mucho.
+Teacher: Sí pero como como el voluntil computer el voluntil computer es más un grit y un cluster, pero aquí donde estamos procesando donde vamos a digamos, le decía capturar los los datos de los de los planetas y el sistema de alertas, eso lo voy a tener en el clóset.
+Student26: Listo son dos pedazos primero la parte que recoge los datos.
+Teacher: O sea
+Student26: Y la otra que lo está.
+Teacher: Recoger los datos consolidarlos Y partirlo en problema o en datos que necesito procesar, eso lo hacemos en un cluster ya distribuyo eso y ya los dejo a que trabajen hasta cuando me devuelvan una respuesta.
+Teacher: Vas a decir algo?
+Student14: Nada es que se
+Teacher: Listo Dale tranquilo.
+Teacher: Puntos críticos de fallo, qué puntos críticos de fallo encuentran ustedes en este sistema Bueno antes de antes de hablar de esto vamos a yo voy a hacer el diagrama, voy a intentar crear el diagrama Aquí les voy a decirle aquí, que quiero insertar un dibujo ustedes pueden utilizar la herramienta que quieran pueden utilizar escalídrow o Pain o la herramienta que ustedes quieran para hacer el dibujo.
+Teacher: Yo voy a crear un dibujo nuevo acá y listo.
+Teacher: Entonces voy a decir, okay, tengo.
+Teacher: Vamos a meter cuadritos, entonces voy a hacer mi entonces voy a tener un componente que este componente va a ser el de login.
+Teacher: O sea, voy a tener un sistema de login por acá también me estuvieron hablando de otro elemento.
+Teacher: Que era el el tema de los registros.
+Teacher: Teníamos aquí el segundo módulo era de Mallas de alertas estas mallas de alertas que era la parte del boletín entonces yo necesito un elemento un componente, perdón.
+Teacher: Que haga toda la parte de distribución.
+Teacher: El buscador o no esto es delegador Epa Pueda tener otro nodo o otro componente?
+Teacher: Que está que tiene que ver con Sí, estos dos están conectados entre sí Entonces vamos a poner una línea cita entre ellos dos.
+Teacher: Estos dos bueno estos dos sistemas independientes.
+Teacher: Cuando digo independientes es que hay un acceso de los usuarios.
+Teacher: Hacia login y diferente otro acceso diferente de los usuarios o desde el Front al sistema de registro de ventas cambio este delegador de trabajo si si está aquí involucrado la información aquí esto podemos decir aquí, que este es el voluntarios.
+Teacher: Listo, qué más teníamos nosotros por acá búsquedas de exoplanetas este hasta Maya de alertas, era la de es el buscador de exoplanetas, no?
+Teacher: Buscador exoplanetas Y este de acá era el procesador.
+Teacher: De Búsqueda este este de acá de las mallas de alerta será la explosión de supernovas y no sé qué y reportar o hacer las notificación en tiempo real a los usuarios Entonces vamos a decir aquí, qué vamos a tener?
+Teacher: Un podría estar relacionado con el registro de eventos cierto Entonces vamos a poder decir aquí que tenemos.
+Teacher: O tiene más sentido de que sea este el que genere los eventos, entonces voy a tener aquí un nodo externo, lo voy a hacer aquí más redondito que va a ser mi broker.
+Teacher: Y voy a tener los suscriptores o los componentes que están escuchando cierto.
+Teacher: Suscriptores eso entonces son los que están interesados en los eventos Este es el broker con el que vamos a mover vamos con la línea citas de aquí para acá y este cuando se genere un evento, pues lo manda al broker para que los suscriptores lo escuchen.
+Teacher: Bien.
+Teacher: Por acá como tenemos la flechita este.
+Teacher: Tocar si quieren nos ponen de colores diferentes como para identificar cada subsistema de manera independiente pero pues Estoy haciendo aquí un diagrama.
+Teacher: De bloques sencillo Muy bien, y el último era replicación de catálogo Entonces esto tenía que ver con que habían unos trabajadores que necesitan acceso a otros trabajadores, pues entonces login registro de eventos.
+Teacher: Por aquí tenemos un usuario, no hay.
+Teacher: Pues si estuviera en una herramienta de diagramas distinta pues podríamos tener un poco más de herramientas.
+Teacher: Pero entonces vamos a al proceso de envío de información, entonces vamos a necesitar un componente que se llame.
+Teacher: Otras buscador y no transmisor de archivos pero como va a ser un híbrido O sea que tiene un cliente servidor, Pues necesito un Buscador de archivos.
+Teacher: Porque estoy diciendo eso, porque pues es lo que me ocurre a mí pongamos aquí un elemento buscador.
+Teacher: Eso es parte.
+Teacher: Del digamos así p2p centralizado.
+Teacher: Y eso ya son centralizados y eso ya son los los nodos o el componente que vamos a colocar en cada uno de los computadores que necesitan intercambiar información entre ellos cierto entonces este este se habla con este.
+Teacher: Ya cuando estemos haciendo la implementación un poco más real de de una arquitectura, pues podríamos agregar más elementos, podríamos.
+Teacher: Pues ver cómo vamos a interconectar el buscador de exoplanetas con el registro de eventos en buscador O sea ya podríamos ir como integrando todos estos elementos, pero por ahora me interesa que vean este diagrama más o menos así cierto Entonces esta sería digámoslo así de una manera muy general o muy genérica.
+Teacher: Nuestra nuestra arquitectura cierto.
+Teacher: Guardar Y cerrar entonces aquí está mi diagrama arquitectónico listo Entonces ese hacía parte, pues de de este último entregable que es hacer El diagrama arquitectónico.
+Teacher: Y la sustentación oral, pues es básicamente hacer un video donde expliquemos por qué esto está aquí así Dónde está el cliente servidor.
+Teacher: Entonces podríamos decir.
+Teacher: Ah, aquí faltó el cliente, por ejemplo pues vamos a decir aquí que el cliente podemos hacer aquí.
+Teacher: De una forma acá que sea el cliente y este transmisor de archivos debería estar aquí al lado del siguiente cierto.
+Teacher: Cliente de la aplicación Entonces esto y este cliente habla con estos dos servidores entonces hagamos líneas citas de aquí para acá y aquí para acá y entonces este elemento lo voy a mover para acá.
+Teacher: Perdón Pero todo esto está como en una sola, pues es como una sola parte.
+Teacher: Cierto Le damos un cuadrito de estos.
+Teacher: Este por fuera.
+Teacher: Le quitamos el fondo.
+Teacher: Y le ponemos Que se vea como si estuviera como si fueran una sola cosa cierto, entonces son dos componentes que vamos a colocar allá.
+Teacher: Y este procesador de búsqueda, pues puede ir en ese mismo cliente puede ir en otras máquinas entonces por eso no lo voy a meter allá.
+Teacher: Ahí está, ahí está como Más o menos la arquitectura démosle aquí guardar Y cerrar listo Entonces ya queda un poco más claro y la idea es de que ustedes en El en el en la solución O en un videito me digan Mire es que la relación entre estos elementos.
+Teacher: Va a ser cliente servidor?
+Teacher: Y por qué cliente servidor?
+Teacher: Ahí me echan el cuento de que esto aquí cliente servidor.
+Teacher: Esto de aquí va a ser p2p.
+Teacher: Entonces por aquí es digámoslo, así que si es un cliente servidor pero realmente está está explicando el p2p.
+Teacher: Esto de aquí va a ser Editor suscriptor.
+Teacher: Y que esta parte de aquí, pues también sería maestro trabajador cierto.
+Teacher: En un día termo arquitectura no colocamos esto Tal cual pero la idea es de que le sirva incluso a ustedes para cuando vayan a explicar la solución O el problema que están resolviendo Pues que puedan.
+Teacher: Identificar Mire es que esta comunicación que hay aquí es p2p.
+Teacher: Entonces voy a tener múltiples buscadores que Me recorté más un poquito.
+Teacher: Este transmisor de archivos es del ser, es parte del servidor o parte de la plataforma?
+Teacher: Este es el que sí está dentro del dentro del cliente.
+Teacher: Este pongámoslo por acá.
+Teacher: Y eso entonces todo esto podríamos decir que todos estos elementos que están aquí.
+Teacher: Algo parecido lo mismo podemos decir que todos estos elementos que tengo acá.
+Teacher: Sin fondo y podemos decir que esto hace parte del cluster.
+Teacher: Del centro de datos listo y que este es mi clóset de centro de datos Y está punteado grueso Entonces ese es mi clóset de centro de datos Este es mi aplicación cliente.
+Teacher: Este, pues sería otra aplicación independiente que haríamos para los voluntarios y todo esto lo vamos a tener dentro de nuestra arquitectura.
+Teacher: Esto lo podemos ordenar para el fondo.
+Teacher: Para poder sacar a los suscriptores que los suscriptores deben estar por fuera.
+Teacher: Listo, porque los suscriptores pueden ser otros otros clientes ser clientes o puede ser otra cosa?
+Teacher: Cómo la ven sencillo cierto Tardamos entonces aquí ya hacen un videíto explicando la arquitectura son dos minuticos y entonces ya con esa arquitectura Entonces vamos a identificar Cuáles son los puntos críticos de fallo, entonces viendo esto acá yo podría decir Ok Dónde dónde tenemos nosotros puntos críticos de fallo.
+Teacher: Entonces por ejemplo acá en el en el servidor de eventos en el registro de eventos es Posible que tengamos un punto crítico de fallo, entonces aquí lo vamos a identificar Ok puntos de críticos de fallos, el componente de gestor de eventos.
+Teacher: Porque necesita necesitamos que podamos registrar de manera instantánea.
+Teacher: Todo todas esas transacciones cierto y que tengan que ir a la base de datos, etcétera y que me den respuesta de tantos milisegundos, entonces Este es mi punto crítico de falla.
+Teacher: Por qué es punto crítico de fallo porque ta ta ta ta ta ta ta ta ta ta ta ta ta cierto porque si es el único elemento y vamos a tener quince mil investigadores mandando, pues vamos a tener que resolver eso Cuál va a ser el el protocolo de resiliencia Cómo nosotros lo vamos a o cómo vamos a evitar de que este punto crítico de fallos llegue.
+Teacher: A afectar nuestro sistema o cómo vamos a resolver la la consistencia Entonces vamos a decir, Okay vamos a tener.
+Teacher: Un cliente servidor como este es cliente servidor.
+Teacher: Entonces voy a hacer un cliente servidor.
+Teacher: Listo y ese cliente servidor replicado como utilizo una base de datos pues la base de datos Con base de datos también replicada.
+Teacher: Con hotswap listo cierto dependiendo de cuál sea lo que ustedes hayan analizado, qué otro punto crítico Okay qué transparencia Estoy buscando aquí transparencia que en ubicación en replicación entonces, okay?
+Teacher: Busco Y concurrencia.
+Teacher: Por qué replicación porque el usuario no debe saber cuántas copias hay y de concurrencia?
+Teacher: Porque lo estoy haciendo para poder atender de manera simultánea múltiples elementos, qué otro?
+Teacher: Qué otro punto vemos Nosotros aquí como punto crítico de fallo el broker cierto entonces nuestro broker haría de que el sistema de registro de eventos nunca le notifique a los suscriptores, cómo vamos a hacer de que el broker sea resiliente Epa siempre me como acá me meto la celda.
+Teacher: Cómo hacemos de que el broker sea por qué el broker es un punto crítico de fallo porque todo el sistema.
+Teacher: De envío de envío o de recepción.
+Teacher: Y notificación Depende.
+Teacher: De este componente cómo vamos a Cómo vamos a resolver ese problema?
+Teacher: Cuál sería el modelo de replicación o de perdón el modelo de resiliencia Cómo vamos a hacer de que ese que sea mi sistema un poco más tolerante a fallos en este caso lo mismo podemos hacer un cluster.
+Teacher: De Brokers Yo sé que que eso me genera aumento en el presupuesto, pero estoy siendo resiliente cierto.
+Teacher: Y no tengo presupuesto, pues no lo pongo resiliente y para contar Y qué transparencia estoy agregando con esto la de ubicación la transparencia en De acceso no este sería de ubicación bueno.
+Teacher: Otro elemento podría ser parte del punto crítico de fallos Y así vamos analizando.
+Teacher: De mi arquitectura o de lo que nosotros el buscador de exoplanetas, cómo ese puede ser?
+Teacher: Porque es el maestro cierto Entonces el buscador de exoplanetas.
+00:45:00
+00:50:00
+00:55:00
+Student26: Entonces, la solución es cluster para todo.
+01:00:00
+Teacher: Pues si tiene plata bien pueda cierto.
+Teacher: Pero entonces hay que analizar el el la situación el problema El el escenario como como yo tengo aquí, digámoslo así yo tengo.
+Teacher: Un cluster para para gestionar todo lo que que está aquí dentro de este bloque cierto.
+Teacher: Yo podría tener o un contenedor adicional para de respaldo Entonces yo por ejemplo en este Buscador de exoplaneta, Yo podría decir tener.
+Teacher: Porque en Para evitar.
+Teacher: O no me gusta con Cold lo vamos a utilizar con standby listo y explico, por qué vamos a elegir ese ese modelo y qué transparencia está o qué niveles de transparencia o qué?
+Teacher: Objetivos de transparencia?
+Teacher: Estamos nosotros agregando con con esto o en este elemento, si no hay nada que hablar de la transparencia, pues no decimos nada o sin sin afectación en el modelo de transparencia listo.
+Teacher: Aunque si yo tengo Aunque yo tengo un maestro esto sería transparencia en replicación también.
+Teacher: En replicación y migración inmigración Por qué Porque en el momento en el que se caiga el el maestro principal Pues el otro maestro Pues debe levantarse y mi sistema debe seguir funcionando, o sea los los trabajadores o los voluntarios deberían de poder llegar de alguna manera eso Entonces podríamos decir y ponemos un Proxy para un Proxy rivers para para recibir todas las respuestas que que lleguen al servidor por ejemplo Entonces ese tipo de Que quiero que hagan para su arquitectura.
+Teacher: Esos elementos y crear un videíto que el videito pues pueden agregar aquí un un link en este último punto pueden colocar aquí el link del video donde explican la arquitectura Y cómo analizaron todos esos problemas, pues el la descomposición pues ustedes al final todo esto lo van a terminar apuntando aquí al digámoslo, así lo van a distribuir entre los distintos.
+Teacher: Puntos de del ejercicio listo, Qué tal cómo lo vieron o cómo lo ven?
+Teacher: Trabajable, no trabajable está muy raro muy está entendible lo que se necesita que hagan.
+Student8: Tenemos que hacer esto.
+Teacher: Solo una hora, pero que la saquen de aquí al domingo listo.
+Student8: Dice
+Student14: Usted y me asusté duro cuando dijo una hora.
+Teacher: Recuerden que pueden utilizar el el el Notebook que les dejé ahí o que les publiqué ahí en classroom para que puedan Investigar de pronto Buscar justificaciones Pero la idea es de que usted digan Mire yo yo tengo esta idea y poder corroborar sin la idea que ustedes tienen sí tiene sentido o no tiene sentido para el para lo que estamos hablando Listo entonces digo No yo quiero decir que es un vamos a utilizar un maestro de Y intentar resolver el problema con con eso y cuáles son las transparencias Recuerden que nosotros vimos las distintas transparencias en los objetivos del sistema distribuido, pues La idea es de que puedan hacer referencia Ok cuál qué transparencias podríamos nosotros aplicar o aquí puedo aplicar mejor sería como más.
+Teacher: Más eficiente el modelo, aquí podemos aplicar el modelo de transparencia tal para este para resolver este punto crítico de fallo Entonces es como para que contro hagan una controversia y contrarresten lo que ustedes están pensando versus lo que está en la guía, no quiero que resuelvan con la guía, no me interesa si ustedes ustedes son los ustedes, son los profesionales yo no bueno.
+Teacher: Sí, yo también, pero ustedes son los que que necesitan este digámoslo así ganar esta experiencia de poder analizar y poder contrastar contra Dale jóvenes Disculpen ahí, que me les extendí un poquito pero pues la idea era que entendieran qué es lo que yo espero del parcial Está bien, les voy a compartir Entonces les voy a publicar Entonces el ejercicio para que lo revisen si tienen tiempo ahora lo realicen Ojalá sino pues como les digo les voy a dar hasta el domingo a las a media noche para que lo envíen con el video deben hacer el videito, no de uno dos minutos, No debe ser.
+Teacher: Cosas muy largas videos cortos porque ustedes son muchos y la idea es que pues expliquen el Por qué tomaron las decisiones.
+Teacher: De arquitectura listo Nada jóvenes que tengan una muy buena noche.
+01:05:00
+Student1: Profe, muchas gracias.
+Teacher: No sé si hay alguna duda alguna inquietud antes de terminar la clase.
+Student6: El domingo le escribimos profe.
+Teacher: Pues ojalá sea para para decirle ahí le mandamos.
+Teacher: Listo que estén bien.
+Teacher: Hasta luego.
+Student1: Listo profesora
+Teacher: Chao, que
+La reunión finalizó después de 01:06:08 👋
+Esta transcripción se obtuvo de la grabación de YouTube y puede contener errores.

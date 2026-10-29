@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { clases } from '../data/clases';
+import { clases, temaTone } from '../data/clases';
 import './ClasePage.styles.css';
 
 export const ClasesIndexPage: React.FC = () => {
-  const temas = ['Introducción', 'Arquitecturas'] as const;
+  const temas = ['Introducción', 'Arquitecturas', 'Comunicación'] as const;
 
   return (
     <div className="clase-page container-tight">
       <header className="clase-header">
-        <p className="clase-kicker">Resúmenes · clases 1–13</p>
+        <p className="clase-kicker">Resúmenes · clases 1–15</p>
         <h1 className="type-display-lg">Clases</h1>
         <p className="clase-idea">
           Un resumen por clase, sacado de la transcripción, con diagramas y un repaso rápido al final. Para ver cómo encajan todos los temas, usa la{' '}
@@ -19,7 +19,7 @@ export const ClasesIndexPage: React.FC = () => {
       </header>
 
       {temas.map((tema) => (
-        <section key={tema} className={`clase-section ${tema === 'Introducción' ? 'tema-intro' : 'tema-arq'}`}>
+        <section key={tema} className={`clase-section ${temaTone[tema]}`}>
           <h2>Tema: {tema}</h2>
           <ul className="clases-list">
             {clases.filter((c) => c.tema === tema).map((c) => (

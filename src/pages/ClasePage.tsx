@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { clases, getClase } from '../data/clases';
+import { clases, getClase, temaTone } from '../data/clases';
 import type { Block } from '../data/clases/types';
 import { ClaseDiagram } from '../components/clases/ClaseDiagram/ClaseDiagram';
 import './ClasePage.styles.css';
@@ -89,7 +89,7 @@ export const ClasePage: React.FC = () => {
 
   const prev = clases.find((c) => c.number === clase.number - 1);
   const next = clases.find((c) => c.number === clase.number + 1);
-  const tone = clase.tema === 'Introducción' ? 'tema-intro' : 'tema-arq';
+  const tone = temaTone[clase.tema];
 
   return (
     <article className={`clase-page container-tight ${tone}`}>
