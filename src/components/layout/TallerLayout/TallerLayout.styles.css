@@ -65,11 +65,6 @@
   color: #b25000;
 }
 
-.taller-layout-points {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--color-primary);
-}
 
 .taller-layout-tabs {
   position: sticky;
@@ -196,9 +191,6 @@
     align-items: center;
   }
 
-  .taller-layout-points {
-    font-size: 15px;
-  }
 
   .taller-layout-tabs {
     padding: 0 8px;

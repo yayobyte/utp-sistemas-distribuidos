@@ -7,14 +7,15 @@ export interface TallerSection {
 
 export interface TallerEntry {
   id: string;
+  kind?: 'taller' | 'exposicion';
+  /** Overrides the default /talleres/:id/:section route. */
+  path?: string;
   number: number;
   title: string;
   shortTitle: string;
   topic: string;
   corte: string;
   status: TallerStatus;
-  points?: number;
-  classroomUrl?: string;
   summary: string;
   objective: string;
   sections: TallerSection[];

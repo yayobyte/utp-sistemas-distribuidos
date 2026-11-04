@@ -1,0 +1,798 @@
+Hora de inicio de la reunión: 2026-10-29 18:29 GMT-5
+Asistentes
+Student36, Student1, Student3, Teacher, Student5, Student7, Student8, Student28, Student9, Student11, Student12, Student13, Student14, Student15, Student16, Student17, Student18, Student19, Student21, Student22, Student23, Student35, Student26, Student27
+Transcripción
+Student14: Ando ahí no están las fechas,
+Teacher: Todavía no,
+Student14: ¿cierto?
+Teacher: eso es lo que me falta por por ajustar,
+Student14: Ah, bueno, está
+Teacher: pero no no se preocupen que la próxima
+Student14: bien.
+Teacher: empieza.
+Student14: ¿Cuándo?
+Student14: Yeah.
+Teacher: ¿Cómo así?
+Teacher: Ya no ya no miraron los temas, eh, Student24.
+Teacher: Eh, pero sí, eh, estoy revisando, como les dije la la clase pasada, me vi como apretadito de tiempo, entonces estoy mirando cómo voy a distribuir las exposiciones para que logremos tener las notas al 5 de de de diciembre,
+Teacher: que es nuestra fecha al límite.
+Teacher: Listo.
+Teacher: Dale.
+Teacher: Listo.
+Teacher: Voy a empezar a grabar y comenzamos.
+Teacher: Bueno, jóvenes, buenas noches.
+Teacher: ¿Cómo están?
+Teacher: Espero que bien.
+Teacher: El eh bienvenidos a Nueva Clé.
+Teacher: Hoy teníamos taller, ¿cierto?
+Teacher: Yo les dejé un tallercito de ejemplos de arquitecturas, ¿o no?
+Teacher: ¿Cómo les fue con ese?
+Teacher: Estuvo bien, estuvo fácil, estuvo complicado, no lo hicieron.
+Student26: Bien,
+Student14: Bien,
+Teacher: Sí,
+Student14: profe.
+Teacher: muy difícil de conseguir los ejemplos.
+Student14: Me tomó toda la semana,
+Teacher: No hay nada,
+Student14: profe.
+Teacher: no hay nada que chat GPT no lo haga.
+Student14: ¿Qué es eso?
+Student14: Yeah.
+Teacher: Ah, sí, claro.
+Teacher: Ve, quería preguntarles como feedback si utilizaron la el notebook que les compartí en el para el primer parcial o eso no sirve para nada y
+Student14: Sí, profe, muy útil.
+Student14: Yeah.
+Student8: Profe, yo sí,
+Teacher: mejor.
+Student8: uf, saqué comparaciones entre arquitecturas y estuve consultando varias cosas chéveres, muy bacán.
+Student8: Yeah.
+Teacher: Dale.
+Teacher: Pues la idea es como como estamos empezando a incorporar estas herramientas dentro del dentro del flujo docente,
+Student5: M.
+Teacher: digámoslo así, pues la idea es también tener retroalimentaciones sobre qué tal son las herramientas, si funcionan o no funcionan, si son útiles o no.
+Teacher: Y nada, eso digamos que ahí vamos mejorando poco a poco.
+Teacher: ¿Listo?
+Teacher: Eh, nada, en la última clase estuvimos hablando sobre el tema de los mecanismos de comunicación y empezamos a hablar sobre el primer mecanismo que era paso de mensaje, ¿cierto?
+Teacher: Y nos quedamos mucho tiempo hablando sobre el modelo de paso de mensajes de manera directa, ¿cierto?
+Teacher: Estábamos hablando de que que utilizábamos el socket.
+Teacher: El socket era bastante complejo, complicado, porque todo el tema del aplanamiento o el marshall y el un marchal de de la información, que podíamos enviar información a un dispositivo que tuviera una interpretación diferente de los datos, entonces cómo íbamos a mandar la información,
+Teacher: etcétera, ¿cierto?
+Teacher: estuvimos discutiendo un poco sobre ese tema, eh, pero tengan en cuenta de que es la forma más básica y la más, digámoslo así, más transversal en la que nosotros vamos a poder desarrollar comunicación entre entre componentes, porque al final de todo,
+Teacher: todos los mecanismos de comunicación que veamos, lo que vamos a ver de, digámoslo así, de R, RMI, Corba, RPC y servicios web.
+Teacher: Todo eso al final se traduce a socket.
+Teacher: ¿Listo?
+Teacher: Digamos que el socket es el mecanismo o la herramienta estándar para todos los sistemas operativos, incluso para poder nosotros estar establecer comunicación con ellos, sino que vamos a ir agregando como capitas de abstracción o capitas que le quitan la responsabilidad
+Teacher: al desarrollador de tomar ese tipo de decisiones.
+Teacher: Pero si vamos nos vamos a ir a la versión más eficiente o de mejor rendimiento, utilizar los tokens directos es lo lo óptimo, ¿cierto?
+Teacher: Hoy vamos a estar hablando o vamos a empezar a hablar sobre otro modelo de comunicación por paso de mensajes, que es el modelo de comunicación a grupo.
+Teacher: ¿Listo?
+Teacher: ¿Qué es esto de la comunicación a grupo?
+Teacher: Pues simplemente que ya no vamos a establecer una comunicación directa uno a uno entre el nodo, entre el componente A al componente B, donde abro un canal de comunicación y envío mensajes por ahí, sino que tenemos la posibilidad de enviar un mensaje al canal y ese mensaje puede ser recibido
+Teacher: por múltiples nodos.
+Teacher: ¿Listo?
+Teacher: Por eso lo llamamos comunicación a grupo y es porque vamos a tener un conjunto de nodos a los cuales nosotros vamos a poder enviar un mensaje y ese mensaje va a llegar eh de alguna manera.
+00:05:00
+Teacher: Aquí si tenemos que enviar mensajes a múltiples nodos, ya no vamos a estar enviando múltiples mensajes, como decíamos con cliente servidor o perdón con la comunicación uno a uno.
+Teacher: Y es que si yo tenía que hablar con cinco servidores o hablar con cinco editores o mandarle información a a n suscriptores, tenía que buscar dónde estaba o establecer la comunicación con ellos abriendo un socket,
+Teacher: abrir el canal de comunicación y enviar el mensaje o tantos mensajes como conexiones yo tenía que hacer.
+Teacher: En la comunicación a grupo, yo mando un solo mensaje al canal y ese mensaje puede llegar a múltiples destinatarios.
+Teacher: Y aquí en la gráfica, o al menos aquí vemos los cuatro tipos de mensajes que podemos usar, ¿cierto?
+Teacher: Podemos utilizar el Unicast, eh, que es un mensaje que envía al canal, pero que tiene un destinatario.
+Teacher: De alguna manera yo le voy a decir quién o qué componente de los que están aquí eh disponibles o a qué componente es al que yo le quiero mandar el mensaje.
+Teacher: Listo.
+Teacher: Es un solo mensaje, pero llega a un solo a un solo elemento.
+Teacher: El otro es el broadcast.
+Teacher: El broadcast es un tipo de mensaje a grupo donde yo mando un solo mensaje y le llegan a todos los integrantes del grupo.
+Teacher: Listo.
+Teacher: Otro tipo de mensaje, el multicast.
+Teacher: El multicast es cuando yo segmento o agrupo o o voy a o voy a enviar este mensaje a un subconjunto de nodos de los que pertenecemos o a los que pertenecemos.
+Teacher: Entonces, yo necesito notificar a estos tres elementos.
+Teacher: Entonces, mando un mensaje, pero ese mensaje va a ser recibido por los tres elementos.
+Teacher: Y por último está el Enicast, donde el Enicast lo que hace es enviar a un subconjunto o a un grupo de de nodos, pero con que solamente uno lo reciba, me doy por bien servido.
+Teacher: ¿Listo?
+Teacher: A pesar de que yo cualquiera de los tres nodos o cualquiera de los nodos a los que sirven de destinatario, eh, pueden recibir ese pueden recibir el mensaje, con que solo uno de ellos lo reciba, ya doy por terminada mi comunicación.
+Teacher: ¿Listo?
+Teacher: Eso es básicamente los cuatro modelos de comunicación o los cuatro tipos de mensajes que podríamos nosotros mandar eh en este modelo, ¿cierto?
+Teacher: haciendo una analogía como para entender un poco el tema del unicast y pues todos estos elementos, eh digamos que la analogía es un poco más fácil cuando estamos en el salón, pero es más o menos la interacción que tenemos nosotros como docentes estudiantes,
+Teacher: ¿cierto?
+Teacher: Ustedes son un grupo o todos hacemos parte de un grupo y va a haber alguien que está mandando mensajes, ¿cierto?
+Teacher: ¿Qué tipo de mensajes?
+Teacher: De estos cuatro que vimos, ¿qué tipo de mensajes es el que yo intento impartir con ustedes?
+Teacher: ¿Un unicast, un broadcast, un multicast o un anyicast?
+Teacher: ¿Qué tipo de mensaje es el que yo intento con ustedes?
+Student8: un broadcast que nos llegue a todos.
+Teacher: Okay, entonces la yo no yo no voy a hablar o no voy a mandar el mensaje para que solamente uno lo escuche.
+Teacher: Yo voy a yo voy a intentar hablar para que todos escuchen el mensaje dentro del salón.
+Teacher: ¿Cierto?
+Teacher: Aquí pues a ustedes les toca porque yo hablo y a todos les llega la misma señal, pero en en un salón yo hago yo intento o los profesores normalmente intentamos enviar el mensaje a todos.
+Teacher: Eso es lo que nosotros llamamos broadcast.
+Teacher: Yo no les no le estoy hablando a cada uno de ustedes de manera independiente.
+Teacher: Estoy mandando un solo mensaje al canal, en este caso al aire y espero que llegue a todos.
+Teacher: Pero, ¿en qué terminamos lo que dice Student26 en Any Enicast?
+Teacher: ¿cierto?
+Teacher: Con que le llegue a uno, yo me doy por bien servido.
+Teacher: Listo.
+Teacher: A pesar de que yo le estoy mandando el mensaje a todos, eh, yo espero que realmente le lleguen a todos y si hay alguien que tiene dificultades para recibir el mensaje, pues tengo que evaluar qué pasa con ese nodo,
+Teacher: ¿cierto?
+Teacher: si es que está ocupado o no está pendiente o no está en el modo o no está sincronizado para estar recibiendo los mensajes.
+Teacher: Eh, pero cuando en el salón yo digo, "Ey, Student17, cuéntame cómo te fue el fin de semana, ¿cierto? Ahí estoy haciendo,
+Teacher: a pesar de que estoy utilizando el canal, tengo un solo destinatario, ¿cierto?
+Teacher: estoy diciendo, "Ey, por favor, eh, el nodo X o en este caso el nodo Student17 debe ponerme atención o debe recibir el mensaje y debe interactuar ante el mensaje que yo le estoy dando." ¿Listo?
+Teacher: Entonces, eso sería un unicast cuando nosotros estamos enviando mensajes de manera independiente.
+00:10:00
+Teacher: ¿Cuándo utilizaría yo el multicast en ese escenario?
+Teacher: ¿Cuándo sería un multicast?
+Teacher: cuando hacemos trabajos en grupo, ¿cierto?
+Teacher: Cuando llegan, se agrupan y yo envío mensajes o yo les digo, me voy pasando por el grupo uno y les digo, "Ey, mire, eh, no están teniendo en cuenta esta esta estos escenarios. Por favor,
+Teacher: tengan en cuenta también esto, esto y esto." Es a pesar de que el canal está para todos,
+Teacher: pero los mensajes van dirigidos a un grupo de personas, a un subgrupo, un subconjunto de personas.
+Teacher: ¿Listo?
+Teacher: Entonces ahí es donde nosotros estamos hablando de multicast, que a pesar de que todos pudiesen llegar a escuchar el mensaje, el mensaje realmente aplica o tiene como receptores y que van a procesar la información de manera eficiente los nodos o los elementos a los que yo les estoy hablando.
+Teacher: ¿Y qué pasaría con el Enicast?
+Teacher: Ahora sí, ¿qué sería un Enicast?
+Teacher: lo que yo intento hacer aquí en este grupo con ustedes, que hago una pregunta y espero que alguien me responda, que uno de ustedes haya recibido el mensaje y pueda responder o pueda atender mi solicitud.
+Teacher: Eso sería Elenicas.
+Teacher: No voy a esperar a que todos me respondan, no voy a esperar a que todos me retroalimenten o que me digan algo, sino que con que solo uno de todo el grupo o de un subgrupo, entonces podrían eh podrían estar podrían darme retroalimentación
+Teacher: cuando eh en el siguiente proyecto o en el siguiente ejercicio que ustedes estén trabajando en equipos, pues yo podría decir, bueno, ¿quién es el representante del equipo y por favor deme informe de lo que de lo que de lo que tienen que investigar?
+Teacher: Entonces, uno de ellos, de todo el grupo que estábamos hablando, le estoy mandando la información a todos, pero uno de ellos me debe responder, ¿cierto?
+Teacher: debe debe recibir el mensaje.
+Teacher: Eso es básicamente lo que nosotros hablamos de comunicación a grupo.
+Teacher: mismo que o ese mismo escenario es lo que quiero llevar al mundo de del sistema distribuido y es que yo podría establecer un canal de comunicación, un mecanismo de comunicación donde yo pueda en lugar de estar enviando mensajes de
+Teacher: manera direccionada cada vez que nosotros necesitamos lo que hacemos con los sockets, podemos utilizar un canal, podemos conectarnos a un espacio donde podamos enviar mensajes a múltiples nodos de manera simultánea que con solo llegar a un con solo enviar un mensaje le puedan llegar a varios,
+Teacher: a uno o a varios.
+Teacher: ¿Listo?
+Teacher: Dependiendo cuál sea eh el objetivo que nosotros nos estemos planteando para cada uno de esos escenarios, ¿está bien?
+Teacher: Y esos grupos a los que estamos hablando de que podemos comunicarnos o podemos enviarle mensajes, tenemos dos tipos.
+Teacher: Hay grupos abiertos y grupos cerrados.
+Teacher: Un grupo abierto no es más que un grupo de nodos, un grupo de trabajo el que pueden ser afectados o que puede recibir mensajes que vienen de fuera del de del grupo.
+Teacher: O sea, alguien externo al grupo puede mandar un mensaje y ese mensaje puede entrar a o puede ser recibido por los integrantes de grupo en cualquiera de los modelos, puede ser en broadcast, enast, en Unicast o en Multicast.
+Teacher: ¿Listo?
+Teacher: O sea, no tiene que llegar el mensaje a todo a todos los del grupo, pero una persona que esté por fuera del equipo o por fuera del grupo puede enviar un mensaje sobre dentro del grupo.
+Teacher: Eh, o podemos tener grupos cerrados, grupos donde solamente las personas que pertenecen a ese grupo van a poderse comunicar.
+Teacher: Eh, un ejemplo del grupo cerrado, por ejemplo, esos grupos de WhatsApp a los que nosotros ingresamos o nos ingresan.
+Teacher: Eh, eso es un modelo de grupo cerrado porque el mensaje o los mensajes que nosotros mandamos a ese canal le va a llegar a uno o a todos los elementos o a todos los integrantes del grupo.
+Teacher: Espero que alguien me responda o espero que o que ese mensaje sea para todos, ¿cierto?
+Teacher: Eso es básicamente lo que nosotros podemos llegar a tener en ese modelo.
+Teacher: En cambio, en un en un mensaje abierto, a pesar de que estamos en un grupo, que nos estamos comunicando entre nosotros, pues simplemente alguien externo podría llegar y mandarnos un mensaje y nosotros pues simplemente lo vamos a recibir y lo vamos a poder procesar.
+Teacher: Generalmente los grupos abiertos suelen utilizarse para lo que nosotros llamamos eh manejo de datos o servicios replicados.
+Teacher: O sea, que vamos a decir que esos tres nodos, estos cinco nodos que pertenecen a un equipo, que pertenecen a un grupo, que pueden ser los clúster o los elementos de de persistencia de almacenamiento de datos.
+Teacher: pueden estar en réplica, recuerde, puede ser réplica activa, pasiva, etcétera.
+00:15:00
+Teacher: Entonces, yo podría decir que voy a mandar un mensaje a los nodos de almacenamiento, a los nodos de base de datos, pero yo soy un un integrante por fuera, yo soy el módulo o la capa de lógica de negocio y voy a enviar datos hacia la capa de
+Teacher: datos.
+Teacher: Entonces, si solo hubiera uno, pues es una comunicación directa, pero como puedo mandar el mensaje a varios, puedo decirle a todos los nodos que procesen el la petición que yo estoy haciendo, yo puedo mandar un mensaje a ese grupo,
+Teacher: a ese grupo cerrado, digamos, ese grupo abierto, porque al final pueden puede recibir mensajes o pueden recibir comunicación de entidades externas.
+Teacher: dentro del grupo también se pueden seguir eh hablando.
+Teacher: Recuerden que nosotros podemos coordinar dentro del grupo o podemos hacer en el modelo de servicios replicados podemos hacer sincronización de datos en manera offline o de manera eh asíncrona, ¿cierto?
+Teacher: Pero en términos generales, un elemento, un nodo que está fuera del grupo puede enviar un mensaje al grupo para que lo reciban todos, para que lo reciba alguno o para que lo reciba un subgrupo de nodos que tengo
+Teacher: en este grupo cerrado.
+Teacher: Ve en este grupo abierto, ¿qué sería el grupo cerrado?
+Teacher: ¿Dónde lo podemos utilizar?
+Teacher: Cuando ya estamos haciendo gestión interna, o sea, ya desde el punto de vista de los sistemas distribuidos, cuando nosotros estamos trabajando en paralelo, ¿cierto?
+Teacher: o digámoslo así o vamos a estar trabajando un modelo maestro trabajador, pues toda la comunicación que ocurre dentro de ese grupo, pues digamos que es entre comillas cerrado.
+Teacher: Y yo voy a decir que entre comillas es porque alguien tiene que hablarle al maestro, ¿cierto?
+Teacher: El maestro no puede recibir mensajes desde afuera, tiene unas características más de grupo abierto, pero en el caso de la arquitectura maestro trabajador, el único que tiene contacto con el exterior es el maestro.
+Teacher: Estos otros nodos no pueden recibir o no van a recibir mensajes del exterior.
+Teacher: Entonces, por eso digamos que podemos analizarlo, podemos verlo como un modelo de procesamiento, un modelo de comunicación en un grupo cerrado.
+Teacher: Que este señor tenga una oreja y reciba mensajes de afuera no significa que la comunicación dentro del grupo pueda ser afectada por elementos externos.
+Teacher: ¿Listo?
+Teacher: ¿Queda claro este mecanismo de comunicación a grupos?
+Teacher: ¿Lo habían visto?
+Teacher: ¿Lo conocían?
+Teacher: Enicast.
+Teacher: Enicast.
+Student8: Profe, pues eso suena un montón redes.
+Teacher: Digamos que las redes utilizan este mismo mecanismo de comunicación o perdón, como el canal, el canal es el cable, ¿cierto?
+Teacher: O o sí, el cable codaxial o el cable Ethernet y va un switch y ese switch pues puede llegar a múltiples dispositivos.
+Teacher: La forma como las redes se comunican, utilizan comunicación a grupo.
+Teacher: Listo.
+Teacher: Por eso yo puedo mandar peticiones enast eh unicast cuando tengo una le digo a qué dirección IP o puedo tener eh comunicaciones broadcast o puedo tener comunicaciones en eh multicast, ¿cierto?
+Teacher: Armando subredes o eh mandando a todos los elementos de la red, ¿cierto?
+Teacher: solamente que allá se resuelve es a partir del direccionamiento.
+Teacher: Dependiendo de qué dirección es la que yo esté colocando y qué máscara de red esté utilizando, a ellos son a los que se les va a comunicar o se les va a mandar el mensaje.
+Teacher: ese ese concepto, digámoslo así, esa ese ejemplo del cómo se comunican las redes un caso de uso, una particularidad de lo que estamos lo que quiero yo compartirles aquí y es yo
+Teacher: puedo comunicarme ante un grupo donde mando un mensaje y le llega a todos.
+Teacher: No significa que solamente lo veamos en redes, también lo podemos tener dentro de los sistemas distribuidos.
+Teacher: Tendríamos que encontrar un canal, tendríamos que encontrar una forma para que esos nodos solamente escuchen o reciban mensajes desde afuera.
+Teacher: Entonces, ya aquí vamos a montar como unas capas de, digámoslo así, una capa superior, una capa un poco más grande, un midle, algo que que todos los nodos a los que me interesa comunicarme o todos los componentes o todos los procesos que están ejecutando,
+Teacher: que quiero coordinar con ellos, pues simplemente voy y los agrego a ese grupo y ese grupo pues se va a gestionar de manera interna.
+Teacher: ¿Dónde más podemos ver esto?
+Teacher: eh desde el punto de vista de los sistemas distribuidos en el tema de la gestión de los hilos, por ejemplo, porque un proceso o un hilo dentro de dentro de un proceso puede hablar con los otros hilos, puede coordinar los otros hilos,
+00:20:00
+Teacher: ¿cierto?
+Teacher: Y puede mandarles mensajes, puede recibir mensajes de los otros hilos.
+Teacher: Ese sería otro ejemplo de un grupo cerrado, ¿cierto?
+Teacher: la coordinación o la comunicación que que puede llegar a ocurrir al interior de un proceso cuando tenemos múltiples hilos definidos en ese proceso, porque ningún elemento externo podría venir a modificar la ejecución de los hilos.
+Teacher: Entonces, es eso por eso por eso podemos verlo desde diferentes niveles o desde diferentes perspectivas.
+Teacher: Ya desde un punto de vista práctico, tendríamos que montar como una plataforma o algo donde yo pueda hacer de que los diferentes elementos de que están en mi sistema se comuniquen entre ellos, no necesariamente con socket.
+Teacher: Internamente todo es socket, pero vamos a crear ese middleware o vamos a crear ese canal de comunicación.
+Teacher: Por eso hablamos de canales y no hablamos de tecnologías, sino que vamos a armar un canal en el que vamos a poder estar hablando con múltiples nodos.
+Teacher: ¿Listo?
+Teacher: Eh, y mira que eso aplica pues en cualquier modelo en Web Socket o la parte de comunicación asíncrona con con algún Bueno, vamos a ver ahorita cola de mensajes, pero cuando yo, por ejemplo,
+Teacher: voy a utilizar el modelo push de notificación, podríamos decir de que cada tópico o cada tipo de evento puede ser tomado como un como un nodo cerrado, porque llega un evento a la plataforma de tipo uno y a todos los nodos
+Teacher: que estén interesados en ese tipo uno, les voy les voy a mandar la comunicación, pero mire que mando un solo mensaje y le llega a todos.
+Teacher: ¿Listo?
+Teacher: Entonces eso es lo que nosotros podríamos llegar a tomar como si fuera un grupo cerrado.
+Teacher: ¿Listo?
+Teacher: Entonces mire que la comunicación en grupo es muy sencilla.
+Teacher: Tengo uno, voy a tener un canal.
+Teacher: Recuerden que toda la comunicación, como estamos hablando de paso de mensajes, siempre es un emisor, el canal y lo el receptor, pero en una comunicación a grupo, pues los receptores pueden ser múltiples, no solamente uno a uno, digámoslo así.
+Teacher: Y el último modelo es utilizar lo que nosotros llamamos las colas de mensajes.
+Teacher: ¿Qué son las colas de mensajes?
+Teacher: son un mecanismo, una tecnología en la cual nosotros lo que vamos a poner es un mid un intermediario, no es un middleware, sino un intermediario que va a tener la capacidad de recoger o recibir todos los mensajes que estén pasando por la red o los mensajes que quieran ser enviados a esta cola de
+Teacher: mensajes.
+Teacher: Y esta cola de mensajes pues logrará entregar o logrará despachar los mensajes hacia sus destinatarios.
+Teacher: Listo.
+Teacher: Eh, las colas de mensajes no son precisamente eh eh publicador editor suscriptor, perdón.
+Teacher: ¿Cierto?
+Teacher: no es exactamente un editor suscriptor.
+Teacher: Ahorita vamos a hablar un poco eh cuál es su gran diferencia, pero lo normal, digámoslo así, lo normal que vamos a tener con las colas de mensajes es de que me va a llegar un mensaje, ese mensaje va a quedar dentro de una cola.
+Teacher: La cola es como unos subgrupos, unas unos buzones independientes a los que nosotros vamos a ir recibiendo mensajes.
+Teacher: y voy a tener otros nodos que son los consumidores que van a estar leyendo esos mensajes.
+Teacher: Generalmente las colas de mensajes no no hacen notificación push.
+Teacher: Las generalmente, ojo, generalmente las colas de mensajes siempre esperan a que los consumidores descarguen los mensajes.
+Teacher: ¿Listo?
+Teacher: Eh, los mensajes pueden ser eh efímeros o pueden ser persistentes.
+Teacher: ¿Qué significa?
+Teacher: Yo mando un mensaje, ese mensaje queda en la memoria de de la cola o del sistema de colas de mensajes y cuando alguien lo lee o cuando alguien dice, "Venga, hay algún mensaje para mí", pues él le entrega y ese mensaje se pierde del sistema.
+Teacher: O sea, ya no queda en el sistema de colas.
+Teacher: Ese es el modelo convencional.
+Teacher: Ese el modelo que normalmente vamos a encontrar en muchos de los aplicaciones de colas que conocemos.
+Teacher: Hay otras que utilizan un modelo de comunicación persistente.
+Teacher: Significa que esos mensajes se pueden guardar y yo puedo leer el mensaje, me lo entregan y ese mensaje pasa como un histórico, o sea, pasa a otro estado donde ya no necesito enviárselo a alguien que lo pida, sino que queda ahí guardado.
+Teacher: ¿Por qué lo guardan?
+Teacher: Ah, por si de pronto llegó a necesitar eh trazabilidad o el que el que recibió el mensaje perdió el mensaje o no lo pudo procesar.
+Teacher: y necesita volverlo a tomar o un nuevo nodo que que entre a reemplazar a este eh a a ese nodo que falló, pues simplemente pueda venir a la cola y decir, "Ven, ¿qué cuál fue el último trabajo? ¿Cuál fue el trabajo que que recibiste que entregaste al nodo que ha caído,
+00:25:00
+Teacher: listo?" Entonces ahí si si yo utilizo o tengo un modelo de
+Teacher: un un sistema de colas que sea persistente, pues voy a poder retomar trabajos, voy a poder reconstruir, voy a poder decir, "Okay, hubo un error en el disco duro o en el los servidores de datos y no tengo la información
+Teacher: sino de ayer o o de lo que sucedió ayer hasta ayer, pues puedo venir a la cola y decir, bueno, ¿qué mensajes hay desde la fecha ahora desde la hora con la que tengo información y empiezo y por favor envíeme de nuevo todos los mensajes para yo poderlos procesar.
+Teacher: Entonces, mire que es un modelo un poco distinto.
+Teacher: Eh, existen múltiples proveedores o múltiples tipos de colas, ¿cierto?
+Teacher: Entonces, ejemplos de colas, el Westfare MQ, el Microsoft MQ, el Java MS, que es el el mecanismo, el middleware para el envío de mensajes eh que utiliza Java y existen múltiples proveedores como tal.
+Teacher: Kafka no entra dentro de un sistema de colas.
+Teacher: Cafka es un modelo un poco más avanzadito.
+Teacher: ¿Listo?
+Teacher: Cafka entra más dentro del flu, digámoslo así, a pesar de que Cafca puede trabajar en modo cola, ¿cierto?
+Teacher: Pero Kafka tiene otras características un poco más avanzadas, ¿cierto?
+Teacher: Eh, lo mismo, tiene la la posibilidad de ser convencional o persistente, principalmente persistente, pero las colas de mensajes generalmente eh son elementos centralizados, no son tan descentralizados o no es tan fácil crear un clúster de colas, ¿listo?
+Teacher: Porque no se comunican entre ellas.
+Teacher: Kafca, eh, es más una solución a otros problemas o a problemas un poquito más avanzados eh que tienen que ver con con el manejo de eventos, el manejo de eh no ya no sería mensajes, colas de mensaje, sino una gestión de venta.
+Teacher: ¿Listo?
+Teacher: Eh, Kafka sí tiene la posibilidad de de notificar.
+Teacher: Kafca puede tener múltiples consumidores del mismo mensaje.
+Teacher: En cambio, las colas de mensajes solamente una, un solo consumidor puede leer un mensaje y después de que fue leído, ya ese, digámoslo así, ese mensaje ya no se va a volver a retransmitir.
+Teacher: En cambio, en Cafka yo sí puedo decirle, "Muévase tres mensajes atrás y mándeme los mensajes que tengo. Mándeme un todos los mensajes que tienen o uno a uno.
+Teacher: Las colas de mensajes solamente manejan uno a uno.
+Teacher: E listo.
+Teacher: Entonces, eso sería más o menos el modelo de colas de mensajes.
+Teacher: Entonces, cada cola no es más que un, digámoslo así, una casilla donde vamos a ir guardando mensajes.
+Teacher: ¿Qué es?
+Teacher: ¿Qué es esa casilla?
+Teacher: el destinatario.
+Teacher: Listo.
+Teacher: Aquí los sistemas de colas de mensajes es un modelo asíncro, un modelo eh desacoplado espacial y temporalmente.
+Teacher: El que produce los eventos no necesita saber dónde está ni si hay consumidores en este momento para los eventos que él está haciendo.
+Teacher: El productor simplemente envía los eventos a la cola o a las colas que que le interesa, porque un productor puede mandar mensajes de diferente tipo y esos mensajes se van a ir guardando acá en estas casillitas, ¿cierto?
+Teacher: El sistema, los sistemas de de gestión de colas, pues lo que hacen es gestionar estas casillitas y guardar los mensajes o o irlas encolando en estas casillitas.
+Teacher: Eh, los consumidores pues pueden ser de diferente tipo, pueden ser de recibir, pues pueden utilizar el método receif, recuerdan que estamos en paso de mensajes y el paso de mensajes tiene dos dos primitivas o dos funciones que siempre vamos a estar eh utilizando.
+Teacher: Método sent para enviar el mensaje y un método receipe.
+Teacher: ¿Listo?
+Teacher: Pero también puedo hacer un poll.
+Teacher: Un poll es equivalente al recif.
+Teacher: O sea, voy a traerme la el primer mensaje o el primer elemento que esté en la cola.
+Teacher: Estas colas funcionan con el principio del tipo de dato cola que es el fibo.
+Teacher: Sí, el primero en entrar, el primero en salir.
+Teacher: La el primer mensaje en llegar es el primer mensaje que yo voy a entregar.
+Teacher: Entonces, eh básicamente el método Recif lo que hace el consumidor es decirle que le pide que le mande el siguiente mensaje, el le recibe el mensaje y este mensaje sale de la cola.
+Teacher: ¿Listo?
+Teacher: Lo mismo con el P. El Poll también es venir aquí y decir, "Ey, deme o devuélvame o entrégueme qué mensajes hay en la cola. Con el P yo sí podría descargar varios mensajes.
+Teacher: ¿Listo?
+Teacher: M. Eso sí depende del tipo de cola que nosotros estemos trabajando o la tecnología o la herramienta que estemos usando, si me permite descargar uno o me permite descargar n mensajes al mismo tiempo.
+00:30:00
+Teacher: Entonces yo podría decir, "Mire cuántos mensajes hay." hay tres.
+Teacher: Démelos de una vez, los voy a ir procesando aquí directamente.
+Teacher: O podemos utilizar el modelo Notify, ¿cierto?
+Teacher: Pero con el notify aquí deberíamos de tener asignado un consumidor predeterminado.
+Teacher: Listo.
+Teacher: Aquí no es un modelo de suscripción.
+Teacher: Aquí no es que yo diga, el consumidor se suscribe a escuchar esta cola.
+Teacher: No, si digámoslo así, si hay uno que se que está interesado en esa cola, solamente vamos a recibir mensajes o solamente le vamos a mandar mensajes a ese consumidor.
+Teacher: Si otro lo intenta hacer y estamos en modo notify, aquí no hace que balanceo que uno para el uno y otro para el otro, no, ahí no aplica este modelo.
+Teacher: ¿Vamos bien hasta ahí o no?
+Teacher: Sí, no, pongan dedito si no si les da pena hablar.
+Teacher: Entonces,
+Student13: Sí,
+Teacher: eh,
+Student13: profe, yo creo que vamos bien ahí.
+Teacher: okay.
+Teacher: Entonces, eh, ¿cómo entra cómo entra este sistema de colas a las arquitecturas?
+Teacher: ¿Dónde entra?
+Teacher: Bastante bien, ¿cierto?
+Teacher: Entonces vamos a hablar de que el en el modelo que más nos puede llegar a servir el las colas de mensajes debido como a la a al mismo la misma forma como la arquitectura espera es en el en el modo
+Teacher: editor suscriptor.
+Teacher: ¿Listo?
+Teacher: Entonces, si utilizamos Notify, permite el modelo push, pero no permite enviarlo a múltiples a múltiples consumidores.
+Teacher: Cada mensaje solamente va a llegar a un consumidor.
+Teacher: Eh, y en el modelo client de servidor podría servirnos en el modelo de replicación.
+Teacher: O sea, si yo tengo múltiples nodos e en escalamiento horizontal, o sea, múltiples copias del mismo servicio y cada servicio va necesita recibir un mensaje o un un nodo, un mensaje o una petición diferente,
+Teacher: entonces nosotros podríamos montar una cola de mensajes en la mitad entre el cliente y el servidor y los servidores.
+Teacher: Y entonces este servidor va a estar pidiendo tareas y este otro servidor va a estar pidiendo tareas, ¿cierto?
+Teacher: Entonces, ese podría ser un modelo de de distribución de peticiones, de que cada petición que llegue realmente lo que hago es aguardarla en la cola de mensajes y los servidores cuando se van se van desocupando, no tienen mucha tarea por hacer,
+Teacher: pues van a la cola de mensajes, descargan una tarea para empezar a trabajar.
+Teacher: ¿Listo?
+Teacher: eh características avanzadas que podríamos encontrar en muchos de los sistemas, el filtrado de mensajes, entre ello, un receptor, un un consumidor Yeah.
+Teacher: podría decir, "No, yo estoy interesado en esa cola, pero los que vengan de tal tipo de petición o que, digámoslo así, alguna de las propiedades, alguno de los datos que vienen dentro del mensaje, estoy interesado en algo de ellos,
+Teacher: ¿listo?
+Teacher: No en cualquier mensaje, sino yo soy especializado en atender este tipo de de tareas.
+Teacher: Entonces, podríamos utilizar la cola y hacer como una especie de búsqueda o filtrado dentro de la cola para encontrar cuál es el eh el mensaje que aplica para él y simplemente pues lo va a sacar de la cola desde la posición donde esté.
+Teacher: Digamos que nos salimos un poco del modelo de cola cola, pues del tipo de dato cola que es el primero entrar en primero en salir, pero pues depende de las necesidades o el problema que nosotros estemos atendiendo.
+Teacher: Pueden estar en la misma cola, pero puedan tener distintos tipos de procesamiento y simplemente los podamos bajar de ahí.
+Teacher: Eh, para el tema de mensajería con transacciones, eh la gestión de transacción entre múltiples nodos, cuando yo tengo que modificar el estado de múltiples elementos y quiero notificar o quiero mandar un mensaje diciendo, "Ey, devuélvase porque yo fallé,
+Teacher: entonces puedo utilizar estos mensajes o estas colas de mensajes como para poder garantizar la transaccionalidad o que en todos haya se haya ejecutado de manera adecuada o simplemente lo podamos devolver.
+Teacher: Y el tema de transformaciones de mensajes, lo mismo.
+Teacher: Si lo quiero pasar de un de un estado a otro, pues podríamos utilizar la cola de mensajes en este en este proceso.
+Teacher: Eh, es cuando nosotros eh trabajamos o uno de los elementos que que potenció mucha de la de las nuevas tecnologías de desarrollo de aplicaciones tuvieron que ver con las colas de mensajes,
+Teacher: ¿cierto?
+Teacher: Inicialmente, antes de que existiera Cafa, las colas de mensajes eran lo máximo, ¿cierto?
+00:35:00
+Teacher: era lo que me permitía eh hacer un modelo asíncrono y que no se perdieran los mensajes y que no tuviera o que no hubiese una mala gestión de de pues de de sincronía, de que yo no tuviese que conectarme de manera directa a quién iba a procesar,
+Teacher: sino que de alguna manera si ellos se movían o si habían varias copias, el mensaje iba a llegar a uno de los dispositivos e eh que se necesitaba llegar.
+Teacher: Entonces, fue uno de esos elementos que que potenciaron el tema de la de la arquitectura orientada servicios.
+Teacher: O sea, hay un hay una arquitectura que no vimos que se llama la arquitectura orientada a servicios, donde yo lo que hacía era definir diferentes servicios y de alguna manera hacer que entre ellos se comunicaran.
+Teacher: Generalmente utilizábamos conexiones directas, conéctese al servidor tal y mándele esta petición y espere la respuesta.
+Teacher: pues las colas de mensajes, logró desacoplar esa eh esa conexión directa, ¿cierto?
+Teacher: Y entonces eh se identificó, se verificó que para las aplicaciones o para la integración de aplicaciones empresariales era un buen elemento, una buena alternativa al a la comunicación directa.
+Teacher: ¿Qué problemas tiene la cola de mensajes al ser desacoplado espacial y temporalmente?
+Teacher: pues va a tener un menor rendimiento, vamos a tener una mayor latencia entre enviar el mensaje y recibir el la respuesta, ¿cierto?
+Teacher: Pero es muy bueno cuando yo tengo grandes volúmenes o necesito hacer procesamiento de grandes volúmenes de información porque no vamos a estar perdiendo información o disminuimos la la el
+Teacher: esfuerzo de de la integración o de la coordinación entre los diferentes servicios.
+Teacher: ¿Listo?
+Teacher: Entonces, ¿por qué vamos a decir de que la cola de mensajes es distinto?
+Teacher: Porque es que cola de mensajes hace parte de las soluciones de de comunicación punto a punto.
+Teacher: O sea, un productor envía un mensaje y llega a un consumidor.
+Teacher: ¿Listo?
+Teacher: Las colas de mensajes generalmente, ojo, las colas de mensajes generalmente sola el mensaje que llegó o que entró a la cola solamente va a ser consumido por un consumidor.
+Teacher: Los modelos de publicador suscriptor, que fue el que vimos nosotros en en las arquitecturas tienen la posibilidad de que un solo mensaje pueda llegar a múltiples suscriptores, ¿cierto?
+Teacher: Entonces, no es exactamente igual.
+Teacher: podría podríamos entre comillas simularlo si tuvies si cada mensaje solamente fuera a procesarse por un solo consumidor.
+Teacher: ¿Listo?
+Teacher: Entonces tendría sentido, ¿no?
+Teacher: Es que este está este consumidor solamente procesa eventos de nómina y este consumidor solo de tesorería y este consumidor solo de de inventario.
+Teacher: Si solamente tengo un consumidor para cada tipo de cola, pues podemos decir que se parece al editor suscriptor.
+Teacher: Pero recuerden que en el editor suscriptor aquí necesitamos de que un mensaje pueda llegar a múltiples suscriptores, a múltiples consumidores.
+Teacher: Entonces ahí estamos hablando de elementos distintos.
+Teacher: Kafka entra entra como un, ¿cómo le digo?
+Teacher: Como un consolidador de estos dos modelos.
+Teacher: ¿Listo?
+Teacher: Porque Kafka tiene la funcionalidad o tiene la forma de de funcionar o de trabajar en modo cola y otro en modo tópico.
+Teacher: Digamos que ese es como el el concepto que generalmente nosotros utilizamos para diferenciar.
+Teacher: Un tópico puede tener múltiples eh múltiples receptores.
+Teacher: Una cola solamente podrá tener una un receptor.
+Teacher: Mist.
+Teacher: Entonces, Cafka como como tecnología entra a suplir cualquiera de estos dos ejemplos o de estos dos modelos, ¿listo?
+Teacher: Tanto el publicador, suscriptor como el punto a punto utilizando la cola.
+Teacher: Pero cuando les lleguen a preguntar, "¿Ustedes qué necesitan? ¿Un tópico o una cola?" entiendan de que si yo defino una cola,
+Teacher: estoy hablando de que solamente puedo tener un consumidor, pero si estoy hablando de un tópico, ya estamos hablando de múltiples consumidores o que múltiples nodos podrían recibir el mismo mensaje.
+Teacher: Vamos bien.
+Teacher: Es ahí.
+Teacher: Sí, listo.
+Teacher: Espero que sí.
+Teacher: ¿Alguna pregunta?
+Teacher: Nada.
+Student13: No, profe, no.
+Student13: Por ahora no.
+Teacher: Listo.
+Teacher: Vamos a partir, vamos a partir hasta aquí porque aquí no voy a parar la clase, vamos a partir los conceptos porque los tres elementos, comunicación punto a punto con socket, socket, RMI o o MAC son herramientas de comunicación punto a punto.
+00:40:00
+Teacher: Listo.
+Teacher: Podemos hacer comunicación a grupo, también es comunicación comunicación por paso de mensajes y o puede utilizar con la de mensajes.
+Teacher: Es una comunicación por paso de mensajes.
+Teacher: Son tres modelos o tres formas diferentes de establecer la comunicación.
+Teacher: ¿Por qué se llama paso de mensajes?
+Teacher: Porque nosotros los datos los vamos a encapsular, los vamos a meter en un mensaje, en un paquetico, y ese paquetico lo vamos a mandar entre el origen al destino por un canal.
+Teacher: Listo, aquí empezamos con otro tema que tienen que ver con los middlews, ¿cierto?
+Teacher: O las herramientas intermedias que me permite crear una aplicación y que internamente ella se encarga de toda la gestión o de todos los elementos necesarios para que haya la comunicación de manera efectiva.
+Teacher: El primer modelo, digámosle así, el primer middleware que existió o que existe es RPC.
+Teacher: ¿Qué es RPC?
+Teacher: remote procedure o llamada procedimientos remotos, así se llama básicamente.
+Teacher: Entonces, ¿qué es RPC?
+Teacher: Es una tecnología que se creó buscando ocultar toda esa capa de lógica o la capa de de comunicación que debemos nosotros establecer entre el cliente y el servidor.
+Teacher: Generalmente lo usamos en esta arquitectura.
+Teacher: ¿Listo?
+Teacher: Entonces, ¿cómo así que ocultar la implementación?
+Teacher: Hemos hablado de que, por ejemplo, si estamos trabajando con un socket eh o con una cola de mensajes, el desarrollador tiene que saber cuál es el mecanismo de comunicación que va a utilizar, ¿cierto?
+Teacher: El desarrollador tiene que saber a qué servidor se va a conectar o a a qué eh componente se va a conectar.
+Teacher: Tiene que saber o debe aprender la tecnología o las instrucciones para poderse comunicar con ese elemento, ¿cierto?
+Teacher: O sea, para mandar un mensaje al grupo, o sea, para mandar un mensaje a la cola de mensajes o simplemente mandar un mensaje de manera directa al servidor.
+Teacher: Tiene que saber de socket, tiene que saber que hay cómo abrir el socket, cómo conectarse, etcétera.
+Teacher: O sea, como desarrollador tiene que saber de todo.
+Teacher: Además de eso, si utilizo socket tiene que hablar del cuál es el formato de representación, si va a utilizar texto, si va a utilizar los datos binarios, si va a mandar los datos binarios, tengo que hacer el marshall y el marshall,
+Teacher: etcétera, etcétera, etcétera.
+Teacher: Entonces, todo eso es parte de esa lógica de estar trabajando en cliente servidor o estar trabajando eh o mandando mensajes entre los dos elementos.
+Teacher: Con RPC ocultamos toda esa capa, no nos vamos a preocupar solamente por la lógica o por las funcionalidades y simplemente nosotros vamos a a delegar a que RPC haga todo el proceso de comunicación entre cliente y servidor.
+Teacher: Ejemplo básico de para explicar este tema.
+Teacher: Normalmente cuando nosotros aprendimos a programar en C, nosotros creábamos las funciones y luego en el main las llamábamos, ¿cierto?
+Teacher: o en otras funciones podíamos llamar las funciones que ya teníamos definidas, pero todo estaba dentro de un mismo archivo, ¿cierto?
+Teacher: Esos eran nuestros primeros archivos.
+Teacher: Creáamos las funciones y luego en el main decíamos llame a sumar, llame a restar, se cay in, cout, etcétera, etcétera, etcétera.
+Teacher: ¿Listo?
+Teacher: Y esto es una forma muy fácil de programar.
+Teacher: Es lo que aprendimos a hacer y lo podemos seguir haciendo muchas veces.
+Teacher: Luego nos movimos a usar bibliotecas, ya cuando empezamos, okay, necesitamos la biblioteca que me permite escribir en pantalla, necesito la biblioteca que me permite pintar en colores.
+Teacher: Y así íbamos agregando diferentes bibliotecas, ¿cierto?
+Teacher: Cada una con una o que tenía definidas unas funciones por dentro.
+Teacher: Pues nosotros también podíamos crear bibliotecas, no sé si los le enseñaron, pero nosotros podríamos crear bibliotecas.
+Teacher: Y en esas bibliotecas nosotros dejábamos las implementaciones o o un conjunto de funciones que sirven para resolver x problema.
+Teacher: Entonces podíamos crear la biblioteca y nosotros simplemente decíamos aquí un declare, un define, perdón, hacíamos un define de la biblioteca, o sea, vamos a decirle que queremos importar o que queremos utilizar esta biblioteca y podíamos llamar las funciones de manera
+Teacher: transparente.
+Teacher: ¿Quién era el que hacía el enlace entre la aplicación que nosotros estábamos haciendo y las bibliotecas?
+Teacher: el compilador, el compilador linkeaba, enlazaba los dos los dos códigos, digámoslo así, los montaba como si fuera uno solo y me lo generaba en el ejecutable.
+Teacher: ¿Listo?
+Teacher: Entonces, eso era básicamente lo que lo que lográbamos hacer con ese modelo de desarrollo usando bibliotecas.
+Teacher: ¿Qué ventaja tenía?
+Teacher: Que estas bibliotecas las podíamos utilizar en este proyecto o en otro o en otro o en otro y así sucesivamente.
+Teacher: Escribíamos una vez y lo podíamos reutilizar tantas veces como nosotros quisiéramos.
+Teacher: Ahora la pregunta pregunta es, ¿y qué pasa si esta biblioteca o esta implementación no se encuentra en el mismo lado del cliente?
+00:45:00
+Teacher: No, no los voy a encontrar aquí juntas para que el compilador las vuelva un solo ejecutable, sino que esto lo voy a escribir en el cliente y el resto las las operaciones, la lógica, las voy a dejar en el servidor.
+Teacher: Ahí es cuando entraba el tema de las de de la arquitectura cliente servidor, ¿cierto?
+Teacher: este sumar de alguna manera tenía que hacer una petición al servidor para poder llamar esta función y esa respuesta debería ser, digám, debería pasar por el canal para poder llegar al campo de respuesta.
+Teacher: Y aquí es donde entraba como nuestro dolor de cabeza, ¿cierto?
+Teacher: Y es de que aquí esto de cómo convertir esto en una petición para llegar aquí y recibir la respuesta para llegar aquí era todo, digámoslo así, era el coco o era la eh las nuevas skills, las nuevas herramientas o las nuevas habilidades que tenía que tener el programador.
+Teacher: Alguien que nunca había trabajado en cliente servidor se tenía que concentrar en este modelo o en esta forma para poder escribir el código, ¿cierto?
+Teacher: sea para trabajar socket, sea para trabajar cola de mensaje, sea para trabajar eh comunicación a grupo.
+Teacher: Si esto es lo que yo necesitaba hacer, yo como desarrollador tenía que conocer cómo hacerlo y tenía que dominar el cómo hacerlo.
+Teacher: Listo.
+Teacher: Y si llegaba otro desarrollador que no lo había no lo conocía o no sabía cómo hacerlo, pues simplemente le tocaba darse contra el mundo a estudiar y aprender, a intentar entender cómo hacerlo, ¿cierto?
+Teacher: Entonces, veamos una implementación de esas dos rayitas, ¿cierto?
+Teacher: Entonces, por ejemplo, en mi aplicación yo voy a decir que tengo un sumar.
+Teacher: ese sumar es este, o sea, es esta función sumar que tengo acá, pero como tengo que establecer la comunicación con mi servidor, entonces voy a utilizar una cola de mensajes.
+Teacher: Entonces voy a decirle que me abra la cola del servidor, ábrame una cola de cliente, o sea, como otra cola.
+Teacher: Necesito en el en la cola de mensajes, en el sistema de cola de mensajes, necesito una que para mandarle los datos al servidor y necesito otra que para yo escuchar lo que me manden, lo que manden para mí.
+Teacher: Entonces, voy a crear una cola de servidor, voy a crear una cola de cliente.
+Teacher: ¿Listo?
+Teacher: O sea, en en el en la en el sistema de colas ya van a ver dos cajitas, dos casilleros, uno que va para el servidor, otro que va para el cliente.
+Teacher: Eh, ¿cuál es la petición?
+Teacher: Entonces, en una estructura, yo digo, bueno, la operación que quiero hacer es sumar eh a qué cola la voy a mandar, a la cola cliente.
+Teacher: Eh, la el campo A va a ser el valor de A, que viene aquí como parámetro.
+Teacher: El valor de B es el valor de B. Eh, a la cola de mensajes le digo que envíe la petición y que quede espere a recibir una respuesta que a que a la cola llegue algún mensaje en la cola del cliente.
+Teacher: Listo.
+Teacher: Y aquí ya viene la respuesta.
+Teacher: Entonces, como aquí llego a la respuesta, pues puedo sacar el resultado de la respuesta.
+Teacher: Lo voy a guardar en rest.
+Teacher: Si ocurrió un error, pues recibo el mensaje de error, eh, etcétera.
+Teacher: Cierro la cola, cierro la cola del cliente, me desenla un link es como ya no quiero estar escuchando, quiero quitarle el enlace que tengo con esta cola de cliente que está en el sistema colas y si falló pues retorno un error.
+Teacher: Pues si hay un error retorno un error.
+Teacher: Si no, aquí en res, mira que esto es un puntero.
+Teacher: Ahí es donde yo voy a devolver el resultado.
+Teacher: Listo, aquí quedó.
+Teacher: la implementación de la suma.
+Teacher: ¿Y qué tengo que hacer del lado del servidor?
+Teacher: Ah, tengo que venir al main abrir una cola de servidor mientras siempre, o sea, voy a crear un demonio o voy a crear un programa que siempre va a estar en ejecución y que va a estar de modo
+Teacher: cíclico.
+Teacher: En este modelo estoy utilizando un servidor secuencial, o sea, recibo un mensaje, lo atiendo y vuelvo y vuelvo aquí al principio al leer el otro mensaje, lo atiendo y así sucesivamente.
+Teacher: El MQ el MQ Receive, recibo la petición.
+Teacher: Si la petición en su OPC code es sumar, entonces voy a venir aquí.
+Teacher: La respuesta va a ser llamar la función sumar que tengo en el servidor entregándole el campo A y el campo B que viene en la petición.
+Teacher: Abro la cola de cliente o a quién se le voy a le voy a dar respuesta.
+Teacher: Eh, le mando la respuesta.
+Teacher: Si hay un error, le mando el código de error, envío los datos a la respuesta, cierro eh la conexión con la cola del cliente y como no hay más, o sea, ya hice la suma, vuelve aquí al while,
+Teacher: vuelve y se queda en modo recibir.
+00:50:00
+Teacher: Listo.
+Teacher: Esto era esto es el conocimiento que tenía que tener el desarrollador.
+Teacher: Aquí estábamos utilizando colas, pero si utilizábamos sockets, teníamos que conocer cuáles eran las operaciones para poder conectarnos al socket.
+Teacher: en qué orden lo tenía que hacer, cuáles eran los mensajes de error, si fue si llegase a ver un error, etcétera.
+Teacher: Comunicación a grupo, ¿cómo me comunico al al canal del grupo?
+Teacher: ¿Cómo hago para recibir los mensajes del grupo?
+Teacher: ¿Cómo hago para enviarle mensajes de respuesta, etcétera?
+Teacher: Todo ese conocimiento era parte o es parte de del conocimiento que debe tener el desarrollador de sistemas cliente servidor, pero con RPC digamos que nos vamos a quitar ese trabajo porque del lado del cliente yo solamente me voy a enfocar en llamar a la función sumar,
+Teacher: por decirlo así, y del lado del servidor yo me voy a enfocar solamente en escribir las implementaciones que deben ejecutarse del lado del servidor.
+Teacher: ¿Y cómo hacemos entonces ese tema de abro la cola, me comunico, envío los mensajes, lo recibo, espero la respuesta.
+Teacher: ¿Quién hace eso?
+Teacher: El stop del cliente y el stop del servidor.
+Teacher: Así, así se llamó en en RPC, un STP o un acompañante, un ayudante del lado del cliente y un STP del lado del servidor, o sea, el que va a estar escuchando, va a recibir la petición y la va a traducir y va a recibir los datos para poder llamar la función de manera
+Teacher: local.
+Teacher: Esto que está aquí en amarillo es lo que RPC va a hacer por mí.
+Teacher: Listo.
+Teacher: Yo ya el desarrollador no tiene que preocuparse por entender cuál es el protocolo, cuál es el mecanismo de comunicación, cuál es el canal que están utilizando, sino que simplemente se enfoca en el cliente, se enfoca en el servidor y el resto lo resuelve el middlew.
+Teacher: ¿Cómo funciona?
+Teacher: Nada, el cliente manda una petición junto con los parámetros y el estup, o sea, la parte que que me entrega RPC, lo recibe el servidor, desempaqueta la petición, la ejecuta, luego empaqueta la respuesta y cuando empaqueta la respuesta,
+Teacher: envía la respuesta y aquí nosotros que después de haber enviado la petición por RPC, nos quedamos en espera de la respuesta.
+Teacher: Entonces nos quedamos a la espera y cuando llega el mensaje, pues simplemente procesamos la respuesta o continuamos con la ejecución como veníamos.
+Teacher: Esto es lo que nosotros llamamos el, digámoslo así, el este es el diagrama de secuencia de lo que es una comunicación cliente servidor.
+Teacher: El cliente hace una petición, se procesa y da una respuesta.
+Teacher: ¿Listo?
+Teacher: Y continúa con la ejecución como tal.
+Teacher: ¿Está claro?
+Teacher: Entonces, ¿cómo cómo es el flujo, digámoslo así, de con RPC?
+Teacher: En RPC se utiliza un binder local.
+Teacher: ¿Cómo así que un binder local?
+Teacher: ¿Recuerdan el concepto del, perdón, el binder?
+Teacher: ¿Listo?
+Teacher: Entonces, ¿qué hace este binder?
+Teacher: El binder, recuerden que como es un binder está en el mismo equipo o está en la misma máquina donde está el servidor o donde está el servicio, mejor dicho, y cada vez que el servicio inicia, pues entonces se registra ante el binder.
+Teacher: Entonces, lo primero que hace el servidor al momento de iniciar, pues es obtener su dirección, o sea, la dirección o o el puerto por el que está escuchando y se registra ante el binder.
+Teacher: Listo.
+Teacher: El binder va a guardar la información y el cliente cuando esté necesitando ese servicio lo que hace es solicitarle al bindero, por dónde está escuchando el servicio.
+Teacher: El binder le responde por dónde está y entonces el cliente simplemente hace la comunicación directa.
+Teacher: Recuerde que el binder es ese componente, ese servidor intermedio para poder localizar un servidor.
+Teacher: RPC desde el momento en el que se inició, que no fue ahorita en los 2000 en el 2015, RPC empezó a ser funcional desde los años O más o menos en servidores Unix principalmente.
+Teacher: Entonces, este mecanismo lo que hacía era que cada servidor, cada mainframe o cada nodo empresarial eh definía qué servicios están corriendo en ese nodo y lo registraban ante este binder.
+Teacher: Y el cliente lo que hacía era preguntarle al binder dónde está porque no tiene conocimiento en qué parte fue implementado o en qué o por qué puerto está escuchando.
+Teacher: Le pregunta al binder por dónde está.
+Teacher: el Binder me responde y simplemente establezco esto.
+Teacher: Pero toda esta negociación que vemos aquí la hace RPC solo.
+Teacher: Yo no tengo que estar eh yo no tengo que realizar este tipo de comunicaciones con el Binder, no tengo que hacer una petición para preguntarle al Binder y luego conectarme al servidor.
+Teacher: Todo esto lo va a hacer RPC de manera eh automática.
+Teacher: ¿Listo?
+Teacher: Entonces, manda la petición y recibe una respuesta.
+Teacher: Cuando el servidor se va a pagar, pues simplemente le dice que lo borre al binder y el binder pues simplemente lo borra.
+Teacher: ¿Qué tipos de RPC existen?
+Teacher: O ¿qué tipos de RPC nosotros eh tenemos a nuestra mano?
+00:55:00
+Teacher: Digamos que inicialmente eh contábamos con el el de S Microsystem, que es como el que se definió como estándar o que quedó como estándar en para la industria o para muchos de los tecnologías que nosotros conocemos, que es el ONCRPC.
+Teacher: Este, esto lo definió S Microsystem, que en su momento era uno de los fabricadores de de servidores más importantes que tenían que tenía el mundo.
+Teacher: Y ellos, como muchos de los avances tecnológicos que tuvimos nosotros en el tema de comunicaciones y en tema de de programación, ellos pues hicieron una propuesta de este de este estándar, ¿cierto?
+Teacher: Eh, ¿cuál era la situación?
+Teacher: que este ONC o este el número el la letra que está aquí al principio o el acrónimo que está aquí al principio hace referencia al esquema de representación de la información, o sea, cómo intercambiaba información este protocolo.
+Teacher: Entonces, eh Sicrosystem definió un protocolo o un esquema de representación llamado ONC.
+Teacher: No es Jason, no es XML, es ONC, un protocolo privado, un protocolo binario, eh, que tenían que conocer tanto el origen y el destino para poder establecer la comunicación generalmente o simplemente pues era propietario, era cerrado.
+Teacher: Solamente entre nodos o entre sistemas operativos de de S microsystem podían establecer esa comunicación de manera directa.
+Teacher: Los sistemas Unix tomaron este estándar y digamos que nosotros con Unix podemos hacer RPC con un estándar o con un esquema de representación un poco diferente porque ha cambiado o cambió en el tiempo, ¿cierto?
+Teacher: Ya con Linux ya no dependíamos de son microsystem, crearon un nuevo esquema de representación y con ese es que estamos trabajando hoy en día.
+Teacher: Otro modelo que se creó eh fue el el del Open Sour Foundation, que era el DCE RPC, listo, fue un RPC que ya no pertenecía solo son microsystem, sino que podía ser implementado por cualquier empresa, o por cualquier fabricante.
+Teacher: ¿Listo?
+Teacher: Entonces, se definió este estándar como intentando que pudiéramos hacer interoperabilidad entre distintos fabricantes, que pudiéramos hablar un un equipo de S microsystem con una versión de Unix y podíamos hablar con un equipo de IBM con otra versión de Unix y así
+Teacher: sucesivamente.
+Teacher: Entonces, eso es lo que básicamente podemos nosotros o digámoslo así, se propuso y se creó este estándar RPC.
+Teacher: ¿Listo?
+Teacher: Y Microsoft que en su momento o en ese momento pues era el, ¿cómo?
+Teacher: ¿Cómo decirlo?
+Teacher: no quería un juntarse con los Unix.
+Teacher: Entonces, ellos crearon otro modelo tipo RPC, o sea, con la misma filosofía, con las mismas eh bases, pero eh ellos lo llamaron.
+Teacher: Listo.
+Teacher: Este Dicom ya ha pasado de moda, digámoslo así, que desde la aparición de Corba, que lo vamos a ver más adelante, pero desde la aparición de estas otras nuevas tecnologías, pues Dicom dejó de existir o dejó de ser parte de de ese estándar que trae Microsoft o que ya
+Teacher: no podemos establecer comunicación de con ese modelo.
+Teacher: Pero en los años 90 y principios de los 2000 era la forma como podíamos nosotros comunicarnos dentro de herramientas de Microsoft.
+Teacher: Podíamos estar trabajando con un programa hecho en Visual Basic y un programa hecho en C#ARP y podemos establecer la comunicación entre ellos o el intercambio de o el llamado a procedimientos remotos utilizando utilizando esta tecnología propietaria de Microsoft.
+Teacher: Eh, al final, ¿cuál quedó?
+Teacher: La de la de digámoslo así, el RPC de Linux, que es otra, digámoslo así, otra variante, se llama XDR.
+Teacher: Y vamos a mirar un poco cómo funciona eso al final, cómo funciona.
+Teacher: Eh, ojo, RPC principalmente se creó para lenguaje C. Listo, hemos visto implementaciones en otros lenguajes, pero eh digamos que la implementación más utilizada era con el lenguaje C, ni siquiera con C+ más C. ¿Listo?
+Teacher: Entonces, eh ¿qué era lo que hacía o cómo funcionaba RPC?
+Teacher: Nosotros lo que hacíamos era definir un fichero de definición de interfaz.
+Teacher: Eso, este fichero de definición de interfaz es lo que nosotros llamamos el IDL.
+Teacher: ¿Listo?
+Teacher: Es un es un archivo donde yo voy a definir cuáles son los datos, o sea, cuáles son los métodos o las funciones que van a estar corriendo de manera remota, qué datos reciben y cuál es su dato de respuesta,
+Teacher: ¿cierto?
+Teacher: O sea, ¿cuál es el tipo de dato que envío?
+Teacher: ¿Y cuál es el tipo de dato que responde?
+Teacher: Y con este archivo, que es un archivo que es en un lenguaje, digámoslo así, intermedio, no es no es exactamente en C, se definió un lenguaje independiente para describir esto.
+01:00:00
+Teacher: Ese archivo pasaba por un un compilador.
+Teacher: ese compilador lo que hacía generar una cabecera, un punto H con la definición de los tipos que nosotros podíamos implementar o eh importar en en mi implementación de cliente y servidor un un staff del cliente y un staff de servidor.
+Teacher: ¿Listo?
+Teacher: O sea, como el código necesario para que el cliente logre encontrar el servidor, haga la negociación con el binder, todo eso.
+Teacher: Y el staff del servidor, que es la la parte contraria, el que cuando inicia se registra ante el binder, el eh recibe las peticiones de manera directa y cuando llaman a una función, pues llama al código que nosotros vamos a hacer.
+Teacher: ¿Dónde está el código de nosotros?
+Teacher: Aquí.
+Teacher: Aquí es donde vamos a escribir el código del servidor y aquí es donde vamos a escribir el código del cliente.
+Teacher: O sea, esto, estos dos elementos son mi responsabilidad.
+Teacher: Yo soy el que tengo que que escribir el código de estos elementos.
+Teacher: O sea, que lo mismo, la función sumar y restar, aquí la llamo y aquí las implemento.
+Teacher: Aquí está la la operación.
+Teacher: Recuerden que el servidor es el que sabe hacer las cosas.
+Teacher: Aquí es donde hago la operación y aquí es donde yo simplemente voy a llamar.
+Teacher: ¿Y cómo hace para llamarlo?
+Teacher: Tengo que unir estos dos elementos.
+Teacher: Bueno, más otros para generar mi ejecutable.
+Teacher: Ahora ya me hizo quedar mal.
+Teacher: No es este suplente del cliente, no es es este.
+Teacher: Listo.
+Teacher: Es aquí es donde nosotros estamos escribiendo nuestro código en el cliente y el servidor.
+Teacher: Esto que dice objeto es la compilación de esto, compilador de esto, el compilado de esto, nuestro archivo fuente lo compilamos y me genera un objeto y vienen unas bibliotecas de RPC que hace parte de la implementación y todos estos tres elementos,
+Teacher: o sea, el objeto del staff del cliente, el compilado del nuestro código y todo lo que la biblioteca RPC, el ambiente de ejecución de RPC tiene, pasa por el linker y el linker me genera ejecutable, o sea, el linker lo que hace es unirme todos estos tres elementos.
+Teacher: Al final, nuestra aplicación de hacer una suma y una resta puede ser una aplicación que me ocupe eh 1 mega, 5 meg, 10 megas.
+Teacher: ¿Por qué?
+Teacher: Porque simplemente toda la implementación de la lógica y de cómo vamos a mandar la información y el formato de representación y todo eso está definido aquí, aquí y aquí.
+Teacher: simplemente los 2 bytes del código fuente o los 2 kb del código fuente que nosotros estamos escribiendo.
+Teacher: Listo.
+Teacher: es más lo que agregamos de la de la plataforma o de la biblioteca que sí.
+Teacher: que el código que nosotros vamos a estar escribiendo.
+Teacher: ¿Listo?
+Teacher: Y aquí ya tenemos el ejecutable del cliente que vamos a ejecutar en la máquina cliente y el ejecutable del servidor que es lo que vamos a estar corriendo en el lado del servidor.
+Teacher: Pero al final todo empezó desde este desde este archivo, porque este archivo generó la cabecera y esta cabecera la vamos a incluir dentro de nuestro fuente del cliente y dentro de fuente del servidor.
+Teacher: Y en el linter o en el montador es donde vamos a coger la compilación de esto que generó el compilador, el compilador de idl, la la compilación o el objeto de nuestro código más las bibliotecas RPC.
+Teacher: Y así funcionaría cualquier tipo de de aplicación.
+Teacher: Siempre voy a crear mi archivo IDL, genero los códigos fuentes y genero los ejecutables, incluyendo o agrupando todos estos elementos.
+Teacher: Eh, para RPC de Linux eh utilizamos algo que se llama el RPC Bind Bind o el Powermapper, dependiendo del sistema operativo.
+Teacher: Si estoy en en Unix, normalmente se llama RPC Bind en unas versiones de Windows, o de Linux, perdón, se llama por mapper.
+Teacher: Entonces, dependiendo de cuál sea la biblioteca o la implementación que estemos viendo, puede ser cualquiera de los dos, el binder o el Powermapper.
+Teacher: Al final es lo mismo, eh, el binder siempre va a estar escuchando por un puerto conocido, por el puerto 111. Listo.
+Teacher: No importa si es este o este, siempre va a estar escuchando por ese puerto.
+Teacher: O sea, ese puerto 111, si alguien me responde, yo sé que es el RPC, o sea, es el binder de RPC.
+Teacher: Ahí, ¿qué va a guardar?
+Teacher: O el binder que va a guardar.
+Teacher: Recuerden que normalmente el binder guarda pues la dirección de en qué puerto está, quéquio es, etcétera.
+Teacher: Pues RPC definió de que para poder identificar el servicio era un nombre de programa, un nombre de versión y el puerto por donde está escuchando este puerto si es el del socket y este y estos dos elementos son el identificador
+01:05:00
+Teacher: del servicio.
+Teacher: ¿Se acuerdan que por allá cuando estábamos hablando del binder decíamos que necesitamos un identificador del servicio?
+Teacher: Pues para RPC era el número del programa y la versión.
+Teacher: Eso, la combinación de esos dos me dicen cuál es el servicio que yo quiero llamar.
+Teacher: El enlace es dinámico.
+Teacher: Podemos utilizar el puerto, o sea, los servidores pueden arrancar en el puerto que quieran, eh, pueden tener varias copias si necesitan y el binder siempre va a estar por el 111. Entonces él tanto el registro el registro de los servicios como las consultas de
+Teacher: los clientes tienen que pasar por el binder.
+Teacher: ¿Listo?
+Teacher: Y una de las elementos interesantes es que en la capa de en la capa de transporte yo puedo utilizar o TCP o UDP, o sea, yo puedo trabajar utilizando redes seguras o redes no tan seguras.
+Teacher: Yeah.
+Teacher: Este es más fiable o es, digámoslo así, es más confiable, es más, nos vamos a asegurar de que el mensaje sí llegue.
+Teacher: En este no hay esa garantía, pero es mucho más rápido.
+Teacher: Sí, porque no tiene que negociar, no tiene que verificar si todo llegó bien, si todo llegó mal, los datagramas son mucho más ágiles, o sea, este va a ser mucho más eficiente en el en el envío de mensajes y este va a ser
+Teacher: más fiable o va a tener una mayor confiabilidad eh en el caso de que no haya no vayan a no vayamos a tener pérdida de información.
+Teacher: Vamos bien.
+Teacher: Este tema es largo, pues es mucho concepto.
+Teacher: El IDL.
+Teacher: Entonces, en el IDL vamos a definir el nombre del servicio, qué operaciones o qué funciones vamos a definir.
+Teacher: En RPC se llaman procedimientos, eh qué parámetros tienen y los tipos de datos de esos de esos elementos.
+Teacher: Si miramos aquí la un ejemplo de un IDL de Microsystem, sería algo como esto.
+Teacher: Esto con el tiempo pues ha mejorado, ha cambiado un poco su estructura, pero aquí digamos que yo defino un programa, el nombre del programa es sumar.
+Teacher: Voy a tener una versión, bueno, aquí no debió haber sido sumar, debió haber sido calculadora o algo así, pues que que agrupe eh las distintas operaciones.
+Teacher: Voy a tener una versión, aquí dice suma ver, pero podía haber sido eh versión inicial, versión 1.0 o la versión la primera, la segunda, la tercera, pues es simplemente un nombre, ¿cierto?
+Teacher: sumar o bueno, el nombre del programa, el nombre de la versión.
+Teacher: La unión de estos dos elementos es lo que hace mi ID de servicio.
+Teacher: Es el que me ayude a identificar a qué a qué RPC o a qué servicio es al que yo me voy a comunicar.
+Teacher: Eh, defino las funciones, la función suma y la función resta.
+Teacher: Recibe unos parámetros y devuelve un valor entero.
+Teacher: ¿Por qué esta cosa loca que tenemos nosotros aquí?
+Teacher: Y es que en las primeras versiones de de RPC, nosotros no podíamos definir tipos variables de datos, o sea, yo no podía poner aquí una lista de n argumentos o de n parámetros.
+Teacher: Entonces, ¿cómo funcionaba?
+Teacher: Tenía que crear una estructura con el número de parámetros que nosotros estábamos esperando, en este caso dos enteros.
+Teacher: Y aquí, pues simplemente definimos o le decimos que quiero utilizar esta estructura llamada argumentos.
+Teacher: ¿Listo?
+Teacher: Entonces, aquí digamos que en términos oficiales yo voy a tener una suma que recibe dos argumentos, el valor A, un entero A y un entero B y retorna un entero.
+Teacher: Listo.
+Teacher: solamente que en esta versión o en estas primeras.
+Teacher: as versiones del IDL, no existía la forma de que yo pudiera definir una función con múltiples parámetros.
+Teacher: ¿Por qué?
+Teacher: Porque al final este elemento es un puntero que llegaba al a a la implementación.
+Teacher: Entonces, por eso necesito solamente un objeto.
+Teacher: Eh, característica de RPC y es que a cada programa, versión y operación o proceso o procedimiento, perdón, tengo que darle un ID.
+Teacher: Listo.
+Teacher: Entonces, este es este lo voy a llamar el procedimiento uno.
+Teacher: Este es mi procedimiento dos.
+Teacher: Este, como hace parte de la definición de la versión, este es el número de versión, un número o el o el identificador de la versión y este es el identificador del programa.
+Teacher: ¿Listo?
+Teacher: O sea, que nosotros directamente en el IDL ya le estábamos diciendo que este valor sumar es el programa 99, este sumver es la versión uno y así sucesivamente.
+01:10:00
+Teacher: Si aparece una nueva versión, ah, pues simplemente la agrego acá.
+Teacher: Listo.
+Teacher: Dentro del programa sumar agregó una nueva versión, la versión suma ver 2. Listo.
+Teacher: Y aquí tengo las operaciones que con, por ejemplo, para hacer sumas y restas de flotantes.
+Teacher: Entonces, podría ser otra versión.
+Teacher: ¿Listo?
+Teacher: Y a cada una de ellas tengo que darle un identificador diferente, o sea, este es el uno, este es el dos.
+Teacher: para eh la otra versión podría ser el mismo dos o podíamos decir tres y cuatro y así sucesivamente.
+Teacher: O sea, simplemente como para identificar por qué utilizar números o por qué utilizar números porque estamos en un lenguaje de programación de bajo nivel, ¿cierto?
+Teacher: Y para C no es muy fácil identificar cosas con cadenas, sino más bien con números.
+Teacher: Entonces, cada una de estas cadenas deben tener una representación numérica que me que ayuden a identificar a cuál elemento es el que yo necesito buscar.
+Teacher: ¿Listo?
+Teacher: Muy bien.
+Teacher: Hay un programa llamado RPCGEN.
+Teacher: S RPCGEN lo que hace es coger este archivo IDL y lo convierte en código, el stop del cliente, el stop del servidor, eh las herramientas de de empaquetado, que aquí se llama XDR y la el archivo de cabecera.
+Teacher: O sea, este RPC genera todos los archivos que yo necesito para hacer mi programa.
+Teacher: ¿Cómo así?
+Teacher: Los archivos IDL de para RPC normalmente terminaban en punto X. ¿Por qué punto X?
+Teacher: No tengo ni idea, pero la extensión normal de los archivos IDL para RPC es un punto X. Entonces, yo definí aquí mi IDL, lo pasaba por el programa RPCGN y este programa me generaba el STP del cliente, o sea,
+Teacher: lo que tengo que anexar o lo que tengo que compilar para poder que funcione del lado del cliente, el STP del servidor o lo que necesito para que funcione mi servidor, para que arranque el servidor.
+Teacher: se registran el binder, etcétera, etcétera.
+Teacher: Eso estaba aquí definido.
+Teacher: Un archivo suma.
+Teacher: Hh, que es la cabecera que vamos a utilizar tanto para el para el servidor como para el cliente, o sea, para poder incluir eso dentro de este archivo y poder llamar las funciones que nosotros definimos en nuestro IDL.
+Teacher: y el suma XDR, que este es el que hace la conversión o que hace la codificación y decodificación, el marchal y el marchal del de los datos que nosotros vamos a estar mandando.
+Teacher: Recuerden, aquí estamos mandando estructuras, o sea, vamos a mandar que voy a llamar la función suma con un entero A y un entero B, pero ese entero A y B están en una estructura.
+Teacher: Este es el que se encarga de decir cómo cómo envía la estructura por la red y cómo lo recibe al otro lado.
+Teacher: Listo, resolviendo todo el tema de del Holia, del tamaño de los campos, etcétera, todo eso está resuelto o el que lo soluciona es este es este archivo.
+Teacher: ¿Listo?
+Teacher: Y con esto ya tengo todo lo que necesito para compilar.
+Teacher: Entonces, cuando yo voy a generar mi ejecutable de cliente, lo que tengo que hacer es enlazar todos estos archivos.
+Teacher: O sea, es es compilo este punto C, me genero un punto O, este me genera un punto objeto, este un objeto y este no necesita objeto.
+Teacher: Pero yo lo paso todos estos objetos alter y me genera el ejecutable, el por decirlo así, el punto ex.
+Teacher: Y lo mismo del lado del servidor.
+Teacher: Cogemos todos estos elementos y simplemente generamos el ex del servidor.
+Teacher: ¿Listo?
+Teacher: Y ya cogemos ese ese cliente generado, lo montamos en la máquina, le damos ejecutar y ya podemos empezar a mandar peticiones y lo mismo del lado del servidor.
+Teacher: Okay, aquí hay un ejemplo pues rapidito.
+Teacher: Entonces, IDL como lo vimos ahora, este ya digámoslo así, este fue un ejemplo que yo preparé y lo escribí en Linux.
+Teacher: ya me soporta pues los tipos de datos aquí directamente pues con las versiones más recientes de Linux ya me lo soporta, ya no tengo que crear esa estructura y ponerme con esa estructura fea.
+Teacher: Él él internamente crea la estructura, o sea, no es que ya no exista, sino que él internamente crea la estructura y hace la representación internamente.
+Teacher: Eh, con este con este archivo genero el stop del cliente, el stop del servidor, el XDR y el punto H. en el server del lado del servidor que necesitamos incluir el suma.
+Teacher: ¿Listo?
+Teacher: O sea, el archivo que se generó allá.
+Teacher: Aquí simplemente lo voy a incluir para poder tener acceso a las funciones.
+01:15:00
+Teacher: Como estoy del lado del servidor, entonces yo lo que voy a hacer es implementar los servicios.
+Teacher: Tengo un servicio llamado suma que tiene el identificador del del sumaver 1. Eso es lo del lado del servidor.
+Teacher: Recibo el dato A, recibo el dato B, devuelvo un resultado y una estructura de parámetros que tienen que ver con con la infraestructura, pues con con RPC, digámoslo así.
+Teacher: Eh, defino el valor de retorno.
+Teacher: Le digo aquí a este puntero que el resultado va a ser a + b.
+Teacher: El retorno fue que se ejecutó de manera correcta y retorno esto, este retorno.
+Teacher: Si ocurre un error, si los parámetros no son válidos y eh para sumar yo no puedo sumar números positivos con negativos, bueno, entonces el red sería false porque no se pudo realizar.
+Teacher: Eh, pero en términos generales aquí sería como la función normal.
+Teacher: Y lo mismo con la resta.
+Teacher: Esta es la función resta de la versión uno del lado del servidor.
+Teacher: Recibo los parámetros y lo mismo en ese puntero de resultado.
+Teacher: Vamos a asignar ese valor y el valor de retorno es true.
+Teacher: Esto es todo lo que tengo que escribir yo del lado del servidor.
+Teacher: Del lado del cliente si tengo que escribir un poquito más de código.
+Teacher: Esta es como la primera parte.
+Teacher: Lo que tengo que hacer es incluir la biblioteca.
+Teacher: tengo que, digámoslo así, definir un puntero para poder apuntar, pues para poder eh registrar cuando esté cuando tenga la conexión con el servidor, eh el valor de retorno, pues para poder identificar qué fue lo que llegó o qué es lo que me está devolviendo,
+Teacher: si un true o false, si se ejecutó o no se ejecutó la respuesta, esto que está aquí es simplemente eh que yo debo al momento de escribir o de ejecutar mi aplicación le tengo que decir que ejecute suma client y que en
+Teacher: el segundo parámetro me diga a qué servidor se va a conectar.
+Teacher: Recuerde que en RPC yo me tengo que conectar al al binder del servidor donde están los servicios.
+Teacher: Entonces, yo le tengo que decir aquí, ah, vaya al servidor uno o al servidor dos o a la IP 1 o la IP2.
+Teacher: Listo.
+Teacher: Cuando ya tengamos la IP, entonces establecemos la conexión con el con el binder o le decimos al binder que se conecte o que cree una conexión con el servidor.
+Teacher: Le digo a qué servidor se tiene que conectar, cuál es este o a qué sumar, a que hace referencia al programa, a la versión suma ver.
+Teacher: ¿Y cuál es el protocolo que vamos a utilizar?
+Teacher: Vamos a utilizar en este caso TCP.
+Teacher: Eh, si no se pudo conectar o ocurrió un error con el servidor o si el servidor no hay no tiene un servicio corriendo por el 111, pues simplemente hay un en error de conexión con el servidor.
+Teacher: Si no hay un servicio que esté escuchando o que esté implementando sumar y suma ver en ese servidor, pues nos va a devolver un error y el cliente es nulo.
+Teacher: Aquí si si no pudo establecer la conexión, pues simplemente falle.
+Teacher: Pero si no entró a este if, entonces sí está conectado.
+Teacher: Entonces simplemente llame a la función suma uno.
+Teacher: Listo.
+Teacher: Llame la función suma uno con el valor 8, con el valor 3. Aquí espero que me devuelva la respuesta.
+Teacher: Este Redbal, recuerden que devuelve un true o false.
+Teacher: Bueno, algo como un true false.
+Teacher: Eh, aquí viene la respuesta y la información de a dónde tengo que mandar la conexión.
+Teacher: Si ustedes miran aquí es muy parecido a la definición que estaba del lado del servidor para cada uno de estos datos.
+Teacher: Si el resultado dice que no fue exitoso, o sea, que no se pudo realizar, pues es un error.
+Teacher: Pero si todo fue exitoso, entonces la suma es lo que está en la variable red.
+Teacher: Listo.
+Teacher: O sea, lo que recibí aquí en este tercer parámetro, ese es el resultado que nosotros estábamos esperando.
+Teacher: Y como ya no voy a mandar más peticiones, pues simplemente destruyo la conexión con me desconecto del RPC.
+Teacher: Si tuviese más operaciones, si tuviese que hacer más, ah, súmeme esto y el resto de resultado, eh, réstele tal cosa, etcétera, puedo seguir haciéndolo aquí debajo.
+Teacher: ¿Listo?
+Teacher: Y cuando ya termine la ejecución, cuando ya no necesite más la conexión con el servidor, pues simplemente cierro la conexión directamente al servidor.
+Teacher: Si ustedes miran aquí, a pesar de que hay mucho mucha lógica que tiene que ver con RPC y que tengo que conectarme y desconectarme, etcétera, ¿cierto?
+Teacher: O sea, que tengo que hacer un client create, un client destroy no es tan complejo como abrir el to, abrir el puerto, conectarme al a la cola, enviar los mensajes a la cola, recibir los mensajes.
+Teacher: Sí, o sea, no soy tan verboso, no sé ni siquiera cómo lo está implementando internamente RPC.
+Teacher: Puede ser una cola, puede ser un un socket o puede ser un una comunicación eh a grupo, ¿no?
+01:20:00
+Teacher: Yo no tengo ni idea cómo lo estoy implementando.
+Teacher: Yo lo único que sé es que tengo que llegar al servicio eh que está en este en este servidor y que cuando ya no necesite conectarme o cuando ya no necesite la conexión, pues simplemente destrúyalo para que otro cliente se pueda conectar a ese servidor.
+Teacher: O sea, libere el recurso para que puedan el otro cliente pueda recibir ese servidor.
+Teacher: RPC normalmente funciona con conexión persistente o digámoslo así con el modelo de atención de de una conexión por n peticiones.
+Teacher: O sea, yo llego y me conecto, puedo hacer todo lo que quiera con el servidor y luego tengo que desconectarme.
+Teacher: Este es el proceso de conexión y este es el proceso de desconexión.
+Teacher: ¿Listo?
+Teacher: Eh, dejemos ahí, dejemos ahí porque pues ahorita sigue con Ri Corb y servicio web, pero entonces eso lo miramos en la próxima clase.
+Teacher: ¿Listo?
+Student22: Listo, profe.
+Student22: Muchas gracias.
+Teacher: Dale.
+Teacher: Entonces, jóvenes, nos vemos el próximo martes, si todo sale bien y espero que este fin de semana ya pueda distribuirlo los temas de las exposiciones.
+Teacher: De todas maneras, vayan preparando porque pues tenemos muy poco tiempo, así que casi que van a tener que exponer todos eh en conjunto, por decirlo así.
+Teacher: ¿Listo?
+Teacher: Nada, que esté muy bien.
+Student26: Ha.
+Teacher: Nos vemos el el martes.
+Student5: Gracias,
+Student22: Listo.
+Student5: profe.
+Student22: Muchas gracias.
+Student22: Hasta luego.
+Teacher: Hasta
+Student1: Gracias,
+Student18: Hasta luego.
+Student1: profe.
+Student1: Feliz noche para todos.
+Teacher: luego.
+La reunión finalizó después de 01:21:53 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+

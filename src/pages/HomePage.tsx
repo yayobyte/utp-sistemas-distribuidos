@@ -1,19 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ExternalLink, Lock } from 'lucide-react';
+import { ArrowRight, GraduationCap, Lock, Map as MapIcon, Presentation, Wrench } from 'lucide-react';
 import {
   getTallerPath,
   isTallerAvailable,
   statusLabels,
   talleresRegistry,
 } from '../data/talleres.registry';
-import { courseInfo, gradingData } from '../data/curso.data';
+import { courseInfo } from '../data/curso.data';
+import { clases } from '../data/clases';
 import type { TallerEntry } from '../data/talleres.registry.d';
 import './HomePage.styles.css';
 
+const GUIA_TOPICS = 6;
+
+const completedTalleres = talleresRegistry.filter((t) => t.status === 'completado').length;
+
+const hubCards = [
+  {
+    to: '/clases',
+    icon: GraduationCap,
+    title: 'Clases',
+    text: 'Resumen de cada clase con diagramas, términos clave y preguntas de repaso.',
+    meta: `${clases.length} clases`,
+  },
+  {
+    to: '/guia',
+    icon: MapIcon,
+    title: 'Guía de estudio',
+    text: 'Los conceptos del curso comparados lado a lado para preparar los parciales.',
+    meta: `${GUIA_TOPICS} temas`,
+  },
+  {
+    to: '#talleres',
+    icon: Wrench,
+    title: 'Talleres',
+    text: 'Las investigaciones entregadas y la exposición del Grupo C.',
+    meta: `${completedTalleres} completados`,
+  },
+];
+
 const TallerRowContent: React.FC<{ taller: TallerEntry }> = ({ taller }) => (
   <>
-    <span className="home-taller-number">{taller.number}</span>
+    <span className="home-taller-number">
+      {taller.kind === 'exposicion' ? <Presentation size={16} /> : taller.number}
+    </span>
     <span className="home-taller-body">
       <span className="home-taller-eyebrow">
         {taller.topic} · {taller.corte}
@@ -23,7 +54,6 @@ const TallerRowContent: React.FC<{ taller: TallerEntry }> = ({ taller }) => (
     </span>
     <span className="home-taller-aside">
       <span className={`home-taller-status status-${taller.status}`}>{statusLabels[taller.status]}</span>
-      {taller.points && <span className="home-taller-points">{taller.points} pts</span>}
     </span>
     {isTallerAvailable(taller) ? (
       <ArrowRight size={18} className="home-taller-arrow" />
@@ -41,30 +71,29 @@ export const HomePage: React.FC = () => {
           {courseInfo.code} · {courseInfo.institution}
         </p>
         <h1 className="type-display-lg">{courseInfo.name}</h1>
-        <p className="home-lead">
-          Portafolio de talleres y actividades de la asignatura. Cada taller incluye la investigación completa y el material entregado.
-        </p>
-        <dl className="home-facts">
-          <div>
-            <dt>Docente</dt>
-            <dd>{courseInfo.professor}</dd>
-          </div>
-          <div>
-            <dt>Programa</dt>
-            <dd>{courseInfo.program}</dd>
-          </div>
-          <div>
-            <dt>Aula</dt>
-            <dd>
-              <a href={courseInfo.classroomUrl} target="_blank" rel="noopener noreferrer">
-                Google Classroom <ExternalLink size={12} />
-              </a>
-            </dd>
-          </div>
-        </dl>
       </header>
 
-      <section className="home-section" aria-labelledby="home-talleres-title">
+      <nav className="home-hub" aria-label="Secciones">
+        {hubCards.map(({ to, icon: Icon, title, text, meta }) => {
+          const body = (
+            <>
+              <span className="home-hub-icon"><Icon size={20} /></span>
+              <span className="home-hub-title">{title}</span>
+              <span className="home-hub-text">{text}</span>
+              <span className="home-hub-meta">
+                {meta} <ArrowRight size={14} />
+              </span>
+            </>
+          );
+          return to.startsWith('#') ? (
+            <a key={title} href={to} className="home-hub-card">{body}</a>
+          ) : (
+            <Link key={title} to={to} className="home-hub-card">{body}</Link>
+          );
+        })}
+      </nav>
+
+      <section id="talleres" className="home-section" aria-labelledby="home-talleres-title">
         <h2 id="home-talleres-title" className="home-section-title">Talleres</h2>
         <ul className="home-taller-list">
           {talleresRegistry.map((taller) => (
@@ -78,23 +107,6 @@ export const HomePage: React.FC = () => {
                   <TallerRowContent taller={taller} />
                 </div>
               )}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="home-section" aria-labelledby="home-grading-title">
-        <div className="home-section-heading">
-          <h2 id="home-grading-title" className="home-section-title">Evaluación</h2>
-          <Link to="/curso" className="home-section-link">
-            Información del curso <ArrowRight size={14} />
-          </Link>
-        </div>
-        <ul className="home-grading-row">
-          {gradingData.map((item) => (
-            <li key={item.id} className={item.id === 'talleres' ? 'is-highlight' : ''}>
-              <span className="home-grading-percentage">{item.percentage}%</span>
-              <span className="home-grading-label">{item.label}</span>
             </li>
           ))}
         </ul>

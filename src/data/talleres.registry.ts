@@ -1,7 +1,5 @@
 import type { TallerEntry, TallerStatus } from './talleres.registry.d';
 
-export const COURSE_CLASSROOM_URL = 'https://classroom.google.com/c/ODcyMDQwNDA5MjIw';
-
 export const talleresRegistry: TallerEntry[] = [
   {
     id: '1',
@@ -11,8 +9,6 @@ export const talleresRegistry: TallerEntry[] = [
     topic: 'Tema 1 · Introducción',
     corte: 'Parcial 1',
     status: 'completado',
-    points: 50,
-    classroomUrl: 'https://classroom.google.com/c/ODcyMDQwNDA5MjIw/a/ODcyMDQwNDA5MjMy/details',
     summary:
       'Investigación del hardware necesario para construir un clúster y un grid: nodos, redes de baja latencia, almacenamiento paralelo, middleware y diferencias de arquitectura.',
     objective:
@@ -33,7 +29,6 @@ export const talleresRegistry: TallerEntry[] = [
     topic: 'Tema 1 · Introducción',
     corte: 'Parcial 1',
     status: 'completado',
-    classroomUrl: COURSE_CLASSROOM_URL,
     summary:
       'Dos ejemplos reales, pasados y actuales, para cada uno de los 9 modelos: Cluster, Grid, Volunteer, Utility, Cloud, Mobile, Ubiquitous/IoT, Edge/Fog y Autonomic.',
     objective:
@@ -50,9 +45,7 @@ export const talleresRegistry: TallerEntry[] = [
     shortTitle: 'Ejemplos de Arquitecturas',
     topic: 'Tema 2 · Arquitecturas',
     corte: 'Parcial 1',
-    status: 'en-progreso',
-    points: 50,
-    classroomUrl: COURSE_CLASSROOM_URL,
+    status: 'completado',
     summary:
       'Dos aplicaciones reales para cada una de las 4 arquitecturas vistas en clase: Maestro/Trabajador, Cliente/Servidor, Editor/Subscriptor y Peer to Peer.',
     objective:
@@ -63,15 +56,17 @@ export const talleresRegistry: TallerEntry[] = [
     ],
   },
   {
-    id: '4',
+    id: 'exposicion-c',
+    kind: 'exposicion',
+    path: '/exposicion/microservicios',
     number: 4,
-    title: 'Comunicación con Sockets & Java RMI',
-    shortTitle: 'Sockets & Java RMI',
-    topic: 'Tema 3 · Comunicación',
+    title: 'Microservicios y Spring Cloud',
+    shortTitle: 'Exposición · Microservicios',
+    topic: 'Exposición · Grupo C',
     corte: 'Parcial 2',
-    status: 'pendiente',
+    status: 'en-progreso',
     summary:
-      'Implementación práctica de paso de mensajes mediante sockets TCP/UDP e invocación de métodos remotos (RMI) con paso de objetos y stubs.',
+      'Presentación interactiva en 3D: del monolito a los microservicios, cómo se conectan con las arquitecturas y la comunicación vistas en clase, y el stack de Spring Cloud (Config, Eureka, Gateway, Resilience4j, tracing).',
     objective: '',
     sections: [],
   },
@@ -87,13 +82,14 @@ export const getTaller = (id: string): TallerEntry | undefined =>
   talleresRegistry.find((t) => t.id === id);
 
 export const isTallerAvailable = (taller: TallerEntry): boolean =>
-  taller.status !== 'pendiente' && taller.sections.length > 0;
+  taller.status !== 'pendiente' && (Boolean(taller.path) || taller.sections.length > 0);
 
 export const getTallerPath = (taller: TallerEntry, sectionSlug?: string): string =>
-  `/talleres/${taller.id}/${sectionSlug ?? taller.sections[0]?.slug ?? ''}`;
+  taller.path ?? `/talleres/${taller.id}/${sectionSlug ?? taller.sections[0]?.slug ?? ''}`;
 
+// Prev/next links only move between regular talleres, never into a presentation.
 export const getAdjacentTalleres = (id: string) => {
-  const available = talleresRegistry.filter(isTallerAvailable);
+  const available = talleresRegistry.filter((t) => isTallerAvailable(t) && t.kind !== 'exposicion');
   const index = available.findIndex((t) => t.id === id);
   return {
     previous: index > 0 ? available[index - 1] : undefined,

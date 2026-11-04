@@ -2,21 +2,21 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AppShell } from './components/layout/AppShell/AppShell';
 import { HomePage } from './pages/HomePage';
-import { CursoPage } from './pages/CursoPage';
 import { Taller1Page } from './pages/Taller1Page';
 import { Taller2Page } from './pages/Taller2Page';
 import { Taller3Page } from './pages/Taller3Page';
 import { GuiaEstudioPage } from './pages/GuiaEstudioPage';
 import { ClasesIndexPage } from './pages/ClasesIndexPage';
 import { ClasePage } from './pages/ClasePage';
+import { ExposicionPage } from './pages/ExposicionPage';
 
 export const App: React.FC = () => {
   return (
     <Router>
       <Routes>
+        <Route path="exposicion/microservicios" element={<ExposicionPage />} />
         <Route element={<AppShell />}>
           <Route index element={<HomePage />} />
-          <Route path="curso" element={<CursoPage />} />
           <Route path="guia" element={<GuiaEstudioPage />} />
           <Route path="clases" element={<ClasesIndexPage />} />
           <Route path="clases/:numero" element={<ClasePage />} />
@@ -26,8 +26,6 @@ export const App: React.FC = () => {
 
           {/* Rutas anteriores al rediseño */}
           <Route path="talleres" element={<Navigate to="/" replace />} />
-          <Route path="parciales" element={<Navigate to={{ pathname: '/curso', hash: '#parciales' }} replace />} />
-          <Route path="exposiciones" element={<Navigate to={{ pathname: '/curso', hash: '#exposiciones' }} replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

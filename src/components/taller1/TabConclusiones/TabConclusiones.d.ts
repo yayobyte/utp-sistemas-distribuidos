@@ -1,3 +1,1 @@
-export interface TabConclusionesProps {
-  classroomUrl?: string;
-}
+export type TabConclusionesProps = Record<string, never>;

@@ -1,0 +1,9 @@
+.ms-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.ms-stage canvas {
+  display: block;
+}

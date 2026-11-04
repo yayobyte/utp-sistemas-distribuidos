@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { BookOpen, ExternalLink, GraduationCap, LayoutGrid, Map as MapIcon, Server, X } from 'lucide-react';
+import { GraduationCap, Map as MapIcon, Presentation, Server, X } from 'lucide-react';
 import {
   getTallerPath,
   isTallerAvailable,
@@ -36,14 +36,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ id, isOpen, onClose }) => {
 
       <nav className="sidebar-nav">
         <div className="sidebar-group">
-          <NavLink to="/" end className={navClass}>
-            <LayoutGrid size={15} />
-            <span>Resumen</span>
-          </NavLink>
-          <NavLink to="/curso" className={navClass}>
-            <BookOpen size={15} />
-            <span>Información del curso</span>
-          </NavLink>
           <NavLink to="/clases" className={navClass}>
             <GraduationCap size={15} />
             <span>Clases</span>
@@ -63,13 +55,14 @@ export const Sidebar: React.FC<SidebarProps> = ({ id, isOpen, onClose }) => {
                 to={getTallerPath(taller)}
                 className={navClass({ isActive: pathname.startsWith(`/talleres/${taller.id}/`) })}
               >
-                <span className="sidebar-taller-number">{taller.number}</span>
+                <span className="sidebar-taller-number">
+                  {taller.kind === 'exposicion' ? <Presentation size={13} /> : taller.number}
+                </span>
                 <span className="sidebar-taller-text">
                   <span className="sidebar-taller-title">{taller.shortTitle}</span>
                   <span className="sidebar-taller-meta">
                     <span className={`sidebar-status-dot status-${taller.status}`} />
                     {statusLabels[taller.status]}
-                    {taller.points ? ` · ${taller.points} pts` : ''}
                   </span>
                 </span>
               </Link>
@@ -85,13 +78,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ id, isOpen, onClose }) => {
           )}
         </div>
       </nav>
-
-      <div className="sidebar-footer">
-        <a href={courseInfo.classroomUrl} target="_blank" rel="noopener noreferrer" className="sidebar-external">
-          <span>Google Classroom</span>
-          <ExternalLink size={12} />
-        </a>
-      </div>
     </aside>
   );
 };

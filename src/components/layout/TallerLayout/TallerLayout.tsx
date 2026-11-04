@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, ChevronRight, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ChevronRight } from 'lucide-react';
 import {
   getAdjacentTalleres,
   getTallerPath,
@@ -37,18 +37,6 @@ export const TallerLayout: React.FC<TallerLayoutProps> = ({ taller, children }) 
               <span className={`taller-layout-status status-${taller.status}`}>
                 {statusLabels[taller.status]}
               </span>
-              {taller.points && <span className="taller-layout-points">{taller.points} puntos</span>}
-              {taller.classroomUrl && (
-                <a
-                  href={taller.classroomUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-pearl-capsule"
-                >
-                  <span>Google Classroom</span>
-                  <ExternalLink size={12} />
-                </a>
-              )}
             </div>
           </div>
         </div>
