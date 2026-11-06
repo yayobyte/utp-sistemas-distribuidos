@@ -9,10 +9,9 @@ import {
 } from '../data/talleres.registry';
 import { courseInfo } from '../data/curso.data';
 import { clases } from '../data/clases';
+import { guias } from '../components/guia/GuiaParts';
 import type { TallerEntry } from '../data/talleres.registry.d';
 import './HomePage.styles.css';
-
-const GUIA_TOPICS = 6;
 
 const completedTalleres = talleresRegistry.filter((t) => t.status === 'completado').length;
 
@@ -27,9 +26,9 @@ const hubCards = [
   {
     to: '/guia',
     icon: MapIcon,
-    title: 'Guía de estudio',
-    text: 'Los conceptos del curso comparados lado a lado para preparar los parciales.',
-    meta: `${GUIA_TOPICS} temas`,
+    title: 'Guías de estudio',
+    text: 'Arquitecturas, comunicación y la guía de la exposición, con diagramas y prácticas interactivas.',
+    meta: `${guias.length} guías`,
   },
   {
     to: '#talleres',

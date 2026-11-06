@@ -6,6 +6,8 @@ import { Taller1Page } from './pages/Taller1Page';
 import { Taller2Page } from './pages/Taller2Page';
 import { Taller3Page } from './pages/Taller3Page';
 import { GuiaEstudioPage } from './pages/GuiaEstudioPage';
+import { GuiaComunicacionPage } from './pages/GuiaComunicacionPage';
+import { GuiaExposicionPage } from './pages/GuiaExposicionPage';
 import { ClasesIndexPage } from './pages/ClasesIndexPage';
 import { ClasePage } from './pages/ClasePage';
 import { ExposicionPage } from './pages/ExposicionPage';
@@ -17,7 +19,10 @@ export const App: React.FC = () => {
         <Route path="exposicion/microservicios" element={<ExposicionPage />} />
         <Route element={<AppShell />}>
           <Route index element={<HomePage />} />
-          <Route path="guia" element={<GuiaEstudioPage />} />
+          <Route path="guia" element={<Navigate to="/guia/arquitecturas" replace />} />
+          <Route path="guia/arquitecturas" element={<GuiaEstudioPage />} />
+          <Route path="guia/comunicacion" element={<GuiaComunicacionPage />} />
+          <Route path="guia/exposicion" element={<GuiaExposicionPage />} />
           <Route path="clases" element={<ClasesIndexPage />} />
           <Route path="clases/:numero" element={<ClasePage />} />
           <Route path="talleres/1/:section?" element={<Taller1Page />} />

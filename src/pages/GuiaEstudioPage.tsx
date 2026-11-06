@@ -14,28 +14,13 @@ import {
   transparencyQuiz,
 } from '../data/guia.data';
 import type { FamilyId } from '../data/guia.data';
+import { FamilyMap, GuiaTabs, SectionHead as SharedSectionHead, VsCard } from '../components/guia/GuiaParts';
 import './GuiaEstudioPage.styles.css';
 
-const SectionHead: React.FC<{ family: FamilyId; title: string; children: React.ReactNode }> = ({ family, title, children }) => {
-  const f = families.find((x) => x.id === family)!;
-  return (
-    <div className="guia-head">
-      <span className="guia-eyebrow">Familia {f.number}</span>
-      <h2>{title}</h2>
-      <p>{children}</p>
-    </div>
-  );
-};
-
-const VsCard: React.FC<{ title: string; items: React.ReactNode[] }> = ({ title, items }) => (
-  <div className="guia-card">
-    <h3>{title}</h3>
-    <ul>
-      {items.map((item, i) => (
-        <li key={i}>{item}</li>
-      ))}
-    </ul>
-  </div>
+const SectionHead: React.FC<{ family: FamilyId; title: string; children: React.ReactNode }> = ({ family, title, children }) => (
+  <SharedSectionHead eyebrow={`Familia ${families.find((x) => x.id === family)!.number}`} title={title}>
+    {children}
+  </SharedSectionHead>
 );
 
 const TransparencyQuiz: React.FC = () => {
@@ -109,6 +94,7 @@ const BinderSequence: React.FC = () => {
 export const GuiaEstudioPage: React.FC = () => {
   return (
     <div className="guia-page container-tight">
+      <GuiaTabs />
       <header className="guia-header">
         <p className="guia-kicker">Guía de estudio · clases 1–13</p>
         <h1 className="type-display-lg">¿De qué tema es esta pregunta?</h1>
@@ -118,15 +104,7 @@ export const GuiaEstudioPage: React.FC = () => {
         </p>
       </header>
 
-      <nav className="guia-map" aria-label="Familias de temas">
-        {families.map((f) => (
-          <a key={f.id} href={`#${f.anchor}`} className={`guia-tile fam-${f.id}`}>
-            <span className="guia-eyebrow">{f.number} · {f.name}</span>
-            <span className="guia-tile-q">{f.question}</span>
-            <span className="guia-tile-terms">{f.terms}</span>
-          </a>
-        ))}
-      </nav>
+      <FamilyMap families={families} label="Familias de temas" />
 
       <div className="guia-trick">
         <b>Truco de examen:</b>

@@ -1,0 +1,137 @@
+/* Endianness lab */
+.com-endian-input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--color-ink-muted-80);
+}
+
+.com-endian-input input {
+  max-width: 220px;
+  padding: 8px 10px;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-xs);
+}
+
+.com-endian-input input:focus-visible { outline: 2px solid var(--fam); outline-offset: 1px; }
+
+.com-bytes-rows { display: flex; flex-direction: column; gap: 10px; }
+
+.com-bytes-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  font-size: 14px;
+}
+
+.com-bytes-row > span { min-width: 260px; color: var(--color-ink-muted-80); }
+.com-bytes { display: flex; gap: 6px; }
+
+.com-bytes code {
+  width: 44px;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 15px;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-xs);
+  background: var(--color-canvas-parchment);
+}
+
+.com-bytes code.is-set { background: var(--fam); border-color: var(--fam); color: var(--color-on-primary); }
+
+.com-endian-result { font-size: 15px; line-height: 1.5; }
+.com-endian-result b { color: var(--fam); font-family: var(--font-mono); }
+
+/* Bar chart */
+.com-bars { min-width: 520px; max-height: none; }
+.com-bar-hit { fill: transparent; }
+.com-bar:hover .com-bar-hit { fill: var(--color-canvas-parchment); }
+.com-bar-fill { fill: var(--fam); }
+.guia-page svg .com-bar-value { font-weight: 600; }
+.com-bar-axis { stroke: var(--color-hairline); stroke-width: 1; }
+
+.com-data summary {
+  font-size: 13px;
+  color: var(--color-body-muted);
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.com-analogy { display: block; margin-top: 4px; font-size: 14px; color: var(--color-ink-muted-80); }
+
+.com-timeline { min-width: 760px; max-height: none; }
+
+/* Code */
+.com-code {
+  margin: 0;
+  padding: 12px 14px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--color-canvas-parchment);
+  border-radius: var(--radius-xs);
+}
+
+/* Richardson ladder: each level sits higher than the last */
+.com-ladder {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: end;
+  gap: 8px;
+}
+
+.com-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px;
+  font-size: 13.5px;
+  line-height: 1.45;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-top: 4px solid var(--fam);
+  border-radius: var(--radius-sm);
+}
+
+.com-step.lvl-1 { margin-bottom: 0; min-height: 190px; }
+.com-step.lvl-2 { min-height: 230px; background: color-mix(in srgb, var(--fam) 8%, var(--color-canvas)); }
+.com-step.lvl-3 { min-height: 270px; background: color-mix(in srgb, var(--fam) 14%, var(--color-canvas)); }
+.com-step.lvl-0 { min-height: 150px; }
+
+.com-step-level {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fam);
+}
+
+.com-step strong { font-size: 15px; }
+.com-step code { font-size: 11.5px; color: var(--color-ink-muted-80); }
+
+.com-step-flag {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 2px 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  background: var(--fam);
+  color: var(--color-on-primary);
+}
+
+@media (max-width: 700px) {
+  .com-ladder { grid-template-columns: 1fr; }
+  .com-step.lvl-0,
+  .com-step.lvl-1,
+  .com-step.lvl-2,
+  .com-step.lvl-3 { min-height: 0; }
+  .com-bytes-row > span { min-width: 0; }
+}

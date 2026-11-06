@@ -243,3 +243,96 @@
   .guia-page { padding: 32px 16px 48px; }
   .guia-trick { flex-direction: column; gap: 4px; }
 }
+
+/* Families of the other guides reuse the same six hues, in the same order */
+.fam-msg, .fam-xbase { --fam: var(--fam-model); }
+.fam-repr, .fam-xmap { --fam: var(--fam-arch); }
+.fam-mq, .fam-xres { --fam: var(--fam-trans); }
+.fam-mw, .fam-xflow { --fam: var(--fam-coup); }
+.fam-web, .fam-xprep { --fam: var(--fam-scale); }
+.fam-xcheat { --fam: var(--fam-server); }
+
+/* Tabs between guides */
+.guia-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  overflow-x: auto;
+}
+
+.guia-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 16px;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-sm);
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+.guia-tab strong { font-size: 15px; }
+.guia-tab span { font-size: 12px; color: var(--color-body-muted); }
+.guia-tab:hover { border-color: var(--color-primary); color: var(--color-ink); }
+
+.guia-tab.is-active {
+  border-color: var(--color-primary);
+  background: var(--color-primary-subtle);
+  box-shadow: inset 0 -3px 0 var(--color-primary);
+}
+
+/* Expandable Q&A */
+.guia-qa { display: flex; flex-direction: column; gap: 8px; }
+
+.guia-qa details {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-sm);
+}
+
+.guia-qa summary {
+  padding: 12px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.guia-qa details[open] { border-color: var(--fam); }
+.guia-qa details[open] summary { border-bottom: 1px solid var(--color-hairline); }
+.guia-qa p { padding: 12px 16px; line-height: 1.55; color: var(--color-ink-muted-80); }
+
+/* Shared widget bits for the new guides */
+.guia-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-sm);
+}
+
+.guia-widget h3 { font-family: var(--font-display); font-size: 18px; font-weight: 600; }
+.guia-widget-note { font-size: 14px; line-height: 1.5; color: var(--color-ink-muted-80); }
+
+.guia-segmented { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.guia-segmented button {
+  padding: 7px 12px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--color-ink);
+  background: var(--color-canvas-parchment);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+}
+
+.guia-segmented button[aria-pressed='true'] { background: var(--fam); border-color: var(--fam); color: var(--color-on-primary); }
+.guia-segmented button:focus-visible { outline: 2px solid var(--fam); outline-offset: 2px; }
+
+.guia-page svg .dim { opacity: 0.25; }
+.guia-page svg .hot { fill: var(--fam); stroke: var(--fam); }
+.guia-page svg text.hot { stroke: none; }
+
+.guia-card .guia-table { min-width: 0; }

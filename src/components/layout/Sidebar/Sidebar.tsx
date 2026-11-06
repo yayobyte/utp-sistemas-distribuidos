@@ -8,6 +8,7 @@ import {
   talleresRegistry,
 } from '../../../data/talleres.registry';
 import { courseInfo } from '../../../data/curso.data';
+import { guias } from '../../guia/GuiaParts';
 import type { SidebarProps } from './Sidebar.d';
 import './Sidebar.styles.css';
 
@@ -40,10 +41,19 @@ export const Sidebar: React.FC<SidebarProps> = ({ id, isOpen, onClose }) => {
             <GraduationCap size={15} />
             <span>Clases</span>
           </NavLink>
-          <NavLink to="/guia" className={navClass}>
-            <MapIcon size={15} />
-            <span>Guía de estudio</span>
-          </NavLink>
+        </div>
+
+        <div className="sidebar-group">
+          <h2 className="sidebar-group-title">Guías de estudio</h2>
+          {guias.map((g) => (
+            <NavLink key={g.to} to={g.to} className={navClass}>
+              <MapIcon size={15} />
+              <span className="sidebar-taller-text">
+                <span className="sidebar-taller-title">{g.label}</span>
+                <span className="sidebar-taller-meta">{g.meta}</span>
+              </span>
+            </NavLink>
+          ))}
         </div>
 
         <div className="sidebar-group">
