@@ -1,0 +1,916 @@
+Hora de inicio de la reunión: 2026-11-05 18:30 GMT-5
+Asistentes
+Student36, Student3, Student4, Teacher, Student5, Student6, Student7, Student8, Student28, Student9, Student12, Student13, Student14, Student15, Student16, Student19, Student20, Student21, Student22, Student23, Student35, Student25, Student26, Student27
+Transcripción
+Teacher: Hola, jóvenes, buenas noches.
+Teacher: ¿Cómo están?
+Teacher: Bienvenidos a esta nueva sesión.
+Teacher: Ya vamos avanzando en nuestro objetivo de ir cubriendo pues los diferentes componentes del sistema distribuido.
+Teacher: Y hoy vamos a empezar con un nuevo componente.
+Teacher: Yo creo que hoy vemos y terminamos un componente, listo, que es el de los sistemas de archivos distribuidos.
+Teacher: Listo.
+Teacher: Entonces, eh voy a compartir pantalla y empezamos.
+Teacher: ventana.
+Teacher: Esta ventana es me confirman si ven mi pantalla.
+Student8: Sí, profe.
+Student8: Buenas noches.
+Student8: ¿Está viéndose la pantalla correctamente?
+Teacher: Dale.
+Teacher: Gracias.
+Teacher: Okay.
+Teacher: Entonces, hoy vamos a estar o vamos a hablar sobre los sistemas de archivos.
+Teacher: ¿Qué son los sistemas de archivos?
+Teacher: Pues la forma como manejamos los discos duros, ¿cierto?
+Teacher: Pero eh digamos que aquí se vuelve un problema o mejor dicho se vuelve una eh necesidad de de evaluar porque estamos hablando de que tenemos sistemas de archivos e perdón que estoy trabajando en un sistema distribuido y en esos
+Teacher: sistemas distribuidos pues tenemos múltiples máquinas y queremos saber cómo gestionamos eh esa eh la información de esas múltiples máquinas.
+Teacher: Hoy vamos a hablar de un componente de tal manera de que le vamos a quitar la carga al servidor de estar haciendo todo este proceso de de transaccionalidad o si yo quisiera leer información que se encuentra en otra máquina,
+Teacher: pues la idea es quitarle responsabilidades a nuestro servidor y delegarlo a otros componentes o a otros servicios que se encarguen de hacer esa tarea por nosotros.
+Teacher: Pero antes de de empezar, pues quiero que quedemos claros en lo qué es un sistema de archivos o a qué hacemos referencia a un sistema de archivos.
+Teacher: ¿Alguien tiene una idea qué es un sistema de archivos y qué sistemas de archivos conocen o es la primer vez que escuchan esa palabra?
+Student26: Es la manera en como se almacenan los archivos.
+Student26: En disco, por ejemplo, está FAT o NTFS.
+Teacher: Ajá.
+Teacher: Entonces,
+Student26: M.
+Student8: R también cuenta como sistema de
+Teacher: mira que no es es realmente el ride es un arreglo
+Student8: archivos.
+Teacher: de discos y ese es más por hardware que por software.
+Teacher: Bueno, pero es más un arreglo de hardware que de software.
+Teacher: Pero los sistemas de archivos son el sistema, el programa, la aplicación que vamos a delegarle la o mejor dicho que tiene la responsabilidad de administrarme los discos duros, ¿cierto?
+Teacher: Entonces, como decía el compañero, FAT, NTFS, son diferentes sistemas de archivos para gestionar el disco y cada uno pues tiene una responsabilidad o tiene una característica que lo hace funcional o diferente, ¿cierto?
+Teacher: Eh, aquí vamos a hablar de cómo podríamos nosotros gestionar los discos de mi sistema distribuido.
+Teacher: Listo, como no lo no lo puedo delegar a que el sistema operativo me tenga un sistema de archivos que me gestione el disco, vamos a ver cómo podemos poner una capa de aplicación o una aplicación que nos permita gestionar
+Teacher: los discos de todo mi sistema de archivo.
+Teacher: ¿Listo?
+Teacher: Y tenemos dos formas de gestionarlos.
+Teacher: los podemos lo podemos gestionar como un sistema distribuido o podemos gestionarlo de un modelo paralelo.
+Teacher: Pero antes de antes de que nos adentremos en el mundo de los sistemas de archivos, quiero hablarles de tres tipos de almacenamiento que se vuelven vitales eh ya dentro de nuestro contexto, ¿cierto?
+Teacher: Probablemente ustedes ya conozcan algunos de ellos, hayan escuchado o tengan conocimiento de de algunos de ellos, pero vamos a aclarar un poco algunas dudas o algunas inquietudes que hay sobre eso.
+Teacher: Entonces, de tipos de almacenamiento, nosotros tenemos tres.
+Teacher: ¿Listo?
+Teacher: Entonces, ¿qué es eso de tipos de almacenamiento?
+Teacher: O sea, ¿cómo podemos nosotros guardar información en nuestro sistema?
+Teacher: ¿Listo?
+Teacher: y sobre todo nuestro sistema distribuido.
+Teacher: Entonces, hay tres modelos que que entran pues o caben dentro de nuestra colación, que es el DAS, el NAS y la SAN.
+00:05:00
+Teacher: Probablemente las hayan escuchado, pero vamos a ir aclarando cada una de ellas y vamos a ver dónde aplica cada una de ellas.
+Teacher: ¿Qué es el DAS o direct attach storage?
+Teacher: El DAS, pues es un sistema de almacenamiento donde nosotros vamos a encontrar el almacenamiento conectado directamente a cada uno de los nodos de nuestro sistema distribuido, ¿cierto?
+Teacher: Si nosotros quisiéramos leer información o leer datos que se encuentren en ese sistema de almacenamiento, muy probablemente vamos a tener que hablar con el servidor que tiene el disco duro donde está la información que nosotros queremos eh trabajar.
+Teacher: ¿Listo?
+Teacher: Eh, entonces va y das como su nombre lo dice, dice almacenamiento de conexión directa, o sea, que realmente son los dispositivos de almacenamiento que tenemos nosotros conectados a nuestro PC o a nuestro servidor.
+Teacher: ¿Okay?
+Teacher: ¿Qué es?
+Teacher: ¿Qué dispositivos de almacenamiento?
+Teacher: los discos duros eh sólidos, los discos duros de eh mecánicos o de disco, eh los tapes, no sé si conozcan el concepto de tapes o o las eh los grabadores de cinta o los sistemas
+Student26: M.
+Teacher: de cinta donde podamos nosotros guardar información en cinta, eh memorias USB, memorias o discos duros externos que tengamos pegados directamente al equipo, etcétera.
+Teacher: O sea, cualquier tipo de almacenamiento que nosotros podamos agregar a nuestro sistema simplemente conectándolo en alguno de los eh nodos, a eso lo vamos a llamar un sistema un sistema de almacenamiento directa o un sistema DAS, ¿listo?
+Teacher: O diré dat ST start.
+Teacher: Eh, una de las ventajas que tiene este modelo es de que todo el almacenamiento, todo lo que yo necesito gestionar, yo lo puedo obtener directamente, ¿cierto?
+Teacher: dado que como está conectado directamente el equipo, pues no necesito ir a la red para poder obtener la información, todo lo tengo dentro del mismo equipo.
+Teacher: Pero si hay un cliente, una aplicación que necesite acceder a este a datos que tengo dentro de este disco, pues muy probablemente vamos a tener que establecer la la comunicación con el servidor y el servidor se encarga de hacer el acceso a esto.
+Teacher: Uno de los ejemplos de utilización de de o un servicio que utiliza este modelo, pues vienen siendo los servidores HTTP o los servidores web.
+Teacher: Si ustedes se dan cuenta o si ustedes tienen el conocimiento, los servidores web lo que hacen es o mejor dicho, es un servicio que lo que hace es publicar un disco o una carpeta dentro de nuestro disco duro,
+Teacher: ¿cierto?
+Teacher: Entonces, eh sin pensar en el tema de las aplicaciones web, que ya es poner a correr programas, todo lo que son los servidores web de documentos estáticos, lo que estamos haciendo nosotros es exponiendo o creando un gestor
+Teacher: de una carpeta donde vamos a ir guardando documentos HTML.
+Teacher: ¿Listo?
+Teacher: Entonces, y ese servidor básicamente está eh utilizando o o me está publicando, me está dando acceso a los clientes a la información que está guardado en ese disco duro.
+Teacher: ¿Listo?
+Teacher: Entonces, eh realmente es un modelo sencillo porque pues todos los equipos, todos los servidores tienen su sistema de almacenamiento, pero carece de escalabilidad, ¿cierto?
+Teacher: No, no hay no hay una forma de que mi sistema crezca en almacenamiento con este modelo.
+Teacher: o a menos de que tengamos pues un equipo que tenga una alta capacidad o una alta una alta escalabilidad o que esté preparado para recibir muchos discos duros, pero generalmente no.
+Teacher: Generalmente tenemos eh elementos limitados en puertos USB limitados o puertos internos para con seria lata o con o para pegar discos duros.
+Teacher: eh e discos duros eh de estado sólido, perdón, pero tenemos el número de slot eh limitado, ¿cierto?
+Teacher: Y las capacidades de de compartir la información, porque básicamente terminamos es o montando una aplicación o habilitando un servicio, que al final es otra aplicación para poder estar compartiendo los archivos.
+Teacher: Entonces, cuando estamos utilizando Samba, cuando estamos utilizando el compartir carpetas o compartir directorios de Windows, ¿qué estamos haciendo ahí?
+Teacher: Pues simplemente eh habilitando un programa para que sea capaz de de comunicarse o de que yo pueda leer y descargar información desde un disco remoto.
+00:10:00
+Teacher: El otro modelo pues son los NAS.
+Teacher: ¿Y qué son los NAS?
+Teacher: son unos sistemas o unos nodos especiales que nosotros vamos a adquirir que se que tienen su funcionalidad o tiene su finalidad de gestionar discos duros.
+Teacher: Listo.
+Teacher: ¿Qué característica tienen los NAS?
+Teacher: Y es que son sistemas de almacenamiento conectados a la red o que están disponibles desde la red.
+Teacher: Eso, ¿qué significa?
+Teacher: Que para poder yo acceder a estos discos duros, lo único que necesito es tener acceso a la red de datos o a la red de transmisión que tenemos dentro de nuestro servicio.
+Teacher: ¿Qué qué tiene interesante estos modelos de o este modelo NAS?
+Teacher: Y es que tanto los clientes como los servidores van a poder acceder a los a la misma información.
+Teacher: es una información común, una información, no digo que pública porque podemos agregar sistemas de seguridad, pero al menos sí tenemos un modelo centralizado de almacenamiento.
+Teacher: Entonces, yo puedo o digámoslo así un sistema para compartir la información o para compartir los datos eh entre todos los nodos que tenemos en nuestro sistema.
+Teacher: ¿Listo?
+Teacher: Eh, el almacenamiento se conecta a los servidores a través de una redline, o sea, que básicamente lo que nosotros llamamos la NAS no es más que un dispositivo, otro nodo que vamos a conectar por red y vamos a poder acceder
+Teacher: usando la red a ese a ese nodo, a los datos que están guardados en ese nodo.
+Teacher: Principalmente estos nodos NAS solamente se dedican al almacenamiento, ¿no?
+Teacher: siempre o no es muy común que nosotros adquiramos o tengamos o compremos un NAS y para montarle un servidor o para montar aplicaciones ahí.
+Teacher: Hay servidores NAS que me permiten montar aplicaciones.
+Teacher: Bueno, van a tener aplicaciones como gestión, el tema de seguridad, etcétera, pero hay algunos servidores que me permiten instalar aplicaciones, digámoslo así, servidores de de algún tipo de servicio que tenga que ver con almacenamiento.
+Teacher: Entonces, yo podría montar en algunos de estos NAS, yo podría montar un software para publicar nuestro sistema de almacenamiento a la red y crear una especie de OneDrive o de Drive o de eh, ¿cómo es que se llama?
+Teacher: Drogboss.
+Teacher: Eh, con con este mismo servidor, ¿cierto?
+Teacher: Entonces yo podría acceder a utilizando una aplicación web poder acceder a los archivos que tenemos guardados aquí.
+Teacher: Generalmente utiliza conmutadores Etern o comunicación Ethernet, o sea, que la forma de conectarnos es simplemente dentro de la LAN, no me sirve para la W. permite varios servidor para que varios servidores accesan al almacenamiento compartido y es
+Teacher: ideal para eh almacenamiento a nivel de archivos y uso compartido a partir de la red.
+Teacher: O sea, que si parte de la información o hay información que queremos nosotros compartir con el mundo, la mejor pues con los compañeros de trabajo o o que estén disponibles para la empresa, pues esta sería la solución,
+Teacher: mucho más que tener el DAS y hacer carpeta compartida por todo lado.
+Teacher: ¿Listo?
+Teacher: Y por último tenemos lo que llamamos la SAN.
+Teacher: La SAN ya no es un sistema de almacenamiento conectado a la red, sino que es una red de almacenamiento.
+Teacher: Realmente la SAN eh pues el nombre lo que dice es que es una red de área de almacenamiento, o sea, es un sistema de almacenamiento que podemos obtener en la red, pero los discos o los dispositivos que van a contener la información o los discos no están en un
+Teacher: solo nodo, es una red de almacenamiento.
+Teacher: ¿Listo?
+Teacher: Entonces esa es como una de las grandes variantes que tenemos nosotros aquí.
+Teacher: Es que aquí ya no estamos hablando de que tenemos un nodo que tiene el almacenamiento, sino que estamos creando una nueva red, una red diferente a la red de datos, perdón, a la red de comunicación, ¿sí?, de datos entre los diferentes nodos.
+Teacher: Voy a tener una red diferente solamente o dedicada al tema del almacenamiento de información.
+Teacher: ¿Listo?
+Teacher: Eh, ¿qué entonces?
+Teacher: ¿Qué son las?
+Teacher: La son una serie de dispositivos a los cuales nosotros vamos a poder acceder por la red, pero no por la red normal con la que nos vamos a comunicar con el servidor, sino con una red completamente distinta.
+Teacher: Si nosotros queremos trabajar con eh con SAN, con servidores SAN, eh básicamente vamos a tener que tener dos tarjetas, ¿listo?
+Teacher: una para poder acceder a los datos, a poder salir a internet y otra para ir hacia el almacenamiento, al sistema de almacenamiento.
+00:15:00
+Teacher: Eh, como como es una red de de de almacenamiento de storage, eh lo ideal es que tengamos una muy buena velocidad de de lectura y escritura con esta red.
+Teacher: ¿Cuál es la finalidad?
+Teacher: Como siempre hemos hablado de la finalidad de nuestros sistemas distribuidos, es obtener un mejor rendimiento o un rendimiento mayor o similar a como si estuviera un sistema centralizado.
+Teacher: Entonces, con esta SAN nosotros debemos garantizar tener unos canales o unos bloques de o perdón, unos canales de comunicación que sean lo suficientemente eficientes para que sean asimilables a la comunicación que puede ocurrir dentro del bus de datos que tenemos
+Teacher: en el procesador, bueno, en el computador como tal.
+Teacher: ¿Listo?
+Teacher: Entonces, generalmente vamos a trabajar en canales de fibra.
+Teacher: ¿Por qué fibra?
+Teacher: porque ya sabemos de que es mucho más barato, pues es mucho más eficiente, es fácil de mantener, tiene unas altas velocidades, entonces nos va a dar esa esa buena
+Teacher: experiencia o va a disminuir la latencia de tener que trabajar con discos locales a tener que trabajar con discos remotos.
+Teacher: Promociona una eh proporciona almacenamiento de alta velocidad y es adecuado para las necesidades de almacenamiento a gran escala.
+Teacher: Aquí hay una cosa, bueno, aquí siempre sale este concepto de gran escala y entonces definamos qué es gran escala, ¿cierto?
+Teacher: Cuando nosotros necesitamos almacenar información compartida o tenemos un disco compartido donde vamos a guardar eh pocos datos o vamos a tener, no sé, eh unos megas o unos gigas de información para que todos los usuarios dentro de mi empresa lo puedan ver.
+Teacher: No, no.
+Teacher: justifica de que nosotros montemos un una SAN.
+Teacher: ¿Listo?
+Teacher: ¿Dónde necesitamos nosotros una SAN?
+Teacher: En grandes empresas o en o cuando estemos trabajando virtualización o cuando necesitemos eh un sistema de almacenamiento más grande de lo que normalmente nosotros vamos a poder conseguir.
+Teacher: Entonces ahí es donde podríamos nosotros eh montar una una sala.
+Teacher: Eh, normalmente como las NAS equipos que yo voy a tener de manera local dentro de mi red, entonces está limitado a lo que podamos nosotros montar dentro de un servidor.
+Teacher: Eh, nosotros en una NAS podríamos obtener una buena cantidad o una un buen tamaño de almacenamiento.
+Teacher: Cuando digo eso es que yo puedo tener múltiples discos y esos discos pues los puedo poner al público en la red o todos los discos que yo pueda llenar dentro de ese equipo pues van a estar disponibles en la
+Teacher: red.
+Teacher: eh una NAS utilizando Ethernet eh podríamos nosotros almacenar hasta no sé eh 200 teras, 300 teras byte de almacenamiento.
+Teacher: Sí, podríamos crear ahí un o comprado comprar discos duros como para gestionar todo ese poco de almacenamiento.
+Teacher: En cambio, en una ya nos va a dar volúmenes mucho más grandes.
+Teacher: Ya no vamos a estar hablando de de teras, sino podríamos estar hablando de petas, hexabites, etcétera, etcétera, etcétera.
+Teacher: ya como una necesidad de almacenamiento mucho más grande.
+Teacher: Listo, poder almacenar mucha más información, poder gestionar mucha más información e incluso archivos mucho más grandes.
+Teacher: ¿Listo?
+Teacher: con una NAS nosotros podríamos llegar a utilizar o o tenerla para estar guardando archivos de 20, 30, 50 GB sin ningún problema de un ter y no habría ningún problema, pero el el digámoslo así que el problema es al momento de leer o descargar los archivos,
+Teacher: porque pues es un tera que está descargando por una red de internet que puede ser a 100 MB por segundo, pues ya sabemos que eso es bastante lento.
+Teacher: En cambio, en la SAN podríamos estar almacenando archivos de 30, 40, 60, 100 GB teras en un solo archivo y podríamos leer y procesar ese tipo de almacenamiento.
+Teacher: Entonces, mira que es un una un modelo en donde nosotros vamos a tener una alta capacidad o una alta necesidad de gestión de información y por ende un sistema de alto rendimiento.
+Teacher: ¿Listo?
+Teacher: Entonces, vamos a necesitar para almacenamiento a gran escala, vamos a crear un Drogboss, vamos a crear un Google, vamos a crear un Netflix, pues necesitamos almacenar mucha información y que la información viaje bastante rápido.
+Teacher: Entonces, lo más lo en ese caso lo más importante o lo más recomendado es que utilizamos una sang.
+Teacher: Pero si yo lo que quiero compartir son los videos o las copias de las películas que hemos descargado y que tenem y las vamos a compartir para verlo en el televisor o para verlo desde el celular o desde el computador interno de la casa,
+00:20:00
+Teacher: pues no necesitamos un sistema de almacenamiento de tanto volumen.
+Teacher: Necesitamos un sistema de archivos que pueda ser accesible desde la red.
+Teacher: Entonces podemos utilizar una NAS y si no hay presupuesto, pues vámonos al DAS.
+Teacher: Listo, queda claro los tres tipos.
+Teacher: ¿Cuál viene siendo Samba?
+Teacher: Es un Samba es un DAS.
+Teacher: ¿Por qué un DAS?
+Teacher: Porque yo con Samba lo que estoy haciendo es publicando recursos que tengo locales dentro de una misma máquina.
+Teacher: Entonces, es un sistema, digámoslo así, no es un sistema de archivos, es un sistema de intercambio de información para poder localizar o para poder llegar a archivos que están en una máquina específica.
+Teacher: en samba.
+Teacher: Nosotros tenemos que decirle, "Vea, yo quiero que vaya a la máquina tal y mire el el los discos o las carpetas que están compartidas en esa máquina. En cambio,
+Teacher: con el NAS es todo, todo el nodo ya está compartido y en el LASAN pues ya son muchos nodos o muchos discos los que estamos compartiendo.
+Teacher: ¿Listo?
+Teacher: Ya teniendo en cuenta esto, entonces vamos a hablar sobre los sistemas de archivos.
+Teacher: ¿Listo?
+Teacher: O sea, tenemos ya los sistemas de almacenamiento.
+Teacher: Podemos ser el almacenamiento local, almacenamiento en la red o una red de almacenamiento.
+Teacher: Dependiendo de las necesidades, pues vamos a escoger una u otra.
+Teacher: Lo más normal o o lo más común que nosotros vamos a encontrar en muchos de los sistemas distribuidos, perdón, aquí hay un videíto, esto los dejo para que ustedes lo vean, es que vamos a tener muchos discos dentro de cada uno de los nodos y los vamos a gestionar de manera
+Teacher: DAS.
+Teacher: ¿Listo?
+Teacher: ¿Por qué?
+Teacher: Porque todos los nodos que nosotros compramos vienen con un disco duro y queremos aprovechar ese disco duro para para el sistema de almacenamiento de nuestro sistema distribuido.
+Teacher: Entonces, eh aquí podemos utilizar sistemas o software que vamos a llamar sistemas de archivos distribuidos.
+Teacher: O sea, son son un software que vamos a instalar dentro de nuestra máquina para que nos gestione los discos duros de todo el sistema distribuido.
+Teacher: Como el sistema operativo no los puede gestionar, porque el sistema operativo solo puede gestionar lo de su propio lo de su propia máquina, digámoslo así.
+Teacher: Eh, los sistemas de archivos distribuidos me permiten leer o poder leer o escribir en cualquiera de los discos que tenemos nosotros a disposición.
+Teacher: Generalmente en un modelo DAS, ¿listo?
+Teacher: Si no lo tenemos en DAS, sino que lo que tenemos en NAS, no necesitamos un sistema archivos distribuido, porque ya toda la el almacenamiento lo está gestionando el servidor NAS.
+Teacher: Y si lo tengo en la SAN, no necesito un sistema archivistribuido porque todos los recursos de almacenamiento están en la SAN.
+Teacher: No sé si me hago entender ahí.
+Teacher: Listo.
+Teacher: Pero básicamente es eso y es si yo tengo unos discos a los cuales yo quiero acceder y yo quisiera que cualquier aplicación que yo desarrolle mi sistema distribuido pueda leer o escribir en cualquiera de los discos de todo mi sistema distribuido,
+Teacher: lo ideal es que instalemos o que montemos eh dentro de nuestra solución un sistema de archivos distribuidos.
+Teacher: ¿Qué es esto?
+Teacher: Pues básicamente es coger todos los servidores o coger el almacenamiento de todos los servidores, todos los discos duros que tenemos en la red y verlos como si fueran un solo sistema de archivos o un solo disco.
+Teacher: Bueno, depende del sistema de archivos, pues ni siquiera no lo voy a ver como un solo disco, pero si van a estar disponibles para que yo pueda leer o escribir en cualquiera en cualquiera de los discos duros que están en mi sistema.
+Teacher: ¿Listo?
+Teacher: Entonces vamos a saltar de solamente utilizar los discos duros que tengo conectados de manera directa al servidor, a a mi máquina, perdón, sino que voy a poder utilizar los discos duros de las otras máquinas que están dentro del sistema,
+Teacher: ¿cierto?
+Teacher: Entonces, eh y lo va a hacer de una manera transparente.
+Teacher: Quiere decir de que eh no voy a yo como usuario no debería decir es que vaya y conéctese al equipo tal y lea el archivo tal, sino que lo voy a ver como si fuera un solo sistema de archivos,
+Teacher: como si tuviéramos un gran disco y simplemente mandamos a guardar y ese guardado no sé si lo estoy haciendo en mi en mi propio disco o en un disco remoto.
+Teacher: Listo.
+Teacher: es un sistema centralizado, el almacenamiento centralizado por fichero.
+Teacher: En un sistema de archivos distribuido, yo voy a guardar la información como si tuviera, así como cuando nosotros tenemos múltiples discos en nuestra máquina, que yo voy a decir, "Vea, guárdeme esto en el C." Pues todos los archivos que yo guardo los guardo en el C.
+00:25:00
+Teacher: van a haber otros que están en el D, otros en el E y así sucesivamente.
+Teacher: Pero a diferencia de Windows, que separamos los archivos, pues separamos los espacios o los discos duros en letras diferentes, la idea de los sistemas de archivos distribuidos es de que todo se vea como una sola cosa, que si yo tengo cuatro discos de un tera,
+Teacher: al ver mi sistema de archivos, yo vea 4 teras disponibles.
+Teacher: No van a ser 4 teras, pero esa es más o menos la idea, ¿cierto?
+Teacher: que yo veo una que tengo un sistema de almacenamiento de 4 teras y si tengo 100 nodos, pues tengo 100 teras de almacenamiento y ahí vamos nosotros a poder leer y escribir en esos 100 teras de almacenamiento.
+Teacher: ¿Listo?
+Teacher: Eh, ¿qué limitaciones tienen los sistemas de archivos distribuidos?
+Teacher: No hay paralelismo.
+Teacher: ¿Qué significa?
+Teacher: que se va a comportar como cuando leemos los discos duros, los discos normales que tenemos en nuestro propio computador.
+Teacher: Y es que los discos duros se leen de manera secuencial.
+Teacher: A pesar de que nosotros tengamos discos de estado sólido, también se leen de manera secuencial.
+Teacher: ¿Por qué?
+Teacher: Porque el sistema de almacenamiento o la forma como se guarda la información en el disco duro no es más que una lista enlazada, ¿cierto?
+Teacher: Yo al nombre del archivo le tengo la cabecera.
+Teacher: Yo digo, es que este archivo se encuentra en en una posición en el disco y ahí voy a tener que ir a ese pedazo del disco.
+Teacher: Ahí va a tener un bloque donde están los datos que están guardados en ese en esa parte del disco y un puntero a la siguiente posición del disco donde sigue el contenido del archivo.
+Teacher: Es una lista enlazada que voy a tener que ir leyendo de manera secuencial.
+Teacher: ¿Listo?
+Teacher: Entonces, con los con el sistema de archivos distribuido, a pesar de que tengamos varias máquinas, a pesar de que tengamos varios procesadores, etcétera, el proceso de lectura y escritura es lineal o es secuencial.
+Teacher: ¿Por qué?
+Teacher: Porque yo voy escribiendo en este disco, se me acabó el espacio, pues salto a otro disco y sigo escribiendo.
+Teacher: Y al momento de leer lo mismo.
+Teacher: Hay unos datos que están en el disco uno, en el servidor uno, hay otros en el servidor tres, otros en el servidor dos y los voy leyendo de manera lineal.
+Teacher: Listo.
+Teacher: Eh, a diferencia del SFP, todavía no hemos hablado de SFP, entonces lo vamos a hablar ahorita más adelante, pero básicamente ese es como el comportamiento normales.
+Teacher: Es es como si nosotros hubiésemos instalado un software y ahora ya tuviéramos visibilidad o la capacidad de almacenar información en todos los discos de nuestro sistema de archiv en todos los discos de mi sistema distribuido.
+Teacher: un sistema de archivos distribuidos o un SFPD o sistema de ficheros distribuidos o DFS es más como el el nombre que más vamos a encontrar, DFS, distribute File System,
+Teacher: eh gestiona distintos dispositivos en diferentes nodos, ofreciendo a los usuarios la misma visión de un sistema de archivo centralizado.
+Teacher: Entonces, a pesar de que los discos duros estén separados, yo los voy a ver como si fueran uno solo.
+Teacher: Permite que múltiples procesos compartan datos durante largos periodos de forma segura y confiable y su propósito principal es emular la funcionalidad de un sistema de archivos no distribuido.
+Teacher: O sea, vamos a simular de que tenemos todo en un solo disco y eso es básicamente lo que busca o lo que intenta hacer los sistemas de archivos distribuidos.
+Teacher: Este sistema al final viene siendo un sistema distribuido, ¿cierto?
+Teacher: Un sistema de archivos distribuidos, pues no es más que un sistema distribuido.
+Teacher: Y por ende pues nosotros tenemos características o objetivos que queremos alcanzar.
+Teacher: ¿Como cuál?
+Teacher: Transparencia.
+Teacher: Transparencia de acceso.
+Teacher: O sea, que eh digámoslo así que no importa desde dónde yo esté, voy a poder acceder a a la información, a la misma información.
+Teacher: Cierto, sin importar de decir, "No, es que me tengo que poner en el equipo uno, en el equipo dos, no, desde cualquiera de los equipos y desde mi dispositivos celular voy a poder acceder a los archivos o a la
+Teacher: información que tenemos en nuestro sistema de archivos distribuidos.
+Teacher: La transparencia de ubicación, no voy a saber en qué disco o en qué parte o en qué nodo se encuentra la información, ¿no?
+Teacher: Pues eso es lo que deseamos o busca intentamos alcanzar con los sistemas de archivos distribuidos.
+Teacher: y transparencia de réplica.
+Teacher: que hay varias copias del mismo archivo por el tema de la redundancia o para garantizar la alta disponibilidad, pues el usuario no debería saber o no debería conocer.
+Teacher: eh ese tema de cuántas copias hay, dónde están las copias, no lo sabemos.
+00:30:00
+Teacher: ¿Listo?
+Teacher: Entonces ese es como del objetivo de transparencia, es lo que nosotros buscamos.
+Teacher: Segundo, la fiabilidad y y tolerancia a fallos.
+Teacher: A pesar de que haya un fallo de alguno de los nodos, yo debería de permitir o mi sistema debería de poder seguir operando a pesar de esos fallos.
+Teacher: ¿Listo?
+Teacher: Entonces, ya sabemos de que este tolerancia fallos habla mucho sobre el tema de la de la disponibilidad de mi sistema, ¿cierto?
+Teacher: Y que si algo falla, pues pueda seguir en funcionamiento sin ningún problema.
+Teacher: El tercero, el rendimiento y escalabilidad.
+Teacher: Ya saben que pues tenemos, necesitamos o no siempre o los sistemas no son siempre estáticos y necesitamos muchas veces crecer o aumentar o agregar más nodos o agregar más servicios, pues entonces la idea de los sistemas de archivos distribuidos es que lo podamos hacer.
+Teacher: Eh, rendimiento eh y el espacio de nombre único.
+Teacher: Y eso y eso qué tiene, a qué hace referencia.
+Teacher: La lo ideal del sistema de archivos distribuido es de que yo vea todos los discos como si fueran uno solo.
+Teacher: Sí. Y que la forma como yo almaceno la información eh sea de manera estándar y que yo no tenga que preocuparme por saber en qué disco está.
+Teacher: Entonces, digámoslo así, eh en Windows de que cada disco, cada partición, cada elemento de almacenamiento debe estar segmentado o dividido en diferentes volúmenes o en diferentes nombres,
+Teacher: pero no sé si para los que han trabajado con Linux o Unix se dan se van a dar cuenta o se han dado cuenta que en Linux no existe un disco C, un disco D, un disco E. Nosotros lo que hacemos es montar dentro del sistema de archivos,
+Teacher: vamos montando los distintos sistemas de almacenamiento.
+Teacher: Entonces, yo puedo decir, mire, eh en el slash está en el disco uno, o sea, todo lo general del sistema operativo lo voy a instalar en un disco.
+Teacher: Todo lo que tiene que ver con con el manejo de usuario, el slash home, que es todo donde quedan guardados todas las carpetas o los datos de los usuarios, lo voy a poner en otro archivo.
+Teacher: voy a tener otro disco duro solamente para los datos de de boot o de reinicio y así sucesivamente.
+Teacher: Pero si nosotros vemos la estructura de directorios, es como si existiera un solo archivo, un solo disco duro.
+Teacher: Eso es lo que nosotros esperamos.
+Teacher: es tener una visión general, una visión de que los sistemas de archivos estén en cualquier máquina, perdón, que independiente de la máquina donde estén, yo lo vea como si fueran, como siempre estuvieran en mi propio espacio de nombre.
+Teacher: Listo.
+Teacher: sistemas de archivos distribuidos eh están divididos o están creados en, digámoslo así, tienen dos alternativas o dos arquitecturas, básicamente no es que sean dos arquitecturas, sino dos implementaciones de arquitectura distintas.
+Teacher: ¿Listo?
+Teacher: La arquitectura general que nosotros vamos a manejar es cliente servidor, o sea, es en la forma como nosotros vamos a comunicarnos entre nuestra aplicación desde nuestra máquina hacia donde están los archivos es utilizando cliente servidor.
+Teacher: ¿Listo?
+Teacher: El, digámoslo así, la tecnología o el mecanismo de comunicación que utiliza eh los sistemas de archivos distribuidos es generalmente RPC.
+Teacher: ¿Okay?
+Teacher: Entonces, eh cuando nosotros instalamos un sistema de estos, pues no digamos que no estamos trabajando directamente con socket, no estamos trabajando con con colas de mensajes, estamos utilizando directamente RPC, ¿cierto?
+Teacher: O sea, la forma como se van a comunicar tanto el cliente y el servidor es por RPC.
+Teacher: Y las arquitecturas pueden ser como cliente cliente ligero o como cliente un cliente liviano o un cliente pesado.
+Teacher: ¿Listo?
+Teacher: La arquitectura tradicional, arquitectura normal es tener un cliente ligero.
+Teacher: ¿Y qué significa el cliente ligero?
+Teacher: Y es que cada normalmente nosotros interactuamos con el sistema de archivo.
+Teacher: Nosotros las aplicaciones que nosotros desarrollamos interactuamos con el sistema de archivos.
+Teacher: utilizando operaciones como abrir un archivo, leer, escribir, borrar, etcétera.
+Teacher: ¿Qué es lo que hace o qué es lo que realiza el sistema de archivos distribuido?
+Teacher: Es que va a montar una aplicación cliente y esa aplicación cliente es la que va a recibir las peticiones de abrir, leer, escribir, cerrar el archivo.
+Teacher: ¿Sí?
+Teacher: Entonces, esas operaciones que normalmente los hacía el sistema operativo, el lo manejaba el sistema operativo, ahora se van a delegar, se van a enviar directamente al sistema de archivos distribuidos.
+00:35:00
+Teacher: Entonces ese cliente va a recibir esas peticiones, pero como es un cliente liviano, lo que hace es delegar o mandar todas las peticiones hacia un servidor.
+Teacher: ¿Listo?
+Teacher: ese servidor que va que está configurado de esa manera, ese servidor va a tener la información de cuáles son los archivos que tiene, dónde se encuentra, en qué disco se encuentra, eh qué permisos se tienen para poder acceder a esos archivos,
+Teacher: etcétera, etcétera, etcétera.
+Teacher: O sea, el servidor se encarga de gestionar todas las peticiones que lleguen de lecturas, escrituras de archivos y además de eso va a tener una referencia de quiénes están accediendo a a cada uno de los archivos.
+Teacher: ¿Listo?
+Teacher: Entonces, el cliente en este caso funciona como una pasarela.
+Teacher: es como, "Ey, necesito abrir un archivo." Pues entonces el la petición llega al cliente y el cliente simplemente le hace la
+Teacher: petición al servidor diciendo, "Necesito el archivo tal, por favor ubíquemelo y dime cómo hago para empezar a leer la información."
+Teacher: Eh, eso de un lado la pero hay una arquitectura alternativa donde los clientes son los que van a llevar la gestión de del sistema de archivos y los servidores solamente se van a dedicar a manejar los bloques o a manejar la forma de acceder al disco.
+Teacher: Estamos quitando la responsabilidad de gestión al servidor para que nosotros, digámoslo así, podamos conectarnos a cualquiera de los discos y podamos gestionarlo de una manera mucho más rápida y eficiente.
+Teacher: Eh, lo mismo, la dificultad de tener un un cliente grueso o un cliente sí, un cliente pesado es que cualquier actualización, cualquier mejora, cualquier ajuste, pues vamos a tener que hacer una actualización general dentro de toda la plataforma.
+Teacher: Pero muchas veces nosotros no cambiamos la configuración o no hacemos ajustes sobre el sistema de archivos.
+Teacher: Es más, yo creo que ninguno de nosotros ha hecho alguna actualización sobre el sistema de archivos de manera consciente.
+Teacher: Entonces, eh digamos lo que podría servirnos tener un cliente grueso, ¿cierto?
+Teacher: de que toda la información pues esté centralizada y la la estemos gestionando de manera local de que nuestro cliente vamos vamos a estar ocupando los recursos del cliente para que él sepa cuáles son los archivos que han abierto,
+Teacher: dónde se encuentran los archivos, eh quiénes están, qué permisos tengo sobre los archivos.
+Teacher: lo vamos a gestionar de manera local y el servidor solamente cuando necesitemos leer o escribir o hacer alguna operación sobre los discos, el servidor es el que se va a dedicar a a hacer esa única función.
+Teacher: Vamos a aumentar la capacidad de o la escalabilidad de de nuestro sistema.
+Teacher: vamos a tener más nodos que pueden estar gestionando que puedan gestionar con con esta misma arquitectura, pero los clientes pues van a tener van a tener que estar trabajando un poco más para poder eh garantizar el funcionamiento de nuestro sistema de archivos
+Teacher: distribuidos.
+Teacher: Eh, ¿qué módulos normalmente trae un sistema de archivos distribuido?
+Teacher: Pues el servicio de archivos es el que me permite leer, escribir, crear, borrar archivos, etcétera.
+Teacher: O sea, ese servicio de archivos es el que se encarga de hacer todas las operaciones sobre los discos.
+Teacher: Voy a tener un servicio de directorios.
+Teacher: ¿Qué es esto?
+Teacher: servicio directorio es como la eh el índice donde vamos a decir, "Mire, este directorio o este archivo que se encuentra en esta carpeta a hace referencia o tiene como referencia una ubicación dentro del disco duro, ¿listo? o dentro de un disco de una máquina en una porción,
+Teacher: en una partición, etcétera.
+Teacher: Entonces, básicamente es el que va a hacer esa traducción entre el nombre del archivo, que es lo que nosotros normalmente entendemos o conocemos, y la ubicación donde se encuentra el la información.
+Teacher: ¿Listo?
+Teacher: Entonces, ese servicio directorio se va a encargar de esa tarea y el módulo cliente, que es pues el que recibe las peticiones de las aplicaciones, o sea, es la aplicación que recibe las peticiones de nuestras aplicaciones, lo que nosotros desarrollamos cuando queremos abrir,
+Teacher: escribir, leer, etcétera.
+Teacher: Él es el que recibe las peticiones y lo va a mandar al servicio de al servidor de archivos o el servicio de archivos como tal.
+Teacher: ¿Cómo vamos hasta ahí?
+Teacher: ¿Está claro qué es el o cómo funciona el sistema archivos distribuido?
+Teacher: porque ya vamos a terminar.
+Teacher: Dale.
+Teacher: Hay unos hay unos eh elementos o una semánticas o unas formas de trabajar que tienen los sistemas de archivos distribuidos y es que eh dependiendo de cuál sea la necesidad que tengamos nosotros dentro del sistema,
+00:40:00
+Teacher: pues podemos tener diferentes semánticas o diferentes formas de gestionar los los discos o los archivos que tenemos ahí.
+Teacher: Entonces, hay uno que se llama semántica Unix.
+Teacher: ¿Y qué es la semántica Unix?
+Teacher: La semántica Unix es un modelo o una forma de configurar nuestro sistema de archivos de tal manera de que todos siempre estemos accediendo al recurso eh original.
+Teacher: ¿Listo?
+Teacher: Eso, ¿qué significa?
+Teacher: que si yo quiero leer un archivo, pues voy a ir hasta el disco duro donde está ese archivo, voy a ir a la ubicación donde está y voy a empezar a leer la información y el sistema de archivos me va a mandar por la
+Teacher: red de del disco de manera directa.
+Teacher: Listo.
+Teacher: Si hay múltiples elementos o múltiples nodos que estén accediendo al mismo archivo, pues entonces vamos a ver, digámoslo así, vamos eh a tener la última versión o la el que el valor de la última modificación que nosotros tenemos.
+Teacher: Si yo si hay varios nodos que están leyendo un archivo y hay otro nodo que lo escribe, todos los todos los nodos eh que está leyendo ese archivo van a ver la última modificación.
+Teacher: ¿Listo?
+Teacher: O sea, digamos que si yo hago algún ajuste sobre el archivo, todos van a poder ver ese ajuste de manera instantánea.
+Teacher: ¿Listo?
+Teacher: Eso es lo que lo que nosotros llamamos la semántica Unix.
+Teacher: ¿Por qué se llama así?
+Teacher: pues porque era la forma como se implementó originalmente eh ese modelo de sistemas de archivos distribuidos y principalmente en sistema ISIS.
+Teacher: Hay otra que se llama semántica de sesión.
+Teacher: ¿Y qué es la semántica de sesión?
+Teacher: Y es que vamos a traer o vamos a crear una copia del archivo que estamos con el que estamos trabajando.
+Teacher: Entonces, en lugar de que todos los procesos de lectura y escritura que nosotros hagamos dentro del dentro del sistema, en lugar de hacerlo con el archivo original, nosotros lo que vamos a hacer Yes.
+Teacher: It's traer una copia y trabajar en la copia.
+Teacher: Vamos a hacer las modificaciones en la copia y solo cuando vamos a cerrar el archivo o cuando cerremos el archivo es que se va a llevar los cambios hacia el servidor, ve hacia la ubicación real donde se encuentra el archivo.
+Teacher: Entonces, si hay varios nodos que están trabajando con con el archivo, cada uno va a hacer una copia y va a poder estar trabajando en su copia, pero solo hasta el momento en el que yo le diga escribir o cuando se cierra el archivo,
+Teacher: ¿sí?
+Teacher: Cuando yo cierro el archivo o escribo o mando a guardar el archivo, solamente en ese momento se va a ver reflejado en la ubicación real.
+Teacher: ¿Listo?
+Teacher: Vamos a hablar de otros que son los archivos inmutables.
+Teacher: Los archivos inmutables o si elegimos este modelo son archivos que solamente se pueden crear o mejor dicho se crean, se escriben y cuando se guardan ya quedan de manera definitiva.
+Teacher: No hay forma de que nosotros los podamos modificar.
+Teacher: ¿Listo?
+Teacher: Entonces, eh no son posibles las actualizaciones, solamente se pueden crear y se pueden leer.
+Teacher: Cuando decimos crear es crear el archivo y escribir el contenido que nosotros queremos dentro del archivo.
+Teacher: Y después de creado solamente me va a permitir hacer lectura.
+Teacher: ¿Listo?
+Teacher: Solo lectura de archivos.
+Teacher: Eh, y el otro modelo es el tema de las transacciones atómicas, o sea, digámoslo así, que que haga hacemos el cambio de todo o nada.
+Teacher: ¿Listo?
+Teacher: ¿Qué significa?
+Teacher: Y es lo mismo.
+Teacher: Vamos a tener una copia, vamos a hacer operaciones y eh cuando yo voy a guardar, voy a guardar el estado final, ¿no?
+Teacher: No las operaciones que hice, no voy a mandar, mira, es que primero hice este cambio, luego hice este cambio y luego hice este cambio, sino que ya cojo el bloque y lo mando tal cual como yo lo espero ver en el
+Teacher: servidor.
+Teacher: Listo.
+Teacher: Hay hay algunos sistemas de archivos, por ejemplo, este que se llama CODA, utiliza un modelo de semántica transaccional, pero pues no es tan estricto como pues se espera que sean las transacciones atómicas.
+Teacher: ¿Listo?
+Teacher: Y lo mismo, si yo quiero analizar cómo cómo llegamos hasta este resultado, pues sería solamente la ejecución secuencial de todos los eventos, de todos los procesos que han entrado a modificar o a manipular el archivo que nosotros estamos trabajando.
+Teacher: ¿Cuál es mejor?
+Teacher: Depende la necesidad que nosotros tengamos, ¿cierto?
+Teacher: Eh, el problema, por ejemplo, en la semántica Unix, yo sé que siempre estoy trabajando con el archivo, o sea, que cualquier modificación pues va a estar en línea, pero cualquier operación que yo haga, así sea para luego eh echarme para atrás,
+00:45:00
+Teacher: va a estar escribiendo directamente en el disco, va a estar haciendo el cambio directamente en el disco.
+Teacher: Entonces, en algunos casos otros puede ser muy útil, pero en otros pues puede ser bastante traumático.
+Teacher: Estamos utilizando mucho ancho de banda.
+Teacher: En la semántica de sesión estamos trabajando locales, como si cada uno tuviera una copia del archivo de manera distinta y luego sincronizar los cambios.
+Teacher: ¿Listo?
+Teacher: Entonces eso también es otra otra opción.
+Teacher: Podemos hacer múltiples operaciones, puedo hacer múltiples escrituras o escribir múltiples líneas, por decirlo así.
+Teacher: Y cuando le doy guardar, guardo todo, o sea, guardo todas las líneas.
+Teacher: O si le doy cancelar, pues deshecho todos los cambios que he hecho sobre el archivo sin ningún problema porque no lo estoy afectando directamente en el archivo original.
+Teacher: Y bueno, y los archivos inmutables pues no se tocan.
+Teacher: Listo.
+Teacher: Entonces, ¿de qué se trata este esta semántica de uso concurrente?
+Teacher: Y es, ¿okay?
+Teacher: y cómo se va a comportar nuestro sistema de archivos si hay múltiples usuarios o múltiples procesos que están accediendo al mismo recurso.
+Teacher: Entonces, dependiendo de qué semántica estemos usando, pues vamos a tener distintas operaciones.
+Teacher: Y por último, de los sistemas de archivos distribuidos, vamos a hablar sobre la gestión de la caché.
+Teacher: ¿Y qué es esto de la caché?
+Teacher: Y es, ya sabemos de que una forma de garantizar el rendimiento de nuestro sistema es utilizar caché.
+Teacher: ¿cierto?
+Teacher: Y la caché no es más que una copia del archivo o un bloque del archivo que nosotros vamos a traer a nuestro lado, al lado del cliente, para que el proceso de lectura y escritura sea mucho más rápida,
+Teacher: mucho más eficiente, ¿cierto?
+Teacher: Entonces, eh la pregunta aquí es, ¿y cómo garantizamos de que los datos que tengo en la caché, que lo que estoy leyendo en la caché sigue siendo vigente o sigue siendo eh útil, ¿cierto?
+Teacher: o si es la última versión y la versión verdadera que tengo que estar leyendo.
+Teacher: Entonces, ahí es donde vamos a definir las políticas de actualización que nosotros queremos.
+Teacher: Entonces, podemos tener una política de actualización inmediata o podemos utilizar una política de administ una política de actualización diferida.
+Teacher: ¿Qué es esto de escritura inmediata y escritura diferida?
+Teacher: Y es que al momento de que yo le dé guardar o mande a escribir en el archivo, lo que voy a hacer es mandar la actualización de de los cambios que yo he hecho.
+Teacher: Le voy a lo voy a actualizar las cachets de las otros nodos que están escuchando o que están pendiente o que están abriendo el mismo archivo.
+Teacher: Entonces, si tengo varios nodos que están interesados en ese archivo, cuando alguien escribe sobre ese archivo, alguien guarda la información, todas las copias se actualizan de manera inmediata.
+Teacher: ¿Listo?
+Teacher: Esto es equivalente a lo a cuando nosotros hacíamos o decimos que tenemos replicación eh replicación activa y es que para poder guardar tengo que notificar a todos los nodos que tiene.
+Teacher: Yeah.
+Teacher: tienen una copia de ese archivo de que los datos han cambiado y lo que vamos a hacer es hacer la actualización de la caché de esos otros nodos.
+Teacher: Eso me va a garantizar un alto rendimiento de que cada vez que un nodo esté leyendo los datos, siempre va a tener los datos actualizados, pero va a haber una gran demanda o una gran cantidad de peticiones o de
+Teacher: actualizaciones de datos porque van a haber múltiples nodos que están actualizando la cach, pues los datos originales y todas las todas las cachés se tienen que actualizar de manera inmediata.
+Teacher: La otra es hacerlo diferido.
+Teacher: Entonces, solamente cuando yo le diga guardar, entonces lo que hago es invalidar la eh la caché y entonces cuando él intente leer, pues simplemente tiene que venir y descargar una vez o o alguna cosa así.
+Teacher: ¿Listo?
+Teacher: Entonces, básicamente eh el tema de la gestión de la caché eh tiene que ver en cómo vamos a garantizar o cuál es el la estrategia que nosotros queremos utilizar.
+Teacher: para garantizar que los datos que yo descargué a la cacheps estén actualizados.
+Teacher: Escritura inmediata.
+Teacher: Cada vez que yo escribo en el archivo original se me actualizan los datos en mi caché.
+Teacher: escritura diferida, yo mando a guardar en el en el archivo y lo y cuando detecta de que hubo un cambio en el archivo, básicamente me van a invalidar, o sea, me van a decir,
+Teacher: "Esas copias que ustedes tienen ya no ya no son válidas." Entonces,
+Teacher: como ya no es válido el dato que tengo en la caché, pues la siguiente petición pues va a ser ir y volver a cargar la caché.
+Teacher: En este, digamos que en este modelo somos impacientes, somos eh vamos a actualizarle la caché, úsela o no la use.
+00:50:00
+Teacher: En este caso vamos a ser un poco más precavidos o al menos más eficientes, porque simplemente mando una notificación diciéndole este archivo ya cambió, no confíen en sus copias y cuando en algún momento si están trabajando con él de manera constante,
+Teacher: pues lo van a actualizar de una vez, pero si no, esa copia va a estar invalidada y va a estar ahí en memoria hasta que yo la necesite.
+Teacher: ¿Listo?
+Teacher: Entonces ahí no voy a estar enviando la información de manera constante, sino que simplemente la invalido y cuando yo la vaya a necesitar, pues hago la actualización de de mi cacheo.
+Teacher: H D. Eso es como todo lo que tengo yo aquí para decir de los sistemas de archivo distribuido.
+Teacher: Hay otro modelo que este sí ya lo vamos a utilizar en los sistemas NAS y en los sistemas eh SAN.
+Teacher: ¿Qué son los sistemas de archivos en paralelo?
+Teacher: ¿Y qué es este modelo de sistemas de archivos en paralelo?
+Teacher: Y es que vamos a tener múltiples discos corriendo de manera simultánea.
+Teacher: ¿Listo?
+Teacher: Vamos a aprovechar el paralelismo de tener múltiples discos.
+Teacher: Y básicamente nosotros lo que vamos a hacer es a eh aprovechar ese paralelismo para mejorar el rendimiento de de las operaciones de lectura y escritura, bueno, de de escritura y de obtención de información que tenemos nosotros en nuestro
+Teacher: sistema de almacenamiento.
+Teacher: Los sistemas de archivos distribuidos es secuencial y utilizo los discos como si fueran discos un solo disco.
+Teacher: Aquí vamos a estar trabajando en paralelo y vamos a estar eh obteniendo información y guardando la información en paralelo.
+Teacher: Y en este modelo digamos que pues básicamente nosotros lo que queremos es aumentar o disminuir el cuello de botella.
+Teacher: ¿Qué cuello de botella?
+Teacher: De de tener que estar esperando a que un servidor o un nodo eh lea de manera secuencial y luego salte otro nodo y lea de manera secuencial.
+Teacher: O sea, si tengo múltiples equipos que están leyendo los mismos archivos, pues voy a estar saturando el mismo nodo para poder leer ese mismo archivo o los archivos que se encuentren en ese nodo.
+Teacher: En cambio, con este modelo, pues estamos aprovechando el paralelismo.
+Teacher: Ya no vamos a estar leyendo, leyendo y escribiendo de manera secuencial, sino que lo vamos a escribir en paralelo.
+Teacher: ¿Cómo así que en paralelo?
+Teacher: y es que vamos a coger la información, el archivo que vamos a guardar y lo partimos en pedazos.
+Teacher: Y esos pedazos los voy a se lo digámoslo así los voy a guardar en o cada uno de esos pedazos los voy a guardar en un disco distinto y ese y en el modelo o existen varios modelos para guardar la información en nuestros archivos paralelos.
+Teacher: El primero es el stripping.
+Teacher: ¿Y qué es el stripping?
+Teacher: Eh, el stripping pues es una técnica donde yo lo que voy a hacer es coger mi archivo, lo voy a partir en bloques dependiendo el número de discos que tengan.
+Teacher: Si yo tengo cuatro discos, voy a partirlo en cuatro bloques y esos cuatro bloques y a cada uno de estos bloques lo voy a guardar en uno en un disco distinto.
+Teacher: Eso significa que si yo tengo, por ejemplo, un archivo de 1 megbte, lo que voy a hacer es partirlo en tres archivos de 255K, 256k, ¿cierto?
+Teacher: Y ahora que tengo esos cuatro cuatro archivos, pues 256k los guardo en el disco 1, 256k en el 2, 256k en el 3 y 256k en el 4. El proceso de escritura es mucho más rápido, ¿cierto?
+Teacher: Porque ya no tengo que esperar a que guarde un mega, sino que voy a esperar a que guarde 256k.
+Teacher: ¿Por qué?
+Teacher: Porque el proceso de guardado lo voy a hacer en paralelo.
+Teacher: ¿Listo?
+Teacher: Eh, y lo mismo pasa al momento de de la escritura, ve de la lectura, porque cuando yo digo, "Ey, necesito leer este archivo, eh no tengo que hacer una lectura de manera secuencial. Lo puedo mandar.
+Teacher: a estos cuatro discos o digámoslo así, va a haber lectura secuencial dentro de este nodo, lectura secuencial dentro de este nodo, pero voy a mandar la tarea de de que lea los cuatro eh el archivo en los cuatro discos de manera simultánea,
+Teacher: o sea, que el tiempo de respuesta o el tiempo de lectura también se va a bajar a un cuarto en este caso.
+Teacher: Listo.
+Teacher: Lo normal es que todo lo hubiéramos guardado en este disco.
+Teacher: Esto es lo que haría un sistema archivo distribuido, pero en este caso estoy diciendo, no, léame solamente este pedacito.
+Teacher: Entonces, léame un cuarto del archivo y le digo a todos los nodos que me lo que me lean ese cuarto y al final cuando ya tengo todos los cuatro bloques, pues simplemente los ensamblo y ya tengo el archivo en memoria disponible para leer,
+Teacher: escribir o hacer lo que yo quiera.
+00:55:00
+Teacher: Entonces, ese es el modelo stripping.
+Teacher: Tengo otro modelo que es el de replicación o mirror.
+Teacher: ¿Listo?
+Teacher: ¿Y cómo funciona este?
+Teacher: Ah, sencillo.
+Teacher: Yo lo que voy a hacer es crear copias de la información.
+Teacher: O sea, yo la información la voy a partir en n pedazos.
+Teacher: Entonces, yo tengo dos posibilidades o dos formas de hacerlo.
+Teacher: Si yo tengo cuatro discos, yo podría decir de que este disco, todo lo que guarde en este disco también lo tengo que guardar aquí.
+Teacher: Y todo lo que tengo en este disco también lo voy a guardar aquí.
+Teacher: O sea, que al final es como si solamente tuviese disponible dos discos porque los estos otros dos son copias de seguridad o copias de esos archivos.
+Teacher: Todo lo que yo escribo acá lo pongo acá.
+Teacher: Todo lo que escribo acá lo pongo acá.
+Teacher: O la otra forma que es este el modelo que está aquí eh dibujado, es que yo voy a guardar toda la información, o sea, voy a partir la información en cuatro bloques, pero voy a guardar las copias de estos cuatro bloques en los mismos cuatro discos,
+Teacher: pero en discos distintos.
+Teacher: Entonces, por ejemplo, aquí tengo F1, lo guardo en el disco uno, pero voy a hacer una copia de F1 en el disco 2. ¿Para qué?
+Teacher: Para que en el caso de que uno de los discos falle, pues tenga la posibilidad de recuperar toda la información como tal.
+Teacher: Lo mismo, eh, el disco dos en el F2 lo guardo en el disco 2, pero otra copia en en el disco cuatro.
+Teacher: Y así simplemente vamos a ir variando, eh, o sea, donde yo guardo el archivo en otro de los discos, en otro voy a guardar una copia de ella.
+Teacher: ¿Listo?
+Teacher: ¿Con cuál?
+Teacher: ¿Con qué objetivo?
+Teacher: Garantizar la la redundancia, ¿cierto?
+Teacher: Garantizar de que si en el caso de que uno de los nodos falle, pues tenga la posibilidad de leer todos los archivos sin ningún problema.
+Teacher: ¿Qué pasaba con el stripping?
+Teacher: ¿Qué pasaba si este nodo se me caía?
+Teacher: Perdón.
+Teacher: ¿Qué pas?
+Teacher: pasa si este no se me cae todo el archivo se se dañaba, ¿cierto?
+Teacher: ¿Por qué?
+Teacher: Porque perdimos un bloque de información y no teníamos cómo eh recuperarlo, o sea, no hay forma de recuperar ese este bloque de información.
+Teacher: Entonces, en el mirroring ya tengo una un digámoslo así una pequeña tolerancia fallos, porque en el caso de que uno de los nodos falle, pues yo tengo en alguno de los otros nodos debe estar la copia del archivo que está guardado aquí.
+Teacher: Y si yo necesitaba F3 de aquí, pues mire que hay otro otro nodo que tiene el F3.
+Teacher: Entonces, básicamente tenemos ya un modelo de un poco más tolerante a fallos.
+Teacher: Y por último, es utilizar un un modelo o un sistema llamado eh códigos correctores.
+Teacher: ¿Listo?
+Teacher: ¿Y qué es esto de los códigos correctores?
+Teacher: Pues es que cuando yo voy a guardar un dato o voy a guardar un archivo, lo voy a partir en varios pedazos.
+Teacher: y voy a crear un código de paridad, ¿sí?
+Teacher: O sea, voy a aplicar un algoritmo y a partir de los datos que yo tengo acá, voy a generar un código de paridad.
+Teacher: ¿Qué hace ese código de paridad?
+Teacher: Me sirve para verificar si los datos que yo estoy leyendo, digámoslo así, son seguros o están correctos, no se han no han sido manipulados.
+Teacher: ¿Listo?
+Teacher: porque él va a tomar basado en el contenido de este pedazo, el contenido de este pedazo y el contenido de este pedazo va a generar ese código de paridad.
+Teacher: Pero tiene otra ventaja y es de que si uno de los nodos falla con este código de paridad o con este eh elemento de paridad y aplicando un algoritmo de recuperación, yo puedo coger este dato uno, este dato dos y el código de paridad y soy capaz de reconstruir la información que
+Teacher: teníamos en este nodo.
+Teacher: O sea, existe la posibilidad física de reconstruir todos los datos que deben deberían estar en este dato tres para que al aplicar la operación con estos tres datos me genere esta paridad.
+Teacher: Entonces, digamos que este bloque de paridad es un sistema de recuperación, o sea, no es una copia de seguridad, pero si es un sistema de recuperación de información.
+Teacher: ¿Listo?
+Teacher: Entces si tengo otro bloque de datos, el dato cuatro, dato 5, dato 6, lo puedo, digámoslo así, podríamos tener un solo disco dedicado para la paridad o puedo distribuir la paridad entre los múltiples discos.
+Teacher: Entonces, lo mismo, dato cuatro, dato 5, dato 6 generan esta paridad dos.
+Teacher: Y también me sirve para que en el caso de que un nuevo falle, pues con la paridad y los otros dos datos, puedo reconstruir la información que yo tengo acá.
+Teacher: ¿Listo?
+Teacher: Son los tres mecanismos que tengo de configuración de los sistemas de archivos.
+01:00:00
+Teacher: Stripping, que es distribuirlo entre todos los discos.
+Teacher: Replicación.
+Teacher: guardar un dato en uno de los discos y crear una copia en el en otro disco y códigos correctores que voy a generar estos archivos de paridad para lograr reconstruir.
+Teacher: Mire que aquí ya no estamos haciendo copias de archivos, ya no tenemos que eh que lo que escriba en el disco uno, escribámoslo en otro disco, ya no es necesario.
+Teacher: ¿Por qué?
+Teacher: Porque con el bloque de paridad o el código de corrector, nosotros vamos a poder reconstruir el dato, alguno de los datos.
+Teacher: Si alguno de los tres falla en este caso, eh, volvamos aquí atrás.
+Teacher: Una característica del stripping es que yo lo que voy a hacer o lo que voy a lograr con ese stripping es compactar o o agregar las capacidades de almacenamiento que tenemos nosotros en nuestro sistema.
+Teacher: Si compramos, yo siempre hago el ejemplo con como lo más barato, si yo compro cuatro discos de 1 tera en stripping, mi sistema de archivos o mi disco virtual o mi disco real son un disco de 4 teras.
+Teacher: ¿Listo?
+Teacher: 1 tera, un tera, un tera, un tera.
+Teacher: En stripping yo lo voy a ver como si fueran 4 teras.
+Teacher: puedo guardar 4 teras de almacenamiento, o sea, que voy a utilizar por completo la capacidad de almacenamiento de los discos que yo compre.
+Teacher: En el modelo de réplicas, yo voy a aprovechar solamente la mitad del almacenamiento que yo compre.
+Teacher: Entonces, si yo tengo cuatro discos de un tera, lo máximo que yo voy a poder almacenar dentro de nuestro sistema de archivos van a ser 2 teras.
+Teacher: ¿Por qué?
+Teacher: Porque la mitad del, o sea, dos teras voy a guardar información y las otras dos teras se van a encargar de ¿qué?
+Teacher: De almacenar las copias.
+Teacher: Entonces ese es el el otro modelo.
+Teacher: ¿Listo?
+Teacher: O sea, que cuando utilizamos mirroring o replicación, lo que vamos a tener son un aprovechamiento de la mitad del de lo que nosotros compramos.
+Teacher: Compramos cuatro discos, pero solamente vamos a disponer de dos porque los otros dos son copia.
+Teacher: Y con el código corrector, digamos que no eh el aprovechamiento viene siendo depende el número de discos que nosotros elijamos, el aprovechamiento puede ser de un 66 75%
+Teacher: de de la capacidad de almacenamiento que nosotros hayamos adquirido.
+Teacher: Si compramos cuatro discos de un tera, pues podríamos estar entre 3 2.8 teras que podemos nosotros aprovechar eh de estos discos.
+Teacher: Listo.
+Teacher: Esto lo quiero dejar aquí para el final porque ya es lo último que vamos a ver, pero yo quiero mostrarles aquí unas eh unas animacioncitas o unos sistemas para validar o verificar esto que estábamos hablando aquí de los sistemas
+Teacher: de archivos, ¿cierto?
+Teacher: Eh, voy a empezar con este que a ver, pongámoslo, pongámosle aquí F11.
+Teacher: Ahí ustedes están viendo mi pantalla, ¿cierto?
+Teacher: No sé si se alcanza a ver todo el texto.
+Teacher: ¿Alcanzan a verlo o no?
+Teacher: Listo.
+Teacher: Estos son tres simul dos simuladores que que realicé para explicar este tema de de espera que esto me quedó aquí en modo edición.
+Teacher: Dos simuladores que hice y que ustedes tienen ahí disponibles en en los materiales para entender un poco este tema de los sistemas de archivos distribuidos y los sistemas de archivos paralelos.
+Teacher: Este primero es el simulador de los sistemas de archivos distribuidos de SF.
+Teacher: Listo.
+Teacher: Distributed F system.
+Teacher: Aquí lo que digamos aquí el primer simulador es el entender un poco cómo funciona las semánticas.
+Teacher: Entonces, aquí vamos a tener la semántica Unix, la semántica sección y la y la semántica inmutable.
+Teacher: ¿Qué dice la semántica Unix?
+Teacher: Y es, yo voy a tener un archivo, vamos a decir de que el archivo con el que estamos trabajando es este que tenemos acá, que tiene como información esta que dice versión inicial.
+Teacher: informe de arquitectura distribuida.
+Teacher: Listo.
+Teacher: Y tengo tres nodos, tres nodos que o tres procesos que están leyendo ese archivo.
+Teacher: Listo.
+Teacher: ¿Qué es lo que vamos a hacer?
+Teacher: Vamos a hacer una simulación de qué pasa si alfa pues este cliente quiere escribir en ese archivo este contenido, o sea, quiere reemplazar la información del archivo.
+01:05:00
+Teacher: Entonces él dice aprobado presupuesto trimestral de 150,000 por alfa.
+Teacher: Lo mando a escribir.
+Teacher: ¿Qué pasa con el archivo original?
+Teacher: Estoy en semántica un.
+Teacher: Entonces, el archivo original al momento en el que yo le di guardar, automáticamente me cambió la información de de mi de mi archivo.
+Teacher: ¿Qué pasa con la información de los otros dos elementos?
+Teacher: ¿Qué pasa con la información de los otros dos elementos?
+Teacher: Hola.
+Teacher: Y aquí me hizo crió.
+Teacher: Ah, ¿qué pasa con la información?
+Teacher: Los otros van a estar viendo el último cambio, ¿sí?
+Teacher: O sea, este último cambio, esta última escritura, estos dos elementos ya ven ese último cambio, o sea, de manera instantánea, porque estamos trabajando en modo semantica.
+Teacher: Si este señor le da por escribir, ahorita dice que beta cambió el presupuesto a 120,000 cuando le voy a escribir los otros nodos o las otros elementos van a Yeah.
+Teacher: ese ese último cambio aquí en el simulador faltó que cambiara también la copia local, ¿cierto?
+Teacher: Porque si yo estoy guardando mi copia, mi copia local también debería actualizarse, pero de manera instantánea voy a ver los últimos cambios, o sea, todos los nodos van a ver el último cambio que tiene el archivo de manera simultánea.
+Teacher: ¿Listo?
+Teacher: Con solamente escribir o leer vamos a poder acceder a la información que tenemos en cada una de ellas.
+Teacher: Pero, ¿qué pasa si me paso a la semántica de sesión?
+Teacher: Recuerden que en la semántica sesión yo voy a tener los datos, digámoslo así, de o los cambios van a quedar solamente dentro de mi ambiente hasta que yo le diga guardar o escribir.
+Teacher: Entonces, vamos a decirle aquí que quiero escribir.
+Teacher: Y aquí, aquí si me los cambio a todos porque al al hacer escribir, no, aquí me debió haberme cambiado solamente el mío y solamente en el momento de cerrar o de guardar,
+Teacher: ahí es donde iba ellos iban a poder ver esto.
+Teacher: Voy a arreglar ahí el ajuste, pero básicamente es esto y es que cuando yo estoy leyendo o cuando voy a escribir estos, este cambio solamente debería quedar en mi copia local.
+Teacher: ¿Hasta cuándo?
+Teacher: Hasta que yo le diga cerrar o le diga eh guardar, digámoslo así.
+Teacher: Y una vez guarda, pues se actualiza esto y estos elementos ya solamente hasta el momento en el que yo le diga guardar voy a va a estar disponible o va vamos a tener que actualizar la caché de los otros de los otros nodos.
+Teacher: O sea, que todo el proceso de lectura mientras yo esté escribiendo, mientras esté trabajando en lo mío y no le diga cerrar, eh todos tendrían la última versión o la versión más viejita.
+Teacher: ¿Y qué sería la semantica inmutable?
+Teacher: que una vez creado no se puede modificar.
+Teacher: Entonces yo aquí, por ejemplo, si yo le digo acá eh eso es lo que está en el archivo ya eso es lo que ya existe en el archivo, en mi sistema, cuando yo le doy a escribir, no me escribe.
+Teacher: ¿Por qué no me escribe?
+Teacher: Porque ese ese archivo es de solo lectura.
+Teacher: Listo.
+Teacher: Cuando yo defino que mi semántica es inmutable, una vez creado un nuevo archivo, o sea, apenas yo creo un archivo, ese archivo ya no se puede modificar, no hay una operación que me permita hacer una sobrescritura, modificación, alteración del archivo que acaba de llegar.
+Teacher: Entonces eso este estos archivos inmutables son muy buenos cuando nosotros queremos guardar así, no digo que históricos, pero sí que cada vez que hagamos una transacción o que queramos guardar un dato, tengamos que crear un archivo nuevo.
+Teacher: Por ejemplo, no digo que con un archivo de lo, pero cuando estoy vaciando reportes o estoy haciendo cosas así, pues es importante que nosotros no podamos modificar cosas que ya fueron generadas.
+Teacher: ¿Listo?
+Teacher: Y entonces esos archivos van a estar disponibles de lectura, pero ya ninguno va a poderlo modificar.
+Teacher: Si van a modificar o si van a agregar, tienen que crear un nuevo archivo con un nuevo contenido.
+Teacher: Y después de creado, solamente solamente ese que creó el archivo fue el único que pudo hacer las modificaciones.
+Teacher: El resto ya solamente va a quedar de solo lectura.
+Teacher: El segundo, bueno, el segundo, este tema de la replicación explica un poco eh algunos algoritmos de de cómo nosotros deberíamos de gestionar eh las particiones y eso todavía no quiero entrar mucho en este contexto,
+Teacher: pero las particiones hacen referencia en que yo puedo tener múltiples regiones o puedo tener múltiples lugares o múltiples centros de datos donde queramos guardar información y entonces aquí vamos a a tener un modelo maestro trabajador o para poder hacer la
+01:10:00
+Teacher: sincronización activa pasiva.
+Teacher: ¿Listo?
+Teacher: Entonces aquí ya vamos a tener un ojo, esto es un sistema archivos distribuido.
+Teacher: Podemos tener réplica, o sea, que yo puedo hacer de que mi sistema distribuido pueda tener múltiples copias.
+Teacher: Aquí son cinco nodos para gestionar todo el tema de las copias, pero yo podría tener dos o podría tener tres aquí.
+Teacher: Y el cluster tiene tres nodos en un centro de datos y tres nodos en otro centro de datos.
+Teacher: ¿Listo?
+Teacher: ¿Para qué tenemos tantos nodos?
+Teacher: Pues simplemente para que cada vez que nosotros hacemos un proceso de de lectura o de lectura y escritura, todas las vamos a hacer sobre nuestro nodo má.
+Teacher: ¿Listo?
+Teacher: Entonces, como nuestro nuevo máster está en línea, entonces eh cualquier modificación, cualquier ajuste que haya dentro de mi sistema, pues lo va a recibir el máster y lo va a replicar a los múltiples nodos.
+Teacher: ¿Qué pasa si muere mi nodo master?
+Teacher: ¿Qué debería de suceder si se apaga el nodo master?
+Teacher: pues yo tengo que ejecutar un sistema de recuperación o de failover.
+Teacher: ¿Qué significa esto de failover?
+Teacher: Y es en el caso de que uno falle, entonces se debe se debe iniciar un proceso de selección de un nuevo máster o un nuevo un nuevo primario, digámoslo así.
+Teacher: Y este nuevo nodo, como ya venía actualizado por las actualizaciones que hacía el nodo primario, pues entonces él como nodo primario pues puede seguir trabajando sin ningún problema.
+Teacher: ¿Y qué pasa si falla de el mismo nodo primario?
+Teacher: Vuelvo y ejecuto y debo crear o debo seleccionar un nuevo nodo primario.
+Teacher: En este caso el nodo, el nodo primario es el nodo el nodo tres.
+Teacher: Listo.
+Teacher: ¿Qué pasa si se me apagaban tres nodos?
+Teacher: O sea, yo se me dañaron tres discos.
+Teacher: Ahí sí nos jodimos.
+Teacher: ¿Por qué nos jodimos?
+Teacher: Porque cuando cuando yo voy a hacer un proceso de selección de de del siguiente máster o del siguiente nodo, yo pongo un yo inicio un proceso de votación y si yo tengo cinco nodos, yo espero que la mitad más un eh voten por el sigui por el
+Teacher: nodo prim por el siguiente nodo primario, pero en este caso tengo menos nodos de la mitad más un, o sea, yo necesito si yo si mi clúster era de cinco nodos o o mi réplica es de cinco nodos.
+Teacher: Yo espero que la mitad 2.5, o sea, tres, elijan al siguiente al siguiente maestro.
+Teacher: ¿Listo?
+Teacher: Pero como este señor se murió, pues entonces ya no hay ya no hay la mitad más tres.
+Teacher: Vamos a restaurarlo todo y vamos a hacer lo siguiente.
+Teacher: Voy a apagar esto, digámoslo así.
+Teacher: Este es un centro de datos.
+Teacher: Esto lo tengo en un centro de datos y esto lo tengo en otro centro de datos.
+Teacher: Podría ser de que lo estamos manejando en un en un en un grid.
+Teacher: Este está en un en un nodo, en un centro, ¿sí?, en un centro de datos, en una ubicación y este está en otra ubicación, el el tema de los backups.
+Teacher: Y tengo los cinco nodos.
+Teacher: Si ocurre algún fallo en mi sistema, voy a poder seguir trabajando.
+Teacher: ¿Por qué?
+Teacher: Porque este este centro de datos, a pesar de que estos están por fuera, pero como son de un centro de no digámoslo así, los tenemos como backup o modo réplica de manera directa, pues entonces para ellos, para para este sistema,
+Teacher: digamos que se puede autogestionar diciendo, "Okay, como estos no están disponibles porque se desconectaron, eh apagaron el centro de datos, etcétera, pues mi sistema primario voy a poder trabajar con ellos. Listo.
+Teacher: Eh, enciendo el nodo.
+Teacher: Espera a ver que aquí vuelvo.
+Teacher: Apago, apago.
+Teacher: Ejecuto este.
+Teacher: Ah, bueno, ahí está bien.
+Teacher: Apago este, me selecciona un nuevo nodo primario y si apago este, pues ya no hay.
+Teacher: Bueno, aquí me selecciona un tercer nodo primario porque pues es el único que queda dentro de mi centro de datos principal.
+Teacher: Así que estos elementos, digámoslo así, solamente los vamos a tener ahí como respaldo en este modelo.
+Teacher: Si yo tengo tres, pues tendría más o menos el mismo juego, digámoslo así, de que lo ideal es tener siempre una copia en un centro de datos distinto o en una partición o en una, si estamos, por ejemplo,
+01:15:00
+Teacher: en una SAN que tenemos varios nodos de de discos, pues la idea es que aquí en este en este en Yeah.
+Teacher: centro de almacenamiento en ese primer nodo de discos estén unos y haya otro nodo de discos que que mantengan nuestro backup.
+Teacher: En el caso de que si se llega a dañar o la tarjeta de red de mi principal falla, pues podamos seguir trabajando o tengamos una copia con la cual podamos promover a principal y podamos seguir funcionando sin ningún problema.
+Teacher: El tercero es el tema de la gestión de la caché.
+Teacher: Entonces, aquí viene con el tema del right throw y o delay to right.
+Teacher: Sí. Entonces que si queremos que la escritura sea activa o la escritura sea pasiva, ¿cierto?
+Teacher: La actualización de la caché.
+Teacher: Entonces aquí miremos acá vamos a este es mi archivo.
+Teacher: Voy a escribir un nuevo dato, ¿cierto?
+Teacher: que me dice que se ha creado una nueva versión inmutable.
+Teacher: Listo.
+Teacher: Eh, pero no la veo.
+Teacher: Ah, okay.
+Teacher: Porque aquí me está leyendo, escribiendo.
+Teacher: ¿Qué pasó aquí?
+Teacher: Okay, okay.
+Teacher: Vamos a escribir este aquí.
+Teacher: Sií, me dice que creó el nuevo archivo o la nueva versión, pero aquí no me lo muestra.
+Teacher: Mm.
+Teacher: Ah, ¿por qué me hizo que más la copia que era?
+Teacher: Bueno, aquí ya un poco de la explicación de cada uno de estos y unas preguntas que podemos nosotros ahí mirar.
+Teacher: Eh, digamos que la idea de este era que viera más o menos cómo funcionaba.
+Teacher: Digamos que voy a terminar de corregirlo para que queden con con el sistema o o con el simulador un poco mejor.
+Teacher: Y este otro es el simulador de los sistemas de archivos en paralelo.
+Teacher: O sea, aquí ya vamos a estar escribiendo de manera eh, digámoslo así, de manera simultánea en múltiples discos.
+Teacher: O sea, no es que vayamos a guardar en un solo disco, sino que lo vamos a guardar en múltiples discos.
+Teacher: Aquí tenemos algunos archivos.
+Teacher: Entonces, tenemos tres archivos que podemos nosotros leer o escribir dentro de nuestro sistema de archivos y vamos a mirar cada uno de los modelos en en modelo stripping, en modelo mirroring o o replicación y los códigos de corrección.
+Teacher: Entonces, en stripping, recuerden que en stripping lo que nosotros hacemos es eh distribuir los archivos o coger el archivo y distribuirlo en varias partes y que cada parte quede en un cada uno de los discos.
+Teacher: Si yo llego y mando escribir el primer archivo, entonces mira que él identificó que tenía cuatro nodos, pues partió en cuatro bloques.
+Teacher: Este archivo era de 100 meg y ahora cada bloque de estos ocupa 25 meg.
+Teacher: y a cada uno de los discos.
+Teacher: me da la la tarea de de escribir el archivo.
+Teacher: Cuando yo lo voy a leer, pues en la simulación mira que nosotros de manera simultánea estamos mandando a leer los cuatro archivos, los cuatro discos y cargando la información de los cuatro discos.
+Teacher: Eh, ¿qué pasa si uno de los discos falla?
+Teacher: Ya todo mi sistema de archivos falló.
+Teacher: Listo.
+Teacher: Así yo inserto un nuevo disco vacío que mi sistema pues queda recuperable.
+Teacher: Pues mi sistema está ahorita funcional porque tiene los cuatro discos disponibles.
+Teacher: Ya no hay forma de leer el archivo A, el primer archivo.
+Teacher: ¿Por qué?
+Teacher: Porque ya le hace falta un pedazo, ¿cierto?
+Teacher: Ya no hay un no hay un bloque dentro de ese disco porque monté un disco nuevo y entonces simplemente ya no puedo hacer ninguna operación con ese.
+Teacher: Si yo puedo escribir ya de el archivo B, puedo escribir el archivo C y ahí está la información, pero el archivo A ya está corrupto, o sea, ya está no disponible.
+Teacher: ¿Por qué?
+Teacher: porque simplemente ya no hay información que nosotros podamos leer, pero las otras sí quedaron porque simplemente fueron creadas después de que el disco nuevo apareció dentro de nuestro sistema.
+Teacher: Eso sería más o menos el modelo strive eh de stripping, perdón.
+Teacher: Aquí a reiniciar.
+Teacher: Entonces yo puedo escribir todos los archivos, ¿cierto?
+Teacher: Aquí tengo todos los archivos y cada vez que yo le diga leer a uno, pues pongo a leerlos.
+Teacher: todos los discos al mismo tiempo.
+Teacher: El problema es que es muy poco tolerant de fallos.
+Teacher: ¿Por qué?
+Teacher: Porque no simplemente no no guarda el estado.
+Teacher: Mire que ahorita ya todos los archivos están inhabilitados.
+Teacher: En el mirroring, en el modelo de mirroring, pues entonces voy a tener cuatro discos, dos primarios y dos secundarios o dos espejos.
+01:20:00
+Teacher: Este es un modelo donde tengo un disco y un disco espejo, otro disco y otro disco espejo.
+Teacher: Entonces voy a par como como tengo cuatro discos y los tengo en en réplica, entonces los archivos los va a partir en dos bloques porque hay dos discos que se pueden ejecutar de manera simultánea.
+Teacher: Voy a escribir el el archivo A. Entonces, mira que el archivo A se escribe en los cuatro discos al mismo tiempo, tanto el dato en el en el en el disco primario como en el espejo, mira que esta es una copia de este y eh el segundo
+Teacher: bloque en el disco primario dos y en y la copia en el espejo.
+Teacher: En el caso de que haya un fallo, mira que este disco está ca dañado, ¿cierto?
+Teacher: Y si yo le voy a decir que me lea, pues entonces él encuentra los dos bloques de archivos.
+Teacher: Pues borré el espejo, entonces él encontró el original primario, el A0 y el A1 en los primarios, pues simplemente lo lee de ahí.
+Teacher: ¿Qué pasa si falla este otro?
+Teacher: Ah, pues ahí sí ya se dañó todo porque ya no tengo copia de del disco cero, ¿cierto?
+Teacher: Ya no hay forma de reconstruir.
+Teacher: Si todavía tenía esto, pero me toca cambiar el disco.
+Teacher: O sea, este disco como se me dañó, simplemente voy al servidor y le monto un disco nuevo.
+Teacher: Al montarle el disco nuevo, yo le puedo yo puedo reconstruir y reconstruir, pues no es más que hacer una copia del disco original en este disco.
+Teacher: Listo.
+Teacher: Entonces, ya ahí recupero el estado de mi sistema y funciona sin ningún problema.
+Teacher: ¿Y qué pasa si me falla?
+Teacher: es un disco primario, pero tengo la copia.
+Teacher: Al momento de leer, pues voy a utilizar la copia y voy a utilizar el disco primario del siguiente bloque y con eso vamos a poder recuperar la información que tenemos.
+Teacher: Lo mismo podemos reconstruir y podemos escribir los tres archivos.
+Teacher: Talisto.
+Teacher: En este modelo las copias están, hay un disco de datos primarios y un disco de dato copia.
+Teacher: Hay configuraciones donde yo puedo hacer de que los primarios y las copias eh las copias queden dentro de los mismos archivos, dentro de los mismos discos, ¿sí?
+Teacher: Así como estaban en en la diapositiva.
+Teacher: Pues son dos modelos distintos dependiendo de la implementación que haya hecho cada sistema de archivos.
+Teacher: Eh, por último, el sistema de de corrección de errores.
+Teacher: En este modelo de de corrección de errores, yo tengo dos posibilidades o ahora tenemos dos posibilidades.
+Teacher: Hacer corrección de tener un solo código de corrección de error o tener dos códigos de corrección de errores.
+Teacher: ¿Qué diferencia entre el uno y el otro?
+Teacher: El número de discos que necesitamos.
+Teacher: Listo.
+Teacher: Vamos a suponer de que vamos a tener cuatro discos de almacenamiento y voy a tener un disco de corrección de error.
+Teacher: O sea, que cuántos discos necesitamos?
+Teacher: Cinco.
+Teacher: O sea, necesito comprar cinco, pero vamos a guardar información en cuatro.
+Teacher: Eh, aquí voy a dejarlo en esta configuración donde voy a decir de que voy a elegir un disco para todo lo que tiene que ver con las particiones y voy a tener los otros discos acá para los datos.
+Teacher: Entonces vamos a a escribir el disco A, el archivo A. Escribo el archivo B. Pues ahí la simulación no se alcanza a ver y se escribe el archivo C. ¿Listo?
+Teacher: O pasa muy rápido.
+Teacher: Dale.
+Teacher: Ahí ya tengo guardadas toda la información y tengo mis códigos de corrección.
+Teacher: Simulemos que se me daña un disco.
+Teacher: Entonces, se me dañó este disco.
+Teacher: ¿Cómo hacemos para leer ahora los archivos?
+Teacher: Todavía los archivos, el disco CA se puede recuperar, puedo cambiarlo por un nuevo disco y decirle que recupere la información que está, pero ya mi sistema o mi sistema archivos está degradado.
+Teacher: Vamos a eh en los servidores normalmente vamos a identificar de que el sistema está degradado.
+Teacher: Eso.
+Teacher: significa que va a leer un poquito más lento porque tiene que reconstruir la información en tiempo de de lectura, digámoslo así.
+Teacher: Si yo le digo que me lea el disco A, mira que él toma el el archivo, el dato de paridad que tenemos nosotros acá y con eso es capaz de recuperar la información de de mi archivo.
+Teacher: Si reconstruimos el disco y le decimos leer, mira que solamente toma los originales, no necesito paridad.
+Teacher: O sea, que el ese bloque de paridad solamente lo vamos a utilizar para reconstruir nuestro disco que hemos dañado o en el caso de que mi sistema esté colapsado, todavía podamos seguir leyendo, tengamos la misma posibilidad.
+Teacher: ¿Qué pasa cuando qué pasa si se me daña el disco de paridad de otro disco?
+01:25:00
+Teacher: Ya mi sistema es inservible, no hay forma de recuperar, ¿cierto?
+Teacher: Porque perdimos la paridad y perdimos datos.
+Teacher: Entonces, no hay forma de reconstruir los datos porque no tengo contra que compararlo.
+Teacher: Por esa razón, una de las posibilidades que tenemos es de que en lugar de tener un disco dedicado solo para la paridad, hagamos una rotación de paridad.
+Teacher: Eso significa que los datos de paridad o los archivos de paridad los vamos a ir distribuyendo entre los distintos discos.
+Teacher: ¿Listo?
+Teacher: Y ya teniendo esto, pues entonces ya puedo eh perder un disco y digamos que todavía sigue siendo eh fácil de recuperar la información, pero si pierdo otro disco, ahí sí volvimos al estado inhabilitado.
+Teacher: No hay forma de que nosotros podamos leer, escribir.
+Teacher: ¿Por qué?
+Teacher: Porque perdimos dos datos.
+Teacher: Entonces, ¿cuál es la solución?
+Teacher: Montemos replicación.
+Teacher: Pero entonces estamos desaprovechando el almacenamiento porque si tenemos cuatro discos de datos, si hacemos replicación lo convertimos en dos o tenemos que comprar nueve discos para poder tener la replicación de los dos de los dos discos que que nos hace falta.
+Teacher: Entonces la última solución que que se definió o que se ha definido es que tengamos dos archivos o dos bloques de código de código de corrección.
+Teacher: Eso me va a garantizar una mayor tolerancia a fallos.
+Teacher: Vamos a reiniciar aquí mi sistema.
+Teacher: Significa que vamos a necesitar más discos.
+Teacher: Sí, cuatro de datos, dos para corrección de errores.
+Teacher: Pero lo voy a hacer aquí con rotación con con distribuidos, ¿cierto?
+Teacher: Con archivos de de de paridad distribuidos.
+Teacher: Vamos a leer este, vamos a leer este y vamos a leer este.
+Teacher: Entonces, mire que aquí tenemos los seis discos, pero tenemos dos bloques de paridad.
+Teacher: Okay.
+Teacher: Entonces, con este modelo ya tenemos la posibilidad de perder dos discos y mi sistema es capaz de recuperarse.
+Teacher: Si ven, ya tengo la posibilidad de que de manera simultánea, la idea es de que ninguno de los discos falle, pero en el caso de que uno falle pueda recuperar la información.
+Teacher: Podemos leer A, podemos leer leer B y podemos leer C, ¿cierto?
+Teacher: O sea, perdimos perdimos un bloque de datos.
+Teacher: Puedo recuperarlo con toda la información que tenga.
+Teacher: Si si reemplazo el disco, leer A, leer B y leer C, pues utiliza los datos originales.
+Teacher: ¿Qué pasa si fallas dos discos?
+Teacher: No pasa nada, porque aquí tengo toda la información de A y puedo recuperar la que teníamos aquí.
+Teacher: Aquí tenemos la información de B y con este bloque podemos recuperar la información que teníamos de B aquí y aquí tenemos C y con este bloque podemos recuperar el bloque ese que teníamos acá.
+Teacher: Entonces cuando ya utilizamos dos códigos correctores, perdemos capacidad de almacenamiento porque estoy comprando seis discos, pero solamente estoy utilizando cuatro.
+Teacher: estoy solamente utilizando, aprovechando el 66% del almacenamiento, pero tengo la posibilidad de, digámoslo así, la tolerancia a que si ocurre algún fallo, pues nosotros seamos capaz de recuperar nuestra información.
+Teacher: ¿Listo?
+Teacher: Tengan en cuenta que esos son discos eh dentro de nuestra máquina, ¿cierto?
+Teacher: o los sistemas de archivos distribuidos serían discos en modo DAS.
+Teacher: Este modelo de de sistemas en paralelo generalmente, ojo, lo podemos utilizar también con DAS, o sea, si tenemos eh disco o vamos a aprovechar los discos que tenemos conectados a cada uno de los nodos,
+Teacher: podemos aplicar eh estos mismos algoritmos o estos mismos configuraciones o distribuciones, stripping, mirroring y códigos correctores los podríamos nosotros eh aplicar en en DAS o los podemos poner en la NAS o en la SAN,
+Teacher: sino que para la NAS y la SAN generalmente utilizamos hardware, o sea, utilizamos configuraciones de hardware.
+Teacher: ¿Por qué?
+Teacher: Porque ahí ya entran algo que se llaman los arreglos write, que son arreglos de hardware o dispositivos o un hardware especial que ayuda a hacer este tipo de configuraciones de manera automática, que no tenga que ir al sistema operativo,
+Teacher: sino que lo haga directamente desde la capa física.
+Teacher: ¿Listo?
+Teacher: Y nosotros configuramos esa capa física y luego se crea un disco virtual.
+Teacher: Y ese disco virtual pues son los cuatro nodos o los cuatro discos.
+Teacher: o el almacenamiento acumulado de los cuatro discos que tenemos nosotros disponibles como si fueran un solo sistema, un solo disco de almacenamiento.
+01:30:00
+Teacher: ¿Listo?
+Teacher: Jóvenes?
+Teacher: Eso es todo por hoy.
+Teacher: Disculpen ahí la demora y la falla del simulador de de DFS.
+Teacher: Lo voy a revisar para que ustedes lo puedan tener y puedan jugar un poquito con él.
+Teacher: Y eh nada, lo último que me quedaba era la comparación, pero la comparación sí es ver que aquí F12.
+Teacher: Básicamente en la comparación yo lo que quería mostrar aquí era que que el objetivo de un sistema de archivos distribuido es emular un sistema de archivos centralizado.
+Teacher: En cambio de los sistemas FP de sistemas de archivos en paralelo, eh lo que buscamos es mejorar el rendimiento, ser mucho más rápidos, mucho más eficientes.
+Teacher: La escalabilidad en el sistema de archivos distribuido está limitada por el almacenamiento en un solo servidor.
+Teacher: En cambio, pues al almacenamiento que podamos obtener o podamos agregar a cada uno de los nodos, ¿cierto?
+Teacher: En cambio, en el SFPD, entre más nodos tenga, pues va a ser mucho más rápido, va a ser mucho más eficiente, ¿cierto?
+Teacher: eh o va a ser mucho más eh va a tener un mejor rendimiento, mejor dicho.
+Teacher: El el modelo de archivo, normalmente en los SFPDs, un archivo se guarda generalmente todo en un mismo disco o en un solo nodo.
+Teacher: En cambio, en los archivos de sistemas de archivos en paralelo, pues se dividen en pedazos y esos pedazos se distribuyen entre todos los discos que tengamos nosotros disponibles.
+Teacher: Y la tolerancia a fallos, pues entonces depende de la replicación.
+Teacher: Entonces en el sistema de archivos distribuidos dependen de la replicación.
+Teacher: En cambio, los sistemas de archivos de en paralelo podemos replicar eh fragmentos, puedo tener los discos independientes o puedo utilizar los códigos correctores para poder eh ser más tolerante a los fallos, ¿cierto?
+Teacher: Entonces, mire que que depende de qué es lo que nosotros estemos buscando, cuál sea la característica del sistema que nosotros necesitemos.
+Teacher: Podemos utilizar o un sistema de archivos distribuido o un sistema de archivos paralelo.
+Teacher: Eh, se supone que esto yo lo iba a dar en dos clases, pero por la por el ajuste de de tema lo lo dejé solo en uno.
+Teacher: Así que les voy a dejar dos talleres, ¿listo?
+Teacher: El taller de distribuidos y el taller de paralelo.
+Teacher: ¿Okay?
+Teacher: Así que les voy a dejar ahí en el taller de sistemas de archivos distribuidos hay una hay un una investigacioncita sobre los los arreglos de discos WR.
+Teacher: ¿Listo?
+Teacher: Ese sí lo vamos a retomar en la siguiente clase.
+Teacher: Vamos a hablar un poquito sobre los arreglos en disco, eh, y qué tipo de arreglos en disco existen.
+Teacher: Aquí hablamos de tres modelos de distribución de paralelismo al momento de guardar.
+Teacher: van a haber unas similitudes en los arreglos right que conozcan, pero quiero que que traigan o que investiguen un poquito sobre qué podemos hacer con esos arreglos y qué soluciones o qué problemas están solucionando con cada uno de ellos.
+Teacher: ¿Listo?
+Teacher: Jóvenes?
+Teacher: Muchísimas gracias.
+Teacher: No sé si tienen alguna duda, alguna inquietud antes de terminemos.
+Teacher: No, nada.
+Teacher: el las exposiciones a partir del la del próximo jueves, o sea, de la dentro de 8 días empiezan las exposiciones, o sea, que los de eh cibermonedas afanarse a hacer la exposición y coordinar.
+Teacher: ¿Listo?
+Teacher: Eh, y nos vamos a ir haciendo, o sea, que la próxima clase va es clase mía, vamos a seguir puras exposiciones y eh al y tenemos final o tenemos una clase final.
+Teacher: El creo que es el 3 de de de diciembre, vamos a tener nuestra última clase y esa clase pues la lidero yo.
+Teacher: En esa clase pues vamos a mirar a ver qué qué hacemos, si nos toca hacer el examen o la evaluación de de este segundo bloque, segundo parcial, comunicación, e sistemas de archivos y servicios de nombres, que es lo que vamos a ver en la próxima clase.
+Teacher: Eh, y voy a generar una estrategia para hacer la evaluación del tercer parcial.
+Teacher: Listo.
+Teacher: Debido de que no nos queda mucho tiempo, o sea, ese mes me va a hacer falta.
+Teacher: Entonces, eh voy a definir una estrategia para que hagamos ese ese o completemos ese tema del tercer parcial o cómo vamos a evaluar ese tercer parcial.
+Teacher: Eso se lo les comento en la próxima clase, cómo va a ser ese ese proceso del tercer parcial.
+Teacher: ¿Listo?
+Teacher: Eh, jóvenes, entonces esa última clase o hacemos parcial o sustentación o o nos vemos y nos despedimos alguna cosa así.
+01:35:00
+Teacher: ¿Cuánto debe durar máximo la exposición?
+Teacher: Hora y media, mínimo hora y media.
+Student7: Los talleres, ¿cuánto se van a
+Teacher: De inicio de clase hasta final de clase.
+Teacher: Si se demora menos tienen menos notas,
+Student7: demorar?
+Teacher: si se demora más tienen menos notas.
+Teacher: Así que para que lo tengan en cuenta, ustedes son cinco.
+Teacher: Imposible que no puedan hablar cada uno 15 minuticos para completar el tiempo, ¿cierto?
+Student7: Profe, los talleres,
+Teacher: Eh,
+Student7: ¿cuánto tiempo tenemos?
+Teacher: los talleres eh no sé, hasta la próxima semana, puede ser hasta el próximo jueves, no hay problema.
+Student7: Listo,
+Teacher: Igual son investigaciones muy corticas,
+Student7: bro.
+Student7: Gracias.
+Teacher: muy pequeñitas, porque es consultar qué sistemas de archivos distribuidos existen y podemos utilizar y qué sistemas de archivos paralelo podemos usar y el tema de los ride.
+Teacher: ¿Listo?
+Teacher: Eh, nada, jóvenes, que tengan una muy buena noche y nos vemos la próxima semana del martes.
+Teacher: Dale, está muy
+La reunión finalizó después de 01:36:15 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+
