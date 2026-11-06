@@ -1,0 +1,835 @@
+Hora de inicio de la reunión: 2026-11-03 18:31 GMT-5
+Asistentes
+Student36, Student1, Student3, Teacher, Student37, Student5, Student6, Student7, Student8, Student28, Student9, Student12, Student13, Student14, Student15, Student16, Student17, Student18, Student19, Student20, Student21, Student22, Student23, Student35, Student25, Student26, Student27
+Transcripción
+Teacher: Hola, jóvenes.
+Teacher: Muy buenas noches.
+Teacher: ¿Cómo están?
+Teacher: Espero que todo muy bien.
+Teacher: Eh, vamos a continuar con lo que estábamos revisando sobre los mecanismos de comunicación.
+Teacher: En la clase pasada eh logramos terminar de ver todo lo que era el paso de mensajes, ¿cierto?
+Teacher: y estuvimos hablando de el modelo, bueno, que por paso de mensajes tenemos diferentes modelos, tenemos la comunicación por paso de mensajes utilizando conexión directa, usando, por ejemplo, a los sockets.
+Teacher: Estuvimos hablando también de la comunicación a grupo, que podíamos mandar un mensaje al grupo y ese mensaje podía tener múltiples destinatarios y también estuvimos viendo las colas de mensajes como un mecanismo de enviar y transmitir información entre dos componentes como tal.
+Teacher: También empezamos a hablar sobre el modelo RPC, ¿cierto?
+Teacher: El remote procedure call o las llamadas a procedimientos remotos.
+Teacher: es simplemente un o fue un mecanismo que se creó en los años 70, 80s para lograr eh establecer la comunicación entre entre, digámoslo así, ocultar toda la lógica o todo lo toda la tecnología
+Teacher: alrededor de cómo enviar la información y resolviendo pues los problemas que ya habíamos visto como los formatos de representación, hacer el marshall, el marshall, eh ubicar el servidor, localizarlo, etcétera.
+Teacher: Y entonces ellos resolvían todo ese problema por nosotros.
+Teacher: Lo único que teníamos nosotros que hacer era implementar o crear la interfaz, generar el código fuente para utilizar el framework de o el middleware de RPC y simplemente pudimos empezar a transmitir información.
+Teacher: Hoy vamos a hablar sobre la implementación que hizo Java sobre ese mismo modelo que se llama RMI.
+Teacher: RMI, pues no es más que el, digámoslo así, es el acrónimo de remote remote method invocation.
+Teacher: Recuerden que en Java es un lenguaje principalmente orientado a objetos.
+Teacher: Entonces, aquí no vamos a hablar de que estamos llamando procedimientos porque los procedimientos son de la del modelo imperativo o procedimental.
+Teacher: Aquí lo que vamos a hacer es llamar métodos.
+Teacher: ¿Listo?
+Teacher: básicamente lo que hacía Java RMI era un, digámoslo así, la filosofía es similar a lo que hacía RPC, solamente que en lugar de publicar métodos o publicar funciones, lo que vamos a publicar son objetos y llamar los métodos que tienen esos objetos de manera remota.
+Teacher: Entonces, básicamente nosotros íbamos a tener un modelo en el que vamos a tener un consumidor o alguien que necesita un objeto y ese objeto va a ser publicado por otro proceso, por otro en otra máquina o en otro proceso independiente,
+Teacher: etcétera.
+Teacher: Y utilizando RMI, nosotros vamos a poder acceder o poder invocar los métodos que están dentro de ese objeto.
+Teacher: ¿Listo?
+Teacher: Eh, lo mismo con la expectativa o con la idea de que vamos a minimizar o vamos a reducir eh la necesidad del desarrollador en conocer toda la lógica de de transporte y cómo hacer la
+Teacher: serialización y deserialización de los objetos.
+Teacher: Simplemente vamos a hacer una implementación relativamente fácil o sencilla o clásica de programación en Java y el resto lo vamos a a generar a partir de el compilador de RMI.
+Teacher: Básicamente fue el primer modelo de trabajar objetos distribuidos.
+Teacher: ¿Listo?
+Teacher: Pero objetos distribuidos hablando de que ya no estábamos publicando métodos, sino objetos.
+Teacher: Esos objetos podían ser de, entre comillas, iban a ser eh se podían mover o se podían invocar desde máquinas remotas.
+Teacher: El proceso se creó en una máquina, pero yo desde mi máquina la voy a poder llamar como si estuviera eh en el código local, como si fuera un elemento local de mi de mi aplicación.
+Teacher: ¿Listo?
+Teacher: Como como le dije antes, básicamente es un modelo similar a RPC, ¿cierto?
+Teacher: Pero implementados únicamente en Java.
+Teacher: Eh, a diferencia de RPC que utilizaba un binder local, un binder local, perdón, que es el el servicio o el servidor que iba a quedar dentro de la misma máquina del cliente y la misma máquina del servidor y el
+Teacher: cliente tenía que primero preguntarle dónde se encontraba el servicio al binder y luego hablaba directamente con el servicio.
+Teacher: En RMI teníamos un binder o binder global.
+00:05:00
+Teacher: Listo.
+Teacher: No necesariamente tenía que estar en la misma máquina el registro o el binder.
+Teacher: No, no necesariamente tenía que estar en la misma máquina donde estaban los servicios.
+Teacher: Yo podía crear una máquina binder y todos los servicios pues simplemente se iban a iban a iniciar sesión o iban a registrarse ante ese registro.
+Teacher: ¿Listo?
+Teacher: Entonces, a diferencia de RPC que tenía un binder local, en RMI optaron por tener un binder global.
+Teacher: ¿Listo?
+Teacher: ¿Qué se registraba aquí?
+Teacher: Los objetos.
+Teacher: Listo.
+Teacher: Entonces, aquí en este Binder íbamos a registrar los objetos que queríamos nosotros publicar de los diferentes servidores RMI que nosotros teníamos.
+Teacher: también íbamos a tener o o también vamos a hacer el proceso de de compilación, o sea, vamos a tener un una interfaz de definición de dominio.
+Teacher: Ahí esa interfaz pues iba a definir cuáles eran los métodos que iban a ser implementados en el servidor y cuáles y y qué podíamos nosotros utilizar o llamar desde el módulo cliente, ¿cierto?
+Teacher: Entonces, íbamos a definir la interfaz, eh luego íbamos a pasarla, bueno, creábamos aquí la implementación, pero la implementación realmente venía aquí al lado del servidor.
+Teacher: Con esa interfaz nosotros lo que íbamos, lo que hacíamos era ejecutar o realizar la compilación o la generación de los stop cliente y el stop del servidor que en que en Java o en RMI lo llamaron el skeleton.
+Teacher: Entonces, el skeleton era lo que iba acompañando el servidor y el stop era lo que estaba en el cliente.
+Teacher: Al final viene siendo como lo mismo.
+Teacher: Es estos stop y Skeleton eran los traductores de peticiones locales a peticiones remotas.
+Teacher: ¿Listo?
+Teacher: Entonces, este era el encargado de ir al registro, al RRMI Registry, eh ubicar el objeto que necesitaba y enviar la información, las solicitudes de llamado al objeto y recibir la respuesta para entregárselo al cliente.
+Teacher: Yo yo simplemente eh creaba a mi cliente, lo compilaba y ejecutaba mi cliente de manera local.
+Teacher: Y como ya tenía este staff, nosotros íbamos a utilizar pues la interfaz remota, pues aquí la íbamos a tener que incluir, implementar, agregar al Classpad para poderlo compilar y que pudiéramos conocer o pudiéramos hacer la ejecución de todos estos métodos.
+Teacher: Y del lado del servidor, pues necesitamos arrancar el RMI registry, pues arrancar el binder en en algún lado, crear los objetos y registrar los objetos.
+Teacher: Listo.
+Teacher: Pues esto sí era bastante sencillo.
+Teacher: O sea, la lógica es muy similar a lo que vimos en RPC, pero ya implementado con los conceptos de Java.
+Teacher: ¿Cómo era el IDL que se utilizaba en RMI o que se utiliza en RMI?
+Teacher: Eh, es una clase o es una interfaz tradicional de Java, ¿cierto?
+Teacher: Es es simplemente un public, o sea, es una clase de extensión.
+Teacher: Java, que tiene por dentro la definición de una interfaz y los métodos que que necesitamos nosotros publicar.
+Teacher: Una característica que me decía que que era parte de RMI eran estas extensiones que están en negritas, pues estos instrucciones que están en negrita.
+Teacher: Primero, una interfaz para un una interfaz Java.
+Teacher: Para poder ser una interfaz remota de RMI, lo único que tenía que hacer era decir de que extendía de esta otra interfaz llamada RMI remote o Java RMI remote.
+Teacher: ¿Listo?
+Teacher: Entonces, simplemente era extender o heredar de este de este de esta interfaz y con eso ya estábamos marcando esta clase como una clase interfaz o definición de interfaz de RMI.
+Teacher: Los métodos, los métodos podían los definimos de manera tradicional, pero teníamos que agregar el la el manejo de excepciones o la posibilidad de enviar excepciones de tipo remote exception, o sea, cualquier cosa que pudiese suceder al momento en que nosotros mandáramos a sumar o mandáramos a
+Teacher: restar que tenga que ver con el transporte o la información que viaja por RMI, pues lo podíamos nosotros capturar dentro de nuestro código.
+Teacher: ¿Listo?
+Teacher: Entonces es era simplemente agregar estas extensiones de de código, por decirlo así, o extensiones en la definición de nuestra clase y con eso ya era suficiente para que RMI entendiera de que este era mi archivo de definición de
+Teacher: interfaz.
+Teacher: Y luego ya simplemente pues vamos a implementar tanto el lado del cliente como el lado del servidor.
+00:10:00
+Teacher: Recuerden que las interfaces de Java simplemente eran una especificación de un contrato, ¿cierto?
+Teacher: No dicen cómo se hace, simplemente qué se puede hacer.
+Teacher: en del lado del servidor, pues nosotros, bueno, aquí se va a crear eh, digámoslo así, se va a crear ese esa implementación y vamos a hacer el registro ante el RMI register o ante el binder.
+Teacher: Entonces voy a crear una clase llamada sumador implementation, que pues es básicamente la implementación de esa clase abstracta o esa o esa interfaz que implementa sumador.
+Teacher: Entonces, mira que aquí estamos haciendo la implementación de de la clase o de la interfaz remota.
+Teacher: Listo.
+Teacher: Entonces, vamos a decir, este es el objeto que va a tener la implementación, que va a decir cómo se ejecuta esa aplicación remota o esa interfaz remota.
+Teacher: ¿Listo?
+Teacher: Pero este objeto también debe marcarse o debe heredar de un de uno de múltiples elementos o de múltiples tipos de objetos que podemos crear.
+Teacher: En este caso hace referencia al Unicas Remote Object.
+Teacher: que a qué le suena este Unicast, comunicación a grupo, ¿cierto?
+Teacher: Entonces, básicamente RMI internamente podía ser podía ser eh, digámoslo así, yo en RMI podía tener múltiples objetos que implementaran la misma interfaz.
+Teacher: Entonces, eran múltiples objetos sumador, por decirlo así, que podían estar en diferentes máquinas.
+Teacher: En el caso de que una falle, pues tenía una copia de respuesta o tenía una copia de respaldo, perdón.
+Teacher: Entonces, con este Unicast Remote Object, nosotros lo que hacíamos era definir que esta interfaz o que esta clase, perdón, cuando se subiera al binder, eh podían hacer una petición dentro del binder y la idea es de que con uno
+Teacher: de los de los objetos que respondiera iba a ser suficiente para para que atendiera la solicitud, digámoslo así.
+Teacher: Entonces, este va a ser uno de los n objetos que van a estar publicados con un nombre X. Y ese objeto eh es el que nosotros vamos, digámoslo así, cuando yo hago una petición, cualquiera de los objetos que estuviera dentro,
+Teacher: que respondiera, digámoslo así, a la misma dirección, con que uno solo me respondiera, pues simplemente lo podíamos nosotros obtener.
+Teacher: Eh, bueno, constructor, donde recibo el nombre, cómo lo vamos a publicar en el binder.
+Teacher: En el mismo constructor, apenas arranca el objeto, simplemente lo que yo voy a hacer es decirle aquí al naming, que el naming es una clase utilitaria para poder hablar con el registry.
+Teacher: Y entonces simplemente le decimos al naming que quiero enlazarme o reenlazarme con este nombre y el objeto que quiero enlazar, el objeto que quiero registrar con este nombre de servicio va a ser yo mismo o esta la el objeto de esto.
+Teacher: ¿Listo?
+Teacher: Okay.
+Teacher: Y aquí simplemente pues íbamos nosotros a implementar las clases, implementar los métodos.
+Teacher: Como estamos implementando la interfaz, pues aquí vamos a decir, ¿qué hace sumar?
+Teacher: Pues retorna a + b.
+Teacher: ¿Y qué hace restar?
+Teacher: Retorna a - b.
+Teacher: ¿Listo?
+Teacher: Aquí puede ser con toda la lógica o toda la funcionalidad o las funcionalidades que queramos nosotros implementar.
+Teacher: Pues eso es lo que aquí simplemente hacíamos.
+Teacher: Esta es la clase implementación.
+Teacher: Esto es lo que me dice esas funciones que yo definí en la interfaz cómo iban a trabajar.
+Teacher: eh la clase servidor, que es como la clase, no es la clase implementación, sino el main, por decirlo así, pues básicamente lo que hacía era registrarse o primero lo que hacía era intentar conectarse o identificar si era capaz de conectarse al RMI registre utilizando el
+Teacher: método de seguridad.
+Teacher: Digamos que Java para todo lo que tiene que ver con transmisión o comunicación en red fue o es muy fuerte en el tema de la seguridad.
+Teacher: No cualquiera puede acceder a los recursos por la red.
+Teacher: Entonces, para poder trabajar con RMI, nosotros teníamos que agregar o asegurar de que nuestro sistema tuviese la capacidad de asegurar la comunicación entre el servidor de RMI, pues el registro, el registro, perdón,
+Teacher: y nuestro y nuestra aplicación.
+Teacher: Por esa razón nosotros aquí verificábamos que si no había ningún security security manager en el sistema, pues simplemente asignábamos el que me gestiona las conexiones con RMI.
+00:15:00
+Teacher: Eh, ahora simplemente creamos una instancia, un objeto de sumador.
+Teacher: Ya sabemos que al llamar al constructor, aquí le decíamos el nombre del servicio.
+Teacher: Mira que este es el nombre del servicio.
+Teacher: Entonces, simplemente le decimos, "Ey, quiero que registre este objeto con este nombre de servicio." Y es y acá
+Teacher: en el constructor, él justamente hacía eso.
+Teacher: recibe el nombre y le dice el naming, que es hable con el registro y dígale que va a enlazar con ese nombre este objeto.
+Teacher: Listo.
+Teacher: Y cuando ya tenemos esto, pues simplemente eh en este caso mi servidor ya queda iniciado.
+Teacher: No tengo que decirle que quede en un ciclo infinito, no tengo que decirle que acepte peticiones, nada.
+Teacher: Todo eso ya está implementado por por la plataforma, por el midware RMI.
+Teacher: Simplemente vamos a capturar aquí cualquier tipo de excepción que que llegue como cualquier error que pueda llegar a surgir en el momento de la publicación o trabajo con el servidor de RMI que podamos nosotros pues loguear y terminar la ejecución de nuestro
+Teacher: programa.
+Teacher: ¿Listo?
+Teacher: Y el cliente, ¿qué es lo que tiene que hacer?
+Teacher: Nada, algo tan sencillo como esto.
+Teacher: Para poder instanciar, para poder crear un objeto de un objeto que existe en RMI, lo único que tenía que hacer es decirle a naming, que recuerden que esta era la clase con el que nosotros hablábamos directamente con el registro
+Teacher: de objetos o con el binder.
+Teacher: Entonces, le digo al naming que quiero buscar un recurso.
+Teacher: ¿Qué recurso quiero buscar?
+Teacher: Aquí le voy a decir en en el RMI le estoy diciendo cuál es el protocolo con el que del objeto que quiero buscar.
+Teacher: En este caso es RMI.
+Teacher: ¿En qué host se encuentra el registro o el servidor de registro?
+Teacher: Aquí le digo el host y luego le digo cuál es el nombre.
+Teacher: Bueno, slash y el nombre del servicio que quiero cargar o o del objeto que quiero buscar.
+Teacher: Entonces, pensemos en RMI como un un repositorio de objetos donde todos los objetos que yo quería compartir entre cliente y servidor o que los clientes pudieran acceder, pues simplemente lo registraba ante ante el registro, ante el naming.
+Teacher: Y aquí con el lookup yo le digo, "Ey, quiero que me busque por RMI en este servidor este recurso o este servicio." Y entonces ese binder encargado de de buscar
+Teacher: o o identificar entre todos los servidores que se registraron y publicaron este nombre cuáles eran y poderle dar información a este cliente.
+Teacher: Pero mira que lo interesante que tiene este lookup es que hace todo el proceso de conexión y obtener el objeto.
+Teacher: Si el objeto no existe, pues tiró una excepción.
+Teacher: Pero si el objeto lo logró encontrar en el registro, pues aquí ya en esta variable ya tenemos la instancia de ese objeto, o sea, tenemos una referencia a ese objeto remoto que que se fue publicado en alguno de los servidores.
+Teacher: Y mire y mire lo sencillo que era poder llamar a la lógica de negocio.
+Teacher: Simplemente le digo a mi variable que llame o a mi objeto, recuerden que esto es un objeto en Java.
+Teacher: Le voy a decir a mi objeto que quiero llamar la función sumar con el valor 5 y el valor 2 y recibo la respuesta en una variable tal cual.
+Teacher: Mire que aquí no es tan complejo como lo vimos nosotros con con RPC y tener que crear un client, conectarme o decirle a a RPC que se que se conecte y luego hacía el llamado y tenía que manejar punteros.
+Teacher: En Java es mucho más sencillo.
+Teacher: Era más sencillo porque simplemente le digo, "Ey, necesito este objeto que está en RMI." Y aquí ya tenía la
+Teacher: instancia del objeto y ya simplemente era como si estuviera trabajando con un objeto creado de manera local.
+Teacher: Pensemos de que esto fuera como el new o la creación del objeto, sino que en este caso el objeto viene desde una máquina remota.
+Teacher: Pero al final el resto del código pues simplemente es utilizar ese objeto como si fueran recursos locales.
+Teacher: ¿Listo?
+Teacher: Entonces, RMI fue esa solución que se ideó Java para cumplir o para satisfacer la misma necesidad que se tenía de desarrollar aplicaciones cliente servidor sin necesidad de complicar al usuario o complicar al
+Teacher: desarrollador en entender todo todas las digámoslo así toda la todos los elementos que van por debajo de la conexión entre cliente y servidor.
+Teacher: Listo.
+Teacher: Mira que aquí simplemente es decirle, mire, necesito conectarme a tal registro, a tal registro y o registres en el en el binder y aquí simplemente le digo, busque en el binder este recurso, este servicio y este servicio pues ya me entrega la referencia y con eso puedo
+00:20:00
+Teacher: conectarme directamente con el objeto y ahora sí, teniendo ya el objeto en mi mano, pues simplemente lo puedo utilizar como si fuera un recurso local.
+Teacher: Dale.
+Teacher: Entonces, digamos que el RMI fue uno de esos eh grandes recursos o precursores de este modelo.
+Teacher: Punet también lo tuvo.
+Teacher: Recuerden que Punet tuvo un modelo de RPC llamado Decom.
+Teacher: con Dicom era muy similar, pero como Punet no tiene un solo lenguaje, sino que tenía varios, pues dependía de cada lenguaje, si estábamos trabajando en basic o estábamos pues en Visual Basic o estábamos trabajando en Visual
+Teacher: C o estábamos trabajando en en efect ellos crearon una versión de Java llamada J+.
+Teacher: Entonces, todas esas eh todas esas eh digámoslo así, en todos esos lenguajes, yo podía hacer RPC utilizando pues el la herramienta que ellos definieron que era Dicom.
+Teacher: Listo.
+Teacher: Y por último apareció Corba.
+Teacher: ¿Qué es Corba?
+Teacher: Corba, pues a al ver esa, digámoslo así, la ventaja, la bondad que tenía en la comunicación cliente servidor utilizando un middleware donde el programador no tuviese que eh eh conocer todos
+Teacher: los elementos de desarrollo para garantizar la comunicación, mantener la sesión conectada, hacer la el marchal y el un marchal eh de ambos lados, pues Pues entonces,
+Teacher: viendo la solución que ya había hecho eh C C C la versión de Java y la versión de P.net, dijeron, "Venga, ¿y por qué no?" Bueno,
+Teacher: cuando eso le llamaba Punnet se llamaba se llamaba Visual Basic o o los desarrollos de Microsoft.
+Teacher: Cuando se dieron cuenta de eso, dijeron, "Bueno, ¿y qué pasa si yo quisiera intercambiar información entre los diferentes aplicaciones? que yo tengo una aplicación hecha en Visual Basic,
+Teacher: pero los objetos están hechos en en Java.
+Teacher: ¿Cómo hago para que Visual Basic sea capaz de leer esos objetos en Java o ejecutar sus funciones o invocar sus métodos y y y viceversa?
+Teacher: que yo tuviese un un código o un objeto creado en C#ARF pudiese llamar desde Java a ese objeto, pudiese obtenerle referencia al objeto y eh llamar sus métodos.
+Teacher: Pues entonces como esto dependía mucho era de las voluntades de cada fabricante, o sea, Microsoft hizo su estándar, Java hizo su estándar, entonces la OMG eh creó este, digámoslo así, esta arquitectura que se llamó Corba, ¿listo?
+Teacher: Corback como common Object Request Broker Architecture, eh, digámoslo así, es una arquitectura o se definió como una arquitectura para el obtener objetos a partir de un broker de forma común.
+Teacher: Eso significa que quería heterogeneizar la forma como se compartían los objetos.
+Teacher: Entonces, yo podía hacer un objeto en C, publicarlo en esta plataforma Corba y una aplicación en Java podía descargar ese objeto y o podía hacer referencia a ese objeto y poder hacer un llamado a los objetos como sin nada,
+Teacher: pues a los métodos que estaban definidos dentro de esos objetos.
+Teacher: Entonces, una de las cosas más difíciles que había es, okay, si yo publico un objeto en C o yo hago una representación del objeto en C, ¿cómo hago desde Java para que eso para que Java entienda que eso es un
+Teacher: objeto?
+Teacher: Porque no tiene la misma implementación, no tiene la misma forma, no tiene la misma representación en memoria de lo que es un objeto en Java.
+Teacher: Entonces, ¿cómo hacemos esa equivalencia?
+Teacher: Pues entonces la OMG buscó o o realizó la implementación o realizó la especificación de una arquitectura que permitiera el intercambio de información de entre lenguajes o entre sistemas heterogéneos.
+Teacher: ¿Y quién es la OMG?
+Teacher: Una organización para que desarrolla los estándares principalmente de la programación orientada objetos.
+Teacher: O sea, muchas de las de los estándares o muchas de las reglas que se que rigen la programación orientada a objetos eh fueron definidos o fueron especificados por la OMG.
+Teacher: La OMG fue fundada en 1989 y está compuesta por múltiples empresas desarrolladoras de software, no las pequeñas empresas que hacen cositas, sino las que definen como nuevas tecnologías o las que puedan eh traer nuevas nuevos estándares eh a la industria.
+00:25:00
+Teacher: Entonces dentro de la OMG pues está estaba son Microsystem, ahora está Oracle, está Microsoft, está Google, etcétera, o sea, tod todas las posibles lenguajes o todos los posibles herramientas que pudiesen
+Teacher: eh o que trabajen con programación orientada objetos y que puedan aportar nueva, digámoslo así, nuevos estándares o nuevas formas de desarrollar con estos lenguajes, pues la OMG es o esta organización es la que se encarga de definir esos estándares para que todas
+Teacher: las empresas o todos los lenguajes implementen eh las mismas funcionalidades o que tengamos las mismas características.
+Teacher: Pues la OMG definió algo que llamó la OMA, ¿listo?
+Teacher: el Object Management Architecture.
+Teacher: Entonces era es una arquitectura, una definición arquitectural de cómo deberían ser el intercambio de objetos.
+Teacher: O sea, cómo hacemos nosotros, cómo logramos de que aplicaciones escritas en diferentes lenguajes que trabajan objetos pudiesen publicar de manera, digámosla, estándar eh lo sus objetos para que otros lenguajes puedan consumirlos.
+Teacher: Entonces, eh buscando la misma filosofía de RPC de que esos objetos se publican en un lado y yo los puedo llamar desde el cliente, lo mismo que pasaba en RMI, que yo publico esto en mi registry y yo simplemente voy y lo busco y lo puedo utilizar de manera
+Teacher: local, pero pero con el digámoslo así con cualquier tipo de de lenguaje.
+Teacher: Entonces ahí es donde apareció Corba, al menos este esta arquitectura que me permitía que en lenguajes y en entornos hetogéneos, o sea, en diferentes sistemas operativos, M different.
+Teacher: entes eh lenguajes, etcétera, pudiésemos publicar en ante un ORB, listo, que este es como el el nombre que ellos le dieron al Binder ORB o o Object Request Broker.
+Teacher: Entonces, este ORB era el que iba a recibir todos los elementos que estaban definidos o que yo quería publicar.
+Teacher: ¿Qué podía publicar?
+Teacher: podía publicar servicios, podía eh publicar utilidades o herramientas que más de una o la aplicación necesite que pueda estar creada en cualquier en cualquier lenguaje e interfaces de dominio, elementos que me digan de qué estamos hablando o qué datos son los que nosotros vamos a estar gestionando,
+Teacher: ¿cierto?
+Teacher: Todos estos elementos pueden estar escritos en cualquier lenguaje.
+Teacher: Yo los puedo esto lo puedo crear en C o servicio lo puedo crear en C, otro servicio lo creo en Python.
+Teacher: las los utilities, pues dependiendo de lo que estemos haciendo.
+Teacher: Si yo quiero hacer una utility para la gestión de video, pues la puedo hacer en Python si o en o en C para trabajarlo con con estas bibliotecas de gestión de de imágenes, Glate creo que se llaman, no recuerdo ahorita.
+Teacher: Eh, podemos hacer facilities para conectarnos con con otros sistemas y interfaces de dominio que me digan cómo son los tipos de datos, etcétera.
+Teacher: Todo esto escrito en cualquier lenguaje podía entrar al ORB y así nuestras aplicaciones que necesitan un servicio, necesitan una facility o necesitan una interfaz de dominio, pues simplemente llegaban a ORB, le decían, "Ey, necesito tal objeto,
+Teacher: necesito tal descripción o tal recurso." obtenía una referencia a ese recurso
+Teacher: y ya internamente pues simplemente hacía el llamado con como utilizaba o de la forma como se manejaban los objetos en cada uno de los lenguajes.
+Teacher: o cambio la forma de estructurar el lenguaje e de de escribir la programación orient objetos, sino que dio un dio un marco general de cómo podemos publicar o cómo deberían ser publicados los objetos a este ORB y cómo pueden ser consultados los objetos de este
+Teacher: ORB.
+Teacher: Entonces, ya teniendo esa definición, esa arquitectura, entonces ya cada lenguaje, cada fabricante, cada empresa, lo que tenía que hacer era hacer la traducción de sus objetos de la forma como ya lo venían haciendo a la forma como lo esperaba Corba para poder hacer la interoperabilidad,
+Teacher: para poder lograr de que esos objetos pudieran eh ser compartidos, porque no importaba cómo yo implementara mi objeto en memoria, simplemente tengo una representación de ese mismo objeto en formato Corba y es el objeto que yo voy a publicar ante el ORB.
+Teacher: ¿Listo?
+Teacher: Entonces, eso fue lo que definió eh como como arquitectura la OMG.
+Teacher: M. Y en qué quedó esto en que todo era muy bonito, todo era muy chévere, todo era muy bello y empezaron los fabricantes a crear sus implementaciones, ¿cierto?
+00:30:00
+Teacher: Entonces, Microsoft creó una implementación de publicación y consumo de objetos de Corba Delfi, que es pues digámoslo así la versión objeto de programación orienta objetos de Pascal, pues entonces creo un mecanismo donde yo podía consumir y publicar los objetos
+Teacher: eh para poderlos publicar en un en un ORB.
+Teacher: Java utilizó lo mismo, creó un su arquitectura C también, etcétera.
+Teacher: Y entonces eh digamos que estábamos encaminados hacia el mundo donde la interoperabilidad entre los distintas aplicaciones escritas en cualquier lenguaje iba a ser posible.
+Teacher: Pero, ¿qué pasó?
+Teacher: Lo cogió lo cogió la tecnología, ¿cierto?
+Teacher: Digamos que cuando Corba apareció, apareció en un momento donde donde necesitábamos nosotros ver cómo hacíamos que aplicaciones que estaban escritas en por diferentes empresas de software con diferentes tecnologías y que se estaban empezando a consolidar dentro de las empresas,
+Teacher: entonces necesitábamos ese mecanismo de intercambio de información.
+Teacher: Pero como ese mecanismo dependía de muchas cosas, por ejemplo, eh los ORB no eran no eran gratuitos, ¿cierto?
+Teacher: No era una implementación estándar.
+Teacher: el el ORB de Corba era una especificación, era la imaginación o el deseo de cómo podemos hacer el registro o cómo podemos guardar las referencias de los objetos que están en diferentes lugares.
+Teacher: Entonces, las empresas, por ejemplo, M Java tenía un servidorcito de prueba para hacer las pruebas mientras estamos en desarrollo de nuestras aplicaciones.
+Teacher: con Corba, Java tenía otro servidorcito muy chiquito, o sea, no hacía todo lo que se esperaba que hiciera el ORB, no lo hacía, solamente tenía un servidor chiquito que me permitía hacer las pruebas de mis aplicaciones Java y así empezaron a salir ORBs que
+Teacher: soportaban cada uno de de pues su proceso de desarrollo, pero ya cuando necesitábamos algo fuerte, potente para producción para que pudiese eh digámoslo así soportar la la integración de los múltiples aplicaciones que teníamos nosotros disponible.
+Teacher: Eh nos dimos cuenta de que los que estaban apostando al desarrollo de ese ORB genérico que sirva para todos eran empresas que necesitaban lucrarse.
+Teacher: ¿Cierto?
+Teacher: Digamos que ese desarrollo no era gratuito, no iba a haber un beneficio, un retorno de inversión para los lenguajes.
+Teacher: Desarrollar eso, pues empezaron empresas privadas a generar esos ORBs y digamos que esa fue como el talón de aquiles, eso fue lo que hizo que no se popularizara tanto o que no se volviera un elemento popular porque simplemente salía muy caro.
+Teacher: Y cuando digo muy caro es que en su momento, cuando estábamos jugando con Corba para a finales de los o a principios de los 2000, eh habían ORBs que podía costar $5,000 su licencia.
+Teacher: Listo.
+Teacher: Ojo.
+Teacher: Y era una licencia no perpetua, no era de que yo pagara 5,000 y y para de contar, sino que era una licencia permanente.
+Teacher: O sea, yo compraba por $5,000 el acceso a la plataforma y lo podía instalar en uno o dos servidores, pero si necesitaba más tenía que comprar más licencias.
+Teacher: Si queríamos que que mi aplicación siguiera funcionando al final del año o al bueno, cuando se venciera la licencia, teníamos que renovar o comprar una nueva licencia.
+Teacher: Y eso pues implicaba a que nosotros teníamos que seguir invirtiendo un modelo como como lo hace Microsoft, como lo como o lo hacía Microsoft, porque Microsoft antes cobraba por su por su kit de desarrollo, por su ambiente de desarrollo,
+Teacher: eh como lo hace Oracle con su base de datos de que toca estar pagando y actualizando su membresía, como lo hacen todas las empresas que vienen desde antes, pues así era pues su modelo de negocio era la forma como iban a poder lucrar de esa
+Teacher: manera.
+Teacher: Pero debido a eso eh empezaron a aparecer nuevas alternativas y esas alternativas pues se fueron fusionando con el tema de la popularización o la gran penetración que empezamos a tener del internet.
+Teacher: ¿Listo?
+Teacher: ¿Cómo así?
+00:35:00
+Teacher: Y es que hasta antes de esta popularización del internet, pues yo tenía que resolverlos mis problemas de manera local.
+Teacher: O sea, mi problema era cómo hacía de que el servidor de nómina de mi empresa enviara la información de los pagos a el servidor financiero de la empresa.
+Teacher: El de nómina estaba hecho en Visual Basic y el de y el Financiero estaba hecho en en Fox Pro. Entonces, ¿cómo hacíamos para que esas dos aplicaciones eh intercambiaran los datos, cierto?
+Teacher: ¿Cómo hacíamos para que ellos cambiaran la información?
+Teacher: Y ahí es y con y cuando empezamos a darnos cuenta de que podíamos publicar o que muchos de los recursos los podíamos publicar en la red, en la web utilizando los protocolos web, o sea, utilizando el servidor HTTP,
+Teacher: que inicialmente era solamente para publicar páginas, ¿cierto?
+Teacher: documento estático y que poco a poco se fue eh evolucionando su uso hasta lo que nosotros conocemos ahora como servicios web.
+Teacher: ¿Y cuál fue esa evolución?
+Teacher: Pues primero íbamos nosotros lo único que podíamos publicar en un servidor HTTP, APH, en GNX, etcétera, eran aplicaciones eh estáticas, ¿listo?
+Teacher: O documentos estáticos.
+Teacher: Nosotros lo único que podíamos hacer era publicar un documento HTML.
+Teacher: Ese HTML se publicaba en la URL dependiendo en qué ruta de las de la carpeta del sistema operativo yo coloqué el archivo que queríamos leer.
+Teacher: Y si queríamos saltar a un siguiente documento, pues teníamos que ir a leer o enlazarlo con otro documento HTML que teníamos dentro de las mismas carpetas.
+Teacher: ¿Listo?
+Teacher: Entonces en en el pasado hablábamos de web de documentos.
+Teacher: teníamos una web donde teníamos mucha información, pero la información era estática.
+Teacher: Información porque el web se creó para la publicación o para compartir los artículos eh académicos que tenían las universidades, ¿cierto?
+Teacher: Yo acabo, yo quiero escribir una un artículo, pues el HTML tenía todos los elementos necesarios para hacer una publicación de un artículo.
+Teacher: Podíamos agregar títulos, podíamos agregar eh eh párrafos.
+Teacher: Dentro de los párrafos podíamos poner negrita, itálica, etcétera.
+Teacher: O sea, mire que todo lo que hoy o lo que existe en el HTML es básicamente para publicar elementos estáticos, ¿cierto?
+Teacher: o documentos que antes hacíamos en Word, en procesadores de texto, ahora los podemos publicar en el con el HTTP y HTML.
+Teacher: ¿Listo?
+Teacher: Pero se empezaron a dar cuenta de que nosotros podríamos empezar a crear aplicaciones utilizando este mismo protocolo.
+Teacher: Entonces empezaron a aparecer herramientas como SGI, PHP, ASP, JSP, bueno, y diferentes herramientas que fueron ir creando que ya me permitían crear ese HTML de manera dinámica.
+Teacher: No era como en con los documentos web que el HTML ya estaba escrito en un archivo y solamente podíamos leer ese archivo, sino que ahora podían hacerme una petición y internamente el servidor web que hacía era delegar eso a un motorcito,
+Teacher: a otro programa que me devolviera un HTML para yo podérselo devolver al usuario.
+Teacher: Entonces ahí es donde ahí fue donde empezaron a aparecer eso que nosotros empezamos a llamar webs de aplicaciones o aplicaciones web y es eran aplicaciones que nosotros desarrollábamos para que funcionaran utilizando eh la web, ¿cierto?
+Teacher: Y en estas aplicaciones web nos concentramos en un tipo de nicho, un tipo de mercado que eran las business to customer o de negocio al cliente, o sea, empezamos a crear aplicaciones para que el usuario pudiera interactuar con el negocio.
+Teacher: ya no tenía que venir hasta la empresa y hablar con el asesor para poder entender o para poder realizar algún sino que podía conectarse a una aplicación web que tenía todas las herramientas, el cliente tenía todas las herramientas para poder realizar las tareas o realizar las acciones que tenía
+Teacher: publicado el negocio.
+Teacher: ¿Listo?
+Teacher: Entonces ahí fue donde nos concentramos casi que todo, digámoslo así, todo los el año 2000 y 2010 estábamos metidos o encerrados dentro de este mundo de de aplicaciones web, ¿cierto?
+Teacher: donde desarrollábamos muchas aplicaciones en PHP, en ASP, en en JSPS, eh Java sacó otra tecnología llamada JSF y empezaron a aparecer pues diferentes herramientas y tecnologías que básicamente me permitían era eso,
+Teacher: publicar aplicaciones en la web, pero eso fue avanzando mucho más allá.
+Teacher: ¿Por qué?
+Teacher: Porque ahora si tenemos ya aplicaciones web y necesitábamos montar servidores de aplicaciones que eran simplemente extensiones del servidor HTTP, pero con los motores para poder entender esto o esto o esto o esto o
+00:40:00
+Teacher: múltiples lenguajes al mismo tiempo.
+Teacher: Entonces, aquí ya teníamos que hacer otra inversión y era desarrollar aplicaciones que corrieran en los motores que estaban en las en los servidores web.
+Teacher: en los servidores de aplicaciones y entonces ahí teníamos que salirnos de los servidores HTTP básicos adentrarnos al mundo de los servidores de aplicaciones.
+Teacher: Ahí entraron eh Internet Information Service de de Microsoft, Westfir en Java eh y bueno, hubo varios motores.
+Teacher: Oracle tenía el Call Fusion, bueno, había un servidor llamado Call Fusion, Oracle tenía otro Jet, algo y eran servidores que permitían el desarrollo de aplicaciones o que yo pudiera publicar mis aplicaciones y yo tenía que pagar por ellos,
+Teacher: ¿cierto?
+Teacher: También habían unos gratuitos, pero pues PHP fue uno de esos que que hicieron o dieron el crecimiento de las aplicaciones web gracias a que era gratuito y que podía ser publicado, podía ser instalado en cualquier lugar.
+Teacher: Entonces, muchos de los hosting hasta mediados de los años 2000 eh 2010, ¿no?
+Teacher: De los de los 2010es, ¿cierto?
+Teacher: Eh, casi todas las aplicaciones las teníamos que escribir en PHP porque era, entre comillas, el único motor gratuito que podíamos nosotros acceder eh de una manera fácil o que los proveedores de internet podían instalar, hacerle mantenimiento y que pudieran ofrecernos el servicio de nubes,
+Teacher: ¿cierto?
+Teacher: El servicio de publicación en en ese en ese en esa plataforma.
+Teacher: Entonces, Eh, así fuimos siguiendo, avanzando, pero llegamos a un punto donde ya no ya no queríamos hablar con el usuario.
+Teacher: Sí, ya la relación B2C o business to customer eh ya no eran, digámoslo así, ya no eran suficientes.
+Teacher: Ahora existían muchos servicios o muchos otros servidores que me permitían eh crecer o llegar al mundo de intercambiar información entre ot con otros negocios, ¿cierto?
+Teacher: Ya el tengo yo la o quisiera tener la posibilidad de ir y hablar con otro negocio, interactuar con ese otro negocio, pero ya no no es decirle al cliente que interactúe con él, sino decirle a mi aplicación que interactúe con otra aplicación.
+Teacher: Y entonces los servicios web fueron la solución para lograr de que una aplicación de una aplicación que no tiene nada que ver con el usuario pudiese interactuar con otra aplicación.
+Teacher: Listo.
+Teacher: Ahí.
+Teacher: Entonces, mira que en los servicios web nosotros lo que empezamos fue a crear fueron funciones o métodos.
+Teacher: Sí. Y esas funciones o métodos, ¿por dónde iban a ir?
+Teacher: Por la por la por el canal o por el protocolo o por la estrategia web que ya teníamos nosotros disponible.
+Teacher: ¿Listo?
+Teacher: Ahí fue donde empezamos nosotros a hablar sobre las APIs de servicios.
+Teacher: ¿Qué es una API?
+Teacher: Sí. ¿Qué es una API?
+Teacher: Una API, pues no es más que una interfaz de qué tengo publicado o qué pueden hacer en mi aplicación.
+Teacher: Listo.
+Teacher: ¿Y por qué definíamos APIs?
+Teacher: Porque necesitamos un contrato que le diga a las aplicaciones que me necesitan cómo me tienen que enviar la información y cómo les voy a devolver la información, ¿cierto?
+Teacher: Eso es lo que nosotros llamamos una API.
+Teacher: O sea, la API, entre comillas, es la documentación o la forma o el contrato con el cual yo le voy a decir a los que necesiten hablar conmigo cómo se tienen que contactar conmigo y cómo les voy a dar la respuesta en el caso de
+Teacher: que tenga alguna respuesta.
+Teacher: Entonces, ya con eso, application programming interface.
+Teacher: Exactamente.
+Teacher: Entonces es la interfaz para que las aplicaciones entre aplicaciones hablen.
+Teacher: Las API no están hecho para que el usuario hable con ellas, sino para que las aplicaciones ah, pero es que yo estoy desarrollando una aplicación móvil.
+Teacher: Okay.
+Teacher: Pero el que va a hablar no es el usuario, va a hablar es la aplicación móvil con nuestra aplicación web, ¿listo?
+Teacher: O o perdón, con nuestro servicio web.
+Teacher: Entonces, ya dejamos de crear aplicaciones para empezar a crear algo así como bibliotecas, una colección de funciones, una colección de servicios que pueden ser consumidos por otras aplicaciones.
+Teacher: Listo, ya no estamos en el mundo del B2C o del Business to customer, sino que estamos en en el mundo del business to business.
+00:45:00
+Teacher: La en los servicios web es para que entre empresas podamos intercambiar información.
+Teacher: ¿Listo?
+Teacher: Y aquí pues aparecieron.
+Teacher: Entonces, digámoslo así, poco a poco esta tecnología que fue que empezó como publicación de documentos terminó convirtiéndose en un RPC usando la web.
+Teacher: Entonces, ya estoy publicando servicios y voy a buscar o existe ya un mecanismo en el cual yo puedo hacer el llamado a esos servicios.
+Teacher: Sí, mi aplicación cliente va a ser un llamado a los servicios publicados en el en la aplicación servidor, en el servicio web llamado servidor.
+Teacher: Entonces, al final lo que nosotros hoy conocemos como servicio web es la evolución tecnológica, utilizando otras tecnologías de lo que llamábamos RPC, estándar eh entre entre diferentes aplicaciones.
+Teacher: ¿Por qué?
+Teacher: ¿Por qué el los servicios web reemplazaron Corba?
+Teacher: Justamente por eso, porque lo que estaba buscando Corba, creando un infraestructura, creando una arquitectura independiente, se solucionó con la evolución de los de de las aplicaciones web o de las del la tecnología web.
+Teacher: ¿Listo?
+Teacher: ¿Por qué se solucionó?
+Teacher: Ah, porque es que yo puedo crear un servidor web hecho en Java o puedo crear un servidor web hecho en Python o puedo crear un servidor web hecho en GO o puedo crear un servidor web hecho en Pascal,
+Teacher: puedo tener eh servidores web hechos en Note y esos servidores pueden intercambiar información utilizando el servicio web.
+Teacher: Entonces, ya estaba listo, o sea, ya lo único que teníamos que hacer era coger todas esas aplicaciones que teníamos, digamoslo así, desarrolladas de una manera eh monolítica o tradicional y llevarlas al web donde estábamos trabajando utilizando socket, utilizando RPC,
+Teacher: RMI, etcétera, ya las teníamos que pasar a una tecnología web utilizando otros protocolos, utilizando otras herramientas y otras tecnologías, porque ya dejamos de escribir eh escribir pantallas o desarrollar pantallas en Java, en Delfi,
+Teacher: en lo que sea para convertirnos a desarrollar páginas web con HTML, CSS y JavaScript.
+Teacher: Entonces, mire que fue hacer una transición técnica para que todas esas aplicaciones que ya existían ahora pudiesen eh convivir o intercambiar información utilizando lo que nosotros llamamos los servicios de web.
+Teacher: Entonces, ¿qué era lo que sucedía en el pasado cuando estaban las aplicaciones?
+Teacher: es web.
+Teacher: Entonces vamos a tener como ejemplo aquí un una un agente de viajes, listo, pues un asesor de una agencia de viajes.
+Teacher: Entonces, era el pasado, cuando existía solo las aplicaciones web, el asesor o el agente de viajes lo que hacía era hablar con el cliente o el cliente venía y hablaba con él y decía, "Okay, necesito un paquete para irme de vacaciones para Cartagena." Okay.
+Teacher: Sí, señor.
+Teacher: Eh, ¿para cuándo lo necesita?
+Teacher: Ah, lo necesito para tales fechas.
+Teacher: Eh, ¿cómo quiere el hotel?
+Teacher: ¿Cómo se va a ir en bus, en avión, en o o de qué manera se va a viajar?
+Teacher: Y toda esa información la tenía que procesar quién, este agente.
+Teacher: cuando ya le hizo el interrogatorio, cuando ya tiene toda la información de qué es lo que quiere el usuario, el agente lo que tenía que hacer era empezar a jugar o empezar a a revisar en las distintas páginas de las distintas empresas a las cuales ellos tenían acceso o que
+Teacher: podían hacer reservas o que podían hacer algún tipo de gestión y empezar a a pasar por todas esas empresas buscando cómo arreglarle la o darle la solución al usuario.
+Teacher: ¿cierto?
+Teacher: Entonces, él tenía que venir a la a la aplicación de de la de la aerolínea, la aplicación web que desarrolló la aerolínea para que pudieran entrar los asesores y empezar a hacer consultas.
+Teacher: Okay, necesito tantos tiquetes o necesito tantos eh ubicaciones.
+Teacher: Si tenían que hacer transbordo o hacer escala, pues entonces tenía que mirar con esta aerolínea a qué hora lo puedo despachar, a qué hora llega al otro lado y luego ir a mirar en la misma aerolínea o en otras aerolíneas para el siguiente
+Teacher: vuelo y cosas así por decirlo.
+Teacher: Pero todo lo hacía este señor, ¿cierto?
+Teacher: y dependíamos de la experiencia, de la capacidad o de la experiencia que tiene él.
+00:50:00
+Teacher: Y luego cuando ya tenía consolidada toda la información, entonces ya le tocaba venir a al sistema empresarial, el sistema de la empresa donde él trabaja y empezar a llenar toda la información.
+Teacher: Okay, señor César Díaz quiere viajar a Cartagena los días tales, tales y tales.
+Teacher: El presupuesto es tanto.
+Teacher: La reserva que está estoy haciendo es con Avianca tal día o con tal vuelo y luego viaja de Bogotá a Cartagena en tal vuelo y el hotel que va a reservar es tal, va a tener tales planes vacacionales o tales toures,
+Teacher: etcétera, etcétera.
+Teacher: Todo lo tenía que venir a hacer aquí, pero también tenía que venir a hacerlo acá.
+Teacher: tenía que hacer la reserva en la aerolínea para que le reservaran el cupo y luego tenía que venir aquí y copiar o pegar o volver a copiar lo que había escrito acá.
+Teacher: Lo mismo con el hotel.
+Teacher: Entonces, con el hotel ya hizo la reserva, pero tenía que venir aquí y decir, "Mire, ¿y la reserva de tal hotel para tales días, tales noches, etcétera? era tal,
+Teacher: ¿para qué?
+Teacher: Para que el sistema de la empresa pues pudiese tener la información de cómo cobrarle al usuario, ¿cierto?
+Teacher: De cómo cobrarle, cómo qué reservas son las que hizo, cuál es la comisión que le va a dar al vendedor, etcétera, etcétera, etcétera.
+Teacher: Pero en el mundo de las aplicaciones web, ya llegamos a a este punto donde el agente ya no tiene que hacer toda la gestión entre diferentes empresas.
+Teacher: Yo lo que puedo hacer es de que mi aplicación web, ojo, que la aplicación web de la empresa me entregue toda la información que yo necesito.
+Teacher: Yo pueda consultar aquí los vuelos, pueda consultar aquí las la los hoteles, las rentas de carros, los toures, etcétera.
+Teacher: Todo lo tengo aquí disponible.
+Teacher: Yo simplemente voy seleccionando, voy o voy buscando en un solo lugar.
+Teacher: Y en el caso de que yo tenga que interactuar con esas empresas eh externas, pues simplemente mi servidor corporativo es el que tiene que hablar con el servidor de la aerolínea, con el servidor del hotel, con el servidor,
+Teacher: etcétera, etcétera.
+Teacher: ¿Cierto?
+Teacher: Entonces, ya este señor termina siendo el cliente o el que va a estar haciendo la comunicación con los diferentes eh con las diferentes empresas o con los diferentes datos o los cuales o los diferentes servicios con los cuales estoy interesado
+Teacher: eh interactuar.
+Teacher: Y esto puede llegar pues a un nivel un poco más grande, ¿cierto?
+Teacher: eh niveles donde yo podría desde mi servidor corporativo dar acceso a aplicaciones web o aplicaciones móviles, ¿cierto?
+Teacher: Para que puedan acceder a la plataforma.
+Teacher: Ah, pueden utilizar WAP, que era pues la tecnología antes de del 3G, pero podíamos utilizar WAP para el la transferencia de información en celulares viejitos.
+Teacher: Ahora ya pues podemos utilizar aplicaciones web utilizando el navegador en nuestros celulares.
+Teacher: Eh, pero también teníamos la posibilidad de trabajar con las Palm.
+Teacher: No sé si conocieron ustedes las Palm, eh, que eran unos dispositivos que me permitía acceder a la aplicación de la empresa, pero de manera móvil.
+Teacher: Todo lo podíamos hacer ya desde desde nuestra aplicación empresarial en nuestro celular o en nuestra Palma o podíamos hacerlo desde la web y teníamos la misma información y podíamos intercambiar información como de rentas de carros, servicios de hoteles,
+Teacher: aerolíneas, el marketplace o eh la parte de de gestión de compras o de gestión de pagos.
+Teacher: Lo podíamos ya gestionar todo aquí.
+Teacher: ya no me tenía que no le tenía que pagar al señor, no tenía que ir a caja para poder pagar, sino que podía pagar con diferentes servicios, ¿cierto?
+Teacher: O o incluso podría llegar a ser el caso de que le pudiéramos publicar al usuario el marketplace para que ellos mismos hicieran su autogestión.
+Teacher: ¿Listo?
+Teacher: Entonces, esto eso es lo que logramos nosotros con la con los servicios web, llegar a un mundo o a un punto donde la integración de servicios es lo natural, no vamos a hacer de que el usuario tenga que conocer todas las aplicaciones o todas las interfaces de todas las empresas,
+Teacher: sino que con una sola aplicación ella, esta aplicación sí conoce cómo hablar con todas las empresas y las otras y todas las empresas se pueden hablar entre sí o todas las aplicaciones se pueden hablar entre sí.
+Teacher: O sea, la idea es de que podamos integrar todos los servicios necesarios en mi aplicación eh para poder dar una solución a un problema.
+Teacher: ¿Qué se ve aquí?
+Teacher: Es que mire que la evolución de los servicios web y la evolución de todo este tema de del desarrollo web terminó creando lo parte o parte o digámoslo así de una manera consistente lo que nosotros hablamos de servicios de computación distribuida,
+Teacher: porque ahora voy a tener nodos independientes para cada una de las tareas y simplemente hago de que hablen entre ellos o que intercambien información dependiendo de dónde necesitamos llegar a o de dónde necesitamos trabajar y o qué necesitamos realizar en un momento determinado.
+00:55:00
+Teacher: Entonces, mire que aquí tenemos lo que conocemos como servicio web, integración de servicios o un gran sistema distribuido para la gestión de las ventas de tiquetes aéreos o de las ventas de turismo y para las empresas de turismo.
+Teacher: Gracias a esta integración de servicio fueron que digámoslo así fueron apareciendo pues nuevos servicios o nuevos proveedores que como Despegar, como Tribago, como Airbnb, Booking,
+Teacher: que a pesar de que hay algunos que se encargan solamente de gestionar un tipo de cosas, como por ejemplo Booking inicialmente era solo gestión de hoteles, pero al final él podía hablar con múltiples hoteles, ¿no?
+Teacher: Los hoteles no se tenían que registrar únicamente en Booking, sino que Booking podía gestionar eso.
+Teacher: Tribago busca entre los diferentes aerolíneas, hoteles y puede integrarlo todo en un paquete.
+Teacher: Y cuando yo le pago a Tribago o cuando hago una compra en Tribago, Tribago es el que se encarga de hacer la el registro tanto en la aerolínea, el hotel y la renta de carros, despegar todas esas empresas,
+Teacher: pues al final estamos haciendo lo que es esto, una integración de servicios gracias a los servicios web.
+Teacher: Ahora, como es un servicio web, digámoslo así, ahora existen dos estilos o existen dos tipos de servicios web.
+Teacher: Los servicios web originales son los eh o digámoslo así, el primer protocolo de servicios web que existió o que existe eh es los servicios web utilizando el protocolo SOAP.
+Teacher: ¿Listo?
+Teacher: Pero hay otro modelo o hay otra arquitectura, otro estilo de arquitectura que es la arquitectura REST o Restfood.
+Teacher: ¿Listo?
+Teacher: Entonces son dos estilos diferentes de hacer lo mismo, de compartir recursos utilizando el protocolo eh web.
+Teacher: Tienen las mismas funcionalidades o tienen lo mismo que nosotros conocimos de RMI porque necesita un protocolo de transporte.
+Teacher: RMI utilizaba eh B RMI o RPC.
+Teacher: Necesitan un protocolo de transporte.
+Teacher: Se utilizaba TCP o UDP.
+Teacher: Ahora, ahora vamos a utilizar HTTP.
+Teacher: ¿Qué significa?
+Teacher: Que los servicios web ya no van en la capa, o sea, no se no se soportan sobre la capa de transporte en la capa tres, sino que vamos a estar en la capa och 8o, en la capa siete,
+Teacher: en la capa de aplicación.
+Teacher: Eh, ¿cuál es el formato de representación?
+Teacher: ¿Cómo vamos a intercambiar información entre cliente y servidor?
+Teacher: Si estamos en SOAP, vamos a utilizar XML.
+Teacher: Si estamos en REST, puede ser XML, puede ser Jason o puede ser eh texto plano.
+Teacher: Listo.
+Teacher: Eh, protocolo de comunicación que usa aquí en digámoslo así, aquí en en SOAP utilizamos el protocolo SOAP.
+Teacher: SOAP es el protocolo de comunicación, o sea, el cómo se van a entender tanto cliente como servidor.
+Teacher: Eh, pero con REST esto no existe.
+Teacher: Listo.
+Teacher: La interfaz de servicios, ¿existe una interfaz, un archivo que me defina qué debe haber en el cliente o qué está publicado en el cliente y qué puedo eh usar en el qué está publicado en el servidor y qué puedo usar
+Teacher: desde el cliente?
+Teacher: Pues está en, digámoslo así, en Soap.
+Teacher: hay un archivo llamado WSDL o web service Definition Language.
+Teacher: ¿Listo?
+Teacher: O es el archivo de ya digámoslo así, el la descripción o la definición del servicio web.
+Teacher: ¿Listo?
+Teacher: En rest no existe un archivo que diga qué es a menos de que yo haga una documentación de mi API, ¿cierto?
+Teacher: Pero no existe un archivo en el cual yo diga qué es lo que realmente tiene el cliente y qué es lo que tiene el servidor.
+Teacher: ¿Qué es lo que me valide o que me identifique cuáles son los parámetros que recibo y cómo los devuelvo.
+Teacher: Listo.
+Teacher: Con el WSDL yo tengo eso.
+Teacher: Yo tengo la posibilidad de localizar eso y tengo UDDI.
+Teacher: Ah, bueno, perdón.
+Teacher: Y para la localización del servidor, ¿dónde se dónde hay un servicio que responde a este WDL?
+Teacher: Pues en SOAP existen los UDDI, ¿listo?
+Teacher: O sea, que todo lo que digámoslo así, todos los elementos que vimos que existían en RPC, que también sirven en o que también existen en RMI, también lo tenemos en los servicios web.
+Teacher: Soap.
+Teacher: En rest no tenemos, digámoslo así, a pesar de que podemos intercambiar información, no hay tantas validaciones y restricciones como lo tenemos en SOAP.
+01:00:00
+Teacher: Eh, SOAP está estandarizado en la W3C bajo este estándar.
+Teacher: Creo que ya hay una actualización de de esta versión o de este estándar porque pues han pasado muchos años del 2002 ahora, ¿cierto?
+Teacher: Pero eh básicamente lo mismo, ¿cierto?
+Teacher: Eh, digámosla tecnológicamente estamos hablando de lo mismo.
+Teacher: Entonces, ¿qué es Soap?
+Teacher: Sap es un protocolo de acceso a objeto de manera simple, o sea, una forma como vamos a intercambiar objetos utilizando e la plataforma o la tecnología web.
+Teacher: Es un protocolo que me permite, digámoslo así, podemos utilizar cualquier protocolo de transporte como HTTP, SMTP y algunos otros aquí.
+Teacher: ¿Qué qué tiene esto o de dónde sale esto?
+Teacher: Listo.
+Teacher: Y es que los servicios web a pesar de que hablamos de que necesitan el protocolo HTTP, yo puedo utilizar cualquier otro protocolo que esté dentro de la capa de aplicación.
+Teacher: O sea, yo puedo basar mis servicios a un protocolo diferente al HTTP.
+Teacher: yo puedo montarlo sobre ese MTP, etcétera.
+Teacher: O sea, no importa qué protocolo estemos nosotros utilizando, yo podría montar un servicio SOAP, un servicio web SOAP y estoy utilizando este protocolo.
+Teacher: Características de este protocolo, utiliza XML, o sea, su formato de representación o el intercambio de información va a ser en XML.
+Teacher: Recuer el XML pues es un lenguaje de marcado donde es por etiquetas, donde tiene una etiqueta que abre, una etiqueta que cierra, eh por dentro va el contenido y dentro del contenido puede ir texto plano o puede ir otros
+Teacher: otras etiquetas o una o un conjunto de etiquetas.
+Teacher: Entonces, utiliza XML eh para transporte puedo utilizar eh HTTP, SMTP, TCP, pues si si me cita servicios web.
+Teacher: Ah, bueno, tiene una extensión o una plugin o por defecto nosotros podemos agregar un esquema de seguridad sobre sobre los servicios web.
+Teacher: eh está estandarizado para que cualquier aplicación que utilice SOAP sepa cómo cómo es la seguridad que vamos a intercambiar entre cliente y servidor.
+Teacher: Y tenemos nuestro web service Language o Definition Language WSDL, que es el que me define cuáles son las funciones que existen en el servidor, cómo puedo enviar la información y cómo voy a recibir la información.
+Teacher: eh ventajas que tienen los servicios websap, la estandarización, eh la estandarización es algo bastante importante eh en los servicios Yeah.
+Teacher: Digamos que por el hecho de que estamos trabajando con el WSL, cualquier aplicación que sepa hablar SOAP o que pueda hablar el protocolo SOAP y que sepa interpretar o implementar el WSDL del lado del cliente, pues entonces va a tener la posibilidad de de hablar de una manera estándar.
+Teacher: O sea, no me importa si el servidor está en Java o está en punto net o está en Pascal, no importa en qué esté implementado, eh la forma de de enviar los mensajes siempre va a ser de la misma manera.
+Teacher: tiene características de seguridad, o sea, puedo asegurar la eh digamos que la transmisión, que la información va a estar segura, que no va a ser violentada o violada, etcétera.
+Teacher: Eh, puede tener transporte flexible porque puede utilizar cualquier protocolo de transporte y la interoperabilidad tiene una alta interoperabilidad entre diferentes lenguajes.
+Teacher: ¿Listo?
+Teacher: Entonces, eh es tiene estado, a ver qué dice de persistencia a a a diferencia rest.
+Teacher: Digamos que sí, digamos que una de las características, a pesar de que rest está sobre http, eh yo puedo crear, digámoslo así, al final yo estoy como ejecutando una aplicación del lado del servidor web.
+Teacher: ¿Listo?
+Teacher: Entonces, cuando yo estoy trabajando con servidores SOAP, yo tengo la posibilidad de de implementarla como una aplicación stateless o sin estado o una aplicación stateful con estado.
+Teacher: Listo.
+Teacher: Entonces, eso es también es otra ventaja, como lo está diciendo ahí Daniel por por el chat.
+Teacher: ¿Qué desventajas?
+Teacher: Complejidad, ¿cierto?
+Teacher: O sea, una de las cosas que ha hecho de que no es no hablamos tanto de servicios OAP es simplemente porque hay muchas reglas, muchas cosas, muchas implementaciones, muchas bibliotecas que se necesitan para poder establecer esa comunicación.
+01:05:00
+Teacher: El tema del rendimiento, todo el proceso de convertir objeto a XML y coger el XML y volverlo otra vez objeto lo hace muy lento versus la versus la implementación de lo que es Jason en JavaScript o o los diccionarios en Python,
+Teacher: ¿cierto?
+Teacher: Eh, para esos lenguajes es muy fácil hacer la la lectura o hacer la traducción o la conversión entre esos tipos de datos, pero con XML es un poco más tedioso porque como XML es un formato de es un
+Teacher: sistema de texto formateado por por marcas o por etiquetas, entonces yo tengo que leer la etiqueta que abre a hacer el recorrido hasta la etiqueta que cierra para poder identificar qué qué hace parte de cada cosa.
+Teacher: En cambio, en Jason, pues aquí abre una llave, hasta donde cierre la llave, ahí termina eh la definición de ese objeto.
+Teacher: So, it's Eso es mucho un poco más fácil, un poco más lento.
+Teacher: Eh, requiere más esfuerzo de desarrollo y mantenimiento porque cualquier modificación, ajuste que nosotros queramos hacer sobre el WSDL implica que tenemos que cambiar el cliente y tenemos que cambiar el servidor.
+Teacher: ¿Listo?
+Teacher: porque cambió el estándar o cambió eh el modelo.
+Teacher: Entonces, eh esa pues puede ser un poco de problema al momento del desarrollo y es menos flexible.
+Teacher: O sea, la flexibilidad es una desventaja porque no me permite eh hacer muchas modificaciones o hacer ajustes sobre mi estructura.
+Teacher: Siempre es un necesito un protocolo o necesita pues una serie de ajustes o cambios que en rest no lo necesitamos.
+Teacher: pues porque red es mucho más flexible.
+Teacher: Esto sería más o menos un ejemplo de cómo sería una petición y una respuesta SOP.
+Teacher: Básicamente, eh, mira que estoy utilizando el protocolo HTTP, entonces tengo estoy mandando método post.
+Teacher: Todo en SOAP son métodos post.
+Teacher: Eh, le digo a qué ruta o a qué recursos o a qué función o a qué servicio es al que quiero llamar.
+Teacher: Y bueno, el protocolo de transporte y aquí en el contenido nosotros mandamos un contenido de texto y ese contenido de texto pues es un documento escrito en XML.
+Teacher: Eso es un XML.
+Teacher: Entonces, hay una etiqueta que abre, que está encerrado entre un menor que y un mayor que y todo el contenido o o sabemos qué hace parte de este de esta etiqueta porque es lo que está dentro de de esa
+Teacher: etiqueta que abre hasta la etiqueta que cierra, que normalmente termina con un mayor con un menor que un slash, el nombre de la etiqueta y la etiqueta que cierra.
+Teacher: Todo eso el Sm y el M, pues son name space, pues esos son especificaciones muy claras de de XML donde yo defino, o sea, yo digo eh o digámoslo así, aquí estoy describiendo dónde está la definición de de esta etiqueta,
+Teacher: o sea, qué puedo guardar o qué puedo agregar dentro de esta etiqueta está definido dentro de este documento, este recurso en internet.
+Teacher: Y lo mismo.
+Teacher: Entonces, aquí está una etiqueta envelop, o sea, esto es un sobre, una carta, un mensaje.
+Teacher: El mensaje va a tener una cabecera donde podemos agregar destinatarios, etcétera, etcétera.
+Teacher: Y en este caso, pues solamente estamos mandando body.
+Teacher: Entonces, en el cuerpo donde va a estar la información útil de qué es lo que necesito.
+Teacher: Entonces, voy a agregar un otro documento XML.
+Teacher: Este sí es definido por nosotros, es personalizado por nosotros.
+Teacher: Y aquí le definimos de que vamos a la función que quiero, si este es el servicio, esta es la función que quiero llamar, digamos.
+Teacher: Digamos que esto es equivalente a tener el objeto.
+Teacher: El objeto es stock quote y la función que quiero llamar es get last trade price obtener el último precio de venta del símbolo o de o de la acción tal.
+Teacher: Entonces, mire que todo lo teníamos que estar etiquetando entre etiqueta que abre y etiqueta que se abre.
+Teacher: Para la respuesta, ¿qué protocolo estamos utilizando?
+Teacher: El código de respuesta.
+Teacher: Eso sí es directamente del protocolo HTTP.
+Teacher: 200 significa que todo está bien y el okay es el mensaje o el o el texto que hace referencia a este código.
+Teacher: ¿Listo?
+Teacher: Y ahora aquí como como contenido de la respuesta, pues también vamos a recibir un sobre, un mensaje.
+Teacher: ¿Listo?
+Teacher: Entonces, SOAP al final es un paso de mensajes, un protocolo de paso de mensajes, ¿listo?
+Teacher: Pero de mensajes escritos en XML y montados sobre un sobre los servicios web.
+Teacher: Entonces es un esto es un sobre, puede traer una cabecera, tiene un body y en el body me trae una respuesta que viene, okay, con un tipo de dato, get last eh price viene con un campo llamado price y un número
+01:10:00
+Teacher: tag.
+Teacher: ¿Dónde está la dificultad?
+Teacher: Y es que cuando yo mando un mensaje, eh, so tengo que escribir todo esto y lo único que quería decir era sobre este objeto quiero llamar esta función con este parámetro, pero tengo que escribir todo eso.
+Teacher: El servidor va a tener que leer todo este mensaje, decodificarlo, verificar que el sobre si tenga una etiqueta de cierre, el body si tengo una etiqueta de cierre, este get price si tengo una etiqueta de cierre,
+Teacher: que este símbolo tenga una etiqueta de cierre y aquí me esté mandando un valor un dato válido.
+Teacher: O sea, todo eso lo valida en el proceso de captura o de o de codificación, de codificar el mensaje, perdón.
+Teacher: Y aquí y entonces cuando ya tiene este dis y cuál es la función que va a hacer, el servidor ya llama la función, va a la base de datos, trae la información y va a devolver un valor 34.5.
+Teacher: Y entonces, ¿qué hace?
+Teacher: C 34.5, lo mete en un price, lo mete en esta en este tipo de respuesta, porque es el tipo de dato de respuesta definido en el WSDL.
+Teacher: Eh, lo mete en un body, lo mete en el sobre y ahora sí le manda.
+Teacher: Entonces, mire que ese proceso de codificación y decodificación puede llegar a ser lento dependi o digámoslo así tiene su esfuerzo para para garantizar la comunicación utilizando eh el servidor de registro, el UDDI.
+Teacher: Entonces, este es mi binder.
+Teacher: Sí, es UDDI se definió como un binder global.
+Teacher: Listo.
+Teacher: Pero lo mejor se definió como un binder global mundial.
+Teacher: Creo que cuando se definieron los servicios web, no pensaron de que fuera a ser tan popular.
+Teacher: Creyeron de que solamente iban a ser algunas pequeñas empresas las que iban a poder publicar sus servicios o que iban a ser interesantes publicar sus servicios.
+Teacher: Entonces, ellos crearon un servidor de registro eh global pero integrable.
+Teacher: ¿Qué significa de que yo podía tener servidores de registro en diferentes de diferentes fabricantes?
+Teacher: y los podíamos integrar, podíamos crear una arquitectura de replicación, sea maestro, maestro trabajador o hacer un proceso de replicación activo, activo o pasivo.
+Teacher: ¿Con qué idea?
+Teacher: con la idea de que si yo quería hacer una consulta o tengo un cliente que quiere que quiere buscar un servicio, pues simplemente le preguntaba al a alguno de los binder, el binder respondía dónde se está dónde estaba publicado y el cliente ya podía establecer la
+Teacher: comunicación de manera directa.
+Teacher: ¿Listo?
+Teacher: Lo mismo que cuando el servidor, el publicador del servicio pues arrancaba, pues tenía que registrarse ante el binder y entonces este binder replicaba las hacía una réplica, una copia de de su registro,
+Teacher: de su estado a los otros servidores para que cualquier consulta pues ellos también las pudieran responder, que no siempre tuviesen que llegar hacia el mismo servidor.
+Teacher: Entonces ese fue el esquema o el modelo que planteó SOAP.
+Teacher: para la implementación del binder, pero al final o digámoslo así de manera práctica no lo pudimos ver implementado.
+Teacher: ¿Por qué?
+Teacher: Porque recuerden que todos estos servicios no generan valor agregado a los fabricantes, ¿cierto?
+Teacher: O sea, Microsoft no gana si yo utilizo el el UDDI a menos de que cobre una mensualidad.
+Teacher: Lo mismo IBM, lo mismo Oracle, lo mismo el lenguaje que sea, ¿cierto?
+Teacher: o o la o el fabricante que sea, necesitan poder ganar eh si hacen este desarrollo necesitan eh beneficios.
+Teacher: Perdón.
+Teacher: Entonces, como estos beneficios eh o digamos así tener un catálogo mundial de todos los servicios, pues se volvía un poco manejable, ¿cierto?
+Teacher: Necesitaríamos muchos servidores y esos muchos servidores implicaban muchos gastos o muchos presupuestos.
+Teacher: Entonces, por esa razón, la gran, digámoslo así, la gran mayoría de los servicios web que nosotros publicamos, no us no usamos un binder, ¿cierto?
+Teacher: No vamos a utilizar un UDI.
+Teacher: Al final nosotros lo que vamos a hacer es hacer esto, digámoslo así, la identificación más básica del servicio y es el ID de la máquina y el puerto por el que está escuchando.
+Teacher: Entonces yo digo, no es que quiero llamar a a la máquina uno por el puerto 8080 y entonces ahí me responde mi servicio web.
+Teacher: Entonces, eso digámoslo así que al final digamos que por uso desechamos el uso de los de los binder o de los UDDIs, los terminamos desechando de nuestra arquitectura para poder realizar conexiones directas.
+01:15:00
+Teacher: Implicaciones de eso.
+Teacher: Si yo cambio el servidor o si tengo múltiples copias, todas las peticiones siempre van a ir al mismo.
+Teacher: ¿Sí?
+Teacher: A menos de que yo cambie este para que le diga, "No, mándele las peticiones en lugar de a este, mándeselo al otro." Pero entonces son los problemas de no tener un
+Teacher: bailer, ¿eh?
+Teacher: Y listo.
+Teacher: El siguiente, el segundo modelo y creo que el modelo que más estamos utilizando hoy en día de servicios REST es este que llamamos nosotros de servicios web, es el que llamamos REST o representational state transfer.
+Teacher: Eh, los servicios REST no son un estándar.
+Teacher: Ojo, no son un estándar.
+Teacher: se han convertido en estándar de facto, pero no están no están especificados.
+Teacher: No existe algo que me diga cómo tengo que crear un servicio rest.
+Teacher: Hay hay convenciones, más no es un estándar.
+Teacher: Hay algo que me dice, "No, si usted lo hace de esta manera es mejor que si lo hace de otra manera, pero no es un estándar. O sea,
+Teacher: yo puedo desarrollar mis o publicar mis servicios restana." ¿Listo?
+Teacher: Entonces, ¿qué es esto de REST?
+Teacher: Es un estilo de arquitectura para diseñar eh servicios web.
+Teacher: Fue una evolución o digámoslo así una devolución en el modelo de los servicios Red de SOAP.
+Teacher: ¿Listo?
+Teacher: ¿Qué fue lo que planteó REST versus SOAP?
+Teacher: Y es, okay, SUAP cumple con el objetivo de eh tenemos un servicio, llamamos a una función de ese servicio y tenemos unos parámetros, pero todo lo tenemos que escribir en XML y tengo que el objeto que tengo lo tengo que escribir en XML,
+Teacher: lo tengo que meter en un sobre y ese sobre es el que voy a mandar y luego tengo que sacar los datos del sobre para poder leer la información.
+Teacher: Entonces, lo que planteó eh Rest fue, "Okay, ¿y qué pasa si en lugar de tener ese protocolo mandamos el dato crudo?" Sí.
+Teacher: O sea, ya no vamos a tener el protocolo.
+Teacher: Métalo en un sobre, métalo en el body y aquí va el objeto.
+Teacher: Mándeme solo el objeto y para ubicar cuál es el cuál es el servicio que usted necesita, mándemelo en la URL.
+Teacher: Sí, en la URL.
+Teacher: dígame qué servicio es el que necesita y en el y en el cuerpo, en el body http, en lugar de mandar una estructura, mándeme de una vez el contenido.
+Teacher: Y si yo Pero entonces, ¿cómo le digo cuáles son las acciones que quiero hacer?
+Teacher: Pues de dos posibilidades.
+Teacher: O en el nombre o en la URL o en el nombre del recurso que estás publicando le dice qué función es.
+Teacher: Entonces, eh es las usuarios es la nuevo, el las usuarios es las editar, el las usuarios es las modificar o eliminar o utiliza una convención para para lo que normalmente entendemos como CRUT,
+Teacher: el get para crear, para consultar o para leer, el delete para borrar, el post para crear nuevos recursos y el putizar nuevos recursos.
+Teacher: Creo que me quedó al revés aquí.
+Teacher: Aquí es put y aquí es post.
+Teacher: Listo.
+Teacher: Put es para actualizar recursos y post para crear nuevos recursos.
+Teacher: ¿Qué es un recurso?
+Teacher: Ah, un usuario, una un producto, una persona, etcétera, etcétera, etcétera.
+Teacher: ¿Cierto?
+Teacher: Los elementos que yo quiero manipular o quiero gestionar de esto.
+Teacher: Y utilicemos el protocolo HTTP.
+Teacher: ¿Y por qué el protocolo HTTP?
+Teacher: Porque ya todos los servidores web saben HTTP y los servidores web ya me pueden entregar en la capa de aplicación, en el CGI, en PHP, en ASP, me pueden entregar ya la información cruda.
+Teacher: Deme el body y deme y deme qué método fue.
+Teacher: Y con esa información, pues simplemente yo puedo ir y ejecutar la tarea que me están pidiendo.
+Teacher: Mira que simplificaron un poco el modelo o o el o la forma en la que podíamos nosotros llamar los servicios, ¿cierto?
+Teacher: Ya no necesitamos un protocolo, no necesitamos un WSDL que tiene que conocer el servidor como el cliente, el servidor tiene que respetar la eh la especificación del WSDL, el cliente tiene que conocerla y y enviar la información como me la piden y esperarla como
+Teacher: como está definido.
+Teacher: En red, no.
+Teacher: En red simplificaron todo eso, toda la toda la parte de estructura y burocracia se la quitaron.
+Teacher: Simplemente dijeron, "¿Qué tal si lo manejamos de esta manera?" Pero no existe una regla o no
+01:20:00
+Teacher: nadie dice que yo no pueda crear un objeto utilizando get o que yo pueda modificar un objeto utilizando podrar un objeto utilizando post.
+Teacher: O sea, no existe nada que me limite a que yo haga ese tipo de de cosas.
+Teacher: ¿Listo?
+Teacher: Pero si nosotros cumplimos las recomendaciones, entonces eh podemos llevar nuestro servicio REST a algo que nosotros llamamos los servicios Restful.
+Teacher: y Redful, pues es básicamente las los servicios que cumplen con eh digámoslo así con las especificaciones o con las recomendaciones que nos dieron para crear buenos servicios restar si
+Teacher: tenemos el nivel un restful adecuado, pues digamos que existen unos niveles de madurez de resto de madurez de Richardson para la evaluación de un servicio rest.
+Teacher: ¿Qué es este modelo de madurez?
+Teacher: Esa es la forma como nosotros vamos a poder identificar qué tan eh adecuado es el servicio REST que estamos publicando para una fácil para fácil compartir recursos entre distintos elementos.
+Teacher: Entonces, inicialmente va a estar el nivel cero.
+Teacher: ¿Y qué es el nivel cero?
+Teacher: Y es la posibilidad de poder enviar información por http.
+Teacher: ¿Listo?
+Teacher: Entonces, todo servicio web, todo servicio web tiene nivel cero.
+Teacher: ¿Listo?
+Teacher: Eh, ¿qué qué diferencia hay?
+Teacher: Y es que vamos a ponerle un endpoint o vamos a crear un recurso API Service Endpoint.
+Teacher: Esto del API no es obligatorio, es simplemente pues un estándar que hemos venido aprendiendo.
+Teacher: Pero entonces para tener el nivel cero yo tengo que publicar el servicio en un point o en una ruta, enviar los todos los métodos utilizando post y datos en Jason o en XML personalizados.
+Teacher: Entonces, esto mismo o este modelo es el que utiliza SOAP.
+Teacher: ¿Listo?
+Teacher: Soap lo que hace es publicar un end point llamado eh SOAP objectice o get eh el que vimos ahorita.
+Teacher: Listo.
+Teacher: El obtener el el valor del stock de de la acción.
+Teacher: Entonces crea un end point completico.
+Teacher: Listo.
+Teacher: Tiene un objeto slash el servicio o la función que quiero llamar.
+Teacher: utilizo post para todas las peticiones y mando los datos en XML.
+Teacher: Entonces, en SOAP estoy utilizando el nivel cero del nivel de madurez de Richardson, pero el modelo de madurez evalúa son los servicios REST, no los SOAP.
+Teacher: Entonces, a pesar de que SOAP está en el nivel cero, está implementando, digámoslo así, tiene está usando las recomendaciones del nivel cero de REST, o sea, lo mínimo necesario.
+Teacher: El primero es los recursos.
+Teacher: Entonces dice, "Okay, en el nivel uno define recursos independientes." ¿Listo?
+Teacher: Entonces, en estos recursos utiliza URIS o identificadores de recursos dedicados y que tengan sentido.
+Teacher: Entonces, aquí slash API Accounts, entonces yo sé que habla de cuentas.
+Teacher: API transactions, este es el elpoint de las transacciones.
+Teacher: AP users, esto, digámoslo así, aquí es donde está llegando todo lo que tiene que ver con usuarios.
+Teacher: Ya no tenemos un solo endo para todo y que decimos qué función es la que queremos llamar por dentro, sino que ahora ya vamos a, digámoslo así, cada endo o cada ruta me sirve para discriminar una cosa distinta.
+Teacher: Eh, el AP2 ya tiene que haber haber agregado además de los recursos, los verbos y los códigos de estado.
+Teacher: ¿Y qué hace referencia a eso?
+Teacher: Y es que vamos a utilizar de manera adecuada los verbos.
+Teacher: O sea, el get para consultar, el post para crear, el put para modificar o cambiar un objeto, delete para borrar y agregan otro nuevo que es el patch que es para modificaciones parciales.
+Teacher: Si yo quiero no quiero cambiar todo el objeto, sino una parte del objeto, entonces se recomienda que utilicemos patch en lugar de put.
+Teacher: Listo.
+Teacher: Y los códigos de estado es reutilizar o adoptar los códigos de los mensajes HTTP como códigos de mensajes de nuestra aplicación.
+Teacher: Entonces, si yo hago un get, entonces me debe devolver un okay.
+Teacher: Si devolvió datos.
+Teacher: Si ocurrió un error pues request.
+Teacher: Si el el problema es que el usuario no tiene permisos, entonces un autorized.
+Teacher: Si lo que mandé a consultar no existe en la base de datos, entonces devolvamos not found.
+Teacher: etcétera, etcétera, etcétera.
+01:25:00
+Teacher: Si mandamos a crear y se creó correctamente, no devolvamos okay, sino created, etcétera.
+Teacher: O sea, hay una serie de códigos dentro del HTTP, pues utilicémoslos o adoptémoslos para que nuestros servicios devuelvan de manera adecuada los códigos y utilicen los verbos de manera adecuada.
+Teacher: Cuando llegamos a este nivel dos, ya ten ya decimos que tenemos un un servicio restful.
+Teacher: ¿Listo?
+Teacher: Un servicio restful es cuando llegan al nivel dos, o sea, está definido por recursos.
+Teacher: Estamos utilizando los verbos http y los códigos de estado de manera adecuada, que tengan sentido.
+Teacher: Y por último, pues el nivel tres del nivel de madurez de Richardson termina en Has.
+Teacher: ¿Qué es Hosas?
+Teacher: Heas es un, digámoslo así, un estándar de intercambio, o sea, un estándar que vamos a cumplir, además de usar los verbos y además de los códigos de estado y los recursos, voy a utilizar un protocolo para poder intercambiar información o para poder recibir la información
+Teacher: y enviar la información al servidor.
+Teacher: ya no se manda un servicio, pues los datos crudos, sino que van dentro de un protocolo y cuando me va a devolver datos, me los devuelve en un protocolo y ese protocolo se llama HOS.
+Teacher: ¿Listo?
+Teacher: Entonces este HOS me permite enviar información que probablemente yo necesite para mis aplicaciones, pero que normalmente no me las devuelve un servicio restf.
+Teacher: ¿Listo?
+Teacher: Entonces, aquí, por ejemplo, cuando yo mando a crear un objeto, él me devuelve un objeto y dentro de ese objeto que me creó, hay un data, pues un bloque de datos y un bloque de enlaces.
+Teacher: Y en el bloque de enlaces me va a decir, eh, acabas de crear un usuario.
+Teacher: Si quieres consultar el usuario que acabamos de crear, entonces eh haga la petición a localhost 8080/ users/1.
+Teacher: Así puedes consultar la información del usuario, pero del usuario tienes unos roles.
+Teacher: Entonces, si quieres consultar los roles, eh llama el elpoint tal y así sucesivamente.
+Teacher: O sea, que en Has, además de los datos que normalmente transmitimos, también tenemos una cabecera que nos permite agregar como un valor agregado, como devolver información adicional que podría ser útil para el consumidor y para el cliente en este caso,
+Teacher: sea una aplicación móvil, sea una aplicación web, lo que sea, puede utilizar esos datos adicionales para configurar o para poder enlazar navegación por por por métodos, etcétera, o para activar alguna algún dato dentro de nuestra aplicación sin necesidad de estar escribiendo
+Teacher: código en nuestro en nuestro cliente.
+Teacher: Entonces, esos son los modelos de madures de Richards.
+Teacher: Y bueno, y un ejemplo de una API nivel dos, o sea, una API Redful, podría ser, no sé si se alcanza a ver bien, pero podría ser, bueno, vamos a hacer un método post a app register y es y este
+Teacher: este y ¿qué creen ustedes que estoy intentando hacer con un post app register?
+Teacher: Entonces, API, pues es simplemente un prefijo.
+Teacher: Out podríamos pensar que es un módulo, el módulo de autenticación y hay un método o hay una un servicio, un point llamado register.
+Teacher: ¿Para qué creen que es este método o este este recurso?
+Teacher: Post creación register, el registro de qué?
+Teacher: De un usuario, de un elemento de autenticación.
+Teacher: ¿Qué posibles mensajes de error?
+Teacher: mensajes de http me puede devolver 2011 porque creo el objeto.
+Teacher: Puede ser eh bad request en el caso de que mande mal los parámetros, que el el email no tenga formato, que la contraseña no tenga el tamaño adecuado, etcétera, puede devolver un bat request o puede mandar un conflicto de que ese usuario o que ese email ya
+Teacher: existe en la base de datos.
+Teacher: ¿Listo?
+Teacher: Esto que dice que es idempotente, recuerden en los conceptos de identición, debe generar el mismo resultado.
+Teacher: Los métodos post normalmente no son id potentes.
+Teacher: Listo.
+Teacher: Cada vez que yo mando un método post me puede, digámoslo así, está espero que me modifique cosas dentro del dentro del estado del sistema.
+Teacher: Y este otro post out login, ¿para qué será?
+Teacher: Pues para iniciar sesión.
+Teacher: ¿Será que con este vamos nosotros a crear un un login?
+Teacher: Estoy mandando un post creación y el endo es login.
+Teacher: ¿Será que vamos a crear un login?
+Teacher: No, lo que quiero es iniciar sesión o mandarle los los las credenciales y esperar eh respuesta.
+01:30:00
+Teacher: Pues entonces me va a devolver o un 200 si todo salió bien o un 401. Pregunta, ¿la outerá un servicio restful o en qué nivel está el este modelo?
+Teacher: Está en el nivel uno, ¿cierto?
+Teacher: en el nivel donde yo tengo un end point, pero no estoy manejando de manera adecuada ni los verbos ni los códigos de estado.
+Teacher: Estoy en el nivel uno y pero puedo funcionar, o sea, puedo crear usuarios, por eso me vuelve created, o puedo verificar que el usuario y contraseña sean correctos.
+Teacher: Por eso me devuelve 200 en vez de 2011, porque a pesar de que es post, no me va a devolver 2011. Okay.
+Teacher: Eh, esa otra API, API Accounts, entonces voy a hacer un get a API Accounts.
+Teacher: Es impotente.
+Teacher: Sí, porque si mando varias veces la misma petición va a devolver los mismos.
+Teacher: Me puede devolver un 200 si existían cuentas, un no content si no hay cuentas.
+Teacher: Puedo volver un autorizet si no tengo permisos para ver las cuentas.
+Teacher: Lo mismo.
+Teacher: Entonces, un método post.
+Teacher: Este método será para crear.
+Teacher: una cuenta no es potente porque crear siempre genera nuevos elementos.
+Teacher: Eh, puede volverme created o salió bien, puede volverme un autoriz si salió mal, puede volverme conflict si estoy intentando crear una cuenta que ya existe, bueno, cosas así por el estilo.
+Teacher: Eh, método put.
+Teacher: El método put es idén potente.
+Teacher: Esta es este es el end point o este es el endo point eh recomendado.
+Teacher: Esto que viene con dos punticos significa que es un dato variable.
+Teacher: Entonces, si yo digo slash/1, el la variable ID va a tomar el valor uno.
+Teacher: Si mando un 150, la el valor ID va a ser 150 y eso lo va a poder recibir la función que la procesa el servidor.
+Teacher: Va a ser impotente, sí, porque normalmente el put es actualizar todos los objetos y si mando varias veces a a actualizar los mismos datos, pues voy a tener el mismo resultado dentro en mi base de datos.
+Teacher: Eh, okay.
+Teacher: 401, 404, en el caso de que una cuenta con ese ID no exista.
+Teacher: Y lo mismo para el delete, ¿cierto?
+Teacher: Tengo el método delete sobre este mismo endo borrar la cuenta que tiene este ID.
+Teacher: Es en potente, sí, porque si yo la borro, pues no la va a poder borrar más de una vez y entonces si mando varias veces a borrar, pues la base de datos va a quedar igual.
+Teacher: me puede devolver un OK, me puede devolver un no content si no devuelve nada, un 401 si no está autorizado o un 404 en el caso de que yo quiera devolver, de que no encontré el registro para borrar.
+Teacher: Entonces, mire que si utilizamos este estándar, entre comillas, vamos a hacer muy fácil la integración con otras aplicaciones, pero mira que no hay una restricción que me diga si lo hago así o lo hago Hay algunos estándares.
+Teacher: Entonces está la documentación de Open Appi o lo que llamamos swagger, que me me genera la documentación o puedo publicar la documentación para que sea más fácil el intercambio, pero el día que yo quiera hacer un cambio en la API si agrego un nuevo campo eh y el usuario no se dio cuenta
+Teacher: o el cliente no se dio cuenta, cambie cambié un parámetro y mi y mi cliente va a poder va a empezar a mandar datos con errores o porque falten datos o porque cambió el parámetro y ya no se está leyendo de manera adecuada.
+Teacher: Listo.
+Teacher: Eh, bueno, ventajas, escalabilidad porque facilita la escalabilidad horizontal, flexibilidad porque permite diferentes formatos.
+Teacher: Yo REST lo puedo utilizar para leer XML, Jason, lo que yo quiera y él lo hace de manera, digámoslo así, fácil y sencilla.
+Teacher: Y utilizar métodos HTTP estándar.
+Teacher: ¿Por qué?
+Teacher: por el simplemente eh porque no vamos a estar agregando nuevas pues nuevas funciones o nuevos textos, sino que con los métodos ya sabemos qué es lo que queremos hacer.
+Teacher: Eh, desventaja sobre carga de datos.
+Teacher: Necesitamos agregar toda la información que necesitamos cuando cuando necesitamos modificar algo.
+Teacher: El tema de la latencia, eh, pues por ser un stateless, pues tiene que recibir objetos más grandes, procesarlos y generar la respuesta de objetos más grandes.
+Teacher: Entonces, puede generar un poco más de latencia.
+Teacher: El tema de la seguridad no es muy buena.
+Teacher: toca al programador le toca eh ingeniarse o definir cuál va a ser eh el modelo de seguridad que se va a implementar a pesar de que no es seguro.
+Teacher: Eh, y el tema de la complejidad en transacciones, digamos que manejar transacciones complejas o que sea o que estemos gestionando múltiples objetos o múltiples recursos se vuelve un poco más difícil en esto en estos tipos de servicios.
+01:35:00
+Teacher: ¿Por qué?
+Teacher: porque estamos separando por recursos y no por funcionalidades.
+Teacher: Entonces, eh algunas veces nos se nos vuelve un poco más compleja.
+Teacher: Eh, jóvenes, eso es todo lo que tenía yo para decirles el día de hoy.
+Teacher: Disculpen ahí por haberme quedado hasta las 8:10.
+Teacher: Hoy sí me le ocupé el tiempo hasta la raya de la clase, pero nada, es quería terminar este tema de de la de los mecanismos de comunicación que tenemos en cliente servidor.
+Teacher: ¿Listo?
+Teacher: Eh, para la próxima clase vamos a empezar a hablar sobre sistemas de archivos distribuidos.
+Teacher: Eh, el tema de las exposiciones, esperen entre hoy y mañana que ya estoy terminando de ajustar cronograma y cómo vamos a terminar el curso y entonces en la próxima clase les estoy comentando cómo vamos a terminar el curso,
+Teacher: sabiendo que se nos acabó el tiempo de de clases.
+Teacher: ¿Listo?
+Teacher: Y nada, espero que tengan una muy buena noche.
+Teacher: No sé si tienen alguna duda o alguna inquietud.
+Student26: Sí, profe.
+Student26: Una preguntica.
+Teacher: Pregunte.
+Student26: las notas del
+Teacher: No he terminado.
+Teacher: Ustedes hablan mucho,
+Student26: parcial.
+Teacher: ustedes escriben mucha cosa o o copiaron o hicieron copy y entonces me ponen a leer a mi más.
+Teacher: Entonces, no, todavía no he terminado.
+Teacher: Ustedes son muchos, entonces apenas estoy terminando.
+Teacher: Cuando termine los puedo compartir.
+Student26: Dale, profe.
+Student26: Muchas gracias.
+Student26: Yeah.
+Teacher: Listo.
+Teacher: Dale.
+Teacher: Bueno, que tengan muy buena noche.
+Teacher: Nos vemos.
+Student13: Chao, profe,
+Student8: Vale,
+Student13: cuídese mucho.
+Student8: buenas noches.
+Teacher: Hasta luego.
+Student22: Yeah.
+La reunión finalizó después de 01:36:40 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+
