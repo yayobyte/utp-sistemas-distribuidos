@@ -5,12 +5,12 @@ import { clases, temaTone } from '../data/clases';
 import './ClasePage.styles.css';
 
 export const ClasesIndexPage: React.FC = () => {
-  const temas = ['Introducción', 'Arquitecturas', 'Comunicación'] as const;
+  const temas = Object.keys(temaTone) as (keyof typeof temaTone)[];
 
   return (
     <div className="clase-page container-tight">
       <header className="clase-header">
-        <p className="clase-kicker">Resúmenes · clases 1–15</p>
+        <p className="clase-kicker">Resúmenes · clases 1–{clases.length}</p>
         <h1 className="type-display-lg">Clases</h1>
         <p className="clase-idea">
           Un resumen por clase, sacado de la transcripción, con diagramas y un repaso rápido al final. Para ver cómo encajan todos los temas, usa la{' '}
