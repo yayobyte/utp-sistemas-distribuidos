@@ -7,6 +7,7 @@
 .tema-arq { --acc: #8a4bd6; }
 .tema-com { --acc: #1f9a8a; }
 .tema-alm { --acc: #b06f08; }
+.tema-nom { --acc: #2a8a5c; }
 
 .clase-back {
   display: inline-flex;

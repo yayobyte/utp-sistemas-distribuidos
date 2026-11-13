@@ -36,7 +36,7 @@ export interface ClaseSection {
 export interface Clase {
   number: number;
   date: string;
-  tema: 'Introducción' | 'Arquitecturas' | 'Comunicación' | 'Almacenamiento';
+  tema: 'Introducción' | 'Arquitecturas' | 'Comunicación' | 'Almacenamiento' | 'Nombres';
   title: string;
   idea: string;
   keyTerms: string[];
