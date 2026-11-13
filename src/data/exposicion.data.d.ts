@@ -27,6 +27,17 @@ export interface Member {
   pending?: boolean;
 }
 
+export interface SlideLink {
+  label: string;
+  href: string;
+}
+
+/** Extra reading shown in the speaker notes: a spot in our guide plus official docs. */
+export interface SlideMore {
+  guia?: { anchor: string; label: string };
+  docs?: SlideLink[];
+}
+
 export interface Slide {
   id: string;
   section: string;
@@ -34,4 +45,5 @@ export interface Slide {
   scene: SceneId;
   content: SlideContent;
   notes: string;
+  more?: SlideMore;
 }

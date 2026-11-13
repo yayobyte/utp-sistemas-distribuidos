@@ -1,10 +1,12 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, LayoutGrid, Maximize, MessageSquareText, X } from 'lucide-react';
+import { BookOpen, ChevronLeft, ChevronRight, ExternalLink, LayoutGrid, Maximize, MessageSquareText, X } from 'lucide-react';
 import { MicroservicesStage } from '../components/exposicion/MicroservicesStage';
 import { SlideContentView } from '../components/exposicion/SlideContentView';
 import { exposicionInfo, slides } from '../data/exposicion.data';
 import './ExposicionPage.styles.css';
+
+const hostLabel = (url: string) => new URL(url).hostname.replace(/^www\./, '');
 
 const clampIndex = (n: number) => Math.min(Math.max(n, 0), slides.length - 1);
 
@@ -137,6 +139,35 @@ export const ExposicionPage: React.FC = () => {
         <aside className="deck-notes" aria-label="Notas del orador">
           <strong>Notas del orador</strong>
           <p>{slide.notes}</p>
+          {slide.more && (
+            <div className="deck-more">
+              <span className="deck-more-title">Ampliar</span>
+              <ul>
+                {slide.more.guia && (
+                  <li>
+                    <a href={`/exposicion/guia#${slide.more.guia.anchor}`} target="_blank" rel="noopener noreferrer">
+                      <BookOpen size={14} aria-hidden="true" />
+                      <span>
+                        Guía: {slide.more.guia.label}
+                        <small>Guía de la exposición</small>
+                      </span>
+                    </a>
+                  </li>
+                )}
+                {slide.more.docs?.map((d) => (
+                  <li key={d.href}>
+                    <a href={d.href} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink size={14} aria-hidden="true" />
+                      <span>
+                        {d.label}
+                        <small>{hostLabel(d.href)}</small>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </aside>
       )}
 

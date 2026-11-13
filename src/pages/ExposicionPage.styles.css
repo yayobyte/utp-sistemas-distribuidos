@@ -414,7 +414,47 @@
   font-size: 15px;
   line-height: 1.5;
   z-index: 4;
+  max-height: calc(100vh - 170px);
+  overflow-y: auto;
 }
+
+.deck-more {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 159, 10, 0.25);
+}
+
+.deck-more-title {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-warning);
+}
+
+.deck-more ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+
+.deck-more a {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 8px;
+  margin: 0 -8px;
+  font-size: 14px;
+  line-height: 1.35;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.deck-more a svg { flex: none; margin-top: 2px; color: var(--color-warning); }
+.deck-more a span { display: flex; flex-direction: column; }
+.deck-more a small { font-size: 12px; opacity: 0.6; }
+.deck-more a:hover { background: rgba(255, 159, 10, 0.14); }
+.deck-more a:hover span { text-decoration: underline; text-underline-offset: 2px; }
+.deck-more a:focus-visible { outline: 2px solid var(--color-warning); outline-offset: 1px; }
 
 .deck-notes strong {
   display: block;

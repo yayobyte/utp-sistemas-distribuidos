@@ -34,7 +34,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 1.5px solid var(--fam);
+  border: 1.5px solid var(--fam, var(--color-primary));
 }
 
 .expo-dots span.is-on { background: var(--fam); }
@@ -52,7 +52,7 @@
 .expo-detail {
   padding: 14px 16px;
   background: var(--color-canvas-parchment);
-  border-left: 4px solid var(--fam);
+  border-left: 4px solid var(--fam, var(--color-primary));
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
@@ -176,7 +176,7 @@
   padding: 12px 14px;
   background: var(--color-canvas);
   border: 1px solid var(--color-hairline);
-  border-top: 4px solid var(--fam);
+  border-top: 4px solid var(--fam, var(--color-primary));
   border-radius: var(--radius-sm);
   font-size: 14px;
 }
@@ -191,4 +191,17 @@
 
 @media (prefers-reduced-motion: reduce) {
   .expo-rate-bar div { transition: none; }
+}
+
+/* Anchors reached from the deck's speaker notes */
+.expo-target { scroll-margin-top: 24px; border-radius: var(--radius-sm); }
+.expo-target.is-target { animation: expo-target-flash 2.4s ease-out; }
+
+@keyframes expo-target-flash {
+  0%, 40% { outline: 3px solid var(--fam, var(--color-primary)); outline-offset: 6px; }
+  100% { outline: 3px solid transparent; outline-offset: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .expo-target.is-target { animation: none; outline: 2px solid var(--fam, var(--color-primary)); outline-offset: 6px; }
 }

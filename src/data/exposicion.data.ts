@@ -1,4 +1,4 @@
-import type { Member, Slide } from './exposicion.data.d';
+import type { Member, Slide, SlideLink, SlideMore } from './exposicion.data.d';
 
 export const exposicionInfo = {
   title: 'Microservicios y Spring Cloud',
@@ -12,7 +12,7 @@ export const members: Member[] = [
   { name: 'Abraham Kaleth Mahecha Corrales' },
 ];
 
-export const slides: Slide[] = [
+const baseSlides: Slide[] = [
   // ── Introducción ───────────────────────────────────────────────
   {
     id: 'portada',
@@ -460,3 +460,57 @@ PaymentResponse payLater(PaymentRequest req, Throwable t) {
     notes: 'Abrir preguntas. Dejar la escena del sistema completo girando de fondo.',
   },
 ];
+
+// ── Ampliar: links shown under the speaker notes ─────────────────
+const doc = {
+  fowler: { label: 'Microservices (Martin Fowler)', href: 'https://martinfowler.com/articles/microservices.html' },
+  pattern: { label: 'Patrón Microservice Architecture', href: 'https://microservices.io/patterns/microservices.html' },
+  dbPerService: { label: 'Patrón Database per service', href: 'https://microservices.io/patterns/data/database-per-service.html' },
+  saga: { label: 'Patrón Saga', href: 'https://microservices.io/patterns/data/saga.html' },
+  springCloud: { label: 'Spring Cloud (proyecto)', href: 'https://spring.io/projects/spring-cloud' },
+  config: { label: 'Spring Cloud Config', href: 'https://docs.spring.io/spring-cloud-config/reference/' },
+  bus: { label: 'Spring Cloud Bus', href: 'https://docs.spring.io/spring-cloud-bus/reference/' },
+  eureka: { label: 'Spring Cloud Netflix (Eureka)', href: 'https://docs.spring.io/spring-cloud-netflix/reference/' },
+  gateway: { label: 'Spring Cloud Gateway', href: 'https://docs.spring.io/spring-cloud-gateway/reference/' },
+  feign: { label: 'Spring Cloud OpenFeign', href: 'https://docs.spring.io/spring-cloud-openfeign/reference/' },
+  loadBalancer: { label: 'Spring Cloud LoadBalancer', href: 'https://docs.spring.io/spring-cloud-commons/reference/spring-cloud-commons/loadbalancer.html' },
+  scBreaker: { label: 'Spring Cloud Circuit Breaker', href: 'https://docs.spring.io/spring-cloud-circuitbreaker/reference/' },
+  r4j: { label: 'Resilience4j CircuitBreaker', href: 'https://resilience4j.readme.io/docs/circuitbreaker' },
+  stream: { label: 'Spring Cloud Stream', href: 'https://docs.spring.io/spring-cloud-stream/reference/' },
+  kafka: { label: 'Documentación de Apache Kafka', href: 'https://kafka.apache.org/documentation/' },
+  grpc: { label: 'Introducción a gRPC', href: 'https://grpc.io/docs/what-is-grpc/introduction/' },
+  tracing: { label: 'Micrometer Tracing', href: 'https://docs.micrometer.io/tracing/reference/' },
+  zipkin: { label: 'Zipkin', href: 'https://zipkin.io/' },
+  k8sService: { label: 'Kubernetes Service', href: 'https://kubernetes.io/docs/concepts/services-networking/service/' },
+  k8sConfig: { label: 'Kubernetes ConfigMap', href: 'https://kubernetes.io/docs/concepts/configuration/configmap/' },
+} satisfies Record<string, SlideLink>;
+
+const g = (anchor: string, label: string) => ({ anchor, label });
+
+const slideMore: Record<string, SlideMore> = {
+  agenda: { guia: g('mapa-diapositivas', 'Mapa diapositiva → guía') },
+  monolito: { guia: g('trade-offs', 'Monolito vs. microservicios'), docs: [doc.fowler] },
+  'que-es': { guia: g('glosario', 'Glosario rápido'), docs: [doc.fowler, doc.pattern, doc.dbPerService] },
+  soa: { guia: g('glosario', 'Glosario rápido'), docs: [doc.pattern] },
+  arquitecturas: { guia: g('tabla-puente', 'Tabla puente curso ↔ Spring Cloud'), docs: [doc.pattern] },
+  acoplamiento: { guia: g('decision', '¿Síncrono o asíncrono?'), docs: [doc.fowler] },
+  escalar: { guia: g('tabla-puente', 'Tabla puente curso ↔ Spring Cloud'), docs: [doc.loadBalancer] },
+  transparencias: { guia: g('tabla-puente', 'Tabla puente: transparencias'), docs: [doc.eureka, doc.loadBalancer, doc.r4j] },
+  sincrona: { guia: g('decision', '¿Síncrono o asíncrono?'), docs: [doc.feign, doc.grpc] },
+  'colas-topicos': { guia: g('decision', 'Cola vs. tópico'), docs: [doc.kafka, doc.stream] },
+  kafka: { guia: g('decision', 'Cola vs. tópico'), docs: [doc.kafka, doc.stream] },
+  mapa: { guia: g('mapa-spring', 'Mapa interactivo de Spring Cloud'), docs: [doc.springCloud] },
+  config: { guia: g('mapa-spring', 'Config Server en el mapa'), docs: [doc.config, doc.bus] },
+  eureka: { guia: g('lease', 'Línea de tiempo del lease'), docs: [doc.eureka] },
+  gateway: { guia: g('mapa-spring', 'Gateway en el mapa'), docs: [doc.gateway] },
+  feign: { guia: g('decision', '¿Síncrono o asíncrono?'), docs: [doc.feign, doc.loadBalancer] },
+  breaker: { guia: g('breaker', 'Simulador del circuit breaker'), docs: [doc.r4j, doc.scBreaker] },
+  tracing: { guia: g('recorrido', 'Recorrido de una compra'), docs: [doc.tracing, doc.zipkin] },
+  recorrido: { guia: g('recorrido', 'Recorrido de una compra (y saga)'), docs: [doc.saga] },
+  'cuando-no': { guia: g('trade-offs', 'Trade-offs criterio por criterio'), docs: [doc.fowler] },
+  kubernetes: { guia: g('preguntas', 'Preguntas probables'), docs: [doc.k8sService, doc.k8sConfig] },
+  quiz: { guia: g('preguntas', 'Preguntas probables') },
+  gracias: { guia: g('preguntas', 'Preguntas probables'), docs: [doc.springCloud] },
+};
+
+export const slides: Slide[] = baseSlides.map((s) => ({ ...s, more: slideMore[s.id] }));

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Presentation } from 'lucide-react';
 import {
   FamilyMap,
@@ -374,7 +374,31 @@ const PurchaseSequence: React.FC = () => {
   );
 };
 
-export const GuiaExposicionPage: React.FC = () => (
+/** Links from the deck's speaker notes land on #anchors; scroll once the page has rendered. */
+const useHashScroll = () => {
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (!hash) return;
+    const id = decodeURIComponent(hash.slice(1));
+    let timer: number | undefined;
+    const frame = requestAnimationFrame(() => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.scrollIntoView({ block: 'start' });
+      // :target is unreliable when the element renders after load, so flag it by hand.
+      el.classList.add('is-target');
+      timer = window.setTimeout(() => el.classList.remove('is-target'), 2600);
+    });
+    return () => {
+      cancelAnimationFrame(frame);
+      window.clearTimeout(timer);
+    };
+  }, [hash]);
+};
+
+export const GuiaExposicionPage: React.FC = () => {
+  useHashScroll();
+  return (
   <div className="guia-page container-tight">
     <header className="guia-header">
       <p className="guia-kicker">Guía de la exposición · Grupo C</p>
@@ -390,7 +414,7 @@ export const GuiaExposicionPage: React.FC = () => (
 
     <FamilyMap families={expoFamilies} label="Partes de la guía de la exposición" />
 
-    <div className="guia-table-wrap expo-slidemap">
+    <div id="mapa-diapositivas" className="guia-table-wrap expo-slidemap expo-target">
       <table className="guia-table">
         <thead><tr><th>Diapositivas</th><th>Sección de la presentación</th><th>Dónde estudiarla en esta guía</th></tr></thead>
         <tbody>
@@ -410,7 +434,7 @@ export const GuiaExposicionPage: React.FC = () => (
         Un microservicio es un servicio pequeño que se despliega solo, es dueño de una capacidad de negocio (pedidos, pagos) y de su propia base de
         datos. Al partir el monolito, la aplicación se vuelve un <b>sistema distribuido</b>, con todos los problemas del curso.
       </SectionHead>
-      <h3>Glosario rápido</h3>
+      <h3 id="glosario" className="expo-target">Glosario rápido</h3>
       <div className="expo-glossary">
         {glossary.map((g) => (
           <div key={g.term} className="guia-card">
@@ -424,7 +448,7 @@ export const GuiaExposicionPage: React.FC = () => (
         <VsCard title="Monolito" items={['Un ejecutable y una base de datos', 'Fácil de empezar, desplegar y depurar', 'Un cambio obliga a desplegar **todo**', 'Un error de memoria tumba **todo**', 'Solo escala completo']} />
         <VsCard title="Microservicios" items={['Muchos servicios, cada uno con su base', 'Se despliegan y escalan por separado', 'Equipos autónomos (ley de Conway)', 'Cada llamada es por **red**: latencia y fallos', 'Necesita infraestructura: registro, gateway, broker, tracing']} />
       </div>
-      <h3>Trade-offs, criterio por criterio</h3>
+      <h3 id="trade-offs" className="expo-target">Trade-offs, criterio por criterio</h3>
       <p className="guia-body">En cada fila, <b>Alto</b> es lo deseable: más puntos, mejor en ese criterio.</p>
       <TradeoffGrid />
       <p className="guia-callout">
@@ -438,8 +462,8 @@ export const GuiaExposicionPage: React.FC = () => (
         Spring Cloud es un conjunto de proyectos sobre Spring Boot. Cada uno resuelve un problema clásico de sistemas distribuidos, y casi todos tienen
         un equivalente directo en lo que vimos en clase.
       </SectionHead>
-      <SpringMap />
-      <h3>Tabla puente: curso ↔ Spring Cloud</h3>
+      <div id="mapa-spring" className="expo-target"><SpringMap /></div>
+      <h3 id="tabla-puente" className="expo-target">Tabla puente: curso ↔ Spring Cloud</h3>
       <GuiaTable headers={['Pieza', 'Concepto de clase', 'Transparencia', 'Arquitectura']} rows={bridgeTable} />
     </section>
 
@@ -448,8 +472,8 @@ export const GuiaExposicionPage: React.FC = () => (
         En un monolito una llamada local casi nunca falla. Entre microservicios, la red falla, los servicios se reinician y las réplicas cambian. Dos
         mecanismos son la base: el <b>lease</b> del registro y el <b>circuit breaker</b> en cada llamada.
       </SectionHead>
-      <LeaseTimeline />
-      <BreakerSim />
+      <div id="lease" className="expo-target"><LeaseTimeline /></div>
+      <div id="breaker" className="expo-target"><BreakerSim /></div>
       <div className="guia-grid">
         <VsCard title="Timeout" items={['Nunca esperar para siempre', 'Igual que en paso de mensajes bloqueante (clase 15)']} />
         <VsCard title="Reintento" items={['Repetir solo si es seguro', 'Exige operaciones **idempotentes**']} />
@@ -462,7 +486,7 @@ export const GuiaExposicionPage: React.FC = () => (
         La pregunta más importante del diseño: ¿esta interacción necesita respuesta inmediata o es un hecho que se puede procesar después? De eso
         depende el acoplamiento.
       </SectionHead>
-      <div className="expo-decision" role="list" aria-label="Cómo elegir la comunicación">
+      <div id="decision" className="expo-decision expo-target" role="list" aria-label="Cómo elegir la comunicación">
         {decisions.map((d, i) => (
           <div key={d.q} role="listitem" className="expo-decision-step">
             <span className="expo-decision-n">{i + 1}</span>
@@ -472,9 +496,9 @@ export const GuiaExposicionPage: React.FC = () => (
           </div>
         ))}
       </div>
-      <h3>Recorrido de una compra</h3>
+      <h3 id="recorrido" className="expo-target">Recorrido de una compra</h3>
       <PurchaseSequence />
-      <h3>Si preguntan por transacciones: saga</h3>
+      <h3 id="saga" className="expo-target">Si preguntan por transacciones: saga</h3>
       <div className="expo-saga" role="list" aria-label="Pasos de una saga con sus compensaciones">
         {sagaSteps.map((s) => (
           <div key={s.step} role="listitem" className="expo-saga-step">
@@ -497,10 +521,10 @@ export const GuiaExposicionPage: React.FC = () => (
       <SectionHead eyebrow={fam(5)} title="Preguntas probables">
         Las preguntas que más probablemente hagan el profesor o la clase, con una respuesta corta que conecta con el curso. Ábrelas para practicar.
       </SectionHead>
-      <QaList items={likelyQuestions} />
+      <div id="preguntas" className="expo-target"><QaList items={likelyQuestions} /></div>
     </section>
 
-    <section className="guia-section fam-xcheat">
+    <section id="chuleta" className="guia-section fam-xcheat">
       <SectionHead eyebrow="Chuleta" title="Anotaciones, propiedades y reemplazos">
         Lo que aparece en el código de las diapositivas, para leerlo sin dudar.
       </SectionHead>
@@ -514,3 +538,4 @@ export const GuiaExposicionPage: React.FC = () => (
     </p>
   </div>
 );
+};
