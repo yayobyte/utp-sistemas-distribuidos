@@ -5,6 +5,7 @@ import { HomePage } from './pages/HomePage';
 import { Taller1Page } from './pages/Taller1Page';
 import { Taller2Page } from './pages/Taller2Page';
 import { Taller3Page } from './pages/Taller3Page';
+import { Taller4Page } from './pages/Taller4Page';
 import { GuiaEstudioPage } from './pages/GuiaEstudioPage';
 import { GuiaComunicacionPage } from './pages/GuiaComunicacionPage';
 import { GuiaExposicionPage } from './pages/GuiaExposicionPage';
@@ -28,6 +29,7 @@ export const App: React.FC = () => {
           <Route path="talleres/1/:section?" element={<Taller1Page />} />
           <Route path="talleres/2/:section?" element={<Taller2Page />} />
           <Route path="talleres/3/:section?" element={<Taller3Page />} />
+          <Route path="talleres/4/:section?" element={<Taller4Page />} />
 
           {/* Rutas anteriores al rediseño */}
           <Route path="talleres" element={<Navigate to="/" replace />} />

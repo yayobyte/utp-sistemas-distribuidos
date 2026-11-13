@@ -56,10 +56,28 @@ export const talleresRegistry: TallerEntry[] = [
     ],
   },
   {
+    id: '4',
+    number: 4,
+    title: 'Sistemas de Archivos Distribuidos y Arreglos RAID',
+    shortTitle: 'Archivos Distribuidos y RAID',
+    topic: 'Tema 4 · Almacenamiento',
+    corte: 'Parcial 2',
+    status: 'completado',
+    summary:
+      'Seis sistemas de archivos distribuidos reales (NFS, AFS, GFS, HDFS, CephFS y GlusterFS) y los niveles RAID, con diagramas de bloques y una calculadora de capacidad.',
+    objective:
+      'Reconocer las diferentes alternativas para la gestión de archivos de forma distribuida, para poder elegir entre las diferentes opciones existentes el que más se ajuste a las necesidades de algún proyecto futuro.',
+    sections: [
+      { slug: 'sistemas', label: 'Sistemas de Archivos' },
+      { slug: 'raid', label: 'Arreglos RAID' },
+      { slug: 'matriz', label: 'Matriz Comparativa' },
+    ],
+  },
+  {
     id: 'exposicion-c',
     kind: 'exposicion',
     path: '/exposicion/microservicios',
-    number: 4,
+    number: 5,
     title: 'Microservicios y Spring Cloud',
     shortTitle: 'Exposición · Microservicios',
     topic: 'Exposición · Grupo C',
