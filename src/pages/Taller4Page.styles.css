@@ -92,3 +92,25 @@
   .t4-calc-row { grid-template-columns: 90px 1fr; }
   .t4-calc-value { grid-column: 1 / -1; }
 }
+
+/* Taller 5 */
+.t5-flow { width: 100%; max-width: 640px; height: auto; margin: 0 0 16px; }
+.t5-flow text { font-size: 12px; fill: var(--color-ink); }
+.t5-flow .t5-small { font-size: 11px; fill: var(--color-body-muted); }
+.t5-node { fill: var(--color-canvas-parchment); stroke: var(--color-hairline); }
+.t5-node.is-meta { fill: color-mix(in srgb, #b06f08 18%, var(--color-canvas)); stroke: #b06f08; }
+.t5-node.is-data { fill: color-mix(in srgb, var(--color-primary) 14%, var(--color-canvas)); stroke: var(--color-primary); }
+.t5-edge { stroke: #b06f08; stroke-width: 1.5; fill: none; stroke-dasharray: 4 3; }
+.t5-edge.is-par { stroke: var(--color-primary); stroke-dasharray: none; }
+.t5-h3 { font-size: 15px; margin: 14px 0 6px; }
+.t5-steps { margin: 0 0 8px; padding-left: 20px; font-size: 14.5px; line-height: 1.6; }
+.t5-steps li { margin-bottom: 4px; }
+.t5-components { display: flex; flex-direction: column; gap: 8px; }
+.t5-components .t5-h3 { margin-top: 0; }
+.t5-component {
+  display: flex; flex-direction: column; gap: 3px;
+  padding: 10px 12px; font-size: 13px; line-height: 1.45;
+  border: 1px solid var(--color-hairline); border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-xs); background: var(--color-canvas);
+}
+.t5-component span { color: var(--color-ink-muted-80); }

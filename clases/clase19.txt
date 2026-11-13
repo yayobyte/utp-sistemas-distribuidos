@@ -1,0 +1,707 @@
+Hora de inicio de la reunión: 2026-11-10 18:43 GMT-5
+Asistentes
+Student36, Student3, Student4, Teacher, Student5, Student6, Student7, Student8, Student28, Student9, Student12, Student13, Student14, Student15, Student16, Student19, Student20, Student21, Student22, Student23, Student35, Student26, Student27
+Transcripción
+Teacher: Hola, jóvenes.
+Teacher: Buenas noches.
+Teacher: ¿Cómo están?
+Teacher: Espero que todos muy bien.
+Teacher: Bienvenidos a esta nueva sesión un poquito retardada por problemas técnicos, pero nada, aquí estamos para continuar.
+Teacher: Eh, vamos a estar hablando de un nuevo tema, pues espero que el día de hoy podamos cubrir todo el tema, pero igual eh este tema sería el último de la del segundo parcial, o sea, que ya estaríamos listos para listos y preparados para un siguiente parcial.
+Teacher: Eh, aquí hoy vamos a estar hablando del servicio de nombres y servicios de directorio.
+Teacher: Voy a compartir pantalla y vamos a aclarar unos conceptos que espero que no que estén un poquito enredados y que pues con lo que hablemos hoy quede mucho más claro, ¿cierto?
+Teacher: ¿Qué es esto del servicio de nombres?
+Teacher: Y es que es otro de los componentes que tiene el sistema distribuido, ¿cierto?
+Teacher: No es una aplicación como tal, es un conjunto de aplicaciones, un conjunto de elementos que nos ayudan a nosotros a localizar recursos, ¿cierto?
+Teacher: Y tenemos dos formas de implementarlo, utilizando algo que llamamos un servicio de nombres o lo que llamamos un servicio de directorios.
+Teacher: Aquí pues más o menos lo que vamos a estar hablando y lo primero que vamos a hablar es entender qué es un nombre y qué es una dirección.
+Teacher: O sea, antes de hablar de los directorios, eh es importante que tengamos claro que cuando nosotros queremos localizar o queremos identificar un recurso, eh los recursos tienen unas ubicaciones, tienen unas direcciones, ¿cierto?
+Teacher: ¿Qué es un recurso?
+Teacher: Pues cualquier cosa, puede ser un la ubicación de un archivo dentro de mi dentro de un disco, la ubicación de un servidor dentro de la red, la ubicación de un archivo, eh, perdón,
+Teacher: la ubicación de de una tarjeta de red dentro de la red, ¿cierto?
+Teacher: A todo eso nosotros lo vamos a llamar direcciones, son recursos que tienen ubicaciones.
+Teacher: ¿Qué otras cosas puede ser una dirección eh o que necesitemos ubicar?
+Teacher: Por ejemplo, ¿dónde se encuentra un sensor?
+Teacher: ¿En qué en qué lugar?
+Teacher: ¿Por qué puerto está conectado un sensor?
+Teacher: O sea, cualquier cosa que yo necesite poder identificar, poderlo direccionar de una manera directa, eh vamos a tener o vamos a hablar de que es una dirección.
+Teacher: ¿Y qué viene siendo el nombre?
+Teacher: pues es la serie de caracteres que a las cuales nosotros le ponemos a esa ubicación o a ese recurso que nosotros queremos buscar.
+Teacher: Entonces, por ejemplo, cuando queremos ubicar un servidor, normalmente vamos a ponerle un dominio, ¿cierto?
+Teacher: Entonces, nosotros creamos un nombre de dominio, por eso se llama nombre.
+Teacher: Creamos un nombre de dominio para identificar una dirección IP y esa combinación de nombre de dominio y dirección IP funcionan en un servicio de nombres.
+Teacher: Vamos a tener otro eh digámoslo así el nombre del archivo versus la ubicación dentro del disco duro.
+Teacher: Entonces nosotros le damos un nombre, le ponemos una creamos una serie de caracteres para que para poder identificar una posición dentro del disco.
+Teacher: Nosotros creamos una variable para ubicar un un espacio en memoria.
+Teacher: Entonces, la forma como nosotros los humanos entendemos o vemos mejor o entendemos mejor el mundo de qué es qué es lo que yo quiero buscar y el dónde es simplemente la ubicación, punto de acceso o elemento físico donde se encuentra el objeto que yo estoy
+Teacher: necesitando.
+Teacher: ¿Listo?
+Teacher: ¿Por qué necesitamos eh la indirección o qué es eso de la indirección?
+Teacher: es poderle poner un alias a una dirección de de del recurso, ¿cierto?
+Teacher: ¿Por qué necesitamos ponerle un nombre a algo que podríamos nosotros localizar directamente con su dirección?
+Teacher: Porque es que los humanos nos, digámoslo así, nos es más fácil recordar nombres que recordar direcciones, ¿cierto?
+Teacher: ¿Cuántos de ustedes conocen el número telefónico de su compañero, de uno de sus compañeros?
+Teacher: Probablemente lo tienen en el directorio, lo tienen en la agenda, pero no se sabe el número telefónico directo, pero sí saben cómo se llama.
+Teacher: Es más fácil para nosotros recordar nombres que recordar ubicaciones o que recordar direcciones.
+Teacher: Eh, ¿cuál es el nombre o cuál es la dirección IP del servidor utp.edu.com, edu.com, ¿cierto?
+00:05:00
+Teacher: Probablemente no no lo sabemos porque no lo hemos necesitado, pero si lo hubiésemos llegado a tener en algún momento, para nosotros es más fácil recordar wwwutp.edu.co que una dirección IP 100 2011, 131, etcétera, etcétera, ¿cierto?
+Teacher: Entonces eso es lo que hace que nosotros necesitemos o tengamos la necesidad de hacer esa indirección.
+Teacher: Ahora también nos sirve para cuando tenemos migración o cuando tenemos replicación, ¿cierto?
+Teacher: Y es que eh con este nombre o con el nombre utp.edu.co puedo estar apuntando a una dirección IP, pero si ese servidor murió y tengo un servidor de respaldo, pues ese mismo nombre me puede servir para apuntar o para dirigirme hacia el servidor de respaldo.
+Teacher: No tengo que conocerlo de manera específica, ¿cierto?
+Teacher: Entonces, estos servicios de nombres y de y de directorios nos sirven para aumentar la transparencia dentro de dentro de nuestro sistema.
+Teacher: Nos va a ayudar para que los usuarios no tengan que recordar ubicaciones específicas o lugares específicos dentro de dentro del sistema, sino que simplemente se enfoquen en aprenderse el nombre del recurso y nosotros pues vamos a ubicar la dirección física o el elemento al que hace referencia.
+Teacher: Eh, como lo que estamos agregando dentro de nuestro sistema, pues es un sistema distribuido, ¿cierto?
+Teacher: O sea, esto es un nuevo servicio, es un nuevo servidor, entre comillas y es un servidor que va a estar trabajando con con caché, ¿cierto?
+Teacher: es un servidor que al cual nosotros le vamos a estar preguntando, mire, yo quiero saber dónde se encuentra tal recurso, él me va a devolver su dirección.
+Teacher: Pues él va a ir aprendiendo, él va a ir utilizando, eh, digámoslo así, guardando en la caché esos consultas comunes, esos elementos comunes, pero ya sabemos qué problema tenemos con la caché, ¿cierto?
+Teacher: Y es el tema de cómo la mantenemos actualizada, cómo hacemos para que en el caso de que algo cambie en su ubicación o que el archivo fue borrado, pues no me siga diciendo que el archivo existe o que vaya siga leyendo en una posición de memoria.
+Teacher: Entonces, eso es algo que vamos a tener que analizar o pensar un poco ahora que estemos eh profundizando un poco más en el tema.
+Teacher: El segundo concepto eh básico que debemos entender es que cuando estamos hablando de internet o ya dentro de nuestros mundos dentro nuestro mundo de los sistemas distribuidos en internet nosotros tenemos un concepto llamado URI.
+Teacher: ¿Y qué es la URI?
+Teacher: El uniform resource identifier.
+Teacher: ¿Y eso qué es?
+Teacher: Pues es una forma como nos como se propuso o está propuesto que nosotros identifiquemos los recursos en internet.
+Teacher: ¿Listo?
+Teacher: ¿Cómo así que identificar los recursos en internet?
+Teacher: Sí, cualquier recurso que nosotros podamos eh acceder por la red debería estar marcado, debería estar codificado, digámoslo así, en algo que llamamos URI.
+Teacher: Y la URI está compuesto de dos elementos, el URL y la URL.
+Teacher: ¿Qué es la URL?
+Teacher: El nombre del recurso, ¿cierto?
+Teacher: Es cómo vamos nosotros a identificar el recurso dentro de todo el internet.
+Teacher: ¿Y qué es la URL?
+Teacher: La ubicación del recurso.
+Teacher: ¿Listo?
+Teacher: Entonces, mire que ese concepto llamado URI, que no sé si lo conocían, pero ese concepto llamado URI, básicamente es un modelo o es una forma como nosotros podríamos nombrar cualquier recurso en internet con su ubicación en internet.
+Teacher: Mira que la URL no necesariamente o las direcciones no necesariamente tienen que ser números.
+Teacher: Sí. En este caso, la URL también es una secuencia de caracteres que pueden ser la dirección IP y y el y el end point al que nosotros estamos apuntando o eh la dirección, el nombre de dominio más elpo al cual nosotros estamos apuntando.
+Teacher: Entonces, mira que eh crear crear este concepto de de nombre de de nombre de recurso o de nombre de dominio, perdón, de que la forma de identificar un recurso en internet no necesariamente tiene que estar eh basado en números,
+Teacher: o sea, que voy a poner un nombre y lo vamos a ubicar en un número, sino que en, digámoslo así, el estándar de internet recomienda de que todos los recursos que nosotros publiquemos o que vayamos a a ubicar,
+Teacher: los definamos con una URL y eh para localizarlos utilizamos la URL.
+Teacher: Pregunta, ¿cuántos de nosotros conocemos o trabajamos con la URN o cuántas URN conocen?
+00:10:00
+Teacher: No es muy común, ¿cierto?
+Teacher: ¿Por qué?
+Teacher: Porque nosotros o digámoslo así, internet no se pudo crear o no tiene un repositorio, un servicio de nombre genérico para todos los servicios.
+Teacher: ¿Listo?
+Teacher: Tenemos buscadores, que no es lo mismo.
+Teacher: Un buscador es una aplicación que yo le meto un texto y busca dentro del contenido, busca dentro de la información que hay dentro del texto las coincidencias con esto.
+Teacher: En el caso de los nombres de los servicios de nombres, yo debería darle el nombre completo para poder ubicar el recurso de manera adecuada.
+Teacher: ¿Listo?
+Teacher: Eh, no sé si tienen alguna duda o alguna inquietud sobre estos dos conceptos, el de qué es un nombre y una dirección y qué es la URIS.
+Teacher: ¿Tienen alguna alguna pregunta?
+Teacher: Que aquí me faltó una después se me olvida.
+Teacher: ¿Alguna pregunta?
+Teacher: No, dale.
+Student8: No,
+Teacher: Entonces,
+Student8: profe.
+Teacher: dale.
+Teacher: Entonces, vamos a hablar primero del primero de los servicios que vamos a ver hoy, que es el servicio de nombres.
+Teacher: ¿Qué es un servicio de nombres?
+Teacher: Imagínense el concepto del directorio telefónico, la parte o la sección de las páginas blancas.
+Teacher: Ustedes sí conocieron el directorio telefónico, ustedes están muy chiquitos ya, pero sí entienden el concepto de las páginas blancas en el directorio telefónico.
+Teacher: Student26, Student26 yo es el único que le tocó o no.
+Student21: Las páginas amarillas.
+Teacher: A ustedes sí les toca las les tocó las páginas amarillas y la y las
+Student21: Claro, tampoco estamos tan Sí.
+Teacher: blancas.
+Student21: No, mentira.
+Student21: Yo no sé qué es eso, profe.
+Teacher: No jodas.
+Teacher: Las páginas blancas era la forma como nosotros teníamos eh la posibilidad de ubicar el número telefónico de una persona dentro de la ciudad.
+Teacher: ¿Listo?
+Teacher: O sea, hace mucho tiempo, a long time ago, eh las empresas de telefonía creaban esta estos directorios telefónicos con la idea o con la intención de disminuir la necesidad de llamar a al a las operadoras, ¿cierto?
+Teacher: Si yo quería llamar a alguien, pues en en el directorio telefónico teníamos la base de datos de todos los números telefónicos que habían en la ciudad en ese momento, eh, con la con el nombre, dirección y teléfono de las pues el nombre del propietario,
+Teacher: la dirección y el teléfono de de cada uno de los propietarios.
+Teacher: esa ese catálogo venía ordenado de manera alfabética, primero por apellidos, luego por nombres.
+Teacher: ¿Listo?
+Teacher: Y no, si nosotros teníamos el conocimiento del nombre y apellido de la persona, pues podíamos ir al directorio de páginas blancas, buscábamos en orden alfabético, como si fuera un diccionario, buscábamos en orden alfabético y cuando encontrábamos la persona,
+Teacher: Teacher, pues ahí me iba a decir cuál es la dirección y cuál es el número telefónico con el cual podíamos nosotros contactarnos de manera directa en su momento, pues, en las casas.
+Teacher: eh de cómo llamar directamente a la casa del Teacher.
+Teacher: ¿Listo?
+Teacher: Eh, ese era más o menos o ese es el mismo concepto, el mismo funcionamiento que tienen los servicios de nombres.
+Teacher: Los servicios de nombres no es más que una un servidor o un servicio que tiene una única función y es de guardar a partir de un nombre cuál es su ubicación.
+Teacher: ¿Listo?
+Teacher: Existen múltiples servicios de nombres.
+Teacher: Por ejemplo, el DNS, que es uno de los que todos conocemos eh básicamente o digámoslo así, gracias al internet conocemos el DNS, pues el DNS es un servicio de nombres, pues el nombre lo dice, domain domain name, servicio de nombres de de dominio,
+Teacher: ¿cierto?
+Teacher: El servicio de nombres de dominio lo que hace es traducir de una de un dominio que nosotros vamos adquirir o que alguien adquirió a la ubicación, a cuál es el servidor que responde a las peticiones de ese dominio.
+Teacher: Y entonces el servicio de nombres se encarga de hacer esa traducción.
+Teacher: Si yo le doy este nombre de dominio, él me va a devolver cuál es la dirección IP a la cual yo tengo que mandarle un mensaje o a la cual yo tengo que navegar.
+Teacher: Pero tengo múltiples sistemas de archivos eh servicios de dominio, por ejemplo, el file system o los servicios de archivos, ¿cierto?
+00:15:00
+Teacher: El sistema de archivos.
+Teacher: El sistema de archivos también necesita un servicio de dominio, un servicio de nombres, perdón.
+Teacher: ¿Y por qué?
+Teacher: Porque es que el sistema de archivos hace una oculta dónde se encuentra el dónde dónde se oculta eh perdón, me oculta dónde se encuentra un archivo.
+Teacher: Yo a partir de un nombre de archivo que tiene su estructura, cedos, pun slash, Windows, user, etcétera, con todo ese nombre de texto que que es el que nosotros normalmente nos vamos a acordar y va a ser para nosotros fácil de identificar qué archivo,
+Teacher: qué contenido tenemos en un archivo.
+Teacher: lo que hace lo que hace el sistema de archivos es hacerme la traducción entre esa cadena que es la que nosotros utilizamos a la ubicación en el archivo, o sea, en qué partición o en qué disco, en qué partición,
+Teacher: en qué ínodo, etcétera, etcétera.
+Teacher: ¿Listo?
+Teacher: O sea, él hace esa traducción.
+Teacher: Por eso cuando nosotros le decimos, "Ey, ábrame el archivo X, pues entonces él ya sabe a a qué parte del disco tiene que ir y empezar a a leer bytes o leer los bits que están dentro del disco,
+Teacher: ¿cierto?
+Teacher: Básicamente porque él hace toda esa traducción.
+Teacher: Nosotros como personas o como usuarios no tenemos que conocer dónde se encuentra.
+Teacher: Necesitamos saber es en el espacio de nombres.
+Teacher: Ahorita vamos a hablar de eso, del espacio de nombres.
+Teacher: O sea, en el espacio de nombres donde yo voy a nombrar o voy a poner todos los nombres de mis archivos, eh ese archivo o ese nombre que yo voy a utilizar, a qué ubicación, a qué lugar del disco duro,
+Teacher: nosotros eh hacemos relación.
+Teacher: Y existen múltiples servicios de nombre.
+Teacher: Un correo electrónico también nos sirve o la dirección de correo electrónico nos sirve como como servicio de nombre.
+Teacher: ¿Por qué?
+Teacher: Porque yo le estoy colocando un nombre, valga la redundancia, yo estoy diciendo eh black@utp.edu.com.
+Teacher: Toda esa cadena vendría siendo el nombre del recurso, ¿cierto?
+Teacher: Y eso va a hacer referencia a cuál es el archivo, vea, cuál es el servidor donde se encuentra almacenado la información.
+Teacher: va a hacer referencia a cuál es el buzón o a cuál es la la casilla donde tiene que dejar el correo, ¿cierto?
+Teacher: Entonces, mire que todo es toda esa cadena que para nosotros es más fácil recordar que que conocer cuál es el servidor, cuál es el servidor, por qué puerto se por qué puerto se escucha y en qué casilla es la que tengo que ubicar.
+Teacher: Simplemente con la con el nombre nosotros vamos a a llegar al al servicio que nosotros necesitamos.
+Teacher: ¿Listo?
+Teacher: Y existen múltiples servicios.
+Teacher: Por ejemplo, en Asure tenemos el ARM, ¿cierto?
+Teacher: O el Asure Resource Management Manager, que lo que hace es definir cuál es el nombre a la dirección, la dirección o el identificador del recurso que nosotros hemos creado en Hu.
+Teacher: ¿Listo?
+Teacher: Entonces, eh cada vez que nosotros vamos a generar un permiso, cada vez que nosotros vamos a crear un objeto, un un elemento, un backet, un un storage, perdón, porque Nature no son backets, sino storage.
+Teacher: Si yo voy a crear un storage, si yo voy a crear un un AP gateway, si yo voy a crear cualquier cosa, un una máquina virtual, cada uno de esos elementos va a tener un nombre de de servicio,
+Teacher: un nombre de recurso.
+Teacher: Pues con eso con ese nombre de recursos nosotros lo vamos a poder o los voy a poder utilizar o voy a poder identificar cada uno de esos elementos para para definirle permisos, quiénes pueden acceder, quiénes no, si van a ser públicos o privados.
+Teacher: Eh, quien tenga x rol puede acceder a tales recursos o puede realizar tales recursos, tales operaciones sobre el recurso.
+Teacher: Entonces, mira que eso eh o los servicios de nombres nos sirven justamente para eso, para poder realizar ese tipo de de asignación y hacer mucho más fácil la parte de gestión.
+Teacher: No sé si si van conmigo en esta explicación, ¿ok?
+Teacher: Eso es lo que nosotros conocemos como servicio de nombres.
+Teacher: Y aquí vamos a hablar sobre el espacio de el espacio de nombres dentro del servicio.
+Teacher: ¿Qué es esto del espacio de nombres?
+Teacher: es, okay, ¿y cómo hacemos nosotros para poder estructurar o para poder garantizar de que el nombre del servicio o el nombre del recurso, perdón, pues tenga relación con con el objeto o con el elemento que estamos buscando.
+00:20:00
+Teacher: Y piensen, piensen de alguna manera en los diferentes ejemplos que hemos visto, ¿cierto?
+Teacher: ¿Cuál es la estructura o cómo es la la estructura de un nombre de un servicio?
+Teacher: Entonces, por ejemplo, vamos a pensar en el DNS que utiliza dominios.
+Teacher: ¿Cómo es la estructura de un nombre para el servicio de nombres?
+Teacher: Entonces dice, decimos www.utp.edu.com.
+Teacher: Ese es el nombre que él va a guardar.
+Teacher: Y ese y ese wwwutp.edu.co com apunta o está direccionado a una dirección IP de uno de los servidores que están dentro de la universidad o o que estén en AWS o que estén en cualquier parte del mundo, ¿cierto?
+Teacher: Pero esa esa relación de este nombre, ¿a dónde tiene que apuntar?
+Teacher: lo debo guardar en ese servicio de nombres o aquí en este caso el DNS.
+Teacher: Listo, perdón, pero si ustedes ven el nombre wwwutp.edu.com tiene una estructura jerárquica, ¿cierto?
+Teacher: ¿Y cómo que jerárquica?
+Teacher: Y es que tiene un modelo o una estructura de directorios.
+Teacher: ¿Cómo así?
+Teacher: Así como nosotros en los en el sistema archivos creamos carpetas y creamos diferentes niveles de carpetas, el DNS también tiene niveles de dominio, por decirlo así, sino que los dominios eh o en el DNS nosotros los dominios los definimos
+Teacher: al revés o los nombres de dominio se definen al revés.
+Teacher: Empezamos por la ubicación o mejor dicho por el servidor puntual y luego por las carpetas.
+Teacher: A diferencia de cuando nosotros escribimos o definimos nuestro nuestros archivos, que nosotros en nuestros archivos decimos en qué disco está, en cuál es la primer carpeta de ese primer nivel, dentro de esa carpeta, en qué subcarpeta y dentro de esa subcarpeta,
+Teacher: en qué subcarpeta y así y así hasta llegar al al último nivel que sería el nombre del archivo.
+Teacher: Lo vemos como de izquierda a derecha, digámoslo así.
+Teacher: En el DNS los dominios se escriben de izquierda o se leen o se entienden de derecha a izquierda.
+Teacher: ¿Listo?
+Teacher: O sea, que el primer nivel de utp.edu.co o de wwwutp.edu.co sería punto como.
+Teacher: ¿Y qué creen ustedes que significa ese punto com?
+Student8: un dominio perteneciente a Colombia.
+Teacher: Okay.
+Teacher: Entonces, entonces ese dominio o ese esa terminación punc lo que hace es determinar de que hace parte de las empresas o de los organizaciones o de los entidades que pertenecen a Colombia.
+Teacher: ¿Y qué significará punto Eduedu?
+Student8: en la carpeta de educación dentro de Colombia.
+Student8: Yeah.
+Teacher: Okay.
+Teacher: Entonces, puntoedu.co dice que dentro de los de las empresas colombianas o en las entidades colombianas hay un subgrupo que son las entidades eh educativas.
+Teacher: ¿Y qué hace UTP ahí en utp.edu.com.
+Student8: Ya, ya es un centro educativo específico.
+Student8: No.
+Teacher: Okay, entonces, okay.
+Teacher: Y dentro de los centros educativos hay un centro llamado UTP y dentro de ese mismo nivel están todos los centros educativos colombianos, ¿cierto?
+Teacher: Pero dentro de UTP puedo tener siguientes subcarpetas o siguientes elementos.
+Teacher: Está ww, está, no sé, finanzas, está eh facultades,
+Student8: M.
+Teacher: está etcétera, ¿cierto?
+Teacher: Hay diferentes subdominios dentro de utp.edu.co, comc.
+Teacher: Pero cada uno de esos subdominios podría ser o una carpeta o podría ser la ubicación de un recurso específico.
+Teacher: Entonces, cuando nosotros hablamos de WW, pues eh ya estamos hablando del del servidor donde va a tener la página principal de de la UTP, ¿cierto?
+Teacher: Pero si miramos existen múltiples subdominios dentro de la dentro de dentro de la la empresa UTP o dentro de la entidad UTP.
+Teacher: Eso es equivalente a lo que nosotros hacemos con los sistemas de con los con el sistema de archivos es que creamos directorios o creamos carpeticas para ir agrupando cosas, para hacer más fácil la gestión.
+Teacher: Pues la idea del espacio de nombres en los servicios de nombres es que tengan esa misma estructura, una estructura jerárquica donde yo vaya creando directorios como una especie de árbol de directorios y dentro de esos directorios puedo agregar u otro directorio u archivo o un elemento o el recurso
+Teacher: que yo estoy buscando de manera o que quiero direccionar de manera puntual.
+Teacher: Al final el proceso de traducción de rutas, o sea, ¿cómo hago yo para identificar a dónde tengo que eh llegar o a qué recurso tengo que llegar tiene que ver con la resolución de esa de esa de esos diferentes lugares o de esos
+00:25:00
+Teacher: diferentes rutas?
+Teacher: Yo no voy a tener una base de datos, por decirlo así, no voy a tener un sistema que coja todos los dominios de todo el mundo y los guarde en un solo en una sola base de datos, porque sería muy difícil o sería la única forma para poder nosotros eh
+Teacher: consultar a partir de la URL completa.
+Teacher: Decimos que su llave primaria es wwwp.edu.com, toda la dirección completa y eso apunta al servidor tal.
+Teacher: Listo.
+Teacher: Pero, ¿cuántas dominios o cuántas direcciones existen en internet?
+Teacher: ¿Será que eso gestionado en una sola base de datos sería coherente o sería un buen modelo de solución del problema?
+Teacher: Y además de que las direcciones pueden ir se pueden ir creando y pueden irse liberando, ¿cierto?
+Teacher: Entonces, sería un sistema bastante complejo de gestionar.
+Teacher: Pues lo que lo que hacemos o lo que se hace es de que el espacio de nombres pues va a tener estas carpetas y lo vamos a ir resolviendo a partir de carpeta por carpeta.
+Teacher: ¿Listo?
+Teacher: Entonces en el caso de de los sistemas de archivos, yo llego y le digo, "Okay, el este sistema de archivos eh me dice que el archivo está guardado en el disco D." Okay.
+Teacher: Entonces, ya sé que no es en el disco uno, sino en el segundo disco.
+Teacher: ¿Listo?
+Teacher: Y después dice, "Y entra la carpeta archivos." Entonces,
+Teacher: de todas las carpetas que existen, voy a entrar a la carpeta archivos.
+Teacher: Voy a entrar a la carpeta eh universidad, voy a entrar a la carpeta décimo semestre y voy a entrar a la carpeta sistemas distribuidos, ¿cierto?
+Teacher: Esa estructura de árbol yo la tengo que ir analizando.
+Teacher: por decirlo así, directorio por directorio.
+Teacher: Lo mismo pasa con el DNS.
+Teacher: Con el DNS, pues lo vamos a estructurar ahora de derecha izquierda.
+Teacher: Este dominio es de CO, entonces ya limito o segmento cuál es el espacio de nombres.
+Teacher: Eh, es edu.
+Teacher: Segmento cada vez más, el conjunto se va volviendo más pequeño y así me voy yendo en este caso, de derecha a izquierda.
+Teacher: ¿Listo?
+Teacher: Eso es lo que nosotros llamamos traducción de rutas y es cómo hacemos para que ese nombre o ese recurso pues yo lo pueda ubicar a partir de de su nombre.
+Teacher: Pues entonces lo vamos revisando, lo vamos analizando de eh carpeta por carpeta, directorio por directorio.
+Teacher: ¿Listo?
+Teacher: Pueden haber rutas absolutas o rutas relativas, pues eso lo tenemos claro, ¿cierto?
+Teacher: de que yo puedo estar en un directorio y decir, "Desde este directorio en adelante, la ruta es tal" o váyase desde la raíz y busque la la ruta tal.
+Teacher: No significa que todos los servicios de nombres tengan esa capacidad, ¿cierto?, de poder buscar de rutas relativas.
+Teacher: Por ejemplo, el DNS busca solo en rutas específicas, eh, perdón, rutas eh absolutas porque tengo que darle la URL, la el el dominio de manera completa para poder que él lo resuelva.
+Teacher: Pero hay algunos otros, por ejemplo, el sistema de archivos, yo sí lo puedo decir de la carpeta actual, entre a semestre 10 eh eh sistemas distribuidos y él sabe que está y está parado en la carpeta universidad.
+Teacher: Entonces, hace que en algunos casos sea más fácil para mí como usuario identificar cuál es el recurso que realmente necesito.
+Teacher: A que si yo tuviese que decir siempre c tal cosa, o sea, darle el nombre completo.
+Teacher: Muchas veces cuando nosotros estamos haciendo programas siempre le decimos, "No, abre el archivo eh índice o clientes. CSV y dónde está clientes?" No,
+Teacher: en el mismo directorio donde está corriendo la aplicación.
+Teacher: es porque tenemos esa capacidad de tener rutas relativas, pero hay otra en otros lugares o en otros espacios yo tengo que darle la ruta completa, ¿no?
+Teacher: Vaya al disco slash en la carpeta tal, en la carpeta tal para poder ubicar el recurso.
+Teacher: Entonces, puedo utilizar cualquiera de los dos modelos para poder localizar.
+Teacher: Hay algunos servicios que me permiten tener rutas relativas y otras que no, pero al final la idea es de que ese espacio de nombres, ese lugar donde se van a guardar todos los todos los nombres o se pueden estructurar todos los
+Teacher: nombres que podemos utilizar nuestro sistema, nuestro servicio de nombres, lo vamos a a gestionar de esta manera y vamos a tener eh digámosle así, vamos a tener que en algunos casos vamos a tener traducción de dos niveles.
+Teacher: Eso significa que yo puedo pasar de nombre de de nombre que conoce el usuario a una dirección intermedia o una identificador interno You identificador interno poder llegar hasta la dirección física.
+00:30:00
+Teacher: Listo.
+Teacher: No, ese identificador interno es, por ejemplo, cuando tenemos una capa de de normalización o un middleware o algo que le da un identificador diferente al identificador físico como tal, ¿cierto?
+Teacher: Entonces, yo podría decir, por ejemplo, en los servicios de nombres, ¿se acuerdan que en la clase pasada estamos hablando de los servicios los perdón en los sistemas de archivos distribuidos?
+Teacher: Yo podía localizar recursos locales o recursos remotos, pues ese servicio de de sistemas de archivos distribuidos es lo que hace es ocultar eh en qué disco, en qué máquina y en qué disco se encuentra la información.
+Teacher: Él lo va a ver muchas veces lo va a ver como si fuera una sola estructura.
+Teacher: Todos los discos los ve como si fuera una sola estructura.
+Teacher: Entonces, cuando yo le digo, "E, guárdalo en tal ubicación", ese nombre se traduce a una ubicación genérica, una ubicación general de todo para todo mi sistema, pero esa ubicación general es la que se va a encargar de decir en qué en qué lugar físico es donde tenemos
+Teacher: nosotros que que apuntar o o donde tenemos que hacer el proceso de lectura.
+Teacher: Entonces, en algunos casos se puede hacer de manera directa, otras puede haber como una un paso intermedio.
+Teacher: Lo más normal o lo más común que vamos nosotros a encontrar es de que creemos servicios de nombres que utilicen manera directa, o sea, que yo le doy un nombre y usted me dice dónde se encuentra.
+Teacher: una característica, no sé si la tengo acá, una no una característica que tienen las los servicios de nombres con el tema del con el tema del espacio de nombres es de que cada vez que yo voy a ubicar un recurso le tengo
+Teacher: que dar la dirección completa y él hace una comparación, por decirlo así, de igual.
+Teacher: O sea, yo no tengo forma de decirle, "Ah, no, devuélvame todas las todos los servidores que pertenecen a la UTP." No,
+Teacher: él siempre va a decir, usted a qué servidor se quiere conectar, a finanzas, a administrativa, a ww a cuál, porque no hay no hay una forma, digámoslo así, de hacer búsquedas eh con un like, por decirlo así,
+Teacher: o que cumplan esta estructura.
+Teacher: Siempre todas las comparaciones o los nombres de los de los recursos se comparan de manera completa.
+Teacher: Si escribo mal el nombre del recurso, probablemente no lo voy a encontrar.
+Teacher: ¿Listo?
+Teacher: Entonces, para que lo tengamos en cuenta, para como estamos hablando de que esto es un sistema, otro sistema distribuido que estamos agregando a nuestro sistema, a nuestra solución, perdón, pues entonces tenemos nuestro problema de servidor, cuello de botella,
+Teacher: ¿cierto?
+Teacher: Punto único de fallo, cuello de botella gestión de caché.
+Teacher: etcétera, etcétera, etcétera.
+Teacher: Entonces, ¿cómo podemos nosotros eh resolver o trabajar con los servicios de nombres para poder garantizar la el la escalabilidad y el rendimiento de mi sistema, cierto?
+Teacher: No depender de uno solo.
+Teacher: Pues básicamente nosotros tenemos que romperlo con una de estas dos alternativas.
+Teacher: O utilizo replicación de servicio de nombres replicados o utilizo distribución.
+Teacher: ¿Qué es replicación?
+Teacher: Pues ya sabemos, son varios servidores que tienen la misma información, pero al momento de que yo vaya a hacer una consulta, no le pregunto siempre al mismo, sino que por pedirle la información a los múltiples servidores, ¿cierto?
+Teacher: Entonces, de esta manera nosotros vamos a poder escalar en peticiones o escalar en el número de clientes a quien puedo atender.
+Teacher: Mira que dependiendo del servicio que nosotros estemos trabajando, pues vamos a tener un alto volumen de traducciones que tenemos que estar haciendo.
+Teacher: A pesar de que el servidor solamente se encarga de hacer estas traducciones, pues si tenemos un alto volumen de de peticiones, pues vamos a saturar ese servidor y probablemente vamos a tener una degradación degradación en el servicio.
+Teacher: Entonces, yo puedo replicar los servicios, puedo hacer un scale out, scale, sí, un scale out, ¿cierto?
+Teacher: que es poder crear más servidores que tengan la misma información y que cada una de ellas pueda estar trabajando eh utilizando algún mecanismo de replicación, replicación activa, replicación pasiva, cualquiera de esas.
+Teacher: ¿Listo?
+Teacher: La otra es utilizando la distribución de de nombres y es que en lugar de que cada servidor conozca todos los nombres de servicio de todo de todo el mundo, lo que podemos hacer es decir, "Mire, usted se va a encargar de gestionar los dominios que utiliza la gente,
+Teacher: la gente que está más cercana a usted." ¿Listo?
+00:35:00
+Teacher: Entonces, voy a crear un DNS que conozca los nombres, los dominios que generalmente o o que UTP está gestionando, que la UTP está controlando, ¿cierto?
+Teacher: Para la Universidad Católica le creó otro DNS para que él pueda administrar o él pueda gestionar las direcciones que pertenecen a la Universidad Católica, a la Universidad Libre.
+Teacher: otro DNS para la universidad libre, a pesar de que se son el mismo servicio de DNS, pero cada uno tiene una o se le está distribuyendo la carga.
+Teacher: Todo lo que tiene que ver con la UTP, que lo hable el DNS de la UTP.
+Teacher: Todo lo que tiene que ver con la Católica, lo habla el DNS de la Católica.
+Teacher: Y todo lo que tiene que ver con el la libre, pues lo gestiona el DNS de la libre.
+Teacher: No tenemos que unirlo todo en un solo servidor.
+Teacher: podemos segmentar o hacer una distribución de responsabilidades a cada uno de los servidores.
+Teacher: Pero hay una una cosa interesante y es que si yo, por ejemplo, estoy en la Universidad Tecnológica, pero necesito un recurso que está en la Católica, pues yo no tengo que saber dónde cuál es el servidor de la Católica para ir a preguntarle porque él es el que gestiona
+Teacher: eso, sino que yo le voy a preguntar al de la tecnológica por el servidor de la Católica.
+Teacher: El de la tecnológica no lo sabe.
+Teacher: Entonces, ¿qué hace?
+Teacher: pues le pregunta a su le pregunta a sus nodos que están que son como el mismo nivel porque entre ellos se habla.
+Teacher: O sea, entre ellos a pesar de que cada uno se encarga de una tarea distinta o de un dominio distinto, entre ellos se pueden hablar.
+Teacher: ¿Listo?
+Teacher: Entonces, si yo hago una pregunta a él, él puede ir a preguntarle al DNS o al servidor de la Católica por la dirección con la cual yo estoy apuntando.
+Teacher: Y lo más interesante y es que después de que le hizo la consulta y recibió la respuesta, puede guardar en su caché la respuesta a esa solicitud.
+Teacher: Así que si más usuarios siguen solicitando la misma dirección, pues lo él ya no tiene que ir hasta la Católica para decirle cuál es su servidor o cuál es su dirección IP.
+Teacher: Simplemente hace la solicitud, verifica que está en la caché y como está en la caché, pues responde de manera directa.
+Teacher: ¿Listo?
+Teacher: Entonces, mira que todo lo que hemos hablado de de las variantes y arquitecturas de cliente servidor, pues son elementos que han hemos tenido que adoptar en los diferentes servicios para poder garantizar eh escalabilidad y rendimiento en las consultas.
+Teacher: Sí, tenemos caché.
+Teacher: ¿Cómo garantizamos de que esa caché eh sí está, digámoslo así, sí está actualizada?
+Teacher: pues depende del servicio que estemos trabajando, porque por ejemplo en en el DNS, en el servicio de nombres, ¿qué tan común o qué tan posible es que cambien recursos o que cambien servidores de un dominio en
+Teacher: específico, o sea, que que cambie el servidor de wwwutp.2.com.
+Teacher: ¿Será que cambia cada 5 minutos?
+Teacher: ¿Será que cambia cada 3 minutos?
+Teacher: ¿Será que cambia todos los días o cambiará cada mes o nunca cambia?
+Teacher: ¿Cierto?
+Teacher: Entonces el tema tiene que ver con Okay.
+Teacher: Y entonces, ¿cómo decimos que cuál es la vigencia de de un dominio en la cacheca después de haberlo consultado?
+Teacher: ¿Por cuánto tiempo lo va a guardar en la caché mi servidor local?
+Teacher: ¿Cierto?
+Teacher: Entonces ahí es donde nosotros vamos a tener que definir el TTL o el tiempo de vida de de ese recurso, ¿cierto?
+Teacher: de ese elemento en la caché, pero por ejemplo en el servicio de nombres, fácilmente yo podría decir, haga haga la actualización del servicio de nombres cada semana.
+Teacher: ¿Listo?
+Teacher: Y y si por alguna razón me hacen una pregunta, eh yo devuelvo una dirección y esa dirección no está disponible, pues entonces tengo la posibilidad de identificar o detectar de que esa dirección ya no está disponible y volver
+Teacher: a hacer la consulta.
+Teacher: o podríamos crear alguno de los algoritmos de de actualización de caché como el que vimos, que cada vez que cambie en el dato origen, pues invalide las copias de los demás, ¿cierto?
+Teacher: Todo eso lo podemos nosotros gestionar o lo podemos configurar dentro de nuestro servicio.
+Teacher: Aquí con lo de la replicación, aquí habla de esquemas simétricos o replicación activa o versus primario, secundario, replicación pasiva.
+Teacher: Estos son los mismos conceptos, pero aplicados ahora en los servicios de nombres.
+Teacher: ¿Listo?
+Teacher: Entonces, ¿para qué me sirve el servicio de nombres?
+00:40:00
+Teacher: para hacer una traducción nombre IP o nombre ubicación y que a partir de la ubicación yo también puedo crear el nombre, ¿cierto?
+Teacher: O sea, yo si yo sé la ubicación del archivo, yo puedo saber a qué archivo hace pertenece gracias al servicio de archivos.
+Teacher: Si yo tengo la dirección IP, podría saber cuál es el dominio, porque digámoslo así, el servicio de nombres es bidireccional.
+Teacher: Yo puedo buscar eh por por nombre de dominio y me dice cuál es la IP, puedo tener el nombre del IP y me puede decir cuál es el nombre de dominio.
+Teacher: Como puede haber replicación, yo puedo tener múltiples servidores apuntando el mismo dominio, ¿cierto?
+Teacher: Entonces, yo le doy mi nombre dominio y él me puede devolver uno o múltiples direcciones IP para que yo pueda tomar la decisión de cuál hacer, ¿listo?
+Teacher: o de cuál utilizar o aplico un modelo de de de muestreo o selecciono una una de las direcciones al azar y hago la petición a ella o simplemente pongo una dirección que es mi balanceador de carga o mi balanceador de peticiones y hacemos
+Teacher: que ese balanceador de peticiones se encargue de hacer la distribución de cosas, pero al final estamos trabajando en un en una arquitectura cliente servidor y la forma de como opera el servicio de nombre siempre es yo le doy el nombre
+Teacher: exacto, él me devuelve la ubicación exacta.
+Teacher: Si yo le doy la ubicación exacta, él me puede devolver el nombre del servicio que eh que se encuentra en esa ubicación.
+Teacher: Básicamente es como un un binder, ¿cierto?
+Teacher: lo que habíamos hablado el binder en en la localización del servidor, básicamente el servicio de nombres es como si fuera un binder.
+Teacher: Le doy un nombre, me dice su ubicación o dónde me tengo que conectar algo así por el estilo.
+Teacher: Eh, funciona aquí solamente que no no solamente es para direcciones de máquinas, sino que me sirve para cualquier tipo de recurso que nosotros queramos ubicar.
+Teacher: Y tenemos los servicios de directorios.
+Teacher: Y los servicios de directorios se parecen más al concepto de las páginas amarillas.
+Teacher: Si las páginas blancas tenían eh tenían una estructura de nombre alfabético de la persona para ubicar el recurso, ¿cómo funcionan las páginas amarillas?
+Teacher: También por nombre, por nombre alfabético, ¿cierto que no?
+Teacher: Las páginas amarillas funcionan es por características, ¿cierto?
+Teacher: Yo puedo yo puedo decir, "Mire, yo necesito un restaurante." Sí.
+Teacher: Entonces, busco la sección de restaurantes y me van a salir todos los restaurantes que están registrados en en el sistema, ¿cierto?
+Teacher: Eh, yo necesito yo necesito un fontanero.
+Teacher: Pues voy a las secciones, la sección de fontaneros y y ahí tengo pues toda la colección, las páginas amarillas.
+Teacher: Eh, al inicio solamente tenían una categoría, ¿cierto?
+Teacher: Yo decía fontaneros y entonces me salía todos los fontaneros, pero con el tiempo fueron creciendo el número de categorías.
+Teacher: O sea, yo puedo decir, eh, yo quiero saber, yo quiero tener conocimiento de sistemas, entonces busco la sección de sistemas, ¿cierto?
+Teacher: O informática, como lo quieran ver.
+Teacher: Vamos a instrucción de informática.
+Teacher: Pero es que en informática pueden pueden estar buscando técnicos, pueden estar buscando servidores, pueden estar buscando eh software, pueden estar buscando pues diferentes cosas y dependiendo de cada cosa pues va a haber diferentes proveedores o diferentes elementos.
+Teacher: Entonces, los servicios de directorio funcionan mucho más parecido a este modelo de las páginas amarillas, porque en el servicio, en el servicio de nombres, yo tenía que saber el nombre de la persona o el nombre de la empresa para poder ubicar su
+Teacher: teléfono.
+Teacher: En cambio, aquí yo lo que tengo que saber son características de quién, mejor dicho, yo voy a a buscar es un servicio y me van a salir cuáles son los nombres y ubicaciones de eso que de personas o de elementos que me pueden atender ese
+Teacher: servicio.
+Teacher: ¿Listo?
+Teacher: Entonces, aquí ya no vamos a localizar el recurso a partir de su nombre exacto, sino que lo vamos a a localizar a partir de unas características.
+Teacher: ¿Listo?
+Teacher: Aquí yo no tengo que saber el nombre exacto de de del recurso.
+Teacher: Yo voy a a decir qué características estoy buscando y me va a devolver los recursos que cumplen con esas características.
+Teacher: Yeah.
+Teacher: Listo.
+00:45:00
+Teacher: Entonces, mira que se diferencia bastante.
+Teacher: A pesar de que sirven para lo mismo, para ubicar recursos, cambian en su en su filosofía.
+Teacher: Los servicios de nombre en busca de manera de manera exacta el nombre.
+Teacher: En el servicio de directorios no necesariamente tenemos que saber cuál es el recurso ni cuál es el recurso que quiero buscar.
+Teacher: Yo lo que sé es cómo está etiquetado o qué características tiene y a partir de esas características yo puedo traer o consultar todos los elementos que cumplen con esas características.
+Teacher: Puedo consultar todos los oaneros que estén en la ciudad de Pereira.
+Teacher: Yo puedo consultar todos los eh las empresas de software que están eh que están creadas o que están definidas a Campereira, ¿cierto?
+Teacher: Entonces, mira que no tengo que saber exactamente el nombre para poder localizar el recurso.
+Teacher: Es más, vamos a conocer el nombre y su recurso.
+Teacher: Entonces, aquí eh los servicios de directorio no se enfocan tanto en el nombre, sino en los filtros o las características que tiene ese recurso.
+Teacher: ¿Listo?
+Teacher: Y ahora los recursos pueden tener una o múltiples características y esas múltiples características lo hace bastante, digámoslo así, disperso porque un recurso no necesariamente está definido o no está apuntado por un solo nombre por un solo elemento.
+Teacher: Yo podría llegar al mismo recurso por diferentes elementos.
+Teacher: ¿Por qué?
+Teacher: Porque tenemos diferentes características.
+Teacher: Pero voy filtrando.
+Teacher: Entre más características yo le dé a mi servicio de nombres, pues más acotado se va volviendo el fil.
+Teacher: En el modelo de los del servicio de nombres, si yo quisiera imprimir en la impresora de la secretaria de ingeniería de sistemas, yo como usuario tendría que saber cómo se llama o qué
+Teacher: tipo de impresora es o cómo está compartida por la red, en qué equipo está compartido, o sea, toda la información para poder yo localizar esa impresora.
+Teacher: Listo, no su ubicación, solamente los nombres.
+Teacher: Entonces yo entro a la red y digo, voy al equipo de la de la secretaria, voy al equipo de Martica.
+Teacher: De Martica voy a a impresoras y ella tiene tres impresoras configuradas.
+Teacher: Entonces, yo le digo, "¿Cuál de las tres es la que yo quiero ubicar para que cuando yo mande mi tarea de impresión se la mande de manera directa?" en el servicio en en el servicio de
+Teacher: nombres, perdón, en el servicio de directorio.
+Teacher: Aquí vamos a estar es por características.
+Teacher: Entonces, yo le voy a decir, mire, yo necesito una impresora a color.
+Teacher: Sí. Entces vamos a imprimir, vamos a buscar entre todas las impresoras de la universidad una impresora color.
+Teacher: Listo, que me soporte el formato A4.
+Teacher: Entonces, habrán un impresoras pequeñas, habrán un impresoras muy grandes.
+Teacher: Me va voy agrupando, voy segmentando el grupo de de impresoras que estén en la facultad de ingenierías.
+Teacher: Okay, entonces ya me quedan tres, cuatro impresoras eh disponibles, que además de eso eh sea de ingeniería de sistemas, entonces ya me quedan solamente las tres que que tiene Marticaya asignada, ¿cierto?
+Teacher: y así sucesivamente.
+Teacher: Entonces, en en lugar de yo decir cuál es la que quiero, estoy diciendo características de ese recurso que estoy buscando.
+Teacher: Básicamente yo podría llegar a un punto donde podríamos decir algo como como lo siguiente y es quiero imprimir este informe, o sea, yo en un momento determinado, en cualquier parte de la red, yo podría decir, quiero imprimir un este informe en la impresora color que esté más cerca de mí,
+Teacher: sin tener yo que saber cuál es la impresora color que está más cerca de mí, ¿cierto?
+Teacher: Entonces, mira que esa es una de las grandes ventajas que tenemos nosotros con el servicio directorio.
+Teacher: Y es que aquí ya podemos localizar los recursos sin necesidad de saber cómo se llama el recurso, ¿listo?
+Teacher: O cómo está publicado, cómo está registrado este recurso ante el sistema.
+Teacher: Simplemente le doy las características y con esas características él me va a hacer la búsqueda dentro de dentro de dentro de todo el catálogo de servicios que tenemos y simplemente me devuelve los recursos.
+Teacher: ¿Listo?
+Teacher: Eh, aquí pues me dice que lo podemos utilizar para buscar recursos como impresoras, servicios de red, información de usuarios, eh servidores, eh ubicación de servidores de bases de datos, eh credenciales, o sea,
+00:50:00
+Teacher: tenemos múltiple información que yo puedo concentrar o puedo agregar dentro de un servicio de de directorio.
+Teacher: A diferencia de los servicios de nombres, que normalmente siempre los asignamos a un solo servicio, entonces pueda tener un servicio de nombres que me haga la traducción de dominio a IP.
+Teacher: Voy a necesitar otro servicio de nombres que me cambie ese IP por la dirección Mac de la máquina para poder localizarlo, ¿cierto?
+Teacher: Si yo voy a mandar una una comunicación, yo necesito la dirección Mac porque por las IPs es la capa de de dirección que es como la capa tres de osi en capa cuatro de OSI.
+Teacher: En cambio, en cambio eh la MAC está en la capa uno, está pegado del dispositivo, entonces a ese es al que yo tengo que apuntar, ¿cierto?
+Teacher: Entonces tengo que tener un servicio que me haga esa traducción y así sucesivamente.
+Teacher: En cambio, los eh las eh los servicios de directorio pueden almacenar o pueden guardar múltiples recursos.
+Teacher: ¿Listo?
+Teacher: No, no solo un tipo específico.
+Teacher: Yo puedo en el mismo servicio de directorios agrupar todos los servicios o todos los recursos que nosotros podamos tener dentro de nuestra red.
+Teacher: Ahora pregunta, ¿y será que el servicio de directorios es una base de datos?
+Teacher: ¿Será?
+Teacher: Porque yo al final lo que estoy diciendo es este recurso en tal campo o en tal atributo tiene un sí o no.
+Teacher: O sea, es impresora, ¿sí o no?
+Teacher: ¿Está en ingeniería de sistemas?
+Teacher: ¿Sí o no?
+Teacher: ¿Está en es da color?
+Teacher: ¿Sí o no?
+Teacher: Pues tengo una estructura, puede ser una estructura como eso y a eso le pongo un nombre y una ubicación.
+Teacher: ¿Será que el servicio de directorios podría ser una base de datos?
+Teacher: Teniendo en cuenta de que podemos agregar de todo, vamos a decir que no, ¿cierto?
+Teacher: Realmente el la el los servicios de directorio tienen más una estructura de árbol, ¿listo?
+Teacher: es un árbol dirigido.
+Teacher: ¿Okay?
+Teacher: ¿Y por qué es una tiene una estructura de árbol?
+Teacher: Y es porque voy a tener un, digámosle así, un nodo raíz y de ese nodo raíz voy a empezar a ir agrupando como cuáles son las categorías que están como a primer nivel y luego de eso voy a definir dentro de cada categoría qué subcategorías vamos a tener y así
+Teacher: sucesivamente.
+Teacher: Pero al momento de asignar los recursos, yo no los voy a guardar como si fueran hojas.
+Teacher: Yo lo que voy a hacer es que este recurso va a estar enlazado con múltiples con múltiples eh hojas del árbol.
+Teacher: ¿Listo?
+Teacher: Entonces, mira que es un modelo bastante raro, es una estructura de datos bastante rara y eh a pesar de que toda la estructura de conceptos o de características yo las tengo en forma de árbol, al momento de yo así decirle este elemento,
+Teacher: esta impresora tiene tales características, es una agregación de características, ¿listo?
+Teacher: que pueden estar en cualquier parte del árbol.
+Teacher: No es que yo lo pegue dentro de un árbol y quedó solamente clasificado en una única ubicación, sino que puede estar en múltiples ubicaciones al mismo tiempo, o sea, el mismo recurso va a estar en múltiples ubicaciones.
+Teacher: Entonces, vamos a tener una estructura de árbol para la organización de las entradas o las características, ¿cierto?
+Teacher: Vamos a tener unas entradas y atributos, o sea, cada objeto tiene una clave de valor, un atributo.
+Teacher: ¿Listo?
+Teacher: Entonces, para el atributo tal tiene tal valor, para el atributo tal tiene tal valor.
+Teacher: Muy parecido a la base a las bases de datos, ¿cierto?
+Teacher: Es que para la carpeta ubica para la carpeta eh facultad tiene ingenierías, para la carpeta programa tiene para el la clave programa tiene ingeniería de sistemas, ¿cierto?
+Teacher: O sea, va teniendo una relación llave valor eh cuando yo estoy asignándole eh los las entidades o los elementos, las características a a cada uno de los objetos.
+Teacher: Van a haber unas clases y esquemas que que las clases es como la estructura árbol que define cuáles son los atributos que puede llegar a tener, cuáles son los que son obligatorios, cuáles son los que son opcionales dependiendo de la entidad.
+00:55:00
+Teacher: Y vamos a tener al final nosotros vamos a a conseguir o vamos a llegar a algo que se llama el DN.
+Teacher: El DN es el nombre del recurso eh del final, o sea, es el que cuando yo cojo y concateno todos los atributos que pertenecen a una sola entidad, todas esas, digámosle así, todos esos atributos es el identificador único,
+Teacher: el nombre distinguido del recurso que nosotros estamos buscando.
+Teacher: ¿Qué pasa si yo tengo dos elementos que tienen exactamente la misma asignación de valores en cada uno de los atributos?
+Teacher: Pues dos cosas, o estamos hablando del mismo objeto o me faltan más características, más elementos que lo ayuden a diferenciar.
+Teacher: ¿Listo?
+Teacher: Una algo que lo puede diferenciar.
+Teacher: Si estuviéramos hablando, por ejemplo, impresoras que son a color de marca HP, están en ingeniería de sistemas, yo podría decir, "Okay, puede ser el modelo. Sería muy poco probable que yo tenga dos impresoras del mismo modelo dentro de la misma facultad o dentro de la misma área,
+Teacher: ¿cierto?
+Teacher: O podría decir el año el año de fabricación o podría ser el número serial.
+Teacher: O sea, tengo que tener una forma de de discriminar,
+Student21: Mucho gusto.
+Teacher: debo tener la forma de discriminar los diferentes elementos que están dentro de la raíz.
+Teacher: No pueden haber dos elementos que tengan exactamente los mismos valores.
+Teacher: ¿Listo?
+Teacher: Pero me puedo nombrar lo que sea.
+Teacher: Yo puedo nombrar personas, o sea, poner ahí en mi servicio de directorios el catálogo de los usuarios.
+Teacher: Por ejemplo, puedo agregar impresoras, puedo agregar bases de datos, puedo agregar eh dispositivos a los que yo pueda llegar a tener permiso no pueda poder podemos agregar cualquier tipo de recurso que haga parte de nuestro sistema.
+Teacher: ¿Listo?
+Teacher: Solo que los tengo que categoría.
+Teacher: izar con las clases y las eh que tengo definidos en mi árbol de jerarquía.
+Teacher: Listo.
+Teacher: Complejo, ¿cierto?
+Teacher: Un poquito complejo este este modelo, sino que aquí ya no tengo un espacio de nombres.
+Teacher: Aquí lo que tengo es una estructura de árbol con todas las características de mi de mi recurso.
+Teacher: Ya el nombre no es ni siquiera útil, no es un elemento útil.
+Teacher: ¿Por qué?
+Teacher: Porque yo a partir de las características es que voy a lograr encontrar mi recurso.
+Teacher: ¿Qué características tiene el servicio de directorio?
+Teacher: Pues primero eh está optimizado para consultas masivas.
+Teacher: ¿Listo?
+Teacher: A diferencia a diferencia de las bases de datos que que están enfocadas en guardar la información de una manera correcta y poder generar consultas eh uniendo o haciendo una agrupación de toda esta
+Teacher: información o resumiendo datos de manera muy eficiente.
+Teacher: Los servicios de directorio están, digamos así, optimizados para que nosotros escribamos muy poco, o sea, no vamos a agregar muchos elementos, pero sí vamos a consultar demasiado.
+Teacher: Lo digámoslo así casi que lo contrario de lo que pasan con las bases de datos.
+Teacher: Otros en las bases de datos principalmente esperamos de que se estén alimentando, que estemos llenando mucha información para poder extraer, digamoslo así, los resúmenes eh que son pocas consultas al tiempo.
+Teacher: En cambio, el servicio de directorios es al revés, ¿cierto?
+Teacher: voy a a son sistemas de almacenamiento, de gestión que me que van a cargar o que se encargan de buscar o hacer lecturas muy rápidas de la información para poder entregarle la información lo más pronto posible al usuario.
+Teacher: ¿Listo?
+Teacher: Tiene unos filtros complejos, ¿cierto?
+Teacher: la forma como se realizan las consultas o las operaciones dentro de dentro del los servicios de directorio, pues entonces son bastante complejos, o sea, tienen una gran cantidad de operaciones, una gran cantidad de de restricciones que se tienen que aplicar para poder identificar cuáles son los
+Teacher: elementos que cumplen o no cumplen con con la con la condición.
+Teacher: Pero esa esas operaciones complejas pues son las que están optimizadas en este modelo.
+Teacher: Tiene un modelo o o está soportado en un modelo descentralizado, o sea, que no necesariamente yo tengo que tener un solo servicio de nombres, un solo servidor para convertirlo en mi cuello de botella, sino que eh el proceso de traducción,
+Teacher: el proceso de respuesta puede estar replicado, puede estar distribuido dentro de la red.
+Teacher: puedo tener múltiples servidores que puedan atender este tipo de servicios.
+Teacher: Entonces, con eso vamos a garantizar la escalabilidad y la alta disponibilidad de nuestro sistema.
+01:00:00
+Teacher: Y eh podríamos nosotros agregar una serie de restricciones o alguna serie de controles a cada uno de los registros o a cada uno de los elementos o objetos que tenemos dentro de nuestro sistema directorio, ¿cierto?
+Teacher: vamos nosotros a garantizar de que a ese recurso solamente puedan acceder personas que pertenezcan al mismo grupo o que tengan características de x tipo.
+Teacher: Entonces, ese tipo de de niveles de seguridad o elementos de seguridad que yo le puedo dar a mi sistema que yo le puedo dar al servicio de directorios, me van a ayudar o me van a permitir evitar de que alguien no autorizado pues pueda
+Teacher: consultar recursos que tenemos nosotros disponible dentro del sistema.
+Teacher: Tengan en cuenta en el al en el servicio de en el servicio de nombres, lo ideal o lo normal es de que nosotros tengamos acceso a todos los recursos, ¿cierto?
+Teacher: Si yo hago una consulta, si ese servidor no lo tiene, él va, lo consulta, lo trae y me lo entrega.
+Teacher: O sea, no hay un modelo de seguridad que me diga, "Usted puede o no puede eh consultar, por decirlo así." No es no es lo normal,
+Teacher: pero en el servicio de directorio eh sí tenemos esa posibilidad de de darle un mayor nivel de seguridad a quiénes pueden acceder a cada uno de los objetos o quiénes pueden consultar un objeto en específico dentro del sistema.
+Teacher: Ahora, ¿cuándo usamos cuál, ¿cierto?
+Teacher: o cómo o cómo diferenciamos el uno y el otro, ¿cierto?
+Teacher: Entonces, vamos a hacer aquí esta tabla comparativa entre lo que es un servicio de nombres y un servicio de directorio.
+Teacher: Entonces, vamos a decir que en el servicio de nombres la analogía es hablar de tener las páginas blancas.
+Teacher: Nosotros siempre tenemos que saber a quién busco, ¿cierto?
+Teacher: Yo tengo que tener el nombre exacto del recurso o de la persona a la que estoy buscando.
+Teacher: Si solamente tengo una una parte del nombre, si solamente digo, "No, es que necesito buscar a Carlos y voy a las páginas blancas, voy a encontrar 200,000 Carlos." ¿A cuál llamo?
+Teacher: A todos.
+Teacher: Eh, sí, porque tengo que consultarlo de manera exacta, ¿cierto?
+Teacher: En cambio, en el servicio de directorio, perdón, utilizamos lo que llamamos las páginas amarillas.
+Teacher: O sea, que básicamente lo que estamos haciendo es saber qué servicio es el que necesito.
+Teacher: No tengo que saber quién es.
+Teacher: Yo necesito el fontanero, no necesito saber su nombre.
+Teacher: Necesito es un fontanero que esté disponible o que esté registrado.
+Teacher: Eh, más o menos ese es el modelo, ¿cierto?
+Teacher: Las en los servicios de nombres tengo que saber quién es quién quién es el que a quién necesito y en el otro, ¿qué es lo que necesito?
+Teacher: Yeah.
+Teacher: Los datos de entrada tiene que ser el nombre exacto y no no se puede equivocar.
+Teacher: En el servicio de directorios las entradas son un conjunto de atributos y filtros, ¿cierto?
+Teacher: ¿Qué es lo que yo estoy buscando y qué condiciones deben cumplirse los datos?
+Teacher: la salida o la dirección IP o la referencia directa del del archivo o la ubicación, el puerto por por donde está escuchando un servidor, lo que sea.
+Teacher: Listo.
+Teacher: Como yo sé qué es lo que necesito, él me va a devolver el recurso para para que ese ese servicio de nombres está entrenado.
+Teacher: Él me va a devolver el valor o o la ubicación de ese recurso que yo estoy buscando.
+Teacher: En cambio, en el servicio directorio me puede devolver uno, muchos o ninguno.
+Teacher: Si todos los que coinciden con mi con mis criterios o con mis atributos me los va a devolver.
+Teacher: Si tengo múltiples objetos y yo solamente necesito uno, tengo que mejorar el filtro, tengo que agregar más atributos o refinar un poco más el filtro.
+Teacher: ¿Listo?
+Teacher: Eh, la carga de trabajo, los servicios de nombre tienen una alta frecuencia de actualización.
+Teacher: ¿Listo?
+Teacher: Eh, eso significa que cada x tiempo está renovando, está verificando que los datos que tiene en su caché o los datos que tiene de trabajo siguen siendo actualizados.
+Teacher: En cambio, en el servicio directorio, no.
+Teacher: El servicio directorio está optimizado, no para estar siempre actualizado, sino para responder a consultas.
+Teacher: ¿Listo?
+Teacher: Y en si estamos utilizando servicios de directorio, es poco probable que los objetos cambien.
+Teacher: Digo poco probable, no porque no se puedan modificar o no podamos agregar más objetos, sino que esos objetos deben ser menos volátiles.
+Teacher: ¿Listo?
+Teacher: O sea, no es que yo esté agregando y quitando, agregando y quitando objetos de manera dinámica.
+Teacher: eh una operación clave, una digámoslo así, la función que nosotros normalmente vamos a llamar en un servicio de nombres va a ser resolver.
+01:05:00
+Teacher: Le digo resolve y le doy el nombre o hágame la la consulta inversa, le doy la resuélvame esa dirección y me devuelve el nombre.
+Teacher: Y en cambio, en el servicio de directorio, la operación que normalmente vamos a buscar es un search, es un buscar y le doy la el los filtros de atributos, o sea, la condición que deben cumplir los elementos o los objetos que vamos a traer del servicio
+Teacher: directorio.
+Teacher: No sé si si queda clara la diferencia entre ellos y cuándo utilizar uno y cuándo utilizar el otro.
+Teacher: ¿O tienen alguna duda?
+Teacher: Los veo muy callados en estos últimos módulos.
+Teacher: No sé si es que quedaron muy claros o es que es todo nuevo.
+Teacher: En conclusión, ¿cierto?
+Teacher: Eh, los dos servicios me sirven para ubicar recursos.
+Teacher: Listo.
+Teacher: Tanto tanto el servicio de nombres como el servicio de directorios.
+Teacher: ¿Listo?
+Teacher: Servicio de nombres.
+Teacher: Cuando yo tengo el nombre del objeto o el recurso, es una muy buena idea.
+Teacher: El servicio de directorios es cuando no tengo idea del nombre del recurso.
+Teacher: ¿Listo?
+Teacher: Pero puedo tener múltiples recursos que me pueden servir o me pueden suplir una necesidad que yo tenga.
+Teacher: Entonces, ambos o digámoslo así, a pesar de que tienen características distintas, son complementarios.
+Teacher: Yo puedo tener ambos en funcionamiento.
+Teacher: Yo puedo tener un servicio de directorios para gestionar unos recursos y un y servicios de nombres o múltiples servicios de nombres para resolver otros recursos.
+Teacher: Ya depende mucho de qué tipo de de relación o qué tipo de de gestión tenemos en nuestro en nuestro sistema.
+Teacher: Listo.
+Teacher: Fundamentos clave, la jerarquía, la replicación, la memoria eh la memoria caché son importantes en ambos en ambos servicios, ¿cierto?
+Teacher: Porque al final nosotros lo que estamos haciendo es eh ubicando recursos y son sistemas centralizados, son sistemas.
+Teacher: Entonces, necesitamos poder garantizar de que esos sistemas no se vuelvan en el cuello de botella de mi de mi servicio.
+Teacher: Entonces, afortunadamente esos servicios se han venido creando o esos servicios que nosotros estamos utilizando se han venido creando bien, se han venido creando teniendo en cuenta todas estas características y estos criterios que necesitamos en nuestros sistemas distribuidos.
+Teacher: ¿Listo?
+Teacher: A pesar de que sean sistemas que puedan funcionar en una sola máquina, digámoslo así, fueron pensados para no ser nuestros cuellos de botella, para no centralizar todo este tipo de peticiones.
+Teacher: A pesar de que es muy común ver servicios de directorio que sean centralizados, es muy común que dentro de nuestra empresa, o dentro de nuestra solución tengamos un solo servicio de directorio.
+Teacher: Listo.
+Teacher: Pero depende mucho como están optimizados para la lectura, probablemente nos sirva o sea una buena opción.
+Teacher: para la solución que estamos nosotros dando.
+Teacher: Pero debemos tener mucho cuidado es con el tema de la carga, o sea, qué tantas peticiones están llegando, qué tantas peticiones de manera concurrente están llegando a ese servicio y qué tanto puede eh puede responder con la caché o si cada consulta que llega tiene que
+Teacher: gestionarla o irla a buscar en en el en el servicio de directorios.
+Teacher: A pesar de que está optimizado para para lecturas, al final estamos nosotros recorriendo todos los todos los objetos que están registrados en el servicio de directorios para poder aplicar el filtro.
+Teacher: Entonces, si cada consulta que cada nodo está haciendo de manera independiente es un filtro completamente distinto, pues puede ser un What?
+Teacher: elemento crítico para nuestro único servicio de servicio de directorios en el sistema.
+Teacher: Entonces, tenemos que analizar muy bien cómo es cómo es la dinámica de nuestro sistema, cómo qué tanto son las consultas, cómo son las consultas y qué tan importante es que eh conozcan cuál es el recurso que necesitamos o que conozcan las características del recurso que se necesita.
+Teacher: Y es y el nivel de de indirección pues es es lo esencial para garantizar el tema de la transparencia, ¿cierto?
+Teacher: Garantizar sistemas distribuidos flexibles y tolerantes a cambios de configuración.
+Teacher: si cambio el recurso de un lugar a otro, si muevo eh o hago algún tipo de de actualización en los datos, si tengo múltiples copias del mismo recurso, lo ideal es que este sistema, digámoslo así,
+Teacher: o este modelo o el que nosotros elijamos eh deba tener un alto nivel de indirección, o sea, sea capaz de hacer esas traducciones, esa esa ocultación de la ubicación específica para el usuario,
+01:10:00
+Teacher: lo que necesitamos es garantizar transparencia para que mi sistema sea mucho más fluido.
+Teacher: Ahora, una pregunta que quiero hacerles y es, ¿ustedes creen que el internet, como lo conocemos, ¿qué utiliza?
+Teacher: Servicios de nombres o servicios de directorio y por qué no utilizaron el otro.
+Teacher: ¿Qué tiene el internet?
+Teacher: ¿Sericios de nombres o servicios de directorio?
+Student26: DNS, servicios
+Student8: de nombre.
+Teacher: Entonces, digamos que inicialmente o al menos el más visible es el DNS, pero el internet como tal depende de muchos de muchos servicios de nombres.
+Teacher: el DNS para ubicar la dirección IP, pero necesitamos el el ARS, ¿cómo es que se llama el que me hace la traducción de IP a a traducción de IP a
+Teacher: Mac a dirección MAC, que es la dirección del el ARP?
+Teacher: Este, necesito el servicio ARP para que si yo ya tengo el IP de del máquina, pues necesito saber a qué tarjeta de red es a la que tengo que mandarle la petición, ¿cierto?
+Teacher: Entonces necesito este otro servicio llamado RP para llegar a él.
+Teacher: Si estoy utilizando HTTP, pues el servidor HTTP sirve de servicio de nombres porque la URL o el NP que yo le estoy dando hace referencia o a una aplicación o a un archivo que está guardado en el disco duro.
+Teacher: Y si es un archivo que está guardado del disco duro, necesito el servicio, el servicio, el file system, el nombre, el sistema de archivos o el servicio de nombres del sistema de archivos para poder ubicar la información dentro de nuestro disco.
+Teacher: Entonces, mire que eh la construcción de un de un sistema no solo depende de un tipo de servicio de nombres, puedo estar uniendo múltiples.
+Teacher: Y ahora mi pregunta es, ¿y por qué no utilizamos un servicio de directorio?
+Teacher: ¿Por qué creen ustedes que no ubicamos los recursos o por qué el internet no creció?
+Teacher: pensando en tener un gran servicio de directorios en lugar de un servicio de nombres.
+Teacher: ¿Se
+Student8: complicado mantener, profe, actualizado.
+Student8: Y bueno, y por otra parte,
+Teacher: imagina?
+Student8: pues digamos que cuando yo busco una funcionalidad, muchas veces la busco en un formato específico.
+Student8: O sea, si yo, por ejemplo, busco un navegador, no busco generalmente cualquier navegador, busco el navegador que a mí me gusta.
+Teacher: Ok.
+Student8: Entonces,
+Teacher: ¿Y
+Student8: como no sé, pienso que va por ahí
+Teacher: cuántos recursos hay en en internet?
+Student8: muchisisísimo.
+Student8: No.
+Teacher: ¿Cómo gestionamos todos esos recursos?
+Teacher: Porque mira que yo estoy diciendo que los servicios de nombre se enfocan en una sola tarea.
+Teacher: El DNS, traducción de dominio a a IP, no más, no hace nada más.
+Teacher: El servicio de nombres podría ser eso y más, o sea, podríamos agregar ese recurso y muchos más recursos.
+Teacher: Entonces, termina terminamos creando un una gran, ¿cómo, cómo se dice ahí?
+Teacher: Un una gran biblioteca de todos los recursos que tenemos en internet y sería muy difícil de gestionar, sería muy difícil de optimizar.
+Teacher: ¿Listo?
+Teacher: Entonces, mire que, por ejemplo, el internet es tan eficiente o o tiene tan buen rendimiento porque tomó la decisión de trabajar con servicios de nombres.
+Teacher: Sí, pero necesito poner en sincronía muchos servicios de nombres para garantizar de que esto funcione.
+Teacher: En cambio, en el con el servicio de directorios puedo crear o puedo agrupar todos esos elementos en uno solo.
+Teacher: ¿Listo?
+Teacher: Y ese gran servicio de directorio eh, digámoslo así, me permite que cualquier aplicación o cualquier recurso que yo necesite, simplemente lo tenga que preguntar a él y no tengo que preocuparme por recordar los nombres específicos de
+Teacher: los elementos o la o el nombre del dominio específico o el nombre o el número IP de manera específica, ¿cierto?
+Teacher: no necesitaría porque los recursos estarían o las ubicaciones o las direcciones estarían relacionadas es a los servicios o a los o a las características que tiene ese recurso.
+Teacher: ¿Listo?
+Teacher: Jóvenes, no sé si tienen alguna duda, alguna pregunta, algo más que quieran compartir conmigo, ¿no?
+01:15:00
+Teacher: Bueno, entonces ya estamos listos para el parcial número dos.
+Student8: Sí, señor.
+Teacher: Okay, perfecto.
+Teacher: El parcial número dos incluye eh comunicación, o sea, todos los modelos de comunicación, comunicación por paso de mensajes, comunicación usando middlewars como RPC, remedba y servicios web.
+Teacher: tiene que ver con sistemas de archivos y tiene que los sistemas de archivos distribuidos y paralelos y tiene que ver con este tema de los servicios de nombre, de servicios de nombres y de directorio.
+Teacher: ¿Listo?
+Teacher: De este también hay tallercito, pues investigación para que me diga o que investiguen algunos servicios de nombre, algunos servicios de directorio.
+Teacher: Eso los vamos a dejar.
+Teacher: Este taller lo voy a publicar ahora, pero es para la próxima semana.
+Teacher: ¿Está bien?
+Teacher: para el jueves terminar los talleres que les dejé de servicios de nombres y directorios y adicional pues empezamos con la exposición número uno, ¿cierto?
+Teacher: ¿Qué es la exposición?
+Teacher: ¿Qué va a ser nuestro eh los compañerosunutun?
+Teacher: No sé si están claros.
+Teacher: Student4, Student13, Student21, Student27, Student11.
+Teacher: Listo, que empiezan el próximo jueves.
+Teacher: ¿Sí están preparados o no para la
+Student21: ¿Para qué, profe?
+Student4: Claro, profe.
+Teacher: exposición?
+Student21: Mentira, profe.
+Student21: Síí.
+Teacher: Ojo con eso.
+Teacher: Dale.
+Teacher: Eh, nada, quedo atentos.
+Teacher: Nos vemos el jueves, entonces.
+Teacher: Listo.
+Student21: He.
+Teacher: Dale,
+Student28: Hola,
+Teacher: que esté muy bien.
+Teacher: Nos vemos.
+Teacher: Chao, chao.
+Student8: Vale, profe, hasta luego.
+Student8: No.
+Student21: Chao, profe.
+Student28: Hasta luego.
+Teacher: Hasta luego.
+La reunión finalizó después de 01:17:03 👋
+Esta transcripción editable se generó automáticamente y puede contener errores. Los usuarios también pueden cambiar el texto después de que se cree.
+

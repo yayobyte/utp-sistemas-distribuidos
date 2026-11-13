@@ -74,10 +74,28 @@ export const talleresRegistry: TallerEntry[] = [
     ],
   },
   {
+    id: '5',
+    number: 5,
+    title: 'Sistemas de Archivos Paralelos',
+    shortTitle: 'Archivos Paralelos',
+    topic: 'Tema 4 · Almacenamiento',
+    corte: 'Parcial 2',
+    status: 'completado',
+    summary:
+      'Seis sistemas de archivos paralelos (Lustre, IBM Storage Scale/GPFS, BeeGFS, OrangeFS, PanFS y DAOS) y cómo funcionan por dentro tres de ellos.',
+    objective:
+      'Reconocer las diferentes alternativas para la gestión de archivos de forma paralela, para poder elegir entre las diferentes opciones existentes el que más se ajuste a las necesidades de algún proyecto futuro.',
+    sections: [
+      { slug: 'sistemas', label: 'Sistemas Paralelos' },
+      { slug: 'funcionamiento', label: 'Cómo Funcionan' },
+      { slug: 'matriz', label: 'Matriz Comparativa' },
+    ],
+  },
+  {
     id: 'exposicion-c',
     kind: 'exposicion',
     path: '/exposicion/microservicios',
-    number: 5,
+    number: 6,
     title: 'Microservicios y Spring Cloud',
     shortTitle: 'Exposición · Microservicios',
     topic: 'Exposición · Grupo C',
