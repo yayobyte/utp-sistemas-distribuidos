@@ -20,7 +20,19 @@ export const AppShell: React.FC<AppShellProps> = () => {
     setIsMenuOpen(false);
 
     if (hash) {
-      document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
+      // Wait a frame so the target exists, then scroll and flash it so a reader
+      // arriving from a link (e.g. the deck's speaker notes) sees the exact block.
+      const frame = requestAnimationFrame(() => {
+        const el = document.getElementById(decodeURIComponent(hash.slice(1)));
+        if (!el) return;
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        el.classList.remove('is-target');
+        void el.offsetWidth;
+        el.classList.add('is-target');
+        window.setTimeout(() => el.classList.remove('is-target'), 2600);
+      });
+      previousPageKey.current = pageKey(pathname);
+      return () => cancelAnimationFrame(frame);
     } else if (previousPageKey.current !== pageKey(pathname)) {
       window.scrollTo(0, 0);
     }

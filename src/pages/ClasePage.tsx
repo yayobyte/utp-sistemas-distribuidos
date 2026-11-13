@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { clases, getClase, temaTone } from '../data/clases';
+import { clases, getClase, sectionSlug, temaTone } from '../data/clases';
 import type { Block } from '../data/clases/types';
 import { ClaseDiagram } from '../components/clases/ClaseDiagram/ClaseDiagram';
 import './ClasePage.styles.css';
@@ -109,7 +109,7 @@ export const ClasePage: React.FC = () => {
       </header>
 
       {clase.sections.map((section) => (
-        <section key={section.heading} className="clase-section">
+        <section key={section.heading} id={sectionSlug(section.heading)} className="clase-section">
           <h2>{section.heading}</h2>
           {section.blocks.map((block, i) => <BlockView key={i} block={block} />)}
         </section>

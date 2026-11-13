@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { BookOpen, ChevronLeft, ChevronRight, ExternalLink, LayoutGrid, Maximize, MessageSquareText, X } from 'lucide-react';
+import { BookOpen, ChevronLeft, ChevronRight, ExternalLink, GraduationCap, LayoutGrid, Maximize, MessageSquareText, X } from 'lucide-react';
 import { MicroservicesStage } from '../components/exposicion/MicroservicesStage';
 import { SlideContentView } from '../components/exposicion/SlideContentView';
 import { exposicionInfo, slides } from '../data/exposicion.data';
@@ -141,7 +141,7 @@ export const ExposicionPage: React.FC = () => {
           <p>{slide.notes}</p>
           {slide.more && (
             <div className="deck-more">
-              <span className="deck-more-title">Ampliar</span>
+              <span className="deck-more-title">Ampliar · en el curso</span>
               <ul>
                 {slide.more.guia && (
                   <li>
@@ -154,6 +154,22 @@ export const ExposicionPage: React.FC = () => {
                     </a>
                   </li>
                 )}
+                {slide.more.curso?.map((c) => (
+                  <li key={c.href}>
+                    <a href={c.href} target="_blank" rel="noopener noreferrer">
+                      <GraduationCap size={14} aria-hidden="true" />
+                      <span>
+                        {c.label.split(' · ').slice(1).join(' · ')}
+                        <small>{c.label.split(' · ')[0]}</small>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              {slide.more.docs && slide.more.docs.length > 0 && (
+                <span className="deck-more-title is-sub">Documentación oficial</span>
+              )}
+              <ul>
                 {slide.more.docs?.map((d) => (
                   <li key={d.href}>
                     <a href={d.href} target="_blank" rel="noopener noreferrer">

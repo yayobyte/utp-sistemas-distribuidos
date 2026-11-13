@@ -35,6 +35,8 @@ export interface SlideLink {
 /** Extra reading shown in the speaker notes: a spot in our guide plus official docs. */
 export interface SlideMore {
   guia?: { anchor: string; label: string };
+  /** Internal links to class sections and study-guide families. */
+  curso?: SlideLink[];
   docs?: SlideLink[];
 }
 

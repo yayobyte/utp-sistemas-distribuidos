@@ -22,4 +22,13 @@ export const temaTone: Record<Clase['tema'], string> = {
   Nombres: 'tema-nom',
 };
 
+/** Anchor id for a class section, e.g. "Aspecto 3: el binder" → "aspecto-3-el-binder". */
+export const sectionSlug = (heading: string) =>
+  heading
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+
 export const getClase = (number: number) => clases.find((c) => c.number === number);

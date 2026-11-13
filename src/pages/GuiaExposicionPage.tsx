@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Presentation } from 'lucide-react';
 import {
   FamilyMap,
@@ -374,30 +374,7 @@ const PurchaseSequence: React.FC = () => {
   );
 };
 
-/** Links from the deck's speaker notes land on #anchors; scroll once the page has rendered. */
-const useHashScroll = () => {
-  const { hash } = useLocation();
-  useEffect(() => {
-    if (!hash) return;
-    const id = decodeURIComponent(hash.slice(1));
-    let timer: number | undefined;
-    const frame = requestAnimationFrame(() => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      el.scrollIntoView({ block: 'start' });
-      // :target is unreliable when the element renders after load, so flag it by hand.
-      el.classList.add('is-target');
-      timer = window.setTimeout(() => el.classList.remove('is-target'), 2600);
-    });
-    return () => {
-      cancelAnimationFrame(frame);
-      window.clearTimeout(timer);
-    };
-  }, [hash]);
-};
-
 export const GuiaExposicionPage: React.FC = () => {
-  useHashScroll();
   return (
   <div className="guia-page container-tight">
     <header className="guia-header">

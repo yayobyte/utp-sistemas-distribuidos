@@ -377,3 +377,16 @@ button {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
+
+/* Any block reached through a #hash link (AppShell adds .is-target for a moment). */
+[id] { scroll-margin-top: 24px; }
+.is-target { animation: target-flash 2.4s ease-out; }
+
+@keyframes target-flash {
+  0%, 40% { outline: 3px solid var(--fam, var(--acc, var(--color-primary))); outline-offset: 6px; }
+  100% { outline: 3px solid transparent; outline-offset: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .is-target { animation: none; outline: 2px solid var(--fam, var(--acc, var(--color-primary))); outline-offset: 6px; }
+}

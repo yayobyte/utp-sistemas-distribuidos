@@ -1,4 +1,5 @@
 import type { Member, Slide, SlideLink, SlideMore } from './exposicion.data.d';
+import { getClase, sectionSlug } from './clases';
 
 export const exposicionInfo = {
   title: 'Microservicios y Spring Cloud',
@@ -487,6 +488,39 @@ const doc = {
 
 const g = (anchor: string, label: string) => ({ anchor, label });
 
+/** Link to a section of a class page; fails loudly if the heading is renamed. */
+const clase = (n: number, heading: string): SlideLink => {
+  if (!getClase(n)?.sections.some((s) => s.heading === heading)) throw new Error(`Clase ${n} sin sección "${heading}"`);
+  return { label: `Clase ${n} · ${heading}`, href: `/clases/${n}#${sectionSlug(heading)}` };
+};
+
+const guiaArq = (anchor: string, label: string): SlideLink => ({ label: `Guía Arquitecturas · ${label}`, href: `/guia/arquitecturas#${anchor}` });
+const guiaCom = (anchor: string, label: string): SlideLink => ({ label: `Guía Comunicación · ${label}`, href: `/guia/comunicacion#${anchor}` });
+const guiaAlm = (anchor: string, label: string): SlideLink => ({ label: `Guía Archivos y nombres · ${label}`, href: `/guia/archivos#${anchor}` });
+
+const curso: Record<string, SlideLink[]> = {
+  monolito: [clase(14, 'Diagrama y puntos críticos de fallo'), guiaArq('escalar', 'Escalabilidad y disponibilidad')],
+  'que-es': [clase(1, 'Características'), clase(1, 'Las 8 falacias')],
+  soa: [clase(16, 'Colas de mensajes')],
+  arquitecturas: [clase(7, 'Las 4 arquitecturas del curso'), guiaArq('arquitecturas', 'Arquitecturas / patrones')],
+  acoplamiento: [clase(7, 'Acoplamiento'), clase(14, 'Matriz de decisiones arquitectónicas'), guiaArq('acoplamiento', 'Acoplamiento')],
+  escalar: [clase(9, 'Scale-up vs. scale-out'), clase(10, 'Activa vs. pasiva'), guiaArq('escalar', 'Escalabilidad y disponibilidad')],
+  transparencias: [clase(6, '1. Transparencia'), guiaArq('transparencia', 'Transparencias')],
+  sincrona: [clase(15, 'Bloqueante o no bloqueante'), clase(16, 'IDL y rpcgen'), guiaCom('middleware', 'Middleware: RPC, RMI, CORBA')],
+  'colas-topicos': [clase(16, 'Colas de mensajes'), clase(16, 'Comunicación a grupo'), guiaCom('mensajeria', 'Modelos de mensajería')],
+  kafka: [clase(16, 'Colas de mensajes'), guiaCom('mensajeria', 'Modelos de mensajería')],
+  mapa: [clase(12, 'Aspecto 3: el binder'), clase(9, 'Proxy')],
+  config: [clase(16, 'Comunicación a grupo'), clase(12, 'Aspecto 4: con estado vs. sin estado')],
+  eureka: [clase(12, 'Aspecto 3: el binder'), clase(12, 'Leases'), clase(19, 'Servicio de nombres: las páginas blancas'), guiaAlm('nombres', 'Servicio de nombres')],
+  gateway: [clase(9, 'Proxy'), clase(10, 'Hot, warm y cold standby')],
+  feign: [clase(16, 'RPC: llamada a procedimientos remotos'), clase(17, 'REST y el modelo de madurez de Richardson'), guiaCom('servicios-web', 'Servicios web')],
+  breaker: [clase(6, '4. Carácter abierto y 5. Fiabilidad'), clase(15, 'Bloqueante o no bloqueante')],
+  tracing: [clase(6, '1. Transparencia')],
+  recorrido: [clase(16, 'Colas de mensajes'), clase(17, 'REST y el modelo de madurez de Richardson')],
+  'cuando-no': [clase(14, 'Matriz de decisiones arquitectónicas'), clase(1, 'Ventajas y desventajas')],
+  kubernetes: [clase(19, 'Servicio de nombres: las páginas blancas'), clase(12, 'Aspecto 3: el binder')],
+};
+
 const slideMore: Record<string, SlideMore> = {
   agenda: { guia: g('mapa-diapositivas', 'Mapa diapositiva → guía') },
   monolito: { guia: g('trade-offs', 'Monolito vs. microservicios'), docs: [doc.fowler] },
@@ -513,4 +547,7 @@ const slideMore: Record<string, SlideMore> = {
   gracias: { guia: g('preguntas', 'Preguntas probables'), docs: [doc.springCloud] },
 };
 
-export const slides: Slide[] = baseSlides.map((s) => ({ ...s, more: slideMore[s.id] }));
+export const slides: Slide[] = baseSlides.map((s) => {
+  const more = slideMore[s.id];
+  return more ? { ...s, more: { ...more, curso: curso[s.id] } } : s;
+});
