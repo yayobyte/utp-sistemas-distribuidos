@@ -109,21 +109,6 @@ export const talleresRegistry: TallerEntry[] = [
       { slug: 'matriz', label: 'Matriz Comparativa' },
     ],
   },
-  {
-    id: 'exposicion-c',
-    kind: 'exposicion',
-    path: '/exposicion/microservicios',
-    number: 7,
-    title: 'Microservicios y Spring Cloud',
-    shortTitle: 'Exposición · Microservicios',
-    topic: 'Exposición · Grupo C',
-    corte: 'Parcial 2',
-    status: 'en-progreso',
-    summary:
-      'Presentación interactiva en 3D: del monolito a los microservicios, cómo se conectan con las arquitecturas y la comunicación vistas en clase, y el stack de Spring Cloud (Config, Eureka, Gateway, Resilience4j, tracing).',
-    objective: '',
-    sections: [],
-  },
 ];
 
 export const statusLabels: Record<TallerStatus, string> = {
@@ -141,9 +126,8 @@ export const isTallerAvailable = (taller: TallerEntry): boolean =>
 export const getTallerPath = (taller: TallerEntry, sectionSlug?: string): string =>
   taller.path ?? `/talleres/${taller.id}/${sectionSlug ?? taller.sections[0]?.slug ?? ''}`;
 
-// Prev/next links only move between regular talleres, never into a presentation.
 export const getAdjacentTalleres = (id: string) => {
-  const available = talleresRegistry.filter((t) => isTallerAvailable(t) && t.kind !== 'exposicion');
+  const available = talleresRegistry.filter((t) => isTallerAvailable(t));
   const index = available.findIndex((t) => t.id === id);
   return {
     previous: index > 0 ? available[index - 1] : undefined,

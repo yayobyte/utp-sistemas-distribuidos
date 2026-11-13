@@ -27,14 +27,21 @@ const hubCards = [
     to: '/guia',
     icon: MapIcon,
     title: 'Guías de estudio',
-    text: 'Arquitecturas, comunicación y la guía de la exposición, con diagramas y prácticas interactivas.',
+    text: 'Arquitecturas, comunicación, y archivos y nombres, con diagramas y prácticas interactivas.',
     meta: `${guias.length} guías`,
+  },
+  {
+    to: '/exposicion/guia',
+    icon: Presentation,
+    title: 'Exposición',
+    text: 'Microservicios y Spring Cloud: la presentación del Grupo C y su guía para preparar preguntas.',
+    meta: 'Grupo C',
   },
   {
     to: '#talleres',
     icon: Wrench,
     title: 'Talleres',
-    text: 'Las investigaciones entregadas y la exposición del Grupo C.',
+    text: 'Las investigaciones entregadas, con su matriz comparativa.',
     meta: `${completedTalleres} completados`,
   },
 ];
@@ -42,7 +49,7 @@ const hubCards = [
 const TallerRowContent: React.FC<{ taller: TallerEntry }> = ({ taller }) => (
   <>
     <span className="home-taller-number">
-      {taller.kind === 'exposicion' ? <Presentation size={16} /> : taller.number}
+      {taller.number}
     </span>
     <span className="home-taller-body">
       <span className="home-taller-eyebrow">

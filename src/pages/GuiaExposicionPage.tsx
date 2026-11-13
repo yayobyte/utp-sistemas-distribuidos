@@ -4,7 +4,6 @@ import { Presentation } from 'lucide-react';
 import {
   FamilyMap,
   GuiaTable,
-  GuiaTabs,
   QaList,
   SectionHead,
   StepButtons,
@@ -377,7 +376,6 @@ const PurchaseSequence: React.FC = () => {
 
 export const GuiaExposicionPage: React.FC = () => (
   <div className="guia-page container-tight">
-    <GuiaTabs />
     <header className="guia-header">
       <p className="guia-kicker">Guía de la exposición · Grupo C</p>
       <h1 className="type-display-lg">Entender para exponer: Microservicios y Spring Cloud</h1>

@@ -5,7 +5,12 @@ import { RichText } from '../../pages/ClasePage';
 export const guias = [
   { to: '/guia/arquitecturas', label: 'Arquitecturas', meta: 'Clases 1–13' },
   { to: '/guia/comunicacion', label: 'Comunicación', meta: 'Clases 15–17' },
-  { to: '/guia/exposicion', label: 'Exposición', meta: 'Microservicios' },
+  { to: '/guia/archivos', label: 'Archivos y nombres', meta: 'Clases 18–19' },
+];
+
+export const exposicionLinks = [
+  { to: '/exposicion/microservicios', label: 'Presentación', meta: 'Microservicios · Grupo C' },
+  { to: '/exposicion/guia', label: 'Guía de la exposición', meta: 'Entender para exponer' },
 ];
 
 export const GuiaTabs: React.FC = () => (

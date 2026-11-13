@@ -8,7 +8,7 @@ import {
   talleresRegistry,
 } from '../../../data/talleres.registry';
 import { courseInfo } from '../../../data/curso.data';
-import { guias } from '../../guia/GuiaParts';
+import { exposicionLinks, guias } from '../../guia/GuiaParts';
 import type { SidebarProps } from './Sidebar.d';
 import './Sidebar.styles.css';
 
@@ -57,6 +57,19 @@ export const Sidebar: React.FC<SidebarProps> = ({ id, isOpen, onClose }) => {
         </div>
 
         <div className="sidebar-group">
+          <h2 className="sidebar-group-title">Exposición</h2>
+          {exposicionLinks.map((g) => (
+            <NavLink key={g.to} to={g.to} className={navClass}>
+              <Presentation size={15} />
+              <span className="sidebar-taller-text">
+                <span className="sidebar-taller-title">{g.label}</span>
+                <span className="sidebar-taller-meta">{g.meta}</span>
+              </span>
+            </NavLink>
+          ))}
+        </div>
+
+        <div className="sidebar-group">
           <h2 className="sidebar-group-title">Talleres</h2>
           {talleresRegistry.map((taller) =>
             isTallerAvailable(taller) ? (
@@ -66,7 +79,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ id, isOpen, onClose }) => {
                 className={navClass({ isActive: pathname.startsWith(`/talleres/${taller.id}/`) })}
               >
                 <span className="sidebar-taller-number">
-                  {taller.kind === 'exposicion' ? <Presentation size={13} /> : taller.number}
+                  {taller.number}
                 </span>
                 <span className="sidebar-taller-text">
                   <span className="sidebar-taller-title">{taller.shortTitle}</span>

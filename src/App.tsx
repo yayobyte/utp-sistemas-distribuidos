@@ -11,6 +11,7 @@ import { Taller6Page } from './pages/Taller6Page';
 import { GuiaEstudioPage } from './pages/GuiaEstudioPage';
 import { GuiaComunicacionPage } from './pages/GuiaComunicacionPage';
 import { GuiaExposicionPage } from './pages/GuiaExposicionPage';
+import { GuiaArchivosPage } from './pages/GuiaArchivosPage';
 import { ClasesIndexPage } from './pages/ClasesIndexPage';
 import { ClasePage } from './pages/ClasePage';
 import { ExposicionPage } from './pages/ExposicionPage';
@@ -25,7 +26,9 @@ export const App: React.FC = () => {
           <Route path="guia" element={<Navigate to="/guia/arquitecturas" replace />} />
           <Route path="guia/arquitecturas" element={<GuiaEstudioPage />} />
           <Route path="guia/comunicacion" element={<GuiaComunicacionPage />} />
-          <Route path="guia/exposicion" element={<GuiaExposicionPage />} />
+          <Route path="guia/archivos" element={<GuiaArchivosPage />} />
+          <Route path="exposicion/guia" element={<GuiaExposicionPage />} />
+          <Route path="guia/exposicion" element={<Navigate to="/exposicion/guia" replace />} />
           <Route path="clases" element={<ClasesIndexPage />} />
           <Route path="clases/:numero" element={<ClasePage />} />
           <Route path="talleres/1/:section?" element={<Taller1Page />} />

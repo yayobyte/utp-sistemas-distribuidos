@@ -1,0 +1,87 @@
+.fam-where { --fam: var(--fam-coup); }
+.fam-dfs { --fam: var(--fam-model); }
+.fam-par { --fam: var(--fam-trans); }
+.fam-names { --fam: var(--fam-scale); }
+.fam-dir { --fam: var(--fam-arch); }
+
+/* Parity lab */
+.alm-disks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+
+.alm-disk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 8px;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-sm);
+}
+.alm-disk.is-parity { background: color-mix(in srgb, var(--fam) 10%, var(--color-canvas)); border-color: var(--fam); }
+.alm-disk.is-failed { border-style: dashed; opacity: 0.6; }
+.alm-disk-name { font-size: 13px; font-weight: 600; }
+
+.alm-bits { display: flex; gap: 4px; }
+.alm-bits button {
+  width: 26px;
+  padding: 6px 0;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-ink);
+  background: var(--color-canvas-parchment);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+}
+.alm-bits button:disabled { cursor: default; }
+.alm-bits button:focus-visible,
+.alm-fail:focus-visible { outline: 2px solid var(--fam); outline-offset: 1px; }
+
+.alm-fail {
+  font: inherit;
+  font-size: 12.5px;
+  padding: 4px 10px;
+  color: var(--fam);
+  background: none;
+  border: 1px solid var(--fam);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+
+.alm-result { font-size: 15px; line-height: 1.5; }
+.alm-result code, .alm-filter { font-family: var(--font-mono); }
+
+.guia-page svg text.alm-hot { fill: var(--fam); font-weight: 600; }
+
+/* Directory lab */
+.alm-field { display: flex; flex-direction: column; gap: 5px; font-size: 13.5px; color: var(--color-ink-muted-80); }
+.alm-field input,
+.alm-field select {
+  padding: 8px 10px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--color-ink);
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-xs);
+}
+.alm-field input { font-family: var(--font-mono); }
+.alm-field input:focus-visible,
+.alm-field select:focus-visible { outline: 2px solid var(--fam); outline-offset: 1px; }
+
+.alm-selects { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.alm-filter {
+  display: block;
+  padding: 8px 10px;
+  font-size: 12.5px;
+  overflow-wrap: anywhere;
+  background: var(--color-canvas-parchment);
+  border-radius: var(--radius-xs);
+}
+
+.alm-matches { margin: 0; padding-left: 18px; font-family: var(--font-mono); font-size: 13px; line-height: 1.7; }
+
+@media (max-width: 600px) {
+  .alm-disks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .alm-selects { grid-template-columns: 1fr; }
+}
