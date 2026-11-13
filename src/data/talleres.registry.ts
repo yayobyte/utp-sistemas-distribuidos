@@ -92,10 +92,28 @@ export const talleresRegistry: TallerEntry[] = [
     ],
   },
   {
+    id: '6',
+    number: 6,
+    title: 'Servicios de Nombres y Servicios de Directorio',
+    shortTitle: 'Nombres y Directorio',
+    topic: 'Tema 5 · Servicios de nombres',
+    corte: 'Parcial 2',
+    status: 'completado',
+    summary:
+      'Tres servicios de nombres (DNS, Eureka y RMI Registry) y tres de directorio (Active Directory, OpenLDAP y Microsoft Entra ID), con un ejemplo de consulta resolve vs. search en cada uno.',
+    objective:
+      'Reconocer las diferentes alternativas de servicios de nombres y de directorio, para poder elegir entre las opciones existentes la que más se ajuste a las necesidades de algún proyecto futuro.',
+    sections: [
+      { slug: 'nombres', label: 'Servicios de Nombres' },
+      { slug: 'directorio', label: 'Servicios de Directorio' },
+      { slug: 'matriz', label: 'Matriz Comparativa' },
+    ],
+  },
+  {
     id: 'exposicion-c',
     kind: 'exposicion',
     path: '/exposicion/microservicios',
-    number: 6,
+    number: 7,
     title: 'Microservicios y Spring Cloud',
     shortTitle: 'Exposición · Microservicios',
     topic: 'Exposición · Grupo C',

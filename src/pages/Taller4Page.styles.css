@@ -114,3 +114,4 @@
   border-radius: var(--radius-xs); background: var(--color-canvas);
 }
 .t5-component span { color: var(--color-ink-muted-80); }
+.t6-code { font-family: var(--font-mono); font-size: 12px; overflow-wrap: anywhere; color: var(--color-ink); }
